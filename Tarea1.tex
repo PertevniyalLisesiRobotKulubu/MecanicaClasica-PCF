@@ -1,0 +1,55 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[affil-it]{authblk}
+
+
+%opening
+\title{Mec\'anica Cl\'asica Tarea \# 1}
+\author{Favio V\'azquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de F\'isica. Universidad Nacional Aut\'onoma de M\'exico}
+\date{}
+
+\begin{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\Large\bfseries \@title \par}%
+    \vskip 1.5em%
+    {\normalsize
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1em%
+    {\normalsize \@date}%
+  \end{center}%
+  \par
+  \vskip 1.5em}
+\makeatother
+
+\maketitle
+
+1.- Encontrar el movimiento de un oscilador arm\'onico amortiguado
+con un coeficiente de amortiguamiento de $\gamma = \omega_{0}/3$ 
+($\omega_{0}/3$ frecuencia natural de l oscilador) si a $t=0$ est\'a 
+en reposo en su punto de equilibrio y a partir de ese instante se le
+aplica una fuerza dada por $$F=A\sin{\omega_{0}t}+B\sin{3\omega_{0}t}$$
+
+\vspace{.3cm}
+
+\underline{Soluci\'on:}
+
+2.- Considere un oscilador arm\'onico con un peque~no amortiguamiento.
+Muestre que el cambio en la energ\'ia durante un per\'iodo es $2T/\tau$,
+donde $T$ el per\'iodo de oscilador sin amortiguar y $\tau$ es el tiempo
+que tarda la amplitud en reducirse por un factor $1/e=1/2,718$.
+
+\vspace{.3cm}
+
+\underline{Soluci\'on:}
+
+\end{document}
