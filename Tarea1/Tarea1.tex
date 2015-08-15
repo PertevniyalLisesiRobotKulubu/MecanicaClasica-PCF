@@ -3,6 +3,10 @@
 \usepackage[spanish]{babel}
 \usepackage[affil-it]{authblk}
 \usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 
 
@@ -68,6 +72,171 @@ Se desea impactar el punto de coordenadas $x=x_{0}$, $z=0$.
 \vspace{.3cm}
 
 \underline{Solución:}
+
+\vspace{.3cm}
+
+Podemos esquematizar el problema como en la (figura \ref{fig:problema3}). 
+Tenemos un proyectil que es disparado desde el origen a una velocidad 
+inicial $v_0$, haciendo un ángulo $\theta$ con el eje x, y deseamos
+alcanzar el punto $x=x_0$ y $z=0$. Primero consideremos el caso sin
+tomar en cuenta la resistencia del aire.
+
+\begin{figure}[ht]
+ \centering
+\includegraphics[scale=0.3]{problema3fig1}
+\caption{Problema 3}
+\label{fig:problema3}
+\end{figure}
+
+\vspace{.3cm}
+
+De la (figura \ref{fig:problema3}) utilizando las relaciones trigonométricas en un 
+triángulo rectángulo vemos que
+
+\begin{gather*}
+v_{0x} = v_0\cos(\theta) \\
+v_{0z} = v_0\sen(\theta)
+\end{gather*}
+
+
+Si la partícula de masa $m$ está sujeta a la atracción gravitacional
+por la tierra, entonces tenemos, utilizando la segunda ley de Newton,
+
+\vspace{.3cm}
+
+En la dirección de $x$,
+
+\begin{equation}
+ 0 = m \ddot{x}
+ \label{ec:1}
+\end{equation}
+
+y en la dirección de $z$,
+
+\begin{equation}
+ - mg = m \ddot{z}
+  \label{ec:2}
+\end{equation}
+
+De la ecuación (\ref{ec:1}) tenemos que (utilizando las condiciones iniciales),
+
+\begin{equation*}
+ \ddot{x} = 0 \Rightarrow \frac{d\dot{x}}{dt} = 0 \Rightarrow 
+ \int_{v_{0x}}^{\dot{x}}d\dot{x}' = 0 \Rightarrow \dot{x} - v_{0x} = 0 
+ \end{equation*}
+
+\begin{equation}
+ \therefore \dot{x} = v_0 \cos(\theta)
+ \label{eq:3}
+\end{equation}
+
+De la ecuación (\ref{eq:3}) podemos obtener $x(t)$, 
+
+\begin{equation*}
+ \frac{dx}{dt} = v_0 \cos(\theta) \Rightarrow dx = v_0 \cos(\theta) dt \Rightarrow
+ \int_0^x dx' = v_0 \cos(\theta) \int_0^t dt'
+\end{equation*}
+
+\begin{equation}
+ \therefore x = v_0 t \cos(\theta)
+ \label{eq:4}
+\end{equation}
+
+Luego para $z$, utilizando la ecuación (\ref{ec:2}),
+
+\begin{equation*}
+ \ddot{z} = -g \Rightarrow \frac{d\dot{z}}{dt} = -g \Rightarrow 
+ \int_{v_{0z}}^{\dot{z}}d\dot{z}' = -g \int_0^t dt' \Rightarrow \dot{z} - v_{0z} = -gt 
+ \end{equation*}
+ 
+\begin{equation}
+ \therefore \dot{z} = -gt + v_0 \sen(\theta)
+ \label{eq:5}
+\end{equation}
+
+De la ecuación (\ref{eq:5}) podemos obtener $z(t)$,
+
+\begin{gather*}
+ \frac{dz}{dt} = -gt + v_0 \sen(\theta) \Rightarrow dz = (-gt + v_0 \sen(\theta)) dt \\ \Rightarrow
+ \int_0^z dz' = -g\int_0^t t' dt' + v_0 \cos(\theta) \int_0^t t'dt'
+\end{gather*}
+
+\begin{equation}
+ \therefore z = - g \frac{t^2}{2} + v_0 t \sen(\theta)
+ \label{eq:6}
+\end{equation}
+
+Podemos encontrar el rango máximo de distancia que recorrerá el proyectil, 
+es decir hasta que choque con el piso, cuando llegue al punto que hemos llamado
+$x_0$, lo cual ocurre al final de su recorrido cuando $z=0$. Para dar
+respuesta a la parte $a)$ de la pregunta debemos determinar en qué momento
+esto ocurre, es decir cuánto es el valor del tiempo para el punto en que 
+$z=0$, ya que esto nos permitirá determinar los ángulos de lanzamiento
+que requerimos para que el proyectil llegue a $x_0$ y $z=0$.
+
+\vspace{.3cm}
+
+Debido a que el proyectil sale disparado desde el origen, $z=0$ cuando
+$t=0$, pero mediante la ecuación (\ref{eq:6}) podemos determinar el otro
+momento en que $z=0$ que es al final de su recorrido, y a este tiempo
+lo llamaremos $\tau$, reescribiendo (\ref{eq:6}) podemos ver esto claramente,
+
+\begin{equation*}
+ z = t(\frac{-gt}{2} + v_0 \sen(\theta)) = 0
+\end{equation*}
+
+Donde vemos que $z=0$ si $t=0$, pero también para un tiempo $\tau$,
+
+\begin{equation*}
+ \frac{-g\tau}{2} + v_0 \sen(\theta) = 0
+\end{equation*}
+
+Resolviendo para $\tau$,
+
+\begin{equation}
+ \tau = \frac{2v_0\sen(\theta)}{g}
+ \label{eq:7}
+\end{equation}
+
+Entonces para obtener el rango del proyectil en $z=0$ cuando
+$t=\tau$, sustituimos en (\ref{eq:4})
+
+\begin{equation*}
+ x = v_0 \tau \cos(\theta) \Rightarrow x = 2 \frac{(v_0)^2}{g} \sen(\theta)\cos(\theta)
+\end{equation*}
+
+Utilizando la identidad trigonométrica $2\sen(\theta)\cos(\theta) = \sen (2\theta)$,
+obtenemos que
+
+\begin{equation}
+ x = \frac{(v_0)^2}{g} \sen(2\theta)
+ \label{eq:8}
+\end{equation}
+
+El rango será máximo, es decir el proyectil llegará a $x_0$ y $z=0$ para
+la familia de ángulos $\theta$ que hagan que $\sen(2\theta)=1$, tales
+ángulos son:
+
+\begin{equation}
+ \theta = \frac{n\pi}{4} \qquad \qquad n = 4\epsilon - 3, \quad  \epsilon = 1,2,3,4,5,\dots
+ \label{eq:9}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \vspace{.3cm}
 
