@@ -49,6 +49,10 @@ aplica una fuerza dada por $$F=A\sin{\omega_{0}t}+B\sin{3\omega_{0}t}$$
 
 \vspace{.3cm}
 
+
+
+\vspace{.3cm}
+
 2.- Considere un oscilador armónico con un pequeño amortiguamiento.
 Muestre que el cambio en la energía durante un período es $2T/\tau$,
 donde $T$ el período de oscilador sin amortiguar y $\tau$ es el tiempo
@@ -326,21 +330,21 @@ Usaremos cantidades con primo (') para el sistema CM,
 También para las energías cinéticas,
  
  \begin{gather*}
-  T_0 = \textrm{Energía cinética total en el sistema LAB} \\
-  T_0' = \textrm{Energía cinética total en el sistema CM} \\
+  T_0 = \textrm{Energía cinética total inicial en el sistema LAB} \\
+  T_0' = \textrm{Energía cinética total inicial el sistema CM} \\
 %  
 %  
-   T_{1i} = \textrm{Energía cinética inicial de} m_1 \textrm{en el sistema LAB} \\
-   T_{1i}' = \textrm{Energía cinética inicial de} m_1 \textrm{en el sistema CM} \\
+   T_{1i} = \textrm{Energía cinética inicial de } m_1 \textrm{en el sistema LAB} \\
+   T_{1i}' = \textrm{Energía cinética inicial de } m_1 \textrm{en el sistema CM} \\
 %   
-   T_{2i} = \textrm{Energía cinética inicial de} m_2 \textrm{en el sistema LAB} \\
-   T_{2i}' = \textrm{Energía cinética inicial de} m_2 \textrm{en el sistema CM} \\
+   T_{2i} = \textrm{Energía cinética inicial de } m_2 \textrm{en el sistema LAB} \\
+   T_{2i}' = \textrm{Energía cinética inicial de } m_2 \textrm{en el sistema CM} \\
 %  
-  T_{1f} = \textrm{Energía cinética final de} m_1 \textrm{en el sistema LAB} \\
-  T_{1f}' = \textrm{Energía cinética final de} m_1 \textrm{en el sistema CM} \\
+  T_{1f} = \textrm{Energía cinética final de } m_1 \textrm{en el sistema LAB} \\
+  T_{1f}' = \textrm{Energía cinética final de } m_1 \textrm{en el sistema CM} \\
 %  
-  T_{2f} = \textrm{Energía cinética final de} m_2 \textrm{en el sistema LAB} \\
-  T_{2f}' = \textrm{Energía cinética final de} m_2 \textrm{en el sistema CM} \\
+  T_{2f} = \textrm{Energía cinética final de } m_2 \textrm{en el sistema LAB} \\
+  T_{2f}' = \textrm{Energía cinética final de } m_2 \textrm{en el sistema CM} \\
 %
 \label{eq:energiasCineticas}
   \end{gather*}
@@ -424,10 +428,80 @@ Utilizando las ecuaciones (\ref{eq:velIguales}) y (\ref{eq:u1iniVel}), podemos v
    v_1' = u_1 - u_2' = \frac{u_1 m_1 + \cancel{m_2 u_1} - \cancel{m_2 u_1}}{m_1 + m_2} =
    \frac{m_2 u_1}{m_1 + m_2}\\
 %   %
-%   \label{eq:velFinales}
+   \label{eq:velFinales}
 %   %
  \end{split}
  \end{gather}
+
+Ya estamos en posición entonces para encontrar expresiones y relaciones que involucren
+la energía de las partículas. En el sistema LAB y debido a que la colisión es elástica,
+la energía cinética total inicial es igual a la energía cinética de la partícula $m_1$,
+es decir
+
+\begin{equation}
+ T_0 = \frac{1}{2} m_1 u_1^2
+ \label{eq:energCinetTotIniLAB}
+\end{equation}
+
+y en el sistema CM,
+
+
+\begin{equation}
+ T_0' = \frac{1}{2} (m_1 u_1'^2 + m_2 u_2'^2)
+ \label{eq:energCinetTotIniCM1}
+\end{equation}
+
+pero utilizando las expresiones para las velocidades de (\ref{eq:velFinales}), 
+la ecuación (\ref{eq:energCinetTotIniCM1}) se convierte en 
+
+\begin{align}
+\begin{split}
+ %
+ T_0' &= \frac{1}{2} \left[ \left(\frac{m_1 u_1}{m_1 + m_2}\right)^2 + m_2 \left(\frac{m_2 u_1}{m_1 + m2+}\right)^2\right] \\
+ %
+       &= \frac{1}{2} \left[ u_1^2 \frac{m_1 m_2^2}{(m_1+m_2)^2} + u_1^2 \frac{m_2 m_1^2}{(m_1+m_2)^2}\right] \\
+%  %
+       &= \frac{1}{2} \left[ m_1 m_2 u_1^2 \left( \frac{m1}{(m_1 + m_2)^2} + \frac{m_2}{(m_1 + m_2)^2}\right)\right] \\
+%  %
+       &= \frac{1}{2} \left[ m_1 m_2 u_1^2 \left( \frac{m_1+m_2}{(m_1+m_2)^2}\right) \right] \\
+%  %
+       &= \frac{1}{2} \left( \frac{m_1 m_2}{m_1+m_2}u_1^2 \right) \\
+%  %
+\therefore T_0' &= \frac{m_2}{m_1+m_2} T_0
+ %
+\end{split}
+\end{align}
+
+El problema nos pide cual es la energía cinética $T_{2f}$ con la que sale la segunda partícula,
+ya con los resultados que hemos obtenido es fácil obtener la misma, calcularemos
+la energía cinética final de la partícula $m_1$ y $m_2$ tanto para el sistema
+LAB como para el sistema CM, para ello utilizando las expresiones para las 
+velocidades finales de la ecuación (\ref{eq:velFinales}),
+
+\begin{align}
+\begin{split} 
+
+ T_{1f}' &= \frac{1}{2} v_1'^2 
+	 &= \frac{1}{2}m_1\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2
+	 &= \left(\frac{m_2}{m_1+m_2}\right)^2 T_0
+
+\label{eq:erergCineFinalm1CM}
+\end{split}
+\end{equation}
+
+y
+
+\begin{align}
+\begin{split} 
+
+ T_{2f}' &= \frac{1}{2} v_2'^2 
+	 &= \frac{1}{2}m_2\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2
+	 &= \frac{1}{2}m_1 u_1^2 \frac{m_1 m_2}{(m_1+m_2)^2}
+	 &= \frac{m_1 m_2}{(m_1+m_2)^2} T_0
+
+\label{eq:erergCineFinalm2CM}
+\end{split}
+\end{equation}
 
 
 
