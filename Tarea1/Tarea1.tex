@@ -7,8 +7,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
-
-
+\usepackage{cancel}
 
 %opening
 \title{Mecánica Clásica Tarea \# 1}
@@ -269,6 +268,173 @@ es máxima si el choque es de frente.
 
 \vspace{.3cm}
 
+Para la resolución de este problema se seguirán las convenciones y notación de \cite{marion} y algunos
+otros autores para el tratamiento de las colisiones elásticas. Como dicen los autores, 
+la descripción de muchos procesos físicos puede simplificarse considerablemente, si se 
+escoge un sistema de coordenadas en reposo con respecto al centro de masa del sistema. Según
+el enunciado del problema puede asumirse que la segunda partícula estaba en reposo, mientras
+que la primera va directo a chocarla. Las mediciones reales se hacen en el sistema de coordenadas
+del laboratorio en el cual el observador está en reposo, en este sistema una de las partículas
+está en movimiento, mientras que la otra está en reposo. No tenemos la misma imagen desde el
+sistema de coordenadas del centro de masa como veremos más adelante. Denominaremos al primero como el sistema \textbf{LAB}
+y al segundo como el sistema \textbf{CM}.
+
+
+\vspace{.3cm}
+
+Usaremos la siguiente notación:
+
+ \begin{gather}
+ \begin{split}
+% 
+  m_1 = \text{Masa de la partícula en movimiento} \\
+  m_2 = \text{Masa de la partícula en reposo}
+%  
+  \label{eq:masas}
+%  
+ \end{split}
+ \end{gather}
+
+Usaremos cantidades con primo (') para el sistema CM,
+
+ \begin{gather}
+ \begin{split}
+  u_1 = \text{Velocidad inicial de } m_1 \text{en el sistema LAB} \\
+  v_1 = \text{Velocidad final de } m_1 \text{en el sistema LAB} \\
+%   
+  u_1' = \text{Velocidad inicial de } m_1 \text{en el sistema CM} \\
+  v_1' = \text{Velocidad final de } m_1 \text{en el sistema CM}
+% 
+ \label{eq:velMasa1}
+ \end{split}
+ \end{gather}
+
+  \begin{gather}
+  \begin{split}
+   u_2 = 0 \\
+   v_2 = \textrm{Velocidad final de} m_2 \textrm{en el sistema LAB} \\
+%  
+ \vspace{.2cm}
+%  
+  u_2' = \textrm{Velocidad inicial de} m_2 \textrm{en el sistema CM} \\
+  v_2' = \textrm{Velocidad final de} m_2 \textrm{en el sistema CM}
+%  
+  \label{eq:velMasa2}
+  \end{split}
+ \end{gather}
+ 
+También para las energías cinéticas,
+ 
+ \begin{gather*}
+  T_0 = \textrm{Energía cinética total en el sistema LAB} \\
+  T_0' = \textrm{Energía cinética total en el sistema CM} \\
+%  
+%  
+   T_{1i} = \textrm{Energía cinética inicial de} m_1 \textrm{en el sistema LAB} \\
+   T_{1i}' = \textrm{Energía cinética inicial de} m_1 \textrm{en el sistema CM} \\
+%   
+   T_{2i} = \textrm{Energía cinética inicial de} m_2 \textrm{en el sistema LAB} \\
+   T_{2i}' = \textrm{Energía cinética inicial de} m_2 \textrm{en el sistema CM} \\
+%  
+  T_{1f} = \textrm{Energía cinética final de} m_1 \textrm{en el sistema LAB} \\
+  T_{1f}' = \textrm{Energía cinética final de} m_1 \textrm{en el sistema CM} \\
+%  
+  T_{2f} = \textrm{Energía cinética final de} m_2 \textrm{en el sistema LAB} \\
+  T_{2f}' = \textrm{Energía cinética final de} m_2 \textrm{en el sistema CM} \\
+%
+\label{eq:energiasCineticas}
+  \end{gather*}
+
+Llamaremos $\textbf{V}$ a la velocidad del centro de masa en el sistema LAB, $\psi$ al 
+ángulo en que $m_1$ se desvía en el sistema LAB, $\xi$ al ángulo en que $m_2$ se desvía
+en el sistema LAB y $\theta$ al ángulo en el que $m_1$ y $m_2$ se desvían en el sistema CM.
+
+De acuerdo con la definición de centro de masa, tenemos que
+
+\begin{equation}
+ m_1 \mathbf{r_1} + m_2 \mathbf{r_2} = M\mathbf{R}
+ %
+ \label{eq:CM1}
+\end{equation}
+
+Diferenciando (\ref{eq:CM1}) con respecto al tiempo encontramos
+
+\begin{equation}
+ m_1 \mathbf{u_1} + m_2 \mathbf{u_2} = M\mathbf{V}
+ \label{eq:CMVel1}
+\end{equation}
+
+Pero debido a que $\mathbf{u_2}=0$ y que $M=m_1+m_2$, el centro de masa se mueve
+hacia $m_2$ con una velocidad,
+
+\begin{equation}
+\mathbf{V} = \frac{m_1 \mathbf{u_1}}{m_1+m_2}
+ \label{eq:CMVel2}
+\end{equation}
+
+Debido a que $m_2$ está en reposo al inicio, la velocidad inicial de $m_2$ en el sistema
+CM debe ser igual a $V$:
+
+\begin{equation}
+u_2'= V = \frac{m_1 u_1}{m_1+m_2}
+ \label{eq:u2iniVel}
+ \end{equation}
+  
+Pero notando que el movimiento y las velocidades son opuestas en dirección, i.e. $\mathbf{u_2'=-\mathbf{V}}$.
+En el sistema CM, de la manera en que lo hemos escogido, el momentum lineal total es cero, por lo tanto
+antes de la colisión las partículas se mueven la una hacia la otra, y luego de la colisión
+se mueven exactamente en direcciones opuestas. Debido a que la colisión es elástica,
+las masas no cambian, y la conservación del momentum y la energía cinética son suficientes
+para decirnos que la velocidad en el sistema CM son iguales antes y después de la colisión,
+por lo que 
+
+\begin{equation}
+ u_1'=v_1', \quad u_2'=v_2'
+ \label{eq:velIguales}
+\end{equation}
+
+De (\ref{eq:u2iniVel}) vemos que 
+
+\begin{equation}
+v_2'= \frac{m_1 u_1}{m_1+m_2}
+ \label{eq:u2finalVel} 
+\end{equation}
+
+Recordando la forma expresar las velocidades en el sistema LAB con respecto al centro de masa,
+tomando como ejemplo una velocidad arbitraria $v_x$
+
+$$
+v_{x,LAB} = v_{x,CM} + v_{CM,LAB}
+$$
+
+Tenemos entonces que, utilizando nuestra notación y la ecuación (\ref{eq:u2iniVel}),
+
+\begin{equation}
+ u_1 = u_1' + V = u_1' + u_2'
+ \label{eq:u1iniVel}
+\end{equation}
+
+Utilizando las ecuaciones (\ref{eq:velIguales}) y (\ref{eq:u1iniVel}), podemos ver entonces que 
+
+ \begin{gather}
+ \begin{split}
+% %
+   v_2' = \frac{m_1 u_1}{m_1 + m_2} \\
+%   %
+   v_1' = u_1 - u_2' = \frac{u_1 m_1 + \cancel{m_2 u_1} - \cancel{m_2 u_1}}{m_1 + m_2} =
+   \frac{m_2 u_1}{m_1 + m_2}\\
+%   %
+%   \label{eq:velFinales}
+%   %
+ \end{split}
+ \end{gather}
+
+
+
+
+
+
+
 6.- Un objeto de masa $m$ se encuentra en el ecuador de la Tierra. ¿Qué velocidad debe 
 tener para que su peso y la fuerza de Coriolis sean iguales?
 
@@ -337,5 +503,12 @@ sistemas de referencia).
 \underline{Solución:}
 
 \vspace{.3cm}
+
+\begin{thebibliography}{10}
+ \bibitem{marion}
+ S. Thronton y J. Marion, \textit{Classical dynamics of particles and systems}, Thomson Brooks/Cole,
+ 5ta edición, 2004.
+\end{thebibliography}
+
 
 \end{document}
