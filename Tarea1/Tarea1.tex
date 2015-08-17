@@ -9,6 +9,10 @@
 \usepackage{amssymb}
 \usepackage{cancel}
 
+%Constantes
+\newcommand{\euler}{\mathrm{e}}
+\newcommand{\im}{\mathrm{i}}
+
 %opening
 \title{Mecánica Clásica Tarea \# 1}
 \author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Física. Universidad Nacional Autónoma de México}
@@ -43,11 +47,159 @@
 con un coeficiente de amortiguamiento de $\gamma = \omega_{0}/3$ 
 ($\omega_{0}/3$ frecuencia natural de l oscilador) si a $t=0$ está 
 en reposo en su punto de equilibrio y a partir de ese instante se le
-aplica una fuerza dada por $$F=A\sin{\omega_{0}t}+B\sin{3\omega_{0}t}$$
+aplica una fuerza dada por\footnote{Hemos modificado el nombre de las contantes originales por conveniencia} 
+$$F= G\sin{\omega_{0}t}+B\sin{3\omega_{0}t}$$
 
 \underline{Solución:}
 
 \vspace{.3cm}
+
+Nos encontramos con el caso de un oscilador armónico amortiguado al cual se le
+aplica una fuerza de conducción. Si asumimos que la fuerza de amortiguamiento es
+una función lineal de la velocidad del oscilador, entonces la ecuación que debemos
+resolver tiene la forma
+
+\begin{equation}
+ m\ddot{x} + b \dot{x} + kx = G \sen{\omega_0 t} + H \sen{3\omega_0 t}
+ \label{eq:ODEinicialOscilador}
+\end{equation}
+
+sujeta a las condiciones iniciales
+
+\begin{equation}
+ x(0) = 0 \qquad \qquad \dot{x}(0) = 0
+ \label{eq:condInicialesOscilador}
+\end{equation}
+
+Podemos escribir la ecuación (\ref{eq:ODEinicialOscilador}) de una forma más conveniente,
+
+\begin{equation}
+ \ddot{x} + 2\gamma \dot{x} + \omega_0^2 x = A \sen{\omega_0 t} + B \sen{3\omega_0 t}
+ \label{eq:ODEmejoradaOscilador}
+\end{equation}
+
+Donde $A = G/m$, $B = H/m$ y hemos definido\footnote{Esta definición la hemos tomado de libros clásicos de mecánica (\cite{marion,taylor})} 
+a  $\gamma \equiv b/2m$, y representa el coeficiente de amortiguado del oscilador 
+y $\omega_0^2 \equiv \sqrt{k/m}$ es la frecuencia natural del oscilador. 
+
+\vspace{.3cm}
+
+La solución a la ecuación (\ref{eq:ODEmejoradaOscilador}) consta de dos partes,
+$x_h(t)$ a la que llamamos solución homogénea, la cual es solución de (\ref{eq:ODEmejoradaOscilador})
+si hacemos el lado derecho de la misma cero, y una solución particular $x_p(t)$, que 
+reproduce el lado derecho. 
+
+\vspace{.3cm}
+
+Para la solución homogénea tenemos 
+
+\begin{equation}
+ \ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = 0 
+ \label{eq:ODEOsciladorHomogenea}
+\end{equation}
+
+Para resolver esta ecuación diferencial ordinaria de segundo orden seguiremos los pasos
+establecidos en \cite{zill}, con algunos trucos utilizados por los libros de mecánica,
+comenzamos por conjeturar que las soluciones de (\ref{eq:ODEOsciladorHomogenea}) tienen 
+la forma 
+
+$$
+x(t) = \euler^{rt}
+$$
+
+entonces
+
+\begin{align}
+ \begin{split}
+  %
+  x(t) &= \euler^{rt} \\
+  %
+  \dot{x}(t) &= r\euler^{rt} \\
+  %
+  \ddot{x}(t) &= r^2\euler^{rt} 
+  %
+  \label{eq:solucionesExpHomogen}
+ \end{split}
+\end{align}
+
+Sustituyendo (\ref{eq:solucionesExpHomogen}) en (\ref{eq:ODEOsciladorHomogenea}) obtenemos
+
+\begin{equation}
+ r^2 \euler^{rt} + 2r\gamma \euler^{rt} + \omega_0^2 \euler{rt} = 0
+ \label{eq:CasiCaracteristica}
+\end{equation}
+
+$$
+\therefore \left(r^2 + 2r\gamma + \omega_0^2\right) \euler^{rt} = 0
+$$
+
+Debido a que $\euler^{rt} \neq 0$ para cualquier $x \in \mathbb{R}$, entonces
+
+\begin{equation}
+  r^2 + 2r\gamma + \omega_0^2 = 0
+ \label{eq:ecuacionCaracteristica1}
+\end{equation}
+
+Haciendo uso de la conocida relación para obtener las raíces de una ecuación
+algebraica lineal de segundo orden
+
+$$
+r_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$
+
+tenemos que 
+
+\begin{align}
+\begin{split}
+%
+r_1 &= - \gamma + \sqrt{\gamma^2 - \omega_0^2} \\
+%
+r_2 &= - \gamma - \sqrt{\gamma^2 - \omega_0^2}
+%
+\end{split}
+\end{align}
+
+Debido a que $r_1$ y $r_2$ son linealmente independientes encontramos que la solución
+a la ecuación homogénea es 
+
+\begin{equation}
+ x(t) = C_1 \euler^{r_1 t} + C_2 \euler^{r_2 t} = \euler^{-\gamma t} (C_1 \euler^{\sqrt{\gamma^2 -q \omega_0^2}t}
+ + C_2 \euler^{-\sqrt{\gamma^2 - \omega_0^2}t})
+\end{equation}
+
+Para encontrar la solución particular utilizaremos el método de los coeficientes indeterminados, 
+en el cual conjeturamos la forma de $x_p (t)$ motivados por los tipos de funciones linealmente
+independientes que pueden construir el término no homogéneo de la ecuación, no demostraremos
+el método, solo lo utilizaremos, puede encontrarse una demostración completa y comprobar
+su validez en cualquier libro ecuaciones diferenciales modernas como (\cite{zill}). Entonces
+asumiendo que $x_p (t)$ tiene la forma
+
+\begin{equation}
+ x_p (t) = C \sen{\omega_0t} + D \cos{\omega_0t} + F \sen{3 \omega_0t} + E \cos{3 \omega_0t}
+ \label{eq:particular1}
+\end{equation}
+
+Derivando (\ref{eq:particular1}) con respecto al tiempo y luego derivando ese resultado de nuevo
+con respecto la tiempo obtenemos
+
+\begin{align}
+ \begin{split}
+  % 
+  \dot{x}_p (t) = C \omega_0 \cos{\omega_0t} - D\omega_0 \sen{\omega_0t} + 
+  3F\omega_0 \cos{3 \omega_0t} - 3E\omega_0 \sen{3 \omega_0t} \\
+  %
+  \ddot{x}_p (t) = - C\omega_0^2 \sen{\omega_0t} - D\omega_0^2 \cos{\omega_0t} - 
+  9F\omega_0^2 \sen{3 \omega_0t} - 9E\omega_0^2 \cos{3 \omega_0t} 
+  %
+  \label{eq:particular2}
+ \end{split}
+\end{align}
+
+
+
+
+
+
 
 
 
@@ -480,28 +632,33 @@ velocidades finales de la ecuación (\ref{eq:velFinales}),
 
 \begin{align}
 \begin{split} 
-
- T_{1f}' &= \frac{1}{2} v_1'^2 
-	 &= \frac{1}{2}m_1\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2
-	 &= \left(\frac{m_2}{m_1+m_2}\right)^2 T_0
-
+%
+ T_{1f}' &= \frac{1}{2} v_1'^2 \\
+ %
+	 &= \frac{1}{2}m_1\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2 \\
+	 %
+	 &= \left(\frac{m_2}{m_1+m_2}\right)^2 T_0\\
+%
 \label{eq:erergCineFinalm1CM}
 \end{split}
-\end{equation}
+\end{align}
 
 y
 
 \begin{align}
 \begin{split} 
-
- T_{2f}' &= \frac{1}{2} v_2'^2 
-	 &= \frac{1}{2}m_2\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2
-	 &= \frac{1}{2}m_1 u_1^2 \frac{m_1 m_2}{(m_1+m_2)^2}
+%
+ T_{2f}' &= \frac{1}{2} v_2'^2 \\
+%
+	 &= \frac{1}{2}m_2\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2 \\
+%
+	 &= \frac{1}{2}m_1 u_1^2 \frac{m_1 m_2}{(m_1+m_2)^2} \\
+%
 	 &= \frac{m_1 m_2}{(m_1+m_2)^2} T_0
-
+%
 \label{eq:erergCineFinalm2CM}
 \end{split}
-\end{equation}
+\end{align}
 
 
 
@@ -582,6 +739,11 @@ sistemas de referencia).
  \bibitem{marion}
  S. Thronton y J. Marion, \textit{Classical dynamics of particles and systems}, Thomson Brooks/Cole,
  5ta edición, 2004.
+ \bibitem{taylor}
+ J. Taylor, \textit{Classical mechanics}, University Science Books, 2005.
+ \bibitem{zill}
+ D. Zill y W. Wright, \textit{Differential equations with Boundary-Value Problems}, Brooks/Cole,
+ 8va edición, 2013.
 \end{thebibliography}
 
 
