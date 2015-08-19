@@ -8,3 +8,5 @@
 *.bcf
 *.dvi
 *.xml
+*.bbl
+*.blg
