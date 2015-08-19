@@ -214,6 +214,20 @@ obtenemos
 
 Pero según el enunciado del problema $\gamma = \omega_0/3$, entonces
 
+\begin{align}
+ \begin{split}
+- C\omega_0^2 \sen{\omega_0t} - D\omega_0^2 \cos{\omega_0t} - 
+  9F\omega_0^2 \sen{3 \omega_0t} - 9E\omega_0^2 \cos{3 \omega_0t} - \\
+  %
+  \frac{2}{3} C \omega_0^2 \omega_0 \cos{\omega_0t} - 2\gamma D\omega_0 \sen{\omega_0t} + 
+  6\gamma F\omega_0 \cos{3 \omega_0t} - 6\gamma E\omega_0 \sen{3 \omega_0t} + \\
+  %
+  C\omega_0^2 \sen{\omega_0t} + D\omega_0^2 \cos{\omega_0t} + F\omega_0^2 
+  \sen{3 \omega_0t} + E\omega_0^2 \cos{3 \omega_0t} \\
+  %
+  = A \sen{\omega_0t} + B \sen
+  \end{split}
+\end{align}
 
 
 
@@ -696,9 +710,64 @@ tener para que su peso y la fuerza de Coriolis sean iguales?
 
 \vspace{.3cm}
 
+El efecto de la rotación de la Tierra sobre los experimentos de laboratorio es muy pequeño, pero sin embargo se puede
+hacer un tratamiento del problema planteado considerandolo como un problema de movimiento con respecto
+a unsistema de coordenadas en rotación. No demostraremos todas las ecuacioens debido a que se haría
+muy larga la solución, pero podemos comenzar por escribir la siguiente ecuación,
+
+\begin{equation}
+ \mathbf{F'} = \mathbf{F} - 2m(\mathbf{\omega} \times \mathbf{v'}) - m\mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'})
+ \label{eq:FuerzasDeSistemaRotacion}
+\end{equation}
+
+Donde $\mathbf{F'} = m\mathbf{a'} = d\mathbf{p'}/dt$ es la fuerza que mediría un observador $S'$ situado
+en un sistemas de coordenadas en rotación, $\mathbf{F}$ es la fuerza que mediría un observador
+en reposo en un sistema inercial. Los dos términos resultantes son las conocidas \emph{fuerzas de inercia}:
+
+\begin{equation}
+ \mathbf{F_i'} = - 2m(\mathbf{\omega} \times \mathbf{v'}) - m\mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'})
+ \label{eq:FuerzasDeInercia}
+\end{equation}
+
+Donde recordamos que $\mathbf{\omega}$ es la velocidad angular del sistema en rotación. Es evidente que cuando $\mathbf{\omega} = 0$
+entonces $S'$ no gira y ambos observadores deberían concordar en las fuerzas. Estas dos fuerzas tienen nombre, el segundo de los términos
+recibe el nombre de fuerza centrífuga, aunque no diremos mucho más de ella, cabe resaltar que esta siempre dirigida hacia
+afuera, es siempre perpendicular al eje de rotación y es proporcionala $\omega^2$ y a la deistancia al eje.
+
+\vspace{.3cm}
+
+La fuerza que nos interesa para resolver este problema es el primer término de (\ref{eq:FuerzasDeInercia}), $- 2m(\mathbf{\omega} \times \mathbf{v'})$,
+llamada \emph{fuerza de Coriolis}, esta como se puede ver depende de la velocidad en $S'$, pero no de la posición. La fuerza de Coriolis 
+es perpendicular a $\mathbf{\omega}$ y a $\mathbf{v'}$. En el problema se nos pregunta qé velocidad debe tener un objeto de masa $m$ para que su peso 
+y la fuerza de Coriolis sean iguales. Como hemos dicho el efecto de la fuerza Coriolis sobre el movimiento de los cuerpos en la Tierra 
+suele ser muy pequeño. Debido a la forma y estructura de la ecuación para la fuerza Coriolis podemos predecir que el objeto se deberá mover 
+relativamente rápido para que su peso y la fuerza de Coriolis sean iguales, porque la velocidad angular de la tierra es de unos $2\pi$ 
+radianes por día sideral (23 $h$, 56 $m$, 4.1 $s$) lo que da un valor aproximado de $7.3 \times 10^-5$ rad/s. El hecho de que el
+cuerpo está en el ecuador facilita un poco el cálculo ya que no hay que considerar las correcciones para la fuerza Coriolis en el
+hemisferio norte o sur de la Tierra.
+
+\vspace{.3cm}
+
+Entonces lo que requerimos es que para el objeto de masa $m$ se cumpla
+
+\begin{equation}
+ - 2m(\mathbf{\omega} \times \mathbf{v'}) = - m \mathbf{g}
+ \label{eq:Coriolis1}
+\end{equation}
+
+De (\ref{eq:Coriolis1}), la velocidad que debe tener el cuerpo es de (asumiendo que se encuentra a nivel del mar
+y una distribución homogénea del campo gravitacional que lo afecta)
+
+\begin{equation}
+ v' = \frac{g}{2\omega} = \frac{9.8 m/s^2}{7.3 \times 10^-5 rad/s} = 6.72 \times 10^5 m/s
+\end{equation}
+
+
+\vspace{.3cm}
+
 7.- La hélice de un avión tiene un momento de inercia $I$ y el motor le imprime una torca 
 
-$$N_m = N_0 (1+\alpha \cos{\omega t}. \qquad (\alpha \ll 1)$$
+$$N_m = N_0 (1+\alpha \cos{\omega t}. \qquad (\alpha \ll 1))$$
 
 La resistencia del aire le imprime una torca
 
