@@ -468,17 +468,23 @@ es máxima si el choque es de frente.
 
 \vspace{.3cm}
 
-Para la resolución de este problema se seguirán las convenciones y notación de \cite{marion} y algunos
-otros autores para el tratamiento de las colisiones elásticas. Como dicen los autores, 
-la descripción de muchos procesos físicos puede simplificarse considerablemente, si se 
-escoge un sistema de coordenadas en reposo con respecto al centro de masa del sistema. Según
-el enunciado del problema puede asumirse que la segunda partícula estaba en reposo, mientras
-que la primera va directo a chocarla. Las mediciones reales se hacen en el sistema de coordenadas
-del laboratorio en el cual el observador está en reposo, en este sistema una de las partículas
-está en movimiento, mientras que la otra está en reposo. No tenemos la misma imagen desde el
-sistema de coordenadas del centro de masa como veremos más adelante. Denominaremos al primero como el sistema \textbf{LAB}
-y al segundo como el sistema \textbf{CM}.
+% Para la resolución de este problema se seguirán las convenciones y notación de \cite{marion} y algunos
+% otros autores para el tratamiento de las colisiones elásticas. Como dicen los autores, 
+% la descripción de muchos procesos físicos puede simplificarse considerablemente, si se 
+% escoge un sistema de coordenadas en reposo con respecto al centro de masa del sistema. Según
+% el enunciado del problema puede asumirse que la segunda partícula estaba en reposo, mientras
+% que la primera va directo a chocarla. Las mediciones reales se hacen en el sistema de coordenadas
+% del laboratorio en el cual el observador está en reposo, en este sistema una de las partículas
+% está en movimiento, mientras que la otra está en reposo. No tenemos la misma imagen desde el
+% sistema de coordenadas del centro de masa como veremos más adelante. Denominaremos al primero como el sistema \textbf{LAB}
+% y al segundo como el sistema \textbf{CM}.
 
+
+Para la resolución de este problema se seguirán las convenciones y notación de \cite{marion} y algunos
+otros autores para el tratamiento de las colisiones elásticas. Según el enunciado del problema puede asumirse 
+que la segunda partícula estaba en reposo, mientras que la primera va directo a chocarla. Esto simplifica 
+un poco los cálculos y ecuaciones pero la extensión a un choque donde ambas partículas tienen una
+velocidad inicial no es muy engorroso.
 
 \vspace{.3cm}
 
@@ -495,214 +501,255 @@ Usaremos la siguiente notación:
  \end{split}
  \end{gather}
 
-Usaremos cantidades con primo (') para el sistema CM,
+% Usaremos cantidades con primo (') para el sistema CM,
+Las velocidades iniciales y finales de las partículas la denotaremos como
 
  \begin{gather}
  \begin{split}
-  u_1 = \text{Velocidad inicial de } m_1 \text{en el sistema LAB} \\
-  v_1 = \text{Velocidad final de } m_1 \text{en el sistema LAB} \\
+%   u_1 = \text{Velocidad inicial de } m_1 \text{en el sistema LAB} \\
+%   v_1 = \text{Velocidad final de } m_1 \text{en el sistema LAB} \\
 %   
-  u_1' = \text{Velocidad inicial de } m_1 \text{en el sistema CM} \\
-  v_1' = \text{Velocidad final de } m_1 \text{en el sistema CM}
+%   u_1' = \text{Velocidad inicial de } m_1 \text{en el sistema CM} \\
+%   v_1' = \text{Velocidad final de } m_1 \text{en el sistema CM}
 % 
- \label{eq:velMasa1}
+  u_1 = \text{Velocidad inicial de } m_1 \\
+  v_1 = \text{Velocidad final de } m_1 \\
+%   
+  u_2 = 0 \\
+  v_2 = \textrm{Velocidad final de} m_2\\
+ \label{eq:velMasas}
  \end{split}
  \end{gather}
 
-  \begin{gather}
-  \begin{split}
-   u_2 = 0 \\
-   v_2 = \textrm{Velocidad final de} m_2 \textrm{en el sistema LAB} \\
-%  
- \vspace{.2cm}
-%  
-  u_2' = \textrm{Velocidad inicial de} m_2 \textrm{en el sistema CM} \\
-  v_2' = \textrm{Velocidad final de} m_2 \textrm{en el sistema CM}
-%  
-  \label{eq:velMasa2}
-  \end{split}
- \end{gather}
+%   \begin{gather}
+%   \begin{split}
+%    u_2 = 0 \\
+%    v_2 = \textrm{Velocidad final de} m_2 \textrm{en el sistema LAB} \\
+% %  
+%  \vspace{.2cm}
+% %  
+%   u_2' = \textrm{Velocidad inicial de} m_2 \textrm{en el sistema CM} \\
+%   v_2' = \textrm{Velocidad final de} m_2 \textrm{en el sistema CM}
+% %  
+%   \label{eq:velMasa2}
+%   \end{split}
+%  \end{gather}
  
-También para las energías cinéticas,
+Para las energías cinéticas,
  
  \begin{gather*}
-  T_0 = \textrm{Energía cinética total inicial en el sistema LAB} \\
-  T_0' = \textrm{Energía cinética total inicial el sistema CM} \\
+  T_{0i} = \textrm{Energía cinética total inicial} \\
+%
+  T_{0f} = \textrm{Energía cinética total final} \\
+%   T_0' = \textrm{Energía cinética total inicial el sistema CM} \\
 %  
 %  
-   T_{1i} = \textrm{Energía cinética inicial de } m_1 \textrm{en el sistema LAB} \\
-   T_{1i}' = \textrm{Energía cinética inicial de } m_1 \textrm{en el sistema CM} \\
+   T_{1i} = \textrm{Energía cinética inicial de } m_1 \\
+%    T_{1i}' = \textrm{Energía cinética inicial de } m_1 \textrm{en el sistema CM} \\
 %   
-   T_{2i} = \textrm{Energía cinética inicial de } m_2 \textrm{en el sistema LAB} \\
-   T_{2i}' = \textrm{Energía cinética inicial de } m_2 \textrm{en el sistema CM} \\
+   T_{2i} = \textrm{Energía cinética inicial de } m_2 \\
+%    T_{2i}' = \textrm{Energía cinética inicial de } m_2 \textrm{en el sistema CM} \\
 %  
-  T_{1f} = \textrm{Energía cinética final de } m_1 \textrm{en el sistema LAB} \\
-  T_{1f}' = \textrm{Energía cinética final de } m_1 \textrm{en el sistema CM} \\
+  T_{1f} = \textrm{Energía cinética final de } m_1 \\
+%   T_{1f}' = \textrm{Energía cinética final de } m_1 \textrm{en el sistema CM} \\
 %  
-  T_{2f} = \textrm{Energía cinética final de } m_2 \textrm{en el sistema LAB} \\
-  T_{2f}' = \textrm{Energía cinética final de } m_2 \textrm{en el sistema CM} \\
+  T_{2f} = \textrm{Energía cinética final de } m_2 \\
+%   T_{2f}' = \textrm{Energía cinética final de } m_2 \textrm{en el sistema CM} \\
 %
 \label{eq:energiasCineticas}
   \end{gather*}
-
-Llamaremos $\textbf{V}$ a la velocidad del centro de masa en el sistema LAB, $\psi$ al 
-ángulo en que $m_1$ se desvía en el sistema LAB, $\xi$ al ángulo en que $m_2$ se desvía
-en el sistema LAB y $\theta$ al ángulo en el que $m_1$ y $m_2$ se desvían en el sistema CM.
-
-De acuerdo con la definición de centro de masa, tenemos que
-
-\begin{equation}
- m_1 \mathbf{r_1} + m_2 \mathbf{r_2} = M\mathbf{R}
- %
- \label{eq:CM1}
-\end{equation}
-
-Diferenciando (\ref{eq:CM1}) con respecto al tiempo encontramos
-
-\begin{equation}
- m_1 \mathbf{u_1} + m_2 \mathbf{u_2} = M\mathbf{V}
- \label{eq:CMVel1}
-\end{equation}
-
-Pero debido a que $\mathbf{u_2}=0$ y que $M=m_1+m_2$, el centro de masa se mueve
-hacia $m_2$ con una velocidad,
-
-\begin{equation}
-\mathbf{V} = \frac{m_1 \mathbf{u_1}}{m_1+m_2}
- \label{eq:CMVel2}
-\end{equation}
-
-Debido a que $m_2$ está en reposo al inicio, la velocidad inicial de $m_2$ en el sistema
-CM debe ser igual a $V$:
-
-\begin{equation}
-u_2'= V = \frac{m_1 u_1}{m_1+m_2}
- \label{eq:u2iniVel}
- \end{equation}
   
-Pero notando que el movimiento y las velocidades son opuestas en dirección, i.e. $\mathbf{u_2'=-\mathbf{V}}$.
-En el sistema CM, de la manera en que lo hemos escogido, el momentum lineal total es cero, por lo tanto
-antes de la colisión las partículas se mueven la una hacia la otra, y luego de la colisión
-se mueven exactamente en direcciones opuestas. Debido a que la colisión es elástica,
-las masas no cambian, y la conservación del momentum y la energía cinética son suficientes
-para decirnos que la velocidad en el sistema CM son iguales antes y después de la colisión,
-por lo que 
+Y para los momenta,
+
+ \begin{gather*}
+  P_{0i} = \textrm{Momentum total inicial} \\
+ %
+  P_{0f} = \textrm{Momentum total final} \\
+%  
+   p_{1i} = \textrm{Momentum inicial de } m_1 \\
+%   
+   p_{2i} = \textrm{Momentum inicial de } m_2 \\
+%  
+  p_{1f} = \textrm{Momentum final de } m_1 \\
+%  
+  p_{2f} = \textrm{Momentum final de } m_2 \\
+%
+\label{eq:Momenta}
+  \end{gather*}
+  
+En las colisiones elásticas el momentum y la energía cinética se conservan, lo cual nos 
+será de mucha utilidad para los cálculos posteriores. Hagámos un breve análisis de lo 
+que ocurrirá luego de la colisión. La masa $m1$ se moverá con una velocidad $v_1$,
+haciéndo un ángulo $\psi$ con el eje $X$, y la masa $m_2$ se moverá con una 
+velocidad $v_2$ haciéndo un ángulo $\theta$ con el eje $X$. La conservación 
+del momentum lineal y la energía requieren que 
 
 \begin{equation}
- u_1'=v_1', \quad u_2'=v_2'
- \label{eq:velIguales}
+ \mathbf{P}_{0i} = \mathbf{P}_{0f} \qquad \text{y} \qquad \mathbf{T}_{0i} = \mathbf{T}_{0f}
+ \label{eq:ConservacionesColision1}
 \end{equation}
 
-De (\ref{eq:u2iniVel}) vemos que 
 
-\begin{equation}
-v_2'= \frac{m_1 u_1}{m_1+m_2}
- \label{eq:u2finalVel} 
-\end{equation}
 
-Recordando la forma expresar las velocidades en el sistema LAB con respecto al centro de masa,
-tomando como ejemplo una velocidad arbitraria $v_x$
 
-$$
-v_{x,LAB} = v_{x,CM} + v_{CM,LAB}
-$$
+% Llamaremos $\textbf{V}$ a la velocidad del centro de masa en el sistema LAB, $\psi$ al 
+% ángulo en que $m_1$ se desvía en el sistema LAB, $\xi$ al ángulo en que $m_2$ se desvía
+% en el sistema LAB y $\theta$ al ángulo en el que $m_1$ y $m_2$ se desvían en el sistema CM.
 
-Tenemos entonces que, utilizando nuestra notación y la ecuación (\ref{eq:u2iniVel}),
-
-\begin{equation}
- u_1 = u_1' + V = u_1' + u_2'
- \label{eq:u1iniVel}
-\end{equation}
-
-Utilizando las ecuaciones (\ref{eq:velIguales}) y (\ref{eq:u1iniVel}), podemos ver entonces que 
-
- \begin{gather}
- \begin{split}
+% De acuerdo con la definición de centro de masa, tenemos que
+% 
+% \begin{equation}
+%  m_1 \mathbf{r_1} + m_2 \mathbf{r_2} = M\mathbf{R}
+%  %
+%  \label{eq:CM1}
+% \end{equation}
+% 
+% Diferenciando (\ref{eq:CM1}) con respecto al tiempo encontramos
+% 
+% \begin{equation}
+%  m_1 \mathbf{u_1} + m_2 \mathbf{u_2} = M\mathbf{V}
+%  \label{eq:CMVel1}
+% \end{equation}
+% 
+% Pero debido a que $\mathbf{u_2}=0$ y que $M=m_1+m_2$, el centro de masa se mueve
+% hacia $m_2$ con una velocidad,
+% 
+% \begin{equation}
+% \mathbf{V} = \frac{m_1 \mathbf{u_1}}{m_1+m_2}
+%  \label{eq:CMVel2}
+% \end{equation}
+% 
+% Debido a que $m_2$ está en reposo al inicio, la velocidad inicial de $m_2$ en el sistema
+% CM debe ser igual a $V$:
+% 
+% \begin{equation}
+% u_2'= V = \frac{m_1 u_1}{m_1+m_2}
+%  \label{eq:u2iniVel}
+%  \end{equation}
+%   
+% Pero notando que el movimiento y las velocidades son opuestas en dirección, i.e. $\mathbf{u_2'=-\mathbf{V}}$.
+% En el sistema CM, de la manera en que lo hemos escogido, el momentum lineal total es cero, por lo tanto
+% antes de la colisión las partículas se mueven la una hacia la otra, y luego de la colisión
+% se mueven exactamente en direcciones opuestas. Debido a que la colisión es elástica,
+% las masas no cambian, y la conservación del momentum y la energía cinética son suficientes
+% para decirnos que la velocidad en el sistema CM son iguales antes y después de la colisión,
+% por lo que 
+% 
+% \begin{equation}
+%  u_1'=v_1', \quad u_2'=v_2'
+%  \label{eq:velIguales}
+% \end{equation}
+% 
+% De (\ref{eq:u2iniVel}) vemos que 
+% 
+% \begin{equation}
+% v_2'= \frac{m_1 u_1}{m_1+m_2}
+%  \label{eq:u2finalVel} 
+% \end{equation}
+% 
+% Recordando la forma expresar las velocidades en el sistema LAB con respecto al centro de masa,
+% tomando como ejemplo una velocidad arbitraria $v_x$
+% 
+% $$
+% v_{x,LAB} = v_{x,CM} + v_{CM,LAB}
+% $$
+% 
+% Tenemos entonces que, utilizando nuestra notación y la ecuación (\ref{eq:u2iniVel}),
+% 
+% \begin{equation}
+%  u_1 = u_1' + V = u_1' + u_2'
+%  \label{eq:u1iniVel}
+% \end{equation}
+% 
+% Utilizando las ecuaciones (\ref{eq:velIguales}) y (\ref{eq:u1iniVel}), podemos ver entonces que 
+% 
+%  \begin{gather}
+%  \begin{split}
+% % %
+%    v_2' = \frac{m_1 u_1}{m_1 + m_2} \\
+% %   %
+%    v_1' = u_1 - u_2' = \frac{u_1 m_1 + \cancel{m_2 u_1} - \cancel{m_2 u_1}}{m_1 + m_2} =
+%    \frac{m_2 u_1}{m_1 + m_2}\\
+% %   %
+%    \label{eq:velFinales}
+% %   %
+%  \end{split}
+%  \end{gather}
+% 
+% Ya estamos en posición entonces para encontrar expresiones y relaciones que involucren
+% la energía de las partículas. En el sistema LAB y debido a que la colisión es elástica,
+% la energía cinética total inicial es igual a la energía cinética de la partícula $m_1$,
+% es decir
+% 
+% \begin{equation}
+%  T_0 = \frac{1}{2} m_1 u_1^2
+%  \label{eq:energCinetTotIniLAB}
+% \end{equation}
+% 
+% y en el sistema CM,
+% 
+% 
+% \begin{equation}
+%  T_0' = \frac{1}{2} (m_1 u_1'^2 + m_2 u_2'^2)
+%  \label{eq:energCinetTotIniCM1}
+% \end{equation}
+% 
+% pero utilizando las expresiones para las velocidades de (\ref{eq:velFinales}), 
+% la ecuación (\ref{eq:energCinetTotIniCM1}) se convierte en 
+% 
+% \begin{align}
+% \begin{split}
+%  %
+%  T_0' &= \frac{1}{2} \left[ \left(\frac{m_1 u_1}{m_1 + m_2}\right)^2 + m_2 \left(\frac{m_2 u_1}{m_1 + m2+}\right)^2\right] \\
+%  %
+%        &= \frac{1}{2} \left[ u_1^2 \frac{m_1 m_2^2}{(m_1+m_2)^2} + u_1^2 \frac{m_2 m_1^2}{(m_1+m_2)^2}\right] \\
+% %  %
+%        &= \frac{1}{2} \left[ m_1 m_2 u_1^2 \left( \frac{m1}{(m_1 + m_2)^2} + \frac{m_2}{(m_1 + m_2)^2}\right)\right] \\
+% %  %
+%        &= \frac{1}{2} \left[ m_1 m_2 u_1^2 \left( \frac{m_1+m_2}{(m_1+m_2)^2}\right) \right] \\
+% %  %
+%        &= \frac{1}{2} \left( \frac{m_1 m_2}{m_1+m_2}u_1^2 \right) \\
+% %  %
+% \therefore T_0' &= \frac{m_2}{m_1+m_2} T_0
+%  %
+% \end{split}
+% \end{align}
+% 
+% El problema nos pide cual es la energía cinética $T_{2f}$ con la que sale la segunda partícula,
+% ya con los resultados que hemos obtenido es fácil obtener la misma, calcularemos
+% la energía cinética final de la partícula $m_1$ y $m_2$ tanto para el sistema
+% LAB como para el sistema CM, para ello utilizando las expresiones para las 
+% velocidades finales de la ecuación (\ref{eq:velFinales}),
+% 
+% \begin{align}
+% \begin{split} 
 % %
-   v_2' = \frac{m_1 u_1}{m_1 + m_2} \\
-%   %
-   v_1' = u_1 - u_2' = \frac{u_1 m_1 + \cancel{m_2 u_1} - \cancel{m_2 u_1}}{m_1 + m_2} =
-   \frac{m_2 u_1}{m_1 + m_2}\\
-%   %
-   \label{eq:velFinales}
-%   %
- \end{split}
- \end{gather}
-
-Ya estamos en posición entonces para encontrar expresiones y relaciones que involucren
-la energía de las partículas. En el sistema LAB y debido a que la colisión es elástica,
-la energía cinética total inicial es igual a la energía cinética de la partícula $m_1$,
-es decir
-
-\begin{equation}
- T_0 = \frac{1}{2} m_1 u_1^2
- \label{eq:energCinetTotIniLAB}
-\end{equation}
-
-y en el sistema CM,
-
-
-\begin{equation}
- T_0' = \frac{1}{2} (m_1 u_1'^2 + m_2 u_2'^2)
- \label{eq:energCinetTotIniCM1}
-\end{equation}
-
-pero utilizando las expresiones para las velocidades de (\ref{eq:velFinales}), 
-la ecuación (\ref{eq:energCinetTotIniCM1}) se convierte en 
-
-\begin{align}
-\begin{split}
- %
- T_0' &= \frac{1}{2} \left[ \left(\frac{m_1 u_1}{m_1 + m_2}\right)^2 + m_2 \left(\frac{m_2 u_1}{m_1 + m2+}\right)^2\right] \\
- %
-       &= \frac{1}{2} \left[ u_1^2 \frac{m_1 m_2^2}{(m_1+m_2)^2} + u_1^2 \frac{m_2 m_1^2}{(m_1+m_2)^2}\right] \\
+%  T_{1f}' &= \frac{1}{2} v_1'^2 \\
 %  %
-       &= \frac{1}{2} \left[ m_1 m_2 u_1^2 \left( \frac{m1}{(m_1 + m_2)^2} + \frac{m_2}{(m_1 + m_2)^2}\right)\right] \\
-%  %
-       &= \frac{1}{2} \left[ m_1 m_2 u_1^2 \left( \frac{m_1+m_2}{(m_1+m_2)^2}\right) \right] \\
-%  %
-       &= \frac{1}{2} \left( \frac{m_1 m_2}{m_1+m_2}u_1^2 \right) \\
-%  %
-\therefore T_0' &= \frac{m_2}{m_1+m_2} T_0
- %
-\end{split}
-\end{align}
-
-El problema nos pide cual es la energía cinética $T_{2f}$ con la que sale la segunda partícula,
-ya con los resultados que hemos obtenido es fácil obtener la misma, calcularemos
-la energía cinética final de la partícula $m_1$ y $m_2$ tanto para el sistema
-LAB como para el sistema CM, para ello utilizando las expresiones para las 
-velocidades finales de la ecuación (\ref{eq:velFinales}),
-
-\begin{align}
-\begin{split} 
-%
- T_{1f}' &= \frac{1}{2} v_1'^2 \\
- %
-	 &= \frac{1}{2}m_1\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2 \\
-	 %
-	 &= \left(\frac{m_2}{m_1+m_2}\right)^2 T_0\\
-%
-\label{eq:erergCineFinalm1CM}
-\end{split}
-\end{align}
-
-y
-
-\begin{align}
-\begin{split} 
-%
- T_{2f}' &= \frac{1}{2} v_2'^2 \\
-%
-	 &= \frac{1}{2}m_2\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2 \\
-%
-	 &= \frac{1}{2}m_1 u_1^2 \frac{m_1 m_2}{(m_1+m_2)^2} \\
-%
-	 &= \frac{m_1 m_2}{(m_1+m_2)^2} T_0
-%
-\label{eq:erergCineFinalm2CM}
-\end{split}
-\end{align}
+% 	 &= \frac{1}{2}m_1\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2 \\
+% 	 %
+% 	 &= \left(\frac{m_2}{m_1+m_2}\right)^2 T_0\\
+% %
+% \label{eq:erergCineFinalm1CM}
+% \end{split}
+% \end{align}
+% 
+% y
+% 
+% \begin{align}
+% \begin{split} 
+% %
+%  T_{2f}' &= \frac{1}{2} v_2'^2 \\
+% %
+% 	 &= \frac{1}{2}m_2\left(\frac{m_2}{m_1+m_2}\right)^2 u_1^2 \\
+% %
+% 	 &= \frac{1}{2}m_1 u_1^2 \frac{m_1 m_2}{(m_1+m_2)^2} \\
+% %
+% 	 &= \frac{m_1 m_2}{(m_1+m_2)^2} T_0
+% %
+% \label{eq:erergCineFinalm2CM}
+% \end{split}
+% \end{align}
 
 
 
