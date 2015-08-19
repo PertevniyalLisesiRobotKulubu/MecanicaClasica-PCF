@@ -8,6 +8,15 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{cancel}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+%Boxes
+\newcommand*{\boxcolor}{blue}
+\makeatletter
+\renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
+\tikz[baseline={([yshift=-1ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
+ \makeatother
 
 %Constantes
 \newcommand{\euler}{\mathrm{e}}
@@ -759,7 +768,7 @@ De (\ref{eq:Coriolis1}), la velocidad que debe tener el cuerpo es de (asumiendo 
 y una distribución homogénea del campo gravitacional que lo afecta)
 
 \begin{equation}
- v' = \frac{g}{2\omega} = \frac{9.8 m/s^2}{7.3 \times 10^-5 rad/s} = 6.72 \times 10^5 m/s
+ \boxed{ v' = \frac{g}{2\omega} = \frac{9.8 m/s^2}{7.3 \times 10^-5 rad/s} = 6.72 \times 10^5 m/s}
 \end{equation}
 
 
