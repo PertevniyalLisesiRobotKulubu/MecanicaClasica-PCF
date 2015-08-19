@@ -581,13 +581,68 @@ En las colisiones elásticas el momentum y la energía cinética se conservan, l
 será de mucha utilidad para los cálculos posteriores. Hagámos un breve análisis de lo 
 que ocurrirá luego de la colisión. La masa $m1$ se moverá con una velocidad $v_1$,
 haciéndo un ángulo $\psi$ con el eje $X$, y la masa $m_2$ se moverá con una 
-velocidad $v_2$ haciéndo un ángulo $\theta$ con el eje $X$. La conservación 
+velocidad $v_2$ haciéndo un ángulo $\theta$ con el eje $X$ (ver figura (\ref{fig:problema5}). La conservación 
 del momentum lineal y la energía requieren que 
+
+\begin{figure}[ht]
+ \centering
+\includegraphics[scale=0.5]{problema5fig1}
+\caption{Problema 5}
+\label{fig:problema5}
+\end{figure}
+
 
 \begin{equation}
  \mathbf{P}_{0i} = \mathbf{P}_{0f} \qquad \text{y} \qquad \mathbf{T}_{0i} = \mathbf{T}_{0f}
  \label{eq:ConservacionesColision1}
 \end{equation}
+
+Desglosando (\ref{eq:ConservacionesColision1}) tenemos que,
+
+\begin{gather}
+ \begin{split}
+ %
+  \mathbf{p}_{1i} +  \mathbf{p}_{2i} &=   \mathbf{p}_{1f} +  \mathbf{p}_{2f} \\
+ %
+  \mathbf{T}_{1i} +  \mathbf{T}_{2i} &=   \mathbf{T}_{1f} +  \mathbf{T}_{2f} \\
+ \label{eq:ConservacionesColision2}
+ \end{split}
+\end{gather}
+
+donde
+
+\begin{gather*}
+ \begin{split}
+%
+\mathbf{p}_{1i} = m_1 u_1, \qquad \mathbf{p}_{2i} = 0, \qquad \mathbf{p}_{1f} = m_1 v_1, \qquad \mathbf{p}_{2f} = m_2 v_2 \\
+%
+\mathbf{T}_{1i} = \frac{1}{2} m_1 u_1^2, \qquad \mathbf{T}_{2i} = 0, \qquad \mathbf{T}_{1f} = \frac{1}{2} m_1 v_1^2, \qquad \mathbf{T}_{2f} = \frac{1}{2} m_2 v_2^2 \\
+%
+ \end{split}
+\end{gather*}
+
+Utilizando estas expresiones podemos escribir \ref{eq:ConservacionesColision2} en forma de componentes
+en el eje $X$ y $Y$, con la ayuda de la figura (\ref{fig:problema5}) como
+
+\begin{gather}
+ \begin{split}
+%
+m_1 u_1 &= m_1 v_1 \cos{\psi} + m_2 v_2 \cos{\theta} \\
+%
+0 &= m_1 v_1 \sin{\psi} + m_2 v_2 \sin{\theta} \\
+%
+\label{eq:momentaAngulos1}
+\end{split}
+\end{gather}
+
+Y para las energías
+
+\begin{equation}
+ \frac{1}{2}m_1 u_1^2 = \frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2
+ \label{eq:cineticas1}
+\end{equation}
+
+
 
 
 
