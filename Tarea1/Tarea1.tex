@@ -365,10 +365,9 @@ De la ecuación (\ref{eq:5}) podemos obtener $z(t)$,
  \label{eq:6}
 \end{equation}
 
-Podemos encontrar el rango máximo de distancia que recorrerá el proyectil, 
-es decir hasta que choque con el piso, cuando llegue al punto que hemos llamado
-$x_0$, lo cual ocurre al final de su recorrido cuando $z=0$. Para dar
-respuesta a la parte $a)$ de la pregunta debemos determinar en qué momento
+Podemos encontrar el momento en que el proyectil se encuentra en el punto $x_0$, 
+es decir hasta que choque con el piso, lo cual ocurre al final de su recorrido cuando $z=0$.
+Para dar respuesta a la parte $a)$ de la pregunta debemos determinar en qué momento
 esto ocurre, es decir cuánto es el valor del tiempo para el punto en que 
 $z=0$, ya que esto nos permitirá determinar los ángulos de lanzamiento
 que requerimos para que el proyectil llegue a $x_0$ y $z=0$.
@@ -398,28 +397,33 @@ Resolviendo para $\tau$,
 \end{equation}
 
 Entonces para obtener el rango del proyectil en $z=0$ cuando
-$t=\tau$, sustituimos en (\ref{eq:4})
+$t=\tau$ y ha llegado al punto $x_0$, para eso sustituimos (\ref{eq:7}) en (\ref{eq:4})
 
 \begin{equation*}
- x = v_0 \tau \cos(\theta) \Rightarrow x = 2 \frac{(v_0)^2}{g} \sen(\theta)\cos(\theta)
+ x_0 = v_0 \tau \cos(\theta) \Rightarrow x = 2 \frac{(v_0)^2}{g} \sen(\theta)\cos(\theta)
 \end{equation*}
 
 Utilizando la identidad trigonométrica $2\sen(\theta)\cos(\theta) = \sen (2\theta)$,
 obtenemos que
 
 \begin{equation}
- x = \frac{(v_0)^2}{g} \sen(2\theta)
+ x_0 = \frac{(v_0)^2}{g} \sen(2\theta)
  \label{eq:8}
 \end{equation}
 
-El rango será máximo, es decir el proyectil llegará a $x_0$ y $z=0$ para
-la familia de ángulos $\theta$ que hagan que $\sen(2\theta)=1$, tales
-ángulos son:
+Despejando a $\theta$ de (\ref{eq:8}) podemos obtener uno de los ángulos que se 
+requieren para que el proyectil llegue a $x_0$ y $z=0$, esto es
+
+% \begin{equation}
+%  \theta = \frac{n\pi}{4} \qquad \qquad n = 4\epsilon - 3, \quad  \epsilon = 1,2,3,4,5,\dots
+%  \label{eq:9}
+% \end{equation}
 
 \begin{equation}
- \theta = \frac{n\pi}{4} \qquad \qquad n = 4\epsilon - 3, \quad  \epsilon = 1,2,3,4,5,\dots
+ \theta = \frac{1}{2} \arcsen{\left(\frac{x_0 g}{v_0^2}\right)}
  \label{eq:9}
 \end{equation}
+
 
 
 
@@ -627,9 +631,9 @@ en el eje $X$ y $Y$, con la ayuda de la figura (\ref{fig:problema5}) como
 \begin{gather}
  \begin{split}
 %
-m_1 u_1 &= m_1 v_1 \cos{\psi} + m_2 v_2 \cos{\theta} \\
+m_1 u_1 &= m_1 v_1 \cos{\phi} + m_2 v_2 \cos{\theta} \\
 %
-0 &= m_1 v_1 \sin{\psi} + m_2 v_2 \sin{\theta} \\
+0 &= m_1 v_1 \sin{\phi} + m_2 v_2 \sin{\theta} \\
 %
 \label{eq:momentaAngulos1}
 \end{split}
