@@ -882,7 +882,7 @@ y una distribución homogénea del campo gravitacional que lo afecta)
 
 7.- La hélice de un avión tiene un momento de inercia $I$ y el motor le imprime una torca 
 
-$$N_m = N_0 (1+\alpha \cos{\omega t}. \qquad (\alpha \ll 1))$$
+$$N_m = N_0 (1+\alpha \cos{\omega t}) \qquad (\alpha \ll 1))$$
 
 La resistencia del aire le imprime una torca
 
@@ -893,6 +893,216 @@ $$N_f = -b\dot{\theta}$$
 \vspace{.3cm}
 
 \underline{Solución:}
+
+Nos encontramos con un caso en el que podemos asumir que la hélice del avión es un
+cuerpo rígido en rotación, debido a que mediante esta suposición podremos utilizar
+las ecuaciones clásicas para cuerpos rígidos en rotación y se simplifica mucho el
+problema. Claramente esta es una descripción idealizada de la hélice porque no 
+existe un cuerpo de tamaño físico que sea estríctamente rígido, debido a que se
+deformará (así sea en cantidades muy pequeñas) bajo la acción de fuerzas aplicadas
+en él. Sin embargo como veremos este tratamiento será muy útil para describir el
+movimiento, y las desviaciones con respecto al sistema físico real no son tan 
+significantes.
+
+Recordemos que para un cuerpo rígido el momentum angular se peude expresar como
+
+\begin{equation}
+ L = I\omega = I\dot{\theta}
+ \label{eq:MomemtumAngCuerpoRig}
+\end{equation}
+
+Donde I es conocido como el momento de iniercia, $\omega$ es la velocidad angular
+del cuerpo y, por consideraciones de simetría en el tratamiento del cuerpo
+rígido podemos ver que $\dot{\theta} = \omega$\footnote{Este tratamineto es el que
+se encuentra en la mayoría de los libros de mecánica clásica \cite{marion,arya}, y simplifica mucho
+las ecuaciones diferenciales e interpretación física de la rotación del cuerpo}. Por
+otra parte, la tasa de cambio del momentum angular de cualquier sistema, es igual
+al torque total externo $\tau$. Entonces para el caso en que estamos tratando,
+
+\begin{equation}
+ \sum_i \tau_i = \frac{dL}{dt} = I \frac{d\omega}{dt} = I \ddot{\theta} 
+ = N_0(1+\alpha \cos{\omega t}) - b\dot{\theta}
+ \label{eq:torquesCuerpoRig1}
+\end{equation}
+
+Podemos reescribir (\ref{eq:torquesCuerpoRig1}) como
+
+\begin{equation}
+ I\ddot{\theta} - b\dot{\theta} = N_0(1+\alpha \cos{\omega t})
+ \label{eq:torquesCuerpoRig2}
+\end{equation}
+
+Donde se puede ver que tenemos una ecuación diferencial lineal no homogénea
+para $\theta$. Seguiremos el método clásico de solución en el cual se encuentra
+una solución para la ecuación homogénea (haciendo cero el lado derecho de
+(\ref{eq:torquesCuerpoRig2}) y una solución particular tomando en cuenta
+la forma de la parte que hace a la ecuación no homogénea, la solución final
+será una suma de la ecuación homogénea más la particular\footnote{Esto es posible
+debido a que la eucuación diferencial que resolveremos es linieal}.
+
+\vspace{.3cm}
+
+La ecuación diferencial homogénea a resolver es,
+
+\begin{equation}
+ I\ddot{\theta} + b\dot{\theta} = 0
+ \label{eq:helixHomog1}
+\end{equation}
+
+Si suponemos que la solución tiene la forma 
+
+$$\theta = \euler^{rt}$$
+
+y sus derivadas
+
+\begin{align*}
+ \begin{split}
+%  
+  \dot{\theta} &= r\euler^{rt} \\
+  %
+  \ddot{\theta} &= r^2\euler^{rt}  
+%
+ \end{split}
+\end{align*}
+
+
+entonces,
+
+\begin{align*}
+ \begin{split}
+%  
+  Ir^2\euler^{rt} + br\euler^{rt} &= 0 \\
+  %
+  (Ir^2+br)\euler^{rt} &= 0 \qquad \text{pero} \qquad \euler^{rt} \neq 0
+%
+ \end{split}
+\end{align*}
+
+$$
+\therefore Ir^2 + br = 0 \Rightarrow r(Ir + b) = 0
+$$
+
+Para esta ecuación auxiliar, es fácil ver que las raíces son
+
+\begin{align*}
+ \begin{split}
+  r_1 &= 0 \\
+  %
+  r_2 &= - \frac{I}{b}
+  \label{eq:raicesHelixHomog}
+ \end{split}
+\end{align*}
+
+Por lo tanto la solución homgénea es
+
+\begin{equation}
+ \theta_h = A \euler^{0t} + B \euler^{-\frac{I}{b}t} = A + B \euler^{-\frac{I}{b}t}
+ \label{eq:solucHelixHomog}
+\end{equation}
+
+Para encontrar la solución partícular utilizaremos el método de los coeficientes
+indeterminados, y supondremos que la solución tiene la forma
+
+$$
+\theta_p = C \cos{\omega t} + D \sen{\omega t} + E t
+$$
+
+\begin{align}
+ \begin{split}
+  \dot{\theta}_p = - C \omega \sen{\omega t} + D \omega \cos{\omega t} + E \\
+  %
+  \ddot{\theta}_p = - C \omega^2 \cos{\omega t} - D \omega^2 \sen{\omega t}
+  \label{eq:helixPart1}
+ \end{split}
+\end{align}
+
+Si sustituimos (\ref{eq:helixPart1}) en (\ref{eq:torquesCuerpoRig2}), nos queda
+
+\begin{align*}
+ \begin{split}
+ %
+ -IC\omega^2 \cos{\omega t} - ID\omega^2 \sen{\omega t} + bC\omega \sen{\omega t} 
+ -bD\omega \cos{\omega t} - bE &= \\ N_0 + N_0\alpha \cos{\omega t} \\
+ %
+ \cos{\omega t}[-IC\omega^2 - bD\omega] + \sen{\omega t}[-ID\omega^2+bC\omega]
+ -bE  &= \\ N_0 + N_0\alpha \cos{\omega t}
+ %
+ \end{split}
+\end{align*}
+
+Por lo tanto
+
+\begin{align*}
+ \begin{split}
+  %
+  -IC\omega^2 - bD\omega &= N_0 \alpha \\
+  %
+  -ID\omega^2+bC\omega &= 0 \\
+  %
+  - bE = N_0
+  %
+ \end{split}
+\end{align*}
+
+De donde se obtiene directamente que $E = -N_0/b$, y para $C$ y $D$, 
+
+\begin{align*}
+ \begin{split}
+  %
+  C &= \frac{ID\omega^2}{b\omega} \\
+  %
+  \therefore C &= \frac{ID\omega}{b} 
+  %
+ \end{split}
+\end{align*}
+
+luego podemos usar el valor de $C$ para obtener $D$
+
+\begin{align*}
+ \begin{split}
+  %
+  D &= - \frac{N_0 \alpha + IC\omega^2}{b\omega} \\
+  %
+  D &= - \frac{N_0 \alpha + I \frac{ID\omega}{b} \omega^2}{bw} \\
+  %
+  D &= - \frac{N_0 \alpha}{b\omega} + \frac{I^2 D \omega^3}{b^2\omega} \\
+  %
+  D &= - \frac{N_0 \alpha}{b\omega} + \frac{I^2D\omega}{b^2} \\
+  %
+  D - \frac{I^2D\omega}{b^2} &= - \frac{N_0 \alpha}{b\omega} \\
+  %
+  D  \left(1 - \frac{I^2\omega}{b^2} \right) &= - \frac{N_0 \alpha}{b\omega} \\
+  %
+  D \left(\frac{b^2-I^2\omega}{b^2} \right) &= - \frac{N_0 \alpha}{b\omega} \\
+  %
+  D &= - \frac{N_0\alpha}{b\omega} \div \left(\frac{b^2-I^2\omega}{b^2} \right) \\
+  %
+  \therefore D &= - \frac{N_0 \alpha b}{\omega(b^2-I\omega^2)}
+  %
+ \end{split}
+\end{align*}
+
+Luego,
+
+$$
+C = - \frac{I\omega}{b}  \frac{N_0 \alpha b}{\omega(b^2-I\omega^2)} 
+\Rightarrow C = - \frac{IN_0 \alpha}{b^2-I\omega^2}
+$$
+
+Entonces la solución particular es igual 
+
+\begin{equation}
+ \theta_p = - \frac{IN_0 \alpha}{b^2-I\omega^2} \cos{\omega t} 
+ - \frac{N_0 \alpha b}{\omega(b^2-I\omega^2)} \sen{\omega t} - \frac{N_0}{b}
+\end{equation}
+
+
+Por lo tanto la solución a la ecuación diferencial es
+
+\begin{equation}
+ \boxed{\theta = A + B \euler^{-\frac{I}{b}t} - \frac{IN_0 \alpha}{b^2-I\omega^2} \cos{\omega t} 
+ - \frac{N_0 \alpha b}{\omega(b^2-I\omega^2)} \sen{\omega t} - \frac{N_0}{b}}
+\end{equation}
 
 \vspace{.3cm}
 
@@ -949,6 +1159,9 @@ sistemas de referencia).
  \bibitem{zill}
  D. Zill y W. Wright, \textit{Differential equations with Boundary-Value Problems}, Brooks/Cole,
  8va edición, 2013.
+ \bibitem{arya}
+ A. Arya, \textit{Introduction to classical mechanics}, Pretince-Hall, 1era Edición,
+ 1990.
 \end{thebibliography}
 
 
