@@ -87,7 +87,7 @@ Podemos escribir la ecuación (\ref{eq:ODEinicialOscilador}) de una forma más c
  \label{eq:ODEmejoradaOscilador}
 \end{equation}
 
-Donde $A = G/m$, $B = H/m$ y hemos definido\footnote{Esta definición la hemos tomado de libros clásicos de mecánica (\cite{marion,taylor})} 
+Donde $A = G/m$, $B = H/m$ y hemos definido\footnote{Esta definición la hemos tomado de libros clásicos de mecánica \cite{marion,taylor}} 
 a  $\gamma \equiv b/2m$, y representa el coeficiente de amortiguado del oscilador 
 y $\omega_0^2 \equiv \sqrt{k/m}$ es la frecuencia natural del oscilador. 
 
@@ -180,7 +180,7 @@ Para encontrar la solución particular utilizaremos el método de los coeficient
 en el cual conjeturamos la forma de $x_p (t)$ motivados por los tipos de funciones linealmente
 independientes que pueden construir el término no homogéneo de la ecuación, no demostraremos
 el método, solo lo utilizaremos, puede encontrarse una demostración completa y comprobar
-su validez en cualquier libro ecuaciones diferenciales modernas como (\cite{zill}). Entonces
+su validez en cualquier libro ecuaciones diferenciales modernas como \cite{zill}. Entonces
 asumiendo que $x_p (t)$ tiene la forma
 
 \begin{equation}
@@ -256,7 +256,178 @@ que tarda la amplitud en reducirse por un factor $1/e=1/2,718$.
 
 \vspace{.3cm}
 
-\underline{Solución:}
+\underline{Solución:} \vspace{.3cm}
+
+Nos encontramos de nuevo con el caso de un oscilador armónico con un pequeño amortiguamiento,
+en este caso sin fuerzas de conducción, para este tipo de oscilador la ecuación diferencial
+que lo gobierna tiene la forma 
+
+\begin{equation}
+ \ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = 0 
+ \label{eq:ODEAmortiguado}
+\end{equation}
+
+Donde hemos definido el factor de amortiguamiento como $\gamma = b/2m$, y $\omega_0t$ 
+es la frecuencia natural del oscilador. Esta ecuación diferencial lineal homogénea tiene
+por solución, definiendo $\omega_i \equiv \sqrt{\omega_0^2 - \gamma^2}$
+
+\begin{equation}
+ x(t) = \euler^{-\gamma t} (A sin(\omega_i t + \delta)
+ \label{eq:SolAmortiguado}
+\end{equation}
+
+Donde $\delta$ es la fase del oscilador. Podemos ver de (\ref{eq:SolAmortiguado}) que
+la presencia del factor exponencial real $\euler^{-\gamma t}$ la amplitutud $A$ 
+del oscilador amortiguado decrece con el tiempo. Podemos definir el período del oscilador
+amortiguado como
+
+\begin{equation}
+ T_a = \frac{2\pi}{\omega_i} = \frac{2\pi}{\sqrt{\omega_0^2-\gamma^2}}
+ \label{eq:PeriodoAmortiguado1}
+\end{equation}
+
+Estamos ya en posición de comenzar a demostrar lo que el problema nos pide, lo cual es
+que el cambio en la energía durante un período es $2T/\tau$,
+donde $T$ el período de oscilador sin amortiguar y $\tau$ es el tiempo
+que tarda la amplitud en reducirse por un factor $1/e=1/2,718$. Comenzamos por 
+escribir la energía total para oscilador amortiguado, la cual está dada por la suma
+de la energía cinética y potencial
+
+\begin{equation}
+ E = \frac{1}{2} m \dot{x}^2 + \frac{1}{2} kx^2
+ \label{eq:EnergiaAmorti1}
+\end{equation}
+
+Para un oscilador armónico esta energía es constante, pero en este caso veremos
+que se cumple algo un poco diferente. Diferenciemos a $E$ con respecto al tiempo:
+
+$$
+\frac{dE}{dt} = m\dot{x}\ddot{x} + kx\dot{x} = (m\ddot{x}+kx)\dot{x}
+$$
+
+Pero por la ecuación (\ref{eq:ODEAmortiguado}) vemos que
+
+\begin{equation}
+\frac{dE}{dt} = - b \dot{x}^2
+\label{eq:DerivadaEnergOscAmorti}
+\end{equation}
+
+La ecuación (\ref{eq:DerivadaEnergOscAmorti}) representa la tasa de cambio de la
+energía para el oscilador armónico, que comúnmente es conocida cono la tasa de 
+disipación de energía debido a que (\ref{eq:DerivadaEnergOscAmorti})
+es siempre cero o negativa, entonces como la amplitud, la energía decrece
+y en un punto se hace despreciable. El cambio de en la energía durante un período
+$T_a$ es 
+
+\begin{equation}
+ \Delta E = \int_0^{T_i} \dot{E} dt
+ \label{eq:CambioEnergPeriodAmorti}
+\end{equation}
+
+De la donde $\dot{E}$ está dada por (\ref{eq:DerivadaEnergOscAmorti}). Necesitamos
+una expresión para $\dot{x}$, para eso derivamos (\ref{eq:SolAmortiguado}) y obtenemos
+
+\begin{equation}
+ \dot{x} = - A\gamma \euler^{-\gamma t} \sen{\omega_i t + \delta} - \omega_i \cos{(\omega_i t + \delta)}
+ \label{eq:derivadaSolAmortiguado}
+\end{equation}
+
+Sustituyendo (\ref{eq:derivadaSolAmortiguado}) en (\ref{eq:CambioEnergPeriodAmorti}),
+
+\begin{equation}
+ \Delta E = \int_0^{T_i} [- A\gamma \euler^{-\gamma t} \sen{\omega_i t + \delta} - \omega_i \cos{(\omega_i t + \delta)}] dt
+\end{equation}
+
+Un procedimiento muy útil en este punto es el que sigue \cite{fowles} en la cual
+se cambia la variable de integración por $\theta = \omega_i t + \delta$, con lo que
+$dt = d\theta / \omega_i$ y la integral sobre el período $T_i$, se transforma debido
+al cambio de variable\footnote{\\$
+ t = 0 \Rightarrow \theta = \delta 
+ $ \\
+ $t = T_i \Rightarrow \theta = \omega_i T_i + \delta = \omega_i \frac{2\pi}{\omega_i} + \delta = 2\pi + \delta
+ $} en una integral de $\delta$ a $\delta + 2\pi$, pero debido a que el valor de la 
+integral sobre un ciclo completo no depende de la fase inicial del movimiento $\delta$,
+lo podemos eliminar de los límites de integración, lo cual simplifica la evaluación
+de la integral, entonces tenemos que
+
+\begin{align}
+ \begin{split}
+  %
+  \Delta E &= \frac{1}{\omega_i} \int_0^{2\pi} \dot{E} d\theta \\
+  %
+  &= - \frac{bA^2}{\omega_i}\euler^{-2\gamma t}\int_0^{2\pi} 
+  (\gamma^2 \sen^2{\theta} - 2\gamma \omega_i \sen{\theta} \cos{\theta} + \omega_i^2 \cos^2{\theta}) d\theta
+ \end{split}
+\end{align}
+
+La integral de $\sen^2{\theta}$ y $ \cos^2{\theta}$ de 0 a $2\pi$ es $\pi$, mientras
+que la integral del producto de $\sen{\theta}\cos{\theta}$ se hace cero. Por lo tanto,
+
+\begin{align}
+ \begin{split}
+  %
+  \Delta E &= - \frac{bA^2}{\omega_i}\pi \euler^{-2\gamma t}(\gamma^2 + \omega_i^2) \\
+  %
+  &= - b A^2 \euler^{-2\gamma t}\omega_0^2\left(\frac{\pi}{\omega_i}\right) \\
+  %
+  &= - 2\gamma m \omega_0^2 A^2 \euler^{-2\gamma t}T_i
+ \end{split}
+\end{align}
+
+Donde hemos utilizado las relaciones $\omega_0^2 = \omega_i^2 + \gamma^2$ y
+$\gamma = b/2m$. Si ahora identificamos el valor de $\gamma$ con una
+constante $\tau$, tal que $\gamma = (2\tau)^-1$, es decir el tiempo en que 
+la amplitud decrece $1/\euler$, obtenemos que la magnitud de la pérdida de energía 
+en un ciclo es
+
+$$
+\Delta E = \left(2mA^2\omega_0^2\euler^{-t/\tau}\right)\frac{T_i}{\tau}
+$$
+
+y definiendo a $2E=\frac{1}{2}mA^2\omega_0^2\euler^{-t/\tau}$ como la energía
+almacenada en el oscilador amortiguado, vemos que 
+
+\begin{equation}
+ \frac{\Delta E}{E} = \frac{2T_i}{\tau}
+\end{equation}
+
+Podemos escribir esta ecuación en función del período de un oscilador sin amortiguamiento $T$
+, expandiendo en series de Taylor y truncando a primer orden\footnote{Podemos hacer esto debido
+a que el amortiguamiento es pequeño y por lo tanto $\gamma$ es pequeño} podemos 
+lograr ese objetivo
+
+\begin{align*}
+ \begin{split}
+  %
+  T_i &= \frac{2\pi}{\sqrt{\omega_0^2-\gamma^2}} = \frac{2\pi}{\omega_0}\frac{1}{\sqrt{1-\frac{\gamma^2}{\omega_0^2}}} \\
+  %
+  T_i &\approx \frac{2\pi}{\omega_0} \left[1 + \cancel{\frac{1}{2}\frac{\gamma^2}{\omega_0^2}} \right]
+  %
+  \therefore T_i \approx T
+ \end{split}
+\end{align*}
+
+Entonces tenemos que 
+
+\begin{equation}
+ \boxed{\frac{\Delta E}{E} = \frac{2T}{\tau}}
+ \label{eq:SolucionFinalProb3}
+\end{equation}
+
+La ecuación (\ref{eq:SolucionFinalProb3}) demuestra justo lo que se pide en el problema
+el que cambio en la energía durante un período es $2T/\tau$, expresado en términos del
+período del oscilador sin amortiguar y $\tau$ es el tiempo que tarda la amplitud en reducirse
+por un factor $1/\euler = 1 / 2.718$.
+
+
+
+
+
+
+
+
+
+
 
 \vspace{.3cm}
 
@@ -456,7 +627,98 @@ perpendicular a la cuerda.
 
 \vspace{.3cm}
 
-\underline{Solución:}
+\underline{Solución:}\vspace{.3cm}
+
+Para tener una mejor intuición del problema podemos representarlo como en la figura (\ref{fig:problema4})
+
+\begin{figure}[ht]
+ \centering
+\includegraphics[scale=0.4]{problema4fig1}
+\caption{Problema 4. Hemos hecho un pequeño cambio de notación en que $l=d$}
+\label{fig:problema4}
+\end{figure}
+
+Donde consideramos que vemos de arriba de la mesa el sistema, como dice el problema
+se le aplica una fuerza perpendicular a la cuerda a la masa 2 la cual se puede observar
+en la figura. Consideraremos un caso general en el que las masas de las partículas
+no necesariamente son las mismas, y trataremos el caso utilizando la formulaciónn
+del centro de masa, que hemos ubicado en un punto arbirtrario entre las partículas,
+y obviamente en la línea que las une que igual a la cuerda extendida.
+
+\vspace{.3cm}
+
+Debido a la simetría del problema, se puede ver que el movimiento que ocurrirá
+luego de que se le aplica el impulso a la partícula $m_2$ será un movimiento
+circular uniforme, con velocidad igual a la velocidad del centro de masa, que podemos
+obtener fácilmente. El radio del centro de masa se puede obtener con la ecuación
+
+\begin{equation}
+ R_{CM} = \frac{m_1 r_1 + m_2 r_2}{m1+m2}
+ \label{eq:RadioCM1}
+\end{equation}
+
+Escogeremos unas coordenadas que nos facilitarán el problema, en las cuales el eje
+X, lo pondremos sobre la partícula $m_1$, por lo tanto $r_1 = 0$, luego
+
+\begin{equation}
+ R_{CM} = \frac{m_2 r_2}{m1+m2}
+ \label{eq:RadioCM2}
+\end{equation}
+
+Entonces la velocidad del centro de masa será
+
+\begin{equation}
+ \boxed{V_{CM} = \frac{m_2 \dot{r_2}}{m_1+m_2} = \frac{m_2 v_0}{m_1 + m_2}}
+\end{equation}
+
+La tensión de la cuerda, debido al tratamiento de movimiento circular uniforme que 
+le hemos dado al problema será igual a la fuerza centrípeta, la cual debería ser
+la misma no importa si la calculemos utilizando la fuerza centrípeta que 
+sentirá $m_1$ o $m_2$, demostremos esto. 
+
+\vspace{.3cm}
+
+La tensión de la cuerda en la partícula $m_2$ será
+
+\begin{align*}
+ T = F_c &= \frac{m_2 v_2'^2}{r_2'} = \frac{m_2 (v_0-V_{CM})^2}{d - \frac{m_2 d}{m1+m2}} = 
+ \frac{m_2 (v_0 - \frac{m_2 v_0}{m_1 + m_2})^2}{d - \frac{m_2 d}{m1+m2}} \\
+ %
+ &= \frac{\frac{m_2 m_1^2 v_0^2}{(m_1+m_2)^2}}{\frac{d m_1}{m_1 + m2}} \\
+%
+ \therefore T &= \frac{m_1 m_2}{d(m_1 + m_2)} v_0^2
+\end{align*}
+
+Si definimos la masa reducida del sistema como $\mu = \frac{m_1 m_2}{m_1 + m_2}$, 
+entonces tenemos que
+
+\begin{equation}
+ \boxed{T = \frac{\mu}{d} v_0^2}
+ \label{eq:TensionM2}
+\end{equation}
+
+Nuestro tratamiento será correcto si encontramos que la tensión de la cuerda
+en ambas masas es la misma, por lo tanto para $m_1$
+
+\begin{align*}
+\begin{split}
+ T = \frac{m_1 v_1'^2}{r_1'} = \frac{m_1(0 - V_{CM})^2}{\frac{m_2}{m_1+m_2}} =
+ \frac{m_1 (\frac{m_2 v_0}{m1+m2})^2}{\frac{m_2}{m_1+m_2}} =
+ \frac{m_1 m_2 v_0^2 (m_1 + m2)}{d m_2 (m_1 + m_2)^2} \\
+ %
+ \end{split}
+\end{align*}
+
+\begin{equation}
+ \boxed{\therefore T = \frac{m_1 m_2}{d(m_1 + m_2)}v_0^2 = \frac{\mu}{d} v_0^2} %
+\end{equation}
+
+Entonces vemos que la tensión será igual si definimos la masa reducida $\mu$ de nuevo,
+lo cual completa la demostración y la solución al problema.
+
+
+
+
 
 \vspace{.3cm}
 
@@ -911,9 +1173,9 @@ Recordemos que para un cuerpo rígido el momentum angular se peude expresar como
  \label{eq:MomemtumAngCuerpoRig}
 \end{equation}
 
-Donde I es conocido como el momento de iniercia, $\omega$ es la velocidad angular
+Donde I es conocido como el momento de inercia, $\omega$ es la velocidad angular
 del cuerpo y, por consideraciones de simetría en el tratamiento del cuerpo
-rígido podemos ver que $\dot{\theta} = \omega$\footnote{Este tratamineto es el que
+rígido podemos ver que $\dot{\theta} = \omega$\footnote{Este tratamiento es el que
 se encuentra en la mayoría de los libros de mecánica clásica \cite{marion,arya}, y simplifica mucho
 las ecuaciones diferenciales e interpretación física de la rotación del cuerpo}. Por
 otra parte, la tasa de cambio del momentum angular de cualquier sistema, es igual
@@ -935,10 +1197,10 @@ Podemos reescribir (\ref{eq:torquesCuerpoRig1}) como
 Donde se puede ver que tenemos una ecuación diferencial lineal no homogénea
 para $\theta$. Seguiremos el método clásico de solución en el cual se encuentra
 una solución para la ecuación homogénea (haciendo cero el lado derecho de
-(\ref{eq:torquesCuerpoRig2}) y una solución particular tomando en cuenta
-la forma de la parte que hace a la ecuación no homogénea, la solución final
+(\ref{eq:torquesCuerpoRig2}) y una solución particular tomando en cuenta 
+la forma de la parte que hace a la ecuación no homogénea, la solución final 
 será una suma de la ecuación homogénea más la particular\footnote{Esto es posible
-debido a que la eucuación diferencial que resolveremos es linieal}.
+debido a que la ecuación diferencial que resolveremos es lineal}.
 
 \vspace{.3cm}
 
@@ -1114,14 +1376,17 @@ a sus centros de masa?. De ser así de un ejemplo.
 \underline{Solución:}
 
 \vspace{.3cm}
+
 9.- Un meteorito choca con la Tierra en el Polo Norte haciendo un ángulo $\theta$ con
-el eje de la tierra. El meteorito tiene una masa igual a $1/10^-17$ de la masa de la 
+el eje de la tierra. El meteorito tiene una masa igual a $10^-17$ de la masa de la 
 Tierra y llega con la velocidad de escape. ¿En qué forma se verá perturbado el movimiento
 de rotación de la Tierra? (Desprecie el cambio en el momento de inercia de la Tierra
 debido a la incrustación del meteorito).
 \vspace{.3cm}
 
 \underline{Solución:}
+
+
 
 \vspace{.3cm}
 
@@ -1162,6 +1427,9 @@ sistemas de referencia).
  \bibitem{arya}
  A. Arya, \textit{Introduction to classical mechanics}, Pretince-Hall, 1era Edición,
  1990.
+ \bibitem{fowles}
+ G. Fowles y G. Cassiday, \emph{Analytical Mechanics}, Thomson Brooks/Cole, 
+ 7ma edición, 2005.
 \end{thebibliography}
 
 
