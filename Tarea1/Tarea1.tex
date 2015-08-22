@@ -1384,8 +1384,86 @@ de rotación de la Tierra? (Desprecie el cambio en el momento de inercia de la T
 debido a la incrustación del meteorito).
 \vspace{.3cm}
 
-\underline{Solución:}
+\underline{Solución:}\vspace{.3cm}
 
+El problema al cual nos vemos enfrentados a resolver podemos imaginarlo representado
+por la figura (\ref{fig:problema9})
+
+
+\begin{figure}[ht]
+ \centering
+\includegraphics[scale=0.3]{problema9fig1}
+\caption{Problema 9}
+\label{fig:problema9}
+\end{figure}
+
+Consideraremos a la Tierra como un cuerpo rígido ideal, lo cual simplificará grandemente
+la solución del problema. Como hemos establecido anteriormente no existe un cuerpo rígido
+con dimensiones físicas reales, y ciertamente la tierra no es uno de ellos, pero la simplificación
+nos permitirá encontrar relaciones que dan una gran idea de cómo se comportará un choque
+realista. De la teoría de cuerpos rígidos sabemos que en ausencia de un impulso exterior,
+el momentum cinético y desde luego, la cantidad de movimiento permanecen constantes. Por 
+lo que las variaciones de la cantidad de movimiento y del momentum cinético total se
+deberán únicamente a un impulso exterior.
+
+\vspace{.3cm}
+
+Supongamos entonces que el choque del meteorito es tal que le aplica un impulso instantáneo
+$\mathbf{J}$ a la tierra. La variación de la cantidad de movimiento $\Delta \mathbf{P} = \mathbf{J}$
+es independiente del punto de aplicación, pero la variación del momentum cinético depende
+del punto de aplicación. Si $\mathbf{R}$ es el vector de posición de la Tierra, que consideraremos
+que es el vector de posición del centro de masa de la Tierra, y ella es quien recibe 
+el impulso, entonces la variación del momentum cinético\footnote{Cuando hablamos de momentum cinético nos referimos al momentum angular, pero en la
+notación clásica de cuerpos rígidos es más común hablar de momentum cinético.} total
+de la tierra será
+
+\begin{equation}
+ \Delta \mathbf{L_t} = \mathbf{R_t} \times \mathbf{J}
+ \label{eq:MomentumAngularTierra1}
+\end{equation}
+
+Pero debido a que $\Delta \mathbf{P} = \mathbf{J}$, entonces podemos reescribir 
+(\ref{eq:MomentumAngularTierra1}) como
+
+\begin{equation}
+ \Delta \mathbf{L_t} = \mathbf{R_t} \times \Delta \mathbf{P}
+ \label{eq:MomentumAngularTierra2} 
+\end{equation}
+
+Debido a que estamos tratando al impulso $\mathbf{J}$ como instantáneo y que consideramos
+que la cantidad de movimiento de la tierra permanece constante luego de la aplicación
+del mismo, entonces $\Delta \mathbf{P} = m_m v_m$, donde $m_m$ es la masa del meteorito
+y $v_m$ es la velocidad del meteorito. Sustituyendo esto en (\ref{eq:MomentumAngularTierra2})
+nos queda
+
+\begin{equation}
+ \boxed{\Delta \mathbf{L_t} = \mathbf{R_t} \times m_m \mathbf{v_m} = R_t m_m v_m \sen{\theta}}
+ \label{eq:MomentumAngularTierra3}
+\end{equation}
+
+La ecuación (\ref{eq:MomentumAngularTierra3}) nos da una expresión de cómo se verá
+perturbado el movimiento de rotación de la tierra luego del choque del meteorito, lo cual
+es lo que pide el problema. Claramente llegar a esta ecuación fue sencillo, debido a que
+el enunciado del problema indica que se puede despreciar el cambio de momento de inercia
+de la Tierra debido a incrustación el meteorito. Podemos ponerle números a la ecuación
+(\ref{eq:MomentumAngularTierra3}) y ver cuánto es modificado el momentum cinético de la 
+Tierra, sustituyendo tenemos que
+
+\begin{equation}
+ \boxed{\Delta \mathbf{L_t} = (6.371 km) (5,972 \times 10^7 kg) (11,2 km s^-1) \sen{\theta}}
+ \label{eq:MomentumAngularTierraFinal}
+\end{equation}
+
+La ecuación (\ref{eq:MomentumAngularTierraFinal}) es la solución final al problema,
+donde solo nos queda como incógnita el valor del ángulo $\theta$ que hace el meteorito
+al chocar, pero podemos ver claramente que si el choque es tal que $\sen{\theta} = 1$, entonces
+será máximo el cambio, dando un cambio de aproximadamente $3,40 \times 10^10 Js$, lo cual
+sería el cambio en el momentum angular de la Tierra. Es un resultado algo significativo
+debido a que la masa del meteorito era relativamente grande y llegó con una gran velocidad,
+cabe destacar que el análisis de unidades es correcto debido a que el momentum angular
+se expresa en Joules por segundo, y es exactamente lo que hemos obtenido. El ángulo
+que hace el impacto sea máximo es entonces de $90^\circ$, y el cambio será cero si 
+el ángulo es de $0^\circ$.
 
 
 \vspace{.3cm}
