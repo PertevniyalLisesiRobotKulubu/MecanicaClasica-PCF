@@ -10,6 +10,7 @@
 \usepackage{cancel}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage{listings}
 
 %Boxes
 \newcommand*{\boxcolor}{blue}
@@ -18,7 +19,7 @@
 \tikz[baseline={([yshift=-1ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
  \makeatother
 
-%Constantes
+%Constants
 \newcommand{\euler}{\mathrm{e}}
 \newcommand{\im}{\mathrm{i}}
 
@@ -51,6 +52,33 @@
 
 \maketitle
 
+%Styling for code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
 1.- Usando una computadora trace el diagrama de fase de estas dos ecuaciones diferenciales:
 
 \begin{gather*}
@@ -79,6 +107,22 @@ de fases usando la computadora. Utilizamos Matplotlib\footnote{\href{http://matp
 por excelencia de Python. El código completo de la realización de esta figura se encuentra
 en un repositorio libre de GitHub, hecho con Jupyter Notebooks. Puede encontrarse en el
 siguiente link: 
+
+El código que finalmente hace el gráfico de la figura () es el siguiente:
+
+\begin{lstlisting}[language=Python]
+Y, X = np.mgrid[-3:3:100j, -3:3:100j]
+a = np.mgrid[-10:10:100j]
+U = X - Y - X*(X**2+Y**2)
+V = X + Y - Y*(X**2+Y**2)
+
+plt.streamplot(X, Y, U, V,color=V,density=[1.2, 1.2], 
+	      linewidth=2, cmap=plt.cm.winter)
+
+plt.show()
+\end{lstlisting}
+
+
 
 \vspace{.3cm}
 
