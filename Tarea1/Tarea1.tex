@@ -33,6 +33,7 @@
 
 
 %Boxes
+
 \newcommand*{\boxcolor}{blue}
 \makeatletter
 \renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
@@ -194,9 +195,18 @@ Debido a que $r_1$ y $r_2$ son linealmente independientes encontramos que la sol
 a la ecuación homogénea es 
 
 \begin{equation}
- x(t) = C_1 \euler^{r_1 t} + C_2 \euler^{r_2 t} = \euler^{-\gamma t} (C_1 \euler^{\sqrt{\gamma^2 -q \omega_0^2}t}
+ x_h(t) = C_1 \euler^{r_1 t} + C_2 \euler^{r_2 t} = \euler^{-\gamma t} (C_1 \euler^{\sqrt{\gamma^2 - \omega_0^2}t}
  + C_2 \euler^{-\sqrt{\gamma^2 - \omega_0^2}t})
 \end{equation}
+
+Que podemos escribir como
+
+\begin{equation}
+ x_h(t) = C_h \euler^{-\gamma t} \sen{(\omega_i t + \phi)}
+\end{equation}
+
+Donde $\omega_i = \sqrt{\gamma^2 - \omega_0^2}$ y $\phi$ es la fase de la oscilación.
+
 
 Para encontrar la solución particular utilizaremos el método de los coeficientes indeterminados, 
 en el cual conjeturamos la forma de $x_p (t)$ motivados por los tipos de funciones linealmente
@@ -250,22 +260,93 @@ Pero según el enunciado del problema $\gamma = \omega_0/3$, entonces
 - C\omega_0^2 \sen{\omega_0t} - D\omega_0^2 \cos{\omega_0t} - 
   9F\omega_0^2 \sen{3 \omega_0t} - 9E\omega_0^2 \cos{3 \omega_0t} - \\
   %
-  \frac{2}{3} C \omega_0^2 \omega_0 \cos{\omega_0t} - 2\gamma D\omega_0 \sen{\omega_0t} + 
-  6\gamma F\omega_0 \cos{3 \omega_0t} - 6\gamma E\omega_0 \sen{3 \omega_0t} + \\
+  \frac{2}{3} C \omega_0^2 \cos{\omega_0t} - \frac{2}{3} \omega_0^2 D \sen{\omega_0t} + 
+  2 \omega_0^2 F \cos{3 \omega_0t} - 2 \omega_0^2 E \sen{3 \omega_0t} + \\
   %
   C\omega_0^2 \sen{\omega_0t} + D\omega_0^2 \cos{\omega_0t} + F\omega_0^2 
   \sen{3 \omega_0t} + E\omega_0^2 \cos{3 \omega_0t} \\
   %
-  = A \sen{\omega_0t} + B \sen
+  = A \sen{\omega_0t} + B \sen{3\omega_0t}
   \end{split}
 \end{align}
 
+\begin{align}
+ \begin{split}
+  \sen{\omega_0t}\left[\cancel{- C\omega_0^2} - \frac{2}{3} \omega_0^2 D  + \cancel{C\omega_0^2}  \right] \\
+  %
+  \cos{\omega_0t}\left[\cancel{- D\omega_0^2} + \frac{2}{3} C \omega_0^2 + \cancel{D\omega_0^2} \right] \\
+  %
+  \sen{3\omega_0t} \left[ - 9F\omega_0^2 - 2 \omega_0^2 E + F\omega_0^2 \right] \\
+  %
+  \cos{3\omega_0t} \left[  - 9E\omega_0^2 + 2 \omega_0^2 + E\omega_0^2 \right] \\
+  %
+  = A \sen{\omega_0t} + B \sen{3\omega_0t} 
+  %
+  \end{split}
+\end{align}
 
+Entonces tenemos que, por igualación
 
+\begin{align*}
+ %
+ A &= - \frac{2}{3} \omega_0^2 D \Rightarrow \boxed{D = - \frac{3A}{2\omega_0^2}} \\
+ %
+ 0 &= - \frac{2}{3} \omega_0^2 C \Rightarrow \boxed{C = 0} \\
+ %
+ 0 &= -8E\omega_0^2 + 2F\omega_0^2 \Rightarrow \boxed{F = 4E} \\
+ %
+ B &= -8F \omega_0^2 - 2E \omega_0^2 \Rightarrow \boxed{E = - \frac{B}{34\omega_0^2}}
+\end{align*}
 
+Entonces la solución particular es
 
+\begin{equation}
+ x_p(t) = - \frac{3A}{2\omega_0^2} \cos{\omega_0t} - \frac{2}{17} 
+ \frac{B}{\omega_0^2} \sen{3\omega_0t} - \frac{B}{34\omega_0^2} \cos{3\omega_0t}
+\end{equation}
 
+La solución final a la ecuación es entonces, donde por simpleza asumiremos por ahora que $\phi = 0$
 
+\begin{equation}
+ x(t) = C_h \euler^{-\frac{\omega_0}{3} t} \sen{\omega_i t} - \frac{3A}{2\omega_0^2} \cos{\omega_0t} - \frac{2}{17} 
+ \frac{B}{\omega_0^2} \sen{3\omega_0t} - \frac{B}{34\omega_0^2} \cos{3\omega_0t}
+\end{equation}
+
+Pero $x(0) = 0$, entonces
+
+\begin{equation}
+ 0 = \frac{3A}{2\omega_0^2} - \frac{B}{34\omega_0^2} \Rightarrow \frac{3A}{2} = \frac{B}{34} \Rightarrow \boxed{A = \frac{B}{51}}
+\end{equation}
+
+Y $\dot{x}(0) = 0$, calculando la derivada de $x(t)$
+
+\begin{align*}
+ \dot{x}(t) =  &-\frac{\omega_0^2}{3} C_h \euler^{-\frac{\omega_0}{3} t} \sen{\omega_i t}
+ + C_h \euler^{-\frac{\omega_0}{3} t} \cos{\omega_0t} + \frac{3A\omega_0}{2\omega_0^2} \sen{\omega_0t} \\ %
+ &- \frac{6}{17}\frac{B\omega_0}{\omega_0^2} \cos{3\omega_0t} + \frac{3B\omega_0}{34\omega_0^2} \sen{3\omega_0t}
+\end{align*}
+
+\begin{align*}
+ \dot{x}(t) = &- \frac{\omega_0^2}{3} C_h \euler^{-\frac{\omega_0}{3} t} \sen{\omega_i t}
+ + C_h \euler^{-\frac{\omega_0}{3} t} \cos{\omega_0t} + \frac{3A}{2\omega_0} \sen{\omega_0t} \\ %
+ &- \frac{6}{17}\frac{B}{\omega_0} \cos{3\omega_0t} + \frac{3B}{34\omega_0} \sen{3\omega_0t}
+\end{align*}
+
+Entonces,
+
+\begin{align*}
+0 &= C_h - \frac{6}{17}\frac{B}{\omega_0} \\
+%
+C_h &= \frac{6B}{17}
+%
+\end{align*}
+
+Entonces la solución final al problema es, donde debido a que $\gamma < \omega_0$ hemos asumido que $\omega_i \approx \omega_0$
+
+\begin{align*}
+ \boxed{x(t) = \frac{6B}{17} \euler^{-\frac{\omega_0}{3} t} \sen{(\omega_0 t + \phi)}
+ - \frac{B}{34\omega_0^2} \cos{\omega_0t} - \frac{2}{17}\frac{B}{\omega_0^2} \sen{3\omega_0t} - \frac{B}{34\omega_0^2} \cos{3\omega_0t}}
+\end{align*}
 
 
 
@@ -394,7 +475,7 @@ que la integral del producto de $\sen{\theta}\cos{\theta}$ se hace cero. Por lo 
   %
   &= - b A^2 \euler^{-2\gamma t}\omega_0^2\left(\frac{\pi}{\omega_i}\right) \\
   %
-  &= - 2\gamma m \omega_0^2 A^2 \euler^{-2\gamma t}T_i
+  &= - \gamma m \omega_0^2 A^2 \euler^{-2\gamma t}T_i
  \end{split}
 \end{align}
 
@@ -405,14 +486,14 @@ la amplitud decrece $1/\euler$, obtenemos que la magnitud de la pérdida de ener
 en un ciclo es
 
 $$
-\Delta E = \left(2mA^2\omega_0^2\euler^{-t/\tau}\right)\frac{T_i}{\tau}
+\Delta E = \left(\frac{1}{2} mA^2\omega_0^2\euler^{-t/\tau}\right)\frac{T_i}{\tau}
 $$
 
-y definiendo a $2E=\frac{1}{2}mA^2\omega_0^2\euler^{-t/\tau}$ como la energía
+y definiendo a $E=\frac{1}{2}mA^2\omega_0^2\euler^{-t/\tau}$ como la energía
 almacenada en el oscilador amortiguado, vemos que 
 
 \begin{equation}
- \frac{\Delta E}{E} = \frac{2T_i}{\tau}
+ \frac{\Delta E}{E} = \frac{T_i}{\tau}
 \end{equation}
 
 Podemos escribir esta ecuación en función del período de un oscilador sin amortiguamiento $T$
@@ -434,24 +515,18 @@ lograr ese objetivo
 Entonces tenemos que 
 
 \begin{equation}
- \boxed{\frac{\Delta E}{E} = \frac{2T}{\tau}}
+ \boxed{\frac{\Delta E}{E} = \frac{T}{\tau}}
  \label{eq:SolucionFinalProb3}
 \end{equation}
 
 La ecuación (\ref{eq:SolucionFinalProb3}) demuestra justo lo que se pide en el problema
-el que cambio en la energía durante un período es $2T/\tau$, expresado en términos del
+el que cambio en la energía durante un período es $T/\tau$, expresado en términos del
 período del oscilador sin amortiguar y $\tau$ es el tiempo que tarda la amplitud en reducirse
-por un factor $1/\euler = 1 / 2.718$.
-
-
-
-
-
-
-
-
-
-
+por un factor $1/\euler = 1 / 2.718$. Cabe destacar que la solución final al problema no
+es exactamente lo que se pide demostrar, debido a que falta un 2 en el numerador, pero
+luego de una intensa revisión de los cálculos realizados se llega a la conclusión de que
+el valor obtenido es correcto, el único modo de que la solución de exactamente igual
+es que se tome el valor de $T_i = 2T$.
 
 \vspace{.3cm}
 
@@ -620,8 +695,12 @@ requieren para que el proyectil llegue a $x_0$ y $z=0$, esto es
  \label{eq:9}
 \end{equation}
 
-El otro ángulo puede obtenerse restando $90^\circ$ menos (\ref{eq:9}) lo 
+El otro ángulo puede obtenerse restando $\pi/2$ menos (\ref{eq:9}) lo 
 cual completa la solución a la primera parte del problema.
+
+\begin{equation}
+ \boxed{\theta = \frac{1}{2}\left[\pi - \arcsen{\left(\frac{x_0 g}{v_0^2}\right)} \right]}
+\end{equation}
 
 \vspace{.3cm}
 
@@ -820,34 +899,83 @@ escribir como
 
 \begin{equation}
  x_0 = \frac{v_0^2 \sen{2\theta}}{g}\left(1 - \frac{4k v_0 \sen{\theta} }{3g} \right)
+ \label{eq:30}
 \end{equation}
 
-Obtener el ángulo de lanzamiento de esta ecuación es un poco complicado
-pero se puede hacer luego de tres expansiones en series de Taylor, debajo
-están algunos pasos de muchos que deben hacerse para despejar $\theta$,
+% Obtener el ángulo de lanzamiento de esta ecuación es un poco complicado
+% pero se puede hacer luego de tres expansiones en series de Taylor, debajo
+% están algunos pasos de muchos que deben hacerse para despejar $\theta$,
+% 
+% \begin{align}
+%  \begin{split}
+%   %
+%   \frac{x_0}{1- \frac{4k}{3g}v_0 \sen{\theta}} &= \frac{v_0^2 \sen{2\theta}}{g} \\
+%   %
+%   x_0 - \frac{4k}{3g}v_0 x_0 \sen{\theta} &\approx \frac{v_0^2 \sen{2\theta}}{g} \\
+%   %
+%   - \frac{4k v_0 x_0}{3g} &\approx \frac{v_0^2 \cos{\theta}}{g} - x_0 \csc{\theta} \\
+%   %
+%   - \frac{4 v_0 x_0}{3g/k} &\approx \frac{v_0^2 \cos{\theta}}{g} - x_0 \left( \frac{cos\theta}{\sqrt{1-\cos^2{\theta}}}\right) \\
+%   %
+%   \cos{\theta} &\approx - \frac{4 v_0 x_0}{3k (2  v_0/g - x_0)}
+%   %
+%  \end{split}
+% \end{align}
+% 
+% Por lo que 
+% 
+% \begin{equation}
+%  \theta \approx \arccos{\frac{4k v_0 x_0}{3g (2 v_0 x_0/g - v_0 x_0)}}
+% \end{equation}
 
-\begin{align}
- \begin{split}
-  %
-  \frac{x_0}{1- \frac{4k}{3g}v_0 \sen{\theta}} &= \frac{v_0^2 \sen{2\theta}}{g} \\
-  %
-  x_0 - \frac{4k}{3g}v_0 x_0 \sen{\theta} &\approx \frac{v_0^2 \sen{2\theta}}{g} \\
-  %
-  - \frac{4k v_0 x_0}{3g} &\approx \frac{v_0^2 \cos{\theta}}{g} - x_0 \csc{\theta} \\
-  %
-  - \frac{4 v_0 x_0}{3g/k} &\approx \frac{v_0^2 \cos{\theta}}{g} - x_0 \left( \frac{cos\theta}{\sqrt{1-\cos^2{\theta}}}\right) \\
-  %
-  \cos{\theta} &\approx - \frac{4 v_0 x_0}{3k (2  v_0/g - x_0)}
-  %
- \end{split}
-\end{align}
-
-Por lo que 
+Pero utilizando la ecuación 8 ecuación (\ref{eq:8}) podemos ver que el término de
+corrección, al cual llamaremos $\alpha$ es\footnote{Hemos despreciado la contribución de 
+$\theta$ de este término, debido a que como la ecuación (\ref{eq:30}) es trascendental para
+$\theta$, solo podemos hallar valores aproximados para el mismo.}
 
 \begin{equation}
- \theta \approx \arccos{\frac{4k v_0 x_0}{3g (2 v_0 x_0/g - v_0 x_0)}}
+  \alpha = \frac{4k v_0 }{3g}
 \end{equation}
 
+% Entonces
+% 
+% \begin{align*}
+%  \frac{\cancel{x_0}}{1 - \frac{4k v_0 \sen{\theta} }{3g}} = \cancelto{x_0}{\frac{v_0^2 \sen{2\theta}}{g}}
+% \end{align*}
+% 
+% \begin{equation}
+%   \frac{1}{1- \frac{4k v_0 \sen{\theta} }{3g}} = 1
+% \end{equation}
+% 
+% Expandiendo en series de Taylor,
+% 
+% \begin{equation}
+%  1 - \frac{1}{3} \frac{4k v_0 \sen{\theta} }{3g}  = 1
+% \end{equation}
+
+\begin{align*}
+ x_0 &\approx \frac{v_0^2 \sen{2\theta}}{g}(1 - \alpha) \\
+%
+ x_0 &\approx  \frac{v_0^2 \sen{2\theta}}{g} -  \frac{\alpha v_0^2 \sen{2\theta}}{g} \\
+%
+ x_0 &\approx \sen{2\theta} \left[ \frac{v_0^2}{g} - \frac{\alpha v_0^2}{g}\right] \\
+ %
+ x_0 &\approx \sen{2\theta} \left[ \frac{v_0^2 - \alpha v_0^2}{g}\right]
+\end{align*}
+
+Entonces 
+
+\begin{equation}
+ \boxed{\theta \approx \frac{1}{2} \arcsen{\frac{x_0 g}{v_0^2(1-\alpha)}}}
+ \label{eq:33}
+\end{equation}
+
+De nuevo, el otro ángulo puede obtenerse restando $\pi/2$ menos (\ref{eq:33}) lo 
+cual completa la solución a la segunda parte del problema.
+
+\begin{equation}
+ \boxed{\theta \approx \frac{1}{2}\left[\pi - \arcsen{\frac{x_0 g}{v_0^2(1-\alpha)}} \right]}
+\end{equation}
 
 
 
@@ -874,7 +1002,9 @@ Por lo que
 
 \vspace{.3cm}
 
-4.- Dos partículas de masa $m_1$ y $m_2$ están amarradas por una cuerda sin masa de 
+\section{Problema 4}
+
+Dos partículas de masa $m_1$ y $m_2$ están amarradas por una cuerda sin masa de 
 longitud $l$ y descansan sobre una mesa sin fricción. En el instante t=0 la cuerda
 está totalmente desplegada y las masas están en reposo; en ese instante se le aplica
 un impulso a la partícula $m_2$ de tal suerte que ésta adquiere una velocidad $v_0$ 
@@ -982,7 +1112,9 @@ lo cual completa la demostración y la solución al problema.
 
 \vspace{.3cm}
 
-5.- Una partícula de masa $m_1$ tiene una energía cinética $T_1i$ y choca elásticamente 
+\section{Problema 5}
+
+Una partícula de masa $m_1$ tiene una energía cinética $T_1i$ y choca elásticamente 
 con otra de masa $m_2$. La segunda partícula sale disparada en una dirección que hace un
 ángulo $\theta$ con la dirección del movimiento inicial de la primera partícula. Encuentre
 la energía cinética $T_2f$ con la que sale la segunda partícula. Muestre que esta energía
@@ -1423,8 +1555,9 @@ Entonces,
 
 
 
+\section{Problema 6}
 
-6.- Un objeto de masa $m$ se encuentra en el ecuador de la Tierra. ¿Qué velocidad debe 
+Un objeto de masa $m$ se encuentra en el ecuador de la Tierra. ¿Qué velocidad debe 
 tener para que su peso y la fuerza de Coriolis sean iguales?
 
 \vspace{.3cm}
@@ -1488,7 +1621,9 @@ y una distribución homogénea del campo gravitacional que lo afecta)
 
 \vspace{.3cm}
 
-7.- La hélice de un avión tiene un momento de inercia $I$ y el motor le imprime una torca 
+\section{Problema 7}
+
+La hélice de un avión tiene un momento de inercia $I$ y el motor le imprime una torca 
 
 $$N_m = N_0 (1+\alpha \cos{\omega t}) \qquad (\alpha \ll 1))$$
 
@@ -1708,12 +1843,26 @@ Entonces la solución particular es igual
 Por lo tanto la solución a la ecuación diferencial es
 
 \begin{equation}
- \boxed{\theta = A + B \euler^{-\frac{I}{b}t} - \frac{IN_0 \alpha}{b^2-I\omega^2} \cos{\omega t} 
+ \theta = A + B \euler^{-\frac{I}{b}t} - \frac{IN_0 \alpha}{b^2-I\omega^2} \cos{\omega t} 
+ - \frac{N_0 \alpha b}{\omega(b^2-I\omega^2)} \sen{\omega t} - \frac{N_0}{b}
+\end{equation}
+
+El movimiento estacionario de la hélice es el que ocurrirá cuando el factor $\euler^{-\frac{I}{b}t}$, 
+se haga casi cero, lo cual ocurrirá mientras el tiempo avance, debido a que es un factor de 
+decaimiento exponencial, entonces cuando $\euler^{-\frac{I}{b}t} \approx 0$, el movimiento
+de la hélice podrá ser descrito por el siguiente $\theta$, 
+
+\begin{equation}
+ \boxed{\theta = A - \frac{IN_0 \alpha}{b^2-I\omega^2} \cos{\omega t} 
  - \frac{N_0 \alpha b}{\omega(b^2-I\omega^2)} \sen{\omega t} - \frac{N_0}{b}}
 \end{equation}
 
+El cálculo de las constantes de integración podrá hacerse si se conocen las condiciones iniciales
+para la ecuación diferencial (\ref{eq:torquesCuerpoRig2}). 
+
 \vspace{.3cm}
 
+\section{Problema 8}
 8.- Dos cuerpos rígidos extensos (no puntuales) chocan elásticamente. ¿Es posible que 
 después del choque ambos queden únicamente con energía cinética de rotación en torno 
 a sus centros de masa?. De ser así de un ejemplo.
@@ -1723,7 +1872,9 @@ a sus centros de masa?. De ser así de un ejemplo.
 
 \vspace{.3cm}
 
-9.- Un meteorito choca con la Tierra en el Polo Norte haciendo un ángulo $\theta$ con
+\section{Problema 9}
+
+Un meteorito choca con la Tierra en el Polo Norte haciendo un ángulo $\theta$ con
 el eje de la tierra. El meteorito tiene una masa igual a $10^-17$ de la masa de la 
 Tierra y llega con la velocidad de escape. ¿En qué forma se verá perturbado el movimiento
 de rotación de la Tierra? (Desprecie el cambio en el momento de inercia de la Tierra
@@ -1803,10 +1954,12 @@ Tierra, sustituyendo tenemos que
 La ecuación (\ref{eq:MomentumAngularTierraFinal}) es la solución final al problema,
 donde solo nos queda como incógnita el valor del ángulo $\theta$ que hace el meteorito
 al chocar, pero podemos ver claramente que si el choque es tal que $\sen{\theta} = 1$, entonces
-será máximo el cambio, dando un cambio de aproximadamente $3,40 \times 10^10 Js$, lo cual
+será máximo el cambio, dando un cambio de aproximadamente $\boxed{3,40 \times 10^{10} Js}$, lo cual
 sería el cambio en el momentum angular de la Tierra. Es un resultado algo significativo
 debido a que la masa del meteorito era relativamente grande y llegó con una gran velocidad,
-cabe destacar que el análisis de unidades es correcto debido a que el momentum angular
+pero igual no es lo suficiente para alterar notablemente el movimiento de rotación de la 
+Tierra\footnote{Esto puede comprobase fácilmente si se calcula el momentum de rotación de 
+la Tierra.},cabe destacar que el análisis de unidades es correcto debido a que el momentum angular
 se expresa en Joules por segundo, y es exactamente lo que hemos obtenido. El ángulo
 que hace el impacto sea máximo es entonces de $90^\circ$, y el cambio será cero si 
 el ángulo es de $0^\circ$.
@@ -1814,7 +1967,9 @@ el ángulo es de $0^\circ$.
 
 \vspace{.3cm}
 
-10.- Uno de los postulados básicos de la mecánica clásica es el de la relatividad galileana,
+\section{Problema 10}
+
+Uno de los postulados básicos de la mecánica clásica es el de la relatividad galileana,
 nos dice que la mecánica clásica debe ser invariante ante las transformaciones de Galileo, 
 esto es las leyes de la física básica deben ser las mismas en todos los sistemas inerciales
 de referencia y la transformación entre un sistema inercial y otro es la de Galileo 
