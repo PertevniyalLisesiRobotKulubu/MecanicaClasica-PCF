@@ -172,7 +172,7 @@ Para eso escribiremos (\ref{eq:ODEsystem1}) de la siguiente forma
   %
   \dot{x} &= y = f(x,y)\\
   %
-  \dot{y} &= - \epsilon y + x - x^3 = g(x,t)
+  \dot{y} &= - \epsilon y + x - x^3 = g(x,y)
  \end{split}
  \label{eq:ODEsystem2}
 \end{align}
@@ -184,14 +184,14 @@ Para hallar los puntos críticos hacemos $0$ a $f(x,y)$ y a $g(x,y)$ en (\ref{eq
   %
   f(x,y) &= y = 0\\
   %
-  g(x,t) &= -\epsilon y + x - x^3 = -\epsilon y + x(1 - x^2) = 0
+  g(x,y) &= -\epsilon y + x - x^3 = \epsilon y -x + x^3  = 0
   %
  \label{eq:ODEsystem3}
  \end{split}
 \end{align}
 
 Claramente vemos de (\ref{eq:ODEsystem3}) que $y=0$ será siempre parte de los puntos críticos,
-y $g(x,y)$ vemos que será cero si $x=0$, $x=1$ o $x=1$. Por lo tanto lo puntos críticos son
+y $g(x,y)$ vemos que será cero si $x=0$, $x=1$ o $x=-1$. Por lo tanto lo puntos críticos son
 
 \begin{align}
  \begin{split}
@@ -216,13 +216,15 @@ J = \begin{pmatrix}
      g_x & g_y
 \end{pmatrix} = \begin{pmatrix}
 		0 & 1 \\
-		1- x^2 & -\epsilon
+		3x^2 -1 & -\epsilon
 		\end{pmatrix}
 \label{eq:jacobiana1}
 \end{align}
 
 Ahora para analizar el comportamiento debemos evaluar la matriz jacobiana en los puntos
-críticos y utilizar los conocidos criterios para los puntos críticos.
+críticos y utilizar los conocidos criterios para los puntos críticos. 
+
+\vspace{.3cm}
 
 Para el punto crítico $(0,0)$
 
@@ -262,12 +264,12 @@ de $\epsilon$, y como ambos son reales, tendremos un punto silla. En este tipo d
 crítico tendremos un comportamiento hiperbólico en el que los ejes coordenados son 
 las asíntotas, una de las coordenadas tenderá a infinito, mientras que la otra a cero.
 
-Para el punto crítico $(1,0)$,
+Para los punto crítico $(\pm 1,0)$,
 
 \begin{align}
-J(0,0) = \begin{pmatrix}
+J(1,0) = \begin{pmatrix}
      0 & 1 \\
-     1 & -\epsilon
+     2 & -\epsilon
 \end{pmatrix}
 \label{eq:jacobiana3s}
 \end{align}
@@ -277,21 +279,25 @@ Que tiene por eigenvalores utilizando la ecuación (\ref{eq:calcEigenvalores}),
 \begin{align}
  \begin{split}
   %
-  \lambda_{1,2} = \pm \sqrt{-\epsilon}
+  \lambda_{1,2} = - \frac{\epsilon}{2} \pm \frac{\sqrt{e^2-8}}{s}
   %
  \end{split}
 \end{align}
 
-Donde vemos que si $\epsilon$ es positivo tendremos dos valores positivos por lo
-que tendemos un foco inestable. En el caso de que $\epsilon$ sea negativo tenemos un
-foco estable. Para el primero tenemos que las curvas tienden asintóticamente a infinito y para el segundo
-tienden asintóticamente a cero. 
+Donde vemos que si $\epsilon > 0 \wedge \epsilon > 8$ tendremos dos valores negativos
+reales y un nodo estable, en el cual las trayectorias se comprimen asintóticamente hacia
+cero, si $\epsilon < 0 \wedge \epsilon > 8$ tendremos dos valores positivos reales y un
+nodo inestable, en este caso las trayectorias se dilatan asintóticamente hacia el infinito.
+En el caso que $\epsilon > 0 \wedge \epsilon < 8$ tendremos eigenvalores complejos
+pero con la parte real positiva, lo que constituye un foco inestable, en el cual las trayectorias
+se alejarán exponencialmente (y asintóticamente) de cero, por último cuando $\epsilon < 0 \wedge \epsilon < 8$, tenemos
+de nuevo raíces complejas pero ahora con la parte real negativa, en este caso tenemos un
+foco estable, en el que las trayectorias se acercan exponencialmente (y asintóticamente) a cero.
 
 \vspace{.3cm}
 
-Para el caso del punto crítico $(1,0)$ tendremos el mismo caso anterior. Para
-el caso en que $\epsilon = 0$, tendremos dos centros. Entonces podemos construir 
-los diagramas de fase y demostrar lo que hemos dicho (arriba).
+Para el caso en que $\epsilon = 0$, tendremos dos centros, es decir curvas cerradas concentricas
+con el origen. Entonces podemos construir los diagramas de fase y demostrar lo que hemos dicho (arriba).
 
 
 \begin{figure}[h!]
@@ -553,7 +559,27 @@ diferencial y un flujo.
 
 \vspace{.3cm}
 
-\underline{Solución:}
+\underline{Solución:}\vspace{.3cm}
+
+Para poder demostrar la equivalencia matemática entre una ecuación diferencial y un flujo,
+primero hay que demostrar la equivalencia entre una ecuación diferencial y un campo vectorial.
+
+\vspace{.3cm}
+
+Asumamos que en cada punto de una cierta región del plano, se ha escogido una línea
+recta que pasa por este punto. En este caso diremos en que ha sido definido un campo
+direccional en la región. Se dice que un campo direccional es continuo si las lineas
+en el campo dependen continuamente del punto de adjunción. Una línea, que en cada uno
+de sus puntos, es tangente a un campo vectorial es llamada una línea integral del
+campo direccional.
+
+\vspace{.3cm}
+
+El problema geométrico de encontrar curvas integrales es escrito analíticamente como el
+problema de encontrar soluciones a una ecuación diferencial. Una condición necesaria 
+y suficiente para que el gráfico de una función $\phi$ sea una curva integral 
+es que se cumpla la siguiente relación para todo $t$ en un intervalo dado:
+
 
 \vspace{.3cm}
 
