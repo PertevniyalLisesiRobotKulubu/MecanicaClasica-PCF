@@ -106,9 +106,26 @@ Para la solución a las primeras dos ecuaciones solo nos piden que tracemos el d
 de fases usando la computadora. Utilizamos Matplotlib\footnote{\href{http://matplotlib.org/}{http://matplotlib.org/}} la librería para hacer graficar 
 por excelencia de Python. El código completo de la realización de esta figura se encuentra
 en un repositorio libre de GitHub, hecho con Jupyter Notebooks. Puede encontrarse en el
-siguiente link: 
+siguiente link: \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea2/Tarea2\%20-\%20Problema1.ipynb}{GitHub-Repo}
 
-El código que finalmente hace el gráfico de la figura () es el siguiente:
+\begin{figure}[ht]
+ \centering
+\includegraphics[scale=0.5]{problema1fig1}
+\caption{Problema 1 parte 1}
+\label{fig:problema1fig1}
+\end{figure}
+
+
+\vspace{.3cm}
+
+Podemos ver que claramente hay un punto crítico en el origen y que coexisten 
+en el espacio de fases un foco estable y uno inestable, donde obviamente debe haber
+una separación entre ellos para que puedan convivir en el espacio, la cual se puede
+observar claramente también.
+
+\vspace{.3cm}
+
+El código que finalmente hace el gráfico de la figura (\ref{fig:problema1fig1}) es el siguiente:
 
 \begin{lstlisting}[language=Python]
 Y, X = np.mgrid[-3:3:100j, -3:3:100j]
@@ -121,6 +138,179 @@ plt.streamplot(X, Y, U, V,color=V,density=[1.2, 1.2],
 
 plt.show()
 \end{lstlisting}
+
+Para la parte dos del problema nos piden que hagamos un análisis de los puntos críticos
+y del comportamiento de las trayectorias en sus entornos. Para eso podemos reescribir
+la ecuación diferencial de segundo orden como un sistema de ecuaciones diferenciales
+lineales,
+
+
+\begin{align}
+ \begin{split}
+  %
+  \dot{x} &= y \\
+  %
+  \dot{y} &= - \epsilon y + x - x^3
+ \end{split}
+ \label{eq:ODEsystem1}
+\end{align}
+
+Haremos un análisis de estabilidad para estas ecuaciones de una forma muy conocida, utilizando
+la matriz jacobiana y estudiando el comportamiento de los puntos críticos en la misma,
+lo cual nos dará información sobre el comportamiento de las trayectorias en sus entornos.
+
+\vspace{.3cm}
+
+Para eso escribiremos (\ref{eq:ODEsystem1}) de la siguiente forma
+
+\begin{align}
+ \begin{split}
+  %
+  \dot{x} &= y = f(x,y)\\
+  %
+  \dot{y} &= - \epsilon y + x - x^3 = g(x,t)
+ \end{split}
+ \label{eq:ODEsystem2}
+\end{align}
+
+Para hallar los puntos críticos hacemos $0$ a $f(x,y)$ y a $g(x,y)$ en (\ref{eq:ODEsystem2})
+
+\begin{align}
+ \begin{split}
+  %
+  f(x,y) &= y = 0\\
+  %
+  g(x,t) &= -\epsilon y + x - x^3 = -\epsilon y + x(1 - x^2) = 0
+  %
+ \label{eq:ODEsystem3}
+ \end{split}
+\end{align}
+
+Claramente vemos de (\ref{eq:ODEsystem3}) que $y=0$ será siempre parte de los puntos críticos,
+y $g(x,y)$ vemos que será cero si $x=0$, $x=1$ o $x=1$. Por lo tanto lo puntos críticos son
+
+\begin{align}
+ \begin{split}
+  %
+  (0,0) \\
+  %
+  (1,0) \\
+  %
+  (-1,0) 
+  %
+ \label{eq:puntoscriticos1}
+ \end{split}
+\end{align}
+
+Para analizar el comportamiento de las trayectorias al rededor de esos puntos, primero escribimos 
+el la matriz jacobiana, que se construye como
+
+
+\begin{align}
+J = \begin{pmatrix}
+     f_x & f_y \\
+     g_x & g_y
+\end{pmatrix} = \begin{pmatrix}
+		0 & 1 \\
+		1- x^2 & -\epsilon
+		\end{pmatrix}
+\label{eq:jacobiana1}
+\end{align}
+
+Ahora para analizar el comportamiento debemos evaluar la matriz jacobiana en los puntos
+críticos y utilizar los conocidos criterios para los puntos críticos.
+
+Para el punto crítico $(0,0)$
+
+\begin{align}
+J(0,0) = \begin{pmatrix}
+     0 & 1 \\
+     1 & -\epsilon
+\end{pmatrix}
+\label{eq:jacobiana2}
+\end{align}
+
+Para encontrar los eigenvalores de (\ref{eq:jacobiana2}) usamos la ecuación
+
+\begin{equation}
+ \lambda^2 - (\text{traza J}) \lambda + \det{J} = 0
+ \label{eq:calcEigenvalores}
+\end{equation}
+
+entonces para $J(0,0)$
+
+\begin{equation}
+ \lambda^2 + \epsilon \lambda - 1 = 0
+\end{equation}
+
+Esta ecuación resulta en que los eigenvalores para $J(0,0)$ son
+
+\begin{align}
+ \begin{split}
+  %
+  \lambda_{1,2} = - \frac{\epsilon}{2} \pm \frac{\sqrt{\epsilon^2 + 4}}{2}
+  %
+ \end{split}
+\end{align}
+
+Por lo que vemos que tenemos que $\lambda_1 > 0$ y que $\lambda_2 < 0$ para todo valor
+de $\epsilon$, y como ambos son reales, tendremos un punto silla. En este tipo de punto
+crítico tendremos un comportamiento hiperbólico en el que los ejes coordenados son 
+las asíntotas, una de las coordenadas tenderá a infinito, mientras que la otra a cero.
+
+Para el punto crítico $(1,0)$,
+
+\begin{align}
+J(0,0) = \begin{pmatrix}
+     0 & 1 \\
+     1 & -\epsilon
+\end{pmatrix}
+\label{eq:jacobiana2}
+\end{align}
+
+Que tiene por eigenvalores utilizando la ecuación (\ref{eq:calcEigenvalores}),
+
+\begin{align}
+ \begin{split}
+  %
+  \lambda_{1,2} = \pm \sqrt{-\epsilon}
+  %
+ \end{split}
+\end{align}
+
+Donde vemos que si $\epsilon$ es positivo tendremos dos valores positivos por lo
+que tendemos un foco inestable. En el caso de que $\epsilon$ sea negativo tenemos un
+foco estable. Para el primero tenemos que las curvas tienden asintóticamente a infinito y para el segundo
+tienden asintóticamente a cero. 
+
+\vspace{.3cm}
+
+Para el caso del punto crítico $(1,0)$ tendremos el mismo caso anterior. Para
+el caso en que $\epsilon = 0$, tendremos dos centros. Entonces podemos construir 
+los diagramas de fase y demostrar lo que hemos dicho (arriba).
+
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema1fig2}
+\caption{Problema 1 parte 2. Centros}
+\label{fig:problema1fig2}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema1fig3}
+\caption{Problema 1 parte 2. Focos inestables}
+\label{fig:problema1fig3}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema1fig4}
+\caption{Problema 1 parte 2. Focos estables}
+\label{fig:problema1fig4}
+\end{figure}
+
 
 
 
