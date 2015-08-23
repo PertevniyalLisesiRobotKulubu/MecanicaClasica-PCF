@@ -12,6 +12,7 @@
 \usetikzlibrary{calc}
 \usepackage{listings}
 \usepackage{subfig}
+\usepackage{float}
 
 %Boxes
 \newcommand*{\boxcolor}{blue}
@@ -384,6 +385,8 @@ ser solución de una ecuación diferencial de la forma planteada.
 
 \vspace{.3cm}
 
+\newpage
+
 3.- Haga una clasificación de los puntos críticos regulares en un espacio de fase 
 de tres dimensiones y trace un diagrama de fase para cada uno de ellos.
 
@@ -415,95 +418,119 @@ En la figura (\ref{fig:problema3fig1}) podemos ver una representación pictóric
 \end{figure}
 
 
-\textbf{Caso 1}. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
+\textbf{Caso 1}. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consiste en contracciones asintóticas
 a lo largo de las tres direcciones.
 
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
-\includegraphics[scale=0.3]{problema3fig2}
+\includegraphics[scale=0.35]{problema3fig2}
 \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
 \label{fig:problema3fig2}
 \end{figure}
 \vspace{.3cm}
 
-\textbf{Caso 2}. $\lambda_1 < \lambda_2 < 0 \lambda_3$: El espacio de fase consisten en contracciones asintóticas
-en dos direcciones y dilatación a lo largo del tercero.
+\newpage
 
-\begin{figure}[h]
+\textbf{Caso 2}. $\lambda_1 < \lambda_2 < 0 \lambda_3$: El espacio de fase consiste en contracciones asintóticas
+en dos direcciones y dilatación asintótica a lo largo del tercero.
+
+\begin{figure}[H]
  \centering
-\includegraphics[scale=0.3]{problema3fig3}
+\includegraphics[scale=0.35]{problema3fig3}
 \caption{Caso 2. $\lambda_1 < \lambda_2 < 0 \lambda_3$}
 \label{fig:problema3fig3}
 \end{figure}
 \vspace{.3cm}
 
-\textbf{Caso 3}. Re $\lambda_{1,2} < \lambda_3 < 0$ : El espacio de fase consisten en en una contracción asintótica
-en la dirección de $Z$, y una rotación con una contracción más rápida en el plano
+\textbf{Caso 3}. Re $\lambda_{1,2} < \lambda_3 < 0$ : El espacio de fase consiste en en una contracción asintótica
+en la dirección de $Z$, y una rotación con una contracción asintótica más rápida en el plano
 $(X,Y)$.
 
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
-\includegraphics[scale=0.3]{problema3fig2}
+\includegraphics[scale=0.35]{problema3fig4}
 \caption{Caso 3. Re $\lambda_{1,2} < \lambda_3 < 0$}
 \label{fig:problema3fig4}
 \end{figure}
 \vspace{.3cm}
 
-\textbf{Caso 4}. $\lambda_3 <$ Re $\lambda_{1,2} < 0$ : El espacio de fase consisten en en una contracción asintótica
-en la dirección de $Z$, y una rotación con una contracción menos rápida en el plano
+\textbf{Caso 4}. $\lambda_3 <$ Re $\lambda_{1,2} < 0$ : El espacio de fase consiste en en una contracción asintótica
+en la dirección de $Z$, y una rotación con una contracción asintótica menos rápida en el plano
 $(X,Y)$.
 
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
-\includegraphics[scale=0.3]{problema3fig2}
+\includegraphics[scale=0.35]{problema3fig5}
 \caption{Caso 4. $\lambda_3 <$ Re $\lambda_{1,2} < 0$}
 \label{fig:problema3fig5}
 \end{figure}
 \vspace{.3cm}
 
-\textbf{Caso 5}. Re $\lambda_{1,2} < 0 < \lambda_3$: El espacio de fase consisten en una dilatación asintótica
-en la dirección de $Z$, y rotación con contracción en el plano $(X,Y)$
+\textbf{Caso 5}. Re $\lambda_{1,2} < 0 < \lambda_3$: El espacio de fase consiste en una dilatación asintótica
+en la dirección de $Z$, y rotación con contracción asintótica en el plano $(X,Y)$
 
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
-\includegraphics[scale=0.3]{problema3fig2}
+\includegraphics[scale=0.35]{problema3fig6}
 \caption{Caso 5. Re $\lambda_{1,2} < 0 < \lambda_3$}
 \label{fig:problema3fig6}
 \end{figure}
 \vspace{.3cm}
 
-Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
+\textbf{Caso 6}. $\lambda_1 > \lambda_2 > \lambda_3 > 0$: El espacio de fase consiste en dilataciones asintóticas
 a lo largo de las tres direcciones.
 
-% \begin{figure}[h!]
-%  \centering
-% \includegraphics[scale=0.3]{problema3fig2}
-% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
-% \label{fig:problema3fig2}
-% \end{figure}
-% \vspace{.3cm}
+\begin{figure}[h]
+ \centering
+\includegraphics[scale=0.35]{problema3fig7}
+\caption{Caso 6. $\lambda_1 > \lambda_2 > \lambda_3 > 0$}
+\label{fig:problema3fig7}
+\end{figure}
+\vspace{.3cm}
 
-Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
-a lo largo de las tres direcciones.
+\textbf{Caso 7}. $\lambda_3 < 0 < \lambda_1 < \lambda_2$: El espacio de fase consiste en dilataciones asintóticas
+en dos direcciones y contracción asintótica en la tercera.
 
-% \begin{figure}[h!]
-%  \centering
-% \includegraphics[scale=0.3]{problema3fig2}
-% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
-% \label{fig:problema3fig2}
-% \end{figure}
-% \vspace{.3cm}
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.35]{problema3fig8}
+\caption{Caso 7. $\lambda_3 < 0 < \lambda_1 < \lambda_2$}
+\label{fig:problema3fig8}
+\end{figure}
+\vspace{.3cm}
 
-Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
-a lo largo de las tres direcciones.
+\textbf{Caso 8}. $0 > \lambda_3 > $ Re $\lambda_{1,2}$: El espacio de fase consiste en una dilatación asintótica en 
+la dirección de $Z$ y rotación con una dilatación más rápida en el plano $(X,Y)$.
 
-% \begin{figure}[h!]
-%  \centering
-% \includegraphics[scale=0.3]{problema3fig2}
-% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
-% \label{fig:problema3fig2}
-% \end{figure}
-% \vspace{.3cm}
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema3fig9}
+\caption{Caso 8. $0 > \lambda_3 > $ Re $\lambda_{1,2}$}
+\label{fig:problema3fig9}
+\end{figure}
+\vspace{.3cm}
+
+\textbf{Caso 9}. $0 > $ Re $\lambda_{1,2} > \lambda_3$. El espacio de fases consiste en una dilatación asintótica
+en la dirección de $Z$, y rotación con una dilatación asintótica menos rápida en el plano $(X,Y)$.
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema3fig10}
+\caption{Caso 9. $0 > $ Re $\lambda_{1,2} > \lambda_3$}
+\label{fig:problema3fig10}
+\end{figure}
+\vspace{.3cm}
+
+\textbf{Caso 10}. $\lambda_3 > 0 > $ Re $\lambda_{1,2}$. El espacio de fases consisten en una contracción asintótica
+en la dirección de $Z$, y una dilatación asintótica en el plano $(X,Y)$.
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema3fig11}
+\caption{Caso 10. $\lambda_3 > 0 > $ Re $\lambda_{1,2}$}
+\label{fig:problema3fig11}
+\end{figure}
+\vspace{.3cm}
 
 4.- Se han encontrado cuatro puntos críticos de una ecuación diferencial en la esfera
 de dos dimensiones ($R^2$ cerrado al incluir el punto al infinito). Uno es un foco
