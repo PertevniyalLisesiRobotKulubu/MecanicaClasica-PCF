@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{listings}
+\usepackage{subfig}
 
 %Boxes
 \newcommand*{\boxcolor}{blue}
@@ -265,7 +266,7 @@ J(0,0) = \begin{pmatrix}
      0 & 1 \\
      1 & -\epsilon
 \end{pmatrix}
-\label{eq:jacobiana2}
+\label{eq:jacobiana3s}
 \end{align}
 
 Que tiene por eigenvalores utilizando la ecuación (\ref{eq:calcEigenvalores}),
@@ -329,7 +330,8 @@ ser la solución de una ecuación diferencial de la forma?
 
 \begin{gather*}
  \begin{split}
- \dot{x} = f(x,y),
+ \dot{x} = f(x,y), \\
+ %
  \dot{y} = g(x,y)
  \end{split}
 \end{gather*}
@@ -338,6 +340,48 @@ ser la solución de una ecuación diferencial de la forma?
 
 \underline{Solución:}
 
+Si las ecuaciones dadas son soluciones de la ecuación diferencial, entonces deben
+cumplir con todas las propiedades de una solución a una ecuación diferencial. Dando
+un vistazo a las ecuaciones dadas, podremos demostrar que estas ecuaciones no cumplen
+con todas las propiedades para ser solución a una ecuación diferencial. Principalmente
+es que podemos encontrar una infinidad de valores para el cual el ``espacio de fases'' es 
+multivaluado, es decir que le asigna más de un vector a un punto. Podemos ver esto de un 
+modo simple, si fijamos el valor de $x_0$ como $y_0/c$, entonces obtendremos que
+
+\begin{align}
+ \begin{split}
+  x(t) =  at^2 + \frac{y_0}{c} \\
+  %
+  y(t) = \cancel{c} t \frac{y_0}{\cancel{c}} + 1 - t y_0 = 
+  \cancel{t y_0} + 1 -\cancel{t y_0} = 1
+  \label{eq:ec1prob2}
+ \end{split}
+\end{align}
+
+Tenemos entonces una familia de curvas que se intersectan en el punto $(a,cx_0)$. Podemos
+graficar un ejemplo de estas curvas para unos valores de $a$ entre -10 y 10, y de $x_0$, igual
+lo cual verifica nuestra proposición. Debido que para este valor de $x_0$, las curvas tienen
+este comportamiento, es una condición suficiente para decir que estas ecuaciones no pueden
+ser solución de una ecuación diferencial de la forma planteada.
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema2fig1}
+\caption{Problema 2.}
+\label{fig:problema2fig1}
+\end{figure}
+
+
+% \begin{figure}[h]
+%  \centering
+%     \subfloat{\includegraphics[scale=0.2]{problema2fig1} }%
+%     \qquad
+%     \subfloat{\includegraphics[scale=0.2]{problema2fig2} }%
+%     \caption{Problema 2}%
+%     \label{fig:example}%
+% \label{fig:problema2fig1}
+% \end{figure}
+
 \vspace{.3cm}
 
 3.- Haga una clasificación de los puntos críticos regulares en un espacio de fase 
@@ -345,9 +389,121 @@ de tres dimensiones y trace un diagrama de fase para cada uno de ellos.
 
 \vspace{.3cm}
 
-\underline{Solución:}
+\underline{Solución:}\vspace{.3cm}
+
+En este caso la ecuación característica será cúbica real. Una ecuación cúbica real puede
+tener tres raíces reales o una real y dos complejas, donde las complejas son complejas conjugadas.
+Son posibles entonces varios casos, dependido del lugar de las raíces $lambda_1, lambda_2, lambda_3$
+en el plano de la variable compleja $\lambda$.
+
+Para la clasificación seguiremos la de V.I Arnold en \cite{arnold}. En la cual debemos
+fijarnos en el orden y signo de partes reales. Existen 10 casos ``robustos'', y una 
+serie de casos ``degenerados'' cuando la parte real de una de las raíces es cero
+o igual a la parte real de una raíz que no es su complejo conjugado, para la 
+solución de este problema solo nos enfocaremos en estudiar los robustos. 
 
 \vspace{.3cm}
+
+En la figura (\ref{fig:problema3fig1}) podemos ver una representación pictórica de los
+10 casos posibles que consideramos. 
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema3fig1}
+\caption{Los eigenvalores de un operador real $A: \mathbb{R}^3 \rightarrow \mathbb{R}^3$}
+\label{fig:problema3fig1}
+\end{figure}
+
+
+Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
+a lo largo de las tres direcciones.
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[scale=0.3]{problema3fig2}
+\caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+\label{fig:problema3fig2}
+\end{figure}
+\vspace{.3cm}
+
+Caso 2. $\lambda_1 < \lambda_2 < 0 \lambda_3$: El espacio de fase consisten en contracciones asintóticas
+en dos direcciones y dilatación a lo largo del tercero.
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig3}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < 0 \lambda_3$}
+% \label{fig:problema3fig3}
+% \end{figure}
+% \vspace{.3cm}
+
+Caso 3. Re $\lambda_{1,2} < \lambda_3 < 0$ : El espacio de fase consisten en en una contracción asintótica
+en la dirección de $Z$, y una rotación con una contracción más rápida en el plano
+$(X,Y)$.
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig2}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+% \label{fig:problema3fig2}
+% \end{figure}
+% \vspace{.3cm}
+
+Caso 4. $\lambda_3 <$ Re $\lambda_{1,2} < 0$ : El espacio de fase consisten en en una contracción asintótica
+en la dirección de $Z$, y una rotación con una contracción menos rápida en el plano
+$(X,Y)$.
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig2}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+% \label{fig:problema3fig2}
+% \end{figure}
+% \vspace{.3cm}
+
+Caso 5. Re $\lambda_{1,2} < 0 < \lambda_3$: El espacio de fase consisten en una dilatación asintótica
+en la dirección de $Z$, y rotación con contracción en el plano $(X,Y)$
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig2}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+% \label{fig:problema3fig2}
+% \end{figure}
+% \vspace{.3cm}
+
+Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
+a lo largo de las tres direcciones.
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig2}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+% \label{fig:problema3fig2}
+% \end{figure}
+% \vspace{.3cm}
+
+Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
+a lo largo de las tres direcciones.
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig2}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+% \label{fig:problema3fig2}
+% \end{figure}
+% \vspace{.3cm}
+
+Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$: El espacio de fase consisten en contracciones asintóticas
+a lo largo de las tres direcciones.
+
+% \begin{figure}[h!]
+%  \centering
+% \includegraphics[scale=0.3]{problema3fig2}
+% \caption{Caso 1. $\lambda_1 < \lambda_2 < \lambda_3 < 0$}
+% \label{fig:problema3fig2}
+% \end{figure}
+% \vspace{.3cm}
 
 4.- Se han encontrado cuatro puntos críticos de una ecuación diferencial en la esfera
 de dos dimensiones ($R^2$ cerrado al incluir el punto al infinito). Uno es un foco
@@ -369,5 +525,14 @@ diferencial y un flujo.
 \underline{Solución:}
 
 \vspace{.3cm}
+
+
+\begin{thebibliography}{10}
+ \bibitem{arnold}
+ V.I. Arnold, \emph{Ordinary Differential Equations}, Springer-Verlang,
+ 3ra edición, 1992.
+\end{thebibliography}
+
+
 
 \end{document}
