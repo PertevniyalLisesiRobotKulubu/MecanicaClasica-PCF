@@ -13,6 +13,26 @@
 \usepackage{listings}
 \usepackage{subfig}
 \usepackage{float}
+\usepackage{cleveref}
+\numberwithin{equation}{section}
+
+%Allow mutiple references
+\usepackage{xparse}
+\ExplSyntaxOn
+\NewDocumentCommand{\mref}{m}{\quinn_mref:n {#1}}
+\seq_new:N \l_quinn_mref_seq
+\cs_new:Npn \quinn_mref:n #1
+ {
+  \seq_set_split:Nnn \l_quinn_mref_seq { , } { #1 }
+  \seq_pop_right:NN \l_quinn_mref_seq \l_tmpa_tl
+  ( % print the left parenthesis
+  \seq_map_inline:Nn \l_quinn_mref_seq
+    { \ref{##1},\nobreakspace } % print the first references
+  \exp_args:NV \ref \l_tmpa_tl 
+  ) 
+ }
+\ExplSyntaxOff
+
 
 %Boxes
 \newcommand*{\boxcolor}{blue}
@@ -143,7 +163,8 @@ plt.streamplot(X, Y, U, V,color=V,density=[1.2, 1.2],
 plt.show()
 \end{lstlisting}
 
-Para la parte dos del problema nos piden que hagamos un análisis de los puntos críticos
+No llenaremos la tarea de código, por lo que para el lector interesado, se recomienda
+ir al link del repositorio dado. Para la parte dos del problema nos piden que hagamos un análisis de los puntos críticos
 y del comportamiento de las trayectorias en sus entornos. Para eso podemos reescribir
 la ecuación diferencial de segundo orden como un sistema de ecuaciones diferenciales
 lineales,
@@ -581,6 +602,9 @@ diferencial y un flujo.
 
 Para poder demostrar la equivalencia matemática entre una ecuación diferencial y un flujo,
 primero hay que demostrar la equivalencia entre una ecuación diferencial y un campo vectorial.
+No demostraremos todas las definiciones y teoremas (encubiertos) que utilizaremos
+debido a que se haría extremadamente complicada, y larga la solución al problema,
+lo mismo para la segunda parte de la demostración.
 
 \vspace{.3cm}
 
@@ -598,6 +622,193 @@ problema de encontrar soluciones a una ecuación diferencial. Una condición nec
 y suficiente para que el gráfico de una función $\phi$ sea una curva integral 
 es que se cumpla la siguiente relación para todo $t$ en un intervalo dado:
 
+\begin{equation}
+ \frac{d\phi}{dt} = v(t,\phi(t))
+ \label{eq:pro5e1}
+\end{equation}
+
+Llamamos a una función $\phi$ una solución de la ecuación diferencial
+
+\begin{equation}
+ \dot{x} = v(t,x)
+ \label{eq:pro5e2}
+\end{equation}
+
+Si satisface la ecuación \mref{eq:pro5e1}, es decir si se hace una identidad cuando
+la función $\phi$ se sustituye por $x$ en la ecuación.
+
+La solución $\phi$ satisface la condición inicial $(t_0, x_0)$ si $\phi(t_0)= x_0$. Por
+lo que una solución es una función definida en el intervalo cuyo gráfico es una curva integral;
+la solución satisface la condición inicial $(t_0, x_0)$  si la integral pasa por el
+punto dado.
+
+Dadas estas simples definiciones entonces podemos decir que cada ecuación diferencial 
+\mref{eq:pro5e2} determina un campo direccional en el plano: la línea adjunta al punto
+$(t,x)$ tiene pendiente v(t,x). Este campo se llama el campo de direcciones de $v$ o 
+el campo direccional de la ecuación \mref{eq:pro5e2}. 
+
+Si ahora consideramos la ecuación, y usando las definiciones anteriores
+
+\begin{equation}
+ \dot{x} = v(t), \qquad x \in \mathbb{R}
+ \label{eq:pro5e3}
+\end{equation}
+
+Esta ecuación describe un proceso evolutivo con un espacio de fases 
+unidimensional. El lado derecho de \mref{eq:pro5e3} define un campo
+vectorial (de velocidades de fase): un vector $v(x)$ está adjunto al punto
+$x$. Por simpleza hemos asumido una ecuación autónoma, pero la generalidad
+no se pierde. Podemos decir ahora que la solución $x=\phi(t)$ de la ecuación
+$\dot{x} = v(x)$ con un lado derecho continuo no igual a cero, que satisface 
+la condición inicial $(t_0,x_0)$ está dada por la fórmula de Barrow
+\footnote{$t-t_0 = \int_{x_0}^x \frac{d\xi}{v(\xi)}$}, la cual también define 
+una solución en el caso de campos direccionales.
+
+\vspace{.3cm}
+
+Hemos entonces encontrado la equivalencia matemática entre ecuaciones diferenciales
+y campos vectoriales, para ser completos en la demostración, puede probarse además
+que la solución $\phi$ de la ecuación $\dot{x} = v(x)$ con condiciones iniciales
+$(t_0,x_0)$ y definida en un intervalo $I$ del eje real
+
+\begin{itemize}
+ \item Existe para todo $t_0 \in \mathbb{R}$ y $x_0 \in I$
+ \item Es única en el sentido que dos soluciones con la misma condición
+ inicial coinciden en alguna vecindad del punto $t_0$
+ \item Está dada por la fórmula de Barrow:
+ 
+ \begin{gather*}
+  t - t_0= \int_{x_0}^{\phi(t)} \frac{d\xi}{v(\xi)}, \quad \text{si} \quad v(x_0) \neq 0, \\
+  \phi(t) \equiv x_0, \quad \text{si} \quad v(x_0) = 0
+ \end{gather*}
+\end{itemize}
+
+Estamos ahora en posición para la demostración solicitada. Comenzamos por
+definir una transformación como un mapeo de uno a uno de un conjunto en si mismo. El 
+producto $fg$ de las transformaciones $f$ y $g$ de un conjunto es la 
+transformación obtenida aplicando primer $g$ y luego $f$, i.e. $(fg)(x) = f(g(x))$. La 
+transformación inversa $f^{-1}$ a $f$ está definida por la condición de que si
+$f$ lleva a $x$ a $y$, entonces $f^{-1}$ lleva a $y$ a $x$.
+
+\vspace{.3cm}
+
+Una colección de transformaciones de un conjunto se llama un grupo de 
+transformación si contiene la inversa de cada una de sus transformaciones,
+y el producto de cualquiera de sus transformaciones. Podemos ver un grupo
+de una manera muy interesante: Sea $A$ un grupo de transformación en el 
+conjunto $X$. La multiplicación y la inversión definen mapeos 
+$A \times A \rightarrow A$ y $A \rightarrow A$ (el par $(f,g)$ va a $fg$, y 
+el elemento $g$ a $g^{-1}$. Un conjunto dotado de estos dos mapeos se le 
+llama un grupo abstracto, o simplemente un \emph{grupo}. Entonces el concepto
+de grupo puede ser obtenido desde el de grupo de transformación simplemente
+ignorando que el conjunto siendo transformado.
+
+\vspace{.3cm}
+
+Sea $G$ un grupo y $M$ un conjunto. Decimos que la \emph{acción} del
+grupo $G$ sobre el conjunto $M$ está definida si a cada elemento $g$ del
+grupo $G$ le corresponde una transformación $T_g:M \rightarrow M$ del 
+conjunto $M$, al producto de cualquiera dos elementos del grupo le corresponde
+el producto de las transformaciones correspondientes de esos elementos, y 
+a cualquiera dos elementos mutuamente inversos les corresponden transformaciones
+mutuamente inversas: $T_{fg} = T_f T_g, T_{g^{-1} = (T_g)^-1}$. 
+
+\vspace{.3cm}
+
+Un mapeo $\phi: G \rightarrow H$ del grupo $G$ al grupo $H$ se llama un
+homeomorfismo si toma productos a productos e inversas a inversas:
+
+\begin{equation}
+ \phi(fg) = \phi(f)\phi(g); \phi(g^-1) = (\phi(g))^-1
+\end{equation}
+
+Entonces la acción de un grupo $G$ en un conjunto $M$ es un homeomorfismo
+del grupo $G$ al grupo de todas las transformaciones del conjunto $M$. 
+
+\vspace{.3cm}
+
+Decimos que un grupo es conmutativo o \emph{Abeliano} si el producto es 
+independiente del orden de los factores $fg = gf$ para cualquier dos elementos
+del grupo. Llamamos \emph{grupo uniparamétrico de transformaciones de un 
+conjunto} a la acción sobre el conjunto por el grupo de todos los números reales.
+Usualmente se denotan como una colección de transformaciones $g^t$ parametrizadas
+por un parámetro real $t$ tal que para cualquiera dos números $s$ y $t$,
+
+\begin{equation}
+ g^{s+t} = g^s g^t, \quad g^{-t} = (g^{-t})^{-1}
+\end{equation}
+
+Usualmente el parámetro $t$ es llamado tiempo, y la transformación, 
+$g^t$ es llamada la transformación en tiempo $t$. 
+
+\vspace{.3cm}
+
+A los grupos uniparamétricos de transformaciones de un conjunto $M$ se 
+les llama flujos, con el espacio fase $M$ (el espacio fase puede pensarse
+como lleno de un fluido, donde una partícula $x$ pasa por el punto $g^t x$
+durante el tiempo $t$). A las \emph{órbitas} del flujo se llaman curvas
+de fase (o trayectoria).
+
+\vspace{.3cm}
+
+Asumamos ahora que el conjunto $M$ bajo consideración está dotado con la estructura
+de una variedad suave, y que está definido en un dominio abierto del 
+espacio euclidiano. Un difeomorfismo es un mapeo que es suave, junto
+con su inversa. Podemos definir entonces a un \emph{grupo uniparamétrico de 
+difeomorfismos} como un grupo uniparamétrico de transformaciones cuyos elementos
+son difeomorfismos, y satisfacen una condición adicional, el que $g^t x$ 
+dependa suavemente de ambos argumentos $t$ y $x$. También podemos 
+definir un grupo uniparamétrico de transformaciones lineales como un 
+grupo uniparamétrico de difeomorfismos cuyos elementos son transformaciones
+lineales.
+
+\vspace{.3cm}
+
+Consideremos un grupo $g^t$ uniparamétrico de difeomorfismos e un dominio
+de $M$. Definimos el vector de velocidad de fase del flujo $g^t$ en el
+punto $x$ en $M$, como la velocidad con la que el punto $g^t x$ deja $x$, i.e.,
+
+\begin{equation}
+ v(x) = \frac{d}{dt} |_{t=0} (g^t x)
+\end{equation}
+
+Los vectores de velocidad de fase de un flujo en todos los puntos del
+dominio $M$ forman un campo vectorial suave debido a que $g^t$ depende
+suavemente de $t$ y $x$. Y es llamado el campo de velocidades de 
+fase. 
+
+\vspace{.3cm}
+
+Fijemos un punto $x_0$ y estudiemos su movimiento bajo la acción del
+flujo $g^t$. En otras palabras consideremos el mapeo $\phi: \mathbb{R} \rightarrow M$, 
+definido como: $\phi(t) = g^t x_0$. Llegamos entonces al teorema principal 
+que queremos demostrar:
+
+\vspace{.3cm}
+
+\textbf{Teorema}. El mapeo $\phi$ es una solución de la ecuación $\dot{x}=v(x)$ 
+con condición inicial $\phi(0)=x_0$.
+
+En otras palabras, bajo la acción del flujo, el punto se mueve de manera
+tal que su vector de velocidad en cualquier instante, es igual al vector de velocidad
+de fase en el punto del espacio de fase en el que el punto que se mueve
+está localizado.
+
+\vspace{.3cm}
+
+\textbf{Prueba}. La prueba surge simplemente de la propiedad de grupo:
+\begin{align}
+\begin{split}
+ \frac{d}{dt}|_{t=\tau} g^t x =  \frac{d}{d\epsilon}|_{\epsilon=0} g^{\tau+\epsilon} x =
+  \frac{d}{d\epsilon}|_{\epsilon=0} g^\epsilon (g^\tau x) = v(g^\tau x). \\
+\Box
+\end{split}
+\end{align}
+
+Entonces a cada grupo uniparamétrico de difeomorfismos (flujo) está asociada una 
+ecuación diferencial (definida por el campo vectorial de velocidades de fase); las
+soluciones a esta ecuación son los movimientos de los puntos de fase bajo la acción del
+flujo. Lo cual culmina la demostración.
 
 \vspace{.3cm}
 
