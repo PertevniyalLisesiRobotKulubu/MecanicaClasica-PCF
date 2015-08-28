@@ -55,6 +55,7 @@
 \newcommand{\teorema}{\textbf{Teorema: }}
 
 
+
 %opening
 \title{Mecánica Clásica Tarea \# 3}
 \author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México}
@@ -583,17 +584,6 @@ obtenida por primera vez por Rutherford, en 1911, en su estudio de la dispersió
 partículas $\alpha$ por un núcleo atómico, curiosamente, este fue uno o el más famoso
 trabajo de Rutherford y lo hizo luego de ya haber ganado el premio nobel en 1908.
 
-
-
-
-
-
-
-
-
-
-
-
 \section{Problema 4}
 
 Demuestre que una partícula moviéndose en una dimensión y sujeta a la 
@@ -609,6 +599,158 @@ de la oscilación. ¿Es esto válido cuando $n<0$?
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Debido a la forma de la fuerza que nos dan en el problema, y al hecho de que en una 
+dimensión todas las fuerzas que dependen solo de $x$ con conservativas, entonces 
+podemos escribir \cite{saletan},
+
+\begin{equation}
+ F(x) = - \frac{dV(x)}{dx}.
+ \label{eq:potencial1}
+\end{equation}
+
+Por otra parte la energía total del sistema puede escribirse como,
+
+\begin{equation}
+ E = \frac{1}{2} m\dot{x}^2 + V(x).
+ \label{eq:energTotal1}
+\end{equation}
+
+La ecuación \mref{eq:energTotal1} puede resolverse para $1/\dot{x}=dt/dx$, lo que 
+resulta en 
+
+\begin{equation}
+ \int_{t_0}^t dt = \sqrt{\frac{m}{2}} \int_{x_0}^{}x \frac{dx}{\sqrt{E - V(x)}}.
+\end{equation}
+
+Que resulta en 
+
+\begin{equation}
+  t - t_0 = \sqrt{\frac{m}{2}} \int_{x_0}^{}x \frac{dx}{\sqrt{E - V(x)}},
+\end{equation}
+
+donde $x_0$ es la posición de la partícula en el tiempo $t_0$, y $x$ es la posición 
+en el tiempo $t$. Si en una gráfica de $V(x)$ sobre $x$, podemos encontrar una 
+región en la cual una partícula, con una energía dada, se encuentre constreñida 
+a moverse alrededor de un mínimo, decimos que la misma oscila, o que el movimiento 
+es periódico sobre esa región, en el cual puede demostrarse con facilidad que 
+los límites de la oscilación serán entre el valor $-A$ y $A$, donde $A$ es la amplitud 
+de la oscilación.
+
+\vspace{.3cm}
+
+\definicion El período de una oscilación es el tiempo que le toma a una partícula 
+ir de $-A$ a $A$ y volver de nuevo, donde $A$ es la amplitud de la oscilación.
+
+\vspace{.3cm}
+
+Debido a esta definición, y al hecho de que el tiempo que le toma a la partícula ir 
+de $-A$ a $A$ es el mismo que le toma para ir de $A$ a $-A$ (si el potencial 
+es simétrico), podemos escribir el período como
+
+\begin{equation}
+ T = 2 \sqrt{m/2} \int_{-A}^A \frac{dx}{\sqrt{E - V(x)}} = \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{E - V(x)}}
+\label{eq:periodo1}
+\end{equation}
+
+
+Con los resultados obtenidos podemos ahora dar solución al problema. En el 
+enunciado nos dicen que la partícula está sujeta a una fuerza $F(x) = - kx^{2n+1}$,
+por lo que 
+
+\begin{gather}
+ \int_{0}^{V(x)} dV(x) = k \int_0^x x^{2n+1} dx, \\
+ \therefore V(x) = \Theta x^{2(n+1)},
+ \label{eq:potencial2}
+\end{gather}
+
+donde hemos definido $\Theta = k/2(n+1)$. Por otra parte, en la oscilación de una partícula
+los momentos iniciales y finales de la oscilación son aquellos en los que la velocidad es 
+igual a cero, o dicho de otra manera en los que la energía total es igual al potencial,
+entonces
+
+\begin{equation}
+ E = V(A) =  \Theta A^{2(n+1)}
+ \label{eq:energTotal2}
+\end{equation}
+
+Introduciendo los resultados de \mref{eq:potencial2} y \mref{eq:energTotal2} en 
+\mref{eq:periodo1} obtenemos
+
+\begin{equation}
+ T = \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{\Theta A^{2(n+1)} - \Theta x^{2(n+1)}}} = 
+ \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{\Theta} \sqrt{A^{2(n+1)} - x^{2(n+1)}}}
+ \label{eq:periodo2}
+\end{equation}
+
+Si hacemos el cambio de variables $x = A \xi$, entonces 
+
+\begin{equation}
+ dx = A d\xi
+\end{equation}
+
+y los límites de integración cambian a 
+
+\begin{align*}
+%
+ (\text{inferior}) \quad x &= - A \Rightarrow \xi = A / -A = -1 \\
+ %
+ (\text{superior}) \quad x &= A \Rightarrow \xi = A / A = 1
+ %
+\end{align*}
+
+entonces \mref{eq:periodo2} se transforma en 
+
+\begin{align}
+ \begin{split}
+  %
+  T &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{A d\xi}{\sqrt{A^{2(n+1)} - (A\xi)^{2(n+1)}}} \\
+  %
+    &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{Ad\xi}{A^{2(n+1)}[1 - \xi^{2(n+1)}]} \\
+  %
+    &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{Ad\xi}{A^{(n+1)}\sqrt{1-\xi^{2(n+1)}}}
+  %
+ \end{split}
+\end{align}
+
+Y debido a que $A/A^{(n+1)} = A^{-n}$, tenemos que 
+
+\begin{equation}
+ \boxed{T = \sqrt{\frac{2m}{\Theta}} A^{-n} \int_{-1}^1 \frac{d\xi}{\sqrt{1-\xi^{2(n+1)}}}}
+\end{equation}
+
+Y debido a que la integral es una constante, entonces hemos demostrado que $T \propto A^{-n}$.
+
+\vspace{.3cm}
+
+Debido a la forma del potencial, si $n=0$,
+
+\begin{equation}
+ F(x) = -k x
+\end{equation}
+
+Que es simplemente el caso del oscilador armónico de una dimensión. Por otra parte si 
+$n$ es negativo, digamos que $n=-1$, entonces 
+
+\begin{equation}
+ F = - k x^{-1} \Rightarrow V(x) = k \ln{|x/c|},
+\end{equation}
+
+donde hemos puesto $\ln{|c|}$ como constante de integración. Este tipo de potenciales
+no puede generar oscilaciones periódicas debido a que no tiene mínimos, y aparte 
+es una función discontinua debido a que no contiene al 0 en su dominio. Por lo que 
+esta solución no funciona para un $n$ negativo ya que daríamos la errónea conclusión de
+que por ejemplo si $n=-1$ entonces el período sería proporcional a $A$, lo cual se 
+puede demostrar siguiendo un procedimiento similar al que llevamos a cabo en la solución 
+del problema. Pero por la descripción del potencial que acabamos de hacer vemos que 
+sería un error conjeturar tal cosa, por lo cual esta solución no es válida cuando 
+$n<0$.
+
+
+
+
+
+
 
 \section{Problema 5}
 
@@ -632,6 +774,9 @@ negativa.
  \bibitem{goldstein}
  H. Goldstein, \emph{Classical Mechanics}, Addison-Wesley, 2da edición,
  1980.
+ \bibitem{saletan}
+ J. José y E. Saletan, \emph{Classical dynamics: A contemporary approach}, Cambridge University Press,
+ 1998.
 \end{thebibliography}
 
 \end{document}
