@@ -49,6 +49,12 @@
 \newcommand{\euler}{\mathrm{e}}
 \newcommand{\im}{i}
 
+%Lemas, teoremas y definiciones
+\newcommand{\definicion}{\textbf{Definición: }}
+\newcommand{\Lema}{\textbf{Lema: }}
+\newcommand{\teorema}{\textbf{Teorema: }}
+
+
 %opening
 \title{Mecánica Clásica Tarea \# 3}
 \author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México}
@@ -344,7 +350,131 @@ que ilustra una colisión en el sistema de coordenadas del laboratorio\footnote{
 suele llamarse sistema de coordenadas de laboratorio a uno que está en reposo
 viendo el sistema ocurrir, como un científico viendo el fenómeno parado 
 o sentado (si es muy largo) ocurrir.} cuando una fuerza repulsiva existe 
-entre $m_1$ y $m_2$. La 
+entre $m_1$ y $m_2$. 
+
+\vspace{.3cm}
+
+\definicion Llamaremos parámetro de impacto, $b$, a la distancia 
+más cercana a la que la partícula $m_1$ se acercaría a la vecindad de $m_2$
+si hubiera fuerza actuando sobre las partículas.
+
+\vspace{.3cm}
+
+En la mayoría de los casos, no podemos escoger ni medir directamente $b$,
+por lo tanto, debemos reducirnos a hablar, en estas situaciones, de la probabilidad
+para varios ángulos de dispersión $\theta$.
+
+\vspace{.3cm}
+
+Consideramos ahora la distribución de ángulos de dispersión que resultan 
+de la colisión con varios parámetros de impacto. Para hacer esto, asumamos
+que tenemos un haz estrecho de partículas, cada una con masa $m_1$ y energía 
+$T_0$. Dirigimos este haz hacia una pequeña región del espacio que contiene 
+una colección de partículas, cada una con una masa $m_2$ en reposo. 
+
+\vspace{.3cm}
+
+\definicion La intensidad o flujo de intensidad $I$ de las partículas
+incidentes, es el número de partículas pasando por unidad de tiempo a través 
+de una unidad de área normal a la dirección del haz. 
+
+\vspace{.3cm}
+
+Si asumimos que la fuerza entre $m_1$ y $m_2$ decae con la distancia 
+lo suficientemente rápido, entonces luego del encuentro, el movimiento 
+de la partícula dispersada asintóticamente se acerca a una línea 
+recta con un ángulo bien definido $\theta$ entre las dirección inicial
+del movimiento y la final.
+
+\vspace{.3cm}
+
+\definicion La sección de dispersión diferencial $\sigma (\theta)$ en el 
+sistema de Centro de Masa (CM) del sistema para la dispersión dentro de 
+un elemento de ángulo sólido $d\Omega'$ a un ángulo particular $\theta$ CM,
+es:
+
+\begin{equation}
+ \sigma(\theta) = \frac{\left(\text{\parbox{20em}{número de interacciones por partículas objetivo que
+ llevan a una dispersión dentro de d$\Omega'$ a un ángulo $\theta$}} \right)}{\text{Número de 
+ partículas incidentes por unidad de área}}
+ \label{eq:disper1}
+\end{equation}
+
+Si $dN$ es el número de partículas dispersadas dentro de $d\Omega'$ por unidad
+de tiempo, entonces la probabilidad de dispersión dentro de $d\Omega'$ de 
+un haz incidente es
+
+\begin{equation}
+ \sigma (\theta) d\Omega' = \frac{dN}{I}
+ \label{eq:disper2}
+\end{equation}
+
+Podemos escribir también,
+
+\begin{equation}
+ \sigma(\theta) = \frac{d\sigma}{d\Omega'} = \frac{1}{I}\frac{dN}{d\Omega'}
+ \label{eq:disper3}
+\end{equation}
+
+El hecho de que $\sigma(\theta)$ tenga las dimensiones de área por estereorradián\footnote{El estereorradián 
+se define haciendo referencia a una esfera de radio $r$. Si el área de una porción de esta esfera es $r^2$, un estereorradián es el ángulo sólido comprendido entre esta porción y el centro de la esfera.}
+da lugar al término \emph{sección de dispersión}. El hecho de que asumimos que 
+la fuerza entre las partículas es central, la dispersión tiene simetría
+axial, podemos entonces hacer la integración sobre el ángulo azimutal 
+para obtener $2\pi$, y luego el elemento de ángulo sólido $d\Omega'$ está
+dado por 
+
+\begin{equation}
+ d\Omega' = 2\pi \sen{\theta} d\theta
+ \label{eq:disper4}
+\end{equation}
+
+Si consideramos, por un momento, la dispersión de una partícula de 
+masas $\mu$ por un centro de fuerza, entonces la figura \mref{fig:problema3fig2},
+muestra que el número de partículas con parámetros de impacto dentro de 
+un rango $db$ a una distancia $b$ deben corresponder con el número de 
+partículas dispersadas dentro del rango angular $d\theta$ a una ángulo $\theta$,
+entonces
+
+\begin{equation}
+ I2\pi b db = - I \sigma(\theta)2\pi\sen{\theta}d\theta
+ \label{eq:disper5}
+\end{equation}
+
+donde $db/d\theta$ es negativo, debido a que hemos asumidos que la fuerza 
+es tal que la cantidad de deflexión angular decrece monótonamente aumentando 
+de parámetro de impacto. 
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.5]{problema3fig2}
+ \caption{Problema equivalente de un cuerpo de masa $\mu$ dispersado 
+ por un centro de fuerzas}
+ \label{fig:problema3fig2}
+\end{figure}
+
+Entonces,
+
+\begin{equation}
+ \sigma(\theta) = \frac{b}{\sen{\theta}}\frac{db}{d\theta}
+ \label{eq:disper6}
+\end{equation}
+
+Podemos obtener ahora una relación entre el parámetro de impacto $b$ y el 
+ángulo de dispersión usando la figura 
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.5]{problema3fig2}
+ \caption{Problema equivalente de un cuerpo de masa $\mu$ dispersado 
+ por un centro de fuerzas}
+ \label{fig:problema3fig2}
+\end{figure}
+
+
+
+
+
 
 
 \section{Problema 4}
