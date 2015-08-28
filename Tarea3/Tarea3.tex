@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{cancel}
 \usepackage{tikz}
+\usepackage{float}
 \usepackage{cleveref}
 \usepackage[margin=1.4in]{geometry}
 \usetikzlibrary{calc}
@@ -104,6 +105,215 @@ las dos frecuencias son inconmensurables.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para demostrar este enunciado utilizaremos algunas técnicas de \cite{arnold}, conjunto
+con algunas particularidades que desarrollaremos aquí. Comenzaremos con unas definiciones 
+importantes las cuales nos permitirán luego demostrar un teorema y un lema que completará
+la demostración del enunciado. El problema debe tratarse en el espacio físico, pero 
+algunas demostraciones se harán en el espacio de fase, pero su extensión es 
+posible.
+
+\vspace{.3cm}
+
+\textbf{Definición}: Dos números $\omega_1$ y $\omega_2$ se llaman racionalmente independientes si la 
+relación $k_1\omega_1 + k_2\omega_2 = 0$, con $k_1$ y $k_2$ enteros, que implica que 
+$k_1 = k_2 = 0$.
+
+\vspace{.3cm}
+
+Por ejemplo $\sqrt{2}$ y $\sqrt{8}$ son racionalmente dependientes, mientras que 
+$\sqrt{6}$ y $\sqrt{8}$ son racionalmente independientes. Podemos ver esta definición
+desde otra perspectiva, que está un poco más cercana a la notación en mecánica clásica,
+
+\vspace{.3cm}
+
+\textbf{Definición}: Si la división entre $\omega_1$ y $\omega_2$ es un número 
+racional $k_2/k_1$, donde $k_1$ y $k_2$ son enteros, entonces se dice que $\omega_1$ y
+$\omega_2$ son \emph{conmensurables}. De lo contrario se llaman \emph{inconmensurables}
+
+\vspace{.3cm}
+
+Para demostrar el enunciado utilizaremos un teorema y un lema definidos sobre un 
+toro $T^2$, esto lo hacemos debido a que como es sabido un sistema de dos dimensiones 
+como el que tratamos, el espacio de fase es de cuatro dimensiones, pero el espacio $\mathbb{R}^4$
+puede descomponerse en la suma directa de dos planos invariantes 
+
+\begin{equation}
+ \mathbb{R}^4 = \mathbb{R}_{1,2} + \mathbb{R}_{3,4}.
+\end{equation}
+
+En cada uno de estos planos las curvas de fase son círculos $S^1$, entonces cada 
+curva de fase pertenece al producto directo de las curvas de fase en $\mathbb{R}_{1,2}$ y
+$\mathbb{R}_{3,4}$, si ambos son círculos entonces obtenemos 
+
+
+\begin{equation}
+ T^2 = S^1 \times S^1,
+\end{equation}
+
+llamado un toro dos-dimensional. 
+
+\vspace{.3cm}
+
+\textbf{Definición:} Un conjunto $A$ es denso en todas partes en un espacio $B$ 
+si hay un punto del conjunto $A$ en cada vecindad arbitrariamente pequeña de 
+cualquier punto del espacio $B$.
+
+Podemos entonces enunciar el siguiente teorema,
+
+\vspace{.3cm}
+
+\textbf{Teorema}: Si $\omega_1$ y $\omega_2$ son racionalmente dependientes, entonces 
+cada curva de fase en el toro $T^2$ es cerrada. Si $\omega_1$ y $\omega_2$ son racionalmente
+independientes, entonces las curvas de fase cubren densamente el toro $T^2$. 
+
+\vspace{.3cm}
+
+Para demostrar el teorema primero demostraremos el siguiente lema,
+
+\vspace{.3cm}
+
+\textbf{Lema}: Considere una rotación del círculo $S^1$ por un ángulo $\alpha$ que 
+es inconmensurable con $2\pi$. Entonces las imágenes de cualquier punto en el círculo 
+bajo las rotaciones repetidas
+
+\begin{equation}
+ \phi, \phi + \alpha, \phi + 2\alpha, \phi + 3\alpha, \dots (\text{mod} 2\pi)
+\end{equation}
+
+forman un conjunto que es denso en todas partes del circulo.
+
+\vspace{.3cm}
+
+\textbf{Prueba}: La prueba puede ser deducida de la estructura de los subgrupos cerrados 
+de la línea. Comenzamos enunciando el llamado ``principio del hoyo de pájaro'': Si $k+1$ 
+objetos yacen en $k$ cajas, entonces al menos uno de las cajas tiene más de un 
+objeto. Dividimos el círculo en $k$ intervalos semiabiertos de longitud $2\pi/k$. 
+Pero por el principio que enunciamos, entre los primeros $k+1$ puntos de nuestra 
+secuencia hay dos que yacen en el mismo intervalo semiabierto. Sean estos puntos 
+$\phi+p\alpha$ y $\phi+q\alpha$ con $p>q$. Consideremos $s=p-q$. El ángulo de 
+rotación $s\alpha$ difiere de un múltiplo de $2\pi$ por menos de $2\pi/k$. En la secuencia 
+de puntos $\phi,\phi+s\alpha,\phi+2s\alpha,\phi+3s\alpha,\dots$ (mod $2\pi$)\footnote{Ver figura 
+\mref{fig:problema2fig1}} cada par de puntos adyacentes están a la misma distancia, menor que $2\pi/k$, de cada uno de 
+ellos. Sea un numero $\epsilon>0$ dado. Escogiendo $k$, lo suficientemente grande,
+podemos tener obtener $2\pi/k < \epsilon$. En cualquier vecindad de $\epsilon$, de 
+cualquier punto de $S^1$ hay puntos de la secuencia $\phi+Ns\alpha$. Lo cual prueba
+el lema.
+
+\vspace{.2cm} $\hspace{12cm} \square$
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.6]{problema2fig1}
+ \caption{Los puntos $\phi+Ns\alpha$}
+ \label{fig:problema2fig1}
+\end{figure}
+
+
+El lema no utiliza directamente la inconmensurabilidad de $\alpha$ con $2\pi$, pero 
+es claro que el lema no es cierto para un $\alpha$ conmensurable con $2\pi$.
+
+\vspace{.3cm}
+
+Estamos en posición entonces para probar el teorema. Aunque todo sea muy matemático 
+hasta ahora luego cuando hablemos del caso particular del problema al que nos enfrentamos,
+haremos una breve descripción física de la situación.
+
+\vspace{.3cm}
+
+\textbf{Prueba del teorema}: Las trayectorias de fase del flujo que consideramos\footnote{Estamos considerando
+un flujo muy similar al que nos encontraremos en el caso del oscilador armónico en 2D.}
+sobre la superficie de $T^2$ satisfacen la ecuación diferencial,
+
+\begin{equation}
+ \dot{\phi}_1 = \omega_1, \quad \dot{\phi}_2 = \omega_2
+\end{equation}
+
+Las soluciones de esta ecuación tienen la forma
+
+\begin{equation}
+ \phi_1 (t) = \phi_1 (0) + \omega_1 t, \quad \phi_2 (t) = \phi_2 (0) + \omega_2 t
+\end{equation}
+
+Sean $\omega_1$ y $\omega_2$ racionalmente dependientes: $k_1\omega_1 + k_2 \omega_2 = 0$,
+$k_1^2+k_2^2 \ne 0$. Las ecuaciones en una variable $T$ 
+
+\begin{equation}
+ \omega_1 T = 2 \pi k_2, \quad \omega_2 T = - 2 \pi k_1
+\end{equation}
+
+son consistentes. Una solución $T$ de estas ecuaciones es un período de la curva 
+cerrada de fase.
+
+\vspace{.3cm}
+
+Sea $\omega_1$ y $\omega_2$ racionalmente independientes. Como dijimos en una definición 
+anterior, $\omega_1/\omega_2$ es un número irracional. Consideremos los puntos de 
+intersección consecutivos de la curva de fase con el meridiano $\phi_1=0$ (mod $2\pi$). 
+Las latitudes de estos puntos son
+
+\begin{equation}
+ \phi_{2,k} ) \phi_{2,0} + 2\pi \frac{\omega_2}{\omega_1}k \quad (\text{mod} 2\pi)
+\end{equation}
+
+Por el lema, el conjunto de puntos de la intersección es denso en todas partes del 
+meridiano. Entonces, las líneas dibujadas desde los puntos de un conjunto que es 
+denso en todas partes, en una línea que yace en el plano en una dirección con 
+esa línea, forman un subconjunto denso en todas partes del plano. Por lo que la imagen
+
+\begin{equation}
+ \tilde{\phi_1}(t) = \phi_1 (t) - 2\pi \left[\frac{\phi_1(t)}{2\pi} \right], \quad
+  \tilde{\phi_2}(t) = \phi_2 (t) - 2\pi \left[\frac{\phi_2(t)}{2\pi} \right]
+\end{equation}
+
+de la curva de fase en el cuadrado $0 \leq \tilde{\phi_1} < 2\pi $, 
+$0 \leq \tilde{\phi_2} < 2\pi $, es densa en todas partes. Por lo que 
+una curva de fase de la ecuación que consideramos es densa en todas 
+partes del toro.
+
+\vspace{.2cm} \hspace{12cm} $\square$
+
+Consideremos ahora que ya hemos probado el lema y teorema que nos interesaban,
+el caso de un oscilador armónico en dos dimensiones. Las componentes de 
+la ecuación de movimiento son
+
+\begin{equation}
+ \frac{d^2x}{dt^2} + \omega_1^2 x = 0, \qquad \frac{d^2y}{dt^2} + \omega_2^2 x = 0,
+\end{equation}
+
+donde $\omega_i = \sqrt{k_i/m}$. La soluciones generales son
+
+\begin{equation}
+ x(t) = A_1 \cos{\omega_1 t + \delta_1}, \qquad y(t) = A_2 \cos{\omega_2 t + \delta_2}
+\label{eq:solOsci2D}
+\end{equation}
+
+donde las constantes $A_i$ y $\phi_i$ dependen de las condiciones iniciales 
+$r_0$ y $v_0$. Como vimos anteriormente la naturaleza de la trayectoria descrita 
+por \mref{eq:solOsci2D} dependen crucialmente de la proporción de las frecuencias 
+angulares $\omega_1/\omega_2$. Démosle un sentido físico aplicado al problema, a las 
+ecuaciones que se encuentran dentro de la prueba del teorema. Veíamos que 
+si $\omega_1$ y $\omega_2$ eran conmensurables las trayectorias eran cerradas. Esto
+significa en el caso del oscilador armónico 2D que cuando la partícula 
+ha hecho $k_1$ oscilaciones completas en la dirección $x$, también
+habrá hecho $k_2$ oscilaciones completas en la dirección de $y$, y por 
+lo tanto ha vuelto a su punto de inicio $r_0$ con la misma velocidad inicial 
+$v_0$. El movimiento es periódico en este caso, lo cual lo podemos entender ahora
+desde una perspectiva física y matemática.
+
+Si $\omega_1$ y $\omega_2$ son inconmensurables, es decir que su proporción 
+es un número irracional, habíamos dicho que las trayectorias eran densas 
+en todas partes, esto desde la perspectiva del problema que tratamos quiere decir 
+que la partícula nunca vuelve a tener sus condiciones iniciales $r_0$ y $v_0$,
+entonces nunca pasa dos veces por el mismo punto con la misma velocidad, lo 
+que hace claramente q la órbita sea abierta.
+
+\vspace{.3cm}
+
+En el caso del oscilador armónico en 2D las trayectorias del espacio físico
+serán figuras de Lissajous cerradas, y periódicas si las frecuencias angulares
+son conmensurables, o cubrirán densamente el espacio físicos con figuras
+tipo Lissajous describiendo trayectorias abiertas.
+
 \section{Problema 3}
 
 Encuentre la sección de dispersión para un potencial coulombiano repulsivo.
@@ -111,6 +321,31 @@ Encuentre la sección de dispersión para un potencial coulombiano repulsivo.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Antes de dar la solución al problema hay que hacer algunas definiciones importantes, y
+encontrar algunas relaciones de la dispersión clásica generalizada que facilitarán
+la solución del caso que consideramos. Para esto utilizaremos un conjunto de 
+acercamientos al problema desde los libros de mecánica clásica como
+\cite{marion, goldstein}.
+
+\vspace{.3cm}
+
+Consideremos la situación mostrada en la figura \mref{fig:problema3fig1}
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.5]{problema3fig1}
+ \caption{Representación esquemática del problema de dispersión visto desde 
+ el sistema de laboratorio.}
+ \label{fig:problema3fig1}
+\end{figure}
+
+que ilustra una colisión en el sistema de coordenadas del laboratorio\footnote{Comúnmente 
+suele llamarse sistema de coordenadas de laboratorio a uno que está en reposo
+viendo el sistema ocurrir, como un científico viendo el fenómeno parado 
+o sentado (si es muy largo) ocurrir.} cuando una fuerza repulsiva existe 
+entre $m_1$ y $m_2$. La 
+
 
 \section{Problema 4}
 
@@ -140,5 +375,16 @@ negativa.
 
 \underline{Solución:} \vspace{.3cm}
 
+\begin{thebibliography}{10}
+ \bibitem{arnold}
+ V.I. Arnold, \emph{Ordinary Differential Equations}, Springer-Verlang,
+ 3ra edición, 1992.
+ \bibitem{marion}
+ S. Thronton y J. Marion, \textit{Classical dynamics of particles and systems}, Thomson Brooks/Cole,
+ 5ta edición, 2004.
+ \bibitem{goldstein}
+ H. Goldstein, \emph{Classical Mechanics}, Addison-Wesley, 2da edición,
+ 1980.
+\end{thebibliography}
 
 \end{document}
