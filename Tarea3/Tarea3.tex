@@ -12,6 +12,7 @@
 \usepackage{float}
 \usepackage{cleveref}
 \usepackage[margin=1.4in]{geometry}
+\usepackage[labelfont=bf]{caption}
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
@@ -49,16 +50,16 @@
 \newcommand{\euler}{\mathrm{e}}
 \newcommand{\im}{i}
 
-%Lemas, teoremas y definiciones
+%Lemas, teoremas, definiciones y pruebas
 \newcommand{\definicion}{\textbf{Definición: }}
-\newcommand{\Lema}{\textbf{Lema: }}
+\newcommand{\lema}{\textbf{Lema: }}
 \newcommand{\teorema}{\textbf{Teorema: }}
-
+\newcommand{\prueba}{\textbf{Prueba: }}
 
 
 %opening
 \title{Mecánica Clásica Tarea \# 3}
-\author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México}
+\author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México.}
 \date{}
 
 \begin{document}
@@ -92,7 +93,7 @@ Trace el diagrama o retrato de fase que corresponde al movimiento de una
 partícula en una dimensión sujeta al potencial que se ilustra en la 
 figura.
 
-\begin{figure}[h]
+\begin{figure}[H]
  \center 
  \includegraphics[scale=0.5]{problema1fig1}
  \caption{Problema 1. Diagrama del potencial a estudiar}
@@ -101,6 +102,32 @@ figura.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+En el gráfico del potencial a estudiar es fácil notar que, en la porción dada, hay 
+dos mínimos y dos máximos (casi se puede ver el tercero) pronunciados, en los mínimos tendremos en el retrato 
+de fases centros y en los máximos puntos de silla. El retrato de fase resultante es 
+el mostrado en la figura \mref{fig:diagramaFase}.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\underline{\textbf{Nota:}} En este espacio que queda libre en la página, agrego una nota relevante. La tarea, tanto 
+el PDF como el archivo .\TeX , las imágenes, y el código en Python (ingresado en un 
+NoteBook de Jupyter\footnote{\href{https://jupyter.org/}{https://jupyter.org/}}), que utilicé para crear algunos
+gráficos posteriores, se encuentran en un repositorio público en el cual se puede acceder al código 
+\LaTeX y ver los PDF, de ésta y las otras tareas que he entregado y seguiré entregando. 
+
+\vspace{.3cm}
+
+El link al repositorio es el siguiente: \href{https://github.com/FavioVazquez/MecanicaClasica-PCF}{https://github.com/FavioVazquez/MecanicaClasica-PCF}.
+Cualquier duda con respecto a lo mencionado, no duden en escribirme al correo.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.2]{problema1fig2}
+ \caption{Problema 1. Diagrama de fases resultante}
+ \label{fig:diagramaFase}
+\end{figure}
+
 
 \section{Problema 2}
 
@@ -121,7 +148,7 @@ posible.
 
 \vspace{.3cm}
 
-\textbf{Definición}: Dos números $\omega_1$ y $\omega_2$ se llaman racionalmente independientes si la 
+\definicion Dos números $\omega_1$ y $\omega_2$ se llaman racionalmente independientes si la 
 relación $k_1\omega_1 + k_2\omega_2 = 0$, con $k_1$ y $k_2$ enteros, que implica que 
 $k_1 = k_2 = 0$.
 
@@ -133,7 +160,7 @@ desde otra perspectiva, que está un poco más cercana a la notación en mecáni
 
 \vspace{.3cm}
 
-\textbf{Definición}: Si la división entre $\omega_1$ y $\omega_2$ es un número 
+\definicion Si la división entre $\omega_1$ y $\omega_2$ es un número 
 racional $k_2/k_1$, donde $k_1$ y $k_2$ son enteros, entonces se dice que $\omega_1$ y
 $\omega_2$ son \emph{conmensurables}. De lo contrario se llaman \emph{inconmensurables}
 
@@ -148,7 +175,7 @@ puede descomponerse en la suma directa de dos planos invariantes
  \mathbb{R}^4 = \mathbb{R}_{1,2} + \mathbb{R}_{3,4}.
 \end{equation}
 
-En cada uno de estos planos las curvas de fase son círculos $S^1$, entonces cada 
+En cada uno de estos planos las curvas de fase son círculos $S^1$, para el caso que tratamos, entonces cada 
 curva de fase pertenece al producto directo de las curvas de fase en $\mathbb{R}_{1,2}$ y
 $\mathbb{R}_{3,4}$, si ambos son círculos entonces obtenemos 
 
@@ -161,15 +188,17 @@ llamado un toro dos-dimensional.
 
 \vspace{.3cm}
 
-\textbf{Definición:} Un conjunto $A$ es denso en todas partes en un espacio $B$ 
+\definicion Un conjunto $A$ es denso en todas partes en un espacio $B$ 
 si hay un punto del conjunto $A$ en cada vecindad arbitrariamente pequeña de 
 cualquier punto del espacio $B$.
+
+\vspace{.3cm}
 
 Podemos entonces enunciar el siguiente teorema,
 
 \vspace{.3cm}
 
-\textbf{Teorema}: Si $\omega_1$ y $\omega_2$ son racionalmente dependientes, entonces 
+\teorema Si $\omega_1$ y $\omega_2$ son racionalmente dependientes, entonces 
 cada curva de fase en el toro $T^2$ es cerrada. Si $\omega_1$ y $\omega_2$ son racionalmente
 independientes, entonces las curvas de fase cubren densamente el toro $T^2$. 
 
@@ -179,19 +208,19 @@ Para demostrar el teorema primero demostraremos el siguiente lema,
 
 \vspace{.3cm}
 
-\textbf{Lema}: Considere una rotación del círculo $S^1$ por un ángulo $\alpha$ que 
+\lema Considere una rotación del círculo $S^1$ por un ángulo $\alpha$ que 
 es inconmensurable con $2\pi$. Entonces las imágenes de cualquier punto en el círculo 
 bajo las rotaciones repetidas
 
 \begin{equation}
- \phi, \phi + \alpha, \phi + 2\alpha, \phi + 3\alpha, \dots (\text{mod} 2\pi)
+ \phi, \phi + \alpha, \phi + 2\alpha, \phi + 3\alpha, \dots (\text{mod} 2\pi),
 \end{equation}
 
 forman un conjunto que es denso en todas partes del circulo.
 
 \vspace{.3cm}
 
-\textbf{Prueba}: La prueba puede ser deducida de la estructura de los subgrupos cerrados 
+\prueba La prueba puede ser deducida de la estructura de los subgrupos cerrados 
 de la línea. Comenzamos enunciando el llamado ``principio del hoyo de pájaro'': Si $k+1$ 
 objetos yacen en $k$ cajas, entonces al menos uno de las cajas tiene más de un 
 objeto. Dividimos el círculo en $k$ intervalos semiabiertos de longitud $2\pi/k$. 
@@ -232,20 +261,20 @@ un flujo muy similar al que nos encontraremos en el caso del oscilador armónico
 sobre la superficie de $T^2$ satisfacen la ecuación diferencial,
 
 \begin{equation}
- \dot{\phi}_1 = \omega_1, \quad \dot{\phi}_2 = \omega_2
+ \dot{\phi}_1 = \omega_1, \quad \dot{\phi}_2 = \omega_2.
 \end{equation}
 
 Las soluciones de esta ecuación tienen la forma
 
 \begin{equation}
- \phi_1 (t) = \phi_1 (0) + \omega_1 t, \quad \phi_2 (t) = \phi_2 (0) + \omega_2 t
+ \phi_1 (t) = \phi_1 (0) + \omega_1 t, \quad \phi_2 (t) = \phi_2 (0) + \omega_2 t.
 \end{equation}
 
 Sean $\omega_1$ y $\omega_2$ racionalmente dependientes: $k_1\omega_1 + k_2 \omega_2 = 0$,
 $k_1^2+k_2^2 \ne 0$. Las ecuaciones en una variable $T$ 
 
 \begin{equation}
- \omega_1 T = 2 \pi k_2, \quad \omega_2 T = - 2 \pi k_1
+ \omega_1 T = 2 \pi k_2, \quad \omega_2 T = - 2 \pi k_1,
 \end{equation}
 
 son consistentes. Una solución $T$ de estas ecuaciones es un período de la curva 
@@ -259,7 +288,7 @@ intersección consecutivos de la curva de fase con el meridiano $\phi_1=0$ (mod 
 Las latitudes de estos puntos son
 
 \begin{equation}
- \phi_{2,k} ) \phi_{2,0} + 2\pi \frac{\omega_2}{\omega_1}k \quad (\text{mod} 2\pi)
+ \phi_{2,k} ) \phi_{2,0} + 2\pi \frac{\omega_2}{\omega_1}k \quad (\text{mod} 2\pi).
 \end{equation}
 
 Por el lema, el conjunto de puntos de la intersección es denso en todas partes del 
@@ -269,7 +298,7 @@ esa línea, forman un subconjunto denso en todas partes del plano. Por lo que la
 
 \begin{equation}
  \tilde{\phi_1}(t) = \phi_1 (t) - 2\pi \left[\frac{\phi_1(t)}{2\pi} \right], \quad
-  \tilde{\phi_2}(t) = \phi_2 (t) - 2\pi \left[\frac{\phi_2(t)}{2\pi} \right]
+  \tilde{\phi_2}(t) = \phi_2 (t) - 2\pi \left[\frac{\phi_2(t)}{2\pi} \right],
 \end{equation}
 
 de la curva de fase en el cuadrado $0 \leq \tilde{\phi_1} < 2\pi $, 
@@ -290,7 +319,7 @@ la ecuación de movimiento son
 donde $\omega_i = \sqrt{k_i/m}$. La soluciones generales son
 
 \begin{equation}
- x(t) = A_1 \cos{\omega_1 t + \delta_1}, \qquad y(t) = A_2 \cos{\omega_2 t + \delta_2}
+ x(t) = A_1 \cos{\omega_1 t + \delta_1}, \qquad y(t) = A_2 \cos{\omega_2 t + \delta_2},
 \label{eq:solOsci2D}
 \end{equation}
 
@@ -399,7 +428,7 @@ es:
 \begin{equation}
  \sigma(\theta) = \frac{\left(\text{\parbox{20em}{número de interacciones por partículas objetivo que
  llevan a una dispersión dentro de d$\Omega'$ a un ángulo $\theta$}} \right)}{\text{Número de 
- partículas incidentes por unidad de área}}
+ partículas incidentes por unidad de área}}.
  \label{eq:disper1}
 \end{equation}
 
@@ -408,14 +437,14 @@ de tiempo, entonces la probabilidad de dispersión dentro de $d\Omega'$ de
 un haz incidente es
 
 \begin{equation}
- \sigma (\theta) d\Omega' = \frac{dN}{I}
+ \sigma (\theta) d\Omega' = \frac{dN}{I}.
  \label{eq:disper2}
 \end{equation}
 
 Podemos escribir también,
 
 \begin{equation}
- \sigma(\theta) = \frac{d\sigma}{d\Omega'} = \frac{1}{I}\frac{dN}{d\Omega'}
+ \sigma(\theta) = \frac{d\sigma}{d\Omega'} = \frac{1}{I}\frac{dN}{d\Omega'}.
  \label{eq:disper3}
 \end{equation}
 
@@ -428,7 +457,7 @@ para obtener $2\pi$, y luego el elemento de ángulo sólido $d\Omega'$ está
 dado por 
 
 \begin{equation}
- d\Omega' = 2\pi \sen{\theta} d\theta
+ d\Omega' = 2\pi \sen{\theta} d\theta.
  \label{eq:disper4}
 \end{equation}
 
@@ -440,7 +469,7 @@ partículas dispersadas dentro del rango angular $d\theta$ a una ángulo $\theta
 entonces
 
 \begin{equation}
- I2\pi b db = - I \sigma(\theta)2\pi\sen{\theta}d\theta
+ I2\pi b db = - I \sigma(\theta)2\pi\sen{\theta}d\theta,
  \label{eq:disper5}
 \end{equation}
 
@@ -459,7 +488,7 @@ de parámetro de impacto.
 Entonces,
 
 \begin{equation}
- \sigma(\theta) = \frac{b}{\sen{\theta}}\left\| \frac{db}{d\theta} \right\|
+ \sigma(\theta) = \frac{b}{\sen{\theta}}\left\| \frac{db}{d\theta} \right\|.
  \label{eq:disper6}
 \end{equation}
 
@@ -480,7 +509,7 @@ dado por ($l$ es la velocidad angular y $V$ la energía potencial)
 
 \begin{equation}
  \Delta \Theta = \int_{r_{min}}^{r_{max}} \frac{(l/r^2)dr}{\sqrt{2\mu[
- E - V - (l^2/2\mu r^2)}}
+ E - V - (l^2/2\mu r^2)}}.
  \label{eq:disper7}
 \end{equation}
 
@@ -489,7 +518,7 @@ respecto al punto de mayor acercamiento al centro de fuerza ($A$), lo que
 hace que los ángulos $\alpha$ y $\beta$ sean iguales. Tenemos entonces que 
 
 \begin{equation}
- \theta = \pi - 2\Theta
+ \theta = \pi - 2\Theta.
  \label{eq:disper8}
 \end{equation}
 
@@ -497,7 +526,7 @@ Para el caso en que $r_{max} = \infty$, el ángulo $\Theta$ está dado por
 
 \begin{equation}
  \Delta \Theta = \int_{r_{min}}^{\infty} \frac{(b/r^2)dr}{\sqrt{1 -
- (b^2/r^2) - (U/T_0')}}
+ (b^2/r^2) - (U/T_0')}}.
  \label{eq:disper9}
 \end{equation}
 
@@ -512,71 +541,71 @@ que consideremos un potencial coulombiano repulsivo, por lo tanto podemos
 escribir este como
 
 \begin{equation}
- V(r) = \frac{k}{r}
+ V(r) = \frac{k}{r}.
  \label{eq:coulombPot}
 \end{equation}
 
 Entonces la ecuación \mref{eq:disper9}, se convierte en
 
 \begin{equation}
- \Theta = \int_{r_{min}}^{\infty} \frac{(b/r)dr}{\sqrt{r^2-(k/T_0')r-b^2}}
+ \Theta = \int_{r_{min}}^{\infty} \frac{(b/r)dr}{\sqrt{r^2-(k/T_0')r-b^2}},
 \end{equation}
 
 que al integrarse resulta (haciendo cambio de variable $b/r$ y de ahí un
 proceso un poco largo) en
 
 \begin{equation}
- \cos{\Theta} = \frac{(\kappa/b)}{\sqrt{1+(\kappa/b)^2}}
+ \cos{\Theta} = \frac{(\kappa/b)}{\sqrt{1+(\kappa/b)^2}},
  \label{eq:CosThet}
 \end{equation}
 
 donde hemos definido
 
 \begin{equation}
- \kappa = \frac{k}{2T_0'}
+ \kappa = \frac{k}{2T_0'}.
 \end{equation}
 
 Podemos reescribir \mref{eq:CosThet} como
 
 \begin{equation}
- b^2=\kappa^2 \tan^2{\Theta}
+ b^2=\kappa^2 \tan^2{\Theta}.
 \end{equation}
 
 Pero de la ecuación \mref{eq:disper8}, $\Theta = \pi /2 - \theta/2$,
 entonces
 
 \begin{equation}
- b = \kappa \cot{\theta/2}
+ b = \kappa \cot{\theta/2}.
 \end{equation}
 
 Entonces
 
 \begin{equation}
-\frac{db}{d\theta} = - \frac{\kappa}{2} \frac{1}{\sin^2{\theta/2}} 
+\frac{db}{d\theta} = - \frac{\kappa}{2} \frac{1}{\sin^2{\theta/2}}.
 \end{equation}
 
 Y de la ecuación \mref{eq:disper6} tenemos que 
 
 \begin{equation}
- \sigma (\theta) = \frac{\kappa^2}{2}\frac{\cot{\theta/2}}{\sen{\theta}\sen^2{\theta/2}}
+ \sigma (\theta) = \frac{\kappa^2}{2}\frac{\cot{\theta/2}}{\sen{\theta}\sen^2{\theta/2}}.
 \end{equation}
 
 Pero,
 
 \begin{equation}
- \sen{\theta} = 2\sen{\theta/2}\cos{\theta/2}
+ \sen{\theta} = 2\sen{\theta/2}\cos{\theta/2}.
 \end{equation}
 
 Por lo que,
 
 \begin{equation}
-  \sigma (\theta) = \frac{\kappa^2}{4}\frac{1}{\sen^4{\theta/2}}
+  \sigma (\theta) = \frac{\kappa^2}{4}\frac{1}{\sen^4{\theta/2}},
 \end{equation}
 
 o,
 
 \begin{equation}
- \boxed{\sigma (\theta) = \frac{k^2}{(4T_0')^2}\frac{1}{\sen^4{\theta/2}}}
+ \boxed{\sigma (\theta) = \frac{k^2}{(4T_0')^2}\frac{1}{\sen^4{\theta/2}}.}
 \end{equation}
 
 Que es la conocida sección de dispersión para un potencial coulombiano repulsivo,
@@ -601,7 +630,7 @@ de la oscilación. ¿Es esto válido cuando $n<0$?
 \underline{Solución:} \vspace{.3cm}
 
 Debido a la forma de la fuerza que nos dan en el problema, y al hecho de que en una 
-dimensión todas las fuerzas que dependen solo de $x$ con conservativas, entonces 
+dimensión todas las fuerzas que dependen solo de $x$ son conservativas, entonces 
 podemos escribir \cite{saletan},
 
 \begin{equation}
@@ -649,7 +678,7 @@ de $-A$ a $A$ es el mismo que le toma para ir de $A$ a $-A$ (si el potencial
 es simétrico), podemos escribir el período como
 
 \begin{equation}
- T = 2 \sqrt{m/2} \int_{-A}^A \frac{dx}{\sqrt{E - V(x)}} = \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{E - V(x)}}
+ T = 2 \sqrt{m/2} \int_{-A}^A \frac{dx}{\sqrt{E - V(x)}} = \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{E - V(x)}}.
 \label{eq:periodo1}
 \end{equation}
 
@@ -670,7 +699,7 @@ igual a cero, o dicho de otra manera en los que la energía total es igual al po
 entonces
 
 \begin{equation}
- E = V(A) =  \Theta A^{2(n+1)}
+ E = V(A) =  \Theta A^{2(n+1)}.
  \label{eq:energTotal2}
 \end{equation}
 
@@ -679,23 +708,23 @@ Introduciendo los resultados de \mref{eq:potencial2} y \mref{eq:energTotal2} en
 
 \begin{equation}
  T = \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{\Theta A^{2(n+1)} - \Theta x^{2(n+1)}}} = 
- \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{\Theta} \sqrt{A^{2(n+1)} - x^{2(n+1)}}}
+ \sqrt{2m} \int_{-A}^A \frac{dx}{\sqrt{\Theta} \sqrt{A^{2(n+1)} - x^{2(n+1)}}}.
  \label{eq:periodo2}
 \end{equation}
 
 Si hacemos el cambio de variables $x = A \xi$, entonces 
 
 \begin{equation}
- dx = A d\xi
+ dx = A d\xi,
 \end{equation}
 
 y los límites de integración cambian a 
 
 \begin{align*}
 %
- (\text{inferior}) \quad x &= - A \Rightarrow \xi = A / -A = -1 \\
+ (\text{inferior}) \quad x &= - A \Rightarrow \xi = A / -A = -1, \\
  %
- (\text{superior}) \quad x &= A \Rightarrow \xi = A / A = 1
+ (\text{superior}) \quad x &= A \Rightarrow \xi = A / A = 1,
  %
 \end{align*}
 
@@ -704,11 +733,11 @@ entonces \mref{eq:periodo2} se transforma en
 \begin{align}
  \begin{split}
   %
-  T &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{A d\xi}{\sqrt{A^{2(n+1)} - (A\xi)^{2(n+1)}}} \\
+  T &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{A d\xi}{\sqrt{A^{2(n+1)} - (A\xi)^{2(n+1)}}}, \\
   %
-    &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{Ad\xi}{A^{2(n+1)}[1 - \xi^{2(n+1)}]} \\
+    &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{Ad\xi}{A^{2(n+1)}[1 - \xi^{2(n+1)}]}, \\
   %
-    &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{Ad\xi}{A^{(n+1)}\sqrt{1-\xi^{2(n+1)}}}
+    &= \sqrt{\frac{2m}{\Theta}} \int_{-1}^1 \frac{Ad\xi}{A^{(n+1)}\sqrt{1-\xi^{2(n+1)}}}.
   %
  \end{split}
 \end{align}
@@ -716,7 +745,7 @@ entonces \mref{eq:periodo2} se transforma en
 Y debido a que $A/A^{(n+1)} = A^{-n}$, tenemos que 
 
 \begin{equation}
- \boxed{T = \sqrt{\frac{2m}{\Theta}} A^{-n} \int_{-1}^1 \frac{d\xi}{\sqrt{1-\xi^{2(n+1)}}}}
+ \boxed{T = \sqrt{\frac{2m}{\Theta}} A^{-n} \int_{-1}^1 \frac{d\xi}{\sqrt{1-\xi^{2(n+1)}}}.}
 \end{equation}
 
 Y debido a que la integral es una constante, entonces hemos demostrado que $T \propto A^{-n}$.
@@ -726,7 +755,7 @@ Y debido a que la integral es una constante, entonces hemos demostrado que $T \p
 Debido a la forma del potencial, si $n=0$,
 
 \begin{equation}
- F(x) = -k x
+ F(x) = -k x.
 \end{equation}
 
 Que es simplemente el caso del oscilador armónico de una dimensión. Por otra parte si 
@@ -745,12 +774,6 @@ puede demostrar siguiendo un procedimiento similar al que llevamos a cabo en la 
 del problema. Pero por la descripción del potencial que acabamos de hacer vemos que 
 sería un error conjeturar tal cosa, por lo cual esta solución no es válida cuando 
 $n<0$.
-
-
-
-
-
-
 
 \section{Problema 5}
 
@@ -785,7 +808,7 @@ con \texttt{plot.streamplot()}.
 Comencemos por $(r,\theta)$. En este caso tenemos la  ecuación para las órbitas que es
 
 \begin{equation}
- r = \frac{\alpha}{1 + \epsilon \cos{\theta}} 
+ r = \frac{\alpha}{1 + \epsilon \cos{\theta}},
  \label{eq:rtita}
 \end{equation}
 
@@ -794,9 +817,9 @@ donde,
 \begin{align}
  \begin{split}
   %
-  \alpha &= \frac{l^2}{m k} \\
+  \alpha &= \frac{l^2}{m k}, \\
   %
-  \epsilon &= \sqrt{1 + \frac{2El^2}{mk^2}}
+  \epsilon &= \sqrt{1 + \frac{2El^2}{mk^2}},
  \end{split}
 \end{align}
 
@@ -860,11 +883,11 @@ Para $(\dot{\theta},r)$, podemos utilizar el impulso angular, que se expresa com
 que si despejamos $\dot{\theta}$, tendremos a $\dot{\theta}$ en función de $r$,
 
 \begin{equation}
- \dot{\theta} = \frac{l}{mr^2}
+ \dot{\theta} = \frac{l}{mr^2}.
 \end{equation}
 
 Una función sencilla, positiva definida de la siguiente forma de la figura \mref{fig:titaDotR},
-vemos que $\dot{\theta}$ decrece de forma cuadrática con $r$ lo cual es lo esperado
+vemos que $\dot{\theta}$ decrece de forma cuadrática con $r$ lo cual es lo esperado.
 
 \begin{figure}[H]
  \center 
@@ -876,7 +899,7 @@ vemos que $\dot{\theta}$ decrece de forma cuadrática con $r$ lo cual es lo espe
 Para el caso de $(\dot{r},\theta)$, podemos utilizar el hecho de que 
 
 \begin{equation}
- \frac{dr}{dt} = \frac{dr}{d\theta}\frac{d\theta}{dt}
+ \frac{dr}{dt} = \frac{dr}{d\theta}\frac{d\theta}{dt}.
 \end{equation}
 
 Derivamos entonces la ecuación \mref{eq:rtita} con respecto a $\theta$ y multiplicamos 
@@ -886,18 +909,18 @@ por $\dot{\theta}$, (recordemos que $\dot{\theta} = l/mr^2$ y que $r=\frac{\alph
  \begin{split}
   %
   \frac{dr}{dt} &= \frac{\cancel{\alpha'(1+\epsilon \cos{\theta})}-\alpha(1+\epsilon 
-  \cos{\theta})'}{(1+\epsilon\cos{\theta})^2} \dot{\theta} \\
+  \cos{\theta})'}{(1+\epsilon\cos{\theta})^2} \dot{\theta}, \\
   %
 		&= \frac{\alpha\epsilon \sen{\theta}}{(1+\epsilon\cos{\theta})^2} 
-		\frac{l}{mr^2} \\
+		\frac{l}{mr^2}, \\
   %
 		&= \frac{\cancel{\alpha}\epsilon\sen{\theta}}{\cancel{(1+\epsilon\cos{\theta})^2}}
-		\frac{l}{m}\frac{\cancel{(1+\epsilon\cos{\theta})^2}}{\alpha^{\cancel{2}}}
+		\frac{l}{m}\frac{\cancel{(1+\epsilon\cos{\theta})^2}}{\alpha^{\cancel{2}}}.
  \end{split}
 \end{align}
 
 \begin{equation}
- \therefore \dot{r}(\theta) = \frac{\alpha l \epsilon \sen{\theta}}{m}
+ \therefore \dot{r}(\theta) = \frac{\alpha l \epsilon \sen{\theta}}{m}.
 \end{equation}
 
 Consideremos los siguientes casos
@@ -928,7 +951,7 @@ de un potencial gravitatorio $V(x) = - k/r$, que tiene la siguiente forma
 y despejamos $\dot{r}$,
 
 \begin{equation}
- \dot{r} = \pm \sqrt{E - \frac{l^2}{2mr^2} + \frac{k}{r}}
+ \dot{r} = \pm \sqrt{E - \frac{l^2}{2mr^2} + \frac{k}{r}}.
 \end{equation}
 
 El tratamiento que haremos con en este caso será diferente, y lo haremos considerando 
@@ -939,7 +962,7 @@ problema.
 
 \vspace{.3cm}
 
-Entonces en este caso, tomando a $l$ como constante, tendremos el gráfico \mref{fig:rDotR}. Las 
+En este caso, tomando a $l$ como constante, tendremos el gráfico \mref{fig:rDotR}. Las 
 curvas cerradas de este retrato de fase corresponden a estados ligados, en los que 
 la partícula tiene una distancia mínima y máxima del centro de fuerza; en el espacio de
 configuración esto significa que la partícula está rotando respecto a el centro de 
@@ -949,18 +972,18 @@ velocidad cruzan al eje $r$ en puntos que dependen de $E$. Mientras más grande 
 cercano a cero), más cercano será el punto de cruce interno ($r$ mínimo) al origen y más 
 lejano el externo ($r$ máximo) del mismo. Las energías negativas terminan en $E=0$, cuando 
 el punto de cruce externo se va a $r=\infty$. Esta es la separatriz para este problema, y 
-corresponde a una órbita parabólica en el espacio de configuración (ver figura \mref{fig:parabola}).
+corresponde a una órbita \textbf{parabólica} en el espacio de configuración (ver figura \mref{fig:parabola}).
 Mientras más pequeño $E$, mas lejano el punto de cruce interno y más cercano 
 el externo, hasta que se encuentran en un punto, que corresponde a un $r$ fijo, 
-o a una órbita circular en el espacio de configuración (ver figura \mref{fig:circulo}),
+o a una órbita \textbf{circular} en el espacio de configuración (ver figura \mref{fig:circulo}),
 para un valor dado de $l$. Este es el único punto singular de este sistema. Las
 órbitas del espacio de fase de velocidad para valores negativos de $E$, entre cero 
-y este límite inferior corresponden a elipses en el espacio de configuración (ver 
+y este límite inferior corresponden a \textbf{elipses} en el espacio de configuración (ver 
 figura \mref{fig:elipse}). Las órbitas del espacio de fase de velocidad para $E>0$, 
 cruzan el eje $r$ solo una vez, entonces cada órbita tiene una asíntota, para $r$ grande,
 que es paralela al eje $r$ en el espacio de fases de velocidad. La distancia de 
 esta órbita desde el eje $r$ es la velocidad mínima $|\dot{r}|$ a esa energía. Estas 
-órbitas en el espacio de configuración para $E>0$ correspondan a órbitas hiperbólicas 
+órbitas en el espacio de configuración para $E>0$ correspondan a órbitas \textbf{hiperbólicas}
 (ver figura \mref{fig:hiperbola}.
 
 
@@ -970,10 +993,6 @@ esta órbita desde el eje $r$ es la velocidad mínima $|\dot{r}|$ a esa energía
  \caption{Gráfico de $(\dot{r},r)$}
  \label{fig:rDotR}
 \end{figure}
-
-
-
-
 
 
 \begin{thebibliography}{10}
