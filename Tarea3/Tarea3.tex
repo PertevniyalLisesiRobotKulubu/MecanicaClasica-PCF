@@ -774,9 +774,76 @@ Es claro que es equivalente graficar la proyección de $(a,b)$ a la de $(b,a)$}.
 
 \vspace{.3cm}
 
-Comencemos por $(r,\theta)$
+Todos los códigos con los que realicé estas gráficas son libres y se encuentran en 
+el un NoteBook de Python, en \href{}{}
+
+\vspace{.3cm}
+
+Comencemos por $(r,\theta)$. En este caso tenemos la ecuación para las órbitas que es
+
+\begin{equation}
+ r = \frac{\alpha}{1 + \epsilon \cos{\theta}} 
+ \label{eq:rtita}
+\end{equation}
+
+donde,
+
+\begin{align}
+ \begin{split}
+  %
+  \alpha &= \frac{l^2}{m l} \\
+  %
+  \epsilon = \sqrt{1 + \frac{2El^2}{mk^2}}
+ \end{split}
+\end{align}
+
+A $\epsilon$ se le conoce como la excentricidad, y a $2\alpha$ como el latus rectum 
+de la órbita. Esta ecuación \mref{eq:rtita} es la de una cónica con uno de sus focos 
+en el origen. Y tenemos los siguientes casos\footnote{Los valores de $E$ menores que 
+$V_{min}= -(mk^2/2l^2)$ no producen movimiento físico real, debido que para esos 
+casos $\dot{r}^2 < 0$ y la velocidad es imaginaria (y aunque lo intentemos mucho
+no podremos imaginarla)}:
+
+\begin{itemize}
+ \item $\epsilon > 1, \qquad E>0$ $\Rightarrow$ Hipérbola
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema5fig1}
+ \caption{Caso $\epsilon > 1$}
+\end{figure}
+
+\newpage %Ojo con este newpage puede cambiar
+
+ \item $\epsilon = 1, \qquad E=0$ $\Rightarrow$ Parábola
 
 
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.45]{problema5fig2}
+ \caption{Caso $\epsilon = 1$}
+\end{figure}
+
+ \item $\epsilon = 0, \qquad E=V_{min}$ $\Rightarrow$ Parábola
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.4]{problema5fig3}
+ \caption{Caso $\epsilon = 0$}
+\end{figure}
+
+\newpage
+
+ \item $0 < \epsilon < 1, \qquad  0 < E < V_{min}$ $\Rightarrow$ Elipse
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.45]{problema5fig4}
+ \caption{Caso $0 < \epsilon < 1$}
+\end{figure}
+
+
+\end{itemize}
 
 \begin{thebibliography}{10}
  \bibitem{arnold}
