@@ -493,10 +493,10 @@ hace que los ángulos $\alpha$ y $\beta$ sean iguales. Tenemos entonces que
  \label{eq:disper8}
 \end{equation}
 
-Para el caso en que $r_{max} = \inf$, el ángulo $\Theta$ está dado por
+Para el caso en que $r_{max} = \infty$, el ángulo $\Theta$ está dado por
 
 \begin{equation}
- \Delta \Theta = \int_{r_{min}}^{\inf} \frac{(b/r^2)dr}{\sqrt{1 -
+ \Delta \Theta = \int_{r_{min}}^{\infty} \frac{(b/r^2)dr}{\sqrt{1 -
  (b^2/r^2) - (U/T_0')}}
  \label{eq:disper9}
 \end{equation}
@@ -519,7 +519,7 @@ escribir este como
 Entonces la ecuación \mref{eq:disper9}, se convierte en
 
 \begin{equation}
- \Theta = \int_{r_{min}}^{\inf} \frac{(b/r)dr}{\sqrt{r^2-(k/T_0')r-b^2}}
+ \Theta = \int_{r_{min}}^{\infty} \frac{(b/r)dr}{\sqrt{r^2-(k/T_0')r-b^2}}
 \end{equation}
 
 que al integrarse resulta (haciendo cambio de variable $b/r$ y de ahí un
@@ -777,7 +777,8 @@ Es claro que es equivalente graficar la proyección de $(a,b)$ a la de $(b,a)$}.
 Todos los códigos con los que realicé estas gráficas son libres y se encuentran en 
 el un NoteBook de Python, en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Problema5.ipynb}{\color{blue}.:este link:..}.
 Fueron hechos com Matplotlib\footnote{\href{http://matplotlib.org/}{http://matplotlib.org/}} usando
-la función \texttt{plot.polar()}.
+la función \texttt{plot.polar()} algunos, otros con \texttt{plot.plot()} y el último 
+con \texttt{plot.streamplot()}.
 
 \vspace{.3cm}
 
@@ -947,7 +948,7 @@ estados tienen todos energías negativas $E$ y las órbitas del espacio de fase 
 velocidad cruzan al eje $r$ en puntos que dependen de $E$. Mientras más grande $E$ (más 
 cercano a cero), más cercano será el punto de cruce interno ($r$ mínimo) al origen y más 
 lejano el externo ($r$ máximo) del mismo. Las energías negativas terminan en $E=0$, cuando 
-el punto de cruce externo se va a $r=\inf$. Esta es la separatriz para este problema, y 
+el punto de cruce externo se va a $r=\infty$. Esta es la separatriz para este problema, y 
 corresponde a una órbita parabólica en el espacio de configuración (ver figura \mref{fig:parabola}).
 Mientras más pequeño $E$, mas lejano el punto de cruce interno y más cercano 
 el externo, hasta que se encuentran en un punto, que corresponde a un $r$ fijo, 
