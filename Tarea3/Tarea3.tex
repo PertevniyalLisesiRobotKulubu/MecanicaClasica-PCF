@@ -775,7 +775,9 @@ Es claro que es equivalente graficar la proyección de $(a,b)$ a la de $(b,a)$}.
 \vspace{.3cm}
 
 Todos los códigos con los que realicé estas gráficas son libres y se encuentran en 
-el un NoteBook de Python, en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Problema5.ipynb}{\color{blue}.:este link:..}
+el un NoteBook de Python, en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Problema5.ipynb}{\color{blue}.:este link:..}.
+Fueron hechos com Matplotlib\footnote{\href{http://matplotlib.org/}{http://matplotlib.org/}} usando
+la función \texttt{plot.polar()}.
 
 \vspace{.3cm}
 
@@ -791,9 +793,9 @@ donde,
 \begin{align}
  \begin{split}
   %
-  \alpha &= \frac{l^2}{m l} \\
+  \alpha &= \frac{l^2}{m k} \\
   %
-  \epsilon = \sqrt{1 + \frac{2El^2}{mk^2}}
+  \epsilon &= \sqrt{1 + \frac{2El^2}{mk^2}}
  \end{split}
 \end{align}
 
@@ -842,8 +844,94 @@ no podremos imaginarla)}:
  \caption{Caso $0 < \epsilon < 1$}
 \end{figure}
 
-
 \end{itemize}
+
+Para $(\dot{\theta},r)$, podemos utilizar el impulso angular, que se expresa como
+
+\begin{equation}
+ l = mr^2\dot{\theta},
+\end{equation}
+
+que si despejamos $\dot{\theta}$, tendremos a $\dot{\theta}$ en función de $r$,
+
+\begin{equation}
+ \dot{\theta} = \frac{l}{mr^2}
+\end{equation}
+
+Una función sencilla, positiva definida de la siguiente forma de la figura \mref{fig:titaDotR},
+vemos que $\dot{\theta}$ decrece de forma cuadrática con $r$ lo cual es lo esperado
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema5fig5}
+ \caption{Gráfico de  $\dot{\theta} = \frac{l}{mr^2}$}
+ \label{fig:titaDotR}
+\end{figure}
+
+Para el caso de $(\dot{r},\theta)$, podemos utilizar el hecho de que 
+
+\begin{equation}
+ \frac{dr}{dt} = \frac{dr}{d\theta}\frac{d\theta}{dt}
+\end{equation}
+
+Derivamos entonces la ecuación \mref{eq:rtita} con respecto a $\theta$ y multiplicamos 
+por $\dot{\theta}$, (recordemos que $\dot{\theta} = l/mr^2$ y que $r=\frac{\alpha}{1+\epsilon\cos{\theta}}$)
+
+\begin{align}
+ \begin{split}
+  %
+  \frac{dr}{dt} &= \frac{\cancel{\alpha'(1+\epsilon \cos{\theta})}-\alpha(1+\epsilon 
+  \cos{\theta})'}{(1+\epsilon\cos{\theta})^2} \dot{\theta} \\
+  %
+		&= \frac{\alpha\epsilon \sen{\theta}}{(1+\epsilon\cos{\theta})^2} 
+		\frac{l}{mr^2} \\
+  %
+		&= \frac{\cancel{\alpha}\epsilon\sen{\theta}}{\cancel{(1+\epsilon\cos{\theta})^2}}
+		\frac{l}{m}\frac{\cancel{(1+\epsilon\cos{\theta})^2}}{\alpha^{\cancel{2}}}
+ \end{split}
+\end{align}
+
+\begin{equation}
+ \therefore \dot{r}(\theta) = \frac{\alpha l \epsilon \sen{\theta}}{m}
+\end{equation}
+
+Consideremos los siguientes casos
+
+\begin{itemize}
+ \item $\epsilon > 1, \qquad E > 0$
+ \item $\epsilon = 1, \qquad E = 0$
+ \item $ 0 <\epsilon < 1, \qquad V_{min} < E < 0$ 
+\end{itemize}
+
+Que son elipses, como las que vemos en la figura \mref{fig:rDotTita}
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema5fig6}
+ \caption{Gráfico de $\dot{r}(\theta) = \frac{\alpha l \epsilon \sen{\theta}}{m}$ 
+ para distintos $\epsilon$}
+ \label{fig:rDotTita}
+\end{figure}
+
+Para el caso de $(\dot{r},r)$, podemos utilizar la energía total para el caso
+de un potencial gravitatorio $V(x) = - k/r$, que tiene la siguiente forma 
+
+\begin{equation}
+ E = \frac{1}{2} m\dot{r}^2 + \frac{l^2}{2mr^2} - \frac{k}{r},
+\end{equation}
+
+y despejamos $\dot{r}$,
+
+\begin{equation}
+ \dot{r} = \pm \sqrt{E - \frac{l^2}{2mr^2} + \frac{k}{r}}
+\end{equation}
+
+
+
+
+
+
+
 
 \begin{thebibliography}{10}
  \bibitem{arnold}
