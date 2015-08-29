@@ -813,6 +813,7 @@ no podremos imaginarla)}:
  \center 
  \includegraphics[scale=0.5]{problema5fig1}
  \caption{Caso $\epsilon > 1$}
+ \label{fig:hiperbola}
 \end{figure}
 
 \newpage %Ojo con este newpage puede cambiar
@@ -824,14 +825,16 @@ no podremos imaginarla)}:
  \center 
  \includegraphics[scale=0.45]{problema5fig2}
  \caption{Caso $\epsilon = 1$}
+ \label{fig:parabola}
 \end{figure}
 
- \item $\epsilon = 0, \qquad E=V_{min}$ $\Rightarrow$ Parábola
+ \item $\epsilon = 0, \qquad E=V_{min}$ $\Rightarrow$ Círculo
 
 \begin{figure}[H]
  \center 
  \includegraphics[scale=0.4]{problema5fig3}
  \caption{Caso $\epsilon = 0$}
+ \label{fig:circulo}
 \end{figure}
 
 \newpage
@@ -842,6 +845,7 @@ no podremos imaginarla)}:
  \center 
  \includegraphics[scale=0.45]{problema5fig4}
  \caption{Caso $0 < \epsilon < 1$}
+ \label{fig:elipse}
 \end{figure}
 
 \end{itemize}
@@ -926,7 +930,45 @@ y despejamos $\dot{r}$,
  \dot{r} = \pm \sqrt{E - \frac{l^2}{2mr^2} + \frac{k}{r}}
 \end{equation}
 
+El tratamiento que haremos con en este caso será diferente, y lo haremos considerando 
+la ecuación diferencial, y el trazaremos el retrato de fase para $(\dot{r},r)$, considerando
+el gráfico muy conocido para el potencial efectivo de el problema gravitacional. Parafrasearemos 
+el comentario de este gráfico hecho en \cite{saletan} para completar el entendimiento del
+problema.
 
+\vspace{.3cm}
+
+Entonces en este caso, tomando a $l$ como constante, tendremos el gráfico \mref{fig:rDotR}. Las 
+curvas cerradas de este retrato de fase corresponden a estados ligados, en los que 
+la partícula tiene una distancia mínima y máxima del centro de fuerza; en el espacio de
+configuración esto significa que la partícula está rotando respecto a el centro de 
+fuerza. Entonces estos estados ligados forman las órbitas que ya obtuvimos. Estos 
+estados tienen todos energías negativas $E$ y las órbitas del espacio de fase de 
+velocidad cruzan al eje $r$ en puntos que dependen de $E$. Mientras más grande $E$ (más 
+cercano a cero), más cercano será el punto de cruce interno ($r$ mínimo) al origen y más 
+lejano el externo ($r$ máximo) del mismo. Las energías negativas terminan en $E=0$, cuando 
+el punto de cruce externo se va a $r=\inf$. Esta es la separatriz para este problema, y 
+corresponde a una órbita parabólica en el espacio de configuración (ver figura \mref{fig:parabola}).
+Mientras más pequeño $E$, mas lejano el punto de cruce interno y más cercano 
+el externo, hasta que se encuentran en un punto, que corresponde a un $r$ fijo, 
+o a una órbita circular en el espacio de configuración (ver figura \mref{fig:circulo}),
+para un valor dado de $l$. Este es el único punto singular de este sistema. Las
+órbitas del espacio de fase de velocidad para valores negativos de $E$, entre cero 
+y este límite inferior corresponden a elipses en el espacio de configuración (ver 
+figura \mref{fig:elipse}). Las órbitas del espacio de fase de velocidad para $E>0$, 
+cruzan el eje $r$ solo una vez, entonces cada órbita tiene una asíntota, para $r$ grande,
+que es paralela al eje $r$ en el espacio de fases de velocidad. La distancia de 
+esta órbita desde el eje $r$ es la velocidad mínima $|\dot{r}|$ a esa energía. Estas 
+órbitas en el espacio de configuración para $E>0$ correspondan a órbitas hiperbólicas 
+(ver figura \mref{fig:hiperbola}.
+
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema5fig7}
+ \caption{Gráfico de $(\dot{r},r)$}
+ \label{fig:rDotR}
+\end{figure}
 
 
 
