@@ -156,13 +156,129 @@ escribir estas constricciones como:
 \begin{align}
  z_1 &= 0, \\
  z_2 &= 0, \\
- |\mathbf{r_1}| =& l_1, \\
- |\mathbf{r_2}| =& l_2.
+ |\mathbf{r_1}| &= l_1, \\
+ |\mathbf{r_2} - \mathbf{r_1}| &= l_2.
+ \label{eq:pendu1}
 \end{align}
 
 Entonces para el caso que consideremos del péndulo doble, tendremos solamente, dos (2)
 grados de libertad, debido a que los originales seis (6) se reducen por las cuatro (4)
-constricciones al movimiento que consideramos.
+constricciones al movimiento que consideramos. 
+
+\vspace{.3cm}
+
+El lector familiarizado con este problema, ya clásico de la mecánica, recordará que en 
+la formulación lagrangiana de este problema, las coordenadas generalizadas más utilizadas
+y que simplifican la solución del problema son $\theta_1$ y $\theta_2$, por lo tanto
+las ecuaciones de movimiento se expresarán en término de las mismas, para así poder tener 
+una comparación directa con el análisis vectorial del problema que haremos, con el escalar
+que se trabaja en la formulación lagrangiana. Podemos encontrar expresiones para $\mathbf{r_1}$ y $\mathbf{r_2}$ en términos 
+de los dos ángulos $\theta_1$ y $\theta_2$:
+
+\begin{align}
+ \mathbf{r_1} &= l_1\sen{\theta_1} + l_1\cos{\theta_1}
+ \mathbf{r_2} &= \mathbf{r_1} +  l_2\sen{\theta_2} + l_2\cos{\theta_2}
+ \label{eq:pendu2}
+\end{align}
+
+Ahora podemos encontrar los vectores de velocidad y aceleración en término de $\theta_1$ y $\theta_2$,
+para $m_1$,
+
+\begin{equation}
+ \dot{\mathbf{r_1}} = \mathbf{v_1} = l_1 \dot{\theta_1} \cos{\theta_1} - l_1 \dot{\theta_1} \sen{\theta_1} = l_1 \dot{\theta_1}(\cos{\theta_1} - \sen{\theta_1}),
+ \label{eq:pendu3}
+\end{equation}
+
+\begin{align}
+\begin{split}
+ \ddot{\mathbf{r_1}} = \mathbf{a_1} &= l_1 \ddot{\theta_1} \cos{\theta_1} - l_1 \dot{\theta_1}^2 \sen{\theta_1} - l_1 \ddot{\theta_1} \sen{\theta_1} - l_1 \dot{\theta_1}^2 \cos{\theta_1}, \\
+ &=  l_1 \ddot{\theta_1} (\cos{\theta_1} - \sen{\theta_1}) - l_1 \dot{\theta_1}^2 (\cos{\theta_1} +  \sen{\theta_1}),
+ \label{eq:pendu4}
+\end{split}
+\end{align}
+
+y para $m_2$
+
+\begin{equation}
+ \dot{\mathbf{r_2}} = \mathbf{v_2} = \mathbf{v_1} + l_2 \dot{\theta_2} \cos{\theta_2} - l_2 \dot{\theta_2} \sen{\theta_2} = l_2 \dot{\theta_2}(\cos{\theta_2} - \sen{\theta_2}),
+ \label{eq:pendu5}
+\end{equation}
+
+\begin{align}
+\begin{split}
+ \ddot{\mathbf{r_1}} = \mathbf{a_2} &= \mathbf{a_1} + l_2 \ddot{\theta_2} \cos{\theta_2} - l_2 \dot{\theta_2}^2 \sen{\theta_2} - l_1 \ddot{\theta_2} \sen{\theta_2} - l_2 \dot{\theta_2}^2 \cos{\theta_2}, \\
+ &= \mathbf{a_1} + l_2 \ddot{\theta_2} (\cos{\theta_2} - \sen{\theta_2}) - l_2 \dot{\theta_1}^2 (\cos{\theta_2} +  \sen{\theta_2}),
+ \label{eq:pendu6}
+\end{split}
+\end{align}
+
+Para poder construir las ecuaciones de movimiento en la metodología vectorial necesitamos 
+conocer el sentido, dirección y magnitud de las fuerzas que actúan sobre las partículas 
+en consideración. En este caso las fuerzas que actúan para $m_1$ son la tensión de las 
+dos cuerdas (que llamaremos $\mathbf{T_1}$ y $\mathbf{T_2}$ respectivamente), y la gravedad.
+La tensión de la cuerda $l_1$, sobre $m_1$ actúa lo largo de $-\mathbf{r_1}$, y la tensión 
+de la cuerda $l_2$ actúa a lo largo de ($\mathbf{r_2} - \mathbf{r_1}$), entonces podemos 
+escribir la fuerza $\mathbf{F_1}$ como
+
+\begin{equation}
+ \mathbf{F_1} = T_1 \frac{-\mathbf{r_1}}{|\mathbf{r_1}|} + T_2 \frac{\mathbf{r_2} - \mathbf{r_1}}{|\mathbf{r_2} -\mathbf{r_1}|}
+	      + m_1 \mathbf{g} = - \frac{T_1}{l_1} \mathbf{r_1} + \frac{T_1}{l_1} (\mathbf{r_2} - \mathbf{r_1}) + m_1 \mathbf{g}.
+\end{equation}
+
+Las fuerzas sobre $m_2$ son la tensión de la cuerda $l_2$ a lo largo de -($\mathbf{r_2} - \mathbf{r_1}$)
+y la gravedad,
+
+\begin{equation}
+ \mathbf{F_2} = T_2 \frac{-(\mathbf{r_2} - \mathbf{r_1})}{|\mathbf{r_2} -\mathbf{r_1}|}
+	      + m_2 \mathbf{g} = - \frac{T_2}{l_2} (\mathbf{r_2} -\mathbf{r_1}) + m_2 \mathbf{g}.
+\end{equation}
+
+Estamos ahora en posición para escribir las ecuaciones de movimiento para el péndulo 
+doble utilizando la segunda ley de Newton en cada partícula, $\mathbf{F_i} = m_i \ddot{\mathbf{r_i}}$:
+
+\begin{align}
+ m_1 \ddot{\mathbf{r_1}} &= - \frac{T_1}{l_1} \mathbf{r_1} + \frac{T_1}{l_1} (\mathbf{r_2} - \mathbf{r_1}) + m_1 \mathbf{g}, \\
+ m_2 \ddot{\mathbf{r_2}} &= - \frac{T_2}{l_2} (\mathbf{r_2} -\mathbf{r_1}) + m_2 \mathbf{g}.
+\end{align}
+
+Estas ecuaciones no son muy esclarecedoras del problema al cual nos enfrentamos, y ahora 
+es claro por qué debemos expresar las mismas para $\theta_1$ y $\theta_2$, debido que como 
+veremos estas se convertirán en cuatro ecuaciones diferenciales para cuatro incógnitas, 
+$\theta_1$, $\theta_2$, $T_1$ y $T_2$. Escribimos entonces las ecuaciones de movimiento 
+para las dos partículas en sus componentes en el plano\footnote{Acá utilizaremos la muy conocida separación
+de componentes de fuerzas de la mecánica newtoniana} ($x-y$), utilizando (\ref{eq:pendu3}) y (\ref{eq:pendu4}) y 
+la figura (\ref{fig:problema2fig1}),
+
+Para $m_1$,
+
+\begin{align}
+ m_1 l_1 (\ddot{\theta_1}\cos{\theta_1} - \dot{\theta_1}^2\sen{\theta_1}) &= - T_1 \sen{\theta_1} + T_2 \sen{\theta_2}, \\
+ -m_1 l_1 (\ddot{\theta_1}\sen{\theta_1} + \dot{\theta_1}^2\cos{\theta_1}) &= - T_1 \cos{\theta_1} + T_2 \cos{\theta_2} + m_1 g.
+\end{align}
+
+Para $m_2$,
+
+\begin{align}
+ m_2(l_1\ddot{\theta_1}\cos{\theta_1} - l_1\dot{\theta_1}^2\sen{\theta_1} + l_2\ddot{\theta_2}\cos{\theta_2} - l_2\dot{\theta_2}^2\sen{\theta_2})
+ &= - T_2 \sen{\theta_2}, \\
+ - m_2(l_1\ddot{\theta_1}\sen{\theta_1} + l_1\dot{\theta_1}^2\cos{\theta_1} + l_2\ddot{\theta_2}\sen{\theta_2} - l_2\dot{\theta_2}^2\cos{\theta_2})
+ &= - T_2 \cos{\theta_2} + m_2 g.
+\end{align}
+
+Haciendo uso de algunas identidades trigonométricas como $\cos^2{\theta} +  \sen^2{\theta} = 1$, y
+$\sen{\theta_2}\cos{\theta_1} - \cos{\theta_2}\sen{\theta_1} = \sen{(\theta_2 - \theta_1)}$, 
+y un largo trabajo algebraico que no aportaría nada colocarlo explícitamente en esta tarea,
+llegamos a que las ecuaciones de movimiento pueden escribirse como:
+
+\begin{align}
+ l_1\ddot{\theta_1} &= \frac{T_2}{m_1}\sen{\theta_2 - \theta_1} - g \sen{\theta_1}, \\
+ l_1\dot{\theta_1}^2 &= \frac{T_1}{m_1} - \frac{T_2}{m_1}\cos{\theta_2 - \theta_1} - g \cos{\theta_1}, \\
+ l_2\ddot{\theta_2} &= - \frac{T_2}{m_1}\sen{\theta_2 - \theta_1}, \\
+ l_2\dot{\theta_2}^2 &= \frac{T_2}{m_2} - \frac{T_2}{m_1} \frac{T_1}{m_1}\cos{\theta_2 - \theta_1}.
+\end{align}
+
+
+
 
 \section{Problema 3}
 
