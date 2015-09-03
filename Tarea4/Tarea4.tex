@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{cancel}
 \usepackage{tikz}
+\usepackage{multimedia}
 \usepackage{float}
 \usepackage{cleveref}
 \usepackage[margin=1.4in]{geometry}
@@ -176,7 +177,7 @@ que se trabaja en la formulación lagrangiana. Podemos encontrar expresiones par
 de los dos ángulos $\theta_1$ y $\theta_2$:
 
 \begin{align}
- \mathbf{r_1} &= l_1\sen{\theta_1} + l_1\cos{\theta_1}
+ \mathbf{r_1} &= l_1\sen{\theta_1} + l_1\cos{\theta_1} \\
  \mathbf{r_2} &= \mathbf{r_1} +  l_2\sen{\theta_2} + l_2\cos{\theta_2}
  \label{eq:pendu2}
 \end{align}
@@ -381,7 +382,60 @@ veremos a continuación. Todo el código que realicé para la solución de este 
 se encuentra en un repositorio público de GitHub y está disponible para su uso, reproducción
 y consulta; el mismo se encuentra en un NoteBook de Python para su simple visualización,
 pero en caso de querer el código en Python, envíenme un correo o solicítenlo por el 
-repositorio.
+repositorio. El repositorio completo se encuentra en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF}{\color{blue} este link},
+y particularmente el NoteBook de este problema en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea4/Problema\%202.ipynb}{\color{blue} este link}.
+
+\vspace{.3cm}
+
+El diagrama completo del sistema, para las condiciones iniciales
+del enunciado, se anexará en el correo, y también se encuentra en el 
+repositorio. Cabe destacar que el código para realizar esta simulación en su mayoría 
+fue recopilado de un ejemplo de MatplotLib, con algunas mejoras que realizamos aparte 
+de que puede correr en un NoteBook de forma dinámica debido a algunos parámetros
+que agregamos al código.
+
+\vspace{.3cm}
+
+Dibujaremos ahora varias combinaciones para el sistema, las cuales nos pintan 
+una imagen completa del movimiento del mismo.
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.45]{problema2fig2}
+\caption{$y_1$ vs $x_1$}
+\label{fig:problema2fig2}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.45]{problema2fig3}
+\caption{$y_2$ vs $x_1$}
+\label{fig:problema2fig3}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.45]{problema2fig4}
+\caption{$y_1$ vs $x_2$}
+\label{fig:problema2fig4}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.45]{problema2fig5}
+\caption{$y_2$ vs $x_2$}
+\label{fig:problema2fig5}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.45]{problema2fig6}
+\caption{$\theta_2$ vs $\theta_1$}
+\label{fig:problema2fig6}
+\end{figure}
+
+
+
 
 \section{Problema 3}
 
