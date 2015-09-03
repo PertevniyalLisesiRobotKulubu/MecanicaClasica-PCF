@@ -316,13 +316,72 @@ ahora en \mref{eq:pendu10} y obtenemos,
  - m_2 l_2 \dot{\theta_2}^2 \sen{(\theta_2 - \theta_1)} + (m_1 + m_2)g\sen{\theta_1} = 0.}
 \end{equation}
 
+\vspace{.3cm}
+
 Que son las conocidas ecuaciones de movimiento para un péndulo doble. Para que sea más
 fácil el análisis computacional, llamemos a $\omega_1 = \dot{\theta_1}$, y 
-$\omega_2 = \dot{\theta_2}$, las velocidades angulares de $m_1$ y $m_2$ respectivamente,
+$\omega_2 = \dot{\theta_2}$, las velocidades respectivas velocidades angulares,
 con lo cual
 
+\begin{equation}
+ \omega_1 = \dot{\theta_1}
+ \label{eq:pendu11}
+\end{equation}
 
+\begin{equation}
+ \omega_2 = \dot{\theta_2}
+ \label{eq:pendu12}
+\end{equation}
 
+\begin{equation}
+ l_2 \dot{\omega_2} + l_1 \dot{\omega_1} \cos{(\theta_2 - \theta_1)} + l_1 \omega_1^2
+ \sen{(\theta_2 - \theta_1)} + g \sen{\theta_2} = 0
+ \label{eq:pendu13}
+\end{equation}
+
+\begin{equation}
+ (m_1 + m_2)l_1 \dot{\omega_1} + m_2 l_2 \dot{\omega_2} \cos{(\theta_2 - \theta_1)}
+ - m_2 l_2 \omega_2^2 \sen{(\theta_2 - \theta_1)} + (m_1 + m_2)g\sen{\theta_1} = 0 
+ \label{eq:pendu14}
+\end{equation}
+
+El paso siguiente es puramente manipulación algebraica, la cual cubriría más de una 
+página de puras ecuaciones que no suman a la demostración que queremos hacer, simplemente
+lo que se hace es despejar $\dot{\omega_2}$ de \mref{eq:pendu13}, y luego se sustituye 
+en \mref{eq:pendu14}, y luego se despeja $\dot{\omega_1}$ de \mref{eq:pendu14}, y luego se sustituye 
+en \mref{eq:pendu13}, y obtendremos lo siguiente (hemos definido $\Delta = \theta_2 - \theta_1$):
+
+\begin{align}
+\begin{split}
+\dot{\omega_1} &= \\
+   &\frac{m_2 l_1 \omega_1^2 \sen{\Delta}\cos{\Delta}
+ + m_2 g \sen{\theta_2}\cos{\Delta}-m_2 l_2 \omega_2^2\sen{\Delta} 
+ +(m_1 + m_2)g \sen{\theta_1}}{(m_1 + m_2) l_1 - m_2 l_1 \cos^2{\Delta}},
+\end{split}
+ \end{align}
+
+y
+
+\begin{align}
+\begin{split}
+\dot{\omega_2} &= \\
+   &\frac{m_2 l_2 \omega_2^2 \sen{\Delta}\cos{\Delta}
+ + (m_1 + m_2)(g \sen{\theta_1}\cos{\Delta} - l_1 \omega_1^2\sen{\Delta}
+ - g\sen{\theta_2})}{(m_1 + m_2) l_1 - m_2 l_2 \cos^2{\Delta}},
+\end{split}
+ \end{align}
+
+Resolveremos estas ecuaciones diferenciales numéricamente utilizando varias librerías 
+de Python, la primera es NumPy\footnote{\href{http://www.numpy.org/}{http://www.numpy.org/}},
+que nos permite utilizar funciones trigonométricas y definir espacios algebraicos para 
+las soluciones, la segunda es SciPy\footnote{\href{http://www.scipy.org/}{http://www.scipy.org/}},
+para encontrar las soluciones numéricas a las ecuaciones y MatplotLib\footnote{
+\href{http://matplotlib.org/}{http://matplotlib.org/}} para hacer los gráficos que 
+veremos a continuación. Todo el código que realicé para la solución de este problema,
+se encuentra en un repositorio público de GitHub y está disponible para su uso, reproducción
+y consulta; el mismo se encuentra en un NoteBook de Python para su simple visualización,
+pero en caso de querer el código en Python, envíenme un correo o solicítenlo por el 
+repositorio.
 
 \section{Problema 3}
 
