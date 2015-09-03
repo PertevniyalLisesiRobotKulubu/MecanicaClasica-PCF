@@ -271,11 +271,55 @@ y un largo trabajo algebraico que no aportaría nada colocarlo explícitamente e
 llegamos a que las ecuaciones de movimiento pueden escribirse como:
 
 \begin{align}
+  \label{eq:pendu7} % la de abajo
  l_1\ddot{\theta_1} &= \frac{T_2}{m_1}\sen{\theta_2 - \theta_1} - g \sen{\theta_1}, \\
- l_1\dot{\theta_1}^2 &= \frac{T_1}{m_1} - \frac{T_2}{m_1}\cos{\theta_2 - \theta_1} - g \cos{\theta_1}, \\
+ \label{eq:pendu8} % la de abajo
+ l_1\dot{\theta_1}^2 &= \frac{T_1}{m_1} - \frac{T_2}{m_1}\cos{(\theta_2 - \theta_1)} - g \cos{\theta_1}, \\
+  \label{eq:pendu9} % la de abajo
  l_2\ddot{\theta_2} &= - \frac{T_2}{m_1}\sen{\theta_2 - \theta_1}, \\
- l_2\dot{\theta_2}^2 &= \frac{T_2}{m_2} - \frac{T_2}{m_1} \frac{T_1}{m_1}\cos{\theta_2 - \theta_1}.
-\end{align}
+  \label{eq:pendu10} % la de abajo
+ l_2\dot{\theta_2}^2 &= \frac{T_2}{m_2} - \frac{T_2}{m_1} - \frac{T_1}{m_1}\cos{(\theta_2 - \theta_1)}.
+ \end{align}
+
+Debido a que las ecuaciones no contienen derivadas de $T_1$ y $T_2$, la mejor manera 
+de escribir las ecuaciones para el análisis numérico que realizaremos, es obtener 
+dos ecuaciones diferenciales para $\theta_1$ y $\theta_2$ sin los términos de $T_1$
+y $T_2$. Para hacer eso hacemos uso de (\ref{eq:pendu7}) y (\ref{eq:pendu9}), y 
+obtenemos que 
+
+\begin{equation}
+ T_1 = - m_1 \frac{l_2\ddot{\theta_2}}{\sen{(\theta_2 - \theta_1)}},
+\end{equation}
+
+\begin{equation}
+ T_2 = m_1 \frac{l_1 \ddot{\theta_1} + g \sen{\theta_1}}{\sen{(\theta_2 - \theta_1)}}.
+\end{equation}
+
+Sustituimos estas expresiones, primero en \mref{eq:pendu8} y obtenemos 
+
+\begin{align*}
+ l_1 \dot{\theta_1}^2 &= \frac{T_1}{m_1} - \frac{T_2}{m_1}\cos{(\theta_2 - \theta_1)} - g \cos{\theta_1}, \\
+		      &= - \frac{l_2\ddot{\theta_2}}{\sen{(\theta_2 - \theta_1})}
+		         -   \frac{l_1 \ddot{\theta_1} + g \sen{\theta_1}}{\sen{(\theta_2 - \theta_1)}}\cos{(\theta_2 - \theta_1)}
+		         - g \cos{\theta_1},
+\end{align*}
+
+\begin{equation}
+ \boxed{\therefore l_2 \ddot{\theta_2} + l_1 \ddot{\theta_1}\cos{(\theta_2 - \theta_1)} 
+ + l_1 \dot{\theta_1}^2\sen{(\theta_2 - \theta_1)} + g \sen{\theta_2} = 0.}
+\end{equation}
+
+ahora en \mref{eq:pendu10} y obtenemos,
+
+\begin{equation}
+ \boxed{(m_1 + m_2) l_1 \ddot{\theta_1} + m_2 l_2 \ddot{\theta_2}\cos{(\theta_2 - \theta_1)}
+ - m_2 l_2 \dot{\theta_2}^2 \sen{(\theta_2 - \theta_1)} + (m_1 + m_2)g\sen{\theta_1} = 0.}
+\end{equation}
+
+Que son las conocidas ecuaciones de movimiento para un péndulo doble. Para que sea más
+fácil el análisis computacional, llamemos a $\omega_1 = \dot{\theta_1}$, y 
+$\omega_2 = \dot{\theta_2}$, las velocidades angulares de $m_1$ y $m_2$ respectivamente,
+con lo cual
 
 
 
