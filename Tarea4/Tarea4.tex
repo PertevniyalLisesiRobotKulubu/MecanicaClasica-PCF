@@ -106,6 +106,122 @@ trace una órbita genérica para este caso.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para la primera parte del problema, desarrollaremos las ecuaciones de movimiento 
+para un caso general, y trazaremos las trayectorias en el espacio de configuración
+usando la computadora. Luego aplicaremos la condición de que $m_2=m_1+\epsilon$ y 
+encontraremos las ecuaciones de movimiento a primer orden para $\epsilon$.
+
+\vspace{.3cm}
+
+En la figura de abajo se muestra la esquematización del problema que tratamos,
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.4]{problema1fig1}
+\caption{Espacio de configuración del problema general para dos partículas $m_1$ y $m_2$,
+ambas constreñidas a moverse en una recta, la una perpendicular a la otra.}
+\label{fig:problema1fig1}
+\end{figure}
+
+Debido a que ambas partículas están constreñidas a moverse cada una en una recta, 
+el espacio de configuración será el producto cartesiano de dos rectas, por lo tanto
+tendrá dos dimensiones. Debido a la la configuración que planteamos es obvio que debemos
+trabajar con coordenadas cartesianas para resolver el problema. Comencemos por un tratamiento
+de las fuerzas que actúan sobre cada partícula; debido a que la única fuerza que 
+actúa sobre ambas es la fuerza gravitacional, y debido a que ambas partículas se mueven
+sobre una recta, únicamente debemos tomar la componente de la fuerza sobre la recta
+para ambas partículas. Calculemos entonces la fuerza sobre cada partícula en coordenadas
+cartesianas $(x,y)$, donde la distancia que las separa es $\sqrt{x^2+y^2}$, 
+y obtendremos para la primera partícula
+
+\begin{equation}
+ F_x = - \frac{G m_1 m_2 x}{(x^2+y^2)^{3/2}},
+\end{equation}
+
+y para la segunda partícula
+
+\begin{equation}
+  F_y = - \frac{G m_1 m_2 y}{(x^2+y^2)^{3/2}},
+\end{equation}
+
+donde $G$ es la constante de gravitación universal. Es fácil ver que estas dos  fuerzas 
+son derivables de un potencial, y ambas del mismo, que es el siguiente
+
+\begin{equation}
+ V(x,y) = - \frac{G m_1 m_2}{\sqrt{x^2+y^2}}.
+\end{equation}
+
+Por otra parte la energía cinética será
+
+\begin{equation}
+ T = \frac{1}{2} m_1 \dot{x}^2 + \frac{1}{2} m_2 \dot{y}^2 = \frac{1}{2} (m_1 \dot{x}^2 + m_2 \dot{y}^2)
+\end{equation}
+
+El sistema claramente es conservativo, ya que hemos encontrado un potencial que genere 
+las fuerzas que actúan sobre las partículas. Podemos ahora escribir la función lagrangiana
+$L = T - V$, 
+
+\begin{equation}
+ L = \frac{1}{2} (m_1 \dot{x}^2 + m_2 \dot{y}^2) +  \frac{G m_1 m_2}{\sqrt{x^2+y^2}}
+\end{equation}
+
+Y utilizando las ecuaciones de Lagrange, podemos encontrar las ecuaciones de movimiento. 
+
+\vspace{.3cm}
+
+Para $m_1$ tenemos,
+
+\begin{equation}
+ \frac{d}{dt} \frac{\partial L}{\partial \dot{x}} - \frac{\partial L}{\partial x} = 0,
+\end{equation}
+
+\begin{equation}
+ m_1 \ddot{x} + \frac{G m_1 m_2 x}{(x^2+y^2)^{3/2}} = 0,
+\end{equation}
+
+Si dividimos por $m_1$ esta ecuación obtenemos que,
+
+\begin{equation}
+ \boxed{\ddot{x} + \frac{G m_2 x}{(x^2+y^2)^{3/2}} = 0.}
+\end{equation}
+
+Donde hemos llegado a la importante conclusión que el movimiento de la partícula $m_1$,
+no depende de su masa, sino solamente la masa de la segunda partícula.
+
+\vspace{.3cm}
+
+Para $m_2$ tenemos,
+
+\begin{equation}
+ \frac{d}{dt} \frac{\partial L}{\partial \dot{y}} - \frac{\partial L}{\partial y} = 0,
+\end{equation}
+
+\begin{equation}
+ m_2\ddot{y} + \frac{G m_1 m_2 y}{(x^2+y^2)^{3/2}} = 0.
+\end{equation}
+
+Si dividimos por $m_2$ esta ecuación obtenemos que,
+
+\begin{equation}
+ \boxed{\ddot{y} + \frac{G m_1 x}{(x^2+y^2)^{3/2}} = 0.}
+\end{equation}
+
+Donde llegamos a la misma conclusión que para la primera partícula. 
+Hemos encontrado las ecuaciones de movimiento para $m_1$ y $m_2$. 
+Para poder resolver numéricamente conviene escribir estas ecuaciones como,
+
+\begin{align}
+ \xi &= \dot{x}, \\ 
+ \dot{\xi} &+ \frac{G m_2 x }{(x^2+y^2)^{3/2}} = 0.
+\end{align}
+
+Y 
+
+\begin{align}
+ \chi &= \dot{y}, \\
+ \dot{\chi} &+ \frac{G m_1 x }{(x^2+y^2)^{3/2}} = 0.
+\end{align}
+
 
 \section{Problema 2}
 
