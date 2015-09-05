@@ -10,12 +10,17 @@
 \usepackage{cancel}
 \usepackage{tikz}
 \usepackage{multimedia}
+\usepackage{subcaption} %Multiple images
+\usepackage{multicol} % Multiple columns
 \usepackage{float}
 \usepackage{cleveref}
 \usepackage[margin=1.4in]{geometry}
 \usepackage[labelfont=bf]{caption}
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
+
+%Columns separation
+\setlength{\columnsep}{1cm}
 
 %Indentation
 \setlength{\parindent}{0ex}
@@ -222,10 +227,41 @@ Y,
  \dot{\chi} &= - \frac{G m_1 y }{(x^2+y^2)^{3/2}}.
 \end{align}
 
-Tenemos entonces las siguientes trayectorias:
+Para trazar las trayectorias hemos utilizado en todas las
+gráficas que inicialmente $\dot{\xi} = \dot{\chi} = 0$, y hemos probado varias 
+combinaciones para las posiciones iniciales y las masas de las partículas. Los códigos 
+con los que realicé los gráficos son libres y se encuentran en un NoteBook de Python,
+en el siguiente \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea4/Problema\%201.ipynb}{\color{blue}{.::link::.}}
 
+\begin{multicols}{2}
+\begin{figure}[H]
+\begin{subfigure}{.4\textwidth}
+\centering
+\includegraphics[scale=0.3]{problema1fig2}
+\label{fig:problema1fig2}
+\end{subfigure}
 
-\vspace{.3cm}
+\begin{subfigure}{.4\textwidth}
+\centering
+\includegraphics[scale=0.3]{problema1fig3}
+\label{fig:problema1fig3}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+\begin{subfigure}{.4\textwidth}
+\centering
+\includegraphics[scale=0.3]{problema1fig4}
+\label{fig:problema1fig4}
+\end{subfigure}
+
+\begin{subfigure}{.4\textwidth}
+\centering
+\includegraphics[scale=0.3]{problema1fig5}
+\label{fig:problema1fig5}
+\end{subfigure}
+\end{figure}
+\end{multicols}
 
 Ahora utilizando el hecho de que $m_2 = m_1 + \epsilon$, primero la energía cinética será
 
