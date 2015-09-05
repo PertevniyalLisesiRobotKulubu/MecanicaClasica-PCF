@@ -683,6 +683,101 @@ una constante.
 
 \underline{Solución:} \vspace{.3cm}
 
+Comencemos escribiendo la expresión general para las ecuaciones de Euler para un 
+cuerpo rígido, en el cual pueden existir torques actuando sobre el,
+
+\begin{equation}
+ (I_i - I_j) \omega_i \omega_j \sum_k (I_k\dot{\omega_k}- \tau_k) \varepsilon_{ijk} = 0.
+\end{equation}
+
+Donde $I_j$ es el tensor de inercia para la coordenada $j$, $\omega_j$ es la velocidad
+angular para la coordenada $j$, $\tau_j$ es el torque aplicado sobre la coordenada 
+$j$ y $\varepsilon_{ijk}$ es el símbolo de permutación, también conocido como la 
+densidad de \emph{Levi-Civita}, que para el lector no familiarizado está definido 
+por 
+
+\begin{align*}
+ \varepsilon_{ijk} = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+     &0 \quad \text{\hspace{.1cm} si cualquier índice es igual a otro índice}, \\
+    &+1 \quad \text{si $i,j,k$ forman una permutación par de 1,2,3}, \\
+    &-1 \quad \text{si $i,j,k$ forman una permutación impar de 1,2,3}.
+  \end{array}\right.
+\end{align*}
+
+Entonces las ecuaciones de Euler toman la siguiente forma para un cuerpo rígido
+de tres dimensiones $(x,y,z)$.
+
+\begin{align}
+ I_x \dot{\omega}_x - (I_y - I_z)\omega_y\omega_z &= \tau_x, \\
+ I_y \dot{\omega}_y - (I_z - I_x)\omega_y\omega_x &= \tau_y, \\
+ I_x \dot{\omega}_z - (I_x - I_y)\omega_y\omega_y &= \tau_z.
+\end{align}
+
+Ahora, tomando en consideración que tratamos con un cuerpo rígido simétrico, cuyo eje 
+de simetría es el eje $z$, tenemos que $I_x = I_y$, debido a que el torque se aplica
+sobre el eje de simetría, las ecuaciones de Euler quedan como
+
+\begin{align}
+\label{eq:rigid1}
+ I_x \dot{\omega}_x - (I_x - I_z)\omega_y\omega_z &= 0, \\
+\label{eq:rigid2}
+ I_y \dot{\omega}_y - (I_z - I_x)\omega_y\omega_x &= 0, \\
+ I_x \dot{\omega}_z &= \tau_z.
+\end{align}
+
+Llegar a la demostración es muy simple. Para ello consideremos las ecuaciones \mref{eq:rigid1} 
+y \mref{eq:rigid2}. Multiplicaremos \mref{eq:rigid1} por $\omega_x$ y \mref{eq:rigid2} por
+$\omega_y$ y las sumaremos, con lo cual obtenemos\footnote{Claramente esta suma es 
+igual a cero debido a que ambas ecuaciones suman cero, y al sumar ceros, solo
+podemos obtener cero (hasta ahora nadie ha demostrado algo diferente).},
+
+\begin{equation}
+ I_x \omega_x \dot{\omega}_x - \cancel{(I_x - I_z)\omega_y\omega_z\omega_x}  + 
+ I_x \omega_y \dot{\omega}_y - \cancel{(I_z - I_x)\omega_y\omega_x\omega_y} = 0.
+\end{equation}
+
+Debido a que $-(I_x - I_z) = (I_z - I_x)$, nos queda entonces 
+
+\begin{align*}
+ I_x \omega_x \dot{\omega}_x + I_x \omega_y \dot{\omega}_y = 0, \\
+ I_x (\omega_x \dot{\omega}_x + \omega_y \dot{\omega}_y) = 0,
+\end{align*}
+
+Y debido a que asumimos de entrada que $I_x \ne 0$, nos queda 
+
+\begin{equation}
+ \omega_x \dot{\omega}_x + \omega_y \dot{\omega}_y = 0.
+\end{equation}
+
+Con un tratamiento simple de esta ecuación llegamos a,
+
+\begin{align}
+\begin{split}
+\omega_x \frac{d\omega_x}{\cancel{dt}} + \omega_y \frac{d\omega_y}{\cancel{dt}} = 0 \\
+%
+d\omega_x \omega_x = - d\omega_y \omega_y \\
+%
+\int d\omega_x \omega_x = - \int d\omega_y \omega_y \\
+%
+\cancel{\frac{1}{2}} \omega_x^2 = - \cancel{\frac{1}{2}} \omega_y^2 + C \\
+%
+ \omega_x^2 = - \omega_y^2 + C
+%
+\end{split}
+\end{align}
+
+Por lo tanto,
+
+\begin{equation}
+ \boxed{\omega_x^2 + \omega_y^2 = C}
+\end{equation}
+
+Que era lo que se pidió demostrar. Esta ecuación nos expresa el hecho de que cuando 
+a un cuerpo rígido simétrico se le aplica un torque sobre el eje de simetría, la suma de las
+otras dos velocidades angulares (no la del eje de simetría) es una constante.
+
+
 \section{Problema 5}
 
 En las notas del curso se presenta una figura con la construcción de Poisont y se 
