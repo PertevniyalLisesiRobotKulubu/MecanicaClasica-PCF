@@ -203,7 +203,7 @@ Para $m_2$ tenemos,
 Si dividimos por $m_2$ esta ecuación obtenemos que,
 
 \begin{equation}
- \boxed{\ddot{y} + \frac{G m_1 x}{(x^2+y^2)^{3/2}} = 0.}
+ \boxed{\ddot{y} + \frac{G m_1 y}{(x^2+y^2)^{3/2}} = 0.}
 \end{equation}
 
 Donde llegamos a la misma conclusión que para la primera partícula. 
@@ -212,15 +212,67 @@ Para poder resolver numéricamente conviene escribir estas ecuaciones como,
 
 \begin{align}
  \xi &= \dot{x}, \\ 
- \dot{\xi} &+ \frac{G m_2 x }{(x^2+y^2)^{3/2}} = 0.
+ \dot{\xi} &= \frac{G m_2 x }{(x^2+y^2)^{3/2}}.
 \end{align}
 
-Y 
+Y,
 
 \begin{align}
  \chi &= \dot{y}, \\
- \dot{\chi} &+ \frac{G m_1 x }{(x^2+y^2)^{3/2}} = 0.
+ \dot{\chi} &= - \frac{G m_1 y }{(x^2+y^2)^{3/2}}.
 \end{align}
+
+Tenemos entonces las siguientes trayectorias:
+
+
+\vspace{.3cm}
+
+Ahora utilizando el hecho de que $m_2 = m_1 + \epsilon$, primero la energía cinética será
+
+\begin{equation}
+ V(x,y) = - \frac{G m_1 (m_1 + \epsilon)}{\sqrt{x^2+y^2}}. 
+\end{equation}
+
+Y la energía cinética,
+
+\begin{equation}
+  T = \frac{1}{2} [m_1 \dot{x}^2 +  (m_1+\epsilon) \dot{y}^2].
+\end{equation}
+
+Y la lagrangiana será,
+
+\begin{equation}
+ L = \frac{1}{2} [m_1 \dot{x}^2 +  (m_1 + \epsilon) \dot{y}^2] + 
+ \frac{G m_1 (m_1 + \epsilon)}{\sqrt{x^2+y^2}}.
+\end{equation}
+
+Las ecuaciones de movimiento serán,
+
+\begin{equation}
+ m_1 \ddot{x} + \frac{G m_1 (m_1 + \epsilon) x}{(x^2+y^2)^{3/2}} = 0,
+\end{equation}
+
+\begin{equation}
+ (m_1 + \epsilon) \ddot{y} + \frac{G m_1 (m_1 + \epsilon) y}{(x^2+y^2)^{3/2}} = 0.
+\end{equation}
+
+
+o,
+
+\begin{equation}
+\boxed{\ddot{x} + \frac{G (m_1 + \epsilon) x}{(x^2+y^2)^{3/2}} = 0,}
+\end{equation}
+
+\begin{equation}
+ \boxed{\ddot{y} + \frac{G m_1 y}{(x^2+y^2)^{3/2}} = 0.}
+\end{equation}
+
+Que son las ecuaciones de movimiento para primer orden en $\epsilon$.
+
+\vspace{.3cm}
+
+Para ellas tendremos la siguiente trayectoria,
+
 
 
 \section{Problema 2}
