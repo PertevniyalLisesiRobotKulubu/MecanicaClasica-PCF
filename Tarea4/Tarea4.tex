@@ -752,7 +752,8 @@ una constante.
 \underline{Solución:} \vspace{.3cm}
 
 Comencemos escribiendo la expresión general para las ecuaciones de Euler para un 
-cuerpo rígido, en el cual pueden existir torques actuando sobre el,
+cuerpo rígido\footnote{Ver siguiente problema para una descripción más completa 
+de las ecuaciones de Euler.}, en el cual pueden existir torques actuando sobre el,
 
 \begin{equation}
  (I_i - I_j) \omega_i \omega_j \sum_k (I_k\dot{\omega_k}- \tau_k) \varepsilon_{ijk} = 0.
@@ -865,8 +866,112 @@ se encuentran en \cite{marasco}, pero debido a que el libro es muy viejo (con re
 a la versión actual del programa), el código estaba obsoleto. Luego de una revisión 
 exhaustiva de las librerías y códigos que utilizaron los autores, pude rehacer el 
 código para implementarlo en la última versión de \emph{Mathematica}. Este código 
-se encuentra en un NoteBook de \emph{Mathematica} y puede encontrarse en el siguiente 
-\href{}{\color{blue}.::link::.}
+se encuentra en un paquete de \emph{Mathematica} que he creado y puede encontrarse en el siguiente 
+\href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea4/Poinsot.m}{\color{blue}.::link::.}
+
+\vspace{.3cm}
+
+Para ser completos en la descripción que haremos debemos establecer primero una teoría 
+mínima acerca de la construcción de Poinsot, ya que esto facilitará el entendimiento 
+del código que se realizó. Comenzaremos con una adaptación a la teoría que se encuentra 
+en \cite{romano}, para luego describir lo que el programa, que se encuentra originalmente 
+en \cite{marasco}, hace, tomando en cuenta de que, como ya se dijo, tuvo que actualizarse 
+en gran medida el mismo. La notación que utilizaremos no es la estándar que vimos en 
+clase, pero debido a que el código se realizó usando la notación de \cite{marasco,romano},
+tomaremos la misma para desarrollar la solución del problema.
+
+\vspace{.3cm}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+\vspace{.3cm}
+
+\definicion Las fuerzas actuando sobre un cuerpo rígido $\mathcal{B}$ pueden ser divididas 
+en dos clases: \textbf{\emph{fuerzas activas}} y \textbf{\emph{fuerzas reactivas}}. Una 
+fuerza pertenece a la primera clase si podemos asignar la fuerza \emph{a priori}. Las fuerzas 
+reactivas están dadas por el contacto entre $\mathcal{B}$ y los obstáculos externos (constricciones). 
+
+\vspace{.3cm}
+
+\definicion Sea $\mathcal{B}$ un cuerpo rígido constreñido a moverse alrededor de un punto fijo suave $O$. Si 
+la constricción es realizada con una bisagra suave, las fuerzas reactivas son ortogonales 
+a la superficie de contacto esférica. Consecuentemente, las líneas rectas de su aplicación
+contienen el punto $O$, y el torque relativo total reactivo a $O$ se hace cero:
+
+\begin{equation}
+ \mathbf{M}_O^{(r)} = 0.
+ \label{eq:poinsot1}
+\end{equation}
+
+Utilizaremos la condición anterior como una definición de un punto fijo suave, cual sea 
+el dispositivo que realiza el punto fijo $O$.
+
+\vspace{.3cm}
+
+La posición de $\mathcal{B}$ está determinada por los ángulos de Euler $\psi,\phi$ y $\theta$ formados 
+por el sistema del cuerpo $(O,e'_i)$ con el sistema de laboratorio $(O,e_i)$. Consecuentemente,
+necesitamos encontrar tres ecuaciones diferenciales que puedan determinar estas variables 
+como funciones del tiempo. En vista de \mref{eq:poinsot1}, el balance de momentum 
+angular asume la forma
+
+\begin{equation}
+ \mathbf{\dot{K}}_O =  \mathbf{M}_O^{(a)}.
+ \label{eq:poinsot2}
+\end{equation}
+
+El torque $\mathbf{M}_O^{(a)}$ de las fuerzas activas debe depender de la posición de 
+$\mathcal{B}$, su campo de velocidad, y el tiempo.  Debido a que la velocidad de cualquier punto
+$\mathbf{r} = \overrightarrow{OP}$ está dada por la fórmula $\mathbf{\dot{r}}= \omega 
+\times \mathbf{r}$, donde $\mathbf{\omega}$ es la velocidad angular del movimiento 
+rígido, podemos establecer que 
+
+\begin{equation}
+ \mathbf{M}_O^{(a)} = \mathbf{M}_O^{(a)}(\psi,\phi,\theta,p,q,r,t),
+ \label{eq:poinsot3}
+\end{equation}
+
+donde $p,q$ y $r$ son las componentes de $\mathbf{\omega}$ en el sistema del cuerpo. Por
+otra parte, puede probarse que el momento angular relativo a el sistema de referencia de 
+laboratorio de un sólido con un punto fijo, cuando es proyectado hacia el sistema 
+de referencia del cuerpo, está dado por (donde $A$, $B$ y $C$ son los respectivos 
+tensores de inercia, llamados $I_i$ en la notación más típica):
+
+\begin{equation}
+ \mathbf{K}_O = Ap\mathbf{e'}_1 +  Bq\mathbf{e'}_2 +  Cr\mathbf{e'}_3.
+ \label{eq:poinsot4}
+\end{equation}
+
+La derivada temporal de \mref{eq:poinsot4}, está dada por\footnote{Recordar que 
+para un cuerpo rígido la relación entre la aceleración relativa y absoluta está dada 
+por $\mathbf{\ddot{r}}_p = \mathbf{\ddot{r'}}_p + \mathbf{\omega} \times \mathbf{\dot{r'}}_p + 
+\frac{d_a \mathbf{v}_\tau}{dt}$},  
+
+\begin{equation}
+  \dot{\mathbf{K}}_O = A\dot{p}\mathbf{e'}_1 +  B\dot{q}\mathbf{e'}_2 +  C\dot{r}\mathbf{e'}_3
+  + \mathbf{\omega}\times \mathbf{K}_0.
+  \label{eq:poinsot5}
+\end{equation}
+
+Introduciendo las expresiones \mref{eq:poinsot3} y \mref{eq:poinsot5} para $ \mathbf{M}_O^{(a)}$
+y $\dot{\mathbf{K}}_O$ en la ecuación de balance para el momentum angular, obtenemos 
+la siguiente ecuación para un cuerpo rígido con un punto fijo suave:
+
+\begin{equation}
+  A\dot{p}\mathbf{e'}_1 +  B\dot{q}\mathbf{e'}_2 +  C\dot{r}\mathbf{e'}_3
+  + \mathbf{\omega}\times \mathbf{K}_0 = \mathbf{M}_O^{(a)}(\psi,\phi,\theta,p,q,r,t).
+\end{equation}
+
+Finalmente, proyectando esta ecuación a lo largo de los ejes del cuerpo (que son los ejes 
+principales de inercia relativos al punto fijo $O$), obtenemos las ecuaciones de 
+Euler
+
+\begin{align}
+ A \dot{p} - (B - C)qr &= M_{O_{x{_1}}}(\psi,\phi,\theta,p,q,r,t) \\
+ B \dot{q} - (C - A)rp &= M_{O_{x{_2}}}(\psi,\phi,\theta,p,q,r,t) \\
+ C \dot{r} - (A - B)pq &= M_{O_{x{_3}}}(\psi,\phi,\theta,p,q,r,t) 
+\end{align}
+
+
 
 \begin{thebibliography}{10}
 \bibitem{marasco}
