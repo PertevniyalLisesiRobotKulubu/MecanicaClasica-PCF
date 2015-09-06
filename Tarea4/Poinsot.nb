@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    867685,      14601]
-NotebookOptionsPosition[    866164,      14553]
-NotebookOutlinePosition[    866497,      14568]
-CellTagsIndexPosition[    866454,      14565]
+NotebookDataLength[    867956,      14609]
+NotebookOptionsPosition[    866393,      14559]
+NotebookOutlinePosition[    866726,      14574]
+CellTagsIndexPosition[    866683,      14571]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1827,7 +1827,7 @@ uf8DwtroOQ==
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
-   ImageSize->{326., Automatic},
+   ImageSize->{337., Automatic},
    Method->{"ScalingFunctions" -> None},
    PlotRange->{All, All},
    PlotRangeClipping->True,
@@ -4454,7 +4454,7 @@ PGP5o+UkevT3tsb0agbcSkiksCbRgbo119rJeBJFyfIn/uRgwP8AyAMX2A==
    Boxed->False,
    DisplayFunction->Identity,
    FaceGridsStyle->Automatic,
-   ImageSize->{422., 244.},
+   ImageSize->{499., 287.},
    Method->{},
    PlotRange->{{-1.414213562373086, 
     1.4142135623729437`}, {-0.9999999999999685, 0.9999999999999685}, {0., 
@@ -4464,9 +4464,9 @@ PGP5o+UkevT3tsb0agbcSkiksCbRgbo119rJeBJFyfIn/uRgwP8AyAMX2A==
      Scaled[0.02], 
      Scaled[0.02]},
    Ticks->{Automatic, Automatic, Automatic},
-   ViewPoint->{1.5979708952449847`, -2.6000555343141136`, 1.4615745743657733`},
-   ViewVertical->{0.11704338953614875`, -0.20505243377246482`, 
-    3.403429319967351}]}]], "Output",
+   ViewPoint->{1.1967910491437221`, -2.617894357935875, 1.7788536520402647`},
+   ViewVertical->{0.0490826793779672, -0.0908794886229073, 
+    3.452757767105242}]}]], "Output",
  CellChangeTimes->{3.650487096406178*^9}]
 }, Open  ]],
 
@@ -4508,12 +4508,15 @@ Cell[BoxData[
   SequenceForm[
   "ra1 = ", 0.40824830489921893` ",      ra2 = ", 0.40824830489921893`],
   Editable->False]], "Print",
- CellChangeTimes->{3.6504871306674957`*^9}],
+ CellChangeTimes->{3.6504871306674957`*^9}]
+}, Open  ]],
 
-Cell[BoxData["\<\"The distance ra of the herpolhoid versus time\"\>"], \
-"Output",
- CellChangeTimes->{3.65048713072184*^9},
- FontFamily->"Times-Plain"],
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\"\<The distance ra of the herpolhoid versus time\>\"", "s"}]], \
+"Input",
+ CellChangeTimes->{{3.650503470437593*^9, 3.65050347043824*^9}}],
 
 Cell[BoxData["\<\"The polhode on the ellipsoid of inertia\"\>"], "Output",
  CellChangeTimes->{3.650487130806921*^9},
@@ -5742,7 +5745,7 @@ pcrSlw7Yj1Vb/vteophVvUcyjy3mFen+NiQ5Q3U0fiVxB6+6unW5kPwjJeYm
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
-   ImageSize->{239., Automatic},
+   ImageSize->{345., Automatic},
    Method->{"ScalingFunctions" -> None},
    PlotRange->{All, All},
    PlotRangeClipping->True,
@@ -7958,7 +7961,7 @@ gaj6CQWc2/8HeujV8g==
    Boxed->False,
    DisplayFunction->Identity,
    FaceGridsStyle->Automatic,
-   ImageSize->{299., 318.},
+   ImageSize->{353., 376.},
    Method->{},
    PlotRange->{{-0.9999999999999937, 0.999999999999893}, {-0.9999999999999685,
      0.9999999999999685}, {0., 1.414213562373086}},
@@ -7967,8 +7970,9 @@ gaj6CQWc2/8HeujV8g==
      Scaled[0.02], 
      Scaled[0.02]},
    Ticks->{Automatic, Automatic, Automatic},
-   ViewPoint->{1.3, -2.4, 2.},
-   ViewVertical->{0., 0., 1.4142135623730594`}]}]], "Output",
+   ViewPoint->{1.1568660126921633`, -2.0668300695538813`, 2.4165832268443874`},
+   ViewVertical->{-0.07625193330772455, 0.14335918462261366`, 
+    1.3954452958472612`}]}]], "Output",
  CellChangeTimes->{3.6504871310677643`*^9}]
 }, Open  ]],
 
@@ -9241,7 +9245,7 @@ zml6h3Kcqfv//5f7HwecOU8=
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
-   ImageSize->{241., Automatic},
+   ImageSize->{344., Automatic},
    Method->{"ScalingFunctions" -> None},
    PlotRange->{All, All},
    PlotRangeClipping->True,
@@ -10943,7 +10947,7 @@ QO9UFSqRQQK1uQ/YNpH/D4u2hdo=
    Boxed->False,
    DisplayFunction->Identity,
    FaceGridsStyle->Automatic,
-   ImageSize->{373., 156.},
+   ImageSize->{475., 199.},
    Method->{},
    PlotRange->{{-0.22123172641038968`, 
     0.22123172641036742`}, {-0.15643445395838965`, 0.15643445395838965`}, {
@@ -10953,8 +10957,10 @@ QO9UFSqRQQK1uQ/YNpH/D4u2hdo=
      Scaled[0.02], 
      Scaled[0.02]},
    Ticks->{Automatic, Automatic, Automatic},
-   ViewPoint->{1.3, -2.4, 2.},
-   ViewVertical->{0., 0., 44.01558750578848}]}]], "Output",
+   ViewPoint->{0.07613488930382148, -0.25728508419035767`, 
+    3.3731302767731735`},
+   ViewVertical->{0.009360805333493614, 1.0738670868831552`, 
+    28.637784518720615`}]}]], "Output",
  CellChangeTimes->{3.650487147999329*^9}]
 }, Open  ]],
 
@@ -12333,7 +12339,7 @@ V5tsx9mOlI+HiTMuSo0Kv5NCzOUYIz0MChxDu1a9W4FmL5paThAnNd0ri3zl
    FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
    GridLinesStyle->Directive[
      GrayLevel[0.5, 0.4]],
-   ImageSize->{244., Automatic},
+   ImageSize->{336., Automatic},
    Method->{"ScalingFunctions" -> None},
    PlotRange->{All, All},
    PlotRangeClipping->True,
@@ -14535,7 +14541,7 @@ RA==
    Boxed->False,
    DisplayFunction->Identity,
    FaceGridsStyle->Automatic,
-   ImageSize->{299., 274.},
+   ImageSize->{375., 344.},
    Method->{},
    PlotRange->{{-1.414213562373095, 
     1.4142135623729526`}, {-0.8164965809277056, 
@@ -14545,9 +14551,9 @@ RA==
      Scaled[0.02], 
      Scaled[0.02]},
    Ticks->{Automatic, Automatic, Automatic},
-   ViewPoint->{1.4297398519669966`, -2.6542616818929456`, 1.536469615622847},
-   ViewVertical->{0.07731363827942964, -0.24332050283692025`, 
-    1.3959137836096305`}]}]], "Output",
+   ViewPoint->{1.2555848545142343`, -2.6500868401928885`, 1.688356127288002},
+   ViewVertical->{0.022281471798303247`, -0.19251313486591104`, 
+    1.4050976955233285`}]}]], "Output",
  CellChangeTimes->{{3.650487205826106*^9, 3.650487214251266*^9}}]
 }, Open  ]]
 },
@@ -14575,33 +14581,35 @@ Cell[22406, 584, 360, 8, 23, "Print"],
 Cell[22769, 594, 154, 3, 32, "Output"],
 Cell[22926, 599, 115, 2, 32, "Output"],
 Cell[23044, 603, 146, 2, 32, "Output"],
-Cell[23193, 607, 235141, 3862, 343, "Output"]
+Cell[23193, 607, 235135, 3862, 354, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[258371, 4474, 676, 21, 187, "Input"],
-Cell[259050, 4497, 208, 3, 32, "Output"],
-Cell[259261, 4502, 364, 8, 23, "Print"],
-Cell[259628, 4512, 151, 3, 32, "Output"],
-Cell[259782, 4517, 144, 2, 32, "Output"],
-Cell[259929, 4521, 209987, 3450, 335, "Output"]
+Cell[258365, 4474, 676, 21, 187, "Input"],
+Cell[259044, 4497, 208, 3, 32, "Output"],
+Cell[259255, 4502, 364, 8, 23, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[469953, 7976, 654, 20, 187, "Input"],
-Cell[470610, 7998, 206, 3, 32, "Output"],
-Cell[470819, 8003, 362, 8, 23, "Print"],
-Cell[471184, 8013, 154, 3, 32, "Output"],
-Cell[471341, 8018, 115, 2, 32, "Output"],
-Cell[471459, 8022, 144, 2, 32, "Output"],
-Cell[471606, 8026, 178170, 2931, 256, "Output"]
+Cell[259656, 4515, 163, 3, 32, InheritFromParent],
+Cell[259822, 4520, 144, 2, 32, "Output"],
+Cell[259969, 4524, 210077, 3451, 393, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[649813, 10962, 648, 20, 187, "Input"],
-Cell[650464, 10984, 208, 3, 32, "Output"],
-Cell[650675, 10989, 362, 8, 23, "Print"],
-Cell[651040, 10999, 152, 3, 32, "Output"],
-Cell[651195, 11004, 117, 2, 32, "Output"],
-Cell[651315, 11008, 144, 2, 32, "Output"],
-Cell[651462, 11012, 214686, 3538, 291, "Output"]
+Cell[470083, 7980, 654, 20, 187, "Input"],
+Cell[470740, 8002, 206, 3, 32, "Output"],
+Cell[470949, 8007, 362, 8, 23, "Print"],
+Cell[471314, 8017, 154, 3, 32, "Output"],
+Cell[471471, 8022, 115, 2, 32, "Output"],
+Cell[471589, 8026, 144, 2, 32, "Output"],
+Cell[471736, 8030, 178267, 2933, 361, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[650040, 10968, 648, 20, 187, "Input"],
+Cell[650691, 10990, 208, 3, 32, "Output"],
+Cell[650902, 10995, 362, 8, 23, "Print"],
+Cell[651267, 11005, 152, 3, 32, "Output"],
+Cell[651422, 11010, 117, 2, 32, "Output"],
+Cell[651542, 11014, 144, 2, 32, "Output"],
+Cell[651689, 11018, 214688, 3538, 361, "Output"]
 }, Open  ]]
 }
 ]
