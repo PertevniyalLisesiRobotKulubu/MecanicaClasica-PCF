@@ -948,7 +948,7 @@ por $\mathbf{\ddot{r}}_p = \mathbf{\ddot{r'}}_p + \mathbf{\omega} \times \mathbf
 
 \begin{equation}
   \dot{\mathbf{K}}_O = A\dot{p}\mathbf{e'}_1 +  B\dot{q}\mathbf{e'}_2 +  C\dot{r}\mathbf{e'}_3
-  + \mathbf{\omega}\times \mathbf{K}_0.
+  + \mathbf{\omega}\times \mathbf{K}_O.
   \label{eq:poinsot5}
 \end{equation}
 
@@ -958,7 +958,8 @@ la siguiente ecuación para un cuerpo rígido con un punto fijo suave:
 
 \begin{equation}
   A\dot{p}\mathbf{e'}_1 +  B\dot{q}\mathbf{e'}_2 +  C\dot{r}\mathbf{e'}_3
-  + \mathbf{\omega}\times \mathbf{K}_0 = \mathbf{M}_O^{(a)}(\psi,\phi,\theta,p,q,r,t).
+  + \mathbf{\omega}\times \mathbf{K}_O = \mathbf{M}_O^{(a)}(\psi,\phi,\theta,p,q,r,t).
+  \label{eq:poinsot6}
 \end{equation}
 
 Finalmente, proyectando esta ecuación a lo largo de los ejes del cuerpo (que son los ejes 
@@ -966,10 +967,211 @@ principales de inercia relativos al punto fijo $O$), obtenemos las ecuaciones de
 Euler
 
 \begin{align}
+  \label{eq:poinsot7}
  A \dot{p} - (B - C)qr &= M_{O_{x{_1}}}(\psi,\phi,\theta,p,q,r,t) \\
+   \label{eq:poinsot8}
  B \dot{q} - (C - A)rp &= M_{O_{x{_2}}}(\psi,\phi,\theta,p,q,r,t) \\
+   \label{eq:poinsot9}
  C \dot{r} - (A - B)pq &= M_{O_{x{_3}}}(\psi,\phi,\theta,p,q,r,t) 
 \end{align}
+
+Estas tres ecuaciones, debido a que contienen seis incógnitas $\psi(t)$, $\phi(t)$, 
+$\theta(t)$, $p(t)$, $q(t)$ y $r(t)$, no pueden determinar el movimiento de $\mathcal{B}$.
+Sin embargo si tomamos en cuenta las relaciones cinemáticas de Euler \cite{romano, saletan},
+
+\begin{align}
+  \label{eq:poinsot10}
+ \dot{\psi} = \frac{1}{\sen{\theta}}(p \sen{\phi} + q \cos{\phi}), \\
+   \label{eq:poinsot11}
+ \dot{\phi} = -(p \sen{\phi} + q \cos{\phi}) \cot{\theta} + r, \\
+   \label{eq:poinsot12}
+ \dot{\theta} = p \cos{\phi} - q \sen{\phi},
+\end{align}
+
+obtenemos un sistema que, bajo la hipótesis general de la regularidad de las funciones 
+que aparecen en los lados derechos de \mref{eq:poinsot7,eq:poinsot8,eq:poinsot9}, admite 
+una y sólo una solución que satisface los datos iniciales
+
+\begin{align}
+ \psi(0) = \psi_0, \quad \phi(0) = \phi_0, \quad \theta(0) = \theta_0, \\
+ p(0) = p0, \quad q(0) = q_0, \quad r(0) = r_0, 
+ \label{eq:poinsot13}
+\end{align}
+
+que corresponden a dar las posiciones iniciales y el campo de velocidad de $\mathcal{B}$.
+
+\vspace{.3cm}
+
+Las ecuaciones no-lineales \mref{eq:poinsot7}-\mref{eq:poinsot12} exhiben una forma muy compleja.
+Es muy difícil, casi imposible encontrar soluciones explícitas para ellas, aún en los casos
+más simples \cite{romano}. Por lo tanto, debemos intentar analizar estas ecuaciones sin 
+la necesidad de resolver estas ecuaciones explícitamente, utilizando un análisis cualitativo
+y numérico que nos permita obtener información relevante sobre el comportamiento del movimiento.
+
+\vspace{.3cm}
+
+\definicion Llamamos rotaciones libres o \emph{movimientos de Poinsot} a todos los movimientos 
+de un cuerpo rígido $\mathcal{B}$ con un punto fijo suave en la ausencia de un torque 
+total activo $\mathbf{M}_O^{(a)}$:
+
+\begin{equation}
+ \mathbf{M}_O^{(a)} = 0.
+ \label{eq:poinsot14}
+\end{equation}
+
+En otras palabras, estos movimientos corresponden a las soluciones de las ecuaciones de 
+Euler cuando sus lados derechos son cero. Aún en este caso, no es posible encontrar 
+estas soluciones de manera simple o analítica. Sin embargo, Poinsot en su \emph{Théorie nouvelle de la
+rotation des corps} de 1851 \cite{poinsot} , propuso  un muy interesante análisis cualitativo de las rotaciones libres. 
+Como resultado de este  análisis, podemos determinar las configuraciones que asume $\mathcal{B}$ 
+durante el movimiento, aunque no podamos dar el instante en el cual $\mathcal{B}$ ocupa una de ellas.
+
+\vspace{.3cm}
+
+El siguiente análisis está basado en las leyes de conservación del momentum angular 
+y la energía cinética:
+
+\begin{equation}
+ \mathbf{K}_O = \mathbf{K}_O(0), \quad T = T(0).
+ \label{eq:poinsot15}
+\end{equation}
+
+Sea $E_0$ el elipsoide de inercia $B$, relativo al punto $O$, y denotemos por $r(t)$ el 
+eje instantáneo de rotación, esto es, la línea recta paralela a la velocidad angular 
+$\mathbf{\omega} \equiv |\mathbf{\omega}|\mathbf{u}$ y que contiene a $O$. Finalmente
+denotemos por $P(t)$ el punto de intersección de $r(t)$ y $E$, en la figura de abajo
+podemos ver mejor esto,
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.6]{problema5fig1}
+\caption{Construcción de Poisont. Se observa el elipsoide de inercia, el plano invariante,
+la poloda y la herpoloda.}
+\label{fig:problema5fig1}
+\end{figure}
+
+Puede probarse que el momentum angular $\mathbf{K}_O$ es ortogonal al plano $\pi$ tangente 
+al elipsoide de inercia en el punto $P(t)$. Y debido a que, en vista de \mref{eq:poinsot15},
+$\mathbf{K}_O$ es un vector constante, podemos establecer que durante el movimiento, este 
+plano tangente permanece paralelo a si mismo. Puede probarse también \cite{romano}, que 
+la conservación de la energía cinética implica que la distancia $h$, de $\pi$ desde $O$, es 
+constante durante el movimiento, y es igual 
+
+\begin{equation}
+ h = \frac{\sqrt{2T(0)}}{\mathbf{K}_O(0)}.
+ \label{eq:poinsot16}
+\end{equation}
+
+En conclusión, durante el movimiento de $\mathcal{B}$, el plano $\pi$ tangente al elipsoide
+de inercia $E$ en el punto $P$, donde $P$ es la intersección del eje instantáneo de rotación 
+con $E$, no cambia de posición. Para entender la consecuencias de este resultado en el 
+movimiento de $\mathcal{B}$, asignamos la velocidad angular inicial $\mathbf{\omega}(0)$.
+Este vector determina los valores iniciales de $\mathbf{K}_O$ y $T_O$ y, consecuentemente, 
+debido a \mref{eq:poinsot16}, la posición invariante del plano $\pi$ relativo a $O$ y la 
+posición inicial $P(0)$ de $P(t)$.
+
+\vspace{.3cm}
+
+Debido a que $P(t) \in E \cap r(t)$, su velocidad es cero. Finalmente podemos concluir, 
+lo que también se establece en las notas, \emph{durante un movimiento de Poinsot de $\mathcal{B}$
+sobre $O$, el elipsoide de inercia $E$ rueda sin resbalar sobre el plano invariante $\pi$}.
+
+\vspace{.3cm}
+
+Durante el movimiento, el punto $P(t)$ describe una curva sobre $E$, llamada la poloda\footnote{
+Del griego $\pi\sigma\lambda\sigma\varrho$ = polo, terminal y $o\delta o \varrho$ = camino, ruta \cite{spivak}.}, y 
+una curva en $\pi$, conocida como la herpoloda\footnote{El nombre ``herpoloda'',
+fue utilizado por Poinsot haciendo alusión a la apariencia de serpentina,
+o serpiente de la curva \cite{spivak}.}. Puede probarse que 
+la poloda es una curva cerrada sobre $E$ \cite{whittaker}, que puede reducirse 
+a un punto. En contraste, la herpoloda puede ser una curva cerrada. Más 
+precisamente, si consideramos el arco $\gamma$ descrito por $P(t)$ durante 
+una vuelta completa sobre el elipsoide $E$, y sea $\alpha$ el ángulo sustendido 
+por $\gamma$, teniendo el vértice en la proyección ortogonal $A$ de $O$ sobre 
+$\pi$. Como probamos en la tarea 2, Si $\alpha = 2\pi(m/n)$ donde $m$ y $n$
+son enteros, es decir que son conmensurables, entonces la herpoloda es 
+cerrada, de otra manera es abierta. También puede probarse que la herpoloda está
+contenida en un anillo $\sigma$ cuyo centro es $A$, siempre es cóncava hacia 
+$A$, y, cuando es abierta, cubre densamente a $\sigma$. 
+
+\vspace{.3cm}
+
+Si la velocidad angular inicial $\mathbf{\omega}(0)$ es paralela a un eje
+principal de inercia, entonces el momento angular $\mathbf{K}_O$ es siempre paralelo 
+a $\mathbf{\omega}(0)$, y $h$ es igual a la mitad de la longitud del eje 
+de $E$. Por lo tanto, la poloda y la herpoloda se reducen a un punto. Si el
+elipsoide $E$ tiene una simetría de revolución sobre un eje $a$, entonces 
+la poloda y la herpoloda se convierten en dos círculos. Finalmente, si 
+$E$ se reduce a una esfera, la poloda y la herpoloda se reducen a un 
+punto y el movimiento es siempre una rotación uniforme.
+
+\vspace{.3cm}
+
+Luego de esta breve exposición de algunas formalidades teóricas sobre la rotación
+del cuerpo rígido libre, y de la construcción de Poinsot, podemos entonces 
+dibujar utilizando el código que adaptamos de \emph{Mathematica} las herpolodas.
+
+\vspace{.3cm}
+
+El código contiene una función llamada \texttt{Poinsot} la cual tiene la 
+siguiente estructura:
+
+$$
+\texttt{Poinsot}[A,B,C0,r0 ,\theta 0,T,\alpha,\texttt{steps}],
+$$
+
+donde $A$, $B$, $CO$, son los momentos de inercia del cuerpo rígido con respecto 
+a los tres ejes $Ox'$, $Oy'$ y $Oz'$ respectivamente, $\theta 0$ es el ángulo 
+entre $Oz'$ y el eje del sistema del laboratorio $Oz$, que se escoge paralelo 
+a la velocidad angular inicial $\mathbf{K}_O$. Luego, $r0$ es la componente 
+inicial de la velocidad angular a lo largo del eje $Oz'$, $T$ es el límite 
+superior del intervalo de tiempo $(0,T)$ en el cual el movimiento es 
+analizado, $\alpha$, es un ángulo que fija la parte del elipsoide de 
+inercia donde se representará la poloda, y \texttt{steps} representa 
+el número de pasos en la integración numérica.
+
+\vspace{.3cm}
+
+La salida de \texttt{Poinsot} está constituida por:
+
+\begin{enumerate}
+ \item El gráfico de la herpoloda y las dos circunferencias en las cuales 
+ está contenida, en el intervalo $(0,T)$,
+ \item El gráfico de la poloda en la parte escogida del elipsoide de 
+ inercia $E$, que está determinada por el valor de $\alpha$, por ejemplo 
+ $\alpha = \pi/2$ corresponde a la mitad de $E$, mientras que $\alpha=\pi$
+ corresponde a todo el elipsoide.
+\end{enumerate}
+
+Cabe resaltar que si la herpoloda no es cerrada en el tiempo $T$, no 
+es posible concluir que es abierta, y consecuentemente densa en todas 
+partes de un anillo. De hecho, la propiedad de ser cerrada puede aparecer 
+en un intervalo de tiempo más grande. Pero podemos decir que, si luego 
+de un tiempo $T$ lo suficientemente grande la herpoloda aún está abierta,
+solo existe la posibilidad de que sea abierta.
+
+\vspace{.3cm}
+
+Mostramos ahora algunos resultados del código adaptado, que constituyen solo
+una pequeña muestra de la gran cantidad de posibles configuraciones que 
+podemos utilizar.
+
+\vspace{.3cm}
+
+\underline{Ejemplo 1}:
+\begin{equation*}
+\begin{aligned}
+ A = 0.5; \\
+ B = 1; \\
+ C0 = 1.5; \\ 
+ r0 = 3; \\
+ \theta 0 = \pi/4; \\
+ T = 3; \\
+ \alpha = \pi/2; \\ 
+ \texttt{steps} = 1000;
+\end{aligned}
+  \phantom{\hspace{12cm}}
+\end{equation*}
 
 
 
@@ -980,6 +1182,18 @@ Euler
  \bibitem{romano}
  A. Romano, \emph{Classical Mechanics with Mathematica\textregistered}, Birkhäuser-Springer, 
  2012.
+ \bibitem{saletan}
+ J. José y E. Saletan, \emph{Classical dynamics: A contemporary approach}, Cambridge University Press,
+ 1998.
+ \bibitem{poinsot}
+ L. Poinsot, \emph{Théorie nouvelle de la rotation des corps (Première et deuxième Parties)}, 
+ Journal de Mathématiques Pures et Appliquées, pp. 9-129, 1851.
+ \bibitem{spivak}
+ M. Spivak, \emph{Physics for mathematicians: Mechanics I}, Publish or Perish,
+ 2010.
+ \bibitem{whittaker}
+ E. Whittaker, \emph{A treatise on the analytical dynamics of particles 
+ and rigid bodies}, Cambridge University Press, 2da edición. 1917.
 \end{thebibliography}
 
 \end{document}
