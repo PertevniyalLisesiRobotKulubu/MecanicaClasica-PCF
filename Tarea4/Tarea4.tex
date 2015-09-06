@@ -131,7 +131,7 @@ ambas constreñidas a moverse en una recta, la una perpendicular a la otra.}
 
 Debido a que ambas partículas están constreñidas a moverse cada una en una recta, 
 el espacio de configuración será el producto cartesiano de dos rectas, por lo tanto
-tendrá dos dimensiones. Debido a la la configuración que planteamos es obvio que debemos
+tendrá dos dimensiones. Debido a la configuración que planteamos es obvio que debemos
 trabajar con coordenadas cartesianas para resolver el problema. Comencemos por un tratamiento
 de las fuerzas que actúan sobre cada partícula; debido a que la única fuerza que 
 actúa sobre ambas es la fuerza gravitacional, y debido a que ambas partículas se mueven
@@ -231,7 +231,7 @@ Y,
 Para trazar las trayectorias hemos utilizado en todas las
 gráficas que inicialmente $\dot{\xi} = \dot{\chi} = 0$, y hemos probado varias 
 combinaciones para las posiciones iniciales y las masas de las partículas. Los códigos 
-con los que realicé los gráficos son libres y se encuentran en un NoteBook de Python,
+con los que realizamos los gráficos son libres y se encuentran en un NoteBook de Python,
 en el siguiente \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea4/Problema\%201.ipynb}{\color{blue}{.::link::.}}
 
 \begin{multicols}{2}
@@ -359,7 +359,7 @@ abajo.}
 Consideraremos un caso general en el cual las longitudes y masas pueden ser diferentes,
 y luego haremos la simplificación que el enunciado indica. El doble péndulo consiste 
 en dos masa $m_1$ y $m_2$ conectadas por barras sin masa de longitudes $l_1$ y $l_2$,
-sujetas a la fuerza de gravedad, y constreñidas por las junturas entre las varas
+sujetas a la fuerza de gravedad, y constreñidas por las junturas entre las barras
 a moverse en un plano. Escogeremos un sistema de coordenadas con el origen en el 
 tope del punto de suspensión, y el eje $x$ como un eje horizontal en el plano del 
 movimiento, y el eje $y$ hacia abajo, de manera tal que las fuerzas de gravedad 
@@ -470,7 +470,9 @@ veremos estas se convertirán en cuatro ecuaciones diferenciales para cuatro inc
 $\theta_1$, $\theta_2$, $T_1$ y $T_2$. Escribimos entonces las ecuaciones de movimiento 
 para las dos partículas en sus componentes en el plano\footnote{Acá utilizaremos la muy conocida separación
 de componentes de fuerzas de la mecánica newtoniana} ($x-y$), utilizando (\ref{eq:pendu3}) y (\ref{eq:pendu4}) y 
-la figura (\ref{fig:problema2fig1}),
+la figura (\ref{fig:problema2fig1})
+
+\vspace{.3cm}
 
 Para $m_1$,
 
@@ -600,7 +602,7 @@ que nos permite utilizar funciones trigonométricas y definir espacios algebraic
 las soluciones, la segunda es SciPy\footnote{\href{http://www.scipy.org/}{http://www.scipy.org/}},
 para encontrar las soluciones numéricas a las ecuaciones y MatplotLib\footnote{
 \href{http://matplotlib.org/}{http://matplotlib.org/}} para hacer los gráficos que 
-veremos a continuación. Todo el código que realicé para la solución de este problema,
+veremos a continuación. Todo el código que realizamos para la solución de este problema,
 se encuentra en un repositorio público de GitHub y está disponible para su uso, reproducción
 y consulta; el mismo se encuentra en un NoteBook de Python para su simple visualización,
 pero en caso de querer el código en Python, envíenme un correo o solicítenlo por el 
@@ -693,14 +695,14 @@ mucho en esto. Supongamos que te pregunto, cuántos pesos llevas contigo, ¿qué
 pregunté, el solo número 300 bastó para proveer la información que buscaba. Ahora, si yo
 te preguntara cuán lejos queda tu casa de donde estamos, y me respondes ``20'', te miraría
 un poco desconcertado y te preguntaría ``¿20 qué?'', claramente para responder a esta 
-pregunta necesitarías darme más información, por ejemplo, ``20 km'', ahora que le has 
+pregunta necesitarías darme más información, por ejemplo, ``20 km''. Ahora que le has 
 dado nombre a 20, representa una cantidad de kilómetros. Pero con esta información, 
 ¿crees que llegaría a tu casa desde acá?.
 
-\textbf{\color{ForestGreen}Roger}: Eh..., no creo. ¿Tendría que decirte que dirección tomar no?
+\textbf{\color{ForestGreen}Roger}: Eh..., no creo. ¿Tendría que decirte qué dirección tomar no?
 
 \textbf{\color{Blue}Favio}: Exacto Roger. Si me dijeras camina 20 km hacia el norte, entonces 
-ya que me has dado una información direccional adicional con la que probablemente llegue a tu casa,
+ya me habrás dado una información direccional adicional con la que probablemente llegue a tu casa,
 o al menos iría en el sentido correcto. En física, matemáticas e ingeniería le decimos 
 a estas cantidades con nombre y dirección ``vectores''. Ah, y por cierto, a las primeras 
 cantidades con nombre y sin dirección les llamamos ``escalares''. Ya con estas nociones 
@@ -716,7 +718,7 @@ dividirlos, y otras. Aunque no es muy riguroso como te lo diré, aquí va. Si mu
 un vector por un escalar obtienes otro vector con una magnitud distinta pero con 
 la misma dirección; si multiplicas un vector por otro vector puedes obtener o un escalar,
 lo que llamamos el producto punto o escalar, o un vector con el llamado producto cruz o 
-vectorial, pero este nos limita a cambiar su dirección en ángulos de $90^\circ$. ¿Que tal 
+vectorial, pero este nos limita a cambiar su dirección en ángulos de $90^\circ$. ¿Qué tal 
 si queremos cambiar la magnitud y la dirección de un vector arbitrariamente?, para ello
 necesitamos una nueva entidad matemática, y estos son los tensores. Entonces un tensor 
 es una entidad matemática muy útil cuando queremos expresar cantidades que tienen una 
@@ -784,7 +786,7 @@ de tres dimensiones $(x,y,z)$.
 \end{align}
 
 Ahora, tomando en consideración que tratamos con un cuerpo rígido simétrico, cuyo eje 
-de simetría es el eje $z$, tenemos que $I_x = I_y$, debido a que el torque se aplica
+de simetría es el eje $z$, tenemos que $I_x = I_y$, y debido a que el torque se aplica
 sobre el eje de simetría, las ecuaciones de Euler quedan como
 
 \begin{align}
@@ -803,10 +805,10 @@ podemos obtener cero (hasta ahora nadie ha demostrado algo diferente).},
 
 \begin{equation}
  I_x \omega_x \dot{\omega}_x - \cancel{(I_x - I_z)\omega_y\omega_z\omega_x}  + 
- I_x \omega_y \dot{\omega}_y - \cancel{(I_z - I_x)\omega_y\omega_x\omega_y} = 0.
+ I_x \omega_y \dot{\omega}_y - \cancel{(I_z - I_x)\omega_y\omega_x\omega_y} = 0,
 \end{equation}
 
-Debido a que $-(I_x - I_z) = (I_z - I_x)$, nos queda entonces 
+debido a que $-(I_x - I_z) = (I_z - I_x)$, nos queda entonces 
 
 \begin{align*}
  I_x \omega_x \dot{\omega}_x + I_x \omega_y \dot{\omega}_y = 0, \\
@@ -843,7 +845,7 @@ Por lo tanto,
 \end{equation}
 
 Que era lo que se pidió demostrar. Esta ecuación nos expresa el hecho de que cuando 
-a un cuerpo rígidos simétrico se le aplica un torque sobre el eje de simetría, la suma de las
+a un cuerpo rígido simétrico se le aplica un torque sobre el eje de simetría, la suma de las
 otras dos velocidades angulares (no la del eje de simetría) es una constante.
 
 
@@ -998,7 +1000,7 @@ una y sólo una solución que satisface los datos iniciales
  \label{eq:poinsot13}
 \end{align}
 
-que corresponden a dar las posiciones iniciales y el campo de velocidad de $\mathcal{B}$.
+que corresponda las posiciones iniciales y el campo de velocidad de $\mathcal{B}$.
 
 \vspace{.3cm}
 
@@ -1045,7 +1047,7 @@ podemos ver mejor esto,
 \begin{figure}[H]
 \center
 \includegraphics[scale=0.6]{problema5fig1}
-\caption{Construcción de Poisont. Se observa el elipsoide de inercia, el plano invariante,
+\caption{Construcción de Poinsot. Se observa el elipsoide de inercia, el plano invariante,
 la poloda y la herpoloda.}
 \label{fig:problema5fig1}
 \end{figure}
@@ -1084,11 +1086,11 @@ una curva en $\pi$, conocida como la herpoloda\footnote{El nombre ``herpoloda'',
 fue utilizado por Poinsot haciendo alusión a la apariencia de serpentina,
 o serpiente de la curva \cite{spivak}.}. Puede probarse que 
 la poloda es una curva cerrada sobre $E$ \cite{whittaker}, que puede reducirse 
-a un punto. En contraste, la herpoloda puede ser una curva cerrada. Más 
+a un punto. En contraste, la herpoloda puede ser una curva abierta. Más 
 precisamente, si consideramos el arco $\gamma$ descrito por $P(t)$ durante 
 una vuelta completa sobre el elipsoide $E$, y sea $\alpha$ el ángulo sustendido 
 por $\gamma$, teniendo el vértice en la proyección ortogonal $A$ de $O$ sobre 
-$\pi$. Como probamos en la tarea 2, Si $\alpha = 2\pi(m/n)$ donde $m$ y $n$
+$\pi$. Como probamos en la tarea 2, si $\alpha = 2\pi(m/n)$ donde $m$ y $n$
 son enteros, es decir que son conmensurables, entonces la herpoloda es 
 cerrada, de otra manera es abierta. También puede probarse que la herpoloda está
 contenida en un anillo $\sigma$ cuyo centro es $A$, siempre es cóncava hacia 
@@ -1126,7 +1128,7 @@ entre $Oz'$ y el eje del sistema del laboratorio $Oz$, que se escoge paralelo
 a la velocidad angular inicial $\mathbf{K}_O$. Luego, $r0$ es la componente 
 inicial de la velocidad angular a lo largo del eje $Oz'$, $T$ es el límite 
 superior del intervalo de tiempo $(0,T)$ en el cual el movimiento es 
-analizado, $\alpha$, es un ángulo que fija la parte del elipsoide de 
+analizado, $\alpha$ es un ángulo que fija la parte del elipsoide de 
 inercia donde se representará la poloda, y \texttt{steps} representa 
 el número de pasos en la integración numérica.
 
