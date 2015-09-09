@@ -171,6 +171,173 @@ posición inicial sobre la cicloide.
 
 \underline{Solución:} \vspace{.3cm}
 
+En la figura de abajo se encuentra el gráfico del cicloide en cuestión, de la ecuación 
+vemos que este es válido para $y \in [0,2a]$ y en el eje $x$ lo graficamos de $[-\pi a, \pi a]$.
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.4]{problema5fig1}
+ \caption{Gráfico del cicloide en consideración.}
+ \label{fig:problema5fig1}
+\end{figure}
+
+Debido a las simetrías de este problema es claro que la coordenada generalizada que 
+mejor describirá el sistema, en una manera más simple también, es la longitud de 
+arco $s$ a lo largo de la línea definida por el cicloide (ver figura \mref{fig:problema5fig1}. 
+En este caso, la energía cinética estará dada por 
+
+\begin{equation}
+ T = \frac{1}{2} m \dot{s}^2.
+ \label{eq:energCinetCiclo1}
+\end{equation}
+
+Por otra parte, el potencial a la cual está sujeta la partícula, se puede obtener
+simplemente de la fuerza de gravedad. Si imponemos que este campo gravitacional de 
+magnitud $g$ está en la dirección negativa de $y$, entonces el potencial será,
+
+\begin{equation}
+ V = mgy.
+ \label{eq:energPotenCiclo1}
+\end{equation}
+
+Debemos encontrar entonces la relación entre $y$ y $s$ para poder escribir la energía 
+potencial en términos de nuestra coordenada generalizada. Recordando que la longitud 
+de arco diferencial en coordenadas cartesianas se puede escribir como,
+
+\begin{equation}
+ s = \int \sqrt{dx^2+dy^2} = \int \sqrt{1+\left( \frac{dx}{dy} \right)^2} dy.
+ \label{eq:arcoCartesiano}
+\end{equation}
+
+Ahora debemos obtener la derivada de $x$ con respecto a $y$, que hacemos explícitamente 
+debajo,
+
+\begin{align}
+ \begin{split}
+  %
+  \frac{dx}{dy} &= \left(\pm a \cos^{-1}{\left(\frac{a-y}{a}\right)}\right)' + 
+  \left(\sqrt{2ay-y^2}\right)', \\
+  %
+		&= a \left[ \frac{-1}{\sqrt{1 - \left(\frac{a-y}{a} \right)^2}}
+		\left(\frac{a-y}{a} \right)'\right] + \frac{1}{2\sqrt{2ay-y^2}}
+		(2ay - y^2)', \\
+  %
+		&= \cancel{a}\left[ \frac{-1}{\sqrt{1 - \left(\frac{a-y}{a} \right)^2}}
+		\left(- \frac{1}{\cancel{a}} \right) \right] + \frac{1}{\cancel{2}\sqrt{2ay-y^2}}
+		[\cancel{2}(a - y)], \\
+  %
+		&= \frac{1}{\sqrt{1 - \frac{(a-y)^2}{a^2}}} + \frac{a-y}{\sqrt{2ay - y^2}}.
+  %
+ \end{split}
+\end{align}
+
+Y simplificando llegamos a que 
+
+\begin{equation}
+ \frac{dx}{dy} = \frac{2a - y}{\sqrt{2ay - y^2}}
+ \label{eq:dxdyCiclo}
+\end{equation}
+
+Ahora sustituyendo \mref{eq:dxdyCiclo} en \mref{eq:arcoCartesiano} nos queda 
+
+\begin{equation}
+ s = \int \sqrt{1 + \frac{(2a - y)^2}{(\sqrt{2ay - y^2})^2}} dy,
+\end{equation}
+
+que podemos reescribir como
+
+\begin{align}
+\begin{split}
+ %
+ s &= \int \sqrt{1 + \frac{(2a - y)^2}{2ay - y^2}} dy, \\
+ % 
+   &= \int \sqrt{\frac{2ay - \cancel{ y^2} + 4a^2 - 4ay + \cancel{y^2}}{2ay - y^2}} dy, \\  
+ % 
+   &= \int \sqrt{\frac{4a^2 -2ay}{2ay - y^2}} dy.  \\
+ %
+   &= \int \sqrt{2} \sqrt{\frac{a}{y}} dy.
+ \end{split}
+\end{align}
+
+Evaluando esta integral obtenemos que 
+
+\begin{equation}
+ s = 2 \sqrt{2ay}.
+\end{equation}
+
+Y por lo tanto
+
+\begin{equation}
+ y = \frac{s^2}{8a}.
+ \label{eq:yCiclo}
+\end{equation}
+
+Sustituyendo \mref{eq:yCiclo} en \mref{eq:energPotenCiclo1}, obtenemos 
+
+\begin{equation}
+ V = \frac{mgs^2}{8a}
+\end{equation}
+
+Entonces la lagrangiana del sistema, $L = T - V$ es 
+
+\begin{equation}
+ L = \frac{1}{2} m \dot{s}^2 - \frac{mgs^2}{8a}
+\end{equation}
+
+Y utilizando las ecuaciones de Lagrange\footnote{Tomando en cuenta que el sistema es conservativo.} 
+
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{s}} - \frac{\partial L}{\partial s} = 0,
+\end{equation}
+
+tenemos que la ecuación de movimiento del sistema será:
+
+\begin{equation}
+ \frac{d}{dt} (m\dot{s}) - \frac{mgs}{4a} = 0,
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore \ddot{s} = \frac{g}{4a} s.}
+\end{equation}
+
+Claramente esta es la ecuación de un oscilador armónico, y podemos ver esto de una 
+forma un poco más clara si llamamos $k = g/4a$, entonces la ecuación de movimiento 
+se convierte en
+
+\begin{equation}
+ \ddot{s} - ks = 0.
+\end{equation}
+
+Cuya solución es\footnote{Esta solución ya se ha encontrado en otras tareas 
+varias veces, y es muy simple obtenerla. Debido a que es una ecuación diferencial lineal
+de segundo orden homogénea proponemos una solución del tipo $\euler^{\lambda t}$, obtenemos la 
+ecuación característica de la EDO. Luego obtenemos las raíces $\lambda$ que sustituiremos
+en la solución que hemos propuesto, haciendo uso de la linealidad de la ecuación para 
+usar el principio de superposición y sumar estas soluciones. Por último hacemos la 
+sustitución $A = \sqrt{C_1^2+ C_2^2}$, donde $C_1$ y $C_2$ son las constantes de 
+integración de la ecuación diferencial, y con un poco de trigonometría, colocamos 
+$C_1$ y $C_2$ en un triángulo rectángulo de hipotenusa $A$, y proponemos un ángulo
+$\delta$ entre $A$ y $C_1$, al cual llamamos fase de la oscilación.},
+
+\begin{equation}
+ s = A\cos{(\omega t + \delta)}
+\end{equation}
+
+donde $\omega = \frac{1}{2}\sqrt{g/a}$ es la frecuencia del oscilador, $A$ es la 
+amplitud de la oscilación y $\delta$ es la fase de la misma. La cual es la solución
+clásica para un oscilador armónico en $s$.
+
+\vspace{.3cm}
+
+La demostración de que el tiempo que tarda la partícula en llegar a la parte más baja 
+del cicloide es independiente de su posición inicial sobre la cicloide, es ahora 
+trivial debido a que tenemos un oscilador armónico y entonces, con un poco de ayuda 
+de la figura \mref{fig:problema5fig1} y usando los resultados de la teoría de 
+osciladores armónicos, es fácil ver que el tiempo que le tomará a la partícula 
+llegar a la parte más baja del cicloide es un cuarto de período, independientemente de 
+la amplitud (que es lo mismo que considerar su posición inicial en el cicloide).
+
 
 \end{document}
 
