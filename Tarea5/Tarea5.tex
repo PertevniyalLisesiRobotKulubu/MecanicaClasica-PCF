@@ -150,6 +150,136 @@ a la figura \mref{fig:problema3fig1}.
  \label{fig:problema3fig1}
 \end{figure}
 
+Tenemos entonces un péndulo simple cuyo extremo fijo está anclado a una masa $M$ que 
+puede desplazarse libremente en dirección horizontal. Comencemos por ver cuantas coordenadas
+generalizadas necesitamos para especificar la configuración del sistema completamente. 
+Como trataremos este sistema como tridimensional, cada masa necesita tres coordenadas 
+cartesianas para ser ubicada únicamente en el espacio, para $m$ las denotaremos por 
+$(x,y,z)$ y para $M$, $(X,Y,Z)$. Pero debido a la configuración del sistema físico 
+podemos ver fácilmente que existen cuatro constricciones holonómicas, que podemos 
+escribir como\footnote{Es fácil ver que, debido al teorema de Pitágoras en coordenadas
+cartesianas, $l$ se puede considerar como la hipotenusa de el triángulo formado 
+por los catetos $y$ y $X-x$, y ya es claro el resultado de \mref{eq:pendu4}.}
+
+\begin{align}
+\label{eq:pendu1}
+ Z &= 0, \\
+\label{eq:pendu2}
+ Y &= 0, \\
+\label{eq:pendu3}
+ z &= 0, \\
+\label{eq:pendu4}
+ [(x-X)^2 - y^2] - r^2 &= 0.
+\end{align}
+
+Las ecuaciones \mref{eq:pendu1, eq:pendu2} constriñen el movimiento de la masa $M$ 
+al eje $X$. Las ecuaciones \mref{eq:pendu3, eq:pendu4} constriñen al péndulo a moverse 
+en el plano $xy$ a lo largo de un arco de radio $l$, relativo a la masa movible $M$. Por 
+lo tanto necesitamos $6-4 = 2$ coordenadas generalizadas para describir completamente 
+la configuración del sistema. Las elecciones obvias para éstas son $X$, la cual denota 
+la posición horizontal de la masa $M$, y $\theta$, que representa el desplazamiento 
+angular del péndulo lejos del eje vertical.
+
+\vspace{.3cm}
+
+La formulación lagrangiana nos dice ahora que debeos obtener la energía cinética y la 
+energía potencial en términos de las coordenadas generalizadas. Comenzamos por escribir 
+la expresión de las mismas en coordenadas cartesianas, recordando que está presente un 
+campo gravitacional constante dirigido hacia abajo,
+
+\begin{align}
+\label{eq:pendu5}
+ T &= \frac{1}{2} M \dot{X}^2 + \frac{1}{2}m(\dot{x}^2+\dot{y}^2), \\
+\label{eq:pendu6}
+ V &= mgy
+ \end{align}
+
+Para poder expresar estas ecuaciones en términos de $X$ y $\theta$, necesitamos una 
+transformación de coordenadas\footnote{Claramente la transformación de $X$ será $X = X$, 
+y por lo tanto $\dot{X} = \dot{X}$.}, fáciles de obtener de la figura 
+\mref{fig:problema3fig1},
+
+\begin{align}
+ x &= X + l \sen{\theta}, \\
+ y &= -l \cos{\theta}
+\end{align}
+
+Ahora necesitamos la primera derivada temporal de las mismas para sustituirlas en 
+la expresión de la energía cinética \mref{eq:pendu5},
+
+\begin{align}
+ \dot{x} &= \dot{X} + l \dot{\theta} \cos{\theta}, \\
+ \dot{y} &= l \dot{\theta} \sen{\theta}
+\end{align}
+
+por lo tanto las ecuaciones \mref{eq:pendu5,eq:pendu6} se transforman en,
+
+\begin{align}
+ \begin{split}
+  T &= \frac{1}{2} \dot{X}^2 + \frac{1}{2}m[(\dot{X}+ l \dot{\theta} \cos{\theta})^2 +
+    (l \dot{\theta} \sen{\theta})^2], \\
+    &= \frac{M}{2}\dot{X}^2 + \frac{m}{2}[\dot{X}^2 + 2l\dot{X}\dot{\theta}\cos{\theta} + 
+    l^2 \dot{\theta}^2 \cos^2{\theta} + l^2 \dot{\theta}^2 \sen^2{\theta}], \\
+    &= \frac{M}{2}\dot{X}^2 + \frac{m}{2}[\dot{X}^2 + l^2 \dot{\theta}^2 + 
+    2l\dot{X}\dot{\theta}\cos{\theta}].
+ \end{split}
+\end{align}
+
+\begin{equation}
+ V = -mgl \cos{\theta}.
+\end{equation}
+
+Por lo tanto la lagrangiana $L = T - V$, será igual a 
+
+\begin{equation}
+ L = \frac{M}{2}\dot{X}^2 + \frac{m}{2}[\dot{X}^2 + l^2 \dot{\theta}^2 + 
+    2l\dot{X}\dot{\theta}\cos{\theta}] + mgl \cos{\theta}.
+\end{equation}
+
+Y las ecuaciones de movimiento serán, para $X$,
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{X}} - \frac{\partial L}{\partial X} = 0,
+\end{equation}
+
+\begin{equation}
+ \frac{d}{dt} (M \dot{X} + m \dot{X} + lm\dot{\theta}\cos{\theta}) = 0.
+ \label{eq:pendu7}
+\end{equation}
+
+La ecuación \mref{eq:pendu7} es producto de que la lagrangiana no depende de $X$, y por 
+lo tanto
+
+\begin{equation}
+ \boxed{M \dot{X} + m \dot{X} + l\dot{\theta}\cos{\theta} = \text{constante},}
+\end{equation}
+
+Lo cual nos dice que $M \dot{X} + m \dot{X} + lm\dot{\theta}\cos{\theta}$ es una integral 
+de movimiento.
+
+\vspace{.3cm}
+
+Por otra parte para $\theta$,
+
+\begin{equation}
+  \frac{d}{dt}\frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} = 0,
+\end{equation}
+
+\begin{align}
+\begin{split}
+ \frac{d}{dt}(ml^2 \dot{\theta} + lm \dot{X} \cos{\theta}) + mgl\sen{\theta} +
+ lm \dot{X} \dot{\theta} \sen{\theta} = 0, \\
+ \ddot{m\theta}l^2  + m\ddot{X}l\cos{\theta} - \cancel{lm\dot{X}\dot{\theta}\sen{\theta}} + mgl\sen{\theta} +
+ \cancel{lm \dot{X} \dot{\theta} \sen{\theta} = 0}. \\
+ \end{split}
+\end{align}
+
+\begin{equation}
+ \boxed{\therefore \ddot{\theta}  + \frac{\ddot{X}}{l}\cos{\theta} + \frac{g}{l}\sen{\theta} = 0.}
+\end{equation}
+
+
+
 \section{Problema 4}
 
 Para un número de grados de libertad mayor que uno, dos lagrangianas distintas $L_1$
