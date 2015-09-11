@@ -522,96 +522,165 @@ Pero por la regla de la cadena, y recordando que $\phi = L_1 - L_2$, tenemos que
 
 \vspace{.2cm} $\hspace{12cm} \square$
 
-Entonces hemos demostrado la primera parte del problema. Ahora para la segunda parte 
-de la demostración, podemos considerar el enunciado desde otra perspectiva. Lo que 
-nos falta por demostrar es que si le sumamos a una lagrangiana una derivada total del tiempo
-de una función como $f(q,t)$ entonces las ecuaciones de movimiento no cambiarán. Desde 
-esta perspectiva podemos ver que si existe tal función $f(q,t)$ entonces,
+Entonces hemos demostrado, solucionando la primera parte del problema, que si dos 
+lagrangianas distintas generan ecuaciones de movimiento idénticas, entonces su resta 
+es una función $f$ de la variedad de configuración; o dicho de otra manera, si le sumamos a una lagrangiana una derivada total del tiempo
+de una función como $f(q,t)$ entonces las ecuaciones de movimiento no cambiarán.
+
+\vspace{.3cm}
+
+Por otra parte nos piden ahora demostrar que si necesariamente dos lagrangianas que 
+producen la mismas ecuaciones de movimiento, difieren por una derivada total del tiempo.
+Podemos demostrar fácilmente que esto no es cierto, y lo haremos usando un contraejemplo 
+del enunciado, es decir si encontramos dos lagrangianas que producen las mismas 
+ecuaciones de movimiento, pero estas no difieren por una derivada total temporal 
+de una función $f$ entonces habremos probado que el enunciado es falso.
+
+\vspace{.3cm}
+
+Para hacer esto consideremos dos partículas en un potencial de oscilador armónico,
+las ecuaciones de movimiento están dadas por,
+
+\begin{align}
+ \ddot{q}^i_1 + \omega^2 q^i_1 = 0, \\
+ \ddot{q}^i_2 + \omega^2 q^i_2 = 0, \\ 
+\end{align}
+
+donde $i = 1,\dots,3$. En estas ecuaciones $q_1$ se refiere a la posición de la 
+partícula 1, $q_2$ se refiere a la posición de la partícula 2, y $\omega$ es la frecuencia 
+del oscilador armónico. Si ahora buscamos una lagrangiana que satisfaga las siguientes 
+identidades
+
+\begin{align}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i_1} - \frac{\partial L}{\partial q^i_1} 
+ &\equiv  \ddot{q}^i_1 + \omega^2 q^i_1 = 0, \\
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i_2} - \frac{\partial L}{\partial q^i_2} 
+ &\equiv  \ddot{q}^i_2 + \omega^2 q^i_2 = 0, \\
+\end{align}
+
+obtenemos la lagrangiana familiar
 
 \begin{equation}
- L' = L + \frac{df}{dt}
- \label{eq:4part1}
+ L = \frac{1}{2} (\dot{q}_1)^2 + \frac{1}{2} (\dot{q}_2)^2 - \frac{1}{2} \omega^2 (q_1)^2 
+ - \frac{1}{2} \omega^2 (q_2)^2.
 \end{equation}
 
-también debe satisfacer las ecuaciones de Lagrange, hemos cambiado $L_1$ por $L'$ y 
-$L_2$ por $L$, porque ya sabíamos que $L_1$ y $L_2$ satisfacen las ecuaciones de Lagrange, y
-queremos hacer una demostración más general. Ahora podemos probar este resultado, asumiendo que 
-$L$ satisface las ecuaciones de Lagrange. Derivemos \mref{eq:4part1} con respecto a $q^i$,
+Supongamos ahora que buscamos una lagrangiana que produzca las mismas ecuaciones de 
+movimiento, pero cambiadas de posición, i.e.
+
+\begin{align}
+ \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i_1} - \frac{\partial L'}{\partial q^i_1} 
+ &\equiv \ddot{q}^i_2 + \omega^2 q^i_2 = 0, \\
+ \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i_2} - \frac{\partial L'}{\partial q^i_2} 
+ &\equiv  \ddot{q}^i_1 + \omega^2 q^i_1 = 0,
+\end{align}
+
+resulta que podemos encontrarla, y resulta ser una simplificación de la lagrangiana 
+de Morse-Feshbach, 
 
 \begin{equation}
- \frac{\partial L'}{\partial q^i} = \frac{\partial L}{\partial q^i} + 
- \frac{\partial}{\partial q^i} \frac{df}{dt},
- \label{eq:4part2}
+ L' = \dot{q}^i_1\dot{q}^i_2 + \omega^2 q^i_1 q^i_2
 \end{equation}
 
-y con respecto a $\dot{q}^i$,
+Es claro entonces que no podemos encontrar una función $f$ de la forma en que la planteamos 
+para que $L - L' = df/dt$, por lo tanto hemos demostrado que es esta proposición no 
+se cumple en sentido inverso, es decir que \textbf{NO} necesariamente dos lagrangianas que 
+producen la mismas ecuaciones de movimiento, difieren por una derivada total del tiempo. 
 
-\begin{equation}
- \frac{\partial L'}{\partial \dot{q}^i} = \frac{\partial L}{\partial \dot{q}^i} + 
- \frac{\partial}{\partial \dot{q}^i} \frac{df}{dt}.
- \label{eq:4part3}
-\end{equation}
-
-Podemos escribir para $f$ por la regla de la cadena,
-
-\begin{equation}
- \frac{df}{dt} = \frac{\partial f}{\partial q^i}\dot{q}^i + \frac{\partial f}{\partial t}.
- \label{eq:4part4}
-\end{equation}
-
-Y entonces la derivada parcial de $df/dt$ con respecto a $\dot{q}^i$,
-
-\begin{equation}
- \frac{\partial}{\partial \dot{q}^i} \frac{df}{dt} = \frac{\partial f}{\partial q^i}.
- \label{eq:4part5}
-\end{equation}
-
-Ahora tomando la derivada parcial de \mref{eq:4part3},
-
-\begin{equation}
- \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i}
- + \frac{d}{dt}\frac{\partial f}{\partial q^i}.
- \label{eq:4part6}
-\end{equation}
-
-Ahora restando \mref{eq:4part6} menos \mref{eq:4part2}, 
-
-\begin{equation}
- \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 
- \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i}
- + \frac{d}{dt}\frac{\partial f}{\partial q^i} - \frac{\partial L}{\partial q^i} - 
- \frac{\partial}{\partial q^i} \frac{df}{dt}.
-\end{equation}
-
-Si arreglamos términos tenemos que 
-
-\begin{equation}
-  \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 
-\frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i} - \frac{\partial L}{\partial q^i} + 
-\frac{d}{dt}\frac{\partial f}{\partial q^i} - \frac{\partial}{\partial q^i} \frac{df}{dt}.
-\label{eq:4part7}
-\end{equation}
-
-Pero por debido a que hemos asumido de entrada que  $L$ satisface las ecuaciones de 
-Lagrange los primeros dos términos de \mref{eq:4part7} se hacen cero, y por otra parte 
-que $f$ es diferenciable entonces,
-
-\begin{equation}
- \frac{d}{dt}\frac{\partial f}{\partial q^i} =  \frac{\partial}{\partial q^i} \frac{df}{dt}.
-\end{equation}
-
-Y por lo tanto,
-
-\begin{equation}
-  \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 0
-\end{equation}
-
-\vspace{.2cm} $\hspace{12cm} \square$
-
-Hemos demostrado entonces que si existe una función de la forma $f(q,t)$, 
-y al sumarle a una lagrangiana una derivada total temporal de ésta, entonces las 
-ecuaciones de movimiento no se ven perturbadas, que era la otra parte de la demostración
-que necesitábamos.
+%
+%Esta parte de abajo, no demuestra la segunda parte del problema, es simplemente otra 
+%manera de demostrar lo mismo que en la primera parte.
+%
+% Entonces hemos demostrado la primera parte del problema. Ahora para la segunda parte 
+% de la demostración, podemos considerar el enunciado desde otra perspectiva. Lo que 
+% nos falta por demostrar es que si le sumamos a una lagrangiana una derivada total del tiempo
+% de una función como $f(q,t)$ entonces las ecuaciones de movimiento no cambiarán. Desde 
+% esta perspectiva podemos ver que si existe tal función $f(q,t)$ entonces,
+% 
+% \begin{equation}
+%  L' = L + \frac{df}{dt}
+%  \label{eq:4part1}
+% \end{equation}
+% 
+% también debe satisfacer las ecuaciones de Lagrange, hemos cambiado $L_1$ por $L'$ y 
+% $L_2$ por $L$, porque ya sabíamos que $L_1$ y $L_2$ satisfacen las ecuaciones de Lagrange, y
+% queremos hacer una demostración más general. Ahora podemos probar este resultado, asumiendo que 
+% $L$ satisface las ecuaciones de Lagrange. Derivemos \mref{eq:4part1} con respecto a $q^i$,
+% 
+% \begin{equation}
+%  \frac{\partial L'}{\partial q^i} = \frac{\partial L}{\partial q^i} + 
+%  \frac{\partial}{\partial q^i} \frac{df}{dt},
+%  \label{eq:4part2}
+% \end{equation}
+% 
+% y con respecto a $\dot{q}^i$,
+% 
+% \begin{equation}
+%  \frac{\partial L'}{\partial \dot{q}^i} = \frac{\partial L}{\partial \dot{q}^i} + 
+%  \frac{\partial}{\partial \dot{q}^i} \frac{df}{dt}.
+%  \label{eq:4part3}
+% \end{equation}
+% 
+% Podemos escribir para $f$ por la regla de la cadena,
+% 
+% \begin{equation}
+%  \frac{df}{dt} = \frac{\partial f}{\partial q^i}\dot{q}^i + \frac{\partial f}{\partial t}.
+%  \label{eq:4part4}
+% \end{equation}
+% 
+% Y entonces la derivada parcial de $df/dt$ con respecto a $\dot{q}^i$,
+% 
+% \begin{equation}
+%  \frac{\partial}{\partial \dot{q}^i} \frac{df}{dt} = \frac{\partial f}{\partial q^i}.
+%  \label{eq:4part5}
+% \end{equation}
+% 
+% Ahora tomando la derivada parcial de \mref{eq:4part3},
+% 
+% \begin{equation}
+%  \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i}
+%  + \frac{d}{dt}\frac{\partial f}{\partial q^i}.
+%  \label{eq:4part6}
+% \end{equation}
+% 
+% Ahora restando \mref{eq:4part6} menos \mref{eq:4part2}, 
+% 
+% \begin{equation}
+%  \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 
+%  \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i}
+%  + \frac{d}{dt}\frac{\partial f}{\partial q^i} - \frac{\partial L}{\partial q^i} - 
+%  \frac{\partial}{\partial q^i} \frac{df}{dt}.
+% \end{equation}
+% 
+% Si arreglamos términos tenemos que 
+% 
+% \begin{equation}
+%   \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 
+% \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i} - \frac{\partial L}{\partial q^i} + 
+% \frac{d}{dt}\frac{\partial f}{\partial q^i} - \frac{\partial}{\partial q^i} \frac{df}{dt}.
+% \label{eq:4part7}
+% \end{equation}
+% 
+% Pero por debido a que hemos asumido de entrada que  $L$ satisface las ecuaciones de 
+% Lagrange los primeros dos términos de \mref{eq:4part7} se hacen cero, y por otra parte 
+% que $f$ es diferenciable entonces,
+% 
+% \begin{equation}
+%  \frac{d}{dt}\frac{\partial f}{\partial q^i} =  \frac{\partial}{\partial q^i} \frac{df}{dt}.
+% \end{equation}
+% 
+% Y por lo tanto,
+% 
+% \begin{equation}
+%   \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 0
+% \end{equation}
+% 
+% \vspace{.2cm} $\hspace{12cm} \square$
+% 
+% Hemos demostrado entonces que si existe una función de la forma $f(q,t)$, 
+% y al sumarle a una lagrangiana una derivada total temporal de ésta, entonces las 
+% ecuaciones de movimiento no se ven perturbadas, que era la otra parte de la demostración
+% que necesitábamos.
 
 \section{Problema 5}
 
@@ -796,6 +865,12 @@ de la figura \mref{fig:problema5fig1} y usando los resultados de la teoría de
 osciladores armónicos, es fácil ver que el tiempo que le tomará a la partícula 
 llegar a la parte más baja del cicloide es un cuarto de período, independientemente de 
 la amplitud (que es lo mismo que considerar su posición inicial en el cicloide).
+
+\begin{thebibliography}{10}
+\bibitem{santilli}
+  R. Santilli, \emph{Foundations of Theoretical Mechanics I: The inverse problem in 
+  Newtonian Mechanics}, Springer-Verlang, 1978.
+\end{thebibliography}
 
 
 \end{document}
