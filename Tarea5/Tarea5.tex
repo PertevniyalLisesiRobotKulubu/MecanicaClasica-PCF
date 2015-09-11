@@ -412,8 +412,8 @@ Que podemos escribir como,
  \end{equation}
 
 Donde $\phi = L_1 - L_2$. Ahora, debido a que $L_1$ y $L_2$ son funciones de solamente 
-$q^i,\dot{q^i}$ y $t$, entonces necesariamente $\phi$ también lo es, es decir, que 
-$L_1$, $L_2$ y $\phi$ son lineales en $\dot{q}^i$, por lo que
+$q^i,\dot{q}^i$ y $t$, entonces necesariamente $\phi$ también lo es, es decir, que 
+$L_1$, $L_2$ y $\phi$ son lineales en $\ddot{q}^k$, por lo que
 
 \begin{equation}
  \frac{\partial^2 \phi}{\partial \dot{q}^i\dot{q}^k} = 0,
@@ -437,8 +437,9 @@ Y de \mref{eq:4phi1}, tenemos que
 y
 
 \begin{equation}
- \frac{\partial \phi}{\partial q^i} = \frac{\Xi_i}{\partial q^i}\dot{q}^i + \frac{\Gamma}{\partial q^i}
-\end{equation}
+ \frac{\partial \phi}{\partial q^i} = \frac{\Xi_k}{\partial q^i}\dot{q}^k + \frac{\Gamma}{\partial q^i}
+\label{eq:4phipartial}
+ \end{equation}
 
 
 Entonces, tenemos que debido a \mref{eq:4phi0} la ecuación \mref{eq:4cero} se convierte en
@@ -449,13 +450,70 @@ Entonces, tenemos que debido a \mref{eq:4phi0} la ecuación \mref{eq:4cero} se c
  \label{eq:4cero1}
 \end{equation}
 
-y sustituyendo \mref{eq:4xi1} en \mref{eq:4cero1} tenemos que
+y sustituyendo \mref{eq:4xi1} y \mref{eq:4phipartial} en \mref{eq:4cero1} tenemos que
 
 \begin{equation}
- \frac{\partial \Xi_i}{\partial q^k} \dot{q}^k + \frac{\partial \Xi_i}{\partial t} 
+ \frac{\partial \Xi_i}{\partial q^k} \dot{q}^k + \frac{\partial \Xi_i}{\partial t}
+- \frac{\Xi_k}{\partial q^i}\dot{q}^k - \frac{\Gamma}{\partial q^i} = 0,
 \end{equation}
 
- 
+que podemos escribir como,
+
+\begin{equation}
+ \left( \frac{\partial \Xi_i}{\partial q^k} - \frac{\partial \Xi_i}{\partial q^i}\right) \dot{q}^k
+ + \frac{\partial \Xi_i}{\partial t} - \frac{\Gamma}{\partial q^i} = 0.
+\end{equation}
+
+Pero debido a que las $Xi_i$ son lineales en $\dot{q}^k$, y usando un argumento 
+parecido al que utilizamos anteriormente, vemos que 
+
+\begin{equation}
+ \frac{\partial \Xi_i}{\partial q^k} - \frac{\partial \Xi_i}{\partial q^i} = 0,
+\end{equation}
+
+\begin{equation}
+ \therefore \frac{\partial \Xi_i}{\partial q^k} = \frac{\partial \Xi_i}{\partial q^i}.
+\end{equation}
+
+Y por lo tanto existe una función f(q,t) que nos permite escribir\footnote{Esto es una 
+generalización para $n$ dimensiones del hecho de que en 3 dimensiones, $\nabla \times \mathbf{E} = 0$,
+implica que existe una función $V$ tal que $\mathbf{E} = \nabla V$, que podemos escribir para 
+$n$ dimensiones como $\partial E_i / \partial x_k = \partial E_k / \partial x_i$, 
+$\therefore E_k = \partial V / \partial x_k$},
+
+\begin{equation}
+ \Xi_i = \frac{\partial f}{\partial q^i}
+ \label{eq:4xi2}
+\end{equation}
+
+y por la ecuación anterior vemos que 
+
+\begin{equation}
+ \frac{\partial \Xi_i}{\partial t} = \frac{\partial \Gamma}{\partial q^i}
+\end{equation}
+
+\begin{equation}
+ \frac{\partial}{\partial t}\frac{\partial f}{\partial q^i} = \frac{\partial \Gamma}{\partial q^i}
+\end{equation}
+
+\begin{equation}
+ \therefore \Gamma = \frac{\partial f}{\partial t}
+ \label{eq:4gamma}
+\end{equation}
+
+Ahora sustituyendo \mref{eq:4xi2} y \mref{eq:4gamma} en \mref{eq:4phi1} obtenemos que 
+
+\begin{equation}
+ \phi = \frac{\partial f}{\partial q^i}\dot{q}^i + \frac{\partial f}{\partial t}
+\end{equation}
+
+Pero por la regla de la cadena, y recordando que $\phi = L_1 - L_2$, tenemos que
+
+\begin{equation}
+ \boxed{L_1 - L_2 = \frac{d}{dt}f(q,t)}
+\end{equation}
+
+\vspace{.2cm} $\hspace{12cm} \square$
 
 \section{Problema 5}
 
