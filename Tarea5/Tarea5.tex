@@ -373,6 +373,90 @@ en sentido inverso?
 
 \underline{Solución:} \vspace{.3cm}
 
+Comencemos por escribir las ecuaciones de Lagrange, donde $L = L(q^i,\dot{q}^i,t)$
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i} - \frac{\partial L}{\partial q^i} = 0 
+\end{equation}
+
+Por la regla de la cadena vemos que, 
+
+\begin{align*}
+ \xi_i (L) &\equiv \frac{\partial}{\partial \dot{q}^k}\frac{\partial L}{\partial \dot{q}^i} 
+ + \frac{d\dot{q}^k}{dt} + \frac{\partial}{\partial q^k}\frac{\partial L}{\partial \dot{q}^i} 
+ + \frac{dq^k}{dt} + \frac{\partial}{\partial t}\frac{\partial L}{\partial \dot{q}^i} \frac{dt}{dt}
+ - \frac{\partial L}{\partial q^i}, \\
+ &= \frac{\partial^2 L}{\partial \dot{q}^k\dot{q}^i} \ddot{q}^k + 
+ \frac{\partial^2 L}{\partial q^k \dot{q}^i} \dot{q}^k+ \frac{\partial^2 L}{\partial t \partial \dot{q}^i}
+ - \frac{\partial L}{\partial q^i}
+ \end{align*}
+
+Ahora, debido a que las lagrangianas producen las mismas ecuaciones de movimiento,
+entonces 
+
+\begin{align}
+ \frac{\partial^2 L_1}{\partial \dot{q}^k\dot{q}^i} \ddot{q}^k + 
+ \frac{\partial^2 L_1}{\partial q^k \dot{q}^i} \dot{q}^k+ \frac{\partial^2 L_1}{\partial t \partial \dot{q}^i}
+ - \frac{\partial L_1}{\partial q^i} = \frac{\partial^2 L_2}{\partial \dot{q}^k\dot{q}^i} \ddot{q}^k + 
+ \frac{\partial^2 L_2}{\partial q^k \dot{q}^i} \dot{q}^k+ \frac{\partial^2 L_2}{\partial t \partial \dot{q}^i}
+ - \frac{\partial L_2}{\partial q^i}.
+\end{align}
+
+Que podemos escribir como,
+
+\begin{equation}
+ \xi_i (L_1) - \xi_i (L_2) = \frac{\partial^2 \phi}{\partial \dot{q}^k\dot{q}^i} \ddot{q}^k
+ + \frac{\partial^2 \phi}{\partial q^k \dot{q}^i} \dot{q}^k + \frac{\partial^2 \phi}{\partial t \partial \dot{q}^i}  
+ - \frac{\partial \phi}{\partial q^i} = 0.
+ \label{eq:4cero}
+ \end{equation}
+
+Donde $\phi = L_1 - L_2$. Ahora, debido a que $L_1$ y $L_2$ son funciones de solamente 
+$q^i,\dot{q^i}$ y $t$, entonces necesariamente $\phi$ también lo es, es decir, que 
+$L_1$, $L_2$ y $\phi$ son lineales en $\dot{q}^i$, por lo que
+
+\begin{equation}
+ \frac{\partial^2 \phi}{\partial \dot{q}^i\dot{q}^k} = 0,
+ \label{eq:4phi0}
+\end{equation}
+
+y 
+
+\begin{equation}
+ \phi = \Xi_i (q,t) \dot{q}^i + \Gamma(q,t).
+ \label{eq:4phi1}
+\end{equation}
+
+Y de \mref{eq:4phi1}, tenemos que 
+
+\begin{equation}
+ \frac{\partial \phi}{\partial \dot{q}^i} = \Xi_i,
+ \label{eq:4xi1}
+\end{equation}
+
+y
+
+\begin{equation}
+ \frac{\partial \phi}{\partial q^i} = \frac{\Xi_i}{\partial q^i}\dot{q}^i + \frac{\Gamma}{\partial q^i}
+\end{equation}
+
+
+Entonces, tenemos que debido a \mref{eq:4phi0} la ecuación \mref{eq:4cero} se convierte en
+
+\begin{equation}
+ \frac{\partial^2 \phi}{\partial q^k \dot{q}^i} \dot{q}^k + \frac{\partial^2 \phi}{\partial t \partial \dot{q}^i}  
+ - \frac{\partial \phi}{\partial q^i} = 0,
+ \label{eq:4cero1}
+\end{equation}
+
+y sustituyendo \mref{eq:4xi1} en \mref{eq:4cero1} tenemos que
+
+\begin{equation}
+ \frac{\partial \Xi_i}{\partial q^k} \dot{q}^k + \frac{\partial \Xi_i}{\partial t} 
+\end{equation}
+
+ 
+
 \section{Problema 5}
 
 En presencia de la gravedad una partícula de masa $m$, inicialmente en reposo, se 
