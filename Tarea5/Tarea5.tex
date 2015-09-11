@@ -373,6 +373,13 @@ en sentido inverso?
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{Nota}: Debido a la alta aparición de sumatorias en este problema, durante la
+solución del mismo utilizaremos el convenio de la suma de Einstein, el cual nos dice 
+que un índice que aparece dos veces en un término matemático es sumado sobre 
+el rango entero de ese índice.
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
 Comencemos por escribir las ecuaciones de Lagrange, donde $L = L(q^i,\dot{q}^i,t)$
 
 \begin{equation}
@@ -383,8 +390,8 @@ Por la regla de la cadena vemos que,
 
 \begin{align*}
  \xi_i (L) &\equiv \frac{\partial}{\partial \dot{q}^k}\frac{\partial L}{\partial \dot{q}^i} 
- + \frac{d\dot{q}^k}{dt} + \frac{\partial}{\partial q^k}\frac{\partial L}{\partial \dot{q}^i} 
- + \frac{dq^k}{dt} + \frac{\partial}{\partial t}\frac{\partial L}{\partial \dot{q}^i} \frac{dt}{dt}
+ \frac{d\dot{q}^k}{dt} + \frac{\partial}{\partial q^k}\frac{\partial L}{\partial \dot{q}^i} 
+ \frac{dq^k}{dt} + \frac{\partial}{\partial t}\frac{\partial L}{\partial \dot{q}^i} \frac{dt}{dt}
  - \frac{\partial L}{\partial q^i}, \\
  &= \frac{\partial^2 L}{\partial \dot{q}^k\dot{q}^i} \ddot{q}^k + 
  \frac{\partial^2 L}{\partial q^k \dot{q}^i} \dot{q}^k+ \frac{\partial^2 L}{\partial t \partial \dot{q}^i}
@@ -514,6 +521,97 @@ Pero por la regla de la cadena, y recordando que $\phi = L_1 - L_2$, tenemos que
 \end{equation}
 
 \vspace{.2cm} $\hspace{12cm} \square$
+
+Entonces hemos demostrado la primera parte del problema. Ahora para la segunda parte 
+de la demostración, podemos considerar el enunciado desde otra perspectiva. Lo que 
+hemos demostrado es que si le sumamos a una lagrangiana una derivada total del tiempo
+de una función como $f(q,t)$ entonces las ecuaciones de movimiento no cambiarán. Desde 
+esta perspectiva podemos ver que si existe tal función $f(q,t)$ entonces,
+
+\begin{equation}
+ L' = L + \frac{df}{dt}
+ \label{eq:4part1}
+\end{equation}
+
+también debe satisfacer las ecuaciones de Lagrange, hemos cambiado $L_1$ por $L'$ y 
+$L_2$ por $L$, porque ya sabíamos que $L_1$ y $L_2$ satisfacen las ecuaciones de Lagrange, y
+queremos hacer una demostración más general. Ahora podemos probar este resultado, asumiendo que 
+$L$ satisface las ecuaciones de Lagrange. Derivemos \mref{eq:4part1} con respecto a $q^i$,
+
+\begin{equation}
+ \frac{\partial L'}{\partial q^i} = \frac{\partial L}{\partial q^i} + 
+ \frac{\partial}{\partial q^i} \frac{df}{dt},
+ \label{eq:4part2}
+\end{equation}
+
+y con respecto a $\dot{q}^i$,
+
+\begin{equation}
+ \frac{\partial L'}{\partial \dot{q}^i} = \frac{\partial L}{\partial \dot{q}^i} + 
+ \frac{\partial}{\partial \dot{q}^i} \frac{df}{dt}.
+ \label{eq:4part3}
+\end{equation}
+
+Podemos escribir para $f$ por la regla de la cadena,
+
+\begin{equation}
+ \frac{df}{dt} = \frac{\partial f}{\partial q^i}\dot{q}^i + \frac{\partial f}{\partial t}.
+ \label{eq:4part4}
+\end{equation}
+
+Y entonces la derivada parcial de $df/dt$ con respecto a $\dot{q}^i$,
+
+\begin{equation}
+ \frac{\partial}{\partial \dot{q}^i} \frac{df}{dt} = \frac{\partial f}{\partial q^i}.
+ \label{eq:4part5}
+\end{equation}
+
+Ahora tomando la derivada parcial de \mref{eq:4part3},
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i}
+ + \frac{d}{dt}\frac{\partial f}{\partial q^i}.
+ \label{eq:4part6}
+\end{equation}
+
+Ahora restando \mref{eq:4part6} menos \mref{eq:4part2}, 
+
+\begin{equation}
+ \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i}
+ + \frac{d}{dt}\frac{\partial f}{\partial q^i} - \frac{\partial L}{\partial q^i} - 
+ \frac{\partial}{\partial q^i} \frac{df}{dt}.
+\end{equation}
+
+Si arreglamos términos tenemos que 
+
+\begin{equation}
+  \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 
+\frac{d}{dt}\frac{\partial L}{\partial \dot{q}^i} - \frac{\partial L}{\partial q^i} + 
+\frac{d}{dt}\frac{\partial f}{\partial q^i} - \frac{\partial}{\partial q^i} \frac{df}{dt}.
+\label{eq:4part7}
+\end{equation}
+
+Pero por debido a que hemos asumido de entrada que  $L$ satisface las ecuaciones de 
+Lagrange los primeros dos términos de \mref{eq:4part7} se hacen cero, y por otra parte 
+que $f$ es diferenciable entonces,
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial f}{\partial q^i} =  \frac{\partial}{\partial q^i} \frac{df}{dt}.
+\end{equation}
+
+Y por lo tanto,
+
+\begin{equation}
+  \frac{\partial L'}{\partial q^i} - \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^i} = 0
+\end{equation}
+
+\vspace{.2cm} $\hspace{12cm} \square$
+
+Hemos demostrado entonces que si existe una función de la forma $f(q,t)$, 
+y al sumarle a una lagrangiana una derivada total temporal de ésta, entonces las 
+ecuaciones de movimiento no se ven perturbadas, que era la otra parte de la demostración
+que necesitábamos.
 
 \section{Problema 5}
 
