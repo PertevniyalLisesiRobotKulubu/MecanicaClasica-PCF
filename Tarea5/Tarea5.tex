@@ -126,6 +126,83 @@ entonces podemos reducir a cuadraturas las ecuaciones de movimiento.
 
 \underline{Solución:} \vspace{.3cm}
 
+Tenemos las siguientes expresiones para la energía cinética y potencial del sistema,
+
+\begin{equation}
+ T = \sum_i f_i(q^i)(\dot{q}^i)^2,
+ \label{eq:2cinetica1}
+\end{equation}
+
+\begin{equation}
+ V = \sum_i V_i(q^i).
+ \label{eq:2potencial1}
+\end{equation}
+
+Y podemos escribir la lagrangiana $L = T - V$ del sistema como,
+
+\begin{equation}
+ L = \sum_i \left[ f_i(q^i)(\dot{q}^i)^2 - V_i(q^i)\right] = \sum_i L_i,
+\end{equation}
+
+donde
+
+\begin{equation}
+ L_i = f_i(q^i)(\dot{q}^i)^2 - V_i(q^i).
+\end{equation}
+
+Por otra parte las ecuaciones de Lagrange nos dicen que,
+
+\begin{equation}
+ \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^i} = \frac{\partial L}{\partial q^i},
+\end{equation}
+
+pero debido a que $L_i$ solo depende de $\dot{q}^i$ y $q^i$, entonces
+
+\begin{equation}
+ \frac{d}{dt} \frac{\partial L_i}{\partial \dot{q}^i} = \frac{\partial L_i}{\partial q^i}. 
+ \label{eq:3ecdeLagrange1}
+\end{equation}
+
+Y vemos entonces que las ecuaciones se separan y solo tendríamos que resolver una sola ecuación
+como \mref{eq:3ecdeLagrange1} para cada coordenada generalizada. Ya este argumento es 
+suficiente y necesario para decir que podemos reducir a cuadraturas las ecuaciones de 
+movimiento, pero podemos mostrar esto de un modo más simple. Debido a que $L_i$ no 
+depende explícitamente del tiempo, y que la energía potencial es una función homogénea 
+de segundo orden de las velocidades generalizadas, entonces la energía se conserva (será
+una integral de movimiento). Y tiene la siguiente expresión,
+
+\begin{equation}
+ E_i = T + V = f_i(q^i)(\dot{q}^i)^2 + V_i(q^i),
+ \label{eq:3energtotal1}
+\end{equation}
+
+la cual puede integrarse por separación de variables. Para hacer esto llamaremos 
+$\xi = \dot{q}^i$, y entonces 
+
+\begin{equation}
+ f_i(q^i) \xi^2 = V_i(q^i) - E_i,
+ \label{eq:3diferencial}
+\end{equation}
+
+y de \mref{eq:3diferencial} vemos que,
+
+\begin{align}
+ \begin{split}
+  \xi^2 = \frac{E_i - V_i(q^i)}{f(q^i)}, \\
+  \xi = \pm \sqrt{\frac{E_i - V_i(q^i)}{f(q^i)}}, \\
+  \frac{dq^i}{dt} = \pm \sqrt{\frac{E_i - V_i(q^i)}{f(q^i)}}
+ \end{split}
+\end{align}
+
+\begin{equation}
+ \boxed{dt = \frac{dq^i}{\pm \sqrt{\frac{E_i - V_i(q^i)}{f(q^i)}}}}.
+ \label{eq:3final}
+\end{equation}
+
+La cual nos proporciona $q^i$ y derivando obtenemos $\xi$, entonces todo el sistema 
+mecánico se puede reducir a cuadraturas como habíamos dicho anteriormente, pero ahora 
+podemos verlo más fácilmente.
+
 \section{Problema 3}
 
 Un péndulo de longitud $l$ y masa $m$ tiene su extremo fijo anclado a una masa $M$ que 
