@@ -106,8 +106,7 @@ sistema, encuentre la función lagrangiana y las ecuaciones de movimiento.
 
 \underline{Solución:} \vspace{.3cm}
 
-Nos servirán para la solución de este problema sin duda las coordenadas esféricas, 
-en la figura de abajo se muestra un diagrama del problema. Las dos partículas $m_1$ y 
+En la figura de abajo se muestra un diagrama del problema. Las dos partículas $m_1$ y 
 $m_2$ interaccionan gravitacionalmente, es decir mediante una fuerza central, y además 
 sabemos que el campo de fuerza que les produce una aceleración constante en 
 una dirección constante, asumiremos que lo hace en la dirección del eje $z$.
@@ -129,41 +128,103 @@ del gravitacional,
  V_{a}^{2} = F^{(2)} z_1 = m_2 \alpha z.
 \end{align}
 
-donde $\alpha$ es la magnitud de la aceleración constante $\mathbf{a}$.
-
-\vspace{.3cm}
-
-Por otra parte sabemos que la energía cinética del problema se puede expresar por 
+donde $\alpha$ es la magnitud de la aceleración constante $\mathbf{a}$. Ahora introduciendo 
+la coordenada relativa $\mathbf{r}$ y la coordenada del centro de masa $\mathbf{R}$ de 
+acuerdo a 
 
 \begin{equation}
- T = \frac{1}{2} m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac{1}{2} m_1 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2)
+ \mathbf{r} = \mathbf{r}_1 - \mathbf{r}_2,
 \end{equation}
 
-Pero debido al hecho de que estamos usando coordenadas esféricas tenemos la siguiente 
-transformación de coordenadas,
+\begin{equation}
+ m_1\mathbf{r}_1 + m_2\mathbf{r}_2 = (m_1 + m_2)\mathbf{R},
+\end{equation}
+
+podemos expresar a $\mathbf{r}_1$ y $\mathbf{r}_2$ en términos de $\mathbf{r}$ y $\mathbf{R}$
 
 \begin{align}
- x_i = r_i \sen{\theta_i}\cos{\phi_i}, \\
- y_i = r_i \sen{\theta_i}\sen{\phi_i}, \\
- z_i = r_i\cos{\theta_i},
+ \mathbf{r}_1 = \frac{m_2}{m_1 + m_2}\mathbf{r} + \mathbf{R}, \\
+ \mathbf{r}_2 = - \frac{m_1}{m_1 + m_2}\mathbf{r} + \mathbf{R}.
 \end{align}
 
-y tomando la primera derivada temporal de éstas obtenemos,
+Entonces las coordenadas generalizadas que utilizaremos para describir el sistema serán
+$\mathbf{r}$ y $\mathbf{R}$. La energía cinética del sistema será igual a 
+
+\begin{equation}
+ T = \frac{1}{2}m_1|\dot{\mathbf{r}}_1|^2 + \frac{1}{2}m_2|\dot{\mathbf{r}}_2|^2,
+\end{equation}
+
+y la energía potencial será
+
+\begin{equation}
+ V = V_{a}^{1} + V_{a}^{2} + V(|\mathbf{r}|).
+\end{equation}
+
+Y la lagrangiana $L = T- V$ del sistema será entonces
+
+\begin{equation}
+ L = \frac{1}{2}m_1|\dot{\mathbf{r}}_1|^2 + \frac{1}{2}m_2|\dot{\mathbf{r}}_2|^2 - V_{a}^{1} - V_{a}^{2} - V(|\mathbf{r}|).
+\end{equation}
+
+Luego con los resultados que hemos obtenido,
+
+\begin{align}
+ L = &\frac{1}{2}m_1 \left|\left(\frac{m_2}{m_1 + m_2}\dot{\mathbf{r}}+  \dot{\mathbf{R}}  \right)\right|^2
+ + \frac{1}{2}m_2 \left|\left(- \frac{m_1}{m_1 + m_2}\dot{\mathbf{r}}+  \dot{\mathbf{R}}  \right)\right|^2 \\
+ &- V(r) - m_1\alpha\left[\frac{m_2}{m_1 + m_2}\xi+\Xi \right] - m_2\alpha \left[- \frac{m_1}{m_1 + m_2}\xi+\Xi \right],
+\end{align}
+
+donde $\xi$ y $\Xi$ son las componentes de $z$ de $\mathbf{r}$ y $\mathbf{R}$ respectivamene. Y luego 
+de algo de álgebra podemos llegar a,
+
+\begin{align}
+ L = &\frac{1}{2}m_1\left[\frac{m_2}{m_1 + m_2} \right]^2 |\dot{r}|^2 + \frac{1}{2}m_2\left[\frac{m_1}{m_1 + m_2} \right]|\dot{r}|^2 
+ + \frac{1}{2}(m_1 + m_2)|\dot{R}|^2 \\
+ &- V(r) + \cancel{\frac{m_2 m_1 \alpha \xi - m_2 m_1 \alpha \xi }{m_1 + m_2}} - (m_1 + m_2)\alpha \Xi
+\end{align}
+
+\begin{equation}
+ \boxed{\therefore L = \frac{1}{2}\mu |\dot{r}|^2 + \frac{1}{2}(m_1 + m_2)|\dot{R}|^2 - V(r) - (m_1 + m_2)\alpha \Xi}
+\end{equation}
 
 
-
-
-% Ahora introduciendo 
-% la coordenada relativa $\mathbf{r}$ y la coordenada del centro de masa $\mathbf{R}$ de 
-% acuerdo a 
+% \vspace{.3cm}
+% 
+% Por otra parte sabemos que la energía cinética del problema se puede expresar por 
 % 
 % \begin{equation}
-%  \mathbf{r} = \mathbf{r_1} - \mathbf{r_2},
+%  T = \frac{1}{2} m_1 (\dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2) + \frac{1}{2} m_1 (\dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2)
+% \label{eq:1cineti1}
 % \end{equation}
 % 
-% \begin{equation}
-%  m_1\mathbf{r_1} + m_2\mathbf{r_2} = (m_1 + m_2)\mathbf{R}
-% \end{equation}
+% Pero debido al hecho de que estamos usando coordenadas esféricas tenemos la siguiente 
+% transformación de coordenadas,
+% 
+% \begin{align}
+%  x_i &= r_i \sen{\theta_i}\cos{\phi_i}, \\
+%  y_i &= r_i \sen{\theta_i}\sen{\phi_i}, \\
+%  z_i &= r_i\cos{\theta_i},
+% \end{align}
+% 
+% y tomando la primera derivada temporal de éstas obtenemos,
+% 
+% \begin{align}
+%  \dot{x_i} &= \dot{r_i} \sen{\theta_i}\cos{\phi_i} + r_i \dot{\theta_i}\cos{\theta_i}\cos{\phi_i} - r_i\dot{\phi_i}\sen{\theta_i}\sen{\phi_i}, \\
+%  \dot{y_i} &= \dot{r_i} \sen{\theta_i}\sen{\phi_i} + r_i \dot{\theta_i}\cos{\theta_i}\sen{\phi_i} + r_i\dot{\phi_i}\sen{\theta_i}\cos{\phi_i}, \\
+%  \dot{z_i} &= \dot{r_i}\cos{\theta_i} -r_i \dot{\theta_i}\sen{\theta_i}.
+% \end{align}
+% 
+% Sustituyendo estas ecuaciones en \mref{eq:1cineti1} obtenemos
+% 
+% \begin{align}
+%  T &= \\
+%  &\frac{1}{2}m_1 (\dot{r_1} \sen{\theta_1}\cos{\phi_1} + r_1 \dot{\theta_1}\cos{\theta_1}\cos{\phi_1} - r_1\dot{\phi_1}\sen{\theta_1}\sen{\phi_1})^2  \\
+%  &+ (\dot{r_1} \sen{\theta_1}\sen{\phi_1} + r_i \dot{\theta_i}\cos{\theta_1}\sen{\phi_1} + r_1\dot{\phi_1}\sen{\theta_1}\cos{\phi_1})^2 \\
+%  &- (\dot{r_1}\cos{\theta_i} -r_i \dot{\theta_i}\sen{\theta_i})^2
+% \end{align}
+
+
+
 
 
 
