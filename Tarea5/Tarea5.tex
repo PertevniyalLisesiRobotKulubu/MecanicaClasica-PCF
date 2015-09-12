@@ -398,6 +398,33 @@ Ahora Sustituyendo \mref{eq:pendu11} en \mref{eq:pendudiferential1} obtenemos
  \ddot{\theta}  + \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2l}\cos{\theta} + \frac{g}{l}\sen{\theta} = 0.
 \end{equation}
 
+Luego,
+
+\begin{align*}
+ \ddot{\theta} + \frac{\cancel{l}\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2\cancel{l}} - \frac{\cancel{l}\ddot{\theta}\cos^2{\theta}}{(M+m)^2\cancel{l}}
+ + \frac{g}{l}\sen{\theta} = 0, \\
+ %
+ \ddot{\theta} + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2} - \frac{\ddot{\theta}\cos^2{\theta}}{(M+m)^2}
+ + \frac{g}{l}\sen{\theta} = 0, \\
+ %
+ \ddot{\theta}\left[1 - \frac{\cos^2{\theta}}{(M+m)^2} \right] + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}
+ + \frac{g}{l}\sen{\theta} = 0, \\
+ %
+\ddot{\theta}\left[\frac{(M+m)^2 - \cos^2{\theta}}{(M+m)^2} \right]+ \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}
+ + \frac{g}{l}\sen{\theta} = 0, \\
+ %
+ \ddot{\theta} + \frac{\frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}}{\frac{(M+m)^2 - \cos^2{\theta}}{(M+m)^2}}
+ + \frac{g(M+m)^2}{l[(M+m)^2-\cos^2{\theta}]} = 0.
+\end{align*}
+
+\begin{equation}
+ \therefore \ddot{\theta} + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2 - \cos^2{\theta}} 
+  + \frac{g(M+m)^2}{l[(M+m)^2-\cos^2{\theta}]} = 0.
+\end{equation}
+
+La cual es una ecuación lineal de segundo orden, un poco complicada de resolver, 
+para $\theta$. Y al resolverla, la sustituimos en \mref{eq:pendu11} para obtener 
+una expresión para $\dot{X}$. Entonces el problema si puede reducirse a cuadraturas.
  
 % Pero de \mref{eq:pendu8} podemos obtener una expresión para $\dot{X}$,
 % 
