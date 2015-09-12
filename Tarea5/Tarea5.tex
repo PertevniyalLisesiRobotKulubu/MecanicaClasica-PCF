@@ -353,7 +353,78 @@ Por otra parte para $\theta$,
 
 \begin{equation}
  \boxed{\therefore \ddot{\theta}  + \frac{\ddot{X}}{l}\cos{\theta} + \frac{g}{l}\sen{\theta} = 0.}
+\label{eq:pendudiferential1}
+ \end{equation}
+
+Hemos encontrado las ecuaciones de movimiento para el sistema, ahora nos queda ver 
+si existen la cantidad suficiente de integrales de movimiento para reducir el problema 
+a cuadraturas. Ya hemos encontrado una, que podemos reescribir como
+
+\begin{equation}
+ (M + m)\dot{X} + l\dot{\theta} \cos{\theta} = p_x.
+ \label{eq:pendu8}
 \end{equation}
+
+Donde hemos llamado a esta integral de movimiento $p_x$, la cual podemos asociar con el 
+momentum lineal total en la dirección $X$. Por otra parte, debido a que la lagrangiana 
+no depende explícitamente del tiempo, i.e., ni la energía potencial ni la cinética dependen 
+explícitamente del tiempo, entonces la energía del sistema se conserva, convirtiéndose 
+esta en una integral de movimiento, que podemos escribir como
+
+\begin{equation}
+  E = \frac{M+m}{2}\dot{X}^2 + \frac{ml^2 \dot{\theta}^2}{2} + 
+    ml\dot{X}\dot{\theta}\cos{\theta} - mgl \cos{\theta}.
+    \label{eq:pendu9}
+\end{equation}
+
+Para ver que podemos reducir el sistema a cuadraturas, vemos que podemos obtener 
+una expresión para $\dot{X}$ de \mref{eq:pendu8},
+
+\begin{equation}
+ \dot{X} = \frac{p_x - l\dot{\theta}\cos{\theta}}{M+m},
+ \label{eq:pendu10}
+\end{equation}
+
+Si derivamos una vez \mref{eq:pendu10} con respecto al tiempo obtenemos,
+
+\begin{equation}
+ \ddot{X} = \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2}
+ \label{eq:pendu11}
+ \end{equation}
+
+Ahora Sustituyendo \mref{eq:pendu11} en \mref{eq:pendudiferential1} obtenemos
+
+\begin{equation}
+ \ddot{\theta}  + \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2l}\cos{\theta} + \frac{g}{l}\sen{\theta} = 0.
+\end{equation}
+
+ 
+% Pero de \mref{eq:pendu8} podemos obtener una expresión para $\dot{X}$,
+% 
+% \begin{equation}
+%  \dot{X} = \frac{p_x - l\dot{\theta}\cos{\theta}}{M+m},
+%  \label{eq:pendu10}
+% \end{equation}
+% 
+% y sustituyendo \mref{eq:pendu10} en \mref{eq:pendu9} vemos que 
+% 
+% \begin{align*}
+%  E &= \frac{M+m}{2}\left(\frac{p_x - l\dot{\theta}\cos{\theta}}{M+m}\right)^2 + 
+%  \frac{ml^2 \dot{\theta}^2}{2} + ml\dot{\theta}\cos{\theta}\left(\frac{p_x - l\dot{\theta}\cos{\theta}}{M+m}\right)
+%  - mgl\cos{\theta}, \\
+%  %
+%    &= \frac{M+m}{2}\left[ \frac{p_x^2 - 2 p_x l \dot{\theta}\cos{\theta}+ l^2 \dot{\theta}^2 \cos^2{\theta}}{(M+m)^2} \right]
+%    + \frac{ml^2 \dot{\theta}^2}{2} + \frac{p_xml\dot{\theta}\cos{\theta - ml^2\dot{\theta}^2\cos{\theta}}}{M+m} \\
+%    &- mgl\cos{\theta}, \\
+%  % 
+%  &= \frac{p_x^2 - 2 p_x l \dot{\theta}\cos{\theta}+ l^2 \dot{\theta}^2 \cos^2{\theta}}{2(M+m)}
+%  + \frac{ml^2 \dot{\theta}^2}{2} + \frac{p_xml\dot{\theta}\cos{\theta - ml^2\dot{\theta}^2\cos{\theta}}}{M+m}
+%    - mgl\cos{\theta},
+%  %
+% \end{align*}
+
+
+
 
 
 
