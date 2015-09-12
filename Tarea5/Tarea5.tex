@@ -113,7 +113,7 @@ una dirección constante, asumiremos que lo hace en la dirección del eje $z$.
 
 \begin{figure}[H]
  \center
- \includegraphics[scale=0.4]{problema1fig1}
+ \includegraphics[scale=0.45]{problema1fig2}
  \caption{Representación esquemática del problema de dos cuerpos que interactúan 
  gravitacionalmente, y que se encuentran en un campo de fuerza que les produce una 
  aceleración constante.}
@@ -124,8 +124,8 @@ Entonces las masas tendrán el siguiente potencial actuando sobre ellas, aparte
 del gravitacional,
 
 \begin{align}
- V_{a}^{1} = F^{(1)} z_1 = m_1 \alpha z, \\
- V_{a}^{2} = F^{(2)} z_1 = m_2 \alpha z.
+ V_{a}^{1} = F^{(1)} z_1 = m_1 \alpha z_1, \\
+ V_{a}^{2} = F^{(2)} z_1 = m_2 \alpha z_2.
 \end{align}
 
 donde $\alpha$ es la magnitud de la aceleración constante $\mathbf{a}$. Ahora introduciendo 
@@ -184,9 +184,39 @@ de algo de álgebra podemos llegar a,
 \end{align}
 
 \begin{equation}
- \boxed{\therefore L = \frac{1}{2}\mu |\dot{r}|^2 + \frac{1}{2}(m_1 + m_2)|\dot{R}|^2 - V(r) - (m_1 + m_2)\alpha \Xi}
+ \boxed{\therefore L = \frac{1}{2}\mu |\dot{r}|^2 + \frac{1}{2}(m_1 + m_2)|\dot{R}|^2 - V(r) - (m_1 + m_2)\alpha \Xi.}
 \end{equation}
 
+Donde $\mu$ es la masa reducida del sistema
+
+\begin{equation}
+ \mu = \frac{m_1 m_2}{m_1 + m_2}.
+\end{equation}
+
+Y las ecuaciones de movimiento serán, para $|\mathbf{r}|$
+
+\begin{equation}
+\frac{d}{dt}\frac{\partial L }{\partial|\mathbf{\dot{r}}|} - \frac{\partial L}{\partial |\mathbf{r}|} = 0,
+\end{equation}
+
+\begin{equation}
+ \boxed{\mu |\mathbf{\ddot{r}}| + \frac{\partial V(r)}{\partial |\mathbf{r}|} = 0}
+\end{equation}
+
+Y para $|\mathbf{R}|$,
+
+\begin{equation}
+\frac{d}{dt}\frac{\partial L }{\partial|\mathbf{\dot{R}}|} - \frac{\partial L}{\partial |\mathbf{R}|} = 0,
+\end{equation}
+
+\begin{equation}
+ \boxed{\frac{d}{dt}(m_1 + m_2)|\mathbf{\dot{R}}| = 0}
+\end{equation}
+
+Por lo tanto hemos demostrado que existe una integral de movimiento en este sistema 
+y es igual a $(m_1 + m_2)|\mathbf{\dot{R}}|$, y entonces el problema queda reducido a un 
+problema de un cuerpo de masa $\mu$ bajo un potencial efectivo, donde se conserva la 
+energía y por lo tanto podemos reducirlo a cuadraturas.
 
 % \vspace{.3cm}
 % 
