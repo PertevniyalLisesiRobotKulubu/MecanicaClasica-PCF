@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     16649,        422]
-NotebookOptionsPosition[     14602,        359]
-NotebookOutlinePosition[     16531,        417]
-CellTagsIndexPosition[     16488,        414]
+NotebookDataLength[     16648,        422]
+NotebookOptionsPosition[     14601,        359]
+NotebookOutlinePosition[     16530,        417]
+CellTagsIndexPosition[     16487,        414]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -286,7 +286,7 @@ Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`e$$ = -0.3, $CellContext`g$$ = 
-    9.82, $CellContext`k$$ = 1., $CellContext`l$$ = 0.98, $CellContext`m$$ = 
+    9.82, $CellContext`k$$ = 1., $CellContext`l$$ = 0.5, $CellContext`m$$ = 
     1., $CellContext`M$$ = 1., Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
@@ -422,7 +422,7 @@ Cell[545, 20, 3961, 98, 150, "Input",
 Cell[4509, 120, 1220, 30, 94, "Input"],
 Cell[CellGroupData[{
 Cell[5754, 154, 4890, 128, 150, "Input"],
-Cell[10647, 284, 3939, 72, 869, "Output"]
+Cell[10647, 284, 3938, 72, 869, "Output"]
 }, Open  ]]
 }
 ]
