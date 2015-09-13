@@ -1,6 +1,6 @@
 # MecanicaClasica-PCF
 
-### **Nota**: Hay un problema actualmente con el compilador de ShareLatex y no se pueden ver los PDF. Cualqueir cosa simplemente tienen que clonar el repositorio y compilar los archivos .TeX.
+### **Nota**: Hay un problema actualmente con el compilador de ShareLatex y no se pueden ver los PDF. Cualquier cosa simplemente tienen que clonar el repositorio y compilar los archivos .TeX.
 
 Repositorio donde guardaré la respuesta a las tareas de la materia y alguna otra información relevante.
 
