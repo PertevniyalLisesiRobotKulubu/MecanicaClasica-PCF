@@ -481,7 +481,7 @@ La ecuación \mref{eq:pendu7} es producto de que la lagrangiana no depende de $X
 lo tanto
 
 \begin{equation}
- \boxed{M \dot{X} + m \dot{X} + l\dot{\theta}\cos{\theta} = \text{constante},}
+ \boxed{M \dot{X} + m \dot{X} + lm\dot{\theta}\cos{\theta} = \text{constante},}
 \end{equation}
 
 Lo cual nos dice que $M \dot{X} + m \dot{X} + lm\dot{\theta}\cos{\theta}$ es una integral 
@@ -514,7 +514,7 @@ si existen la cantidad suficiente de integrales de movimiento para reducir el pr
 a cuadraturas. Ya hemos encontrado una, que podemos reescribir como
 
 \begin{equation}
- (M + m)\dot{X} + l\dot{\theta} \cos{\theta} = p_x.
+ (M + m)\dot{X} + lm\dot{\theta} \cos{\theta} = p_x.
  \label{eq:pendu8}
 \end{equation}
 
@@ -530,78 +530,109 @@ esta en una integral de movimiento, que podemos escribir como
     \label{eq:pendu9}
 \end{equation}
 
-Para ver que podemos reducir el sistema a cuadraturas, vemos que podemos obtener 
-una expresión para $\dot{X}$ de \mref{eq:pendu8},
+Pero de \mref{eq:pendu8} podemos obtener una expresión para $\dot{X}$,
 
 \begin{equation}
- \dot{X} = \frac{p_x - l\dot{\theta}\cos{\theta}}{M+m},
+ \dot{X} = \frac{p_x - lm\dot{\theta}\cos{\theta}}{M+m},
  \label{eq:pendu10}
 \end{equation}
 
-Si derivamos una vez \mref{eq:pendu10} con respecto al tiempo obtenemos,
-
-\begin{equation}
- \ddot{X} = \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2}
- \label{eq:pendu11}
- \end{equation}
-
-Ahora Sustituyendo \mref{eq:pendu11} en \mref{eq:pendudiferential1} obtenemos
-
-\begin{equation}
- \ddot{\theta}  + \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2l}\cos{\theta} + \frac{g}{l}\sen{\theta} = 0.
-\end{equation}
-
-Luego,
+y sustituyendo \mref{eq:pendu10} en \mref{eq:pendu9} vemos que 
 
 \begin{align*}
- \ddot{\theta} + \frac{\cancel{l}\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2\cancel{l}} - \frac{\cancel{l}\ddot{\theta}\cos^2{\theta}}{(M+m)^2\cancel{l}}
- + \frac{g}{l}\sen{\theta} = 0, \\
+ E &= \frac{M+m}{2}\left(\frac{p_x - ml\dot{\theta}\cos{\theta}}{M+m}\right)^2 + 
+ \frac{ml^2 \dot{\theta}^2}{2} + ml\dot{\theta}\cos{\theta}\left(\frac{p_x - ml\dot{\theta}\cos{\theta}}{M+m}\right)
+ - mgl\cos{\theta}, \\
  %
- \ddot{\theta} + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2} - \frac{\ddot{\theta}\cos^2{\theta}}{(M+m)^2}
- + \frac{g}{l}\sen{\theta} = 0, \\
+   &= \frac{M+m}{2}\left[ \frac{p_x^2 - 2 p_x ml \dot{\theta}\cos{\theta}+ m^2l^2 \dot{\theta}^2 \cos^2{\theta}}{(M+m)^2} \right]
+   + \frac{ml^2 \dot{\theta}^2}{2} + \frac{p_xml\dot{\theta}\cos{\theta - m^2l^2\dot{\theta}^2\cos^2{\theta}}}{M+m} \\
+   &- mgl\cos{\theta}, \\
+ % 
+ &= \frac{p_x^2 - 2 p_x ml \dot{\theta}\cos{\theta}+ m^2 l^2 \dot{\theta}^2 \cos^2{\theta}}{2(M+m)}
+ + \frac{ml^2 \dot{\theta}^2}{2} + \frac{p_xml\dot{\theta}\cos{\theta} - m^2l^2\dot{\theta}^2\cos^2{\theta}}{M+m}
+   - mgl\cos{\theta}, \\
  %
- \ddot{\theta}\left[1 - \frac{\cos^2{\theta}}{(M+m)^2} \right] + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}
- + \frac{g}{l}\sen{\theta} = 0, \\
+ &= \frac{p_x^2 - \cancel{ 2 p_x ml \dot{\theta}\cos{\theta}}+ m^2 l^2 \dot{\theta}^2 \cos^2{\theta} 
+ + \cancel{2p_xml\dot{\theta}\cos{\theta}} -2 m^2l^2\dot{\theta}^2\cos^2{\theta}}{2(M+m)}
+  + \frac{ml^2 \dot{\theta}^2}{2} - mgl\cos{\theta}, \\
  %
-\ddot{\theta}\left[\frac{(M+m)^2 - \cos^2{\theta}}{(M+m)^2} \right]+ \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}
- + \frac{g}{l}\sen{\theta} = 0, \\
+ &= \frac{p_x^2 - m^2 l^2 \dot{\theta^2} \cos^2{\theta}}{2(M+m)}  + \frac{ml^2 \dot{\theta}^2}{2} - mgl\cos{\theta}, \\
  %
- \ddot{\theta} + \frac{\frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}}{\frac{(M+m)^2 - \cos^2{\theta}}{(M+m)^2}}
- + \frac{g(M+m)^2}{l[(M+m)^2-\cos^2{\theta}]} = 0.
+ &= \frac{p_x^2}{2(M+m)} - \frac{ m^2 l^2 \dot{\theta^2} \cos^2{\theta}}{2(M+m)} + \frac{ml^2 \dot{\theta}^2}{2} 
+ - mgl\cos{\theta}, \\
+ %
+ &= \dot{\theta}^2 \left[\frac{ml^2}{2} -  \frac{ m^2 l^2 \cos^2{\theta}}{2(M+m)}\right] 
+ + \frac{p_x^2}{2(M+m)} - mgl\cos{\theta},  \\
+ %
+ &= \dot{\theta}^2\left[ \frac{Mml^2 + m^2 l^2 - m^2l^2\cos^2{\theta}}{2(M+m)} \right]
+ + \frac{p_x^2}{2(M+m)} - mgl\cos{\theta}.
 \end{align*}
 
 \begin{equation}
- \therefore \ddot{\theta} + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2 - \cos^2{\theta}} 
-  + \frac{g(M+m)^2}{l[(M+m)^2-\cos^2{\theta}]} = 0.
+ \boxed{E = \left[\frac{Mml^2 + m^2l^2\sen^2{\theta}}{2(M+m)} \right]\dot{\theta}^2 + \frac{p_x^2}{2(M+m)} - mgl\cos{\theta}.}
+\label{eq:pendu12}
+\end{equation}
+z
+Entonces podemos considerar esta energía como una energía cinética, la cual siempre 
+es positiva por la expresión de \mref{eq:pendu12} más un potencial efectivo igual a 
+
+\begin{equation}
+ \boxed{V_{ef} = \frac{p_x^2}{2(M+m)} - mgl\cos{\theta}.}
 \end{equation}
 
-La cual es una ecuación lineal de segundo orden, un poco complicada de resolver, 
-para $\theta$. Y al resolverla, la sustituimos en \mref{eq:pendu11} para obtener 
-una expresión para $\dot{X}$. Entonces el problema si puede reducirse a cuadraturas.
- 
-% Pero de \mref{eq:pendu8} podemos obtener una expresión para $\dot{X}$,
+El cual tiene mucho sentido debido a que se reduce al potencial de un péndulo simple 
+si $p_x = 0$. En la figura de abajo se muestra dicho potencial.
+
+
+% Vemos ahora que podemos obtener una expresión para $\dot{X}$ de \mref{eq:pendu8},
 % 
 % \begin{equation}
 %  \dot{X} = \frac{p_x - l\dot{\theta}\cos{\theta}}{M+m},
 %  \label{eq:pendu10}
 % \end{equation}
 % 
-% y sustituyendo \mref{eq:pendu10} en \mref{eq:pendu9} vemos que 
+% Si derivamos una vez \mref{eq:pendu10} con respecto al tiempo obtenemos,
+% 
+% \begin{equation}
+%  \ddot{X} = \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2}
+%  \label{eq:pendu11}
+%  \end{equation}
+% 
+% Ahora Sustituyendo \mref{eq:pendu11} en \mref{eq:pendudiferential1} obtenemos
+% 
+% \begin{equation}
+%  \ddot{\theta}  + \frac{l\dot{\theta}^2\sen{\theta} - l\ddot{\theta}\cos{\theta}}{(M+m)^2l}\cos{\theta} + \frac{g}{l}\sen{\theta} = 0.
+% \end{equation}
+% 
+% Luego,
 % 
 % \begin{align*}
-%  E &= \frac{M+m}{2}\left(\frac{p_x - l\dot{\theta}\cos{\theta}}{M+m}\right)^2 + 
-%  \frac{ml^2 \dot{\theta}^2}{2} + ml\dot{\theta}\cos{\theta}\left(\frac{p_x - l\dot{\theta}\cos{\theta}}{M+m}\right)
-%  - mgl\cos{\theta}, \\
+%  \ddot{\theta} + \frac{\cancel{l}\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2\cancel{l}} - \frac{\cancel{l}\ddot{\theta}\cos^2{\theta}}{(M+m)^2\cancel{l}}
+%  + \frac{g}{l}\sen{\theta} = 0, \\
 %  %
-%    &= \frac{M+m}{2}\left[ \frac{p_x^2 - 2 p_x l \dot{\theta}\cos{\theta}+ l^2 \dot{\theta}^2 \cos^2{\theta}}{(M+m)^2} \right]
-%    + \frac{ml^2 \dot{\theta}^2}{2} + \frac{p_xml\dot{\theta}\cos{\theta - ml^2\dot{\theta}^2\cos{\theta}}}{M+m} \\
-%    &- mgl\cos{\theta}, \\
-%  % 
-%  &= \frac{p_x^2 - 2 p_x l \dot{\theta}\cos{\theta}+ l^2 \dot{\theta}^2 \cos^2{\theta}}{2(M+m)}
-%  + \frac{ml^2 \dot{\theta}^2}{2} + \frac{p_xml\dot{\theta}\cos{\theta - ml^2\dot{\theta}^2\cos{\theta}}}{M+m}
-%    - mgl\cos{\theta},
+%  \ddot{\theta} + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2} - \frac{\ddot{\theta}\cos^2{\theta}}{(M+m)^2}
+%  + \frac{g}{l}\sen{\theta} = 0, \\
 %  %
+%  \ddot{\theta}\left[1 - \frac{\cos^2{\theta}}{(M+m)^2} \right] + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}
+%  + \frac{g}{l}\sen{\theta} = 0, \\
+%  %
+% \ddot{\theta}\left[\frac{(M+m)^2 - \cos^2{\theta}}{(M+m)^2} \right]+ \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}
+%  + \frac{g}{l}\sen{\theta} = 0, \\
+%  %
+%  \ddot{\theta} + \frac{\frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2}}{\frac{(M+m)^2 - \cos^2{\theta}}{(M+m)^2}}
+%  + \frac{g(M+m)^2}{l[(M+m)^2-\cos^2{\theta}]} = 0.
 % \end{align*}
+% 
+% \begin{equation}
+%  \therefore \ddot{\theta} + \frac{\dot{\theta}^2\cos{\theta}\sen{\theta}}{(M+m)^2 - \cos^2{\theta}} 
+%   + \frac{g(M+m)^2}{l[(M+m)^2-\cos^2{\theta}]} = 0.
+% \end{equation}
+% 
+% La cual es una ecuación lineal de segundo orden, un poco complicada de resolver, 
+% para $\theta$. Y al resolverla, la sustituimos en \mref{eq:pendu11} para obtener 
+% una expresión para $\dot{X}$.
+ 
+
 
 
 
