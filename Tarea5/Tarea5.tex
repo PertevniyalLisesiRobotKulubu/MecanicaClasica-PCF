@@ -581,8 +581,40 @@ es positiva por la expresión de \mref{eq:pendu12} más un potencial efectivo ig
 \end{equation}
 
 El cual tiene mucho sentido debido a que se reduce al potencial de un péndulo simple 
-si $p_x = 0$. En la figura de abajo se muestra dicho potencial.
+si $p_x = 0$. En la figuras de abajo se muestra dicho potencial para diferentes condiciones 
+iniciales de $p_x$ y para distintas configuraciones de $m, M$ y $l$. Vemos que el sistema 
+oscilará como era esperado, pero que los parámetros de la oscilación, como la amplitud,
+frecuencia y período dependerán de los valores de los parámetros del potencial efectivo 
+y en gran parte de la diferencia de masas y la magnitud del momentum.
 
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.5]{problema3fig2}
+ \caption{Masas iguales}
+ \label{fig:problema3fig2}
+\end{figure}
+
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.5]{problema3fig3}
+ \caption{$M \gg m$}
+ \label{fig:problema3fig3}
+\end{figure}
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.45]{problema3fig4}
+ \caption{$m \gg M$}
+ \label{fig:problema3fig4}
+\end{figure}
+
+Todos los códigos con los que realicé estas gráficas se encuentran en un repositorio 
+público de GitHub, en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/tree/master/Tarea5}{\color{blue}.::este link::..}. Se encuentran en un 
+NoteBook de Python, el cual se encuentra \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea5/Problema1.ipynb}{\color{blue}.::este link::..}.
+También puede encontrarse un NoteBook de Mathematica con el que se hacen 
+las mismas figuras y se pueden manipular dinámicamente, puede accederse 
+a este NoteBook en \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea5/effpotential.nb}{\color{blue}.::este link::..}.
 
 % Vemos ahora que podemos obtener una expresión para $\dot{X}$ de \mref{eq:pendu8},
 % 
