@@ -1,0 +1,431 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     16649,        422]
+NotebookOptionsPosition[     14602,        359]
+NotebookOutlinePosition[     16531,        417]
+CellTagsIndexPosition[     16488,        414]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"Plot", ",", 
+    StyleBox[
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "10"}], ",", "12"}], "}"}]}], "}"}]}],
+     FontFamily->"Courier New",
+     FontSize->18], 
+    StyleBox[",",
+     FontFamily->"Courier New",
+     FontSize->18], 
+    StyleBox[
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", "Thick"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Red", ",", "Thick"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Black", ",", 
+          RowBox[{"AbsoluteThickness", "[", "4", "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Green", ",", "Thick"}], "}"}]}], "}"}]}],
+     FontFamily->"Courier New",
+     FontSize->18], 
+    StyleBox[",",
+     FontFamily->"Courier New",
+     FontSize->18], 
+    StyleBox[
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<r\>\"", ",", "\"\<Energy\>\""}], "}"}]}],
+     FontFamily->"Courier New",
+     FontSize->18], 
+    StyleBox[",",
+     FontFamily->"Courier New",
+     FontSize->18], 
+    RowBox[{
+     StyleBox["ImageSize",
+      FontFamily->"Courier New",
+      FontSize->18], 
+     StyleBox["\[Rule]",
+      FontFamily->"Courier New",
+      FontSize->18], "800"}], ",", 
+    RowBox[{"BaseStyle", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Arial\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "16"}]}], "}"}]}], ",", 
+    RowBox[{"AxesStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Arial\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "16"}], ",", "Black", ",", 
+       RowBox[{"AbsoluteThickness", "[", "0.5", "]"}], ",", 
+       RowBox[{"Arrowheads", "[", "0.04", "]"}]}], "]"}]}], ",", 
+    RowBox[{"TicksStyle", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Black", ",", 
+         RowBox[{"AbsoluteThickness", "[", "0.5", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Black", ",", 
+         RowBox[{"AbsoluteThickness", "[", "0.5", "]"}]}], "}"}]}], "}"}]}]}],
+    "]"}], ";"}]], "Input",
+ PageBreakAbove->False,
+ PageBreakWithin->False,
+ GroupPageBreakWithin->False,
+ CellChangeTimes->{{3.4003366531514874`*^9, 3.400336655522043*^9}, {
+   3.4003372488118687`*^9, 3.400337295308672*^9}, {3.400608558228178*^9, 
+   3.4006085587401047`*^9}, {3.40285536142773*^9, 3.402855361611483*^9}, {
+   3.402856921333412*^9, 3.402856926160396*^9}, {3.40285696402614*^9, 
+   3.4028569668974133`*^9}, {3.402857082763999*^9, 3.402857090475286*^9}, {
+   3.4028576228103657`*^9, 3.402857665498437*^9}, {3.4028577042813663`*^9, 
+   3.4028577665195913`*^9}, 3.402858778660322*^9, {3.402858908226555*^9, 
+   3.4028589088543367`*^9}, {3.4036638865282593`*^9, 3.40366388666*^9}, {
+   3.40366600407644*^9, 3.403666004498348*^9}, {3.403704381406205*^9, 
+   3.403704381827917*^9}, {3.403900349522643*^9, 3.403900349748927*^9}, {
+   3.404605525073654*^9, 3.404605595195243*^9}, {3.404605699810865*^9, 
+   3.4046057066874237`*^9}, {3.404607921653274*^9, 3.404607922102585*^9}, {
+   3.404669818762907*^9, 3.404669825902643*^9}, 3.537131493146364*^9, 
+   3.537131538804887*^9, {3.537131637599698*^9, 3.537131638244391*^9}, {
+   3.537132648958211*^9, 3.5371326919061337`*^9}, {3.537132970633442*^9, 
+   3.537132974567128*^9}, {3.5371337431103773`*^9, 3.537133749852837*^9}, {
+   3.538752046243503*^9, 3.5387520569044123`*^9}, {3.538752393261909*^9, 
+   3.5387524298493547`*^9}, {3.538752491356435*^9, 3.538752492671344*^9}, 
+   3.5395262689461517`*^9, {3.6510957814344997`*^9, 3.651095782350206*^9}, {
+   3.651095836506958*^9, 3.651095836603838*^9}, {3.6511011419292173`*^9, 
+   3.651101142951414*^9}},
+ FontSize->18],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"U", "[", 
+   RowBox[{"M_", ",", "m_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"k", "/", "2"}], 
+   RowBox[{"(", 
+    RowBox[{"m", "+", "M"}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CB", "[", 
+   RowBox[{"r_", ",", "l_", ",", "g_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"-", "m"}], "*", "g", "*", "l", "*", 
+   RowBox[{"Cos", "[", "r", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Veff", "[", 
+   RowBox[{"r_", ",", "k_", ",", "l_", ",", "g_", ",", "M_", ",", "m_"}], 
+   "]"}], ":=", 
+  RowBox[{
+   RowBox[{"U", "[", 
+    RowBox[{"M", ",", "m", ",", "k"}], "]"}], "+", 
+   RowBox[{"CB", "[", 
+    RowBox[{"r", ",", "l", ",", "g", ",", "m"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.539525818870141*^9, 3.539525933593829*^9}, {
+  3.6510948579321833`*^9, 3.651094924182723*^9}, {3.651094955311198*^9, 
+  3.651094962458432*^9}, {3.6510949944475117`*^9, 3.651095014385303*^9}, {
+  3.651095046038924*^9, 3.651095060587638*^9}, {3.651095103803562*^9, 
+  3.651095163300316*^9}, {3.651095218325062*^9, 3.651095234072114*^9}, {
+  3.651095277047887*^9, 3.6510952804407597`*^9}, {3.651095321031054*^9, 
+  3.651095321248576*^9}},
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["Manipulate",
+   FontFamily->"Courier New",
+   FontSize->18], 
+  StyleBox["[",
+   FontFamily->"Courier New",
+   FontSize->18], 
+  RowBox[{
+   StyleBox[
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"U", "[", 
+         RowBox[{"M", ",", "m", ",", "k"}], "]"}], ",", 
+        RowBox[{"CB", "[", 
+         RowBox[{"r", ",", "l", ",", "g", ",", "m"}], "]"}], ",", 
+        RowBox[{"Veff", "[", 
+         RowBox[{"r", ",", "k", ",", "l", ",", "g", ",", "M", ",", "m"}], 
+         "]"}], ",", "e"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "5"}], "}"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", "\[IndentingNewLine]", 
+       RowBox[{"\"\<\[ScriptL] = \>\"", "<>", 
+        RowBox[{"ToString", "[", "l", "]"}], "<>", "\"\<,M = \>\"", "<>", 
+        RowBox[{"ToString", "[", "k", "]"}], "<>", "\"\<, k = \>\"", "<>", 
+        RowBox[{"ToString", "[", "k", "]"}], "<>", "\"\<, g = \>\"", "<>", 
+        RowBox[{"ToString", "[", "g", "]"}], "<>", "\"\<, E = \>\"", "<>", 
+        RowBox[{"ToString", "[", "e", "]"}]}]}]}], "]"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"l", ",", "1", ",", "\"\<\[ScriptL]\>\""}], "}"}], ",", "0.5", 
+      ",", "5"}], "}"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"m", ",", "1", ",", "\"\<m\>\""}], "}"}], ",", "1", ",", 
+      "10"}], "}"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"M", ",", "1", ",", "\"\<M\>\""}], "}"}], ",", "1", ",", 
+      "10"}], "}"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{"k", ",", "1", ",", "4"}], "}"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"g", ",", "9.82", ",", "\"\<g\>\""}], "}"}], ",", "1", ",", 
+      "10"}], "}"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"e", ",", 
+        RowBox[{"-", "0.3"}], ",", "\"\<E\>\""}], "}"}], ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}],
+    FontFamily->"Courier New",
+    FontSize->18], 
+   StyleBox[",",
+    FontFamily->"Courier New",
+    FontSize->18], 
+   RowBox[{"LabelStyle", "\[Rule]", "Large"}]}], 
+  StyleBox["]",
+   FontFamily->"Courier New",
+   FontSize->18]}]], "Input",
+ CellChangeTimes->{{3.5209450836197057`*^9, 3.520945207976693*^9}, {
+   3.520945243960377*^9, 3.5209452523820906`*^9}, {3.520945293521926*^9, 
+   3.5209452996155586`*^9}, {3.520945403910431*^9, 3.520945453487604*^9}, {
+   3.5209460134612274`*^9, 3.520946279799864*^9}, {3.520946355985901*^9, 
+   3.5209464399530387`*^9}, {3.520946602481168*^9, 3.5209466383554792`*^9}, {
+   3.5209466836046104`*^9, 3.5209468295236835`*^9}, {3.520946887991311*^9, 
+   3.5209469186469727`*^9}, {3.520947274546389*^9, 3.520947280171281*^9}, {
+   3.520947315576851*^9, 3.5209473249672956`*^9}, {3.5209478026299996`*^9, 
+   3.520947816473484*^9}, {3.537133060472157*^9, 3.5371330611523647`*^9}, {
+   3.5371334875329742`*^9, 3.537133499964623*^9}, {3.5371338569518223`*^9, 
+   3.5371338642289257`*^9}, {3.5386906360479517`*^9, 3.538690796515353*^9}, {
+   3.5387516790421753`*^9, 3.5387516848514557`*^9}, {3.53875171944914*^9, 
+   3.538751734303841*^9}, {3.538751839245379*^9, 3.538751872179049*^9}, {
+   3.53875190841341*^9, 3.53875191236604*^9}, {3.53875194926408*^9, 
+   3.538751982513597*^9}, {3.538752033617714*^9, 3.538752037729314*^9}, {
+   3.5387520911016293`*^9, 3.538752172864459*^9}, {3.538752292092752*^9, 
+   3.5387522929883213`*^9}, {3.538752415977229*^9, 3.538752418813493*^9}, {
+   3.538752498663032*^9, 3.538752573992277*^9}, 3.538752637856265*^9, {
+   3.53952689695681*^9, 3.53952691160601*^9}, {3.539527009141486*^9, 
+   3.539527026344277*^9}, {3.65109501647689*^9, 3.651095075732072*^9}, {
+   3.651095258208666*^9, 3.651095259122644*^9}, {3.6510952985204687`*^9, 
+   3.6510953125238523`*^9}, {3.6510954060252123`*^9, 3.651095428990445*^9}, {
+   3.651095469249963*^9, 3.65109552848772*^9}, {3.651095571395692*^9, 
+   3.651095634805173*^9}, {3.651095673312348*^9, 3.651095757525895*^9}, {
+   3.6511010731811457`*^9, 3.651101090483053*^9}, 3.651101200582239*^9},
+ FontSize->18],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`e$$ = -0.3, $CellContext`g$$ = 
+    9.82, $CellContext`k$$ = 1., $CellContext`l$$ = 0.98, $CellContext`m$$ = 
+    1., $CellContext`M$$ = 1., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`l$$], 1, "\[ScriptL]"}, 0.5, 5}, {{
+       Hold[$CellContext`m$$], 1, "m"}, 1, 10}, {{
+       Hold[$CellContext`M$$], 1, "M"}, 1, 10}, {
+      Hold[$CellContext`k$$], 1, 4}, {{
+       Hold[$CellContext`g$$], 9.82, "g"}, 1, 10}, {{
+       Hold[$CellContext`e$$], -0.3, "E"}, -10, 10}}, Typeset`size$$ = {
+    800., {259., 267.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`l$43699$$ = 
+    0, $CellContext`m$43700$$ = 0, $CellContext`M$43701$$ = 
+    0, $CellContext`k$43702$$ = 0, $CellContext`g$43703$$ = 
+    0, $CellContext`e$43704$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`e$$ = -0.3, $CellContext`g$$ = 
+        9.82, $CellContext`k$$ = 1, $CellContext`l$$ = 1, $CellContext`m$$ = 
+        1, $CellContext`M$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`l$$, $CellContext`l$43699$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$43700$$, 0], 
+        Hold[$CellContext`M$$, $CellContext`M$43701$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$43702$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$43703$$, 0], 
+        Hold[$CellContext`e$$, $CellContext`e$43704$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         $CellContext`U[$CellContext`M$$, $CellContext`m$$, $CellContext`k$$], 
+         $CellContext`CB[$CellContext`r, $CellContext`l$$, $CellContext`g$$, \
+$CellContext`m$$], 
+         $CellContext`Veff[$CellContext`r, $CellContext`k$$, \
+$CellContext`l$$, $CellContext`g$$, $CellContext`M$$, $CellContext`m$$], \
+$CellContext`e$$}, {$CellContext`r, 0, 5}, PlotLabel -> 
+        StringJoin["\[ScriptL] = ", 
+          ToString[$CellContext`l$$], ",M = ", 
+          ToString[$CellContext`k$$], ", k = ", 
+          ToString[$CellContext`k$$], ", g = ", 
+          ToString[$CellContext`g$$], ", E = ", 
+          ToString[$CellContext`e$$]]], 
+      "Specifications" :> {{{$CellContext`l$$, 1, "\[ScriptL]"}, 0.5, 
+         5}, {{$CellContext`m$$, 1, "m"}, 1, 10}, {{$CellContext`M$$, 1, "M"},
+          1, 10}, {$CellContext`k$$, 1, 4}, {{$CellContext`g$$, 9.82, "g"}, 1,
+          10}, {{$CellContext`e$$, -0.3, "E"}, -10, 10}}, 
+      "Options" :> {LabelStyle -> Large}, "DefaultOptions" :> {}],
+     ImageSizeCache->{847., {406., 413.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.651094861772442*^9, 3.651094928858164*^9, 3.6510950303573027`*^9, 
+   3.651095083550927*^9, {3.65109515588273*^9, 3.651095166915929*^9}, {
+   3.651095236392314*^9, 3.651095284628978*^9}, {3.6510953241350803`*^9, 
+   3.65109535209473*^9}, 3.6510955487560062`*^9, {3.651095590150765*^9, 
+   3.651095637491692*^9}, {3.651095690505858*^9, 3.6510957064659433`*^9}, {
+   3.6510957369197598`*^9, 3.651095784757286*^9}, 3.651095839634098*^9, {
+   3.651101078822055*^9, 3.651101091164105*^9}, 3.651101172660424*^9, 
+   3.651101211947839*^9}]
+}, Open  ]]
+},
+WindowSize->{1362, 728},
+WindowMargins->{{0, Automatic}, {Automatic, 18}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PageHeaders->{{
+  "\"Cell[TextData[{Cell[TextData[{CounterBox[\"Page\"]}], \"PageNumber\"], \
+\" \", Cell[\" \", \"Header\", CellFrame -> {{0.5, 0}, {0, 0}}, \
+CellFrameMargins -> 4], Cell[TextData[{ValueBox[\"FileName\"]}], \
+\"Header\"]}], CellMargins -> {{0, Inherited}, {Inheri", None, None}, {
+   Cell[
+    TextData[{
+      ValueBox["FileName"]}], "Header"], 
+   Cell[
+    TextData[{
+      ValueBox["Date"]}], "Header"], 
+   Cell[
+    TextData[{
+      CounterBox["Page"]}], "PageNumber"]}},
+PageHeaderLines->{False, True},
+PrintingOptions->{"FacingPages"->False,
+"FirstPageHeader"->True,
+"PaperOrientation"->"Portrait",
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->False,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"10.2 for Linux x86 (64-bit) (July 6, 2015)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Text"], FontFamily -> "Arial", FontSize -> 14, FontWeight -> 
+       "Plain", FontSlant -> "Plain", Background -> RGBColor[0, 1, 1]], 
+      Cell[
+       StyleData["Text", "Printout"], FontFamily -> "Arial", FontSize -> 14, 
+       FontWeight -> "Plain", FontSlant -> "Plain", Background -> None]}, 
+     Open]], 
+   Cell[
+    StyleData["Input"], TextAlignment -> Right, FontSize -> 14], 
+   Cell[
+    StyleData["Title"], TextAlignment -> Center], 
+   Cell[
+    StyleData["Subsubtitle"], TextAlignment -> Center]}, Visible -> False, 
+  FrontEndVersion -> "10.2 for Linux x86 (64-bit) (July 6, 2015)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 3961, 98, 150, "Input",
+ PageBreakAbove->False,
+ PageBreakWithin->False],
+Cell[4509, 120, 1220, 30, 94, "Input"],
+Cell[CellGroupData[{
+Cell[5754, 154, 4890, 128, 150, "Input"],
+Cell[10647, 284, 3939, 72, 869, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
