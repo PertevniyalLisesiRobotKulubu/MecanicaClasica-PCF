@@ -104,6 +104,112 @@ Calcule las fuerzas de constricción.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para visualizar mejor el problema al cual nos enfrentamos, se muestra en la figura 
+de abajo una partícula de masa $m$ constreñida a moverse en dicho paraboloide.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig1}
+ \caption{Partícula de masa $m$ se mueve constreñida a la superficie de un paraboloide de 
+revolución}
+\label{fig:problema1fig1}
+\end{figure}
+
+Debido a las simetrías involucradas en este problema, utilizaremos coordenadas cilíndricas 
+polares para resolverlo. Tenemos entonces las siguientes transformaciones de coordenadas,
+
+\begin{align}
+ x &= r\cos{\phi}, \\
+ y &= r\sen{\phi}, \\
+ z &= z.
+ \label{eq:transfCoordenadasParab}
+\end{align}
+
+Por otra parte, tenemos la constricción holonómica de que la partícula debe moverse 
+en la superficie del paraboloide de revolución, que podemos expresar como
+
+\begin{equation}
+ x^2 + y^2 = \alpha z.
+\end{equation}
+
+Pero en las coordenadas que estamos utilizando
+
+\begin{equation}
+ x^2 + y^2 = r^2,
+\end{equation}
+
+entonces la constricción se convierte en,
+
+\begin{equation}
+ z = \alpha r^2.
+ \label{eq:constriccionParab}
+\end{equation}
+
+Siguiendo la receta lagrangiana calculemos ahora la energía cinética y la potencial 
+en nuestras coordenadas generalizadas $(r,\phi,z)$. Recordemos que podemos escribir 
+estas energías en coordenadas cartesianas como,
+
+\begin{equation}
+ T = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2 +\dot{z}^2).
+ \label{eq:energCinetParab1}
+\end{equation}
+
+\begin{equation}
+ V = mgz.
+ \label{eq:energPotenParab1}
+\end{equation}
+
+Debido a que la partícula se encuentra en un campo gravitacional uniforme. Expresemos 
+ahora estas energías en términos de nuestras coordenadas generalizadas. Cabe resaltar 
+que utilizaremos el método de los coeficientes indeterminados de Lagrange para obtener 
+las fuerzas generalizadas, por lo cual haremos uso de la constricción en los momentos 
+indicados por esta metodología. 
+
+\vspace{.3cm}
+
+Comencemos por obtener las derivadas temporales de \mref{eq:transfCoordenadasParab}, 
+para introducirlas en \mref{eq:energCinetParab1},
+
+\begin{align}
+ \dot{x} = \dot{r}\cos{\phi} - r \dot{\phi}\sen{\phi}, \\
+ \dot{y} = \dot{r}\sen{\phi} + r \dot{\phi}\cos{\phi}, \\
+ \dot{z} = \dot{z}.
+ \label{eq:derivTemprTransfCoordParab}
+\end{align}
+
+Introduciendo \mref{eq:derivTemprTransfCoordParab} en \mref{eq:energCinetParab1} obtenemos,
+
+\begin{align}
+ \begin{split}
+  T &= \frac{1}{2}m [( \dot{r}\cos{\phi} - r \dot{\phi}\sen{\phi})^2
+  + (\dot{r}\sen{\phi} + r \dot{\phi}\cos{\phi})^2 + \dot{z}^2], \\
+  %  
+  &= \frac{1}{2} m (\dot{r}^2\cos^2{\phi} - \cancel{2r\dot{r}\dot{\phi}\cos{\phi}\sen{\phi}} + 
+  r^2\dot{\phi}^2 \sen^2{\phi} +  \dot{r}^2\sen^2{\phi} \\
+  %
+  &+ \cancel{2r\dot{r}\dot{\phi}\cos{\phi}\sen{\phi}}
+  + r^2\dot{\phi}^2 \cos^2{\phi} + \dot{z}^2 ) \\
+  %
+  &= \frac{1}{2} m \left[ \dot{r}^2\cancelto{1}{(\sen^2{\phi} + \cos^2{\phi})}
+  + r^2\dot{\phi}^2 \cancelto{1}{(\sen^2{\phi} + \cos^2{\phi})} + \dot{z}^2 \right]
+  %%
+ \end{split}
+\end{align}
+
+\begin{equation}
+ \therefore T = \frac{1}{2}m(\dot{r}^2 + r^2\dot{\phi}^2 + \dot{z}^2)
+ \label{eq:energCinetParab2}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
 \section{Problema 2}
 
 Considere la lagrangiana de una partícula de masa $m$ totalmente libre en el 
