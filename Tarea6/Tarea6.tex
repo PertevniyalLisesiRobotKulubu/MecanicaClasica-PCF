@@ -141,7 +141,7 @@ Pero en las coordenadas que estamos utilizando
 entonces la constricción se convierte en,
 
 \begin{equation}
- z = \alpha r^2.
+ \xi(r,\phi,z) \equiv - r^2 + \alpha z = 0.
  \label{eq:constriccionParab}
 \end{equation}
 
@@ -161,7 +161,7 @@ estas energías en coordenadas cartesianas como,
 
 Debido a que la partícula se encuentra en un campo gravitacional uniforme. Expresemos 
 ahora estas energías en términos de nuestras coordenadas generalizadas. Cabe resaltar 
-que utilizaremos el método de los coeficientes indeterminados de Lagrange para obtener 
+que utilizaremos el método de los multiplicadores indeterminados de Lagrange para obtener 
 las fuerzas generalizadas, por lo cual haremos uso de la constricción en los momentos 
 indicados por esta metodología. 
 
@@ -171,9 +171,9 @@ Comencemos por obtener las derivadas temporales de \mref{eq:transfCoordenadasPar
 para introducirlas en \mref{eq:energCinetParab1},
 
 \begin{align}
- \dot{x} = \dot{r}\cos{\phi} - r \dot{\phi}\sen{\phi}, \\
- \dot{y} = \dot{r}\sen{\phi} + r \dot{\phi}\cos{\phi}, \\
- \dot{z} = \dot{z}.
+ \dot{x} &= \dot{r}\cos{\phi} - r \dot{\phi}\sen{\phi}, \\
+ \dot{y} &= \dot{r}\sen{\phi} + r \dot{\phi}\cos{\phi}, \\
+ \dot{z} &= \dot{z}.
  \label{eq:derivTemprTransfCoordParab}
 \end{align}
 
@@ -197,9 +197,186 @@ Introduciendo \mref{eq:derivTemprTransfCoordParab} en \mref{eq:energCinetParab1}
 \end{align}
 
 \begin{equation}
- \therefore T = \frac{1}{2}m(\dot{r}^2 + r^2\dot{\phi}^2 + \dot{z}^2)
+ \therefore T = \frac{1}{2}m(\dot{r}^2 + r^2\dot{\phi}^2 + \dot{z}^2).
  \label{eq:energCinetParab2}
 \end{equation}
+
+Entonces la lagrangiana del sistema sería
+
+\begin{equation}
+ L = \frac{1}{2} m(\dot{r}^2 + r^2\dot{\phi}^2 + \dot{z}^2) - mgz.
+\end{equation}
+
+Ahora utilizando el hecho de que las ecuaciones de Lagrange en la metodología de 
+multiplicadores indeterminados, se convierten en,
+
+\begin{equation}
+  \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^j} - \frac{\partial L}{\partial q^j}  
+ - \sum_k \lambda_k(t) \frac{\partial \xi_k}{\partial q^j} = 0,
+\end{equation}
+
+y que las fuerzas generalizadas de constricción se encuentran con
+
+\begin{equation}
+ Q_j = \sum_k \lambda_k(t) \frac{\partial \xi_k}{\partial q^j}.
+ \label{eq:fuerzasConstri1}
+\end{equation}
+
+estamos en posición para aplicar el método y obtener estas fuerzas. Tendremos entonces 
+las siguientes ecuaciones para $r$, $z$ y $\phi$
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{r}} - \frac{\partial L}{\partial r}
+ - \lambda \frac{\partial \xi}{\partial r} = 0,
+\end{equation}
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{z}} - \frac{\partial L}{\partial z}
+ - \lambda \frac{\partial \xi}{\partial z} = 0,
+\end{equation}
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{\phi}} - \frac{\partial L}{\partial \phi}
+ - \lambda \frac{\partial \xi}{\partial \phi} = 0.
+\end{equation}
+
+Entonces tenemos para $r$,
+
+\begin{equation}
+  \frac{d}{dt}(m\dot{r}) - m r\dot{\phi}^2 + 2 r = 0,
+\end{equation}
+
+\begin{equation}
+ \boxed{m(\ddot{r} - r\dot{\phi}^2) + 2 \lambda r = 0}.
+ \label{eq:ecuMovimientoR}
+\end{equation}
+
+Para $z$,
+
+\begin{equation}
+ \frac{d}{dt}(m\dot{z}) + mg + \lambda \alpha = 0.
+\end{equation}
+
+\begin{equation}
+ \boxed{m(\ddot{z}+g) + \lambda \alpha = 0 }.
+ \label{eq:ecuMovimientoZ}
+\end{equation}
+
+Y para $\phi$,
+
+\begin{equation}
+ \frac{d}{dt}(mr^2\dot{\phi}) = 0.
+\end{equation}
+
+\begin{equation}
+ \boxed{mr^2\dot{\phi} = \text{constante} = l}.
+ \label{eq:ecuMovimientoPhi}
+\end{equation}
+
+Donde como puede verse debido a que $\phi$ es una coordenada cíclica, encontramos 
+una integral de movimiento a la cual asociamos el momentum angular, el cual se 
+conserva durante el movimiento de la partícula.
+
+\vspace{.3cm}
+
+Para poder hallar las fuerzas de constricción debemos encontrar un valor para 
+$\lambda$, lo cual podemos hacer utilizando la ecuación para la constricción 
+\mref{eq:constriccionParab} y vemos que 
+
+\begin{equation}
+ \alpha z = r^2,
+\end{equation}
+
+\begin{equation}
+\alpha \dot{z} = 2r \dot{r},
+\end{equation}
+
+\begin{equation}
+\alpha \ddot{z} = 2(\dot{r}^2 + r\ddot{r}),
+\end{equation}
+
+\begin{equation}
+ \therefore \ddot{z} = 2 \frac{(\dot{r}^2 + r\ddot{r})}{\alpha}.
+ \label{eq:derivConstriccionParab}
+\end{equation}
+
+Pero por la ecuación \mref{eq:ecuMovimientoZ} y usando \mref{eq:derivConstriccionParab}
+vemos que,
+
+\begin{equation}
+ \ddot{z} = 2 \frac{(\dot{r}^2 + r\ddot{r})}{\alpha} = - \frac{\lambda \alpha}{m} - g,
+\end{equation}
+
+entonces,
+
+\begin{equation}
+ \ddot{r} = - \frac{\lambda \alpha^2}{2mr} - \frac{g\alpha}{2r} - \frac{\dot{r}^2}{r}.
+\label{eq:doblederivR}
+\end{equation}
+
+Ahora sustituyendo \mref{eq:doblederivR} en \mref{eq:ecuMovimientoR}, y utilizando 
+el hecho que $\dot{\phi}^2 = l^2/m^2r^4$ obtenemos
+
+\begin{equation}
+ m(- \frac{\lambda \alpha^2}{2mr} - \frac{g\alpha}{2r} - \frac{\dot{r}^2}{r}.
+ - \frac{l^2}{m^2r^3}) + 2\lambda r = 0.
+\end{equation}
+
+Reescribiendo y agrupando términos de $\lambda$ vemos que
+
+\begin{equation}
+ - \frac{\lambda \alpha^2}{2r} + 2 \lambda r = \frac{gm\alpha}{2r} + \frac{2m\dot{r}^2}{r},
+ - \frac{l^2}{mr^3}
+\end{equation}
+
+\begin{equation}
+ \lambda \left(2r - \frac{\alpha^2}{2r}\right) = \frac{gm\alpha}{2r} + \frac{2m\dot{r}^2}{r},
+ - \frac{l^2}{mr^3}
+\end{equation}
+
+\begin{equation}
+ \lambda \left(\frac{4r^2 - \alpha^2}{2r}\right) = \frac{gm\alpha}{2r} + \frac{2m\dot{r}^2}{r},
+ - \frac{l^2}{mr^3}
+\end{equation}
+
+\begin{equation}
+ \lambda(4r^2 - \alpha^2) = gm\alpha + 4 m\dot{r}^2 - \frac{2l^2}{mr^2},
+\end{equation}
+
+\begin{equation}
+ \boxed{\lambda = \frac{1}{4r^2 - \alpha^2} \left[ m(g\alpha + 4 \dot{r}^2) - \frac{2l^2}{mr^2}\right]}.
+\end{equation}
+
+Ahora utilizando \mref{eq:fuerzasConstri1} podemos encontrar las fuerzas generalizadas 
+que serán,
+
+\begin{equation}
+ \boxed{Q_r = \lambda \frac{\partial \xi}{\partial r} = - 2r\lambda = 
+ - \frac{2r}{4r^2 - \alpha^2} \left[ m(g\alpha + 4 \dot{r}^2) - \frac{2l^2}{mr^2}\right],}
+\end{equation}
+
+\begin{equation}
+ \boxed{Q_z = \lambda \frac{\partial \xi}{\partial z} = \lambda \alpha = 
+ \frac{\alpha}{4r^2 - \alpha^2} \left[ m(g\alpha + 4 \dot{r}^2) - \frac{2l^2}{mr^2}\right],}
+\end{equation}
+
+y 
+
+\begin{equation}
+ \boxed{Q_{\phi} = \lambda \frac{\partial \xi}{\partial \phi} = \lambda \cdot (0) = 0}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
