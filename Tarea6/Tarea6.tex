@@ -401,6 +401,98 @@ las fuerzas: centrífuga, de Coriolis, y de Euler.
 
 \underline{Solución:} \vspace{.3cm}
 
+
+La imagen de abajo representa a los dos sistemas con los que trataremos, el primero que 
+es no primado será un sistema de coordenadas cartesianas inercial y el segundo que 
+está primado será el sistema en rotación. En este caso consideremos un sistema 
+no inercial que está en rotación en sentido de las agujas del reloj sobre el eje $z$ 
+y traslación con  respecto al primero, y para  ser completos en la demostración y 
+acatar lo establecido en el enunciado,  asumiremos que el ángulo de rotación 
+$\theta$ es una función dada del tiempo $\theta = \theta(t)$.
+
+\begin{figure}
+ \center 
+ \includegraphics[scale=0.5]{problema2fig1}
+ \caption{Rotación del sistema de coordenadas $(x,y,z)$ en dirección de las agujas 
+ del reloj sobre el eje $z$ con un ángulo $\theta(t)$.}
+ \label{fig:problema2fig1}
+\end{figure}
+
+Como el enunciado establece que la partícula está totalmente libre en el espacio
+tridimensional, entonces esto quiere decir que no está sujeta a ningún potencial, 
+por lo tanto la lagrangiana para el sistema no primado será
+
+\begin{equation}
+ L = \frac{1}{2}m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2).
+\end{equation}
+
+Por otra parte, la matriz de rotación será 
+
+\begin{equation}
+ \lambda = \begin{pmatrix}
+          \cos{\theta} & \sen{\theta} & 0 \\
+          -\sen{\theta} & \cos{\theta} & 0 \\
+          0 & 0 & 1
+          \end{pmatrix}
+\end{equation}
+
+Por lo tanto tendremos las siguientes transformaciones entre los sistemas, una 
+para ir de los primados a los no primados
+
+\begin{align}
+ x' &= x\cos{\theta} + y \sen{\theta}, \\
+ y' &= -x\sen{\theta} + y\cos{\theta}, \\
+ z' &= z,
+\end{align}
+
+y una para ir de los no primados a los primados
+
+\begin{align}
+ x &= x'\cos{\theta} - y' \sen{\theta}, \\
+ y &= x'\sen{\theta} + y'\cos{\theta}, \\
+ z &= z',
+ \label{eq:transfCoordNonInertial}
+\end{align}
+
+Debido a que las necesitaremos en la lagrangiana para el sistema primado, obtengamos 
+las primeras derivadas temporales de las ecuaciones \mref{eq:transfCoordNonInertial}
+
+\begin{align}
+ \dot{x} &= \dot{x}'\cos{\theta} - x'\dot{\theta}\sen{\theta} - \dot{y}'\sen{\theta} - y'\dot{\theta}\cos{\theta}, \\
+ \dot{y} &= \dot{x}'\sen{\theta} + x'\dot{\theta}\cos{\theta} + \dot{y}'\cos{\theta} - y'\dot{\theta}\sen{\theta}, \\
+ \dot{z} &= \dot{z}'.
+ \label{eq:derivTransfNonInertial1}
+\end{align}
+
+Si llamamos a $\dot{\theta} = \omega$, a la cual asociamos la velocidad angular de 
+la rotación, entonces las ecuaciones \mref{eq:derivTransfNonInertial1} se convierten en
+
+\begin{align}
+  \dot{x} &= \dot{x}'\cos{\theta} - \omega x'\sen{\theta} - \dot{y}'\sen{\theta} - \omega y'\cos{\theta}, \\
+ \dot{y} &= \dot{x}'\sen{\theta} + \omega x'\cos{\theta} + \dot{y}'\cos{\theta} - \omega y'\sen{\theta}, \\
+ \dot{z} &= \dot{z}'.
+ \label{eq:derivTransfNonInertial2}
+\end{align}
+
+Podemos escribir \mref{eq:derivTransfNonInertial2} de una forma más compacta,
+
+\begin{align}
+ \dot{x} &= (\dot{x}' - \omega y')\cos{\theta} - (\dot{y}' + \omega x')\sen{\theta}, \\
+ \dot{y} &= (\dot{y}' + \omega x')\cos{\theta} + (\dot{x}' - \omega y')\sen{\theta}, \\
+ \dot{z} &= \dot{z}'.
+\end{align}
+
+Entonces la lagrangiana en el sistema primado será
+
+\begin{align}
+ L' & = \frac{1}{2}\{[(\dot{x}' - \omega y')\cos{\theta} - (\dot{y}' + \omega x')\sen{\theta}]^2 \\ 
+ &+ [(\dot{y}' + \omega x')\cos{\theta} + (\dot{x}' - \omega y')\sen{\theta}]^2 + (\dot{z}')^2\}
+\end{align}
+
+
+
+
+
 \section{Problema 3}
 
 Un girocompás es un instrumento que consisten de un cuerpo rígido simétrico, 
