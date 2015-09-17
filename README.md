@@ -1,9 +1,5 @@
 # MecanicaClasica-PCF
 
-### **Nota**: Hay un problema actualmente con el compilador de ShareLatex y no se pueden ver los PDF. Cualquier cosa simplemente tienen que clonar el repositorio y compilar los archivos .TeX.
-
------------------------------
-
 Repositorio donde guardaré la respuesta a las tareas de la materia y alguna otra información relevante.
 
 Tarea 1 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/c63f455167399dac1e050d68073999854736d66b/raw/output.pdf)
