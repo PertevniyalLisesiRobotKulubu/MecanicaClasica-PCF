@@ -485,12 +485,114 @@ Podemos escribir \mref{eq:derivTransfNonInertial2} de una forma más compacta,
 Entonces la lagrangiana en el sistema primado será
 
 \begin{align}
- L' & = \frac{1}{2}\{[(\dot{x}' - \omega y')\cos{\theta} - (\dot{y}' + \omega x')\sen{\theta}]^2 \\ 
- &+ [(\dot{y}' + \omega x')\cos{\theta} + (\dot{x}' - \omega y')\sen{\theta}]^2 + (\dot{z}')^2\}
+\begin{split}
+ L' & = \frac{1}{2}m\{[(\dot{x}' - \omega y')\cos{\theta} - (\dot{y}' + \omega x')\sen{\theta}]^2 \\ 
+ &+ [(\dot{y}' + \omega x')\cos{\theta} + (\dot{x}' - \omega y')\sen{\theta}]^2 + (\dot{z}')^2\}.
+ \end{split}
 \end{align}
 
+Trabajando el álgebra para estos términos tendremos,
 
+\begin{align*}
+ L' &= \frac{1}{2}m [(\dot{x}' - \omega y')^2\cos^2{\theta} - \cancel{2(\dot{x}' - \omega y')(\dot{y}' + \omega x')\cos{\theta}\sen{\theta}} \\
+    &+ (\dot{y}' + \omega x')^2\sen^2{\theta} + (\dot{y}' + \omega x')^2\cos^2{\theta} \\
+    &+ \cancel{2(\dot{x}' - \omega y')(\dot{y}' + \omega x')\cos{\theta}\sen{\theta}} + (\dot{x}' - \omega y')^2\sen^2{\theta} \\
+    &+ (\dot{z}')^2].
+\end{align*}
 
+\begin{align*}
+ L' &= \frac{1}{2}m [(\dot{x}' - \omega y')^2\cos^2{\theta} + (\dot{y}' + \omega x')^2\sen^2{\theta} + (\dot{y}' + \omega x')^2\cos^2{\theta} \\ 
+    &+ (\dot{x}' - \omega y')^2\sen^2{\theta} + (\dot{z}')^2 ].
+\end{align*}
+
+\begin{equation*}
+ L' = \frac{1}{2}m \left[(\dot{x}' - \omega y')^2\cancelto{1}{(\sen^2{\theta} + \cos^2{\theta})} + 
+ (\dot{y}' + \omega x')^2\cancelto{1}{(\sen^2{\theta} + \cos^2{\theta})} + (\dot{z}')^2 \right].
+\end{equation*}
+
+\begin{equation*}
+ L' = \frac{1}{2}m \left[(\dot{x}' - \omega y')^2 + (\dot{y}' + \omega x')^2  + (\dot{z}')^2\right].
+\end{equation*}
+
+\begin{equation*}
+ L' = \frac{1}{2}m \left[ (\dot{x}')^2 - 2\omega \dot{x}'y' + \omega^2(\dot{y}')^2 + 
+ (\dot{y}')^2 + 2\omega\dot{y}'x' + \omega^2(\dot{x}')^2 + (\dot{z}')^2 \right].
+\end{equation*}
+
+\begin{equation}
+ \boxed{L' = \frac{1}{2}m \left[ (\dot{x}')^2 + (\dot{y}')^2 + (\dot{z}')^2 + 2\omega(\dot{y}'x' - \dot{x}'y')
+ + \omega^2((\dot{y}')^2 + (\dot{x}')^2)\right]. }
+\end{equation}
+
+Ahora que hemos encontrado la lagrangiana para el sistema primado podemos utilizar 
+las ecuaciones de Lagrange para hallar las expresiones para las fuerzas ficticias 
+solicitadas. Recordando que las ecuaciones de Lagrange pueden escribirse, para el 
+sistema primado, como
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L'}{\partial \dot{q}^{i}{'}} - \frac{\partial L'}{\partial q^{i}{'}} = 0
+\end{equation}
+
+Tendremos entonces las siguientes ecuaciones de movimiento:
+
+\vspace{.3cm}
+
+Para $x'$,
+
+\begin{align*}
+ \frac{d}{dt}(m\dot{x}' - m\omega y') - m\omega\dot{y}' - m\omega^2x' = 0, \\
+ %
+ m\ddot{x}' - m\omega\dot{y}' - m\dot{\omega}y' - m\omega\dot{y}' - m\omega^2x' = 0,
+\end{align*}
+
+\begin{equation}
+ \boxed{m\ddot{x}' = 2m\omega\dot{y}' + m\omega^2 x'+ m\dot{\omega}y'}.
+ \label{eq:ecuMoviXNonInertial}
+\end{equation}
+
+Para $y'$,
+
+\begin{align*}
+ \frac{d}{dt}(m\dot{y}' + m\omega x') + m\omega \dot{x}' - m\omega^2y' = 0, \\
+ m\ddot{y}' + m\omega\dot{x}' + m\dot{\omega}x' + m\omega \dot{x}' - m\omega^2y' = 0.
+\end{align*}
+
+\begin{equation}
+ \boxed{m\ddot{y}' = -2m\omega\dot{x}' + m\omega^2 y' - m\dot{\omega}x'.}
+  \label{eq:ecuMoviYNonInertial}
+\end{equation}
+
+Y para $z'$
+
+\begin{equation}
+ \boxed{\frac{d}{dt}(m\dot{z}') = 0 \Rightarrow m\dot{z}' = \text{constante}}
+  \label{eq:ecuMoviZNonInertial}
+\end{equation}
+
+Podemos ahora fácilmente reconocer las fuerzas ficticias que también se encuentran en 
+el tratamiento de sistemas no inerciales con la mecánica vectorial. Los términos 
+proporcionales a $\omega$ son las "fuerzas de Coriolis``
+
+\begin{equation}
+\boxed{ \vec{F}' \text{(Coriolis)} = (2m\omega\dot{y}', -2m\omega\dot{x}', 0) = -2m\vec{\omega} \times \dot{\vec{r}'}.}
+\end{equation}
+
+Los términos proporcionales a $\omega^2$ son las ''fuerzas centrífugas`` 
+
+\begin{equation}
+ \boxed{\vec{F}' \text{(Centrífuga)} = ( m \omega^2 x', m\omega^2 y', 0) = - m \vec{\omega} \times (\vec{\omega} \times \vec{r}').}
+\end{equation}
+
+Y los términos proporcionales a $\dot{\omega}$ son las ''fuerzas de Euler``
+
+\begin{equation}
+ \boxed{\vec{F}' \text{(Euler)} = (m\dot{\omega}y', -m\dot{\omega}x', 0 ) = - m \dot{\vec{\omega}} \times \vec{r}'.}
+\end{equation}
+
+Con lo cual hemos comprobado que podemos llegar a las mismas expresiones para las fuerzas 
+ficticias desde un marco lagrangiano a las que se encuentran con la mecánica vectorial, pero 
+con mucho menos trabajo. Cabe destacar que las fuerzas de Euler surgen debido a que 
+hemos considerado que la velocidad angular de rotación puede cambiar en el tiempo.
 
 
 \section{Problema 3}
