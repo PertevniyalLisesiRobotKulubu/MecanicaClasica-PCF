@@ -401,24 +401,168 @@ las fuerzas: centrífuga, de Coriolis, y de Euler.
 
 \underline{Solución:} \vspace{.3cm}
 
+Como el enunciado establece que la partícula está totalmente libre en el espacio
+tridimensional, entonces esto quiere decir que no está sujeta a ningún potencial, 
+por lo tanto la lagrangiana para el sistema no primado será
 
-La imagen de abajo representa a los dos sistemas con los que trataremos, el primero que 
+\begin{equation}
+ L = \frac{1}{2}m (\dot{r}_{S})^2.
+ \label{eq:lagrangianaEnS}
+\end{equation}
+
+Sea $S'$ un sistema de referencia en rotación y traslación con respecto a un sistema inercial 
+$S'$. Consideraremos que ni la traslación o la rotación son constantes, por lo que el sistema 
+$S'$ puede considerarse como rotando con una velocidad angular $\mathbf{\omega}$ con respecto a
+$S$. Denotaremos por $\mathbf{D}(t)$ al vector de posición del origen $O'$ relativo a $O$.
+
+\vspace{.3cm}
+
+Tenemos entonces que la posición de una partícula en $S$ relativa $S'$ será,
+
+\begin{equation}
+ \mathbf{r = r' + D}.
+\end{equation}
+
+Y la velocidad será,
+
+\begin{equation}
+ \mathbf{\dot{r}}_S = \mathbf{\dot{r}}'_S + \mathbf{\dot{D}},
+\end{equation}
+
+pero como $S'$ está en rotación\footnote{Si consideramos el vector de posición expresado en términos de 
+las coordenadas de $S'$, 
+
+\begin{equation*}
+ \mathbf{r} = x'\mathbf{\hat{x}'} + y'\mathbf{\hat{y}'} + z'\mathbf{\hat{z}'}.
+\end{equation*}
+
+La velocidad relativa a $S'$ será 
+
+\begin{equation*}
+ \left( \frac{d\mathbf{r}}{dt} \right)_{S'} = \frac{dx'}{dt}\mathbf{\hat{x}'} 
+ + \frac{dy'}{dt}\mathbf{\hat{y}'} + \frac{dz'}{dt}\mathbf{\hat{y}'}.
+\end{equation*}
+
+Relativo a $S$ ambas componentes y los vectores unitarios en la ecuación anterior 
+cambian, entonces
+
+\begin{equation*}
+ \left( \frac{d\mathbf{r}}{dt} \right)_{S} = \frac{dx'}{dt}\mathbf{\hat{x}'} 
+ + \frac{dy'}{dt}\mathbf{\hat{y}'} + \frac{dz'}{dt}\mathbf{\hat{y}'} + 
+ x'\frac{d\mathbf{\hat{x}}}{dt} + y'\frac{d\mathbf{\hat{y}}}{dt} + z'\frac{d\mathbf{\hat{z}}}{dt}.
+\end{equation*}
+
+Pero puede probarse que \cite{delange}
+
+\begin{equation*}
+ \frac{d\mathbf{\hat{x}}}{dt} = \mathbf{\omega} \times \mathbf{\hat{x}}', \qquad 
+ \frac{d\mathbf{\hat{y}}}{dt} = \mathbf{\omega} \times \mathbf{\hat{y}}', \qquad 
+ \frac{d\mathbf{\hat{z}}}{dt} = \mathbf{\omega} \times \mathbf{\hat{z}}'
+\end{equation*}}
+
+\begin{equation}
+ \mathbf{\dot{r}}'_S = \mathbf{\dot{r}}{'}_{S'} - \mathbf{\omega} \times \mathbf{r}'_{S'}.
+\end{equation}
+
+Tenemos entonces la siguiente fórmula de transformación de velocidades entre 
+los sistemas,
+
+\begin{equation}
+ \mathbf{\dot{r}}_S = \mathbf{\dot{r}}'_{S'} - \mathbf{\omega} \times \mathbf{r}'_{S'} + \mathbf{\dot{D}}.
+\end{equation}
+
+o en notación escalar,
+
+\begin{equation}
+ \dot{r}_S  = \dot{r}'_{S'} - \omega r'_{S'} + \dot{D}
+\end{equation}
+
+Ahora, tomando el cuadrado de esta ecuación obtenemos,
+
+\begin{equation}
+ \dot{r}_S^2 = (\dot{r}'_{S'})^2 - 2 \dot{r}'_{S'}\omega r'_{S'} + 2 \dot{r}'_{S'}\dot{D} + 
+ \omega^2 {r'_{S'}}^2 - 2 \omega r'_{S'}\dot{D} + \dot{D}^2
+\end{equation}
+
+Ahora debido a que 
+
+\begin{equation}
+ \dot{r}'_{S'}\dot{D} = \frac{d}{dt}(r'_{S'}\dot{D}) - r'_{S'}\ddot{D},
+ \label{eq:lagrangeTeoremita}
+\end{equation}
+
+y recordando que una derivada con respecto al tiempo de una función de las coordenadas 
+puede ser omitida de la lagrangiana porque no afecta a las ecuaciones de Lagrange, entonces 
+podemos eliminar el primer término de \mref{eq:lagrangeTeoremita}, y de forma similar 
+a $\dot{D}^2$ y el término $\omega r'_{S'}\dot{D} $ , quedándonos entonces la siguiente ecuación,
+
+\begin{equation}
+ \dot{r}_S^2 = \dot{r}_{S'}^2 - 2 \dot{r}'_{S'}\omega r'_{S'} - 2 r'_{S'}\ddot{D}+ 
+ \omega^2 r'^2.
+\end{equation}
+
+Entonces la lagrangiana en el sistema primado será,
+
+\begin{equation}
+ L' = \frac{1}{2}m [(\dot{r}'_{S'})^2 - 2 \dot{r}'_{S'}\omega r'_{S'} - 2 r'_{S'}\ddot{D}+ 
+ \omega^2 {r'_{S'}}^2].
+\end{equation}
+
+Ahora que hemos encontrado la lagrangiana para el sistema primado podemos utilizar 
+las ecuaciones de Lagrange para hallar las expresiones para las fuerzas ficticias 
+solicitadas. Recordando que las ecuaciones de Lagrange pueden escribirse, para el 
+sistema primado, como (\textbf{donde abreviaremos solo a cantidades primadas entendiendo 
+que se trata a cantidades primadas en $S'$})
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L'}{\partial \dot{r}'} - \frac{\partial L'}{\partial r'} = 0,
+\end{equation}
+
+encontramos que 
+
+\begin{equation}
+ \frac{d}{dt}(m\dot{r}' + m\omega r') - (- m \dot{r}' \omega - m\ddot{D} + mr'\omega^2) = 0,
+\end{equation}
+
+\begin{equation}
+ m\ddot{r}' + m\dot{r}'\omega + mr'\dot{\omega} + m \dot{r}' \omega  + m\ddot{D} 
+ -  mr'\omega^2 = 0.
+\end{equation}
+
+\begin{equation}
+ \boxed{m\ddot{r}' = - m r'\dot{\omega} - 2m \dot{r}' \omega + m\ddot{D} +  mr'\omega^2}
+\label{eq:finalRotacionTraslacion}
+ \end{equation}
+
+De la ecuación \mref{eq:finalRotacionTraslacion} podemos ver claramente los términos 
+de las fuerzas pedidas, el término $ 2m \dot{r}' \omega$ es el de la fuerza de Coriolis, 
+el término $mr'\omega^2$ es el de la fuerza centrífuga, y el término $mr'\dot{\omega}$ 
+es el de la fuerza de Euler; el término $m\ddot{D}$ se conoce como la fuerza traslacional 
+y surge por el hecho que hemos considerado que el sistema primado puede moverse de 
+manera no uniforme, lo mismo ocurre con la fuerza de Euler (o fuerza Azimutal) que surge 
+por el hecho de que hemos considerado que la rotación puede ser no uniforme.
+
+\vspace{.3cm}
+
+Para completar el entendimiento de este ejercicio, quisimos hacer un ejemplo concreto, no 
+tan general como el resultado que hemos obtenido anteriormente, para ver de que forma 
+surgen estas fuerzas en un problema más específico. Consideraremos el caso particular 
+de un sistema en rotación, y no traslación con respecto al sistema inercial. La imagen de abajo representa a los dos sistemas con los que trataremos, el primero que 
 es no primado será un sistema de coordenadas cartesianas inercial y el segundo que 
 está primado será el sistema en rotación. En este caso consideremos un sistema 
-no inercial que está en rotación en sentido de las agujas del reloj sobre el eje $z$ 
-y traslación con  respecto al primero, y para  ser completos en la demostración y 
-acatar lo establecido en el enunciado,  asumiremos que el ángulo de rotación 
-$\theta$ es una función dada del tiempo $\theta = \theta(t)$.
+no inercial que está en rotación en sentido de las agujas del reloj sobre el eje $z$, y para  ser completos
+en la demostración y  acatar lo establecido en el enunciado,  asumiremos que el
+ángulo de rotación $\theta$ es una función dada del tiempo $\theta = \theta(t)$.
 
-\begin{figure}
+\begin{figure}[H]
  \center 
- \includegraphics[scale=0.5]{problema2fig1}
+ \includegraphics[scale=0.44]{problema2fig1}
  \caption{Rotación del sistema de coordenadas $(x,y,z)$ en dirección de las agujas 
  del reloj sobre el eje $z$ con un ángulo $\theta(t)$.}
  \label{fig:problema2fig1}
 \end{figure}
 
-Como el enunciado establece que la partícula está totalmente libre en el espacio
+De nuevo, como el enunciado establece que la partícula está totalmente libre en el espacio
 tridimensional, entonces esto quiere decir que no está sujeta a ningún potencial, 
 por lo tanto la lagrangiana para el sistema no primado será
 
@@ -592,7 +736,9 @@ Y los términos proporcionales a $\dot{\omega}$ son las ''fuerzas de Euler``
 Con lo cual hemos comprobado que podemos llegar a las mismas expresiones para las fuerzas 
 ficticias desde un marco lagrangiano a las que se encuentran con la mecánica vectorial, pero 
 con mucho menos trabajo. Cabe destacar que las fuerzas de Euler surgen debido a que 
-hemos considerado que la velocidad angular de rotación puede cambiar en el tiempo.
+hemos considerado que la velocidad angular de rotación puede cambiar en el tiempo. Claramente 
+como en este ejemplo práctico que hemos hecho no consideramos traslación, no surge 
+el término de fuerza traslacional que vimos anteriormente.
 
 
 \section{Problema 3}
@@ -612,6 +758,13 @@ el eje de simetría oscilará, de manera estable, en torno a la dirección norte
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+
+\begin{thebibliography}{10}
+ \bibitem{delange}
+ O. De Lange y J. Pierrus, \emph{Solved Problems on Classical Mechanics}, Oxford 
+ University Press, 2010.
+\end{thebibliography}
 
 
 \end{document}
