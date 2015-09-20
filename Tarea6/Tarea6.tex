@@ -17,8 +17,14 @@
 \usepackage{cleveref}
 \usepackage[margin=1.4in]{geometry}
 \usepackage[labelfont=bf]{caption}
+\usepackage[titletoc,toc,title]{appendix}
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
+
+%Appendices in spanish
+\renewcommand{\appendixname}{Ap\'endices}
+\renewcommand{\appendixtocname}{Ap\'endices}
+\renewcommand{\appendixpagename}{Ap\'endices}
 
 %Columns separation
 \setlength{\columnsep}{1cm}
@@ -759,11 +765,120 @@ el eje de simetría oscilará, de manera estable, en torno a la dirección norte
 
 \underline{Solución:} \vspace{.3cm}
 
+\appendix
+\appendixpage
+
+\section{Movimiento con respecto a la Tierra}
+
+\textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 2.8 
+de \cite{baruh}. 
+
+\vspace{.3cm}
+
+Consideremos una partícula cerca de la superficie de la Tierra, y adjuntemos un marco 
+de referencia en movimiento $B$ a la superficie de la Tierra usando un sistema 
+$xyz$. La dirección $z$ es la vertical, la dirección $x$ es hacia el norte y la 
+dirección $y$ es hacia el oste. En las figuras de bajo se muestra un poco mejor 
+la situación.
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.4]{apendice1fig1}
+ \caption{Movimiento con respecto a la Tierra}
+  \label{fig:apendice1fig1}
+\end{figure}
+
+Asumiremos que la Tierra está rotando sobre su propio eje con una velocidad angular 
+constante $\Omega$. La parte de la derecha de la figura \mref{fig:apendice1fig1} 
+muestra el sistema de coordenadas visto de lado. Considerando esta figura, podemos 
+describir la velocidad angular de la Tierra en forma vectorial como
+
+\begin{equation}
+ \vec{\Omega} = \Omega(\sen{\lambda}\hat{k}+\cos{\lambda}\hat{i}),
+ \label{eq:velAngTierra1}
+\end{equation}
+
+donde $\lambda$ es la latitud. Hemos ignorado la velocidad angular de la Tierra. Esta 
+suposición y la de que la rotación de la Tierra son constantes no son exactamente 
+ciertas. La rotación de la Tierra sobre si misma no es sobre un eje fijo. El eje 
+sobre el cual la Tierra rota exhibe un pequeño movimiento de bamboleo con un 
+período de 433 días, principalmente porque la Tierra no es totalmente rígida, ni 
+totalmente esférica. La tasa de rotación de la Tierra no es constante; se esta 
+reduciendo a una tasa extremadamente pequeña. Además, ignoramos la inclinación 
+entre el plano ecuatorial (el plano generado por el ecuador) y el plano eclíptico 
+(el plano generado por la órbita de la Tierra alrededor del Sol). También hemos 
+ignorado el movimiento relativo de Tierra con respecto al Sol.
+
+\section{Secuencias de Ángulos de Euler}
+
+\textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 7.5.1 
+de \cite{baruh}.
+
+\vspace{.3cm}
+
+En esta sección, usaremos rotaciones fijas a un cuerpo, y seleccionamos 
+los ejes no-paralelos sobre los cuales se ejecutan las rotaciones como los ejes 
+del marco rotado. Los tres ángulos usados para transformar un conjunto de coordenadas 
+en otro, en este ámbito, se llaman los ángulos de Euler.
+
+\vspace{.3cm}
+
+En la generación de tres conjuntos de rotaciones para transformar un conjunto de 
+coordenadas en otro, i.e., $a_1a_2a_3$ a $b_1b_2b_3$, hay doce opciones en las cuales 
+no son iguales dos índices de rotación. Comenzamos con el marco $a_1a_2a_3$ y lo 
+rotamos sobre uno de los ejes para obtener el marco $a'_1a'_2a'_3$. Acá tenemos 
+tres opciones. La siguiente rotación es sobre uno de los ejes $a'_1$, $a'_2$ o $a'_3$, 
+excluyendo el eje que coincide con con la pasada rotación. Es decir, si la primera 
+rotación es sobre el eje $a_2$, la segunda rotación no debe ser sobre el eje $a'_2$. 
+Entonces, tenemos dos posibles rotaciones por cada rotación previa. Seguimos el mismo 
+procedimiento para la tercera transformación, resultado en dos posibles transformaciones 
+para cada rotación previa. Como resultado tenemos $3 \times 2 \times 2 = 12$ posibles 
+combinaciones 
+
+\begin{align*}
+ 1-2-1,\quad 1-2-3,\quad 1-3-1,\quad 1-3-2,\quad 2-1-2,\quad 2-1-3, \\
+ 2-3-1,\quad 2-3-2,\quad 3-1-2,\quad 3-1-3,\quad 3-2-1,\quad 3-2-3.
+\end{align*}
+
+Estos doce conjuntos son llamados las \emph{secuencias de ángulos de Euler}. Pueden 
+clasificarse en dos categorías principales, cada una con características similares. 
+La primera categoría es cuando el primer y el tercer índice son iguales (e.g., $3-2-3$) 
+y la segunda categoría consiste en rotaciones donde el primer y el tercer índice 
+son diferentes (e.g., $1-2-3$). Se escoge la secuencia dependiendo de la aplicación, 
+de manera tal que la secuencia escogida de una mejor visualización y conlleve a 
+menos singularidades.
+ 
+\vspace{.3cm}
+
+Uno de las secuencias de Euler más utilizadas es la $3-1-3$, muy usada para describir 
+cuerpos rígidos en rotación (es la que utilizamos para el problema del girocompás). En 
+una transformación $3-1-3$, primero, los ejes $a_1a_2a_3$ se rotan sobre $a_3$ 
+con un ángulo $\phi$, resultando en los ejes $a'_1a'_2a'_3$. Luego, se hace una rotación 
+sobre el eje $a'_1$ con un ángulo $\theta$, produciendo los ejes $a''_1a''_2a''_3$. 
+El eje $a'_1$ también es conocido como la línea de nodos. Este eje describe la 
+intersección de los planos $a_1a_2$ y $a''_1a''_2$. Por último, los ejes $a''_1a''_2a''_3$ 
+se rotan con un ángulo $\psi$ sobre el eje $a''_3$, resultando en los ejes $b_1b_2b_3$.
+Para una transformación $3-1-3$, los ángulos de rotación $phi$, $\theta$ y $\psi$ se 
+conocen como los ángulos de \emph{precesión}, \emph{nutación} y de \emph{espín}.
+
+\section{Cuerpos con ejes de simetría}
+
+\textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 7.5.3 
+de \cite{baruh}.
+
+\vspace{.3cm}
+
+En el estudio de los cuerpos con ejes de simetría, es más deseable describir el 
+movimiento de los mismos usando un conjunto de ejes relativos que no coinciden con 
+los ejes del cuerpo. 
+
 
 \begin{thebibliography}{10}
  \bibitem{delange}
  O. De Lange y J. Pierrus, \emph{Solved Problems on Classical Mechanics}, Oxford 
  University Press, 2010.
+ \bibitem{baruh}
+ H. Baruh, \emph{Analytical Dynamics}, McGraw-Hill, 1999.
 \end{thebibliography}
 
 
