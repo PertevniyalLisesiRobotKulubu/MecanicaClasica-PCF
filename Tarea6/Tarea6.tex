@@ -765,23 +765,71 @@ el eje de simetría oscilará, de manera estable, en torno a la dirección norte
 
 \underline{Solución:} \vspace{.3cm}
 
-Debido a la complejidad de este problema, algunas demostraciones y resultados relevantes 
+\textbf{Nota}: \textbf{Debido a problemas de notación, ya que utilizaremos los 
+ángulos de Euler en su forma estándar, el punto de la tierra donde
+se encuentra el girocompás tendrá una latitud $\lambda$, y no $\phi$. Además
+debido a la complejidad de este problema, algunas demostraciones y resultados relevantes 
 se han dejado para los apéndices. Para solucionar este problema se utilizarán análisis 
 de varios libros de mecánica analítica, y se recomienda al lector interesado que se dirija 
-a la bibliografía para un estudio más completo de este interesante artefacto.
+a la bibliografía para un estudio más completo de este interesante artefacto.}
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
 
 \vspace{.3cm}
 
 El girocompás es un dispositivo diseñado para determinar la rotación del norte verdadero 
 (o sur verdadero). Está hecho para siempre apuntar al norte celeste de la Tierra (no como 
 las brújulas magnéticas que apuntan al norte magnético de la Tierra). Esto se logra 
-añadiendo un contra peso del cardán interno de un giroscopio, que resulta en un 
+añadiendo un contra peso del cardán\footnote{Componente mecánico, descrito por primera vez por Girolamo
+Cardano, que permite unir dos ejes no colineales. Su objetivo es transmitir el movimiento de rotación de un
+eje al otro a pesar de la no colinealidad.} interno de un giroscopio, que resulta en un 
 movimiento de precesión que puede ser ajustado para coincidir con la precesión de 
 la Tierra. La figura de abajo, sacada de \cite{baruh} muestra una representación 
 esquemática del girocompás; como establece \cite{saletan}, los girocompases reales 
 usados en los barcos o algunas aeronaves, son mucho más complicados de lo que trataremos 
 acá, nos limitaremos a trabajar con un sistema idealizado (algunas de las suposiciones 
 que utilizamos en esta derivación están detalladas al final del apéndice \mref{app:apendice1}).
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema3fig1}
+ \caption{Representación esquemática de un girocompás}
+ \label{fig:problema3fig1}
+\end{figure}
+
+El rotor está colocado en el medio del cardán interno y una masa oscilante $m$ está 
+fijada al fondo del cardán interno. Usaremos un sistema de coordenadas $e_1e_2e_3$
+fijado a la Tierra, donde $\hat{e}_1$ apunta al norte, $\hat{e}_2$ al oeste, y $\hat{e}_3$
+es la vertical local (esto está explicado con detalle en el apéndice \mref{app:apendice1}). 
+La velocidad angular de este sistema de coordenadas es (ver ecuación \mref{eq:velAngTierra1}) 
+
+\begin{equation}
+ \vec{\omega}_{AT} = \omega_0(\cos{\lambda}\hat{e}_1 + \sen{\lambda}\hat{e}_3),
+\end{equation}
+
+donde $\lambda$ es la latitud del punto de la Tierra donde se encuentra el girocompás, y 
+$\omega_0$es la velocidad angular de la Tierra, $\omega_0 = 7.292\times 10^-5$ rad/s. 
+El tratamiento del cardán interior - que llamaremos marco\footnote{Ver apéndice 
+\mref{app:apendice3}.} $F$ - se obtiene de una transformación\footnote{Ver apéndice 
+\mref{app:apendice2}.} $3-1$, de manera que la velocidad angular del rotor con respecto 
+a la tierra es\footnote{ver figura \mref{fig:problema3fig1} y la ecuación \mref{eq:velAngFframe3}.}
+
+\begin{equation}
+ \vec{\omega}_{TB} = \dot{\theta}\hat{f}_1 + \dot{\phi}\sen{\theta}\hat{f}_2 + 
+ (\dot{\phi}\cos{\theta} + \dot{\psi})\hat{f}_3.
+\end{equation}
+
+Los vectores unitarios en el marco $T$ de la Tierra, y el marco $F$ están relacionados 
+por\footnote{Ver figura \mref{fig:problema3fig1}}
+
+\begin{equation}
+ \hat{e}_1 = \cos{\phi}\hat{f}_1 - \sen{\phi}\cos{\theta}\hat{f}_2 + \sen{\phi}\sen{\theta}\hat{f}_3 
+ \qquad \hat{e}_3 = \sen{\theta}\hat{f}_2 + \cos{\theta}\hat{f}_3.
+\end{equation}
+
+
+
+
 
 
 
@@ -829,7 +877,7 @@ entre el plano ecuatorial (el plano generado por el ecuador) y el plano eclípti
 (el plano generado por la órbita de la Tierra alrededor del Sol). También hemos 
 ignorado el movimiento relativo de Tierra con respecto al Sol.
 
-\section{Secuencias de Ángulos de Euler}
+\section{Secuencias de Ángulos de Euler} \label{app:apendice2}
 
 \textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 7.5.1 
 de \cite{baruh}.
@@ -891,7 +939,7 @@ conocen como los ángulos de \emph{precesión}, \emph{nutación} y de \emph{esp�
 
 
 
-\section{Cuerpos con ejes de simetría}
+\section{Cuerpos con ejes de simetría} \label{app:apendice3}
 
 \textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 7.5.3 
 de \cite{baruh}.
@@ -938,7 +986,32 @@ la velocidad angular del cuerpo como
 \end{equation}
 
 donde ${^A}{ \vec{\omega}}^{F} = {^A}{ \vec{\omega}}^{A''}$ y ${^F}{ \vec{\omega}}^{B}$ 
-es el espín, ${^F}{ \vec{\omega}}^{B} = \dot{\phi}\hat{f}_3$.
+es el espín, ${^F}{ \vec{\omega}}^{B} = \dot{\psi}\hat{f}_3$. 
+
+\vspace{.cm}
+
+Para una transformación $3-1-3$, podemos escribir las velocidades angulares del cuerpo 
+y del marco $F$ en términos de las componentes del marco $F$ como
+
+\begin{align}
+\begin{split}
+ %
+ {^F}{ \vec{\omega}}^{B} &= \dot{\psi}\hat{f}_3, \\
+ %
+ {^A}{ \vec{\omega}}^{F} &= \dot{\phi}(\sin{\theta}\hat{a}''_2 + \cos{\theta}\hat{a}''_3) 
+ + \dot{\theta}\hat{a}''_1 = \dot{\theta}\hat{f}_1 + \dot{\phi}\sen{\theta}\hat{f}_2 +
+ \dot{\phi}\cos{\theta}\hat{f}_3,
+ %
+\end{split}
+\end{align}
+
+\begin{equation}
+ \boxed{\vec{\omega} = {^A}{ \vec{\omega}}^{F} + {^F}{ \vec{\omega}}^{B} = \dot{\theta}\hat{f}_1 
+ + \dot{\phi}\sen{\theta}\hat{f}_2 + (\dot{\phi}\cos{\theta} + \dot{\psi})\hat{f}_3.}
+\label{eq:velAngFframe3}
+\end{equation}
+
+
 
 
 \begin{thebibliography}{10}
