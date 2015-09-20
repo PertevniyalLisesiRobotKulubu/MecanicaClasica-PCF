@@ -117,7 +117,7 @@ de abajo una partícula de masa $m$ constreñida a moverse en dicho paraboloide.
  \center 
  \includegraphics[scale=0.5]{problema1fig1}
  \caption{Partícula de masa $m$ se mueve constreñida a la superficie de un paraboloide de 
-revolución}
+revolución.}
 \label{fig:problema1fig1}
 \end{figure}
 
@@ -419,7 +419,8 @@ por lo tanto la lagrangiana para el sistema no primado será
 Sea $S'$ un sistema de referencia en rotación y traslación con respecto a un sistema inercial 
 $S'$. Consideraremos que ni la traslación o la rotación son constantes, por lo que el sistema 
 $S'$ puede considerarse como rotando con una velocidad angular $\mathbf{\omega}$ con respecto a
-$S$. Denotaremos por $\mathbf{D}(t)$ al vector de posición del origen $O'$ relativo a $O$.
+$S$ y acelerado con respecto al mismo. Denotaremos por $\mathbf{D}(t)$ al vector 
+de posición del origen $O'$ relativo a $O$.
 
 \vspace{.3cm}
 
@@ -500,7 +501,7 @@ Ahora debido a que
 y recordando que una derivada con respecto al tiempo de una función de las coordenadas 
 puede ser omitida de la lagrangiana porque no afecta a las ecuaciones de Lagrange, entonces 
 podemos eliminar el primer término de \mref{eq:lagrangeTeoremita}, y de forma similar 
-a $\dot{D}^2$ y el término $\omega r'_{S'}\dot{D} $ , quedándonos entonces la siguiente ecuación,
+a $\dot{D}^2$ y el término $\omega r'_{S'}\dot{D}$, quedándonos entonces la siguiente ecuación,
 
 \begin{equation}
  \dot{r}_S^2 = \dot{r}_{S'}^2 - 2 \dot{r}'_{S'}\omega r'_{S'} - 2 r'_{S'}\ddot{D}+ 
@@ -553,7 +554,7 @@ por el hecho de que hemos considerado que la rotación puede ser no uniforme.
 Para completar el entendimiento de este ejercicio, quisimos hacer un ejemplo concreto, no 
 tan general como el resultado que hemos obtenido anteriormente, para ver de que forma 
 surgen estas fuerzas en un problema más específico. Consideraremos el caso particular 
-de un sistema en rotación, y no traslación con respecto al sistema inercial. La imagen de abajo representa a los dos sistemas con los que trataremos, el primero que 
+de un sistema en rotación, y no en traslación con respecto al sistema inercial. La imagen de abajo representa a los dos sistemas con los que trataremos, el primero que 
 es no primado será un sistema de coordenadas cartesianas inercial y el segundo que 
 está primado será el sistema en rotación. En este caso consideremos un sistema 
 no inercial que está en rotación en sentido de las agujas del reloj sobre el eje $z$, y para  ser completos
@@ -766,7 +767,7 @@ el eje de simetría oscilará, de manera estable, en torno a la dirección norte
 \underline{Solución:} \vspace{.3cm}
 
 \textbf{Nota}: \textbf{Debido a problemas de notación, ya que utilizaremos los 
-ángulos de Euler en su forma estándar, el punto de la tierra donde
+ángulos de Euler en su forma estándar, el punto de la Tierra donde
 se encuentra el girocompás tendrá una latitud $\lambda$, y no $\phi$. Además
 debido a la complejidad de este problema, algunas demostraciones y resultados relevantes 
 se han dejado para los apéndices. Para solucionar este problema se utilizarán análisis 
@@ -812,7 +813,7 @@ $\omega_0$es la velocidad angular de la Tierra, $\omega_0 = 7.292\times 10^-5$ r
 El tratamiento del cardán interior - que llamaremos marco\footnote{Ver apéndice 
 \mref{app:apendice3}.} $F$ - se obtiene de una transformación\footnote{Ver apéndice 
 \mref{app:apendice2}.} $3-1$, de manera que la velocidad angular del rotor con respecto 
-a la tierra es\footnote{ver figura \mref{fig:problema3fig1} y la ecuación \mref{eq:velAngFframe3}.}
+a la Tierra es\footnote{ver figura \mref{fig:problema3fig1} y la ecuación \mref{eq:velAngFframe3}.}
 
 \begin{equation}
  \vec{\omega}_{TB} = \dot{\theta}\hat{f}_1 + \dot{\phi}\sen{\theta}\hat{f}_2 + 
@@ -848,7 +849,7 @@ donde
 Debido a que las tasas precesión y nutación son bajas, ignoraremos la energía 
 cinética de la masa oscilante, así que la energía cinética del sistema será solo 
 la debida rotor. Además, ignoraremos términos cuadráticos en $\omega_0$, debido a que 
-la velocidad angular de la tierra es muy pequeña. Como queremos ver si hay unos 
+la velocidad angular de la Tierra es muy pequeña. Como queremos ver si hay unos 
 ángulos de precesión y nutación para los cuales el eje del rotor y tasa de espín 
 son constantes, consideraremos la precesión y nutación como cero. Ignorando además 
 la inercia de los cardanes, y recordando que para el girocompás $I_1=I_2$ tenemos 
@@ -870,8 +871,8 @@ Mientras que la energía potencial es debida solamente a la masa oscilante,
 Podemos construir entonces la lagrangiana $L = T - V$ del sistema,
 
 \begin{equation}
- L = \frac{1}{2}I_3[\dot{\psi}^2 + 2\dot{\psi}\omega_0(\cos{\lambda}\sen{\phi}\sen{\theta} + 
- \sen{\lambda}\cos{\theta})] + mgL\sen{\theta}.
+ \boxed{L = \frac{1}{2}I_3[\dot{\psi}^2 + 2\dot{\psi}\omega_0(\cos{\lambda}\sen{\phi}\sen{\theta} + 
+ \sen{\lambda}\cos{\theta})] + mgL\sen{\theta}.}
  \label{eq:lagrangianaGirocompas}
 \end{equation}
 
@@ -957,7 +958,7 @@ Y haciendo lo mismo para $p_\psi$ vemos que,
 
 \begin{equation}
  p_\psi = \omega_0(\cos{\lambda}\cancelto{1}{\sen{\phi}}\sen{\theta}+ 
- \sen{\lambda}\cos{\theta} + dot{\psi},
+ \sen{\lambda}\cos{\theta} + \dot{\psi},
 \end{equation}
 
 \begin{equation}
@@ -966,6 +967,8 @@ Y haciendo lo mismo para $p_\psi$ vemos que,
 
 \textbf{Entonces debido a que $p_\psi = \omega_3$ hemos demostrado que la velocidad de rotación 
 en torno al eje de simetría permanece constante}.
+
+\vspace{.3cm}
 
 Para probar la última parte del problema, no o haremos directamente con lo que nos dice 
 el enunciado debido a que el tratamiento que hemos hecho lleva al mismo resultado 
@@ -994,7 +997,7 @@ a
 
 Con lo cual podemos establecer que si el rotor se suelta con su eje de rotación inclinado 
 a un ángulo $\Delta\theta$ sobre la horizontal norte-sur, la precesión del giroscopio 
-coincidirá con la componente de la velocidad angular de la tierra en la dirección del 
+coincidirá con la componente de la velocidad angular de la Tierra en la dirección del 
 vertical local, o lo que es lo mismo, el girocompás oscilará en torno a la dirección 
 norte-sur buscando el norte verdadero, en un plano horizontal.
 
@@ -1055,12 +1058,12 @@ Consideremos una partícula cerca de la superficie de la Tierra, y adjuntemos un
 de referencia en movimiento $B$ a la superficie de la Tierra usando un sistema 
 $xyz$. La dirección $z$ es la vertical, la dirección $x$ es hacia el norte y la 
 dirección $y$ es hacia el oste. En las figuras de bajo se muestra un poco mejor 
-la situación.
+la situación
 
 \begin{figure}[H]
  \center
- \includegraphics[scale=0.4]{apendice1fig1}
- \caption{Movimiento con respecto a la Tierra}
+ \includegraphics[scale=0.7]{apendice1fig1}
+ \caption{Movimiento con respecto a la Tierra.}
   \label{fig:apendice1fig1}
 \end{figure}
 
@@ -1094,7 +1097,7 @@ de \cite{baruh}.
 
 \vspace{.3cm}
 
-En esta sección, usaremos rotaciones fijas a un cuerpo, y seleccionamos 
+En este apéndice, usaremos rotaciones fijas a un cuerpo, y seleccionamos 
 los ejes no-paralelos sobre los cuales se ejecutan las rotaciones como los ejes 
 del marco rotado. Los tres ángulos usados para transformar un conjunto de coordenadas 
 en otro, en este ámbito, se llaman los ángulos de Euler.
@@ -1143,7 +1146,7 @@ conocen como los ángulos de \emph{precesión}, \emph{nutación} y de \emph{esp�
 \begin{figure}[H]
 \center 
 \includegraphics[scale=0.38]{apendice2fig1}
-\caption{Secuencia de Euler $3-1-3$}
+\caption{Secuencia de Euler $3-1-3$.}
 \label{fig:apendice2fig1}
 \end{figure}
 
@@ -1198,7 +1201,7 @@ la velocidad angular del cuerpo como
 donde ${^A}{ \vec{\omega}}^{F} = {^A}{ \vec{\omega}}^{A''}$ y ${^F}{ \vec{\omega}}^{B}$ 
 es el espín, ${^F}{ \vec{\omega}}^{B} = \dot{\psi}\hat{f}_3$. 
 
-\vspace{.cm}
+\vspace{.3cm}
 
 Para una transformación $3-1-3$, podemos escribir las velocidades angulares del cuerpo 
 y del marco $F$ en términos de las componentes del marco $F$ como
