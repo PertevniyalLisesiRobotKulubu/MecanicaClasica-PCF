@@ -967,11 +967,79 @@ Y haciendo lo mismo para $p_\psi$ vemos que,
 \textbf{Entonces debido a que $p_\psi = \omega_3$ hemos demostrado que la velocidad de rotación 
 en torno al eje de simetría permanece constante}.
 
+Para probar la última parte del problema, no o haremos directamente con lo que nos dice 
+el enunciado debido a que el tratamiento que hemos hecho lleva al mismo resultado 
+pero llegar a él es un poco distinto. Podemos ver esto, si introducimos estas consideraciones a la ecuación 
+\mref{eq:movimientoTheta} y resolvemos para $\theta$, tenemos que 
 
+\begin{equation}
+ \cot{\theta} = \frac{I_3\dot{\psi}\omega_o\sen{\lambda}}{I_3\dot{\psi}\omega_0\cos{\lambda} + mgL}.
+\label{eq:cotangenteTheta}
+\end{equation}
 
+Pero debido a que $mgL$ es mucho más grande que $I_3\dot{\psi}\omega_0$, entonces el término 
+$mgL$ domina la ecuación de arriba. Además $\cot{\theta}$ es muy pequeño y $\theta$ es 
+muy cercano a $\pi/2$. Introduciendo la expresión
 
+\begin{equation}
+ \theta = \frac{\pi}{2} - \Delta\theta,
+\end{equation}
 
+donde $\Delta\theta$ es pequeña, podemos simplificar la ecuación \mref{eq:cotangenteTheta}
+a 
 
+\begin{equation}
+ \boxed{\Delta\theta = \frac{I_3\dot{\psi}\omega_0\sen{\lambda}}{mgl}.}
+\end{equation}
+
+Con lo cual podemos establecer que si el rotor se suelta con su eje de rotación inclinado 
+a un ángulo $\Delta\theta$ sobre la horizontal norte-sur, la precesión del giroscopio 
+coincidirá con la componente de la velocidad angular de la tierra en la dirección del 
+vertical local, o lo que es lo mismo, el girocompás oscilará en torno a la dirección 
+norte-sur buscando el norte verdadero, en un plano horizontal.
+
+\vspace{.3cm}
+
+Para complementar esta discusión, puede probarse además \cite{delange}, que si llamamos $\xi$ el ángulo entre el norte 
+verdadero y el eje de rotación del girocompás, tendremos la siguiente ecuación diferencial 
+para $\xi$,
+
+\begin{equation}
+ \ddot{\xi} + [(I_1/I_3)\omega_3\omega_0\cos{\lambda}]\sen{\xi} = 0, 
+\end{equation}
+
+con lo que vemos que el rotor oscilará en un plano horizontal sobre el norte verdadero 
+($\xi=0$), lo cual concuerda con lo que habíamos probado anteriormente. Más aún, para 
+pequeñas oscilaciones $|\xi| \ll 1$ la ecuación no lineal anterior se puede 
+aproximar a 
+
+\begin{equation}
+ \ddot{\xi} + [(I_1/I_3)\omega_3\omega_0\cos{\lambda}]\xi = 0, 
+\end{equation}
+
+la cual es muy similar a la de un oscilador armónico con período 
+
+\begin{equation}
+ P = 2\pi[(I_1/I_3)\omega_3\omega_0\cos{\lambda}]^{-1/2},
+\end{equation}
+
+y la oscilación será estable \cite{spivak} si $\omega_3 >(I_1/I_3)\omega_0\cos{\lambda}$, 
+con lo cual hemos terminado todas las demostraciones.
+
+\vspace{.3cm}
+
+Al lector interesado se le recomienda dirigirse a la bibliografía donde se encontrará 
+con mucha más información detallada sobre el girocompás. 
+
+\vspace{.3cm}
+
+Específicamente para una discusión física y teórica los libros de 
+Baruh, \cite{baruh}, José y Saletan \cite{saletan}, Spivak \cite{spivak},
+Chaichian et. al \cite{chaichian}, Fowles y Cassiday \cite{fowles}, Synge y Griffith \cite{synge} y Meirovitch \cite{meirovitch}. 
+Para una discusión física y computacional (Mathematica) el libro de Romano \cite{romano}. Y para una discusión ingenieril y práctica los 
+libros de Ginsberg \cite{ginsberg1} y \cite{ginsberg2}.
+
+\newpage
 
 \appendix
 \appendixpage
@@ -1164,9 +1232,9 @@ y del marco $F$ en términos de las componentes del marco $F$ como
  \label{fig:apendice4fig1}
 \end{figure}
 
+\newpage
 
-
-\begin{thebibliography}{10}
+\begin{thebibliography}{20}
  \bibitem{delange}
  O. De Lange y J. Pierrus, \emph{Solved Problems on Classical Mechanics}, Oxford 
  University Press, 2010.
@@ -1175,6 +1243,27 @@ y del marco $F$ en términos de las componentes del marco $F$ como
  \bibitem{saletan}
  J. José y E. Saletan, \emph{Classical dynamics: A contemporary approach}, Cambridge University Press,
  1998.
+ \bibitem{spivak}
+ M. Spivak, \emph{Physics for mathematicians: Mechanics I}, Publish or Perish,
+ 2010.
+ \bibitem{chaichian}
+ M. Chaichian, I. Merches y A. Tureanu, \emph{Mechanics: An intensive course}, Springer-Verlang,
+ 2012.
+ \bibitem{romano}
+ A. Romano, \emph{Classical Mechanics with Mathematica\textregistered}, Birkhäuser-Springer, 
+ 2012.
+ \bibitem{fowles}
+ G. Fowles y G. Cassiday, \emph{Analytical Mechanics}, Thomson Brooks/Cole, 
+ 7ma edición, 2005.
+ \bibitem{synge}
+ J. Synge y B. Griffith, \emph{Principles of Mechanics}, 2da. edición, McGraw-Hill, 
+ 1949.
+ \bibitem{meirovitch}
+ L. Meirovitch, \emph{Methods of Analytical Dynamics}, McGraw-Hil, 1970.
+ \bibitem{ginsberg1}
+ J. Ginsberg, \emph{Advanced Engineering Dynamics}, Cambridge University Press 1998.
+ \bibitem{ginsberg2}
+ J. Ginsberg, \emph{Engineering Dynamics}, Cambridge University Press, 2008.
 \end{thebibliography}
 
 
