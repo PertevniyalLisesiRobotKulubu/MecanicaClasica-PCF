@@ -11,3 +11,5 @@ Tarea 3 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazq
 Tarea 4 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/d1b41867604b38c68db419cbb80632b6cd6b1185/raw/output.pdf)
 
 Tarea 5 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/cd770fdd3604204aae06ddb307ebe6ca059d62f6/raw/output.pdf)
+
+Tarea 6 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/e009a967d37cafd4b068ccf87ba31ce41cc23da1/raw/output.pdf)
