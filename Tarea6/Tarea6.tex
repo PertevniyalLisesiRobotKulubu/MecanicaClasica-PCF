@@ -872,9 +872,100 @@ Podemos construir entonces la lagrangiana $L = T - V$ del sistema,
 \begin{equation}
  L = \frac{1}{2}I_3[\dot{\psi}^2 + 2\dot{\psi}\omega_0(\cos{\lambda}\sen{\phi}\sen{\theta} + 
  \sen{\lambda}\cos{\theta})] + mgL\sen{\theta}.
+ \label{eq:lagrangianaGirocompas}
 \end{equation}
 
+Tenemos entonces las siguientes ecuaciones de movimiento:
 
+\vspace{.3cm}
+
+Para $\theta$, 
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} = 0.
+\end{equation}
+
+Pero como \mref{eq:lagrangianaGirocompas} no depende de $\dot{\theta}$, entonces 
+
+\begin{equation}
+ \frac{\partial L}{\partial \theta} = 0,
+\end{equation}
+
+entonces,
+
+\begin{equation}
+ \boxed{I_3\dot{\psi}\omega_0(\cos{\lambda}\sen{\phi}\cos{\theta} - \sen{\lambda}\sen{\theta}) 
+ + mgL\cos{\theta} = 0}.
+ \label{eq:movimientoTheta}
+\end{equation}
+
+Para $\phi$, 
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{\phi}} - \frac{\partial L}{\partial \phi} = 0.
+\end{equation}
+
+De nuevo, \mref{eq:lagrangianaGirocompas} no depende de $\dot{\phi}$, entonces 
+
+\begin{equation}
+ \frac{\partial L}{\partial \phi} = 0,
+\end{equation}
+
+entonces,
+
+\begin{equation}
+ \boxed{\dot{\phi}\omega_0\cos{\lambda}\cos{\phi}\sen{\theta} = 0.}
+ \label{eq:movimientoPhi}
+\end{equation}
+
+Por último para, $\psi$, debido a que \mref{eq:lagrangianaGirocompas} no depende 
+de $\psi$ tenemos que,
+
+\begin{equation}
+ \frac{d}{dt}[I_3\dot{\psi} + I_3\omega_0(\cos{\lambda}\sen{\phi}\sen{\theta} + 
+ \sen{\lambda}\cos{\theta})] = 0,
+\end{equation}
+
+entonces hemos encontrado una integral de movimiento que la asociamos con el momentum 
+de espín $p_{\psi}$,
+
+\begin{equation}
+ \boxed{\dot{\psi} + \omega_0(\cos{\lambda}\sen{\phi}\sen{\theta}+ 
+ \sen{\lambda}\cos{\theta}) = p_{\psi}}
+ \label{eq:movimientoPsi}
+\end{equation}
+
+Ahora, estamos interesados en los valores de $\phi$ y $\theta$ que hacen a las ecuaciones
+\mref{eq:movimientoTheta} y \mref{eq:movimientoPhi} válidas. Para que la segunda ecuación sea 
+válida, debido a que ni $\dot{\phi}$, ni $\omega_0$, ni $\cos{\lambda}$ son iguales a
+cero, entonces o $\cos{\phi} = 0$ o $\sen{\theta} = 0$. El caso en que $\sen{\theta} = 0$ 
+no tiene mucho sentido estudiarlo, porque corresponde al caso en el que el cardán interno no se 
+ha movido. Entonces consideramos que $\cos{\phi}= 0$. Esto es posible para $\phi= \pm \pi/2$. Por 
+simplicidad nos quedaremos con el caso en que $\phi = \pi/2$ para que $\sen{\phi} = 1$. Ahora 
+tomando este resultado vemos que la expresión para $\omega_3$ se transforma en,
+
+\begin{equation}
+ \omega_3 = \omega_0\cos{\lambda}\cancelto{1}{\sen{\phi}}\sen{\theta} + \omega_0\sen{\lambda}\cos{\theta} + 
+ \cancelto{0}{\dot{\phi}\cos{\theta}} + \dot{\psi},
+\end{equation}
+
+\begin{equation}
+ \boxed{\omega_3 = \omega_0(\cos{\lambda}\sen{\theta} + \sen{\lambda}\cos{\theta}) + \dot{\psi}.}
+\end{equation}
+
+Y haciendo lo mismo para $p_\psi$ vemos que,
+
+\begin{equation}
+ p_\psi = \omega_0(\cos{\lambda}\cancelto{1}{\sen{\phi}}\sen{\theta}+ 
+ \sen{\lambda}\cos{\theta} + dot{\psi},
+\end{equation}
+
+\begin{equation}
+ \boxed{p_\psi = \omega_0(\cos{\lambda}\sen{\theta} + \sen{\lambda}\cos{\theta}) + \dot{\psi}.}
+\end{equation}
+
+\textbf{Entonces debido a que $p_\psi = \omega_3$ hemos demostrado que la velocidad de rotación 
+en torno al eje de simetría permanece constante}.
 
 
 
