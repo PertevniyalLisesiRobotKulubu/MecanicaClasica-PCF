@@ -765,10 +765,30 @@ el eje de simetría oscilará, de manera estable, en torno a la dirección norte
 
 \underline{Solución:} \vspace{.3cm}
 
+Debido a la complejidad de este problema, algunas demostraciones y resultados relevantes 
+se han dejado para los apéndices. Para solucionar este problema se utilizarán análisis 
+de varios libros de mecánica analítica, y se recomienda al lector interesado que se dirija 
+a la bibliografía para un estudio más completo de este interesante artefacto.
+
+\vspace{.3cm}
+
+El girocompás es un dispositivo diseñado para determinar la rotación del norte verdadero 
+(o sur verdadero). Está hecho para siempre apuntar al norte celeste de la Tierra (no como 
+las brújulas magnéticas que apuntan al norte magnético de la Tierra). Esto se logra 
+añadiendo un contra peso del cardán interno de un giroscopio, que resulta en un 
+movimiento de precesión que puede ser ajustado para coincidir con la precesión de 
+la Tierra. La figura de abajo, sacada de \cite{baruh} muestra una representación 
+esquemática del girocompás; como establece \cite{saletan}, los girocompases reales 
+usados en los barcos o algunas aeronaves, son mucho más complicados de lo que trataremos 
+acá, nos limitaremos a trabajar con un sistema idealizado (algunas de las suposiciones 
+que utilizamos en esta derivación están detalladas al final del apéndice \mref{app:apendice1}).
+
+
+
 \appendix
 \appendixpage
 
-\section{Movimiento con respecto a la Tierra}
+\section{Movimiento con respecto a la Tierra} \label{app:apendice1}
 
 \textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 2.8 
 de \cite{baruh}. 
@@ -850,7 +870,7 @@ menos singularidades.
  
 \vspace{.3cm}
 
-Uno de las secuencias de Euler más utilizadas es la $3-1-3$, muy usada para describir 
+Uno de las secuencias de Euler más utilizadas es la $3-1-3$, ver figura \mref{fig:apendice2fig1}, muy usada para describir 
 cuerpos rígidos en rotación (es la que utilizamos para el problema del girocompás). En 
 una transformación $3-1-3$, primero, los ejes $a_1a_2a_3$ se rotan sobre $a_3$ 
 con un ángulo $\phi$, resultando en los ejes $a'_1a'_2a'_3$. Luego, se hace una rotación 
@@ -861,6 +881,16 @@ se rotan con un ángulo $\psi$ sobre el eje $a''_3$, resultando en los ejes $b_1
 Para una transformación $3-1-3$, los ángulos de rotación $phi$, $\theta$ y $\psi$ se 
 conocen como los ángulos de \emph{precesión}, \emph{nutación} y de \emph{espín}.
 
+
+\begin{figure}[H]
+\center 
+\includegraphics[scale=0.4]{apendice2fig1}
+\caption{Secuencia de Euler $3-1-3$}
+\label{fig:apendice2fig1}
+\end{figure}
+
+
+
 \section{Cuerpos con ejes de simetría}
 
 \textbf{Nota}: Este apéndice es una reconstrucción de una parte de la sección 7.5.3 
@@ -870,7 +900,45 @@ de \cite{baruh}.
 
 En el estudio de los cuerpos con ejes de simetría, es más deseable describir el 
 movimiento de los mismos usando un conjunto de ejes relativos que no coinciden con 
-los ejes del cuerpo. 
+los ejes del cuerpo. Una buena opción para analizar este tipo de movimiento, 
+es usar un sistema de referencia que no contenga el ángulo de espín. La motivación 
+detrás de la selección de un sistema de referencia diferente al del cuerpo, 
+surge del hecho de que en muchos problemas que involucran simetría axial, 
+el valor del ángulo de espín no es de mucha importancia, mientras que la tasa de 
+espín si lo es. Estamos más interesados en la velocidad y aceleración del centro 
+de masa o de otro punto a lo largo del eje de simetría, así como en la velocidad
+angular y la aceleración angular, que del movimiento de algún punto específico del 
+cuerpo. En estos casos podemos decir que, la precesión y nutación describen completamente 
+la orientación del eje de simetría.
+
+\vspace{.3cm}
+
+Consideremos una transformación $3-1-3$. Usando la notación $a_1a_2a_3$ para los 
+ejes inerciales, las coordenadas asociadas con el nuevo sistema de referencia se 
+convierten en los ejes $a''_1a''_2a''_3$, y podemos encontrar la velocidad angular 
+luego de la rotación $3-1$ 
+
+\begin{equation}
+ {^A}{ \vec{\omega}}^{A''} = \dot{\phi}\vec{a}_3 + \dot{\theta}\vec{a}'_3 = 
+ \dot{\phi}(\sen{\theta}\vec{a}''_2 + \cos{\theta}\vec{a}''_3) + \dot{\theta}\vec{a}''_1
+\label{eq:velAngFframe1}
+\end{equation}
+
+Nos referiremos a este sistema relativo, siguiendo al autor, como el marco de referencia 
+$F$, con los ejes coordenados asociados $f_1f_2f_3$, y sus vectores unitarios 
+$\hat{f_1}\hat{f_2}\hat{f_3}$. Para cuerpos con ejes de simetría, ver el marco de 
+referencia $F$ es equivalente a ver la forma general de un disco o un trompo, sin 
+seguir el movimiento de un punto específico del cuerpo. Podemos entonces escribir 
+la velocidad angular del cuerpo como 
+
+\begin{equation}
+ \vec{\omega} =  {^A}{ \vec{\omega}}^{B} =  {^A}{ \vec{\omega}}^{F} + 
+  {^F}{ \vec{\omega}}^{B},
+  \label{eq:velAngFframe2}
+\end{equation}
+
+donde ${^A}{ \vec{\omega}}^{F} = {^A}{ \vec{\omega}}^{A''}$ y ${^F}{ \vec{\omega}}^{B}$ 
+es el espín, ${^F}{ \vec{\omega}}^{B} = \dot{\phi}\hat{f}_3$.
 
 
 \begin{thebibliography}{10}
@@ -879,6 +947,9 @@ los ejes del cuerpo.
  University Press, 2010.
  \bibitem{baruh}
  H. Baruh, \emph{Analytical Dynamics}, McGraw-Hill, 1999.
+ \bibitem{saletan}
+ J. José y E. Saletan, \emph{Classical dynamics: A contemporary approach}, Cambridge University Press,
+ 1998.
 \end{thebibliography}
 
 
