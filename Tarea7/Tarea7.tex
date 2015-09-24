@@ -235,13 +235,46 @@ Entonces tenemos que,
 Tenemos entonces que 
 
 \begin{align*}
- f(y+h) - f(y) = \sum_{i=1}^n \int_{t_{i}}^{t_{f}} \left[\frac{\partial F}{\partial y_i}  - 
+ f(y+h) - f(y) &= \sum_{i=1}^n \int_{t_{i}}^{t_{f}} \left[\frac{\partial F}{\partial y_i}  - 
  \frac{d}{dt}\frac{\partial F}{\partial \dot{y}}  
- - \frac{d^2}{dt^2}\frac{\partial F}{\partial \ddot{y}} \right]_y h_i dt 
- + \sum_{i=1}^n 
+ - \frac{d^2}{dt^2}\frac{\partial F}{\partial \ddot{y}} \right]_y h_i dt \\
+ &+\sum_{i=1}^n \left\zerodel \left\zerodel\frac{\partial F}{\partial \dot{y}}\right|_y h_i\right|_{t_{i}}^{t_{f}}
+ + \sum_{i=1}^n \left\zerodel \left\zerodel\frac{\partial F}{\partial \ddot{y}}\right|_y\dot{h}_i\right|_{t_{i}}^{t_{f}}
+ + \int_{t_{i}}^{t_{f}} O(|h|^2)dt
 \end{align*}
 
+Tenemos entonces que la diferencial está dada por
 
+\begin{align}
+\begin{split}
+ DF_c[h] &=  \sum_{i=1}^n \int_{t_{i}}^{t_{f}} \left[\frac{\partial F}{\partial y_i}  - 
+ \frac{d}{dt}\frac{\partial F}{\partial \dot{y}}  
+ - \frac{d^2}{dt^2}\frac{\partial F}{\partial \ddot{y}} \right]_y h_i dt \\
+ &+\sum_{i=1}^n \left\zerodel \left\zerodel\frac{\partial F}{\partial \dot{y}}\right|_y h_i\right|_{t_{i}}^{t_{f}}
+ + \sum_{i=1}^n \left\zerodel \left\zerodel\frac{\partial F}{\partial \ddot{y}}\right|_y\dot{h}_i\right|_{t_{i}}^{t_{f}}
+ \end{split}
+ \label{eq:diferencialFuncional2}
+\end{align}
+
+
+Para resolver este problema, limitamos las posibles curvas a aquellas que 
+para pasan por puntos fijos, y que cumplen con las condiciones del enunciado, con lo 
+cual vemos que la variación de $h_i$ y $\dot{h}_i$ es cero evaluada entre $t_i$ y $t_f$, 
+haciendo cero a los dos últimos términos de \mref{eq:diferencialFuncional2}, y entonces 
+como el resto de las cantidades dentro del primer término de \mref{eq:diferencialFuncional2}
+son independientes de $h(t)$, para que se cumpla que la curva $y$ para que $f$ sea 
+extremal debe cumplirse que 
+
+\begin{equation}
+\boxed{\frac{\partial F}{\partial y_i}  - 
+ \frac{d}{dt}\frac{\partial F}{\partial \dot{y}}  
+ - \frac{d^2}{dt^2}\frac{\partial F}{\partial \ddot{y}} = 0.}
+ \label{eq:condicionExtremal}
+\end{equation}
+
+Decimos entonces que la funcional $f$, y dentro del espacio de las curvas que pasan 
+por un punto específico para $t=t_0$ y por otro para $t=t_1$, las curvas para que la 
+funcional tiene una extremal están dadas por las ecuaciones \mref{eq:condicionExtremal}.
 
 
 
