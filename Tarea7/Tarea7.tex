@@ -26,6 +26,9 @@
 \renewcommand{\appendixtocname}{Ap\'endices}
 \renewcommand{\appendixpagename}{Ap\'endices}
 
+%Zero delimiter
+\newcommand{\zerodel}{.\kern-\nulldelimiterspace}
+
 %Columns separation
 \setlength{\columnsep}{1cm}
 
@@ -145,6 +148,102 @@ $\dot{y}(t_f) = v_f$.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Comencemos calculando la diferencial de la funcional dada, claramente esta debe ser 
+diferenciable para poder cumplirse lo que demostraremos en este problema. Usando 
+el hecho de 
+
+\begin{equation}
+ F(c+h) - F(c) = DF_c[h]+O(|h|^2),
+ \label{eq:diferencialFuncional1}
+\end{equation}
+
+donde $c$ y $h$ son curvas, y $Df_c$ es una funcional lineal, a la cual se le llama 
+la diferencial de la funcional $f$ valuada en la curva $c$, tenemos entonces que, 
+donde recordamos que $y = y(t)$, $\dot{y} = \dot{y}(t)$,$\ddot{y} = \ddot{y}(t)$ y $h=h(t)$, 
+$\dot{h}=\dot{h}(t)$, $\ddot{h}=\ddot{h}(t)$
+
+\begin{align}
+\begin{split}
+ f(y+h) - f(y) &= \int_{t_{i}}^{t_{f}} F(y+h,\dot{y}+ \dot{h}, \ddot{y} + \ddot{h}, t)dt -
+ \int_{t_{i}}^{t_{f}} F(y,\dot{y},\ddot{y},y)dt, \\
+	       &= \int_{t_{i}}^{t_{f}} \left[ F(y+h,\dot{y}+ \dot{h}, \ddot{y} + \ddot{h}, t)
+	       -F(y,\dot{y},\ddot{y},y) \right]dt.
+ \end{split}
+\end{align}
+
+Ahora, como $F$ es una función diferenciable de $\mathbb{R}^{n+n+n+1}$ en $R$ podemos 
+escribir, utilizando \mref{eq:diferencialFuncional1}
+
+\begin{equation}
+ f(y+h) - f(y) =  \int_{t_{i}}^{t_{f}} \left\{DF_y[h,\dot{h},\ddot{h},t] + O(|h|^2) \right\}dt
+\end{equation}
+
+Luego,
+
+\begin{align*}
+ f(y+h) - f(y) = \int_{t_{i}}^{t_{f}} \left[ \left\zerodel \sum_{i=1}^n  \left( \frac{\partial F}{\partial y_i}h_i + 
+ \frac{\partial F}{\partial \dot{y}_i}\dot{h}_i + \frac{\partial F}{\partial \ddot{y}_i}\ddot{h}_i\right)\right|_{y} 
+ + O(|h|^2) \right]dt, \\
+%  
+	      = \sum_{i=1}^n \left[\int_{t_{i}}^{t_{f}}\left\zerodel\frac{\partial F}{\partial y_i}\right|_y h_i dt  
+	      + \int_{t_{i}}^{t_{f}} \left\zerodel\frac{\partial F}{\partial \dot{y}_i}\right|_y \dot{h}_i dt
+	       + \int_{t_{i}}^{t_{f}} \left\zerodel\frac{\partial F}{\partial \ddot{y}_i}\right|_y \ddot{h}_i dt\right] 
+	       +  \int_{t_{i}}^{t_{f}} O(|h|^2)dt
+ %
+\end{align*}
+
+Integrando por parte el segundo y el primer término tenemos que
+
+\begin{equation}
+  \int_{t_{i}}^{t_{f}} \left\zerodel\frac{\partial F}{\partial \dot{y}_i}\right|_y \dot{h}_i dt = 
+  - \int_{t_{i}}^{t_{f}} \frac{d}{dt}\left(\left\zerodel\frac{\partial F}{\partial \dot{y}}\right)\right|_y h_i dt + 
+  \left\zerodel\frac{\partial F}{\partial \dot{y}}\right|_y \left\zerodel h_i\right|_{t_{i}}^{t_{f}},
+\end{equation}
+
+y
+
+\begin{equation}
+  \int_{t_{i}}^{t_{f}} \left\zerodel\frac{\partial F}{\partial \ddot{y}_i}\right|_y \ddot{h}_i dt = 
+  - \int_{t_{i}}^{t_{f}} \frac{d}{dt}\left(\left\zerodel\frac{\partial F}{\partial \ddot{y}}\right)\right|_y \dot{h}_i dt + 
+  \left\zerodel\frac{\partial F}{\partial \ddot{y}}\right|_y \left\zerodel \dot{h}_i\right|_{t_{i}}^{t_{f}},
+\end{equation}
+
+Entonces tenemos que,
+
+\begin{align}
+ \begin{split}
+  f(y+h) - f(y) =  &\sum_{i=1}^n \left[\int_{t_{i}}^{t_{f}}\left\zerodel\frac{\partial F}{\partial y_i}\right|_y h_i dt 
+   - \int_{t_{i}}^{t_{f}} \frac{d}{dt}\left(\left\zerodel\frac{\partial F}{\partial \dot{y}}\right)\right|_y h_i dt + 
+  \left\zerodel\frac{\partial F}{\partial \dot{y}}\right|_y \left\zerodel h_i\right|_{t_{i}}^{t_{f}}\right\zerodel \\
+  %
+  &- \left\zerodel\int_{t_{i}}^{t_{f}} \frac{d}{dt}\left(\left\zerodel\frac{\partial F}{\partial \ddot{y}}\right)\right|_y \dot{h}_i dt + 
+  \left\zerodel\frac{\partial F}{\partial \ddot{y}}\right|_y \left\zerodel \dot{h}_i\right|_{t_{i}}^{t_{f}}\right]
+  +  \int_{t_{i}}^{t_{f}} O(|h|^2)dt \\
+  %
+  &= \sum_{i=1}^n\left[\int_{t_{i}}^{t_{f}}\left\zerodel\frac{\partial F}{\partial y_i}\right|_y h_i dt 
+   - \int_{t_{i}}^{t_{f}} \frac{d}{dt}\left(\left\zerodel\frac{\partial F}{\partial \dot{y}}\right)\right|_y h_i dt + 
+  \left\zerodel\frac{\partial F}{\partial \dot{y}}\right|_y \left\zerodel h_i\right|_{t_{i}}^{t_{f}}\right\zerodel \\
+  %
+  &-\left\zerodel \int_{t_{i}}^{t_{f}} \frac{d^2}{dt^2}\left(\left\zerodel\frac{\partial F}{\partial \ddot{y}}\right)\right|_y h_i dt + 
+  \left\zerodel\frac{\partial F}{\partial \ddot{y}}\right|_y \left\zerodel \dot{h}_i\right|_{t_{i}}^{t_{f}}\right]
+  +  \int_{t_{i}}^{t_{f}} O(|h|^2)dt
+  %
+ \end{split}
+\end{align}
+
+Tenemos entonces que 
+
+\begin{align*}
+ f(y+h) - f(y) = \sum_{i=1}^n \int_{t_{i}}^{t_{f}} \left[\frac{\partial F}{\partial y_i}  - 
+ \frac{d}{dt}\frac{\partial F}{\partial \dot{y}}  
+ - \frac{d^2}{dt^2}\frac{\partial F}{\partial \ddot{y}} \right]_y h_i dt 
+ + \sum_{i=1}^n 
+\end{align*}
+
+
+
+
 
 \section{Problema 4}
 
