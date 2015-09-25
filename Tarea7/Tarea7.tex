@@ -313,8 +313,8 @@ para las aceleraciones generalizadas,
  m\ddot{X} = \lambda_1, \\
  m\ddot{Y} = - mg\sen{\alpha} + \lambda_2, \\
  2\left( I + \frac{1}{4}ml^2\right) \ddot{\theta} = l\lambda_3, \\
- I_3\ddot{\phi} = -lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} + R\lambda_3, \\
- I_3\ddot{\phi}' = -lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} - R\lambda_3.
+ I_3\ddot{\phi} = -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} + R\lambda_3, \\
+ I_3\ddot{\phi}' = -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} - R\lambda_3.
 \end{align}
 
 
@@ -327,7 +327,7 @@ Un sistema consiste de una partícula de masa $m$ en el espacio físico y tiene 
 lagrangiana
 
 $$
-L = \frac{1}{2}m(\mathbf{\dot{r}} + \mathbf{\dot{r}}) - V(\mathbf{r}).
+L = \frac{1}{2}m(\mathbf{\dot{r}} \cdot \mathbf{\dot{r}}) - V(\mathbf{r}).
 $$
 
 La partícula puede describir una trayectoria entre dos puntos $A$ y $B$ en un tiempo 
@@ -338,6 +338,60 @@ tardaría sería distinto. Calcule ese tiempo.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Debido a que la lagrangiana no depende del tiempo y la energía potencial 
+es una función homogénea cuadrática de las velocidades, se conserva la cantidad 
+de Jacobi y esta es igual a la energía total del sistema, por lo tanto 
+podemos escribir
+
+\begin{equation}
+ E = T + V = \frac{1}{2}m\dot{r}^2 + V,
+\end{equation}
+
+de esta ecuación podemos obtener el tiempo $t_{AB}$ que le toma a la primera 
+partícula describir la trayectoria entre $AB$ como
+
+\begin{equation}
+ t_{AB} = \frac{\sqrt{m}}{\sqrt{2}} \int_A^B \frac{dr}{\sqrt{E - V}}.
+ \label{eq:tiempo1}
+\end{equation}
+
+Por otra parte para la segunda partícula tendremos que
+
+\begin{equation}
+ E = \frac{1}{2}M\dot{r}^2 + V,
+\end{equation}
+
+por lo que el tiempo $\tau_{AB}$ que le toma a la segunda 
+partícula describir la trayectoria entre $AB$ lo podemos escribir como
+
+\begin{equation}
+ t_{AB} = \frac{\sqrt{M}}{\sqrt{2}} \int_A^B \frac{dr}{\sqrt{E - V}}.
+ \label{eq:tiempo2}
+\end{equation}
+
+Ahora dividiendo \mref{eq:tiempo1} entre \mref{eq:tiempo2} obtenemos que 
+
+\begin{equation}
+ \frac{t_{AB}}{\tau_{AB}} = \frac{\sqrt{m}/\sqrt{2}}{\sqrt{M}/\sqrt{2}} 
+ \frac{\int_A^B \frac{dr}{\sqrt{E - V}}}{\int_A^B \frac{dr}{\sqrt{E - V}}}
+\end{equation}
+
+\begin{equation}
+ \frac{t_{AB}}{\tau_{AB}} = \left(\frac{m}{M}\right)^{\frac{1}{2}}
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore t_{AB} = \left(\frac{m}{M}\right)^{\frac{1}{2}}\tau_{AB}}
+\end{equation}
+
+Por lo tanto hemos demostrado que  partícula de masa M sujeta al mismo potencial 
+describirá la misma trayectoria entre los puntos A y B, pero que el tiempo que tardaría sería distinto. Claramente cuando 
+$m = M$ el tiempo será el mismo.
+
+
+
+
 
 \section{Problema 3}
 
