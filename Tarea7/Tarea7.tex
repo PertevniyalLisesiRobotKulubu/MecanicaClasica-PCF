@@ -200,17 +200,125 @@ construcción que hemos hecho, y sumando las expresiones de las energías
 cinéticas para ambos discos tenemos que,
 
 \begin{align*}
- T = \frac{1}{2}m\left[(\dot{X}^2 + \dot{Y}^2) + + (l^2/4)\dot{\theta}^2 +
+ T &= \frac{1}{2}m\left[(\dot{X}^2 + \dot{Y}^2) + (l^2/4)\dot{\theta}^2 +
  l\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O \right]
  + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}^2\right] \\
  %
- + \frac{1}{2}m\left[(\dot{X}^2 + \dot{Y}^2) + (l^2/4)\dot{\theta}^2 
+ &+ \frac{1}{2}m\left[(\dot{X}^2 + \dot{Y}^2) + (l^2/4)\dot{\theta}^2 
  - l\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O \right]
- + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}'^2\right]
+ + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}'^2\right], \\
+ %
+   &= \frac{1}{2}m(\dot{X}^2 + \dot{Y}^2) + \frac{1}{2}m(l^2/4)\dot{\theta}^2 +
+      \cancel{\frac{1}{2}ml\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O}
+      + \frac{1}{2}I\dot{\theta}^2 + \frac{1}{2}I_3\dot{\phi}^2 \\
+  %
+  &+ \frac{1}{2}m(\dot{X}^2 + \dot{Y}^2) + \frac{1}{2}m(l^2/4)\dot{\theta}^2 -
+      \cancel{\frac{1}{2}ml\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O}
+      + \frac{1}{2}I\dot{\theta}^2 + \frac{1}{2}I_3\dot{\phi}'^2,
+  %
 \end{align*}
 
+\begin{equation}
+ \therefore T = m\left(\dot{X}^2 + \dot{Y}^2\right)  
+ +\left( I + \frac{1}{4}ml^2 \right) \dot{\theta}^2 
+ + \frac{1}{2}I_3 \left(\dot{\phi}^2 + \dot{\phi}'^2\right).
+\end{equation}
+
+Veremos que escribir las aceleraciones generalizadas nos será muy útil
+para resolver este problema ya que lo haremos utilizando el método de 
+los multiplicadores indeterminados de Lagrange. Recordando la expresión
+para las aceleraciones generalizadas 
+
+\begin{equation}
+ A_i(q,\dot{q},\ddot{q},t) = \frac{d}{dt}\frac{\partial T(q,\dot{q},t)}{\partial\dot{q^i}}
+ + \frac{\partial T(q,\dot{q},t)}{\partial q^i},
+\end{equation}
+
+tenemos entonces que,
+
+\begin{align}
+ A_X &= 2m\ddot{X}, \\
+ A_Y &= 2m\ddot{Y}, \\
+ A_\theta &= 2 \left( I + \frac{1}{4}ml^2 \right) \ddot{\theta}, \\
+ A_\phi &= I_3\ddot{\phi}, \\
+ A_{\phi'} &= I_3\ddot{\phi}''.
+\end{align}
+
+Necesitamos ahora expresar las condiciones para rodar sin resbalar. Sea 
+$\zeta$ el punto de contacto del disco $\xi$con el plano; la condición que 
+requerimos es que $\mathbf{V}_\zeta = 0$. Pero sabemos que para $\xi$, 
+el vector de rotación instantánea en $\zeta$ puede escribirse como 
+
+\begin{equation}
+ \mathbf{V}_\zeta = \mathbf{V}_\xi + \mathbf{\omega}\times \mathbf{\xi\zeta} = 0.
+\end{equation}
+
+Esta condición nos dará dos condiciones escalares, lo mismo para 
+el disco $\xi'$ que en el punto $\zeta'$ debe cumplirse que 
+
+\begin{equation}
+ \mathbf{V}_\zeta' = \mathbf{V}_\xi' + \mathbf{\omega}\times \mathbf{\xi'\zeta'} = 0.
+\end{equation}
+
+De estas cuatro condiciones (utilizando la figura \mref{fig:problema1fig2} y la ecuación para $\mathbf{V}_\xi$), 
+dos son idénticas, y tenemos entonces tres ecuaciones de constricción,
+
+\begin{align}
+ \dot{X}\cos{\theta} + \dot{Y}\sen{\theta} = 0, \\
+ \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} + \frac{1}{2}l\dot{\theta} + R\dot{\phi} = 0, \\
+ \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} - \frac{1}{2}l\dot{\theta} + R\dot{\phi}' = 0,
+\end{align}
+
+Podemos escribir estas ecuaciones de una forma más informativa, haciendo 
+un poco de álgebra, como
+
+\begin{align}
+\label{eq:discosConstri1}
+ 2\dot{X} - R (\dot{\phi} + \dot{\phi}')\sen{\theta} = 0, \\
+\label{eq:discosConstri2}
+ 2\dot{Y} + R (\dot{\phi} + \dot{\phi}')\cos{\theta} = 0, \\
+\label{eq:discosConstri3}
+ l\dot{\theta} + R (\dot{\phi} - \dot{\phi}') = 0.
+\end{align}
+
+De estas constricciones, solo \mref{eq:discosConstri3} es holonómica, 
+en cambio \mref{eq:discosConstri1} y \mref{eq:discosConstri2} son no holonómicas. 
+Estas construcciones representan las constricciones requeridas para rodar 
+sin resbalar. 
+
+\vspace{.3cm}
+
+Debido a que los puntos de aplicación para las fuerzas de reacción 
+debidos al plano no se desplazan durante un desplazamiento virtual, 
+por la condición de rodar sin resbalar, estas fuerzas de reacción no 
+implican fuerzas generalizadas. El único trabajo virtual que no 
+se hace cero es debido al peso. Podemos calcularla con un desplazamiento 
+virtual del centro de masa $O$. Es fácil ver que 
+
+\begin{equation}
+ \delta W = - 2mg \delta z_O = -2mg\sen{\alpha}\delta Y,
+\end{equation}
+
+entonces la única fuerza generalizada que no se hace cero es 
+
+\begin{equation}
+ Q_Y = -2mg\sen{\alpha}.
+\end{equation}
+
+Ahora recordando la expresión para el formalismo de los multiplicadores 
+indeterminados de Lagrange tenemos que, utilizando las expresiones 
+para las aceleraciones generalizadas,
+
+\begin{align}
+ m\ddot{X} = \lambda_1, \\
+ m\ddot{Y} = - mg\sen{\alpha} + \lambda_2, \\
+ 2\left( I + \frac{1}{4}ml^2\right) \ddot{\theta} = l\lambda_3, \\
+ I_3\ddot{\phi} = -lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} + R\lambda_3, \\
+ I_3\ddot{\phi}' = -lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} - R\lambda_3.
+\end{align}
 
 
+TERMINAR.
 
 
 \section{Problema 2}
