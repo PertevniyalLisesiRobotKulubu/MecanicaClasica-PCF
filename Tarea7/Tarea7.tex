@@ -115,6 +115,104 @@ las curvas que, sobre el plano, trazan los dos puntos de contacto entre los disc
 
 \underline{Solución:} \vspace{.3cm}
 
+Debido a la complejidad de este problema, y como en últimas la posición del eje 
+está determinada por la posición de los discos, consideramos que podemos resolver 
+el problema y determinar las curvas que traza el centro del eje, el cual representa
+cómo se mueve el sistema sobre el plano, siguiendo a . Además para nuestra formulación, aunque 
+exista el ángulo $\beta$ que hace el eje con la dirección de máximo descenso, nos será 
+más útil el ángulo que hace el eje con el eje horizo tal que definiremos a continuación 
+en el plano inclinado. Entonces, sean $XX'$ y $YY'$ un sistema de ejes perpendiculares 
+sobre el plano inclinado, estando $YY'$ en dirección de máximo descenso. El centro 
+$O$ del eje está caracterizado por las coordenadas $X$ e $Y$ en este sistema, con 
+origen arbitrario $A$. Denotaremos por $\xi$ y $\xi'$ a los centros de los discos, y la 
+distancia $l=\xi\xi'$. Debajo se encuentra una imagen ilustrativa del sistema físico,
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.4]{problema1fig1}
+ \caption{Representación esquemática del sistema de dos discos que ruedan sin resbalar.}
+ \label{fig:problema1fig1}
+\end{figure}
+
+Para los discos, el eje puede considerarse como un eje de simetría, y entonces los 
+momentos de inercia en el plano de los discos serán iguales $I_1 = I_2 = I$ y a lo 
+largo de el eje $\xi\xi'$ será $I_3$. El eje hace un ángulo $\theta$ con la horizontal 
+$XX'$. Denotaremos por $\theta$ y $\theta'1$ los ángulos que marcan los puntos de 
+referencia de los puntos en la circunferencia de los discos con respecto a la línea 
+normal al plano inclinado. Entonces con esas suposiciones y geometría que hemos 
+planteado proponemos que podemos describir el sistema en términos de 5 coordenadas 
+generalizadas $(X,Y,\theta,\phi,\phi')$. Debajo mostramos el sistema visto de arriba 
+para una más fácil visualización de las coordenadas y de los ángulos que hemos 
+planteado.
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.4]{problema1fig2}
+ \caption{Geometría del sistema de ejes propuesto sobre el plano inclinado visto desde 
+ arriba.}
+ \label{fig:problema1fig2}
+\end{figure}
+
+Recordamos que el sistema está definido en el plano inclinado, con origen $A$, el eje 
+horizontal es $AX$, el eje $AY$ está en la dirección de máximo descenso y $AZ$ es normal 
+al plano. Las coordenadas del centro del eje, $O$, las denotaremos por $X$ y $Y$. Sea 
+$\mathbf{K}$ el vector unitario normal al plano, $\mathbf{u}$ el vector unitario 
+a lo largo de $\mathbf{O\xi}$ y $\mathbf{v}$ el vector unitario del plano perpendicular 
+a $\mathbf{O\xi}$. Por esta construcción es fácil ver que $\mathbf{O\xi} = (l/2)\mathbf{u}$.
+Debido a que también por construcción $\mathbf{A\xi} = \mathbf{AO} + \mathbf{O\xi}$ la 
+velocidad del punto $\xi$ será $\mathbf{V}_\xi = \mathbf{V}_O + (l/2)\dot{\theta}\mathbf{v}$. 
+Para obtener las cantidades relativas a $\xi'$ solo bastará con cambiar $l \rightarrow -l$ y 
+$\phi \rightarrow \phi'$ a la cantidad relativa a $\xi$ lo cual simplificará 
+bastante el trabajo.
+
+\vspace{.3cm}
+
+Debido a que el eje no tiene masa, solo los discos contribuyen a la energía 
+cinética. Es fácil ver que el vector de rotación para el disco $\xi$ estará 
+dado por $\mathbf{\omega} = \dot{\theta}\mathbf{K} + \dot{\phi}\mathbf{u}$. La 
+energía cinética estará dada por la energía del centro de masa de la disco 
+más la energía cinética de rotación,
+
+\begin{equation}
+ T_\xi = \frac{1}{2}\mathbf{V}_\xi^2 + T_\xi^{(rot)}.
+\end{equation}
+
+La energía rotacional se calcula simplemente utilizando $\mathbf{\omega}$ y
+los momentos de inercia de los discos, $(T_\xi^{(rot)})_i = I_i(\mathbf{\omega}\cdot \mathbf{\omega})$, 
+y ahora usando la expresión para $\mathbf{V}_\xi$ tenemos que 
+
+\begin{equation}
+ T_\xi = \frac{1}{2}m\left[\mathbf{V}_O^2 + (l^2/4)\dot{\theta}^2 +
+ l\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O \right]
+ + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}^2\right],
+\end{equation}
+
+y para $\xi'$
+
+\begin{equation}
+ T_{\xi'} = \frac{1}{2}m\left[\mathbf{V}_O^2 + (l^2/4)\dot{\theta}^2 
+ - l\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O \right]
+ + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}'^2\right].
+\end{equation}
+
+Ahora debido a que $\mathbf{V}_O^2 = \dot{X}^2 + \dot{Y}^2$ por la 
+construcción que hemos hecho, y sumando las expresiones de las energías 
+cinéticas para ambos discos tenemos que,
+
+\begin{align*}
+ T = \frac{1}{2}m\left[(\dot{X}^2 + \dot{Y}^2) + + (l^2/4)\dot{\theta}^2 +
+ l\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O \right]
+ + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}^2\right] \\
+ %
+ + \frac{1}{2}m\left[(\dot{X}^2 + \dot{Y}^2) + (l^2/4)\dot{\theta}^2 
+ - l\dot{\theta}\mathbf{v}\cdot\mathbf{V}_O \right]
+ + \frac{1}{2}\left[ I\dot{\theta}^2 + I_3\dot{\phi}'^2\right]
+\end{align*}
+
+
+
+
+
 \section{Problema 2}
 
 Un sistema consiste de una partícula de masa $m$ en el espacio físico y tiene una 
@@ -313,5 +411,12 @@ otra que también se redujera a la lagrangiana del sistema cuando $\overline{t}=
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{20}
+\bibitem{ginoux}
+C. Ginoux y B. Silvestre-Brac,\emph{Solved Problems in Lagrangian and Hamiltonian Mechanics},
+Springer, 2009.
+\end{thebibliography}
+
 
 \end{document}
