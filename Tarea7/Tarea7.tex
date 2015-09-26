@@ -635,7 +635,8 @@ $SO(3)$ y que por ello se conserva el vector de impulso angular.
 
 Comenzaremos con una breve digresión de teoría de grupos necesaria para poder dar una 
 demostración completa y formal del enunciado de este problema. Utilizando principalmente 
-el contenido básico de \cite{tung}.
+el contenido básico de \cite{tung}. Además haremos una breve descripción del teorema 
+de Noether para simetrías continuas tomado en gran parte de \cite{kleinert}.
 
 \vspace{.3cm}
 
@@ -755,9 +756,158 @@ de \mref{eq:unoSO32} es simplemente la determinante; y esta ecuación coincide c
 totalmente antisimétrica de los ambos lados de la ecuación. Esta identidad establece 
 el hecho de que $e^{lmn}$ es invariante ante rotaciones. 
 
+\vspace{.3cm}
 
+Pasemos ahora a un breve estudio de simetrías continuas, leyes de conservación y 
+el teorema de Noether. Consideremos a sistema mecánico simple con una acción 
+generadora
 
+\begin{equation}
+ \mathcal{A} = \int_{t_{a}}^{t_{b}} L(q(t),\dot{q}(t),t)dt.
+ \label{eq:noet1}
+\end{equation}
 
+Supongamos que $\mathcal{A}$ es invariante bajo un conjunto continuo de transformaciones 
+de las variables dinámicas:
+
+\begin{equation}
+ q(t) \rightarrow q'(t) = f(q(t),\dot{q}(t)),
+ \label{eq:noet2}
+\end{equation}
+
+donde $f(q(t),\dot{q}(t))$ es alguna funcional de $q(t)$. Estas transformaciones 
+son llamadas transformaciones de simetría. Si la acción se somete a dos transformaciones 
+de simetría sucesivas, el resultado es de nuevo una transformación de simetría. Entonces, 
+las transformaciones de simetría forman el llamado \emph{grupo de simetría} del sistema. 
+Para una transformación infinitesimal \mref{eq:noet2}, la diferencia 
+
+\begin{equation}
+ \delta_s q(t) \equiv q'(t) - q(t),
+ \label{eq:noet3}
+\end{equation}
+
+es llamada una \emph{variación de simetría}. Tiene la forma general 
+
+\begin{equation}
+ \delta_s = \epsilon \xi((q(t),\dot{q}(t),t)).
+ \label{eq:noet4}
+\end{equation}
+
+Si calculamos el cambio de la acción bajo la acción de simetría \mref{eq:noet4}, utilizando
+la regla de la cadena para la diferenciación, la integración por partes y el hecho
+de que deben cumplirse las ecuaciones de Lagrange para las trayectorias de $q(t)$, obtendremos 
+que la cantidad 
+
+\begin{equation}
+ I(t) = \frac{\partial L}{\partial \dot{q}}\xi(q,\dot{q},t),
+ \label{eq:noet5}
+\end{equation}
+
+es la misma para los tiempo $t=t_a$ y $t=t_b$. Debido a que $t_b$ es arbitrario, 
+$I(t)$ es independiente del tiempo, i.e., satisface
+
+\begin{equation}
+ I(T) \equiv I.
+ \label{eq:noet6}
+\end{equation}
+
+Entonces $I$ es una cantidad conservada, una constante de movimiento. El lado derecho 
+de \mref{eq:noet5} es llamada la \emph{carga de Noether}, y lo que hemos enunciado en 
+este breve estudio es el conocido \emph{teorema de Noether}.
+
+\vspace{.3cm}
+
+Consideremos ahora la lagrangiana para una partícula libre en el espacio tridimensional
+
+\begin{equation}
+ L = L(q^i(t),\dot{q}^i(t),t).
+\end{equation}
+
+Bajo el grupo de rotaciones \textbf{SO(3)}, las coordenadas $q^i$ cambian a
+
+\begin{equation}
+ q'^i = R^i_j q^j,
+\end{equation}
+
+donde $ R^i_j$ es de la forma que hemos definido arriba. Infinitesimalmente, podemos 
+escribir esto como
+
+\begin{equation}
+ R^i_j = \delta^i_j - \omega_l \epsilon_{kij},
+\end{equation}
+
+donde $\mathbf{\omega}$ es un vector de rotación infinitesimal. La correspondiente 
+rotación del camino de la partícula es 
+
+\begin{equation}
+ \delta_s q^i(t) = q'^i(t) - q^i(t) = - \omega^k\epsilon_{kij}q^j.
+\end{equation}
+
+Es útil en este punto introducir el tensor de rotación antisimétrico infinitesimal 
+
+\begin{equation}
+ \omega_{ij} \equiv \omega_k \epsilon{kij},
+\end{equation}
+
+y en términos de este tenemos que
+
+\begin{equation}
+ \delta_s q^i = -\omega_{ij}q^j.
+\end{equation}
+ 
+Podemos ahora escribir el cambio en la lagrangiana bajo $\delta q^i$,
+
+\begin{align}
+\begin{split}
+ \delta_s L &= L(q'^i(t),\dot{q}'^i,t) - L(q^i(t),\dot{q}^i,t), \\
+	    &= \frac{\partial L}{\partial q^i}\delta_s q^i + \frac{\partial L}{\partial \dot{q}^i}\delta_s \dot{q}^i,
+ \end{split}
+\end{align}
+
+como
+
+\begin{equation}
+ \delta_s L = - \left(\frac{\partial L}{\partial q^i}q^i +  
+  \frac{\partial L}{\partial \dot{q}^i}\dot{q}^i\right)\omega_{ij} = 0.
+\end{equation}
+
+Si la lagrangiana depende solamente de invariantes de rotación, y sus potencias, entonces 
+el lado derecho se hace cero debido a la antisimetría de $\omega_ij$. Esto asegura 
+simetría rotacional. Podemos ahora hacer otra variación simétrica de la lagrangiana 
+usando la regla de la cadena, usando las ecuaciones de Lagrange, 
+
+\begin{align}
+ \begin{split}
+  \delta_s L &= \left( \frac{\partial L}{\partial q^i} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^i} 
+  \right)\delta_s q^i + \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}^i}\delta_s q^i \right), \\
+  %
+	   &= -\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}^i} \right)\omega_{ij} 
+	   = \frac{1}{2}\frac{d}{dt}\left(q_i  \frac{\partial L}{\partial \dot{q}^i}  
+	   -  q_j\frac{\partial L}{\partial \dot{q}^j}\right)\omega_{ij}.
+ \end{split}
+\end{align}
+
+El lado derecho de esta ecuación nos da la carga de Noether conservada de la forma 
+\mref{eq:noet5}, una para cada par antisimétrico $i,j$:
+
+\begin{equation}
+ \boxed{K^{ij} = x^i\frac{\partial L}{\partial \dot{q}^j} - x^j\frac{\partial L}{\partial \dot{q}^i} 
+ = x^i p^j - x^j p^i.}
+\end{equation}
+
+Estas son las componentes antisimétricas del momentum angular $K^{ij}$. Si trabajamos 
+con la forma vectorial original para los ángulos de rotación $\omega^k$, puede obtenerse 
+de una manera muy similar el momentum angular en una forma más común:
+
+\begin{equation}
+ \boxed{K_k = \frac{1}{2}\epsilon_{kij}K^{ij} = (\mathbf{q} \times \mathbf{p})^k.}
+\end{equation}
+
+$\hspace{12cm} \square$
+
+Hemos demostrado entonces lo solicitado, el hecho de que  la lagrangiana de
+una partícula libre en tres dimensiones es invariante ante el grupo de rotaciones 
+\textbf{SO(3)} que por ello se conserva el vector de momentum angular.
 
 \section{Problema 6}
 
@@ -784,6 +934,9 @@ Springer, 2009.
 D. Tong, \emph{Classical Mechanics}, Cambridge University Press, 2005.
 \bibitem{tung}
 W. Tung, \emph{Group Theory in Physics}, World Scientific Publishing, 1985.
+\bibitem{kleinert}
+H. Kleinert, \emph{Particles and Quantum Fields}, Notas de clase 
+disponibles en \href{http://users.physik.fu-berlin.de/~kleinert/b6/psfiles/}{http://users.physik.fu-berlin.de/~kleinert/b6/psfiles/}.
 \end{thebibliography}
 
 
