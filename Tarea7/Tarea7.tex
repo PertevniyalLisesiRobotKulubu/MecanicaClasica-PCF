@@ -18,6 +18,7 @@
 \usepackage[margin=1.4in]{geometry}
 \usepackage[labelfont=bf]{caption}
 \usepackage[titletoc,toc,title]{appendix}
+\usepackage{enumitem}
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
@@ -622,12 +623,6 @@ por una función de las coordenadas y el tiempo. Con lo cual hemos demostrado qu
 la formulación lagrangiana es invariante ante el grupo de Galileo, particularmente 
 queríamos probar que era invariante ante transformaciones del tipo ``boost''.
 
-
-
-
-
-
-
 \section{Problema 5}
 
 Demuestre, con toda formalidad y usando el teorema de Noether, que la lagrangiana 
@@ -637,6 +632,132 @@ $SO(3)$ y que por ello se conserva el vector de impulso angular.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Comenzaremos con una breve digresión de teoría de grupos necesaria para poder dar una 
+demostración completa y formal del enunciado de este problema. Utilizando principalmente 
+el contenido básico de \cite{tung}.
+
+\vspace{.3cm}
+
+\definicion (Grupo): Se dice que un conjunto $\{G:a,b,c,\dots\}$ forma un \emph{grupo}
+si existe una operación $\cdot$, llamada la \emph{multiplicación de grupo}, que asocia 
+cualquier par de elementos (ordenados) dado $a,b \in G$ con un producto bien definido 
+$a\cdot b$ que también es un elemento de $G$, tal que se satisfacen las siguientes 
+condiciones 
+
+\begin{enumerate}[label=(\alph*)]
+ \item La operación $\cdot$ es \emph{asociativa}, i.e. $a\cdot (b\cdot c) = (a\cdot b)\cdot c$ 
+ para todo $a,b,c \in G$,
+ \item Entre los elementos de $G$, existe un elemento $e$, llamado la identidad, que 
+ tiene la propiedad de que $a\cdot e = a$ para todo $a \in G$,
+ \item Para cada $a \in G$, existe un elemento $a^{-1} \in G$, llamado la inversa 
+ de $a$ que tiene la propiedad de que $a\cdot a^{-1} = e$.
+\end{enumerate}
+
+\definicion (Grupo Abeliano): Un \emph{grupo abeliano} $G$ es aquel en que la multiplicación
+de grupo es conmutativa, i.e. $a\cdot b = b\cdot a$ para todo $a,b \in G$.
+
+\vspace{.3cm}
+
+De la definición anterior diremos que un grupo puede ser abeliano o no-abeliano.
+
+\vspace{.3cm}
+
+\definicion (Orden): El \emph{orden} de un grupo es el número de elementos del grupo 
+(si es finito). 
+
+\vspace{.3cm}
+
+\definicion (Grupo continuo): Los \emph{grupos continuos} consisten en grupos de 
+elementos etiquetados por una o más variables continuas, i.e. $(a_1,a_2,\dots,a_r)$, 
+donde cada variable tiene un rango bien definido.
+
+\vspace{.3cm}
+
+Claramente todos los grupos continuos tienen un número infinito de elementos, aunque 
+puede probarse que no todos los grupos infinitos son continuos. La teoría matemática 
+general de grupos continuos es usualmente llamada la teoría de grupos de Lie. Simplificando,
+podemos decir que un \emph{grupo de Lie} es un grupo infinito cuyos elementos pueden 
+ser parametrizados suave y analíticamente; la formulación precisa de los grupos de 
+Lie requiere un trato considerable ya que envuelve nociones de topología y geometría 
+diferencial, las cuales salen del marco de desarrollo de este problema.
+
+\vspace{.3cm}
+
+Pasemos ahora a estudiar brevemente el grupo que nos interesa para solucionar este 
+problema, \textbf{SO(3)}, el grupo continuo no-abeliano más útil \cite{tung}.
+
+\vspace{.3cm}
+
+\definicion (Grupo \textbf{SO(3)}): El \emph{grupo \textbf{SO(3)}} consiste en todas 
+las transformaciones lineales continuas en el espacio euclideano tridimensional 
+que dejan la longitud de los vectores coordenados invariantes. 
+
+\vspace{.3cm}
+
+Consideremos un sistema de coordenadas Cartesiano especificado por los vectores 
+ortonormales $\hat{\mathbf{e}}_i$, $i = 1,2,3$. Bajo la rotación,
+
+\begin{equation}
+ \hat{\mathbf{e}}_i \xrightarrow{\mathbf{R}} \hat{\mathbf{e}}'_i = \hat{\mathbf{e}}_j R^j_i,
+\end{equation}
+
+donde $R^j_i$ son elementos de matrices rotacionales $3\times 3$. Sea $\mathbf{x}$ un 
+vector arbitrario, $\mathbf{x} = \hat{\mathbf{e}}_i x^i$, entonces 
+$\mathbf{x} \rightarrow \mathbf{x}'$ bajo la rotación $\mathbf{R}$ tal que
+
+\begin{equation}
+ x'^{i} = R^i_j x^j. 
+\end{equation}
+
+El requerimiento que $|\mathbf{x}| = |\mathbf{x}'|$, o $x_i x^j = x'_i x'^{j}$, resulta en 
+
+\begin{equation}
+ \mathbf{R}\mathbf{R}^T = \mathbf{R}^T\mathbf{R} = \mathbf{E},
+ \label{eq:identidadSO31}
+\end{equation}
+
+donde $\mathbf{E}$ es la matriz identidad, para todas las matrices rotacionales. Las 
+matrices reales que satisfacen esta condición tienen determinantes igual a $\pm 1$. Debido 
+a que todas las rotaciones físicas pueden ser alcanzadas continuamente de la 
+la transformación idéntica (ángulo cero de rotación), y debido a que el determinante 
+de esta es $+1$, entonces todas las matrices de rotación deben tener determinante $+1$. Entonces 
+en adición a la ecuación \mref{eq:identidadSO31}, las matrices $\mathbf{R}$ están restringidas 
+por la condición
+
+\begin{equation}
+ \text{det } \mathbf{R} = 1.
+ \label{eq:unoSO31}
+\end{equation}
+
+Ambas condiciones para la matriz rotacional $\mathbf{R}$ pueden ser expresadas 
+en términos de \emph{tensores invariantes}. En particular la ecuación \mref{eq:identidadSO31} 
+puede escribirse como
+
+\begin{equation}
+ R^i_k R^j_l \delta^{kl} = \delta^{ij}, 
+ \label{eq:identidadSO32}
+\end{equation}
+
+que expresa la invariancia del tensor de segundo orden $\delta^{kl}$ (conocido como
+la delta de Kronecker) bajo rotaciones. De forma similar, la ecuación \mref{eq:unoSO31} 
+puede escribirse como
+
+\begin{equation}
+ R^i_l R^k_m R^k_n \epsilon^{lmn} = \epsilon^{ijk},
+ \label{eq:unoSO32}
+\end{equation}
+
+donde $\epsilon^{ijk}$ es el tensor unitario de tercer orden totalmente antisimétrico (conocido 
+como el tensor de Levi-Civita). Cuando $(i,j,k) = (1,2,3)$, el lado izquierdo 
+de \mref{eq:unoSO32} es simplemente la determinante; y esta ecuación coincide con 
+\mref{eq:unoSO31}. Para otros valores de $(i,j,k)$, la identidad resulta de la naturaleza 
+totalmente antisimétrica de los ambos lados de la ecuación. Esta identidad establece 
+el hecho de que $e^{lmn}$ es invariante ante rotaciones. 
+
+
+
+
 
 \section{Problema 6}
 
@@ -661,6 +782,8 @@ C. Ginoux y B. Silvestre-Brac,\emph{Solved Problems in Lagrangian and Hamiltonia
 Springer, 2009.
 \bibitem{tong}
 D. Tong, \emph{Classical Mechanics}, Cambridge University Press, 2005.
+\bibitem{tung}
+W. Tung, \emph{Group Theory in Physics}, World Scientific Publishing, 1985.
 \end{thebibliography}
 
 
