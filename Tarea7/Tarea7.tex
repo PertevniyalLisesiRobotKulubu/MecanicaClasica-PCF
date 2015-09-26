@@ -547,6 +547,87 @@ de Galileo.
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{Nota}: Luego de una charla con el profesor nos comentó que solo teníamos que probar 
+la invariancia ante los ``boosts'', es decir las transformaciones cinemáticas..
+
+\noindent\rule[0.5ex]{\linewidth}{1pt}
+
+El marco inercial con el cual podemos describir un sistema mecánico no es único, de hecho 
+existe un número infinito de marcos inerciales. Sea $S$ un marco inercial. Puede probarse 
+\cite{tong} que hay $10$ transformaciones independientes $S\rightarrow S$ tales que 
+$S'$ también sea un marco inercial. Estas son:
+
+\begin{itemize}
+ \item 3 Rotaciones: $\mathbf{r}' = O\mathbf{r}$ donde $O$ es una matriz ortogonal $3\times 3$.
+ \item 3 Traslaciones: $\mathbf{r}' = \mathbf{r} + \mathbf{c}$ para un vector constante $\mathbf{c}$.
+ \item 3 ``boosts'' (impulsos): $\mathbf{r}' = \mathbf{r} + \mathbf{v}t$ para una velocidad constante 
+ $\mathbf{v}$.
+ \item 1 Traslación temporal: $t' = t+c$ para una constante real $c$.
+\end{itemize}
+
+Estas transformaciones conforman el grupo de Galileo, el cual es un grupo de 10 parámetros. 
+Como hemos dicho solo probaremos la invariancia ante los ``boosts''. Recordemos que podemos 
+escribir la lagrangiana de la forma
+
+\begin{equation}
+ L = T-V = \frac{1}{2}m(\mathbf{v}\cdot \mathbf{v}) - V,
+ \label{eq:lagrangianaGalileo1}
+\end{equation}
+
+y sea una transformación de la forma
+
+\begin{equation}
+ \mathbf{r}' = \mathbf{r} + \mathbf{v_0}t, \qquad \mathbf{v}' = \mathbf{v} + \mathbf{v_0}.
+\label{eq:boost1}
+\end{equation}
+
+Entonces tenemos que la lagrangiana para el sistema $S'$ estará dada por
+
+\begin{equation}
+ L' = \frac{1}{2}m(\mathbf{v}'\cdot \mathbf{v}') - V,
+\end{equation}
+
+pero por \mref{eq:boost1} 
+
+\begin{align*}
+ L'&= \frac{1}{2}m[(\mathbf{v} + \mathbf{v_0})\cdot(\mathbf{v} + \mathbf{v_0})] - V, \\
+   &= \frac{1}{2}m(\mathbf{v}\cdot \mathbf{v} + 2\mathbf{v}\cdot \mathbf{v}_0 + \mathbf{v}_0\cdot \mathbf{v}_0) - V, \\
+   &= \frac{1}{2}m(\mathbf{v}\cdot \mathbf{v}) - V + \frac{1}{2}m(2\mathbf{v}\cdot \mathbf{v}_0) + \frac{1}{2}m(\mathbf{v}_0\cdot \mathbf{v}_0),
+\end{align*}
+
+pero por \mref{eq:lagrangianaGalileo1} tenemos que 
+
+\begin{equation}
+ L' = L + \frac{1}{2}m\mathbf{v}_0(2\mathbf{v}+\mathbf{v}_0)
+ \label{eq:lagrangianaGalileo2}
+\end{equation}
+
+Ahora debido a que\footnote{Recordar que $\mathbf{v}_0$ es constante.}
+
+\begin{equation}
+ \frac{1}{2}m\mathbf{v}_0(2\mathbf{v}+\mathbf{v}_0) = \frac{d}{dt}\left[\frac{1}{2}m\mathbf{v}_0(2\mathbf{r}+\mathbf{v}_0t)\right]
+ = \frac{d}{dt}\phi,
+\end{equation}
+
+donde $\phi \equiv \frac{1}{2}m\mathbf{v}_0(2\mathbf{r}+\mathbf{v}_0t)$. Entonces 
+\mref{eq:lagrangianaGalileo2} se transforma en 
+
+\begin{equation}
+ \boxed{L' = L + \frac{d}{dt}\phi}
+\end{equation}
+
+Vemos entonces que debido a que como ya se ha demostrado en tareas anteriores, dos lagrangianas 
+diferentes resultarán en ecuaciones de movimiento idénticas si difieren solamente 
+por una función de las coordenadas y el tiempo. Con lo cual hemos demostrado que 
+la formulación lagrangiana es invariante ante el grupo de Galileo, particularmente 
+queríamos probar que era invariante ante transformaciones del tipo ``boost''.
+
+
+
+
+
+
+
 \section{Problema 5}
 
 Demuestre, con toda formalidad y usando el teorema de Noether, que la lagrangiana 
@@ -578,6 +659,8 @@ otra que también se redujera a la lagrangiana del sistema cuando $\overline{t}=
 \bibitem{ginoux}
 C. Ginoux y B. Silvestre-Brac,\emph{Solved Problems in Lagrangian and Hamiltonian Mechanics},
 Springer, 2009.
+\bibitem{tong}
+D. Tong, \emph{Classical Mechanics}, Cambridge University Press, 2005.
 \end{thebibliography}
 
 
