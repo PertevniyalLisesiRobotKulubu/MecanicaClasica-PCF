@@ -926,9 +926,175 @@ otra que también se redujera a la lagrangiana del sistema cuando $\overline{t}=
 
 \underline{Solución:} \vspace{.3cm}
 
+Para entender por completo la solución que propondremos para este problema, tenemos que 
+hablar un poco del \emph{método de coordenadas paramétricas}, del cual es que podremos 
+entender el por qué de la forma de la lagrangiana extendida, y sus interpretaciones. Principalmente
+utilizaremos contenido de \cite{johns} y de \cite{greiner}, con algunas interpretaciones 
+propias y comentarios. Es \textbf{importante} resaltar que enunciaremos algunos teoremas 
+pero no se probarán, el lector interesado puede acudir a la bibliografía mencionada.
+
+\vspace{.3cm}
+
+El uso de una coordenada como parámetro de integración constituye el llamado 
+método de coordenadas paramétricas. Supongamos que, luego de re-arreglar las coordenadas 
+si es necesario, denotamos la coordenada seleccionada como el parámetro de integración 
+en el método de coordenadas paramétricas por $\xi_1$. Las derivadas de las otras coordenadas 
+con respecto a $\xi_1$ serán denotadas por $\xi'_k$ de manera que $\xi'_k = d\xi_k/d\xi_1$. La integral 
+a ser extremizada en el método de coordenadas paramétricas puede escribirse como
+
+\begin{equation}
+ \mathcal{I} = \int_{\xi_1^{(1)}}^{\xi_1^{(2)}} g(\xi,\xi'_{[1]})d\xi_1,
+ \label{eq:6accion1}
+\end{equation}
+
+donde $\xi_2,\dots,\xi_N$ son las variables restantes y $\xi'_{[1]} = \xi'_2,\dots,\xi'_N$ son 
+sus derivadas con respecto a $\xi_1$. (Acá $\xi$ quiere decir todas las variables, 
+$\xi_1,\dots,\xi_N$, y $\xi_{[1]}$ quiere decir todas las variables \emph{excepto} $\xi_1$).
+
+\vspace{.3cm}
+
+\teorema (Coordenadas de Lagrange): Asumamos que la variable $\xi_1$ escogida como 
+el parámetro de integración del método de coordenadas paramétricas varía monótonamente 
+a lo largo del camino invariado. Entonces la variación de primer orden de la ecuación 
+\mref{eq:6accion1} se hace cero, $\delta\mathcal{I}$, para variaciones arbitrarias 
+de las variables $\xi_2,\dots,\xi_N$ con puntos finales fijos (y no una variación de 
+$\xi_1$), sí y solo sí el camino invariado $\xi_k = \xi_k(\xi_1)$ es una solución 
+de las ecuaciones de Lagrange
+
+\begin{equation}
+ \frac{d}{d\xi_1}\left(\frac{\partial g(\xi,\xi'_{[1]})}{\partial \xi'_k} \right)
+ - \frac{\partial g(\xi,\xi'_{[1]})}{\partial \xi_l} = 0,
+ \label{eq:6lagrangeEqs1}
+\end{equation}
+
+para $k=2,\dots,N$.
+
+\vspace{.3cm}
+
+Aunque acá no lo haremos, es fácil probar que este método a también puede ser utilizado 
+para problemas con constricciones.
+
+\vspace{.3cm}
+
+Uno de los problemas con el método de coordenadas paramétricas es que tenemos $N$ coordenadas 
+$\xi_1,\dots,\xi_N$ pero solo $N-1$ ecuaciones de Lagrange. Comparado con el método 
+paramétrico general en el cual hay una ecuación de Lagrange para cada coordenada, 
+en \mref{eq:6lagrangeEqs1} la ecuación con respecto a $\xi_1$ se ha perdido. Esta 
+ecuación perdida puede recuperarse con lo que es llamada la \emph{segunda forma de 
+las ecuaciones de Lagrange}. 
+
+\vspace{.3cm}
+
+\teorema (Segunda forma de las ecuaciones de Lagrange): La ecuación de Lagrange perdida 
+en el método de coordenadas paramétricas puede recuperarse definiendo la segunda forma 
+$h$ como
+
+\begin{equation}
+ h = \sum_{k=2}^{N} \xi'_k\frac{g(\xi,\xi'_{[1]})}{\partial \xi'_l} - g(\xi,\xi'_{[1]}),
+\label{eq:6segundaForma}
+\end{equation}
+
+la ecuación de Lagrange perdida es entonces 
+
+\begin{equation}
+ \frac{dh}{d\xi_1} = - \frac{g(\xi,\xi'_{[1]})}{\partial \xi_1}.
+ \label{eq:6lagrangeEqs2}
+\end{equation}
+
+Por último debemos establecer algo muy importante y relevante: cualquier problema 
+en la forma de coordenadas paramétricas puede ser convertido a la forma paramétrica 
+general. Introduciendo el parámetro monótono $\tau$ y escribiendo $d\xi = \overline{\xi_1}d\tau$ 
+y $\xi'_k = \overline{\xi_k}/\overline{\xi_1}$, la integral de la ecuación 
+\mref{eq:6accion1} se puede escribir como
+
+\begin{equation}
+  \mathcal{I} = \int_{\xi_1^{(1)}}^{\xi_1^{(2)}} g(\xi,\xi'_{[1]})d\xi_1 = 
+  \int_{\tau_1}^{\tau_2} g\left(\xi,\frac{\overline{\xi}_{[1]}}{\overline{x_1}}\right) \overline{\xi_1}d\tau 
+  =  \int_{\tau_1}^{\tau_2} f(\xi,\overline{\xi})d\tau,
+  \label{eq:6accion2}
+\end{equation}
+
+donde
+
+\begin{equation}
+ f(\xi,\overline{\xi}) = g\left(\xi,\frac{\overline{\xi}_{[1]}}{\overline{x_1}}\right)\overline{\xi_1}.
+ \label{eq:6motivacionLext}
+\end{equation}
+
+es el integrando usado para el método paramétrico general. Ahora hay $N$ ecuaciones de 
+Lagrange, una para cada coordenada. 
+
+\vspace{.3cm}
+
+Podemos ahora comenzar a entender la forma de la lagrangiana extendida. Comencemos 
+por escribir la lagrangiana tradicional
+
+\begin{equation}
+ L = L(q,\dot{q},t).
+ \label{eq:6lagrangianaNormal}
+\end{equation}
+
+La motivación para la lagrangiana extendida surge de los conceptos y teoremas anteriores 
+que hemos establecido para el método de coordenadas paramétricas y claramente 
+del principio de Hamilton, en este caso el tiempo es removido de su rol como
+parámetro de fondo universal, y se considera como una coordenada más, y el 
+parámetro que utilizaremos como el nuevo ``tiempo'' será $\tau$. Entonces tendremos
+que (recordamos que hemos denotado las derivadas con respecto a $\tau$ por una línea 
+arriba de la variable, i.e. $\overline{t}$)
+
+\begin{equation}
+ \mathcal{I} = \int_{t_1}^{t_2} L(q,\dot{q},t)dt = 
+ \int_{\tau_1}^{\tau_2} L\left(q,\frac{\overline{q}}{\overline{t}},t\right)\overline{t}d\tau.
+\end{equation}
+
+De donde podemos definir a partir de la lagrangiana \mref{eq:6lagrangianaNormal} 
+la lagrangiana extendida $L_{ext}$ por 
+
+\begin{equation}
+ L_{ext} = L(q,\frac{\overline{q}}{\overline{t}},t)\overline{t},
+ \label{eq:6lagrangianaExt}
+\end{equation}
+
+que tiene la misma forma que la establecida por el enunciado. Ahora entendemos que 
+utilizamos esta forma para la lagrangiana extendida y no otra que también se redujera
+a la lagrangiana del sistema cuando $\overline{t} = 1$, debido  a que 
+es la ecuación a la que se llega en la prescripción descrita arriba para pasar del método 
+de coordenadas paramétricas al de paramétricas generales. Esto es claro si identificamos 
+que las ecuaciones \mref{eq:6lagrangianaExt} es la misma que \mref{eq:6motivacionLext} 
+identificando $g\rightarrow L$, $\xi_1 \rightarrow t$, $\xi_1{[1]} \rightarrow q$ y 
+$f \rightarrow L_{ext}$. La cual es la forma necesaria para poder tener una ecuación 
+de Lagrange para cada coordenada, el cual es uno de los principales motivos. 
+
+\vspace{.3cm}
+
+Hay otra motivación más por la cual se escoge esta expresión para $L_{ext}$ y no otra,
+y es el hecho que por construcción $L_{ext}$ es una función homogénea de orden uno 
+del conjunto de velocidades generalizadas $\overline{q}$. Lo cual, utilizando 
+el teorema de Euler de las funciones homogéneas, significa que podemos encontrar 
+una identidad para $L_{ext}$ que involucra a estas velocidades $\overline{q}$ y otra
+identidad que involucra a las $\overline{t}$, por lo tanto no obtenemos una ecuación 
+de movimiento sustancial para $t(\tau)$. En este caso la parametrización del 
+tiempo $t(\tau)$ es dejada indeterminada, lo cual refleja el hecho de que la lagrangiana 
+convencional no provee ninguna información sobre una parametrización del tiempo.
+
+\vspace{.3cm}
+
+Por otra parte, si la lagrangiana extendida $L_{ext}$ es la función principal que 
+describe nuestro sistema, entonces $L_{ext}$ no es una función homogénea, en general. 
+En ese caso la identidad de la que habíamos hablado antes, se convierte ahora en una 
+función de constricción para el sistema. Y la ecuación de Lagrange que involucra 
+$\overline{t}$ resulta en una ecuación de movimiento no trivial para $t(\tau)$. Entonces 
+la lagrangiana tradicional se puede deducir de \mref{eq:6lagrangianaExt} por medio 
+de la constricción. En este caso el número de grados de libertad no cambia, y el movimiento 
+toma lugar en una hiper-superficie, definida por esta identidad, dentro del haz 
+tangente $T(\mathbb{M}\times\mathbb{R})$ sobre la variedad de configuración espacio-temporal 
+$\mathbb{M}\times\mathbb{R}$. Esto contrasta con la descripción lagrangiana sin 
+constricciones en el haz tangente dependiente del tiempo $(T\mathbb{M})\times \mathbb{R}$.
+
+
 \begin{thebibliography}{20}
 \bibitem{ginoux}
-C. Ginoux y B. Silvestre-Brac,\emph{Solved Problems in Lagrangian and Hamiltonian Mechanics},
+C. Ginoux y B. Silvestre-Brac, \emph{Solved Problems in Lagrangian and Hamiltonian Mechanics},
 Springer, 2009.
 \bibitem{tong}
 D. Tong, \emph{Classical Mechanics}, Cambridge University Press, 2005.
@@ -937,6 +1103,12 @@ W. Tung, \emph{Group Theory in Physics}, World Scientific Publishing, 1985.
 \bibitem{kleinert}
 H. Kleinert, \emph{Particles and Quantum Fields}, Notas de clase 
 disponibles en \href{http://users.physik.fu-berlin.de/~kleinert/b6/psfiles/}{http://users.physik.fu-berlin.de/~kleinert/b6/psfiles/}.
+\bibitem{johns}
+O. Johns \emph{Analytical Mechanics for Relativity and Quantum Mechanics}, Oxford 
+University Press, 2005.
+\bibitem{greiner}
+W. Greiner, \emph{Classical Mechanics: Systems of Particles and Hamiltonian Dynamics},
+2da edición, Springer-Verlang, 2010.
 \end{thebibliography}
 
 
