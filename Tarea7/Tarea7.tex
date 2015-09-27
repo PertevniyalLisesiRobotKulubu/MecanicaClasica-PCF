@@ -128,7 +128,8 @@ más útil el ángulo que hace el eje con el eje horizontal que definiremos a co
 en el plano inclinado. Entonces, sean $XX'$ y $YY'$ un sistema de ejes perpendiculares 
 sobre el plano inclinado, estando $YY'$ en dirección de máximo descenso. El centro 
 $O$ del eje está caracterizado por las coordenadas $X$ e $Y$ en este sistema, con 
-origen arbitrario $A$. Denotaremos por $\xi$ y $\xi'$ a los centros de los discos, y la 
+origen arbitrario $A$. Denotaremos por $\xi$ y $\xi'$ a los centros de los discos, que será 
+la misma posición de los puntos de apoyo de los discos por construcción, y la 
 distancia $l=\xi\xi'$. Debajo se encuentra una imagen ilustrativa del sistema físico,
 
 \begin{figure}[H]
@@ -141,7 +142,7 @@ distancia $l=\xi\xi'$. Debajo se encuentra una imagen ilustrativa del sistema f�
 Para los discos, el eje puede considerarse como un eje de simetría, y entonces los 
 momentos de inercia en el plano de los discos serán iguales $I_1 = I_2 = I$ y a lo 
 largo de el eje $\xi\xi'$ será $I_3$. El eje hace un ángulo $\theta$ con la horizontal 
-$XX'$. Denotaremos por $\theta$ y $\theta'1$ los ángulos que marcan los puntos de 
+$XX'$. Denotaremos por $\phi$ y $\phi'$ los ángulos que marcan los puntos de 
 referencia de los puntos en la circunferencia de los discos con respecto a la línea 
 normal al plano inclinado. Entonces con esas suposiciones y geometría que hemos 
 planteado proponemos que podemos describir el sistema en términos de 5 coordenadas 
@@ -245,11 +246,11 @@ tenemos entonces que,
  A_Y &= 2m\ddot{Y}, \\
  A_\theta &= 2 \left( I + \frac{1}{4}ml^2 \right) \ddot{\theta}, \\
  A_\phi &= I_3\ddot{\phi}, \\
- A_{\phi'} &= I_3\ddot{\phi}''.
+ A_{\phi'} &= I_3\ddot{\phi}'.
 \end{align}
 
 Necesitamos ahora expresar las condiciones para rodar sin resbalar. Sea 
-$\zeta$ el punto de contacto del disco $\xi$con el plano; la condición que 
+$\zeta$ el punto de contacto del disco $\xi$ con el plano; la condición que 
 requerimos es que $\mathbf{V}_\zeta = 0$. Pero sabemos que para $\xi$, 
 el vector de rotación instantánea en $\zeta$ puede escribirse como 
 
@@ -269,11 +270,11 @@ dos son idénticas, y tenemos entonces tres ecuaciones de constricción,
 
 \begin{align}
 \label{eq:discosConstri01}
- \dot{X}\cos{\theta} + \dot{Y}\sen{\theta} = 0, \\
+ \dot{X}\cos{\theta} + \dot{Y}\sen{\theta} &= 0, \\
 \label{eq:discosConstri02}
- \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} + \frac{1}{2}l\dot{\theta} + R\dot{\phi} = 0, \\
+ \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} + \frac{1}{2}l\dot{\theta} + R\dot{\phi} &= 0, \\
 \label{eq:discosConstri03}
- \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} - \frac{1}{2}l\dot{\theta} + R\dot{\phi}' = 0,
+ \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} - \frac{1}{2}l\dot{\theta} + R\dot{\phi}' &= 0,
 \end{align}
 
 Podemos escribir estas ecuaciones de una forma más informativa, haciendo 
@@ -281,11 +282,11 @@ un poco de álgebra, como
 
 \begin{align}
 \label{eq:discosConstri1}
- 2\dot{X} - R (\dot{\phi} + \dot{\phi}')\sen{\theta} = 0, \\
+ 2\dot{X} - R (\dot{\phi} + \dot{\phi}')\sen{\theta} &= 0, \\
 \label{eq:discosConstri2}
- 2\dot{Y} + R (\dot{\phi} + \dot{\phi}')\cos{\theta} = 0, \\
+ 2\dot{Y} + R (\dot{\phi} + \dot{\phi}')\cos{\theta} &= 0, \\
 \label{eq:discosConstri3}
- l\dot{\theta} + R (\dot{\phi} - \dot{\phi}') = 0.
+ l\dot{\theta} + R (\dot{\phi} - \dot{\phi}') &= 0.
 \end{align}
 
 De estas constricciones, solo \mref{eq:discosConstri3} es holonómica, 
@@ -318,15 +319,15 @@ para las aceleraciones generalizadas,
 
 \begin{align}
  \label{eq:1lagrange1}
- m\ddot{X} = \lambda_1, \\
+ m\ddot{X} &= \lambda_1, \\
  \label{eq:1lagrange2}
- m\ddot{Y} = - mg\sen{\alpha} + \lambda_2, \\
+ m\ddot{Y} &= - mg\sen{\alpha} + \lambda_2, \\
  \label{eq:1lagrange3}
- 2\left( I + \frac{1}{4}ml^2\right) \ddot{\theta} = l\lambda_3, \\
+ 2\left( I + \frac{1}{4}ml^2\right) \ddot{\theta} &= l\lambda_3, \\
  \label{eq:1lagrange4}
- I_3\ddot{\phi} = -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} + R\lambda_3, \\
+ I_3\ddot{\phi} &= -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} + R\lambda_3, \\
  \label{eq:1lagrange5}
- I_3\ddot{\phi}' = -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} - R\lambda_3.
+ I_3\ddot{\phi}' &= -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} - R\lambda_3.
 \end{align}
 
 Para resolver las ocho ecuaciones (las cinco ecuaciones de Lagrange más las tres 
@@ -369,9 +370,9 @@ pero por \mref{eq:discosConstri1} y \mref{eq:discosConstri2},
 
 \begin{align}
 \label{eq:discosConstri4}
- 2\dot{X} = 2R\dot{\sigma}\sen{\omega t}, \\
+ 2\dot{X} &= 2R\dot{\sigma}\sen{\omega t}, \\
 \label{eq:discosConstri5}
- 2\dot{Y} = -2R\dot{\sigma}\cos{\omega t}. 
+ 2\dot{Y} &= -2R\dot{\sigma}\cos{\omega t}. 
 \end{align}
 
 y tomando en cuenta que $I_3 = mR^2/2$ y $I = mR^2/4$, haciendo la sustitución en 
@@ -380,13 +381,13 @@ tenemos que
 
 \begin{align}
  \label{eq:1lagrange6}
- \ddot{X} = \frac{\lambda_1}{m}, \\
+ \ddot{X} &= \frac{\lambda_1}{m}, \\
  \label{eq:1lagrange7}
- \ddot{Y} = - g\sen{\alpha} + \frac{\lambda_2}{m}, \\
+ \ddot{Y} &= - g\sen{\alpha} + \frac{\lambda_2}{m}, \\
  \label{eq:1lagrange8}
- R\ddot{\phi} = \frac{2}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}), \\
+ R\ddot{\phi} &= \frac{2}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}), \\
  \label{eq:1lagrange9}
- R\ddot{\phi}' = \frac{2}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}).
+ R\ddot{\phi}' &= \frac{2}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}).
 \end{align}
 
 Entonces usando \mref{eq:discosConstri4}, \mref{eq:discosConstri5}, \mref{eq:1lagrange6} y 
@@ -489,7 +490,7 @@ $\xi'$ vs. $t$ y otras son para $\xi$ vs. $\xi'$, para distintos intervalos de t
 configuraciones iniciales, i.e. longitud de la barra, ángulo de inclinación, etc. Todos 
 los códigos con los que se hicieron estas gráficas se encuentran en un repositorio público,
 en un NoteBook de IPython, usando las librerías \texttt{mathplotlib} y \texttt{numpy}. Se 
-puede acceder al NoteBook por \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea7/Problema1.ipynb}{\color{blue}.::este link::.}.
+puede acceder al NoteBook mediante \href{https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea7/Problema1.ipynb}{\color{blue}.::este link::.}.
 Vemos interesantes patrones oscilatorios para el gráfico $\xi$ vs. $\xi'$ lo cual es 
 congruente con el sistema físico que nos planteamos.
 
