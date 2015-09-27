@@ -38,6 +38,8 @@
 
 %Multiple References
 
+\crefrangelabelformat{equation}{(#3#1#4--#5\crefstripprefix{#1}{#2}#6)}
+
 \usepackage{xparse}
 \ExplSyntaxOn
 \NewDocumentCommand{\mref}{m}{\quinn_mref:n {#1}}
@@ -117,11 +119,12 @@ las curvas que, sobre el plano, trazan los dos puntos de contacto entre los disc
 \underline{Solución:} \vspace{.3cm}
 
 Debido a la complejidad de este problema, y como en últimas la posición del eje 
-está determinada por la posición de los discos, consideramos que podemos resolver 
-el problema y determinar las curvas que traza el centro del eje, el cual representa
-cómo se mueve el sistema sobre el plano, siguiendo a . Además para nuestra formulación, aunque 
+está determinada por la posición de los discos, utilizaremos durante casi toda la solución 
+las coordenadas del centro del eje, y solo luego al final haremos los cambios necesarios 
+para poder expresar la solución en términos de los puntos de contacto entre los 
+discos y el plano. Mucho del tratamiento que haremos será siguiendo a \cite{ginoux}. Además para nuestra formulación, aunque 
 exista el ángulo $\beta$ que hace el eje con la dirección de máximo descenso, nos será 
-más útil el ángulo que hace el eje con el eje horizo tal que definiremos a continuación 
+más útil el ángulo que hace el eje con el eje horizontal que definiremos a continuación 
 en el plano inclinado. Entonces, sean $XX'$ y $YY'$ un sistema de ejes perpendiculares 
 sobre el plano inclinado, estando $YY'$ en dirección de máximo descenso. El centro 
 $O$ del eje está caracterizado por las coordenadas $X$ e $Y$ en este sistema, con 
@@ -265,8 +268,11 @@ De estas cuatro condiciones (utilizando la figura \mref{fig:problema1fig2} y la 
 dos son idénticas, y tenemos entonces tres ecuaciones de constricción,
 
 \begin{align}
+\label{eq:discosConstri01}
  \dot{X}\cos{\theta} + \dot{Y}\sen{\theta} = 0, \\
+\label{eq:discosConstri02}
  \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} + \frac{1}{2}l\dot{\theta} + R\dot{\phi} = 0, \\
+\label{eq:discosConstri03}
  \dot{Y}\cos{\theta} - \dot{X}\sen{\theta} - \frac{1}{2}l\dot{\theta} + R\dot{\phi}' = 0,
 \end{align}
 
@@ -311,15 +317,185 @@ indeterminados de Lagrange tenemos que, utilizando las expresiones
 para las aceleraciones generalizadas,
 
 \begin{align}
+ \label{eq:1lagrange1}
  m\ddot{X} = \lambda_1, \\
+ \label{eq:1lagrange2}
  m\ddot{Y} = - mg\sen{\alpha} + \lambda_2, \\
+ \label{eq:1lagrange3}
  2\left( I + \frac{1}{4}ml^2\right) \ddot{\theta} = l\lambda_3, \\
+ \label{eq:1lagrange4}
  I_3\ddot{\phi} = -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} + R\lambda_3, \\
+ \label{eq:1lagrange5}
  I_3\ddot{\phi}' = -\lambda_1 R\sen{\theta} + \lambda_2 R\cos{\theta} - R\lambda_3.
 \end{align}
 
+Para resolver las ocho ecuaciones (las cinco ecuaciones de Lagrange más las tres 
+ecuaciones de constricciones) hagamos el siguiente cambio de variable 
+$\sigma = (\phi + \phi')/2$ y $\delta = (\phi - \phi')$. Con este cambio de variable 
+la ecuación \mref{eq:discosConstri3} se convierte en 
 
-TERMINAR.
+\begin{equation}
+ l\dot{\theta} + R\dot{\delta} = 0,
+\end{equation}
+
+y de las ecuaciones \mref{eq:1lagrange4,eq:1lagrange5} obtenemos que 
+
+\begin{equation}
+ \lambda_3 = \left(\frac{I_3}{2R}\right)\ddot{\delta}.
+\end{equation}
+
+Usando esta ecuación e introduciéndola en \mref{eq:1lagrange3} llegamos a que 
+
+\begin{equation}
+ \left[2I + \frac{1}{2}ml^2 + \left(\frac{I_3l^2}{2R^2}\right) \right]\ddot{\theta} = 0,
+\end{equation}
+
+de la cual obtenemos que $\ddot{\theta} = 0$, por lo que $\ddot{\theta}=0$. Lo cual 
+quiere decir que el eje rota con una velocidad angular constante $\omega$, que con 
+una selección conveniente del tiempo de origen podemos escribir $\theta = \omega t$. Entonces 
+$\delta - \delta_0 = - (l\omega/R)t$ y $\lambda_3 = 0$. 
+
+\vspace{.3cm}
+
+Derivemos ahora las constricciones no holonómicas \mref{eq:discosConstri02} y \mref{eq:discosConstri03}
+y sumémoslas, con lo cual luego de unas pocas líneas de álgebra encontramos que
+
+\begin{equation}
+ 2\ddot{Y}\cos{\omega t} - 2\dot{Y}\omega\sen{\omega t} - 2\ddot{X}\sen{\omega t} 
+ - 2\dot{X}\omega\cos{\omega t}  + 2R\ddot{\sigma} = 0
+\end{equation}
+
+pero por \mref{eq:discosConstri1} y \mref{eq:discosConstri2},
+
+\begin{align}
+\label{eq:discosConstri4}
+ 2\dot{X} = 2R\dot{\sigma}\sen{\omega t}, \\
+\label{eq:discosConstri5}
+ 2\dot{Y} = -2R\dot{\sigma}\cos{\omega t}. 
+\end{align}
+
+y tomando en cuenta que $I_3 = mR^2/2$ y $I = mR^2/4$, haciendo la sustitución en 
+\mref{eq:1lagrange1}, \mref{eq:1lagrange2}, \mref{eq:1lagrange4} y \mref{eq:1lagrange5},
+tenemos que 
+
+\begin{align}
+ \label{eq:1lagrange6}
+ \ddot{X} = \frac{\lambda_1}{m}, \\
+ \label{eq:1lagrange7}
+ \ddot{Y} = - g\sen{\alpha} + \frac{\lambda_2}{m}, \\
+ \label{eq:1lagrange8}
+ R\ddot{\phi} = \frac{2}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}), \\
+ \label{eq:1lagrange9}
+ R\ddot{\phi}' = \frac{2}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}).
+\end{align}
+
+Entonces usando \mref{eq:discosConstri4}, \mref{eq:discosConstri5}, \mref{eq:1lagrange6} y 
+\mref{eq:1lagrange7}, tenemos que 
+
+\begin{align*}
+ 2 \left(- g\sen{\alpha} + \frac{\lambda_2}{m}\right)\cos{\omega t} 
+ +\cancel{2R\omega\dot{\sigma}\cos{\omega t}\sen{\omega t}} \\
+ - 2\frac{\lambda_1}{m}\sen{\omega t} 
+ - \cancel{2R\omega\dot{\sigma}\sen{\omega t}\cos{\omega t}}  + 2R\ddot{\sigma} = 0,
+\end{align*}
+
+\begin{equation}
+ \therefore R\ddot{\sigma} = \frac{\lambda_1}{m}\sen{\omega t} + g\sen{\alpha}\cos{\omega t}  - \frac{\lambda_2}{m}\cos{\omega t}. 
+\label{eq:1Rsigma1}
+\end{equation}
+
+Ahora si sumamos \mref{eq:1lagrange8} con \mref{eq:1lagrange9} obtenemos 
+
+\begin{equation}
+4 R \ddot{\sigma} = \frac{4}{m}(-\lambda_1 \sen{\omega t} + \lambda_2 \cos{\omega t}),
+\end{equation}
+
+o
+
+\begin{equation}
+ R\ddot{\sigma} = -\frac{\lambda_1}{m} \sen{\omega t} + \frac{\lambda_2}{m} \cos{\omega t}.
+\label{eq:1Rsigma2}
+\end{equation}
+
+Si ahora sumamos \mref{eq:1Rsigma1} con \mref{eq:1Rsigma2}, obtenemos que 
+
+\begin{equation}
+ 2R\ddot{\sigma} =  g\sen{\alpha}\cos{\omega t} 
+\end{equation}
+
+entonces
+
+\begin{equation}
+ \ddot{\sigma} = \frac{g\sen{\alpha}\cos{\omega t} }{2R}.
+\end{equation}
+
+De esta ecuación podemos encontrar fácilmente una expresión para $\dot{\sigma}$, tomando 
+en cuanta de que como los discos inicialmente se encuentran reposo las condiciones 
+iniciales serán $\dot{\sigma}(0) = 0$, $\dot{\phi}(0) = 0$ y $\dot{\phi'}(0) = 0$,
+
+\begin{equation}
+ \boxed{\dot{\sigma} = \frac{g\sen{\alpha}\sen{\omega t}}{2\omega R}.}
+ \label{eq:1sigma1}
+\end{equation}
+
+Utilizando la ecuación \mref{eq:1sigma1} podemos encontrar una expresión para $X(t)$ utilizando  
+\mref{eq:discosConstri4},
+
+\begin{equation}
+ \dot{X} = \frac{g\sen{\alpha}\sen^2{\omega t}}{2\omega},
+\end{equation}
+
+\begin{equation}
+ \boxed{X = \frac{g\sen{\alpha}}{4\omega}\left(t - \frac{\sen{2\omega t}}{2\omega}\right) + X(0) .}
+\end{equation}
+
+Podemos hacer lo mismo para $Y(t)$ utilizando \mref{eq:discosConstri5},
+
+\begin{equation}
+ \dot{Y} = - \frac{g\sen{\alpha}\cos{\omega t}\sen{\omega t}}{2\omega},
+\end{equation}
+
+\begin{equation}
+ \boxed{Y = \frac{g\sen{\alpha}\cos^2{\omega t}}{4\omega^2} + Y(0).}
+\end{equation}
+
+Ahora podemos encontrar las expresiones para los puntos de apoyo de los discos 
+$\xi$ y $\xi'$, tenemos entonces que 
+
+\begin{equation}
+ \xi = X + Y + \frac{l}{2}(\cos{\omega t} + \sen{\omega t})
+\end{equation}
+
+\begin{equation}
+ \boxed{\xi = \frac{g\sen{\alpha}}{4\omega}\left(t - \frac{\sen{2\omega t}}{2\omega} \right) + X(0) 
+ + \frac{g\sen{\alpha}\cos^2{\omega t}}{4\omega^2} + Y(0) + 
+ \frac{l}{2}(\cos{\omega t} + \sen{\omega t})}
+\end{equation}
+
+y para el disco $\xi'$ 
+
+\begin{equation}
+  \xi' = X + Y - \frac{l}{2}(\cos{\omega t} + \sen{\omega t})
+\end{equation}
+
+\begin{equation}
+ \boxed{\xi = \frac{g\sen{\alpha}}{4\omega}\left(t - \frac{\sen{2\omega t}}{2\omega} \right) + X(0) 
+ + \frac{g\sen{\alpha}\cos^2{\omega t}}{4\omega^2} + Y(0) - 
+ \frac{l}{2}(\cos{\omega t} + \sen{\omega t})}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Problema 2}
@@ -1063,7 +1239,10 @@ de coordenadas paramétricas al de paramétricas generales. Esto es claro si ide
 que las ecuaciones \mref{eq:6lagrangianaExt} es la misma que \mref{eq:6motivacionLext} 
 identificando $g\rightarrow L$, $\xi_1 \rightarrow t$, $\xi_1{[1]} \rightarrow q$ y 
 $f \rightarrow L_{ext}$. \textbf{La cual es la forma necesaria para poder tener una ecuación 
-de Lagrange para cada coordenada}, el cual es uno de los principales motivos. 
+de Lagrange para cada coordenada}, el cual es uno de los principales motivos. Con respecto 
+al teorema de Noether, esta forma es la que necesitamos para que surja como cantidad 
+conservada la negativa de la cantidad de Jacobi, y que cumpla con la motivación que 
+vimos arriba y con algunos comentarios que expresamos a continuación.
 
 \vspace{.3cm}
 
