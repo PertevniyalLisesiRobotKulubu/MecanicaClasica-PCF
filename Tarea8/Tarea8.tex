@@ -75,6 +75,7 @@
 \newcommand{\teorema}{\textbf{Teorema: }}
 \newcommand{\prueba}{\textbf{Prueba: }}
 \newcommand{\proposicion}{\textbf{Proposición: }}
+\newcommand{\corolario}{\textbf{Corolario: }}
 
 
 %opening
@@ -150,6 +151,173 @@ locales $(q^1,\dots,q^n)$.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para probar esto necesitamos hacer unas pequeñas construcciones, estableceremos un 
+lema, el cual no probaremos, y una proposición que sí será probada de la cual 
+surgirá un corolario el cual demostrará el enunciado del problema. Para una lectura 
+más detallada del tema y la prueba del lema ver el capítulo 3 de \cite{lee}. Durante 
+toda la prueba utilizaremos el convenio de suma de Einstein, el cual nos dice 
+que un índice que aparece dos veces en un término matemático, una vez como un 
+superíndice y una vez como un subíndice, es sumado sobre el rango entero de ese 
+índice. 
+
+\vspace{.3cm}
+
+La noción de un vector tangente euclidiano provee la noción de tomar la ``derivada 
+direccional'' de funciones. Por ejemplo, para cualquier vector tangente $v_a \in \mathbb{R}^n_a$ 
+podemos definir un mapeo 
+
+\begin{equation}
+ D_v|_a: C^{\infty}(\mathbb{R}^n) \rightarrow \mathbb{R},
+\end{equation}
+
+tomando la derivada direccional en la dirección de $v$ en $a$:
+
+\begin{equation}
+ D_v|_a f = D_v f(a) = D_v f(a) = \left\zerodel\frac{d}{dt}\right|_t= f(a+tv).
+\end{equation}
+
+Esta operación es lineal y satisface la regla del producto:
+
+\begin{equation}
+ D_v|_a (fg) = f(a)D_v|_a(g) + g(a)D_v|_a(f).
+\end{equation}
+
+Si $v_a = v^ie_i|_a$ en términos de la base estándar, entonces por la regla de la 
+cadena $D_v|_a f$ puede escribirse más concretamente como 
+
+\begin{equation}
+ D_v|_a = f = v^i\frac{\partial f}{\partial q^i (a)}.
+\end{equation}
+
+Por ejemplo, si $v_a = e_j|_a$ entonces 
+
+\begin{equation}
+ D_v|_a = \frac{\partial f}{\partial x^j}(a).
+\end{equation}
+
+Con esta construcción en la mente hacemos la siguiente definición. 
+
+\vspace{.3cm}
+
+\definicion Si $a$ es un punto de $\mathbb{R}^n$, un mapeo lineal
+$\xi:C^{\infty}(\mathbb{R}^n \rightarrow \mathbb{R}$ es llamado una derivación 
+en $a$ si satisface la siguiente regla del producto:
+
+\begin{equation}
+ \xi(fg) = f(a)\xi g + g(a)\xi f.
+\end{equation}
+
+\lema (Propiedades de la derivación): Sea $T_a(\mathbb{R^n}$ el conjunto que denota todas las derivaciones de $C^{\infty}(\mathbb{R}^n)$.
+Sea $a \in \mathbb{R}$ y $\xi \in T_a(\mathbb{R}^n)$, entonces 
+
+\begin{enumerate}[label=(\alph*)]
+ \item Si $f$ es una función constante, entonces $\xi f = 0$.
+ \item Si $f(a) = g(a) = 0$, entonces $\xi(fg) = 0$. 
+\end{enumerate}
+
+\proposicion Para todo $a \in \mathbb{R}^n$, el mapeo $v_a \mapsto D_v|_a$ es 
+un isomorfismo de $\mathbf{R}^n_a$ sobre $T_a(\mathbb{R}^n)$.
+
+\prueba El mapeo  $v_a \mapsto D_v|_a$ es lineal, lo cual es fácil de verificar. 
+Para ver que es inyectivo, supongamos que $v_a \in \mathbb{R}^n_a$ tiene 
+la propiedad de que $D_v|a$ es la derivación cero. Escribiendo $v_a = v^ie_i|_a$
+en términos de la base estándar, y tomando $f$ como la $j$-ésima función 
+coordenada $q^j: \mathbb{R}^n \rightarrow \mathbb{R}$, pensándola como 
+una función suave en $\mathbb{R}$, obtenemos 
+
+\begin{equation}
+ 0 = D_v|_a (q^j) = v^i \left\zerodel\frac{\partial}{\partial q^i}(q^i)\right|_{x=a} = v^j.
+\end{equation}
+
+Debido a que esto es cierto para todo $j$, entonces $v_a$ es el vector 
+cero. 
+
+\vspace{.3cm}
+
+Para probar que es sobreyectiva, sea un $\xi \in T_a(\mathbb{R}^n$ arbitrario. 
+Motivados por la pasada computación, definimos números reales $v^1,\dots,v^n$ 
+por 
+
+\begin{equation}
+ v^i = \xi(q^i).
+\end{equation}
+
+Mostraremos que $\xi = D_v|_a$, donde $v = v^ie_i$. Para ver esto, 
+sea $f$ una función real suave sobre $\mathbb{R}$. Por la fórmula 
+de Taylor con residuo, vemos que hay funciones suaves $g_1,\dots,g_n$ 
+definidas en $\mathbb{R}^n$ tales que $g_i(a) = 0$ y 
+
+\begin{equation}
+ f(x) = f(a) = \sum_{i=1}^n \frac{\partial f}{\partial q^i}(a) (q^i - a^i) 
+ + \sum_{i=1}^n g_i(q) (q^i - a^i).
+\end{equation}
+
+Notemos que el último término de esta ecuación es una suma de funciones, 
+y cada una de ellas es producto de dos funciones $g_i(q)$ y $(q^i - a^i)$ que 
+se hacen cero cuando $q=a$. Aplicando $\xi$ a esta fórmula y usando 
+el lema, obtenemos 
+
+\begin{align}
+ \begin{split}
+  \xi f &= \xi(f(a)) + \sum_{i=1}^n \xi \left( \frac{\partial f}{\partial q^i}(a) (q^i - a^i)\right) 
+  + \xi (g_i(q) (q^i - a^i)), \\
+	&= 0 + \sum_{i=1}^n \frac{\partial f}{\partial q^i}(a)(\xi(q^i)- \xi(a^i)) + 0, \\
+	&= \sum_{i=1}^n \frac{\partial f}{\partial q^i}(a)v^i, \\
+	&= D_v|_a f.
+ \end{split}
+\end{align}
+
+Lo cual muestra que $\xi = D_v|_a$.
+
+$\hspace{12cm} \square$
+
+De esta proposición surge el siguiente corolario, 
+
+\vspace{.3cm}
+
+\corolario Para todo $a \in \mathbb{R}^n$, las $n$ derivaciones 
+
+\begin{equation}
+ \left\zerodel\frac{\partial}{\partial q^1}\right|_a, \dots, 
+  \left\zerodel\frac{\partial}{\partial q^n}\right|_a,
+\end{equation}
+
+definidas por 
+
+\begin{equation}
+  \left\zerodel\frac{\partial}{\partial q^1}\right|_a f = 
+  \frac{\partial f}{\partial q^i}(a),
+\end{equation}
+
+forman una base para $T_a(\mathbb{R}^n)$, que por lo tanto tiene 
+dimensión $n$.
+
+\vspace{.3cm}
+
+\prueba Esto puede probarse inmediatamente de la pasada proposición, 
+haciendo 
+
+\begin{equation}
+ \left\zerodel\frac{\partial}{\partial q^i}\right|_a = D_{e_{i}}|_a. 
+\end{equation}
+
+$\hspace{12cm} \square$
+
+Claramente el corolario es exactamente igual al enunciado que debía 
+probarse, concluyendo así este problema.
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Problema 5}
 
 Identifique la variedad de configuración correspondiente a las rotaciones de un cuerpo 
@@ -206,6 +374,8 @@ $R_{ab}(t)$ tal que $\mathbf{e}_a(t) = R_{ab}(t)\tilde{\mathbf{e}}_b$.
 \delta_{ab}$ o, en otras palabras, $(R^TR)_{ab} = \delta_{ab}$ lo cual establece que 
 $R$ es ortogonal. La unicidad de $R$ proviene de la construcción $R_{ab} = \mathbf{e}_a \cdot 
 \tilde{\mathbf{e}}_b$.
+
+$\hspace{12cm} \square$
 
 \vspace{.3cm}
 
@@ -323,5 +493,13 @@ y para formar un sistema de coordenadas locales para \textbf{SO(3)}. Cabe destac
 que al utilizar estos ángulos para un problema concreto, debemos recordar que este 
 sistema de coordenadas es similar a las coordenadas geográficas sobre la esfera: excluyen 
 los polos y son multivaluadas en un meridiano.
+
+$\hspace{12cm} \square$
+
+\begin{thebibliography}{10}
+\bibitem{lee}
+J. Lee, \emph{Introduction to Smooth Manifolds}, Springer, 2006.
+\end{thebibliography}
+
 
 \end{document}
