@@ -74,6 +74,7 @@
 \newcommand{\lema}{\textbf{Lema: }}
 \newcommand{\teorema}{\textbf{Teorema: }}
 \newcommand{\prueba}{\textbf{Prueba: }}
+\newcommand{\proposicion}{\textbf{Proposición: }}
 
 
 %opening
@@ -158,5 +159,169 @@ variedad.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\definicion Un cuerpo rígido es un sistema de $N$ partículas puntuales, constreñidas 
+por relaciones holonómicas expresadas por el hecho de que la distancia entre los 
+puntos es constante:
+
+\begin{equation}
+ |\mathbf{r}_i - \mathbf{r}_j| = \text{constante},
+\end{equation}
+
+para todo $i,j = 1,\dots,N$.
+
+\vspace{.3cm}
+
+El movimiento más general para un cuerpo rígido es una traslación más una rotación 
+sobre un punto $P$, pero para la solución de este problema solo consideraremos las 
+rotaciones.
+
+\vspace{.3cm}
+
+Sea un cuerpo rígido fijado en un punto $P$. Consideremos una rotación sobre el punto 
+$P$. Para describir esto, especificaremos las posiciones en un marco de referencia 
+estático $\{{\tilde{\mathbf{e}}_a\}}$ introduciendo un marco de referencia en movimiento $\{{\mathbf{e}_a}\}$
+en el cuerpo de manera que $\{\mathbf{e}_a\}$ se mueve con él. Debajo se encuentra una 
+ilustración de estas consideraciones,
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.6]{problema5fig1}
+ \caption{El marco de referencia estático y el marco de referencia en movimiento.}
+\end{figure}
+
+Debido a que ambos ejes son ortogonales, tenemos que 
+
+\begin{equation}
+ \tilde{\mathbf{e}}_a \cdot \tilde{\mathbf{e}}_b = \delta_{ab}, \quad \mathbf{e}_a(t) \cdot \mathbf{e}_b(t) = \delta_{ab}.
+\end{equation}
+
+\proposicion Para todo $t$, existe una matriz ortogonal única $R(t)$ con componentes 
+$R_{ab}(t)$ tal que $\mathbf{e}_a(t) = R_{ab}(t)\tilde{\mathbf{e}}_b$.
+
+\vspace{.3cm}
+
+\prueba $\mathbf{e}_a \cdot \mathbf{e}_b = \delta_{ab} \Rightarrow R_{ac}R_{bd} 
+(\tilde{\mathbf{e}}_c\cdot\tilde{\mathbf{e}}_d) = \delta_{ab} \Rightarrow R_{ac}R_{bc} = 
+\delta_{ab}$ o, en otras palabras, $(R^TR)_{ab} = \delta_{ab}$ lo cual establece que 
+$R$ es ortogonal. La unicidad de $R$ proviene de la construcción $R_{ab} = \mathbf{e}_a \cdot 
+\tilde{\mathbf{e}}_b$.
+
+\vspace{.3cm}
+
+Entonces mientras el cuerpo rígido rota, esta rotación es descrita por una matriz 
+$3\times 3$ ortogonal y dependiente del tiempo $R(t)$. Debido a la propiedad de 
+las matrices $R$, $R_{ac}R_{bc} = \delta_{ab}$, y al hecho de que esta matriz es 
+real, puede probarse sin dificultad que éstas tienen determinantes $\pm 1$. Debido 
+a que todas las rotaciones físicas pueden ser alcanzadas continuamente de la 
+la transformación idéntica (ángulo cero de rotación), y debido a que el determinante 
+de esta es $+1$, entonces todas las matrices de rotación deben tener determinante $+1$, 
+a este tipo de matrices se les llama matrices especiales. Entonces, cada familia uniparamétrica $R(t)$ describe un posible movimiento para 
+el cuerpo, y llegamos a la siguiente conclusión:
+
+\begin{center}
+ $M$ = Variedad de configuración para  las rotaciones del cuerpo rígido = Espacio de las matrices 
+ ortogonales especiales $\equiv$ \textbf{SO(3)}.
+\end{center}
+
+\vspace{.3cm}
+
+Una matriz $3\times 3$ tiene $9$ componentes pero la condición de ortogonalidad $R^TR=1$
+impone $6$ relaciones, por lo tanto la variedad de configuración es tridimensional, y 
+por lo tanto necesitamos $3$ coordenadas generalizadas para parametrizar y describir 
+completamente a $M$. Como probaremos en el siguiente teorema, estas coordenadas son 
+los conocidos ángulos de Euler.
+
+\teorema Una rotación arbitraria puede ser expresada como el producto de $3$ rotaciones 
+sucesivas sobre (en general) $3$ ejes diferentes.
+
+\vspace{.3cm}
+
+\prueba Sean $\{{\tilde{\mathbf{e}}_a\}}$ los ejes del sistema estático y 
+$\{{\mathbf{e}_a\}}$ los ejes anclados al cuerpo en rotación. Queremos encontrar 
+la rotación $R$ tal que $\mathbf{e}_a = R_{ab}{\tilde{\mathbf{e}}_b}$. Podemos 
+lograr esto en tres pasos
+
+\begin{equation}
+ \{{\tilde{\mathbf{e}}_a\}} \xrightarrow{R_3(\phi)} 
+ \{{\mathbf{e}'_a\}} \xrightarrow{R_1(\theta)} 
+ \{{\mathbf{e}''_a\}} \xrightarrow{R_3(\psi)} \{{\mathbf{e}_a\}}
+\end{equation}
+
+\textbf{Paso 1}: Rotación por un ángulo $\phi$ sobre el eje $\tilde{\mathbf{e}}_3$. 
+Entonces $\mathbf{e}'_a = R_3(\phi)_{ab}\tilde{\mathbf{e}}_b$ con 
+
+\begin{equation}
+ R_3(\phi) = \begin{pmatrix}
+              \cos{\phi} & \sen{\phi} & 0 \\
+	      -\sen{\phi} & \cos{\phi} & 0 \\
+	      0 & 0 & 1
+	     \end{pmatrix}.
+\end{equation}
+
+\begin{figure}[H]
+  \center 
+  \includegraphics[scale=0.6]{problema5fig2}
+  \caption{Paso 1: Rotación sobre $\tilde{\mathbf{e}}_e$ del marco de referencia 
+  estático.}
+\end{figure}
+
+\textbf{Paso 2}: Rotación por un ángulo $\theta$ sobre el nuevo eje $\mathbf{e}'_1$. 
+Este eje $\mathbf{e}'_1$ es conocido como la ``línea de nodos''. Escribimos entonces 
+$\mathbf{e}''_a = R_1(\theta)\mathbf{e}'_b$ con 
+
+\begin{equation}
+ R_3(\theta) = \begin{pmatrix}
+              1 & 0 & 0 \\
+	      0 & \cos{\theta} & \sen{\theta} \\
+	      0 & -\sen{\theta} & \cos{\theta}
+	     \end{pmatrix}.
+\end{equation}
+
+\begin{figure}[H]
+  \center 
+  \includegraphics[scale=0.6]{problema5fig3}
+  \caption{Paso 2: Rotación sobre el nuevo eje $\mathbf{e}'_1$.}
+\end{figure}
+
+\textbf{Paso 3}: Rotación por un ángulo $\psi$ sobre el nuevo eje $\mathbf{e}''_3$ 
+entonces $\mathbf{e}_a = R_3(\psi)_{ab}\mathbf{e}''_b$ con 
+
+\begin{equation}
+ R_3(\psi) = \begin{pmatrix}
+              \cos{\psi} & \sen{\psi} & 0 \\
+	      -\sen{\psi} & \cos{\psi} & 0 \\
+	      0 & 0 & 1
+	     \end{pmatrix}.
+\end{equation}
+
+Poniendo todo esto junto tenemos que 
+
+\begin{equation}
+ R_{ab} (\phi,\theta,\psi) = [R_3(\phi)R_1(\theta)R_3(\psi)]_{ab}
+\end{equation}
+
+Los ángulos $\phi,\theta,\psi$ son los ángulos de Euler. Los cuales hemos demostrado 
+entonces que forman un sistema de coordenadas para la variedad de configuración 
+para las rotaciones de un cuerpo rígido, ya que podemos escribir la matriz $R(\phi,\theta,\psi)$
+como 
+
+\begin{equation*}
+ R  = \begin{pmatrix}
+              \cos{\psi}\cos{\phi} - \cos{\theta}\sen{\phi}\sen{\psi} & 
+              \sen{\phi}\cos{\psi} + \cos{\theta}\sen{\psi}\cos{\phi} & 
+              \sen{\theta}\sen{\psi} \\
+	      -\cos{\psi}\sen{\psi} - \cos{\theta}\cos{\psi}\sen{\phi} & 
+	      -\sen{\psi}\sen{\phi} + \cos{\theta}\cos{\psi}\cos{\phi} & 
+	      \sen{\theta}\cos{\psi} \\
+	      \sen{\theta}\sen{\phi} & -\sen{\theta}\cos{\phi} & \cos{\theta}
+	     \end{pmatrix},
+\end{equation*}
+
+y esta cumple con las propiedades deseadas para probar el teorema que hemos propuesto 
+y para formar un sistema de coordenadas locales para \textbf{SO(3)}. Cabe destacar 
+que al utilizar estos ángulos para un problema concreto, debemos recordar que este 
+sistema de coordenadas es similar a las coordenadas geográficas sobre la esfera: excluyen 
+los polos y son multivaluadas en un meridiano.
 
 \end{document}
