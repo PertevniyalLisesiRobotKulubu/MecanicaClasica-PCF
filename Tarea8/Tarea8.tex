@@ -127,6 +127,13 @@ de las cartas utilizadas y de las curvas representativas escogidas en cada clase
 
 \underline{Solución:} \vspace{.3cm}
 
+Durante toda la prueba utilizaremos el convenio de suma de Einstein, el cual nos dice 
+que un índice que aparece dos veces en un término matemático, una vez como un 
+superíndice y una vez como un subíndice, es sumado sobre el rango entero de ese 
+índice. 
+
+\vspace{.3cm}
+
 Queremos pensar en un campo vectorial sobre una variedad diferencial $M$ como un 
 mapeo $\xi$ que asigna a cada punto $p \in M$ un vector tangente $\xi_p \in T_p M$, 
 junto con alguna suposición de continuidad o diferenciabilidad. Pero como bien 
@@ -272,6 +279,156 @@ común de diferencial cuando las dos variedades son espacios de tipo $\mathbb{R}
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Durante toda la prueba utilizaremos el convenio de suma de Einstein, el cual nos dice 
+que un índice que aparece dos veces en un término matemático, una vez como un 
+superíndice y una vez como un subíndice, es sumado sobre el rango entero de ese 
+índice. 
+
+\vspace{.3cm}
+
+Para poder dar respuesta a este problema, tendremos que hacer una serie de construcciones, 
+debido a que como veremos la diferencial de una función real sobre un punto de 
+una variedad diferencial, se puede interpretar más naturalmente en términos de 
+covectores tangentes (como veremos una sección diferenciable del haz cotangente). Muchas 
+de las definiciones y proposiciones básicas, así como sus demostraciones se excluirán de esta solución, enfocándonos 
+y probando las más importantes y relevantes para la solución de este problema.
+
+\vspace{.3cm}
+
+Sea $V$ un espacio vectorial finito y real. Definimos un covector sobre $V$ como 
+un funcional real lineal sobre $V$, es decir un mapeo lineal $ \omega: V \rightarrow 
+\mathbb{R}$. El espacio de todos los covectores sobre $V$ es un espacio vectorial 
+real sobre la adición y la multiplicación escalar. Se denota por $V^*$ y es llamado 
+el espacio dual a $V$.
+
+\vspace{.3cm}
+
+\proposicion Sea $V$ un espacio vectorial finito. Si $(E_1,\dots,E_n)$ es una base 
+cualquiera para $V$, entonces los covectores $(\epsilon^1,\dots,\epsilon^n)$, 
+definidos por 
+
+\begin{equation}
+ \epsilon^i(E_j) = \delta_i^j = \begin{cases}
+                                 1 \quad \text{si} \quad i=j, \\
+                                 0 \quad \text{si} \quad i\ne j,
+                                \end{cases}
+\end{equation}
+
+forman una base para $V^*$, llamada la base dual a $(E_i)$. Y por lo tanto la 
+dimensión de $V$ es igual a la dimensión de $V^*$.
+
+\vspace{.3cm}
+
+\definicion Sea $M$ una variedad diferencial. Para cada $p \in M$ definimos el 
+espacio cotangente en $p$, denotado por $T_p^* M$, como el espacio dual a $T_p M$:
+
+\begin{equation}
+ T_p^* M = (T_p M)^*.
+\end{equation}
+
+Los elementos de $T_p^* M$ son llamados los covectores tangentes en $p$. Si $(q^i)$ 
+son unas coordenadas locales en sobre un subconjunto abierto $U \subseteq M$, entonces 
+para cada $p \in U$, la base coordenada\footnote{Ver problema 4.} $(\partial/\partial q^i|_p)$ 
+da lugar a una base dual para $T_p^* M$, que denotaremos por el momento como 
+$(\lambda^i|_p)$.
+
+\vspace{.3cm}
+
+\definicion La unión disjunta 
+
+\begin{equation}
+ T^*M =  \underset{p \in M}{\coprod} T^*_p M
+\end{equation}
+
+es llamada el haz cotangente de $M$. Tiene un mapeo de proyección natural 
+$\pi: T^* M \rightarrow M$ enviando $\omega \in T^*_p M$ a $p \in M$. La base dual 
+para $T^*_p M$ establecida arriba define $n$ mapeos $\lambda^1,\dots,\lambda^n: 
+U \rightarrow T^*M$, llamados los campos covectoriales coordenados. Puede probarse\footnote{
+Ver \cite{curtis}, \cite{lee}, \cite{kosinski}.} que $T^*M$ tiene una única 
+estructura de variedad diferencial, lo que lo hace un haz vectorial de rango $n$ 
+sobre $M$ para el cual todos los campos covectores coordenados son secciones 
+locales diferenciales. Una sección de $T^* M$ es llamada un campo covectorial 
+o una 1-forma diferencial\footnote{Ver \cite{lee} y \cite{torres}.}.
+
+\vspace{.3cm}
+
+Estamos ahora en posición de definir la diferencial.
+
+\vspace{.3cm}
+
+\definicion Sea $f$ una función real sobre una variedad diferencial $M$. Definimos 
+un campo covectorial $df_p(\xi_p) = \xi_p f$ para $\xi_p \in T_p M$. 
+
+\vspace{.3cm}
+
+\lema La diferencial de una función diferenciable es un campo covectorial diferenciable.
+
+\vspace{.3cm}
+
+\prueba Es fácil verificar que en cada punto $p \in M$, $df_p(\xi_p)$ depende linealmente 
+en $\xi_p$, de manera que $df_p$ es un covector en $p$. Para ver que $df$ es diferenciable, 
+usamos el hecho deque para cualquier campo vectorial $\xi$ sobre un subconjunto 
+abierto $U \subseteq M$, la función $(df \cdot \xi)$ es diferenciable debido a que 
+es igual a $\xi f$.
+
+$\hspace{12cm} \square$
+
+La cual claramente es una buena definición, y también hemos demostrado que proporciona 
+un mapeo lineal. Para ver como luce $df$ de forma más concreta, necesitamos computar si representación 
+coordenada. Sean $(q^i)$ coordenadas diferenciables sobre un subconjunto abierto 
+$U \subseteq M$, y sean $(\lambda^i)$ las bases correspondientes (en realidad 
+estas deberían llamarse el co-marco coordenado) sobre $U$. Escribiendo $df$ en 
+coordenadas como $df_p = A_i(p)\lambda^i|_p$ para algunas funciones $A_i:U\rightarrow \mathbb{R}$, 
+la definición de $df$ implica 
+
+\begin{equation}
+ A_i(p) = df_p\left( \left\zerodel \frac{\partial}{\partial q^i}\right|_p \right) = 
+  \left\zerodel \frac{\partial}{\partial q^i}\right|_p f = \frac{\partial f}{\partial q^i}(p).
+\end{equation}
+
+Esto produce la siguiente fórmula para la representación de $df$:
+
+\begin{equation}
+ df_p = \frac{\partial f}{\partial q^i}(p) \lambda^i|_p.
+ \label{eq:diferencial1}
+\end{equation}
+
+Entonces las funciones componentes de $df$ en cualquier carta coordenada diferenciable 
+son las derivadas parciales con respecto a esas coordenadas. Debido a esto podemos 
+pensar en $df$ como un análogo a el gradiente clásico, reinterpretado en una manera 
+independiente de coordenadas sobre una variedad.
+
+\vspace{.3cm}
+
+Con estas pequeñas construcciones estamos en posición de probar la segunda parte 
+del enunciado. Si aplicamos \mref{eq:diferencial1} al caso especial en que las 
+funciones coordenadas $q^i: U \rightarrow \mathbb{R}^n$, obtenemos 
+
+\begin{equation}
+ dq^i|_p = \frac{\partial q^j}{\partial q^i}(p) \lambda^i|_p. = 
+ \delta^j_i \lambda^i|_p = \lambda^j|_p.
+\end{equation}
+
+En otras palabras, el campo covectorial coordenado $\lambda^j$ no es más que 
+$dq^i$. Por lo tanto la ecuación \mref{eq:diferencial1} para $df_p$ puede 
+reescribirse como 
+
+\begin{equation}
+ df_p = \frac{\partial f}{\partial q^i}(p) dq^i|_p,
+\end{equation}
+
+o como una ecuación entre campos covectoriales en vez de covectores: 
+
+\begin{equation}
+ df = \frac{\partial f}{\partial q^i}dq^i.
+\end{equation}
+
+La cual es la expresión clásica para la diferencial de una función $f$ en coordenadas, 
+lo cual era lo que debíamos probar. Por este resultado anterior, la notación para 
+las bases de este espacio ya no se denotan como $\lambda^i$ sino como $dq^i$, la cual 
+tiene una forma más esclarecedora.
+
 
 \section{Problema 4}
 
@@ -627,6 +784,11 @@ J. Lee, \emph{Introduction to Smooth Manifolds}, Springer, 2006.
 \bibitem{curtis}
 W. Curtis y F. Miller, \emph{Differential Manifolds and Theoretical Physics}, Academic 
 Press, 1985.
+\bibitem{kosinski}
+A. Kosinski, \emph{Differential Manifolds}, Academic Press, 1993.
+\bibitem{torres}
+G. Torres del Castillo, \emph{Differentiable Manifolds: A Theoretical Physics Approach}, 
+Birkhäuser - Springer, 2012.
 \end{thebibliography}
 
 
