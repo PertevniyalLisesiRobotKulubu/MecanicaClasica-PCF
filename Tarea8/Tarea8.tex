@@ -117,6 +117,114 @@ Construya un atlas para el toro de dos dimensiones.
 
 \underline{Solución:} \vspace{.3cm}
 
+La superficie de un 2-toro en $\mathbb{R}^3$ se denota por $\mathbb{T}^2$. Esta superficie 
+puede obtenerse rotando un círculo de radio $b$ cuya distancia a su centro desde 
+el eje $z$ es $a$ sobre ese eje. En la figura de abajo se muestra esta construcción.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig1}
+ \caption{2-Toro.}
+ \label{fig:problema1fig1}
+\end{figure}
+
+Podemos entonces escribir $\mathbb{T}^2 = \mathbb{S}^1 \times \mathbb{S}^1$ como el 
+producto de dos variedades. La variedad $\mathbb{S}^1$ representa a la esfera de 
+una dimensión, es decir, el círculo, por lo que podemos construir el toro como 
+el producto cartesiano de dos círculos. 
+
+\vspace{.3cm}
+
+Por otra parte, un 2-toro puede determinarse paramétricamente en $\mathbb{R}^3$ por 
+las siguientes relaciones 
+
+\begin{align}
+ x = (a+b\sen{\theta})\cos{\phi}, \\
+ y = (a+b\sen{\theta})\sen{\phi}, \\
+ z = b\cos{\theta},
+\end{align}
+
+donde la condición $b<a$ debe satisfacerse. Los parámetros $\phi$ y $\theta$ miden 
+los ángulos a lo largo de los círculos, el pequeño y el grande respectivamente. Si 
+escribimos $x^1 = \theta$ y $x^2 = \phi$ estas relaciones definen un mapeo $\varphi_1^{-1}:
+\mathbb{R}^2\rightarrow \mathbb{T}^2$. Pero para hacer este mapeo inyectivo tenemos 
+que restringir su dominio a un conjunto abierto en $\mathbb{R}^2$ prescrito con 
+las inigualidades $0 < x^1 < 2\pi$, $0 < x^2 < 2\pi$. Sea $U_1$ el conjunto abierto
+obtenido borrando de $\mathbb{T}^2$ el círculo con radio $a$ en el plano $z=b$ y 
+el círculo de radio $b$ en el plano $xz$ centrado en el punto $x=a$ $z=0$. Entonces 
+$(U_1,\varphi_1)$ se convierte en una carta. Definamos ahora un nuevo mapeo $\varphi_2$ 
+por 
+
+\begin{align}
+ x = -(a + b\sin{y^1})\sen{y^2}, \\
+ y = (a + b\sen{y^1})\cos{y^2}, \\
+ z = b \cos{y^1}.
+\end{align}
+
+Sea $U_2$ el conjunto abierto obtenido borrando de $\mathbb{T}^2$ el círculo con 
+radio $a$ en el plano $z=b$ y el círculo con radio $b$ en el plano $yz$ centrado 
+en el punto $y=a$, $z=0$. Es fácil ver ahora que $(U_2,\varphi_2)$ se convierte en una 
+carta. La región $U_1 \cap U_2$ en la cual las dos cartas se solapan es la unión 
+de dos conjuntos abiertos $V_1$ y $V_2$ que son desconectados donde 
+
+\begin{equation}
+ V_1 = \varphi_1^{-1}((0,2\pi) \times (\pi/2,2\pi)), \quad 
+ V_2 =  \varphi_1^{-1}((0,2\pi) \times (0,2\pi)).
+\end{equation}
+
+
+Usando las transformaciones de coordenadas analíticas $y^1 = x^1$, $y^2 = x^2 - \frac{\pi}{2}$ 
+sobre $V_1$ y $y^1 = x^1$, $y^2 = x^2 + \frac{3\pi}{2}$ sobre $V_2$. Finalmente, 
+consideremos el mapeo $\varphi_3$ dado por 
+
+\begin{align}
+ x = (a+b \cos{z^1})\cos{z^2}, \\
+ y = (a+b \cos{z^1})\sen{z^2}, \\
+ z = - b \sen{z^1}.
+\end{align}
+
+El conjunto abierto $U_3$ se obtiene borrando de $\mathbb{T}^2$ el círculo con 
+radio $a+b$ en el plano $z=0$ y el círculo con radio $b$ en plano $xz$ centrado 
+en el punto $x=a$, $z=0$. De nuevo $(U_3,\varphi_3)$ es una carta. La región 
+$U_1 \cap U_3$ en la cual las cargas $(U_1,\varphi_1)$ y $(U_3,\varphi_3)$ 
+se solapan es la unción de dos conjuntos abiertos $W_1$ y $W_2$ que son 
+desconectados donde 
+
+\begin{equation}
+  W_1 = \varphi_1^{-1}((\pi/2,2\pi) \times (0,2\pi)), \quad 
+ W_2 =  \varphi_1^{-1}((0,\pi/2) \times (0,2\pi)).
+\end{equation}
+
+Usando las transformaciones de coordenadas analíticas $z^1 = x^1 - \frac{\pi}{2}$, 
+$z^2 = x^2$ sobre $W_1$ y $z^1 = x^1 - \frac{3\pi}{2}$, $z^2 = x^2$ sobre $W_2$. 
+Las cartas $(U_2,\varphi_2)$ y $(U_3,\varphi_3)$ se solapan en $U_2 \cap U_3$ que 
+es la unión de los conjuntos abiertos $Z_1, Z_2, Z_3$ y $Z_4$. Estos conjuntos 
+están dados por 
+
+\begin{align}
+ Z_1 = \varphi_2^{-1}((0,\pi/2) \times (0,3\pi/2)), \quad 
+ Z_2 = \varphi_2^{-1}((0,\pi/2) \times (3\pi/2,2\pi)), \\
+ Z_3 = \varphi_2^{-1}((\pi/2,2\pi) \times (0,3\pi/2)), \quad 
+ Z_4 = \varphi_2^{-1}((\pi/2,2\pi) \times (3\pi/2,2\pi)).
+\end{align}
+
+Transformaciones de coordenadas analíticas para estos cuatro conjuntos están determinadas 
+por las siguientes expresiones, respectivamente 
+
+\begin{align}
+ z^1 = y^1 + \frac{3\pi}{2}, z^2 = y^2 + \frac{\pi}{2}, \\
+ z^1 = y^1 + \frac{3\pi}{2}, z^2 = y^2 - \frac{3\pi}{2}, \\
+ z^1 = y^1 - \frac{\pi}{2}, z^2 = y^2 + \frac{\pi}{2}, \\
+ z^1 = y^1 - \frac{\pi}{2}, z^2 = y^2 - \frac{3\pi}{2}.
+\end{align}
+
+Debido a que las cartas $U_1 \cup U_2 \cup U_3 = T^2$, concluimos que el 2-toro 
+tiene un atlas analítico con tres cartas $\{(U_1,\varphi_1),(U_2,\varphi_2),(U_3,\varphi_3)\}$. 
+Lo cual completa la solución a este problema.
+
+
+
+
 \section{Problema 2}
 
 Demuestre que la estructura de espacio vectorial que se dio al conjunto de clases de 
