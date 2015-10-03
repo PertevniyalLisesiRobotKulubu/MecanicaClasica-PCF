@@ -139,9 +139,9 @@ Por otra parte, un 2-toro puede determinarse paramétricamente en $\mathbb{R}^3$
 las siguientes relaciones 
 
 \begin{align}
- x = (a+b\sen{\theta})\cos{\phi}, \\
- y = (a+b\sen{\theta})\sen{\phi}, \\
- z = b\cos{\theta},
+ x &= (a+b\sen{\theta})\cos{\phi}, \\
+ y &= (a+b\sen{\theta})\sen{\phi}, \\
+ z &= b\cos{\theta},
 \end{align}
 
 donde la condición $b<a$ debe satisfacerse. Los parámetros $\phi$ y $\theta$ miden 
@@ -156,9 +156,9 @@ $(U_1,\varphi_1)$ se convierte en una carta. Definamos ahora un nuevo mapeo $\va
 por 
 
 \begin{align}
- x = -(a + b\sin{y^1})\sen{y^2}, \\
- y = (a + b\sen{y^1})\cos{y^2}, \\
- z = b \cos{y^1}.
+ x &= -(a + b\sin{y^1})\sen{y^2}, \\
+ y &= (a + b\sen{y^1})\cos{y^2}, \\
+ z &= b \cos{y^1}.
 \end{align}
 
 Sea $U_2$ el conjunto abierto obtenido borrando de $\mathbb{T}^2$ el círculo con 
@@ -178,9 +178,9 @@ sobre $V_1$ y $y^1 = x^1$, $y^2 = x^2 + \frac{3\pi}{2}$ sobre $V_2$. Finalmente,
 consideremos el mapeo $\varphi_3$ dado por 
 
 \begin{align}
- x = (a+b \cos{z^1})\cos{z^2}, \\
- y = (a+b \cos{z^1})\sen{z^2}, \\
- z = - b \sen{z^1}.
+ x &= (a+b \cos{z^1})\cos{z^2}, \\
+ y &= (a+b \cos{z^1})\sen{z^2}, \\
+ z &= - b \sen{z^1}.
 \end{align}
 
 El conjunto abierto $U_3$ se obtiene borrando de $\mathbb{T}^2$ el círculo con 
@@ -212,10 +212,10 @@ Transformaciones de coordenadas analíticas para estos cuatro conjuntos están d
 por las siguientes expresiones, respectivamente 
 
 \begin{align}
- z^1 = y^1 + \frac{3\pi}{2}, z^2 = y^2 + \frac{\pi}{2}, \\
- z^1 = y^1 + \frac{3\pi}{2}, z^2 = y^2 - \frac{3\pi}{2}, \\
- z^1 = y^1 - \frac{\pi}{2}, z^2 = y^2 + \frac{\pi}{2}, \\
- z^1 = y^1 - \frac{\pi}{2}, z^2 = y^2 - \frac{3\pi}{2}.
+ z^1 &= y^1 + \frac{3\pi}{2}, z^2 = y^2 + \frac{\pi}{2}; \\
+ z^1 &= y^1 + \frac{3\pi}{2}, z^2 = y^2 - \frac{3\pi}{2}; \\
+ z^1 &= y^1 - \frac{\pi}{2}, z^2 = y^2 + \frac{\pi}{2}; \\
+ z^1 &= y^1 - \frac{\pi}{2}, z^2 = y^2 - \frac{3\pi}{2}.
 \end{align}
 
 Debido a que las cartas $U_1 \cup U_2 \cup U_3 = T^2$, concluimos que el 2-toro 
@@ -446,7 +446,7 @@ $(\lambda^i|_p)$.
 \definicion La unión disjunta 
 
 \begin{equation}
- T^*M =  \underset{p \in M}{\coprod} T^*_p M
+ T^*M =  \underset{p \in M}{\coprod} T^*_p M,
 \end{equation}
 
 es llamada el haz cotangente de $M$. Tiene un mapeo de proyección natural 
@@ -706,7 +706,7 @@ haciendo
 $\hspace{12cm} \square$
 
 Claramente el corolario es exactamente igual al enunciado que debía 
-probarse, concluyendo así este problema.
+probarse, concluyendo así la solución a este problema.
 
 \section{Problema 5}
 
@@ -792,6 +792,8 @@ por lo tanto necesitamos $3$ coordenadas generalizadas para parametrizar y descr
 completamente a $M$. Como probaremos en el siguiente teorema, estas coordenadas son 
 los conocidos ángulos de Euler.
 
+\vspace{.3cm}
+
 \teorema Una rotación arbitraria puede ser expresada como el producto de $3$ rotaciones 
 sucesivas sobre (en general) $3$ ejes diferentes.
 
@@ -868,6 +870,8 @@ Poniendo todo esto junto tenemos que
  R_{ab} (\phi,\theta,\psi) = [R_3(\phi)R_1(\theta)R_3(\psi)]_{ab}
 \end{equation}
 
+$\hspace{12cm} \square$
+
 Los ángulos $\phi,\theta,\psi$ son los ángulos de Euler. Los cuales hemos demostrado 
 entonces que forman un sistema de coordenadas para la variedad de configuración 
 para las rotaciones de un cuerpo rígido, ya que podemos escribir la matriz $R(\phi,\theta,\psi)$
@@ -891,7 +895,6 @@ que al utilizar estos ángulos para un problema concreto, debemos recordar que e
 sistema de coordenadas es similar a las coordenadas geográficas sobre la esfera: excluyen 
 los polos y son multivaluadas en un meridiano.
 
-$\hspace{12cm} \square$
 
 \begin{thebibliography}{10}
 \bibitem{lee}
