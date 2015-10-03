@@ -15,6 +15,7 @@
 \usepackage{multicol} % Multiple columns
 \usepackage{float}
 \usepackage{cleveref}
+ \usepackage{relsize} %bigger math symbols
 \usepackage[margin=1.4in]{geometry}
 \usepackage[labelfont=bf]{caption}
 \usepackage[titletoc,toc,title]{appendix}
@@ -125,6 +126,142 @@ de las cartas utilizadas y de las curvas representativas escogidas en cada clase
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Queremos pensar en un campo vectorial sobre una variedad diferencial $M$ como un 
+mapeo $\xi$ que asigna a cada punto $p \in M$ un vector tangente $\xi_p \in T_p M$, 
+junto con alguna suposición de continuidad o diferenciabilidad. Pero como bien 
+se establece en las notas del curso, antes de que podamos pensar en ese objeto 
+como un mapeo, debemos definir el conjunto que será su rango. Esto nos lleva a la 
+definición de ``haz tangente''.
+
+\vspace{.3cm}
+
+\definicion Sea una variedad diferencial $M$, definimos el \emph{haz tangente} de 
+$M$, denotado por $TM$, como la unión disjunta de espacios tangentes en todos 
+los puntos de $M$:
+
+\begin{equation}
+ TM = \underset{p \in M}{\coprod} T_p M.
+\end{equation}
+
+Escribiremos un elemento de esta unión disjunta como el par ordenado $(p,\xi)$, 
+con $p \in M$ y $\xi \in T_pM$. El haz tangente viene equipado con un un mapeo 
+de proyección natural $\pi = TM \rightarrow M$, que mapea cada vector en $T_p M$ 
+al punto $p$ en el cual es tangente: $\pi(p,\xi) = p$. El siguiente lema 
+muestra que $TM$ puede pensarse como una variedad diferenciable en si mismo.
+
+\vspace{.3cm}
+
+\lema Para cualquier variedad diferencial $M$ de $n$ dimensiones, el haz tangente 
+$TM$ tiene una topología natural y una estructura diferenciable que lo hace 
+una variedad diferencial de $2n$ dimensiones. Con esta estructura, $\pi: TM \rightarrow M$ 
+es un mapeo diferenciable.
+
+\vspace{.3cm}
+
+\prueba Comenzamos por definir los mapeos que se convertirán en nuestras cartas 
+diferenciables. Dada una carta diferenciable $(U,\phi)$, sean $(q^1,\dots,x^n)$ 
+las funciones coordenadas de $\phi$, y definimos un mapeo $\phi': \pi^{-1}(t) \rightarrow \mathbb{R}^{2n}$ 
+por 
+
+\begin{equation}
+ \phi' \left( v^i \left\zerodel\frac{\partial}{\partial q^i}\right|_p \right) = 
+ (q^1(p),\dots,q^n(p),v^1,\dots,v^n).
+\end{equation}
+
+Su conjunto imagen es $\phi(U) \times \mathbb{R}^n$, que es un subconjunto abierto 
+de $\mathbb{R}^{2n}$. Es una biyección sobre su imagen, debido a que su inversa 
+puede escribirse explícitamente como
+
+\begin{equation}
+ \phi'^{-1}(q^1(p),\dots,q^n(p),v^1,\dots,v^n) = v^i \left\zerodel\frac{\partial}{\partial q^i}\right|_{\phi^{-1}(q)}.
+\end{equation}
+
+Sean ahora dos cartas diferenciales dadas $(U,\phi)$ y $(V,\psi)$ para $M$, y 
+sean $(\pi^{-1}(U),\phi')$, $(\pi^{-1}(V),\psi')$ las cartas correspondientes sobre 
+$TM$. Los conjuntos $\phi'(\pi^{-1}(U)\cap\pi^{-1}(V)) = \phi(U \cap V) \times \mathbb{R}^n$ 
+y $\psi'(\pi^{-1}(U)\cap\pi^{-1}(V) = \psi(U \cap V) \times R^n$ son ambos abiertos 
+en $\mathbb{R}^{2n}$, y el mapeo de transición 
+$\psi' \circ \phi'^{-1}: \phi(U \cap V) \times \mathbb{R}^n \rightarrow 
+\psi(U\cap V)\times \mathbb{R}^n$ puede escribirse explícitamente como\footnote{Ver problema 4.}
+
+\begin{align}
+\begin{split}
+ \psi' \circ \phi'^{-1}(q^1(p),\dots,q^n(p),v^1,\dots,v^n) = \\
+ \left(q'^1(q),\dots,q'^n(q),\frac{\partial q'^1}{\partial q^j}(q)v^j, 
+ \dots,\frac{\partial q'^n}{\partial q^j}(q)v^j\right).
+ \end{split}
+\end{align}
+
+El cual es claramente diferenciable. Si escogemos una cobertura contable 
+$\{U_i\}$ sobre $M$ un dominio de coordenadas diferenciables, obtenemos 
+una cobertura contable sobre $TM$ con un dominio de coordenadas ${\pi^{-1}(U_i)}$,
+con lo cual cumple con las condiciones para la construcción de una variedad 
+diferencial. También puede probarse que satisface la condición de Hausdorff 
+lo cual no haremos aquí. Por último para ver que $\pi$ es diferenciable, 
+notamos que su representación en coordenadas con respecto a las cartas 
+$(U,\phi)$ para $M$ y $(\pi^{-1}(U),\phi')$ para $TM$ es $\pi(q,v))q$.
+
+$\hspace{12cm} \square$
+
+Podemos ahora definir lo que queríamos, un campo vectorial.
+
+\vspace{.3cm}
+
+\definicion Si $M$ es una variedad diferencial, un campo vectorial 
+sobre $M$ es una sección del mapeo $\pi:TM \rightarrow M$. De forma 
+más concreta, un campo vectorial es un mapeo continuo $\zeta:M \rightarrow TM$, 
+usualmente escrito $p \mapsto \zeta_p$, con la propiedad que 
+
+\begin{equation}
+ \pi \circ \zeta = \text{Id}_M,
+\end{equation}
+
+o de forma equivalente, $\zeta_p \in T_p M \forall p \in M$. Debemos pensar un 
+campo vectorial en $M$ de la misma manera en que lo hacemos con los campos vectoriales 
+en el espacio euclidiano: como una flecha fijada a cada punto de $M$, escogido como 
+tangente a $M$ y a que varíe continuamente de punto en punto.
+
+\vspace{.3cm}
+
+Para culminar esta demostración, con el siguiente lema mostraremos que cada vector 
+tangente en un punto puede ser extendido a un campo vectorial global diferenciable.
+
+\vspace{.3cm}
+
+\lema Sea $M$ una variedad diferencial. Si $p \in M$ y $\xi \in T_p M$, $\exists$ un 
+campo vectorial $\xi'$ sobre $M$ tal que $\xi'_p = \xi$.
+
+\vspace{.3cm}
+
+\prueba Sean $(q^i)$ unas coordenadas diferenciables en la vecindad $U$ de $p$, y 
+sea $\xi^i \partial/\partial q^i|_p$ la expresión coordenada para $\xi$l. Si $\psi$ 
+es una función ``bump'' \cite{curtis} soportada en $U$ y con $\psi(p) = 1$, el 
+campo vectorial $\xi'$ definido por 
+
+\begin{equation}
+ \xi'_s = \begin{cases}
+           \psi(s)\xi^i \left\zerodel\frac{\partial}{\partial q^i}\right|_s, \quad s \in U, \\
+           0, \qquad \qquad \quad s \notin \text{sup} \psi,
+          \end{cases}
+\end{equation}
+
+es un campo vectorial diferenciable cuyo valor en $p$ es igual a $X$.
+
+$\hspace{12cm} \square$
+
+\vspace{.3cm}
+
+Claramente este último lema prueba directamente el enunciado del problema, pero para 
+poder llegar al mismo tuvimos que pasar por algunas definiciones y proposiciones 
+necesarias; y también debe ser claro que esta estructura que le hemos dado a las 
+clases de tangencia de curvas que pasan por un punto de una variedad diferencial 
+es independiente de las cartas utilizadas, ya que la construcción de la estructura 
+de la cual son secciones, $TM$ la hemos construido independiente de las cartas, y 
+obviamente de las curvas representativas escogidas en cada clase. No hemos utilizado 
+directamente los conceptos de clases de tangencia de curvas, pero los conceptos y 
+definiciones que hemos establecidos contienen a las mismas.
+
 
 \section{Problema 3}
 
@@ -305,18 +442,6 @@ $\hspace{12cm} \square$
 
 Claramente el corolario es exactamente igual al enunciado que debía 
 probarse, concluyendo así este problema.
-
-
-
-
-
-
-
-
-
-
-
-
 
 \section{Problema 5}
 
@@ -499,6 +624,9 @@ $\hspace{12cm} \square$
 \begin{thebibliography}{10}
 \bibitem{lee}
 J. Lee, \emph{Introduction to Smooth Manifolds}, Springer, 2006.
+\bibitem{curtis}
+W. Curtis y F. Miller, \emph{Differential Manifolds and Theoretical Physics}, Academic 
+Press, 1985.
 \end{thebibliography}
 
 
