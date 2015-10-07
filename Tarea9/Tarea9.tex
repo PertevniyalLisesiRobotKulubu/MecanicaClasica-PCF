@@ -165,6 +165,8 @@ su respuesta.
 
 \vspace{.3cm}
 
+\underline{Solución:} \vspace{.3cm}
+
 Sin duda uno de los artículos más importantes y relevantes en la carrera de 
 Emmy Noether fue su \emph{Invariante Variationsprobleme} \cite{noether}, el cual también 
 fue muy importante para el desarrollo de le mecánica teórica en el resto del siglo 
@@ -195,7 +197,7 @@ una formulación de densidades lagrangianas vía el teorema de Noether.
 
 Para derivar el teorema en la mecánica de partículas, se muestra que cada $q$-simetría 
 de la lagrangiana $L$ corresponde a una constante de movimiento $I(q,\dot{q})$. Una 
-$q$-simetría es una $q$-transformación de la forma $q(t) \mapsto q(t,\epsilon)$, que 
+$q$-simetría es una $q$-transformación de la forma $q(t) \mapsto q(t;\epsilon)$, que 
 deja a $L$ invariante. El que $I$ sea una constante de movimiento significa que 
 $dI(q,\dot{q})/dt = 0$. El análogo en dinámica de sistemas continuos, en teorías 
 de campo, de las $q$-transformaciones son transformaciones de las variables de 
@@ -203,14 +205,120 @@ campo $\phi_s$. Las simetrías serán de la densidad lagrangiana $\mathcal{L}$ e
 de la lagrangiana $L$. El análogo del tiempo $t$ será el conjunto de variables 
 $x^0, x^1, x^2, x^3$, por lo que la conclusión del problema no involucrará sólo 
 derivadas temporales de alguna función, sino que también incluirá derivadas con 
-respecto a todas las $x^\alpha$. 
+respecto a todas las $x^\alpha$, donde $\alpha \in [0,3]$. 
 
 \vspace{.3cm}
 
+Consideremos una $\epsilon$-familia $\phi_s(x;\epsilon)$ de transformaciones de las 
+variables de campo. En $\epsilon = 0$ los campos $\phi_s(x;0)$ son soluciones de 
+las ecuaciones de Lagrange (i.e., $\delta L / \delta \phi_s = 0$). Las transformaciones 
+no están restringidas a alguna región $R$ del 4-espacio y no se hacen cero en 
+ninguna subvariedad. Si escribimos la variación de la funcional de acción para este 
+caso como
 
+\begin{equation}
+ \delta S \equiv \delta \int_R \mathcal{L} d^4 x = 0,
+ \label{eq:noet1}
+\end{equation}
 
+donde $R$ es una región del 4-espacio, luego de alguna manipulaciones llegamos a\footnote{ 
+$\partial \phi_{s,\alpha} = \partial \phi_s / \partial \alpha$.} 
 
-\underline{Solución:} \vspace{.3cm}
+\begin{equation}
+ \delta \mathcal{L} = \left[ \frac{\partial \mathcal{L}}{\partial \phi_s} 
+ - \frac{\partial}{\partial x^\alpha}\frac{\mathcal{L}}{\partial \phi_{s,\alpha}} \right] 
+ \delta \phi_s + \frac{\partial}{\partial x^\alpha}\left[\frac{\mathcal{L}}{\partial \phi_{s,\alpha}} 
+ \delta \phi_s \right].
+ \label{eq:noet2}
+\end{equation}
+
+Entonces la ecuación \mref{eq:noet1} se convierte en 
+
+\begin{equation}
+ 0 = \int_R \delta \mathcal{L} = \left[ \frac{\partial \mathcal{L}}{\partial \phi_s} 
+ - \frac{\partial}{\partial x^\alpha}\frac{\mathcal{L}}{\partial \phi_{s,\alpha}} \right] 
+ \delta \phi_s d^4 x + \int_R \frac{\partial}{\partial x^\alpha}\left[\frac{\mathcal{L}}{\partial \phi_{s,\alpha}} 
+ \delta \phi_s \right]d^4 x.
+ \label{eq:noet3}
+\end{equation}
+
+Debido al teorema de Stoke, nos damos cuenta que el segundo término de \mref{eq:noet3} 
+se hace cero, quedando solo el primer término. Debido a que esta ecuación debe 
+ser cierta para una $\epsilon$-familia arbitraria, cada expresión dentro de los corchetes 
+den el integrando debe hacerse cero. Podemos escribir estas expresiones como 
+
+\begin{equation}
+ \frac{\partial}{\partial x^\alpha}\frac{\partial \mathcal{L}}{\partial \phi_{s,\alpha}} 
+ - \frac{\partial \mathcal{L}}{\partial \phi_s} \equiv - \frac{\delta L}{\delta \phi_s} = 0.
+\label{eq:noet4}
+\end{equation}
+
+Las ecuaciones \mref{eq:noet4} son las ecuaciones de Lagrange para sistemas continuos. 
+Los índices pueden sustraerse de para simplificar la forma de estas expresiones, y 
+utilizando esto llegamos a que podemos escribir las ecuaciones \mref{eq:noet4} como
+
+\begin{equation}
+ \nabla \frac{\partial \mathcal{L}}{\partial \nabla \phi} 
+ - \frac{\partial \mathcal{L}}{\partial \phi} \equiv - \frac{\delta L}{\delta \phi} = 0.
+ \label{eq:noet5}
+\end{equation}
+
+Y el segundo término de la ecuación \mref{eq:noet2} se convierte en 
+
+\begin{equation}
+ \nabla \cdot \left[ \frac{\partial \mathcal{L}}{\partial \nabla \phi}\right] \delta \phi.
+ \label{eq:noet6}
+\end{equation}
+
+Entonces de acuerdo a las ecuaciones \mref{eq:noet2} y \mref{eq:noet6}, cuando 
+se satisfacen las ecuaciones de campo $(\delta = \left\zerodel\frac{d}{d\epsilon}\right|_{\epsilon=0})$
+
+\begin{equation}
+ \delta \mathcal{L} =  \nabla \cdot \left[ \frac{\partial \mathcal{L}}{\partial \nabla \phi} \delta \phi\right].
+ \label{eq:noet7}
+\end{equation}
+
+Por lo tanto, la invariancia de $\mathcal{L}$ sobre la $\epsilon$-familia implica 
+que el lado derecho de \mref{eq:noet7} se hace cero. $\mathcal{L}$ no tiene que 
+ser estrictamente invariante, esta pueda cambiar por una 4-divergencia. Entonces 
+si existen cuatro funciones $\Phi^\alpha(\phi,x)$ tales que 
+
+\begin{equation}
+ \delta \mathcal{L} = \frac{\partial \Phi^\alpha}{\partial x^\alpha} \equiv \nabla \cdot \Phi,
+ \label{eq:noet8}
+\end{equation}
+
+entonces 
+
+\begin{equation}
+ \nabla \cdot \left[ \frac{\partial \mathcal{L}}{\partial \nabla \phi} \delta \phi \right] 
+ \equiv \nabla \cdot G \equiv \frac{\partial G^\alpha}{\partial \alpha} = 0,
+ \label{eq:noet9}
+\end{equation}
+
+donde 
+
+\begin{equation}
+ \boxed{G^\alpha = \frac{\partial \mathcal{L}}{\partial \phi_{s,\alpha}}\delta \phi_s - 
+ \Phi^\alpha.}
+ \label{eq:noet10}
+\end{equation}
+
+Este resultado es análogo que al de mecánica de partículas, i.e. las cuatro funciones 
+$G$ no son constantes del movimiento, pero $\partial G^\alpha / \partial \alpha = 0$. Este nuevo 
+teorema requiere cuatro funciones $\Phi^\alpha$ que dependen de las $\phi_s$ y de las 
+$x^\alpha$ pero no de $\phi_{s,\alpha}$. Aquí las $\partial/\partial \alpha$ son derivadas 
+de la dependencia explícita de $x^\alpha$ de las $\Phi^\alpha$ y de la dependencia de 
+$x^\alpha$ a través de $\phi_s$. 
+
+\vspace{.3cm}
+
+Este resultado es el teorema de Noether para teoría de campos, y para sistemas continuos 
+en relación a la densidad lagrangiana $\mathcal{L}$. Nos dice que una cuasi-simetría 
+de la densidad lagrangiana corresponde a una \emph{corriente conservada}, es decir, 
+a un conjunto $G$ de cuatro funciones $G^\alpha$ que satisfacen la ecuación 
+\mref{eq:noet9}: la divergencia de $G$ es cero.
+
 
 \section{Problema 5}
 
