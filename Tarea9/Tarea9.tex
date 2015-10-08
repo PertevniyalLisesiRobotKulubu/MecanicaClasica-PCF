@@ -329,12 +329,77 @@ $$
 - \frac{a^2}{2m}\nabla \phi^* \cdot \nabla \phi - \phi^*\phi V(x,y,z),
 $$
 
-donde el asterisco denota conjugación completa, $a$ es una constante, $V$ un 
+donde el asterisco denota conjugación compleja, $a$ es una constante, $V$ un 
 potencial e $i=\sqrt{-1}$. Comente sobre las ecuaciones que resulten.
 
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+En el anterior problema derivamos las ecuaciones de Lagrange para sistemas continuos, 
+y las pusimos en una forma muy compacta la cual nos servirá para resolver este problema. 
+Recordando la ecuación \mref{eq:noet4}, vemos que podemos escribirla como, para 
+la variable conjugada $\phi^*$,
+
+\begin{equation}
+ - \frac{\delta \mathcal{L}}{\delta \phi^*} \equiv 
+ \left[ \nabla \cdot \frac{\partial \mathcal{L}}{\partial \nabla \phi^*} \right] 
+ + \frac{\partial}{\partial t}\frac{\partial \mathcal{L}}{\partial \dot{\phi^*}} 
+ - \frac{\partial \mathcal{L}}{\partial \phi^*} = 0,
+ \label{eq:shro1}
+\end{equation}
+
+y para $\phi$ 
+
+\begin{equation}
+ - \frac{\delta\mathcal{L}}{\delta \phi} \equiv 
+ \left[ \nabla \cdot \frac{\partial \mathcal{L}}{\partial \nabla \phi} \right] 
+ + \frac{\partial}{\partial t}\frac{\partial \mathcal{L}}{\partial \dot{\phi}} 
+ - \frac{\partial \mathcal{L}}{\partial \phi} = 0.
+ \label{eq:shro2}
+\end{equation}
+
+Entonces aplicando \mref{eq:shro1} a la densidad lagrangiana obtenemos 
+
+\begin{equation}
+ \nabla \cdot \left[ - \frac{a^2}{2m}\nabla\phi \right] - 
+ i\frac{a}{2}\frac{\partial}{\partial t} \phi + - i\frac{a}{2}\dot{\phi} + 
+ \phi V(x,y,z) = 0,
+\end{equation}
+
+\begin{equation}
+ -\frac{a}{2m}\nabla^2 \phi - ia\dot{\phi} + \phi V(x,y,z) = 0,
+\end{equation}
+
+\begin{equation}
+ \boxed{ia\dot{\phi} = \left[-\frac{a}{2m}\nabla^2 + V(x,y,z)\right]\phi = 0.}
+ \label{eq:shro3}
+\end{equation}
+
+Si en \mref{eq:shro3} hacemos el cambio $a \rightarrow \hbar$ y $\phi \rightarrow \psi$, 
+resultando en
+
+\begin{equation}
+ \boxed{i\hbar\dot{\psi} = \left[-\frac{\hbar}{2m}\nabla^2 + V(x,y,z)\right]\psi = 0,}
+ \label{eq:shro4}
+\end{equation}
+
+vemos que hemos encontrado la ecuación de Schrödinger lineal no relativista, y que 
+por lo tanto la densidad lagrangiana del enunciado la podemos asociar con el 
+campo de Schrödinger. La otra ecuación de Lagrange, para $\phi$, es la compleja 
+conjugada de la ecuación obtenida que podemos escribir como, utilizando nuestra 
+nueva notación que esclarece la ecuación resultante
+
+
+\begin{equation}
+ \boxed{i\hbar\dot{\psi^*} = \left[-\frac{\hbar}{2m}\nabla^2 + V(x,y,z)\right]\psi^* = 0.}
+ \label{eq:shro5}
+\end{equation}
+
+
+
+
+
 
 \begin{thebibliography}{10}
 \bibitem{noether}
