@@ -174,13 +174,16 @@ cinética y la potencial en unas buenas coordenadas que tomen en cuenta la simet
 del problema, luego debemos diagonalizar simultáneamente las dos matrices $T_{ij}$ 
 y $V_{ij}$, aunque comúnmente si escogemos unas buenas coordenadas la matriz $T_{ij}$
 ya estará en forma diagonal, dejándonos solo la diagonalización de la matriz $V_{ij}$
-lo cual lo haremos utilizando un nuevo sistema de coordenadas $R^i = r^i\sqrt{T_i}$, 
-donde las $T_i$ son los eigenvalores de $T$, el cual utilizaremos para reescalar 
-la matriz $V_{ij}$ y luego diagonzalizarla para obtener sus eigenvalores que nos 
-permitirán encontrar las frecuencias normales, y luego los modos normales. Por último 
-un comentario sobre notación: denotaremos por $\phi_i$ el desplazamiento de cada 
+lo cual lo haremos utilizando el hecho de que $\det{(V_{ij}-\omega^2T_{ij})} = 0$, donde 
+las $\omega$ son las frecuencias normales, lo cual nos permitirá obtener las mismas, 
+y luego los modos normales. Esta metodología que utilizaremos no es exactamente la 
+que vimos en clase, aunque es muy parecida debido a que se llegan a los mismos 
+resultado de una forma similar, pero tal vez un poco más simple, y fue tomada de \cite{marion}. Por último un comentario sobre notación: 
+denotaremos por\footnote{Numerando de izquierda a derecha,
+es decir, que la partícula más a la izquierda será $\phi_1$ y la última de la 
+derecha será $\phi_n$, para un sistema de $n$ partículas.} $\phi_i$ el desplazamiento de cada 
 partícula con respecto a su posición de equilibrio cuando el sistema está totalmente 
-relajado, y serán nuestras coordenadas generalizadas.
+relajado, y serán nuestras coordenadas generalizadas. 
 
 \vspace{.3cm}
 
@@ -191,6 +194,88 @@ M - - k - - M - - k - - M
 $$
 
 \vspace{.3cm}
+
+Para este sistema la energía cinética estará expresada como 
+
+\begin{equation}
+ T = \frac{1}{2}m(\dot{\phi_1}^2 + \dot{\phi_2}^2 + \dot{\phi_3}^2),
+\end{equation}
+
+y la energía potencial como
+
+\begin{equation}
+ V = \frac{k}{2}(\phi_2 - \phi_1)^2 + \frac{k}{2}(\phi_3 - \phi_2)^2.
+ \label{eq:energpoten2}
+\end{equation}
+
+Para encontrar la matriz del potencial $V_{ij}$ utilizamos la ecuación \mref{eq:poten1},
+por lo que tenemos que obtener las segundas derivadas de \mref{eq:energpoten2}, comencemos 
+con las primeras derivadas,
+
+\begin{align*}
+ \frac{\partial V}{\partial \phi_1} &= - k (\phi_2 - \phi_1), \\
+ \frac{\partial V}{\partial \phi_2} &= k (\phi_2 - \phi_1) - k (\phi_3 - \phi_2), \\
+ \frac{\partial V}{\partial \phi_3} &= k (\phi_3 - \phi_2),
+\end{align*}
+
+ahora podemos obtener las segundas derivadas que buscamos,
+
+\begin{align*}
+ \frac{\partial^2 V}{\partial \phi_1^2} &= k, \\
+ \frac{\partial^2 V}{\partial \phi_2^2} &= 2k, \\
+ \frac{\partial^2 V}{\partial \phi_3^2} &= k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_2} = \frac{\partial^2 V}{\partial \phi_2\phi_1}&= -k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_3} = \frac{\partial^2 V}{\partial \phi_3\phi_1}  &= 0, \\
+ \frac{\partial^2 V}{\partial \phi_2\phi_3} =  \frac{\partial^2 V}{\partial \phi_3\phi_2} &= -k.
+\end{align*}
+
+Entonces podemos escribir las matrices de la energía potencial y la energía 
+cinética como
+
+\begin{equation}
+ V = \begin{pmatrix}
+      k & -k & 0 \\
+      -k & 2k & -k \\
+      0 & -k & k
+     \end{pmatrix},
+\end{equation}
+
+\begin{equation}
+ T = \begin{pmatrix}
+      m & 0 & 0 \\
+      0 & m & 0 \\
+      0 & 0 & m
+     \end{pmatrix}.
+\end{equation}
+
+Debido a que la matriz para la energía cinética ya está diagonalizada, solo nos queda 
+diagonalizar $V$, lo cual lo hacemos resolviendo
+
+\begin{equation}
+ \left| \begin{matrix}
+	    k - \omega^2 m & -k & 0 \\
+	    -k & 2k - \omega^2 m & -k \\
+	    0 & -k & k - \omega^2 m
+     \end{matrix}\right| = 0,
+\end{equation}
+
+Esta ecuación se reduce a 
+
+\begin{align*}
+ [k - \omega^2][( 2k - \omega^2 m)(k - \omega^2 m) - (-k)(-k)] - 
+ [-k][(-k)(k - \omega^2 m) - (-k)(0)] + \\
+ \cancelto{0}{[0][(-k)(-k)-(2k - \omega^2 m)(0)]} = 0
+\end{align*}
+
+\begin{equation}
+ 
+\end{equation}
+
+
+
+
+
+
 
 
 
@@ -464,6 +549,9 @@ nueva notación que esclarece la ecuación resultante
 
 
 \begin{thebibliography}{10}
+\bibitem{marion}
+ S. Thronton y J. Marion, \textit{Classical dynamics of particles and systems}, Thomson Brooks/Cole,
+ 5ta edición, 2004.
 \bibitem{noether}
 E. Noether, \emph{Invariante Variationsprobleme}, Göttinger Nachirchten, pp. 235-275
 (presentado por F. Klein en la conferencia del 26 de julio de 1918), 1918.
