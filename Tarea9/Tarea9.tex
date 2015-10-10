@@ -135,6 +135,68 @@ Para cada una de ellas encuentre los modos y las frecuencias normales de oscilac
 
 \underline{Solución:} \vspace{.3cm}
 
+Comenzaremos con una breve descripción del proceso que utilizaremos para resolver 
+cada uno de los casos. Recordemos que en una vecindad suficientemente pequeña del 
+punto de equilibrio, podemos aproximar al potencial como una forma bilineal simétrica 
+
+
+\begin{equation}
+ V = \frac{1}{2}\sum_{i,j=0}^n V_{ij}q^iq^j,
+ \label{eq:energpoten1}
+\end{equation}
+
+donde 
+
+\begin{equation}
+ V_{ij} = \left\zerodel\frac{\partial^2 V}{\partial q^i \partial q^j}\right|_0,
+ \label{eq:poten1}
+\end{equation}
+
+y que las condiciones para un mínimo nos indican que esta forma bilineal será 
+positiva definida.
+
+\vspace{.3cm}
+
+Por otra parte, debido a que las velocidades generalizadas deben ser y permanecer 
+pequeñas y a que las coordenadas permanecerán en una vecindad del origen, podemos 
+aproximar la energía cinética, que también quedará a segundo orden, como 
+
+\begin{equation}
+ T = \frac{1}{2}\sum_{i,j=0}^n T_{ij}\dot{q}^i\dot{q}^j,
+\end{equation}
+
+donde $T_{ij}$ es la aproximación del tensor de inercia por sus valores en el origen.
+
+\vspace{.3cm}
+
+En un sentido muy resumido, necesitamos primero hallar una expresión para la energía 
+cinética y la potencial en unas buenas coordenadas que tomen en cuenta la simetría 
+del problema, luego debemos diagonalizar simultáneamente las dos matrices $T_{ij}$ 
+y $V_{ij}$, aunque comúnmente si escogemos unas buenas coordenadas la matriz $T_{ij}$
+ya estará en forma diagonal, dejándonos solo la diagonalización de la matriz $V_{ij}$
+lo cual lo haremos utilizando un nuevo sistema de coordenadas $R^i = r^i\sqrt{T_i}$, 
+donde las $T_i$ son los eigenvalores de $T$, el cual utilizaremos para reescalar 
+la matriz $V_{ij}$ y luego diagonzalizarla para obtener sus eigenvalores que nos 
+permitirán encontrar las frecuencias normales, y luego los modos normales. Por último 
+un comentario sobre notación: denotaremos por $\phi_i$ el desplazamiento de cada 
+partícula con respecto a su posición de equilibrio cuando el sistema está totalmente 
+relajado, y serán nuestras coordenadas generalizadas.
+
+\vspace{.3cm}
+
+\textbf{Caso 1}:
+
+$$
+M - - k - - M - - k - - M
+$$
+
+\vspace{.3cm}
+
+
+
+
+
+
 \section{Problema 2}
 
 Cuatro masas están acopladas cíclicamente por resortes iguales de constante $K$ con 
