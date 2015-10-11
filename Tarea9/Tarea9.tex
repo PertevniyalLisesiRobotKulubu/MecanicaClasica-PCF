@@ -781,6 +781,255 @@ Podemos escribir entonces la matriz de la energía potencial como
      \end{pmatrix}
 \end{equation}
 
+y la matriz de la energía cinética como 
+
+\begin{equation}
+ T = \begin{pmatrix}
+      m_1 & 0 & 0 & 0 \\
+      0 & m_1 & 0 & 0 \\
+      0 & 0 & m_2 & 0 \\
+      0 & 0 & 0 & m_2
+     \end{pmatrix}.
+\end{equation}
+
+Si nos mantenemos en el caso en que las longitudes de las barras que sostienen a las 
+masas son diferentes, y también la magnitud de las mismas, entonces tendríamos que 
+diagonalizar la matriz de la energía potencial para así encontrar las frecuencias 
+normales y luego los modos normales, resolviendo lo siguiente 
+
+\begin{equation}
+ \left| \begin{matrix}
+      \frac{gm_2}{R_2} + \frac{g(m_1 + m_2)}{R_1} - \omega^2m_1 & 0 & - \frac{gm_2}{R_2} & 0 \\
+      0 & \frac{gm_2}{R_2} + \frac{g(m_1 + m_2)}{R_1} - \omega^2m_1 & 0 & - \frac{gm_2}{R_2} \\
+      - \frac{gm_2}{R_2} & 0 & \frac{gm_2}{R_2} - \omega^2m_2 & 0 \\
+      0 & - \frac{gm_2}{R_2} & 0 & \frac{gm_2}{R_2} - \omega^2m_2
+        \end{matrix}\right| = 0,
+\end{equation}
+
+que se reduce a la siguiente expresión
+
+\begin{align*}
+ m_{1}^{2} m_{2}^{2} \omega^{8} - \frac{2 g}{R_{2}} m_{1}^{2} m_{2}^{2} \omega^{6} -
+ \frac{2 g}{R_{2}} m_{1} m_{2}^{3} \omega^{6} + \frac{g^{2} m_{1}^{2}}{R_{2}^{2}} m_{2}^{2} \omega^{4} + \\
+ \frac{2 m_{1}}{R_{2}^{2}} g^{2} m_{2}^{3} \omega^{4} + \frac{g^{2} m_{2}^{4}}{R_{2}^{2}} \omega^{4} - 
+ \frac{2 g}{R_{1}} m_{1}^{2} m_{2}^{2} \omega^{6} - \frac{2 g}{R_{1}} m_{1} m_{2}^{3} \omega^{6} + 
+ \frac{4 g^{2} m_{1}^{2} m_{2}^{2}}{R_{1} R_{2}} \omega^{4} + \\
+ \frac{6 g^{2} m_{1} m_{2}^{3}}{R_{1} R_{2}} \omega^{4} + 
+ \frac{2 g^{2} m_{2}^{4} \omega^{4}}{R_{1} R_{2}} - 
+ \frac{2 g^{3} m_{1}^{2} m_{2}^{2}}{R_{1} R_{2}^{2}} \omega^{2} - 
+ \frac{4 g^{3} m_{1} m_{2}^{3}}{R_{1} R_{2}^{2}} \omega^{2} - \\
+ \frac{2 g^{3} m_{2}^{4} \omega^{2}}{R_{1} R_{2}^{2}} + 
+ \frac{g^{2} m_{1}^{2}}{R_{1}^{2}} m_{2}^{2} \omega^{4} + 
+ \frac{2 m_{1}}{R_{1}^{2}} g^{2} m_{2}^{3} \omega^{4} + 
+ \frac{g^{2} m_{2}^{4}}{R_{1}^{2}} \omega^{4} - \\
+ \frac{2 g^{3} m_{1}^{2} m_{2}^{2}}{R_{1}^{2} R_{2}} \omega^{2} - 
+ \frac{4 g^{3} m_{1} m_{2}^{3}}{R_{1}^{2} R_{2}} \omega^{2} - 
+ \frac{2 g^{3} m_{2}^{4} \omega^{2}}{R_{1}^{2} R_{2}} + 
+ \frac{g^{4} m_{1}^{2} m_{2}^{2}}{R_{1}^{2} R_{2}^{2}} + 
+ \frac{2 g^{4} m_{1} m_{2}^{3}}{R_{1}^{2} R_{2}^{2}} + 
+ \frac{g^{4} m_{2}^{4}}{R_{1}^{2} R_{2}^{2}} = 0
+\end{align*}
+
+Esta es una expresión muy complicada para intentar hallar las frecuencias normales 
+y luego los modos normales, por lo tanto consideraremos un caso especial en que 
+las masas son iguales y las barras tienen la misma longitud. En este caso la matriz 
+de la energía cinética se reduce a 
+
+\begin{equation}
+ T = \begin{pmatrix}
+      m & 0 & 0 & 0 \\
+      0 & m & 0 & 0 \\
+      0 & 0 & m & 0 \\
+      0 & 0 & 0 & m
+     \end{pmatrix}.
+\end{equation}
+
+y la de la energía potencial se reduce a 
+
+\begin{equation}
+ V = \begin{pmatrix}
+      \frac{gm}{R} + \frac{g(m + m)}{R} & 0 & - \frac{gm}{R} & 0 \\
+      0 & \frac{gm}{R} + \frac{g(m + m)}{R}& 0 & - \frac{gm}{R} \\
+      - \frac{gm}{R} & 0 & \frac{gm}{R} & 0 \\
+      0 & - \frac{gm}{R} & 0 & \frac{gm}{R}
+        \end{pmatrix},
+\end{equation}
+
+la cual puede reducirse aún más en 
+
+\begin{equation}
+ V = \frac{gm}{R}\begin{pmatrix}
+      3 & 0 & - 1 & 0 \\
+      0 & 3 & 0 & - 1 \\
+      - 1 & 0 & 1 & 0 \\
+      0 & - 1 & 0 & 1
+        \end{pmatrix}.
+\end{equation}
+
+Por lo tanto tendríamos que resolver lo siguiente para encontrar las frecuencias 
+normales
+
+
+ \begin{equation}
+ \left|\begin{matrix}
+      3 - \omega^2 & 0 & - 1 & 0 \\
+      0 & 3 - \omega^2 & 0 & - 1 \\
+      - 1 & 0 & 1 - \omega^2 & 0 \\
+      0 & - 1 & 0 & 1 - \omega^2
+        \end{matrix}\right| = 0.
+\end{equation}
+
+De donde encontramos las frecuencias normales, cabe destacar que hay doble degeneración, 
+de las mismas,
+
+\begin{align}
+ \omega_1 = \sqrt{\frac{g}{R}(2 - \sqrt{2})}, \\
+ \omega_2 = \sqrt{\frac{g}{R}(2 - \sqrt{2})}, \\
+ \omega_3 = \sqrt{\frac{g}{R}(2 + \sqrt{2})}, \\
+ \omega_4 = \sqrt{\frac{g}{R}(2 + \sqrt{2})}, \\ 
+\end{align}
+
+Para encontrar los modos normales hacemos uso de la ecuación
+
+\begin{equation}
+ \sum_j (V_{jk} - \omega^2_r T_{jk})a_{jr} = 0,
+\end{equation}
+
+donde las $a_{jr}$ son las amplitudes reales de la oscilación. Tenemos entonces 
+para $k = 1$ 
+
+\begin{equation}
+ (V_{11} - \omega_r^2 T_{11})a_{1r} + \cancelto{0}{V_{21}}a_{2r} + V_{31}a_{3r} + \cancelto{0}{V_{41}}a_{2r} = 0,
+\end{equation}
+
+\begin{equation}
+ \left(\frac{3gm}{R} - \omega_r^2m\right)a_{1r} - \frac{gm}{R} a_{3r} = 0. 
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r = 1:  \left(\frac{3gm}{R} -  \omega_1^2m\right)a_{11} - \frac{gm}{R} a_{31} = 0 \Rightarrow
+ (1+ \sqrt{2})a_{11} = a_{31} \\
+ r = 2:  \left(\frac{3gm}{R} - \omega_2^2m\right)a_{12} - \frac{gm}{R} a_{32} = 0 \Rightarrow
+ (1+ \sqrt{2})a_{12} = a_{32} \\
+ r = 3:  \left(\frac{3gm}{R} - \omega_3^2m\right)a_{13} - \frac{gm}{R} a_{33} = 0 \Rightarrow
+ (1 - \sqrt{2})a_{13} = a_{33} \\
+ r = 4:  \left(\frac{3gm}{R} - \omega_4^2m\right)a_{14} - \frac{gm}{R} a_{34} = 0 \Rightarrow
+ (1 - \sqrt{2})a_{14} = a_{34}. \\
+\end{align}
+
+Para $k=2$ tenemos que 
+
+\begin{equation}
+ \cancelto{0}{V_{12}}a_{1r} + (V_{22} - \omega_r^2T_{22})a_{2r} + \cancelto{0}{V_{32}}a_{3r} + V_{42}a_{4r} = 0,
+\end{equation}
+
+\begin{equation}
+ \left( \frac{3gm}{R} - \omega_r^2m\right)a_{2r} - \frac{gm}{R} a_{4r} = 0
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r = 1:  \left(\frac{3gm}{R} -  \omega_1^2m\right)a_{21} - \frac{gm}{R} a_{41} = 0 \Rightarrow
+ (1+ \sqrt{2})a_{21} = a_{41} \\
+ r = 2:  \left(\frac{3gm}{R} - \omega_2^2m\right)a_{22} - \frac{gm}{R} a_{42} = 0 \Rightarrow
+ (1+ \sqrt{2})a_{22} = a_{42} \\
+ r = 3:  \left(\frac{3gm}{R} - \omega_3^2m\right)a_{23} - \frac{gm}{R} a_{43} = 0 \Rightarrow
+ (1 - \sqrt{2})a_{23} = a_{43} \\
+ r = 4:  \left(\frac{3gm}{R} - \omega_4^2m\right)a_{24} - \frac{gm}{R} a_{44} = 0 \Rightarrow
+ (1 - \sqrt{2})a_{24} = a_{44}. \\
+\end{align}
+
+Para $k=3$ tenemos que
+
+\begin{equation}
+ V_{13}a_{1r} + \cancelto{0}{V_{23}}a_{2r} + (V_{33} - \omega_r^2T_{33})a_{3r} + \cancelto{0}{V_{43}}a_{4r} = 0,
+\end{equation}
+
+\begin{equation}
+ - \frac{gm}{R}a_{1r} + \left(\frac{gm}{R} - \omega_r^2m \right)a_{3r} = 0.
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r = 1:  - \frac{gm}{R} a_{11} + \left(\frac{gm}{R} -  \omega_1^2m\right)a_{31}  = 0 \Rightarrow
+ (\sqrt{2} -1)a_{31} = a_{11} \\
+ r = 2: - \frac{gm}{R} a_{12} + \left(\frac{gm}{R} -  \omega_2^2m\right)a_{32} = 0 \Rightarrow
+ (\sqrt{2} -1)a_{32} = a_{12} \\
+ r = 3:  - \frac{gm}{R} a_{13} + \left(\frac{gm}{R} -  \omega_3^2m\right)a_{33} = 0 \Rightarrow
+ (- \sqrt{2} -1)a_{33} = a_{13} \\
+ r = 4:  - \frac{gm}{R} a_{14} + \left(\frac{gm}{R} -  \omega_4^2m\right)a_{34} = 0 \Rightarrow
+ (- \sqrt{2} -1)a_{34} = a_{14}. \\
+\end{align}
+
+Por último para $k=4$, 
+
+\begin{equation}
+ \cancelto{0}{V_{14}}a_{1r} + V_{24}a_{2r} + \cancelto{0}{V_{34}}a_{3r} + (V_{44} - \omega_r^2T_{44})a_{4r} = 0
+\end{equation}
+
+\begin{equation}
+ -\frac{gm}{R}a_{2r} + \left(\frac{gm}{R} - \omega_r^2m\right)a_{4r} = 0.
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r = 1:  - \frac{gm}{R} a_{21} + \left(\frac{gm}{R} -  \omega_1^2m\right)a_{41}  = 0 \Rightarrow
+ (\sqrt{2} -1)a_{41} = a_{21} \\
+ r = 2: - \frac{gm}{R} a_{22} + \left(\frac{gm}{R} -  \omega_2^2m\right)a_{42} = 0 \Rightarrow
+ (\sqrt{2} -1)a_{42} = a_{22} \\
+ r = 3:  - \frac{gm}{R} a_{23} + \left(\frac{gm}{R} -  \omega_3^2m\right)a_{43} = 0 \Rightarrow
+ (- \sqrt{2} -1)a_{43} = a_{23} \\
+ r = 4:  - \frac{gm}{R} a_{24} + \left(\frac{gm}{R} -  \omega_4^2m\right)a_{44} = 0 \Rightarrow
+ (- \sqrt{2} -1)a_{44} = a_{24}. \\
+\end{align}
+
+Entonces las ecuaciones 
+
+\begin{align}
+ x = a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3 + a_{14}Q_4, \\
+ y = a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3 + a_{24}Q_4, \\
+ u = a_{31}Q_1 + a_{32}Q_2 + a_{33}Q_3 + a_{34}Q_4, \\
+ v = a_{41}Q_1 + a_{42}Q_2 + a_{43}Q_3 + a_{44}Q_4,
+\end{align}
+
+Pueden escribirse como
+
+\begin{align}
+ x &= a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3 + a_{14}Q_4, \\
+ y &= a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3 + a_{24}Q_4, \\
+ u &= (1+\sqrt{2})a_{11}Q_1 + (1+\sqrt{2})a_{12}Q_2 + (1-\sqrt{2})a_{13}Q_3 + (1-\sqrt{2})a_{14}Q_4, \\
+ v &= (1+\sqrt{2})a_{21}Q_1 + (1+\sqrt{2})a_{22}Q_2 + (1-\sqrt{2})a_{23}Q_3 + (1-\sqrt{2})a_{24}Q_4,
+\end{align}
+
+Para simplificar los cálculos haremos las aproximaciones de que $1-\sqrt{2}\approx -\frac{1}{2}$ 
+y que $1+\sqrt{2}\approx \frac{5}{2}$, entonces 
+
+\begin{align}
+ x &= a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3 + a_{14}Q_4, \\
+ y &= a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3 + a_{24}Q_4, \\
+ u &= \frac{5}{2}a_{11}Q_1 + \frac{5}{2}a_{12}Q_2 - \frac{1}{2}a_{13}Q_3 - \frac{1}{2} a_{14}Q_4, \\
+ v &= \frac{5}{2}a_{21}Q_1 + \frac{5}{2}a_{22}Q_2 - \frac{1}{2}a_{23}Q_3 - \frac{1}{2}a_{24}Q_4,
+\end{align}
+
+Luego de un largo trabajo algebraico podemos hallar las coordenadas normales $Q_i$ que 
+nos dan los modos normales de oscilación que son
+
+\begin{align}
+ Q_1 &= \frac{(x/2) + u - 3a_{12}\left[\frac{(ya_{11}/2) + a_{11}v - a_{21}((x/2)+u)}{-3a_{21}a_{12} + 3a_{11}a_{22}}\right]}{3a_{11}}, \\
+ Q_2 &= \frac{(ya_{11}/2) + a_{11}v - a_{21}((x/2)+u)}{-3a_{21}a_{12} + 3a_{11}a_{22}}, \\
+ Q_3 &= \frac{(5/2x) - u - 2a_{14}\left[  \frac{(5ya_{13}/2) - va_{13} - a_{23}(5/2x-v)}{2a_{24}a_{13} - 2a_{23}a_{14}}\right]}{2a_{13}}, \\
+ Q_4 &= \frac{(5ya_{13}/2) - va_{13} - a_{23}(5/2x-v)}{2a_{24}a_{13} - 2a_{23}a_{14}}.
+\end{align}
+
+Las cuales son unas expresiones complicadas para los modos normales de oscilación, 
+pero se simplificarían al obtener los valores de los $a_{jk}$, lo cual no se hará
+en esta solución. Pero podrían estudiarse de una forma sencilla viendo cuando se hacen 
+cero cada uno de ellos, dados unos valores para las coordenadas. 
 
 \section{Problema 4}
 
