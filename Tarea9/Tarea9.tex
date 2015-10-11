@@ -279,7 +279,7 @@ Para encontrar los modos normales hacemos uso de la ecuación
  \sum_j (V_{jk} - \omega^2_r T_{jk})a_{jr} = 0,
 \end{equation}
 
-donde las $a_{kr}$ son las amplitudes reales de la oscilación. Tenemos entonces 
+donde las $a_{jr}$ son las amplitudes reales de la oscilación. Tenemos entonces 
 para $k = 1$ 
 
 \begin{equation}
@@ -290,7 +290,7 @@ para $k = 1$
  (k - \omega_r^2m)a_{1r} - k a_{2r} = 0 
 \end{equation}
 
-Substituyendo para cada valor de $r$ tenemos,
+Sustituyendo para cada valor de $r$ tenemos,
 
 \begin{align}
  r &= 1: \quad (k - \cancelto{0}{\omega_1^2}m)a_{11} - k a_{21} = 0 \Rightarrow 
@@ -312,7 +312,7 @@ Para $k=2$,
  -ka_{1r} + (2k - \omega_r^2m)a_{2r} - ka_{3r} = 0,
 \end{equation}
 
-Substituyendo para cada valor de $r$ tenemos,
+Sustituyendo para cada valor de $r$ tenemos,
 
 \begin{align}
  r &=1: \quad -ka_{11} + (2k - \cancelto{0}{\omega_1^2}m)a_{21} - ka_{31} = 0 \Rightarrow
@@ -334,7 +334,7 @@ Para $k=3$,
  -ka_{2r} + (k - \omega_r^2m)a_{3r} = 0,
 \end{equation}
 
-Substituyendo para cada valor de $r$ tenemos,
+Sustituyendo para cada valor de $r$ tenemos,
 
 \begin{align}
  r &= 1: \quad -ka_{21} + (k - \cancelto{0}{\omega_1^2}m)a_{31} = 0 \Rightarrow
@@ -455,7 +455,7 @@ Podemos escribir entonces la matriz de la energía potencial como
 
 \begin{equation}
  V = \begin{pmatrix}
-      K+x & -k & 0 & -K \\
+      K+k & -k & 0 & -K \\
       -k & K+k & - K & 0 \\
       0 & - K & 2K & - K \\
       -K & 0 & - K & 2K
@@ -466,13 +466,192 @@ Debido a que la matriz para la energía cinética ya está diagonalizada, solo n
 diagonalizar $V$, lo cual lo hacemos resolviendo
 
 \begin{equation}
- V = \begin{pmatrix}
-      K+x - \omega^2m & -k & 0 & -K \\
+ \left|\begin{matrix}
+      K+k - \omega^2m_1 & -k & 0 & -K \\
+      -k & K+k - \omega^2m_2 & - K & 0 \\
+      0 & - K & 2K -  \omega^2m_3 & - K \\
+      -K & 0 & - K & 2K -  \omega^2m_4
+     \end{matrix}\right| = 0.
+\end{equation}
+
+Esta ecuación se reduce a 
+
+\begin{align}
+ - K^{3} m_{1} w^{2} - K^{3} m_{2} w^{2} - K^{3} m_{3} w^{2} - K^{3} m_{4} w^{2} \\
+ - 3 K^{2} k m_{1} w^{2} - 3 K^{2} k m_{2} w^{2} - 3 K^{2} k m_{3} w^{2} \\
+ - 3 K^{2} k m_{4} w^{2} + 3 K^{2} m_{1} m_{2} w^{4} + 2 K^{2} m_{1} m_{3} w^{4}\\
+ + K^{2} m_{1} m_{4} w^{4} + K^{2} m_{2} m_{3} w^{4} + 2 K^{2} m_{2} m_{4} w^{4} \\
+ + K^{2} m_{3} m_{4} w^{4} + 2 K k m_{1} m_{3} w^{4} + 2 K k m_{1} m_{4} w^{4} \\
+ + 2 K k m_{2} m_{3} w^{4} + 2 K k m_{2} m_{4} w^{4} + 2 K k m_{3} m_{4} w^{4} \\
+ - 2 K m_{1} m_{2} m_{3} w^{6} - 2 K m_{1} m_{2} m_{4} w^{6} \\
+ - K m_{1} m_{3} m_{4} w^{6} - K m_{2} m_{3} m_{4} w^{6} - k m_{1} m_{3} m_{4} w^{6} \\
+ - k m_{2} m_{3} m_{4} w^{6} + m_{1} m_{2} m_{3} m_{4} w^{8} = 0
+\end{align}
+
+Vemos que resolver esta expresión analíticamente no es posible, ni 
+los programas especializados podrían hacerlo, pero si se puede resolver numéricamente,
+no haremos esto porque sale de la solución del problema. Lo que si podemos hacer 
+es intentar resolver el sistema cuando las masas son iguales, en este caso
+
+\begin{equation}
+ \left|\begin{matrix}
+      K+k - \omega^2m & -k & 0 & -K \\
       -k & K+k - \omega^2m & - K & 0 \\
       0 & - K & 2K -  \omega^2m & - K \\
       -K & 0 & - K & 2K -  \omega^2m
-     \end{pmatrix}
+     \end{matrix}\right| = 0.
 \end{equation}
+
+
+Esta ecuación se reduce a 
+
+\begin{equation}
+ - 4 K^{3} m w^{2} - 12 K^{2} k m w^{2} + 10 K^{2} m^{2} w^{4} + 
+ 10 K k m^{2} w^{4} - 6 K m^{3} w^{6} - 2 k m^{3} w^{6} + m^{4} w^{8} = 0,
+\end{equation}
+
+y de esta ecuación podemos encontrar las frecuencias normales que son
+
+\begin{align}
+ \omega_1 &= 0, \\
+ \omega_2 &= \sqrt{\frac{2K}{m}}, \\
+ \omega_3 &= \sqrt{\frac{2K+k-\sqrt{2K+2Kk}}{m}} \approx 
+ \sqrt{\frac{2K-\sqrt{2K}}{m}}, \\
+ \omega_4 &=  \sqrt{\frac{2K+k+\sqrt{2K+2Kk}}{m}} \approx 
+ \sqrt{\frac{2K+\sqrt{2K}}{m}},
+\end{align}
+
+recordando que debido a que $k\ll K$ entonces $K+k \approx K$ y $Kk \approx 0$.
+
+\vspace{.3cm}
+
+Para encontrar los modos normales hacemos uso de la ecuación
+
+\begin{equation}
+ \sum_j (V_{jk} - \omega^2_r T_{jk})a_{jr} = 0,
+\end{equation}
+
+donde las $a_{jr}$ son las amplitudes reales de la oscilación. Tenemos entonces 
+para $k = 1$ 
+
+\begin{equation}
+ (V_{11} - \omega_r^2 T_{11})a_{1r} + (V_{21} - \omega_r^2 \cancelto{0}{T_{21}})a_{2r} 
+ (\cancelto{0}{V_{31}} - \omega_r^2 \cancelto{0}{T_{31}})a_{3r} +
+ (V_{41} - \omega_r^2 \cancelto{0}{T_{41}})a_{4r} = 0,
+\end{equation}
+
+\begin{equation}
+ (K - \omega_r^2m)a_{1r} - ka_{2r} -Ka_{4r} = 0
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align*}
+ r &= 1: \quad  (K - \cancelto{0}{\omega_1^2}m_1)a_{11} - ka_{21} - Ka_{41}= 0 \Rightarrow
+ a_{11}= \frac{ka_{21} + Ka_{41}}{K}, \\
+ r &= 2: \quad (K - \omega_2^2m)a_{12} - ka_{22} - Ka_{42} = 0 \Rightarrow
+ a_{12} = - \frac{ka_{22} + Ka_{42}}{K}, \\
+ r &= 3: \quad (K - \omega_3^2m)a_{13} - ka_{23} - Ka_{43} = 0 \Rightarrow
+ a_{13} = \frac{ka_{23} + Ka_{43}}{-K + \sqrt{2K}}, \\
+ r &= 4: \quad (K - \omega_4^2m)a_{14} - ka_{24} - Ka_{44} = 0 \Rightarrow  
+ a_{14} = \ \frac{ka_{24} + Ka_{44}}{-K - \sqrt{2K}}.
+ \end{align*}
+ 
+Para $k = 2$ 
+
+\begin{equation}
+ (V_{12} - \omega_r^2 \cancelto{0}{T_{12}})a_{1r} + (V_{22} - \omega_r^2 T_{22})a_{2r} 
+  + (V_{32} - \omega_r^2 \cancelto{0}{T_{32}})a_{3r} + (\cancelto{0}{V_{42}} - \omega_r^2 \cancelto{0}{T_{42}})= 0,
+\end{equation}
+
+\begin{equation}
+ -ka_{1r} + (K - \omega_r^2m)a_{2r} - Ka_{3r} = 0.
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r &= 1: \quad -ka_{11} + (K - \cancelto{0}{\omega_1^2}m)a_{21} - Ka_{31} = 0 \Rightarrow 
+ a_{21} = - \frac{ka_{11} + Ka_{31}}{K}, \\
+ r &= 2: \quad -ka_{12} + (K - \omega_2^2m)a_{22} - Ka_{32} = 0 \Rightarrow
+ a_{22} = - \frac{ka_{12} + Ka_{32}}{K}, \\
+ r &= 3: \quad -ka_{13} + (K - \omega_3^2m)a_{23} - Ka_{33} = 0 \Rightarrow
+ a_{33} = \frac{ka_{13} + (K - \sqrt{2K})a_{23}}{K}, \\
+ r &= 4: -ka_{14} + (K - \omega_4^2m)a_{24} - Ka_{34} = 0 \Rightarrow 
+ a_{34} = \frac{ka_{14} + (K + \sqrt{2K})a_{24}}{K},
+\end{align}
+
+Para $k = 3$ 
+
+\begin{equation}
+ (\cancelto{0}{V_{13}} - \omega_r^2 \cancelto{0}{T_{13}})a_{1r} + (V_{23} - \omega_r^2 \cancelto{0}{T_{23}})a_{2r} 
+  + (V_{33} - \omega_r^2 T_{33})a_{3r} + (V_{43} - \omega_r^2 \cancelto{0}{T_{43}})a_{4r} = 0,
+\end{equation}
+
+\begin{equation}
+ - Ka_{2r} + (2K - \omega_r^2m)a_{3r} - Ka_{4r} = 0.
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r &= 1: \quad - Ka_{21} + (2K - \cancelto{0}{\omega_1^2}m)a_{31} - Ka_{41} = 0 \Rightarrow
+ a_{41} = a_{21} + 2a_{31}, \\
+ r &= 2: \quad - Ka_{22} + (2K - \omega_2^2m)a_{32} - Ka_{42} = 0 \Rightarrow
+ a_{44} = a_{22}, \\
+ r &= 3: \quad - Ka_{23} + (2K - \omega_3^2m)a_{33} - Ka_{43} = 0 \Rightarrow
+ a_{23} = \frac{- Ka_{43} + \sqrt{2K}a_{33}}{K}, \\
+ r &= 4: \quad - Ka_{24} + (2K - \omega_4^2m)a_{34} - Ka_{44} = 0 \Rightarrow
+ a_{24} = \frac{- Ka_{44} - \sqrt{2K}a_{34}}{K}.
+\end{align}
+
+Para $k = 4$ 
+
+\begin{equation}
+ (V_{14} - \omega_r^2 \cancelto{0}{T_{14}})a_{1r} + (\cancelto{0}{V_{24}} - \omega_r^2 \cancelto{0}{T_{24}})a_{2r} 
+  + (V_{34} - \omega_r^2 \cancelto{0}{T_{34}})a_{3r} + (V_{44} - \omega_r^2 T_{44})a_{4r} = 0,
+\end{equation}
+
+\begin{equation}
+ - Ka_{1r} - Ka_{3r} + (2K - \omega_r^2m)a_{4r} = 0.
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos
+
+\begin{align}
+ r &= 1: \quad - Ka_{11} - Ka_{31} + (2K - \cancelto{0}{\omega_1^2}m)a_{41} = 0 \Rightarrow 
+ a_{41} = \frac{a_{11} + a_{31}}{2}, \\
+ r &= 2: \quad - Ka_{12} - Ka_{32} + (2K - \omega_2^2m)a_{42} = 0 \Rightarrow 
+ a_{32} = - a_{12}, \\
+ r &= 3: \quad - Ka_{13} - Ka_{33} + (2K - \omega_3^2m)a_{43} = 0 \Rightarrow 
+ a_{33} = \frac{-Ka_{13} + \sqrt{2K}a_{43}}{K}, \\
+ r &= 4: \quad - Ka_{14} - Ka_{34} + (2K - \omega_4^2m)a_{44} = 0 \Rightarrow 
+ a_{44} = \frac{-K a_{34} + Ka_{14}}{\sqrt{2K}} .
+\end{align}
+
+Entonces las ecuaciones 
+
+\begin{align}
+ \phi_1 = a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3 + a_{14}Q_4, \\
+ \phi_2 = a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3 + a_{24}Q_4, \\
+ \phi_3 = a_{31}Q_1 + a_{32}Q_2 + a_{33}Q_3 + a_{34}Q_4, \\
+ \phi_4 = a_{41}Q_1 + a_{42}Q_2 + a_{43}Q_3 + a_{44}Q_4,
+\end{align}
+
+pueden escribirse como
+
+\begin{align*}
+ \phi_1 &= a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3 + a_{14}Q_4, \\
+ \phi_2 &= - \frac{ka_{11} + Ka_{31}}{K}Q_1 + \frac{-K a_{34} + Ka_{14}}{\sqrt{2K}}Q_2 + 
+ \frac{- Ka_{43} + \sqrt{2K}a_{33}}{K}Q_3 + \frac{- Ka_{44} - \sqrt{2K}a_{34}}{K}Q_4, \\
+ \phi_3 &= a_{31}Q_1 - a_{12}Q_2 + \frac{-Ka_{13} + \sqrt{2K}a_{43}}{K}Q_3 + 
+ \frac{ka_{14} + (K + \sqrt{2K})a_{24}}{K}Q_4, \\
+ \phi_4 &=  \frac{a_{11} + a_{31}}{2}Q_1 + a_{42}Q_2 + a_{43}Q_3 + 
+ \frac{-K a_{34} + Ka_{14}}{\sqrt{2K}}Q_4,
+\end{align*}
+
+
+
 
 
 \section{Problema 3}
