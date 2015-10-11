@@ -651,9 +651,6 @@ pueden escribirse como
 \end{align*}
 
 
-
-
-
 \section{Problema 3}
 
 Encuentre las frecuencias normales de oscilación de un péndulo esférico doble: (una 
@@ -665,6 +662,50 @@ de este sistema.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+En la figura de abajo se muestra una esquematización del péndulo doble esférico
+con el que trabajaremos
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.43]{problema3fig1}
+ \caption{Péndulo doble esférico}
+ \label{fig:problema3fig1}
+\end{figure}
+
+Hemos colocado el origen en el punto fijo del primer péndulo, la masa 1 tendrá 
+coordenadas $(x,y,z)$, a la masa 2 le asignaremos las coordenadas 
+$(u,v,w)$ para simplificar la notación. Aunque están en la imagen dibujados, no 
+no utilizaremos los ángulos como coordenadas generalizadas ya que complican 
+el análisis del sistema. Tendemos entonces 6 coordenadas generalizadas para 
+describir el sistema, pero existen dos constricciones holonómicas, que son 
+
+\begin{align}
+ x^2 + y^2 + z^2 = R_1^2, \\
+ (x - u)^2 + (y-v)^2 - (z-w)^2 = R_2^2.
+\end{align}
+
+Por lo que entonces tenemos un sistema con 4 grados de libertad. Solo como una nota relevante, 
+la variedad de configuración de este sistema es $\mathbb{S}^2 \times \mathbb{S}^2$, 
+la cual es bastante difícil de describir en detalle.
+
+\vspace{.3cm}
+
+Siguiendo la típica receta, escribamos ahora una expresión para la energía cinética y 
+la potencial,
+
+\begin{equation}
+ T = \frac{1}{2}m_1(\dot{x}^2+\dot{y}^2+\dot{z}^2) 
+ + \frac{1}{2}m_2(\dot{u}^2+\dot{v}^2+\dot{w}^2),
+\end{equation}
+
+\begin{equation}
+ V = - m_1gz - m_2gw.
+\end{equation}
+
+
+
+
 
 \section{Problema 4}
 
