@@ -293,14 +293,82 @@ para $k = 1$
 Substituyendo para cada valor de $r$ tenemos,
 
 \begin{align}
- r = 1: \quad 
+ r &= 1: \quad (k - \cancelto{0}{\omega_1^2}m)a_{11} - k a_{21} = 0 \Rightarrow 
+ ka_{11} = ka_{21} \Rightarrow a_{11} = a_{21}, \\
+ r &= 2: \quad (k - \omega_2^2m)a_{12} - ka_{22} = 0 \Rightarrow 
+ \cancelto{0}{(k - k)a_{12}} - k a_{22} = 0 \Rightarrow a_{22} = 0, \\
+ r &= 3: \quad (k - \omega_3^2m)a_{13} - ka_{23} = 0 \Rightarrow  
+ -2ka_{13} - ka_{23} = 0 \Rightarrow a_{13} = \frac{a_{23}}{2}.
 \end{align}
 
+Para $k=2$,
 
+\begin{equation}
+ (V_{12} - \omega_r^2 \cancelto{0}{T_{12}})a_{1r} + (V_{22} - \omega_r^2 T_{22})a_{2r} + 
+ (V_{32} - \omega_r^2 \cancelto{0}{T_{32}})a_{3r}= 0,
+\end{equation}
 
+\begin{equation}
+ -ka_{1r} + (2k - \omega_r^2m)a_{2r} - ka_{3r} = 0,
+\end{equation}
 
+Substituyendo para cada valor de $r$ tenemos,
 
+\begin{align}
+ r &=1: \quad -ka_{11} + (2k - \cancelto{0}{\omega_1^2}m)a_{21} - ka_{31} = 0 \Rightarrow
+ ka_{11} - ka_{31} = 0 \Rightarrow a_{11} = a_{31}, \\
+ r &=2: \quad -ka_{12} + (2k - \omega_2^2m)\cancelto{0}{a_{22}} - ka_{32} = 0 \Rightarrow
+ -ka_{12} - ka_{32} = 0 \Rightarrow a_{12} = -a_{32},\\
+ r &=3: \quad -ka_{13} + (2k - \omega_3^2m)a_{23} - ka_{33} = 0 \Rightarrow 
+ -3ka_{13} - k_{33} = 0 \Rightarrow a_{33} = -3a_{13}.
+\end{align}
 
+Para $k=3$, 
+
+\begin{equation}
+ (\cancelto{0}{V_{13}} - \omega_r^2\cancelto{0}{T_{13}})a_{1r} +  (V_{23} - \omega_r^2\cancelto{0}{T_{23}})a_{2r} 
+ +  (V_{33} - \omega_r^2T_{33})a_{3r} = 0,
+\end{equation}
+
+\begin{equation}
+ -ka_{2r} + (k - \omega_r^2m)a_{3r} = 0,
+\end{equation}
+
+Substituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r &= 1: \quad -ka_{21} + (k - \cancelto{0}{\omega_1^2}m)a_{31} = 0 \Rightarrow
+ -ka_{21} + ka_{31} = 0 \Rightarrow a_{21} = a_{31}, \\
+ r &= 2: \quad -k\cancelto{0}{a_{22}} + (k - \omega_2^2m)a_{32} = 0 \Rightarrow
+ (k - k)a_{32} = 0 \Rightarrow a_{32} = - a_{12}, \\
+ r &= 3: \quad -ka_{23} + (k - \omega_3^2m)a_{33} = 0 \Rightarrow
+ -ka_{23} - 2ka_{33} = 0 \Rightarrow a_{33} = - \frac{a_{23}}{2}
+\end{align}
+
+Para hallar las coordenadas normales y los modos normales hacemos uso de las ecuaciones 
+\cite{marion}
+
+\begin{align}
+ \phi_1 = a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3, \\
+ \phi_2 = a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3, \\
+ \phi_3 = a_{31}Q_1 + a_{32}Q_2 + a_{33}Q_3
+\end{align}
+
+Sustituyendo los valores para las $a_{jk}$, tenemos 
+
+\begin{align}
+ \phi_1 &= a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3, \\
+ \phi_2 &= a_{11}Q_1 + 3a_{13}Q_3, \\
+ \phi_3 &= a_{11}Q_1 - a_{12}Q_2 - 3a_{13}Q_3
+\end{align}
+
+Resolviendo para las coordenadas generalizadas $Q_i$, 
+
+\begin{align}
+ Q_1 = \\
+ Q_2 = \\
+ Q_3 = 
+\end{align}
 
 
 \section{Problema 2}
@@ -313,6 +381,68 @@ y para el caso en que son iguales. ¿Se podrá resolver este sistema de forma ex
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Podemos ver debajo una representación gráfica del sistema en cuestión,
+
+\begin{figure}[H]
+\center 
+\includegraphics[scale=0.5]{problema2fig1}
+ \caption{Cuatro masas acopladas cíclicamente.}
+ \label{fig:problema2fig1}
+\end{figure}
+
+Comencemos estudiando el caso más general en el cual nas masas son distintas. 
+Para estudiar el movimiento del sistema, denotaremos por $\phi_i$ el desplazamiento de cada 
+partícula con respecto a su posición de equilibrio cuando el sistema está totalmente 
+relajado, y serán nuestras coordenadas generalizadas.  por lo tanto la energía cinética 
+del sistema será
+
+\begin{equation}
+ T = \frac{1}{2}m_1\phi_{1}^2 + \frac{1}{2}m_2\phi_{2}^2 + 
+ \frac{1}{2}m_3\phi_{3}^2 + \frac{1}{2}m_4\phi_{4}^2,
+\end{equation}
+
+y la energía potencial
+
+\begin{equation}
+ V = \frac{1}{2}k(\phi_2 - \phi_1)^2 + \frac{1}{2}K(\phi_3 - \phi_2)^2
+ + \frac{1}{2}K(\phi_4 - \phi_3)^2 + \frac{1}{2}K(\phi_1 - \phi_4)^2.
+ \label{eq:energPotenCirc}
+\end{equation}
+
+La matriz para la energía cinética es entonces
+
+\begin{equation}
+ T = \begin{pmatrix}
+      m_1 & 0 & 0 & 0 \\
+      0 & m_2 & 0 & 0 \\
+      0 & 0 & m_3 & 0 \\
+      0 & 0 & 0 & m_4
+     \end{pmatrix}
+\end{equation}
+
+Para encontrar la matriz del potencial $V_{ij}$ utilizamos la ecuación \mref{eq:poten1},
+por lo que tenemos que obtener las segundas derivadas de \mref{eq:energPotenCirc}, comencemos 
+con las primeras derivadas,
+
+\begin{align*}
+ \frac{\partial V}{\partial \phi_1} &= -k(\phi_2 - \phi_1) + K(\phi_1 - \phi_4), \\
+ \frac{\partial V}{\partial \phi_2} &= , \\
+ \frac{\partial V}{\partial \phi_3} &= , \\
+ \frac{\partial V}{\partial \phi_4} &=  ,
+\end{align*}
+
+ahora podemos obtener las segundas derivadas que buscamos,
+
+\begin{align*}
+ \frac{\partial^2 V}{\partial \phi_1^2} &= , \\
+ \frac{\partial^2 V}{\partial \phi_2^2} &= , \\
+ \frac{\partial^2 V}{\partial \phi_3^2} &= , \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_2} = \frac{\partial^2 V}{\partial \phi_2\phi_1}&= , \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_3} = \frac{\partial^2 V}{\partial \phi_3\phi_1}  &= , \\
+ \frac{\partial^2 V}{\partial \phi_2\phi_3} =  \frac{\partial^2 V}{\partial \phi_3\phi_2} &= .
+\end{align*}
+
 
 \section{Problema 3}
 
