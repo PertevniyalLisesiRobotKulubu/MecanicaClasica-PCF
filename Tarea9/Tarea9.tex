@@ -682,7 +682,7 @@ describir el sistema, pero existen dos constricciones holonómicas, que son
 
 \begin{align}
  x^2 + y^2 + z^2 = R_1^2, \\
- (x - u)^2 + (y-v)^2 - (z-w)^2 = R_2^2.
+ (x - u)^2 + (y-v)^2 + (z-w)^2 = R_2^2.
 \end{align}
 
 Por lo que entonces tenemos un sistema con 4 grados de libertad. Solo como una nota relevante, 
@@ -703,8 +703,83 @@ la potencial,
  V = - m_1gz - m_2gw.
 \end{equation}
 
+De las constricciones tenemos que 
 
+\begin{align*}
+ z &= \sqrt{R_1^2 - x^2 - y^2}, \\
+ w &= z - \sqrt{R_2^2 - (x-u)^2 - (y-v)^2} = \sqrt{R_1^2 - x^2 - y^2} - 
+ \sqrt{R_2^2 - (x-u)^2 - (y-v)^2}
+\end{align*}
 
+Por lo tanto $V$ queda expresada como 
+
+\begin{equation}
+ V = - m_1g\sqrt{R_1^2 - x^2 - y^2} - m_2g\sqrt{R_1^2 - x^2 - y^2} + 
+ m_2 g  \sqrt{R_2^2 - (x-u)^2 - (y-v)^2}
+ \label{eq:energPotenDoble}
+\end{equation}
+
+Como queremos estudiar el sistema bajo pequeñas oscilaciones, notamos que esto ocurre 
+cuando se mantiene que $z \approx R_1$ y $w \approx R_1 + R_2$, por lo que $\dot{z} = 
+\dot{w} = 0$, y la energía cinética es entonces 
+
+\begin{equation}
+ T = \frac{1}{2}m_1(\dot{x}^2+\dot{y}^2) 
+ + \frac{1}{2}m_2(\dot{u}^2+\dot{v}^2),
+\end{equation}
+
+Para encontrar la matriz del potencial $V_{ij}$ utilizamos la ecuación \mref{eq:poten1},
+por lo que tenemos que obtener las segundas derivadas de \mref{eq:energPotenDoble}, comencemos 
+con las primeras derivadas,
+
+\begin{align*}
+ \frac{\partial V}{\partial x} &= - \frac{m_2 g (x-u)}{\sqrt{R_2^2-(u-x)^2-(v-y)^2}}+
+ \frac{m_1 g x}{\sqrt{R_1^2-x^2-y^2}}+ \frac{m_2 g x}{\sqrt{R_1^2-x^2-y^2}} \\
+ \frac{\partial V}{\partial y} &=  - \frac{g m_2 (y-v)}{\sqrt{R_2^2-(x-u)^2-(y-v)^2}} + 
+ \frac{g m_1 y}{\sqrt{R_1^2-x^2-y^2}}+ \frac{g m_2 y}{\sqrt{R_1^2-x^2-y^2}} \\
+ \frac{\partial V}{\partial u} &=  \frac{g m_2 (x-u)}{\sqrt{R_2^2-(x-u)^2-(y-v)^2}} \\
+ \frac{\partial V}{\partial v} &=  \frac{g m_2 (y-v)}{\sqrt{R_2^2-(x-u)^2-(y-v)^2}},
+\end{align*}
+
+Utilizando las expresiones para las constricciones podemos transformar estas derivadas
+en, recordando que $z \approx R_1$ y $w \approx R_1 + R_2$
+
+\begin{align*}
+ \frac{\partial V}{\partial x} &= \frac{m_2 g (x-u)}{w-z}+
+ \frac{m_1 g x}{z}+ \frac{m_2 g x}{z} = \frac{gm_2(x-u)}{R_2} + \frac{xg (m_1+m_2)}{R_1}\\
+ \frac{\partial V}{\partial y} &=  \frac{g m_2 (y-v)}{w-z} + 
+ \frac{g m_1 y}{z}+ \frac{g m_2 y}{z}= \frac{gm_2(y-v)}{R_2} + \frac{yg (m_1+m_2)}{R_1} \\
+ \frac{\partial V}{\partial u} &=  \frac{g m_2 (x-u)}{z-w} = 
+ - \frac{g m_2 (x-u)}{R_2}\\
+ \frac{\partial V}{\partial v} &=  \frac{g m_2 (y-v)}{z-w} = 
+  -\frac{g m_2 (y-v)}{R_2},
+\end{align*}
+
+ahora podemos obtener las segundas derivadas que buscamos,
+
+\begin{align*}
+ \frac{\partial^2 V}{\partial x^2} &= \frac{gm_2}{R_2} + \frac{g(m_1 + m_2)}{R_1}, \\
+ \frac{\partial^2 V}{\partial y^2} &= \frac{gm_2}{R_2} + \frac{g(m_1 + m_2)}{R_1}, \\
+ \frac{\partial^2 V}{\partial u^2} &= \frac{gm_2}{R_2}, \\
+ \frac{\partial^2 V}{\partial v^2} &= \frac{gm_2}{R_2}, \\
+ \frac{\partial^2 V}{\partial x\partial y} = \frac{\partial^2 V}{\partial y \partial x}&= 0, \\
+ \frac{\partial^2 V}{\partial x \partial u} = \frac{\partial^2 V}{\partial u \partial x}  &= - \frac{gm_2}{R_2}, \\
+ \frac{\partial^2 V}{\partial x \partial v} =  \frac{\partial^2 V}{\partial v \partial x} &= 0, \\
+ \frac{\partial^2 V}{\partial y \partial u} =  \frac{\partial^2 V}{\partial u \partial y} &= 0, \\
+ \frac{\partial^2 V}{\partial y \partial v} =  \frac{\partial^2 V}{\partial v \partial y} &= -\frac{gm_2}{R_2} , \\ 
+ \frac{\partial^2 V}{\partial u \partial v} =  \frac{\partial^2 V}{\partial v \partial u} &= 0.
+\end{align*}
+
+Podemos escribir entonces la matriz de la energía potencial como
+
+\begin{equation}
+ V = \begin{pmatrix}
+      \frac{gm_2}{R_2} + \frac{g(m_1 + m_2)}{R_1} & 0 & - \frac{gm_2}{R_2} & 0 \\
+      0 & \frac{gm_2}{R_2} + \frac{g(m_1 + m_2)}{R_1} & 0 & - \frac{gm_2}{R_2} \\
+      - \frac{gm_2}{R_2} & 0 & \frac{gm_2}{R_2} & 0 \\
+      0 & - \frac{gm_2}{R_2} & 0 & \frac{gm_2}{R_2}
+     \end{pmatrix}
+\end{equation}
 
 
 \section{Problema 4}
