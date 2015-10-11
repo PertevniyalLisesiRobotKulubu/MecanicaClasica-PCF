@@ -426,22 +426,53 @@ por lo que tenemos que obtener las segundas derivadas de \mref{eq:energPotenCirc
 con las primeras derivadas,
 
 \begin{align*}
- \frac{\partial V}{\partial \phi_1} &= -k(\phi_2 - \phi_1) + K(\phi_1 - \phi_4), \\
- \frac{\partial V}{\partial \phi_2} &= , \\
- \frac{\partial V}{\partial \phi_3} &= , \\
- \frac{\partial V}{\partial \phi_4} &=  ,
+ \frac{\partial V}{\partial \phi_1} &= -k(\phi_2 - \phi_1) + K(\phi_1 - \phi_4) 
+ = -k\phi_2 + k\phi_1 + K\phi_1 - K\phi_4 = \phi_1(K + k) -k\phi_2 - K\phi_4, \\
+ \frac{\partial V}{\partial \phi_2} &= k(\phi_2 - \phi_1)  - K(\phi_3 - \phi_2)
+ = k\phi_2 - k\phi_1 - K\phi_3 + K\phi_2 = \phi_2(K+k) - k\phi_1 - K\phi_3, \\
+ \frac{\partial V}{\partial \phi_3} &= K(\phi_3 - \phi_2) - K(\phi_4 - \phi_3)
+ = K\phi_3 - K\phi_2 - K\phi_4 + K\phi_3 = 2K\phi_3 - K\phi_2 - K\phi_4, \\
+ \frac{\partial V}{\partial \phi_4} &=  K(\phi_4 - \phi_3) - K(\phi_1 - \phi_4)
+ = K\phi_4 - K\phi_3 - K\phi_1 + K\phi_4 = 2K\phi_4 - K\phi_3 - K\phi_1 ,
 \end{align*}
 
 ahora podemos obtener las segundas derivadas que buscamos,
 
 \begin{align*}
- \frac{\partial^2 V}{\partial \phi_1^2} &= , \\
- \frac{\partial^2 V}{\partial \phi_2^2} &= , \\
- \frac{\partial^2 V}{\partial \phi_3^2} &= , \\
- \frac{\partial^2 V}{\partial \phi_1\phi_2} = \frac{\partial^2 V}{\partial \phi_2\phi_1}&= , \\
- \frac{\partial^2 V}{\partial \phi_1\phi_3} = \frac{\partial^2 V}{\partial \phi_3\phi_1}  &= , \\
- \frac{\partial^2 V}{\partial \phi_2\phi_3} =  \frac{\partial^2 V}{\partial \phi_3\phi_2} &= .
+ \frac{\partial^2 V}{\partial \phi_1^2} &= K+k, \\
+ \frac{\partial^2 V}{\partial \phi_2^2} &= K+k, \\
+ \frac{\partial^2 V}{\partial \phi_3^2} &= 2K, \\
+ \frac{\partial^2 V}{\partial \phi_4^2} &= 2K, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_2} = \frac{\partial^2 V}{\partial \phi_2\phi_1}&= -k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_3} = \frac{\partial^2 V}{\partial \phi_3\phi_1}  &= 0, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_4} =  \frac{\partial^2 V}{\partial \phi_4\phi_1} &= -K, \\
+ \frac{\partial^2 V}{\partial \phi_2\phi_3} =  \frac{\partial^2 V}{\partial \phi_3\phi_2} &= -K, \\
+ \frac{\partial^2 V}{\partial \phi_2\phi_4} =  \frac{\partial^2 V}{\partial \phi_4\phi_2} &= 0, \\ 
+ \frac{\partial^2 V}{\partial \phi_3\phi_4} =  \frac{\partial^2 V}{\partial \phi_4\phi_3} &= -K.
 \end{align*}
+
+Podemos escribir entonces la matriz de la energía potencial como
+
+\begin{equation}
+ V = \begin{pmatrix}
+      K+x & -k & 0 & -K \\
+      -k & K+k & - K & 0 \\
+      0 & - K & 2K & - K \\
+      -K & 0 & - K & 2K
+     \end{pmatrix}
+\end{equation}
+
+Debido a que la matriz para la energía cinética ya está diagonalizada, solo nos queda 
+diagonalizar $V$, lo cual lo hacemos resolviendo
+
+\begin{equation}
+ V = \begin{pmatrix}
+      K+x - \omega^2m & -k & 0 & -K \\
+      -k & K+k - \omega^2m & - K & 0 \\
+      0 & - K & 2K -  \omega^2m & - K \\
+      -K & 0 & - K & 2K -  \omega^2m
+     \end{pmatrix}
+\end{equation}
 
 
 \section{Problema 3}
