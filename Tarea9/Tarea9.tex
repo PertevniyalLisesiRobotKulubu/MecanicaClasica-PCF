@@ -400,7 +400,7 @@ y la energía potencial como
 \end{equation}
 
 Para encontrar la matriz del potencial $V_{ij}$ utilizamos la ecuación \mref{eq:poten1},
-por lo que tenemos que obtener las segundas derivadas de \mref{eq:energpoten2}, comencemos 
+por lo que tenemos que obtener las segundas derivadas de \mref{eq:energpoten3}, comencemos 
 con las primeras derivadas,
 
 \begin{align*}
@@ -994,7 +994,7 @@ pueden escribirse como
 
 Esta ecuación es muy compleja y aún con la aproximación de que $K/K \approx 0$ no 
 se pudo encontrar una expresión lo suficientemente simple para las coordenadas normales 
-para poder hacer algún tipo de análisis del sistema. Pero Con las ecuaciones que quedan 
+para poder hacer algún tipo de análisis del sistema. Pero con las ecuaciones que quedan 
 planteadas para las coordenadas normales, y un software numérico se podría hacer este 
 cálculo. No es extremadamente complicado el movimiento del sistema, y se pudo aproximar 
 con \texttt{SymPy}\footnote{\href{http://www.sympy.org/en/index.html}{http://www.sympy.org/en/index.html}}. 
@@ -1029,7 +1029,7 @@ con el que trabajaremos
 
 Hemos colocado el origen en el punto fijo del primer péndulo, la masa 1 tendrá 
 coordenadas $(x,y,z)$, a la masa 2 le asignaremos las coordenadas 
-$(u,v,w)$ para simplificar la notación. Aunque están en la imagen dibujados, no 
+$(u,v,w)$ para simplificar la notación. Aunque están en la imagen dibujados, 
 no utilizaremos los ángulos como coordenadas generalizadas ya que complican 
 el análisis del sistema. Tendemos entonces 6 coordenadas generalizadas para 
 describir el sistema, pero existen dos constricciones holonómicas, que son 
@@ -1233,7 +1233,7 @@ normales
         \end{matrix}\right| = 0.
 \end{equation}
 
-De donde encontramos las frecuencias normales, cabe destacar que hay doble degeneración, 
+De donde encontramos las frecuencias normales, cabe destacar que hay doble degeneración 
 de las mismas,
 
 \begin{align}
@@ -1613,15 +1613,8 @@ resultando en
 
 vemos que hemos encontrado la ecuación de Schrödinger lineal no relativista, y que 
 por lo tanto la densidad lagrangiana del enunciado la podemos asociar con el 
-campo de Schrödinger. La otra ecuación de Lagrange, para $\phi$, es la compleja 
-conjugada de la ecuación obtenida que podemos escribir como, utilizando nuestra 
-nueva notación que esclarece la ecuación resultante
-
-
-\begin{equation}
- \boxed{i\hbar\dot{\psi^*} = \left[-\frac{\hbar}{2m}\nabla^2 + V(x,y,z)\right]\psi^* = 0.}
- \label{eq:shro5}
-\end{equation}
+campo de Schrödinger. La otra ecuación de Lagrange, para $\phi$, es simplemente la compleja 
+conjugada de la ecuación obtenida.
 
 
 \begin{thebibliography}{10}
