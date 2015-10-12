@@ -573,6 +573,8 @@ las ecuaciones, que claramente se podrían reducir aún más, pero vemos que est
 tiene complicaciones, partiendo del hecho de que da soluciones complejas y tuvieron 
 que hacerse muchas aproximaciones para llegar a estas coordenadas normales.
 
+\vspace{.3cm}
+
 \textbf{Caso 3}:
 
 $$
@@ -669,9 +671,47 @@ haber quedado claro el procedimiento para obtener las $a_{jr}$ solo escribiremos
 los resultados debajo
 
 \begin{align}
- a_{
+ a_{21} = 0, \\
+ a_{22} = -\sqrt{2}a_{12}, \\
+ a_{23} = \sqrt{2}a_{13}, \\
+ a_{11} = - a_{31}, \\
+ a_{12} = a_{32}, \\
+ a_{13} = a_{33}, \\
+ a_{22} = -\sqrt{2}a_{32}, \\
+ a_{23} = \sqrt{2}a_{33}
 \end{align}
 
+Para hallar las coordenadas normales y los modos normales hacemos uso de las ecuaciones 
+
+\begin{align}
+ \phi_1 = a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3, \\
+ \phi_2 = a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3, \\
+ \phi_3 = a_{31}Q_1 + a_{32}Q_2 + a_{33}Q_3
+\end{align}
+
+Sustituyendo los valores para las $a_{jk}$, tenemos 
+
+\begin{align}
+ \phi_1 = a_{11}Q_1 -\frac{1}{\sqrt{2}}a_{22} Q_2 + a_{13}Q_3, \\
+ \phi_2 = a_{22}Q_2 + \sqrt{2}a_{33}Q_3, \\
+ \phi_3 = - a_{11}Q_1 + -\frac{1}{\sqrt{2}}a_{22} Q_2 + a_{33}Q_3
+\end{align}
+
+Tenemos entonces las siguientes coordenadas normales,
+
+\begin{align}
+ Q_1 = \frac{\phi_1 - \phi_3}{2a_{11}}, \\
+ Q_2 = \frac{-\phi_1 + \sqrt{2}\phi_2 - \phi_3}{2\sqrt{2}a_{22}}, \\
+ Q_3 = \frac{\phi_1 + \sqrt{2}\phi_2 + \phi_3}{4a_{33}}.
+\end{align}
+
+Los modos normales son 3 entonces, y ocurren cuando 
+
+\begin{align}
+ Q_1 &\Rightarrow  \phi_1 = -\phi_3, \\
+ Q_2 &\Rightarrow  \phi_2 = - \sqrt{2} \phi_1 = - \sqrt{2} \phi_3, \\
+ Q_3 &\Rightarrow  \phi_1 = \sqrt{2}\phi_2 = \sqrt{2}\phi_3
+\end{align}
 
 \section{Problema 2}
 
@@ -951,6 +991,15 @@ pueden escribirse como
  \phi_4 &=  \frac{a_{11} + a_{31}}{2}Q_1 + a_{42}Q_2 + a_{43}Q_3 + 
  \frac{-K a_{34} + Ka_{14}}{\sqrt{2K}}Q_4,
 \end{align*}
+
+Esta ecuación es muy compleja y aún con la aproximación de que $K/K \approx 0$ no 
+se pudo encontrar una expresión lo suficientemente simple para las coordenadas normales 
+para poder hacer algún tipo de análisis del sistema. Pero Con las ecuaciones que quedan 
+planteadas para las coordenadas normales, y un software numérico se podría hacer este 
+cálculo. No es extremadamente complicado el movimiento del sistema, y se pudo aproximar 
+con \texttt{SymPy}\footnote{\href{http://www.sympy.org/en/index.html}{http://www.sympy.org/en/index.html}}. 
+El resultado para los vectores propios y coordenadas normales se encuentran en el siguiente 
+NoteBook de IPython, en la casilla ``\#Problema 3'', \href{}{}
 
 
 \section{Problema 3}
