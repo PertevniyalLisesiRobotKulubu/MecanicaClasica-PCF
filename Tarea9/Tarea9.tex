@@ -362,12 +362,314 @@ Sustituyendo los valores para las $a_{jk}$, tenemos
  \phi_3 &= a_{11}Q_1 - a_{12}Q_2 - 3a_{13}Q_3
 \end{align}
 
-Resolviendo para las coordenadas generalizadas $Q_i$, 
+Resolviendo para las coordenadas normales $Q_i$, 
 
 \begin{align}
- Q_1 = \\
- Q_2 = \\
- Q_3 = 
+ Q_1 &= \frac{\phi_1 + \phi_3}{2a_{11}}\\
+ Q_2 &= \frac{5\phi_1 + 5\phi_3 - 4\phi_2}{6a_{12}}\\
+ Q_3 &= \frac{2\phi_2 - \phi_1 - \phi_3}{3a_{13}}
+\end{align}
+
+Los modos normales son 3 entonces, y ocurren cuando 
+
+\begin{align}
+ Q_1 &\Rightarrow \phi_1 + \phi_3 = 0 \Rightarrow \phi_1 = -\phi_3, \\
+ Q_2 &\Rightarrow 5\phi_1 + 5\phi_3 - 4\phi_2 = 0 \Rightarrow \phi_2 = 
+ - \frac{10}{4} \phi_1 = - \frac{10}{4} \phi_3, \\
+ Q_3 &\Rightarrow 2\phi_2 - \phi_1 - \phi_3 = 0 \Rightarrow 
+ \phi_1 = \phi_2 = \phi_3
+\end{align}
+
+\textbf{Caso 2}:
+
+$$
+] - - k - - M - - k - - M - - k - - M
+$$
+
+Para este sistema la energía cinética estará expresada como
+
+\begin{equation}
+ T = \frac{1}{2}m(\dot{\phi_1}^2 + \dot{\phi_2}^2 + \dot{\phi_3}^2),
+\end{equation}
+
+y la energía potencial como
+
+\begin{equation}
+ V = \frac{k}{2}\phi_1^2 + \frac{k}{2}(\phi_2 - \phi_1)^2 + \frac{k}{2}(\phi_3 - \phi_2)^2.
+ \label{eq:energpoten3}
+\end{equation}
+
+Para encontrar la matriz del potencial $V_{ij}$ utilizamos la ecuación \mref{eq:poten1},
+por lo que tenemos que obtener las segundas derivadas de \mref{eq:energpoten2}, comencemos 
+con las primeras derivadas,
+
+\begin{align*}
+ \frac{\partial V}{\partial \phi_1} &= k\phi_1 - k (\phi_2 - \phi_1) = 2k\phi_1 - k\phi_2, \\
+ \frac{\partial V}{\partial \phi_2} &= k (\phi_2 - \phi_1) - k (\phi_3 - \phi_2), \\
+ \frac{\partial V}{\partial \phi_3} &= k (\phi_3 - \phi_2),
+\end{align*}
+
+ahora podemos obtener las segundas derivadas que buscamos,
+
+\begin{align*}
+ \frac{\partial^2 V}{\partial \phi_1^2} &= 2k, \\
+ \frac{\partial^2 V}{\partial \phi_2^2} &= 2k, \\
+ \frac{\partial^2 V}{\partial \phi_3^2} &= k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_2} = \frac{\partial^2 V}{\partial \phi_2\phi_1}&= -k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_3} = \frac{\partial^2 V}{\partial \phi_3\phi_1}  &= 0, \\
+ \frac{\partial^2 V}{\partial \phi_2\phi_3} =  \frac{\partial^2 V}{\partial \phi_3\phi_2} &= -k.
+\end{align*}
+
+Entonces podemos escribir las matrices de la energía potencial y la energía 
+cinética como
+
+\begin{equation}
+ V = \begin{pmatrix}
+      2k & -k & 0 \\
+      -k & 2k & -k \\
+      0 & -k & k
+     \end{pmatrix},
+\end{equation}
+
+\begin{equation}
+ T = \begin{pmatrix}
+      m & 0 & 0 \\
+      0 & m & 0 \\
+      0 & 0 & m
+     \end{pmatrix}.
+\end{equation}
+
+Debido a que la matriz para la energía cinética ya está diagonalizada, solo nos queda 
+diagonalizar $V$, lo cual lo hacemos resolviendo
+
+\begin{equation}
+ \left| \begin{matrix}
+	    2k - \omega^2 m & -k & 0 \\
+	    -k & 2k - \omega^2 m & -k \\
+	    0 & -k & k - \omega^2 m
+     \end{matrix}\right| = 0,
+\end{equation}
+
+Esta ecuación se reduce a 
+
+\begin{equation}
+ k^{3} - 6 k^{2} m w^{2} + 5 k m^{2} w^{4} - m^{3} w^{6} = 0,
+ \label{eq:complex}
+\end{equation}
+
+Y de esta ecuación podemos encontrar las frecuencias normales que son:
+
+\begin{align}
+ \omega_1 &\approx \sqrt{\frac{k}{5m}}, \\
+ \omega_2 &\approx \sqrt{\frac{3k}{2m}}, \\
+ \omega_3 &\approx - \sqrt{\frac{7k}{2m}}.
+\end{align}
+
+Claramente estas frecuencias normales son aproximaciones debido a que la ecuación 
+\mref{eq:complex} produce raíces complejas, pero con valores imaginarios despreciables, 
+por lo tanto se aproximarán las primeras dos frecuencias a sus valores reales, 
+y para simplificar los cálculos utilizaremos que $0.4450 \approx \sqrt{1/5}$, 
+$1.2469 \approx \sqrt{3/2}$ y que $1.8019 \approx \sqrt{7/2}$.
+
+\vspace{.3cm}
+
+Para encontrar los modos normales hacemos uso de la ecuación
+
+\begin{equation}
+ \sum_j (V_{jk} - \omega^2_r T_{jk})a_{jr} = 0,
+\end{equation}
+
+donde las $a_{jr}$ son las amplitudes reales de la oscilación. Tenemos entonces 
+para $k = 1$ 
+
+\begin{equation}
+ (V_{11} - \omega_r^2T_{11})a_{1r} + V_{21}a_{2r} + \cancelto{0}{V_{31}}a_{3r} = 0,
+\end{equation}
+
+\begin{equation}
+ (2k - \omega_r^2m)a_{1r} - ka_{2r} = 0.
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos, 
+
+\begin{align}
+ r &= 1: (2k - \omega_1^2m)a_{11} - ka_{21} = 0 \Rightarrow a_{11} = \frac{5}{9}a_{12}, \\
+ r &= 2: (2k - \omega_2^2m)a_{12} - ka_{22} = 0 \Rightarrow a_{12} = 2a_{22}, \\
+ r &= 3: (2k - \omega_3^2m)a_{13} - ka_{23} = 0 \Rightarrow a_{13} = \frac{2}{11}a_{23}.
+\end{align}
+
+Para $k=2$
+
+\begin{equation}
+ V_{12}a_{1r} + (V_{22} - \omega_r^2T_{22})a_{2r} + V_{32}a_{3r} = 0
+\end{equation}
+
+
+\begin{equation}
+ -ka_{1r} + (2k - \omega_r^2m)a_{2r} -k a_{3r} = 0
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r &= 1: -ka_{11} + (2k - \omega_1^2m)a_{21} -k a_{31}  = 0 \Rightarrow 
+ -a_{11} + \frac{9}{5}a_{21} = a_{31}, \\
+ r &= 2: -ka_{12} + (2k - \omega_2^2m)a_{22} -k a_{32}  = 0 \Rightarrow 
+ a_{32} = - \frac{3}{2}a_{22}, \\
+ r &= 3: -ka_{13} + (2k - \omega_3^2m)a_{23} -k a_{33}  = 0 \Rightarrow 
+ a_{33} \approx - \frac{2}{5} a_{23}.
+\end{align}
+
+Para $k=3$
+
+\begin{equation}
+ \cancelto{0}{V_{13}a_{1r}} + V_{23}a_{2r} + (V_{33} - \omega_r^2T_{33})a_{3r} = 0,
+\end{equation}
+
+\begin{equation}
+ -ka_{2r} + (k - \omega_r^2m)a_{3r} = 0
+\end{equation}
+
+Sustituyendo para cada valor de $r$ tenemos,
+
+\begin{align}
+ r &= 1: -ka_{21} + (k - \omega_1^2m)a_{31} = 0 \Rightarrow  
+ a_{21} =\frac{4}{5}a_{31},\\
+ r &= 2: -ka_{22} + (k - \omega_2^2m)a_{32} = 0 \Rightarrow 
+ a_{22} = -\frac{2}{3}a_{32}\\
+ r &= 3: -ka_{23} + (k - \omega_3^2m)a_{33} = 0 \Rightarrow 
+ a_{23} = - \frac{5}{2}a_{33}
+\end{align}
+
+Para hallar las coordenadas normales y los modos normales hacemos uso de las ecuaciones 
+
+\begin{align}
+ \phi_1 = a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3, \\
+ \phi_2 = a_{21}Q_1 + a_{22}Q_2 + a_{23}Q_3, \\
+ \phi_3 = a_{31}Q_1 + a_{32}Q_2 + a_{33}Q_3
+\end{align}
+
+Sustituyendo los valores para las $a_{jk}$, tenemos 
+
+\begin{align}
+ \phi_1 = a_{11}Q_1 + a_{12}Q_2 + a_{13}Q_3, \\
+ \phi_2 = a_{21}Q_1 + \frac{1}{2}a_{12}Q_2 + a_{23}Q_3, \\
+ \phi_3 = \frac{5}{4}a_{21}Q_1 + \frac{3}{4}a_{12}Q_2 - \frac{2}{5}a_{23}Q_3
+\end{align}
+
+Tenemos entonces las siguientes coordenadas normales,
+
+\begin{align}
+ Q_1 = \frac{(-3/2)\phi_2 + \phi_3 - (4a_{23}/5a_{13})((\phi_1/2)+\phi_2)}{(-1/4)a_{21} 
+ - (6a_{11}a_{23}/5a_{13})}, \\
+ Q_2 =  \frac{(3\phi_2/2)+\phi_3 - \frac{15}{4}a_{12}\left[ \frac{(-3/2)\phi_2 + \phi_3 - (4a_{23}/5a_{13})((\phi_1/2)+\phi_2)}{(-1/4)a_{21} 
+ - (6a_{11}a_{23}/5a_{13})}\right]}{5a_{12}/4},\\
+ Q_3 = \frac{(\phi_1/2)+\phi_2 - \frac{3}{2}a_{11}\left[\frac{(-3/2)\phi_2 + \phi_3 - (4a_{23}/5a_{13})((\phi_1/2)+\phi_2)}{(-1/4)a_{21} 
+ - (6a_{11}a_{23}/5a_{13})} \right]}{5a_{13}}
+\end{align}
+
+Nos reservaremos el análisis de estos modos normales debido a la complejidad de 
+las ecuaciones, que claramente se podrían reducir aún más, pero vemos que este caso 
+tiene complicaciones, partiendo del hecho de que da soluciones complejas y tuvieron 
+que hacerse muchas aproximaciones para llegar a estas coordenadas normales.
+
+\textbf{Caso 3}:
+
+$$
+] - - k - - M - - k - - M - - k - - M - - k - -[
+$$
+
+Para este sistema la energía cinética estará expresada como
+
+\begin{equation}
+ T = \frac{1}{2}m(\dot{\phi_1}^2 + \dot{\phi_2}^2 + \dot{\phi_3}^2),
+\end{equation}
+
+y la energía potencial como
+
+\begin{equation}
+ V = \frac{k}{2}\phi_1^2 + \frac{k}{2}(\phi_2 - \phi_1)^2 + \frac{k}{2}(\phi_3 - \phi_2)^2
+ + \frac{k}{2}\phi_3^2.
+ \label{eq:energpoten4}
+\end{equation}
+
+Para encontrar la matriz del potencial $V_{ij}$ utilizamos la ecuación \mref{eq:poten1},
+por lo que tenemos que obtener las segundas derivadas de \mref{eq:energpoten4}, comencemos 
+con las primeras derivadas,
+
+\begin{align*}
+ \frac{\partial V}{\partial \phi_1} &= k\phi_1 - k (\phi_2 - \phi_1) = 2k\phi_1 - k\phi_2, \\
+ \frac{\partial V}{\partial \phi_2} &= k (\phi_2 - \phi_1) - k (\phi_3 - \phi_2), \\
+ \frac{\partial V}{\partial \phi_3} &= k (\phi_3 - \phi_2) + k\phi_3 = 2k\phi_3 - k\phi_2,
+\end{align*}
+
+ahora podemos obtener las segundas derivadas que buscamos,
+
+\begin{align*}
+ \frac{\partial^2 V}{\partial \phi_1^2} &= 2k, \\
+ \frac{\partial^2 V}{\partial \phi_2^2} &= 2k, \\
+ \frac{\partial^2 V}{\partial \phi_3^2} &= 2k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_2} = \frac{\partial^2 V}{\partial \phi_2\phi_1}&= -k, \\
+ \frac{\partial^2 V}{\partial \phi_1\phi_3} = \frac{\partial^2 V}{\partial \phi_3\phi_1}  &= 0, \\
+ \frac{\partial^2 V}{\partial \phi_2\phi_3} =  \frac{\partial^2 V}{\partial \phi_3\phi_2} &= -k.
+\end{align*}
+
+Entonces podemos escribir las matrices de la energía potencial y la energía 
+cinética como
+
+\begin{equation}
+ V = \begin{pmatrix}
+      2k & -k & 0 \\
+      -k & 2k & -k \\
+      0 & -k & 2k
+     \end{pmatrix},
+\end{equation}
+
+\begin{equation}
+ T = \begin{pmatrix}
+      m & 0 & 0 \\
+      0 & m & 0 \\
+      0 & 0 & m
+     \end{pmatrix}.
+\end{equation}
+
+Debido a que la matriz para la energía cinética ya está diagonalizada, solo nos queda 
+diagonalizar $V$, lo cual lo hacemos resolviendo
+
+\begin{equation}
+ \left| \begin{matrix}
+	    2k - \omega^2 m & -k & 0 \\
+	    -k & 2k - \omega^2 m & -k \\
+	    0 & -k & 2k - \omega^2 m
+     \end{matrix}\right| = 0,
+\end{equation}
+
+Esta ecuación se reduce a 
+
+\begin{equation}
+ 4 k^{3} - 10 k^{2} m w^{2} + 6 k m^{2} w^{4} - m^{3} w^{6} = 0.
+\end{equation}
+
+Como hemos venido haciendo, de esta ecuación obtenemos las frecuencias normales que son:
+
+\begin{align}
+ \omega_1 &= \sqrt{\frac{2k}{m}} , \\
+ \omega_2 &= \sqrt{\frac{(2+\sqrt{2})k}{m}}, \\
+ \omega_3 &= \sqrt{\frac{(2-\sqrt{2})k}{m}}
+\end{align}
+
+Para encontrar los modos normales hacemos uso de la ecuación
+
+\begin{equation}
+ \sum_j (V_{jk} - \omega^2_r T_{jk})a_{jr} = 0,
+\end{equation}
+
+donde las $a_{jr}$ son las amplitudes reales de la oscilación. Debido a que ya debió
+haber quedado claro el procedimiento para obtener las $a_{jr}$ solo escribiremos 
+los resultados debajo
+
+\begin{align}
+ a_{
 \end{align}
 
 
