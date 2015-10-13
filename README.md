@@ -1,6 +1,7 @@
 # Mecánica Clásica - Posgrado de Ciencias Físicas - UNAM. Semestre 2016-I
 
 Profesor: Dr. Rafael Pérez Pascual.
+
 Ayudante: M.Sc. Eduardo Serrano Ensástiga.
 
 --------
