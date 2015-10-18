@@ -3,7 +3,7 @@ before_install:
   texlive texlive-extra-utils texlive-binaries texlive-base texlive-latex-base texlive-latex-extra 
   texlive-fonts-extra texlive-lang-spanish texlive-generic-recommended texlive-luatex 
   texlive-pictures tipa texlive-pstricks texlive-fonts-recommended texlive-latex-recommended dvipng
-- sudo tlmgr install expl3  xpackages l3kernel l3packages
+- sudo tlmgr install expl3 xpackages l3kernel
 - sudo tlmgr update -self -all
 script:
 - mkdir _build
