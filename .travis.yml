@@ -16,3 +16,6 @@ deploy:
   skip_cleanup: true
   on:
     repo: FavioVazquez/MecanicaClasica-PCF
+
+notifications:
+  email: false
