@@ -51,8 +51,8 @@
   ( % print the left parenthesis
   \seq_map_inline:Nn \l_quinn_mref_seq
     { \ref{##1},\nobreakspace } % print the first references
-  \exp_args:NV \ref \l_tmpa_tl 
-  ) 
+  \exp_args:NV \ref \l_tmpa_tl % print the last or only one
+  ) % print the right parenthesis
  }
 \ExplSyntaxOff
 
