@@ -40,3 +40,12 @@ Instituto de Ciencias Nucleares - UNAM.
 ## Tarea 8 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/814afd27d487daa5220c71e4d1314bd6752db24f/raw/output.pdf)
 
 ## Tarea 9 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/12d7fd93fb389aed651fc26834c8a28ec2b61c4e/raw/output.pdf)
+
+--------
+
+## **Descarga directa de las tareas**
+
+También pueden descargar la versión en PDF directamente de los links de abajo. Estos archivos fueron compilados en línea con [Travis-CI](https://travis-ci.org/) y son las mismas versiones que las que se encuentran arriba, solo que la descarga es directa y no se verá el PDF en el explorador.
+
+## [Descargar Tarea 10](https://github.com/FavioVazquez/MecanicaClasica-PCF/releases/download/tarea-10/Tarea10.pdf)
+
