@@ -6,13 +6,13 @@ before_install:
 
 script:
 - mkdir _build
-- pdflatex -output-directory _build tex/Tarea10.tex
+- pdflatex -output-directory _build Tarea9/Tarea9.tex
 deploy:
   provider: releases
   api_key:
     secure: F+OKWUH2O2N0qEVbA4bg2L49MxKJ1v/M+knl9E+MtmXtnNhYK4wvwVx/MWXW8oIb7XUP+3j1TVxoUsMntH6VMJq4SaDvJae+x0SIWsEoGUkOD9EgOYKynSBYoctglrfqq6uKK1LgPrqasmYL4Onj/lkMOjcTy/gyvTWjj+y1qOfnChEcknMzOVO47LYYj0mE+vV/dqWG6QDXr9q5FGP8Ns10e8zskYyZz+knc4YIaPjt4+e6/TP+P7qzjHjNPXuFdSvOVl8YpvpfS/V7+OPSlYk+3VMhk3tLyKr69Ve5ks2R2XFxHzoIjmYvwu67nJKjvOh3wDt934M7D+YTAp4nrm1Z1DkrMs1dc7B9en863MxVv5xPBCS8Ct68G8VBUcXAu7pgPiDVwMCNTiC+xzyOR3xL8wvNSvcpzHOhihgvH/Gg0yGX3y4knPPQtP5aRTOVLH9RtUZF32WRGMQ0FwFVVTLEvfanTEb6RmO4WULsudlD83p0+Aqmffx4VVgVf/rXaswuyG6MWNgap1YetN7gQQsLR2QrqwMTpSvwxvoLxmTyB63UDaM4JHKxeI8gYlC06LrC6gxuoNjF1e32C1WP/Eh+09/2QEGAoIzOinQkodrgWC113zgDE2eIwGsAmooqXkg8+0shBxNqXxg5xzunl3AJ1L63y0uSWtFfp8gTOn0=
   file: 
-  - _build/Tarea10.pdf
+  - _build/Tarea9.pdf
   skip_cleanup: true
   on:
     repo: FavioVazquez/MecanicaClasica-PCF
