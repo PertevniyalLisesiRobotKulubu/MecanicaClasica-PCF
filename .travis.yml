@@ -1,6 +1,8 @@
 before_install:
-- sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
-  texlive texlive-base texlive-latex-base texlive-latex-extra texlive-fonts-extra texlive-lang-spanish texlive-latex-recommended dvipng
+- sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended luatex pgf tex-common 
+  latex-color texlive texlive-extra-utils texlive-binaries texlive-base texlive-latex-base texlive-latex-extra 
+  texlive-fonts-extra texlive-lang-spanish texlive-generic-recommended texlive-luatex 
+  texlive-pictures tipa texlive-pstricks texlive-fonts-recommended texlive-latex-recommended dvipng
 script:
 - mkdir _build
 - pdflatex -output-directory _build tex/Tarea10.tex
