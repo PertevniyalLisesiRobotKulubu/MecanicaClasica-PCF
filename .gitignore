@@ -11,3 +11,6 @@
 *.bbl
 *.blg
 *.txt
+
+# Custom
+_build/

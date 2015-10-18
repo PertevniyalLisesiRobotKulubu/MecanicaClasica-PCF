@@ -1,0 +1,186 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[affil-it]{authblk}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{tikz}
+\usepackage{multimedia}
+\usepackage{subcaption} %Multiple images
+\usepackage{multicol} % Multiple columns
+\usepackage{float}
+\usepackage{cleveref}
+ \usepackage{relsize} %bigger math symbols
+\usepackage[margin=1.4in]{geometry}
+\usepackage[labelfont=bf]{caption}
+\usepackage[titletoc,toc,title]{appendix}
+\usepackage{enumitem}
+\usetikzlibrary{calc}
+\numberwithin{equation}{section}
+
+%Appendices in spanish
+\renewcommand{\appendixname}{Ap\'endices}
+\renewcommand{\appendixtocname}{Ap\'endices}
+\renewcommand{\appendixpagename}{Ap\'endices}
+
+%Zero delimiter
+\newcommand{\zerodel}{.\kern-\nulldelimiterspace}
+
+%Columns separation
+\setlength{\columnsep}{1cm}
+
+%Indentation
+\setlength{\parindent}{0ex}
+
+%Multiple References
+
+\crefrangelabelformat{equation}{(#3#1#4--#5\crefstripprefix{#1}{#2}#6)}
+
+\usepackage{xparse}
+\ExplSyntaxOn
+\NewDocumentCommand{\mref}{m}{\quinn_mref:n {#1}}
+\seq_new:N \l_quinn_mref_seq
+\cs_new:Npn \quinn_mref:n #1
+ {
+  \seq_set_split:Nnn \l_quinn_mref_seq { , } { #1 }
+  \seq_pop_right:NN \l_quinn_mref_seq \l_tmpa_tl
+  ( % print the left parenthesis
+  \seq_map_inline:Nn \l_quinn_mref_seq
+    { \ref{##1},\nobreakspace } % print the first references
+  \exp_args:NV \ref \l_tmpa_tl 
+  ) 
+ }
+\ExplSyntaxOff
+
+
+%Boxes
+
+\newcommand*{\boxcolor}{blue}
+\makeatletter
+\renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
+\tikz[baseline={([yshift=-1ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
+ \makeatother
+
+%Constantes
+\newcommand{\euler}{\mathrm{e}}
+\newcommand{\im}{i}
+
+%Lemas, teoremas, definiciones y pruebas
+\newcommand{\definicion}{\textbf{Definición: }}
+\newcommand{\lema}{\textbf{Lema: }}
+\newcommand{\teorema}{\textbf{Teorema: }}
+\newcommand{\prueba}{\textbf{Prueba: }}
+\newcommand{\proposicion}{\textbf{Proposición: }}
+\newcommand{\corolario}{\textbf{Corolario: }}
+
+
+%opening
+\title{Mecánica Clásica Tarea \# 10}
+\author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México.}
+\date{}
+
+\begin{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\Large\bfseries \@title \par}%
+    \vskip 1.5em%
+    {\normalsize
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1em%
+    {\normalsize \@date}%
+  \end{center}%
+  \par
+  \vskip 1.5em}
+\makeatother
+
+\maketitle
+
+\section{Problema 1}
+
+Utilizando la formulación hamiltoniana de la mecánica, encuentre las ecuaciones de 
+movimiento de un péndulo doble de masas y longitudes iguales.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 2}
+
+Una partícula de masa $m$ se mueve en una dimensión y la hamiltoniana del sistema 
+es 
+
+$$
+H(q,p) = \frac{p^2}{2m}e^{-\frac{q}{a}}
+$$
+
+Encuentre las ecuaciones de movimiento y su solución. Considerando únicamente los casos 
+en que $p>0$, ¿Cuál sería la fuerza que debería actuar sobre la partícula en una visión
+newtoniana del este sistema? ¿Qué sentido le puede dar en este caso a las relaciones entre 
+la energía total, la energía cinética y la hamiltoniana como integral de movimiento?
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 3}
+
+Considere la hamiltoniana en dos grados de libertad 
+
+$$
+H = q^1p_1 - q^2p_2 - a(q^1)^2 + b(q^2)^2
+$$
+
+demuestre que las tres funciones 
+
+$$
+f_1 = (p_2 - bq^2)/q^1, \quad f_2 = q^1q^2, \quad f_3=q^1e^{-t},
+$$
+
+son constantes de movimiento. ¿Son todas integrales de movimiento? ¿Son independientes?, 
+¿Cuáles son los paréntesis de Poisson entre ellas?, ¿Habrá más integrales de movimiento 
+independientes?; de haber más, ¿podrán ser los paréntesis de Poisson entre todas 
+las integrales de movimiento iguales a cero?
+
+\vspace{.3cm}
+
+Esta hamiltoniana es muy rara, encuentre esta rareza y descríbala.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 4}
+
+Demuestre que un sistema es hamiltoniano sí y solo sí
+
+$$
+\frac{d}{dt}\{f,g\} = \{\dot{f},g\} + \{f,\dot{g}\}
+$$
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 5}
+
+Demuestre la identidad de Jacobi para los paréntesis de Poisson.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\end{document}
