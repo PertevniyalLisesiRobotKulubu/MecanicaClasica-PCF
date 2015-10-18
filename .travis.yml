@@ -1,8 +1,10 @@
 before_install:
-- sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended luatex pgf tex-common 
+- sudo apt-get update && sudo apt-get install --no-install-recommends l3packages texlive-fonts-recommended luatex pgf tex-common 
   texlive texlive-extra-utils texlive-binaries texlive-base texlive-latex-base texlive-latex-extra 
   texlive-fonts-extra texlive-lang-spanish texlive-generic-recommended texlive-luatex 
   texlive-pictures tipa texlive-pstricks texlive-fonts-recommended texlive-latex-recommended dvipng
+- sudo tlmgr install expl3  xpackages l3kernel l3packages
+- sudo tlmgr update -self -all
 script:
 - mkdir _build
 - pdflatex -output-directory _build tex/Tarea10.tex
