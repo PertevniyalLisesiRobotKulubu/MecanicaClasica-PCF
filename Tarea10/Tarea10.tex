@@ -267,9 +267,39 @@ movimiento, recordamos su forma
 
 Entonces las ecuaciones de movimiento, utilizando las anteriores ecuaciones serán
 
+\begin{equation}
+ \dot{\phi_1} =  \frac{\partial H}{\partial p_{\theta_1}} = 
+ \frac{2p_{\theta_2} - 2p_{\theta_2}\cos{(\theta_1 - \theta_2)}}{4m - 
+ 2m\cos^2{(\theta_1 - \theta_2)}},
+\end{equation}
+
+\begin{equation}
+ \dot{\phi_2} =  \frac{\partial H}{\partial p_{\theta_2}} = 
+ \frac{4p_{\theta_2} - 2p_{\theta_1}\cos{(\theta_1 - \theta_2)}}{4m - 
+ 2m\cos^2{(\theta_1 - \theta_2)}},
+\end{equation}
+
 \begin{align}
- \dot{\phi_1} =  
+\begin{split}
+ \dot{p_{\theta_1}} = \frac{\partial H}{\partial \theta_1} = 
+ &- \frac{4m\sen{(\theta_1 - \theta_2})\cos{(\theta_1 - \theta_2)}
+ \left[p_{\theta_1}^2 - 2p_{\theta_1}p_{\theta_2}\cos{(\theta_1 - \theta_2)} + 2p_{\theta_2}^2\right]}{[4m - 2m\cos^2{(\theta_1 - \theta_2)}]^2} \\
+ &+ \frac{2p_{\theta_1}p_{\theta_2}\sen{(\theta_1 - \theta_2)}}{4m - 2m\cos^2{(\theta_1 - \theta_2)}} 
+ + 2mgl\sen{\theta_1},
+\end{split}
 \end{align}
+
+\begin{align}
+\begin{split}
+ \dot{p_{\theta_2}} = \frac{\partial H}{\partial \theta_2} = 
+ &\frac{4m\sen{(\theta_1 - \theta_2})\cos{(\theta_1 - \theta_2)}
+ \left[p_{\theta_1}^2 - 2p_{\theta_1}p_{\theta_2}\cos{(\theta_1 - \theta_2)} + 2p_{\theta_2}^2\right]}{[4m - 2m\cos^2{(\theta_1 - \theta_2)}]^2} \\
+ &- \frac{2p_{\theta_1}p_{\theta_2}\sen{(\theta_1 - \theta_2)}}{4m - 2m\cos^2{(\theta_1 - \theta_2)}} 
+ + mgl\sen{\theta_2}
+\end{split}
+\end{align}
+
+
 
 
 
