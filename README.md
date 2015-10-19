@@ -14,7 +14,7 @@ Ayudante: M.Sc. Eduardo Serrano Ensástiga.
 
 --------
 
-Travis-CI
+Travis-CI (Integración continua y compilación en línea de las tareas)
 
 [![Build Status](https://travis-ci.org/FavioVazquez/MecanicaClasica-PCF.svg?branch=master)](https://travis-ci.org/FavioVazquez/MecanicaClasica-PCF)
 
