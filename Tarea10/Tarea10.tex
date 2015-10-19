@@ -102,6 +102,114 @@ movimiento de un péndulo doble de masas y longitudes iguales.
 
 \underline{Solución:} \vspace{.3cm}
 
+En la figura de abajo se muestra un diagrama para el problema,
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.4]{problema1fig1}
+ \caption{Péndulo doble. Como muestra el muñequito la gravedad va dirigida hacia 
+ abajo.}
+ \label{fig:problema1fig1}
+\end{figure}
+
+Si tomamos a $\theta_1$ y $\theta_2$ como nuestras coordenadas generalizadas, las 
+coordenadas $x$ y $y$ de las dos masas serán
+
+\begin{align}
+ x_1 &= l\sen{\theta_1}, \\
+ y_1 &= l\cos{\theta_1}, \\
+ x_2 &= l\sen{\theta_1} + l\sen{\theta_2}, \\
+ y_2 &= l\cos{\theta_1} + l\cos{\theta_2}.
+\end{align}
+
+Para construir la energía cinética del sistema necesitamos las primeras derivadas
+temporales de estas ecuaciones, las cuales son
+
+\begin{align}
+ \dot{x_1} &= l\dot{\theta_1}\cos{\theta_1}, \\
+ \dot{y_1} &= - l\dot{\theta_1}\sen{\theta_1}, \\
+ \dot{x_2} &=  l\dot{\theta_1}\cos{\theta_1} + l\dot{\theta_2}\cos{\theta_2}, \\
+ \dot{y_2} &= - l\dot{\theta_1}\sen{\theta_1} - l\dot{\theta_2}\sen{\theta_2}.
+\end{align}
+
+Entonces la energía cinética
+
+\begin{equation}
+ T = \frac{1}{2}m(\dot{x_1}^2 + \dot{y_1}^2) +  \frac{1}{2}m(\dot{x_2}^2 + \dot{y_2}^2),
+\end{equation}
+
+puede escribirse como 
+
+\begin{align}
+ T &= \frac{1}{2}m(l^2\dot{\theta_1}^2\cos^2{\theta_1} + l^2\dot{\theta_1}^2\sen^2{\theta_1} 
+ + l^2\dot{\theta_1}^2\cos^2{\theta_1} + 2l^2\dot{\theta_1}\dot{\theta_2}\cos{\theta_1}\cos{\theta_2} \\
+ &+ l^2\dot{\theta_2}^2\cos^2{\theta_2} + l^2\dot{\theta_1}^2\sen^2{\theta_1} + 
+ 2l^2\dot{\theta_1}\dot{\theta_2}\sen{\theta_1}\sen{\theta_2} + l^2\dot{\theta_2}^2\sen^2{\theta_2}),
+\end{align}
+
+\begin{equation}
+ \therefore T = \frac{m}{2}l^2\left[2\dot{\theta_1}^2 + \dot{\theta_2}^2 
+ + 2\dot{\theta_1}\dot{\theta_2}\cos{(\theta_1 - \theta_2)}\right]
+\end{equation}
+
+Por otra parte la energía potencial del sistema 
+
+\begin{equation}
+ V = -mgy_1 - mgy_2,
+\end{equation}
+
+puede escribirse como
+
+\begin{equation}
+ V = - mg(l\cos{\theta_1}) - mg(l\cos{\theta_1} + l\cos{\theta_2}),
+\end{equation}
+
+\begin{equation}
+ \therefore V = - mgl(2\cos{\theta_1} - \cos{\theta_2}).
+\end{equation}
+
+Por lo tanto la lagrangiana del sistema es 
+
+\begin{equation}
+ L = T - V = \frac{m}{2}l^2\left[2\dot{\theta_1}^2 + \dot{\theta_2}^2 
+ + 2\dot{\theta_1}\dot{\theta_2}\cos{(\theta_1 - \theta_2)}\right]
+ - mgl(2\cos{\theta_1} - \cos{\theta_2}).
+\end{equation}
+
+Definimos a la hamiltoniana del sistema como
+
+\begin{equation}
+ H(q,p,t) = \sum_{k=1}^n p_k \dot{q}^k(q,p,t) - L(q,\dot{q}(q,p,t),t),
+\end{equation}
+
+necesitamos entonces una expresión para los impulsos generalizados, y escribir a las 
+velocidades generalizadas en términos de éstos. Recordamos que los impulsos generalizados 
+están definidos por 
+
+\begin{equation}
+p_i = \frac{\partial L}{\partial \dot{q}^i}.
+\end{equation}
+
+En este caso tendremos dos, uno para cada coordenada generalizada
+
+\begin{equation}
+ p_{\theta_1} = \frac{\partial L}{\partial \dot{\theta_1}} = 
+ 2ml^2\dot{\theta_1} + ml^2\dot{\theta_2}\cos{(\theta_1 - \theta_2)},
+\end{equation}
+
+\begin{equation}
+ p_{\theta_2} = 
+\end{equation}
+
+
+
+
+
+
+
+
+
+
 \section{Problema 2}
 
 Una partícula de masa $m$ se mueve en una dimensión y la hamiltoniana del sistema 
