@@ -1,5 +1,7 @@
 # Mecánica Clásica - Posgrado de Ciencias Físicas - UNAM. Semestre 2016-I
 
+![UNAM](https://elielirangel.files.wordpress.com/2012/08/nt_p2.jpg) ![PCF-UNAM](http://www.posgrado.fisica.unam.mx/sites/default/files/LUZ.png)
+
 Profesor: Dr. Rafael Pérez Pascual.
 
 Ayudante: M.Sc. Eduardo Serrano Ensástiga.
@@ -18,8 +20,11 @@ Si desean una explicación detallada de alguno de los códigos que realicé, o t
 
 En tal caso de alguna pregunta no relacionada directamente con el repositorio pueden escribir a mi dirección de correo electrónico: favio.vazquezp@gmail.com
 
-Favio Vázquez.
-Instituto de Ciencias Nucleares - UNAM.
+**Favio Vázquez.**
+
+**Instituto de Ciencias Nucleares - UNAM.**
+
+![ICN-UNAM](http://sigi.nucleares.unam.mx/sgiicn/images/icn_logo_small.png)
 
 -------
 
@@ -47,5 +52,5 @@ Instituto de Ciencias Nucleares - UNAM.
 
 También pueden descargar la versión en PDF directamente de los links de abajo. Estos archivos fueron compilados en línea con [Travis-CI](https://travis-ci.org/) y son las mismas versiones que las que se encuentran arriba, solo que la descarga es directa y no se verá el PDF en el explorador.
 
-## [Descargar Tarea 10](https://github.com/FavioVazquez/MecanicaClasica-PCF/releases/download/tarea-10/Tarea10.pdf)
+![Coming Soon](http://www.booktrip4me.com/Content/images/Coming-Soon.png)
 
