@@ -165,7 +165,7 @@ puede escribirse como
 \end{equation}
 
 \begin{equation}
- \therefore V = - mgl(2\cos{\theta_1} - \cos{\theta_2}).
+ \therefore V = - mgl(2\cos{\theta_1} + \cos{\theta_2}).
 \end{equation}
 
 Por lo tanto la lagrangiana del sistema es 
@@ -173,13 +173,14 @@ Por lo tanto la lagrangiana del sistema es
 \begin{equation}
  L = T - V = \frac{m}{2}l^2\left[2\dot{\theta_1}^2 + \dot{\theta_2}^2 
  + 2\dot{\theta_1}\dot{\theta_2}\cos{(\theta_1 - \theta_2)}\right]
- - mgl(2\cos{\theta_1} - \cos{\theta_2}).
+ + mgl(2\cos{\theta_1} + \cos{\theta_2}).
 \end{equation}
 
 Definimos a la hamiltoniana del sistema como
 
 \begin{equation}
  H(q,p,t) = \sum_{k=1}^n p_k \dot{q}^k(q,p,t) - L(q,\dot{q}(q,p,t),t),
+ \label{eq:hamiltonianaDoblePend}
 \end{equation}
 
 necesitamos entonces una expresión para los impulsos generalizados, y escribir a las 
@@ -195,11 +196,84 @@ En este caso tendremos dos, uno para cada coordenada generalizada
 \begin{equation}
  p_{\theta_1} = \frac{\partial L}{\partial \dot{\theta_1}} = 
  2ml^2\dot{\theta_1} + ml^2\dot{\theta_2}\cos{(\theta_1 - \theta_2)},
+ \label{eq:impulsoGenTheta1}
 \end{equation}
 
 \begin{equation}
- p_{\theta_2} = 
+ p_{\theta_2} = \frac{\partial L}{\partial \dot{\theta_2}} = 
+ ml^2\dot{\theta_2} + ml^2\dot{\theta_1}\cos{(\theta_1 - \theta_2)}.
+ \label{eq:impulsoGenTheta2}
 \end{equation}
+
+Ahora que tenemos expresiones para los impulsos generalizados, podemos expresar a las 
+coordenadas generalizadas en función de los mismos como
+
+\begin{equation}
+ \dot{\theta_1} = \frac{\cos{(\theta_1 - \theta_2)}[- p_{\theta_1}^2 - 
+ p_{\theta_2}ml^2] + p_{\theta_1}[p_{\theta_2} + ml^2\cos^2{(\theta_1 - \theta_2)}]}{m^2l^4[2 - \cos^2{(\theta_1 - \theta_2)}]}
+ \label{eq:velGenTheta1}
+\end{equation}
+
+\begin{equation}
+ \dot{\theta_2} = \frac{2p_{\theta_2} - 2p_{\theta_1}\cos{(\theta_1 - \theta_2)}}{ml^2[2 - \cos^2{(\theta_1 - \theta_2)}]}
+ \label{eq:velGenTheta2}
+\end{equation}
+
+Usando estas ecuaciones podemos reescribir ahora la lagrangiana para que solo dependa 
+de las coordenadas e impulsos generalizados, 
+
+\begin{align*}
+ L &= \frac{m}{2}l^2\left[2 \left\{ \frac{\cos{(\theta_1 - \theta_2)}[- p_{\theta_1}^2 - 
+ p_{\theta_2}ml^2] + p_{\theta_1}[p_{\theta_2} + ml^2\cos^2{(\theta_1 - \theta_2)}]}{m^2l^4[2 
+ - \cos^2{(\theta_1 - \theta_2)}]} \right\}^2 + \right\zerodel \\
+ &2 \left\{\frac{2p_{\theta_2} - 2p_{\theta_1}\cos{(\theta_1 - 
+ \theta_2)}}{ml^2[2 - \cos^2{(\theta_1 - \theta_2)}]} \right\}^2 + \\
+ &2\left\{ \frac{\cos{(\theta_1 - \theta_2)}[- p_{\theta_1}^2 - 
+ p_{\theta_2}ml^2] + p_{\theta_1}[p_{\theta_2} +
+ ml^2\cos^2{(\theta_1 - \theta_2)}]}{m^2l^4[2 - \cos^2{(\theta_1 - \theta_2)}]}\right\}
+ \left\{ \frac{2p_{\theta_2} - 2p_{\theta_1}\cos{(\theta_1 - \theta_2)}}{ml^2[2 - \cos^2{(\theta_1 - \theta_2)}]}\right\} \\
+ &\left\zerodel\cos{(\theta_1 - \theta_2)}\right] + mgl(2\cos{\theta_1} + \cos{\theta_2}).
+\end{align*}
+
+Entonces la hamiltoniana del sistema puede escribirse como\footnote{El trabajo algebraico 
+es largo para llegar a esta ecuación, por lo tanto solo se escribe el resultado final.}, 
+utilizando las expresiones para los impulsos generalizados \eqref{eq:impulsoGenTheta1} y 
+\eqref{eq:impulsoGenTheta2}, las expresiones para las velocidades generalizadas en términos 
+de los impulsos generalizados \eqref{eq:velGenTheta1} y \eqref{eq:velGenTheta2}, así 
+como la lagrangiana expresada sólo en términos de las coordenadas e impulsos generalizados 
+
+
+\begin{equation}
+ H = \frac{ml^2p_{\theta_1}^2 + 2ml^2p_{\theta_2}^2 - 
+ 2ml^2\cos{(\theta_1 - \theta_2)p_{\theta_1}p_{\theta_2}}}{2ml^2[2m - 
+ m\cos^2{(\theta_1 - \theta_2)}]} - mgl(2\cos{\theta_1} + \cos{\theta_2}),
+\end{equation}
+
+o simplificando 
+
+\begin{equation}
+ \boxed{H = \frac{p_{\theta_1}^2 + 2p_{\theta_2}^2 - 
+ 2\cos{(\theta_1 - \theta_2)p_{\theta_1}p_{\theta_2}}}{4m - 
+ 2m\cos^2{(\theta_1 - \theta_2)}} - mgl(2\cos{\theta_1} + \cos{\theta_2})}
+\end{equation}
+
+Podemos utilizar ahora las ecuaciones de Hamilton para encontrar las ecuaciones de 
+movimiento, recordamos su forma
+
+\begin{align}
+ \dot{q}^i = \frac{\partial H}{\partial p_i}, \\
+ \dot{p}_i = - \frac{\partial H}{\partial q^i}.
+\end{align}
+
+Entonces las ecuaciones de movimiento, utilizando las anteriores ecuaciones serán
+
+\begin{align}
+ \dot{\phi_1} =  
+\end{align}
+
+
+
+
 
 
 
