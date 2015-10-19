@@ -8,7 +8,7 @@ Ayudante: M.Sc. Eduardo Serrano Ensástiga.
 
 --------
 
-## **Página Web del repositorio (contiene los PDFs de las tareas para verlos online)**
+## **Página Web del repositorio (contiene los PDFs de las tareas para verlos en línea)**
 
 ### http://faviovazquez.github.io/MecanicaClasica-PCF/
 
