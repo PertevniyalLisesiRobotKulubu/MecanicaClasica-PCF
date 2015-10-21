@@ -478,6 +478,92 @@ $$
 
 \underline{Solución:} \vspace{.3cm}
 
+Probemos primero hacia un sentido y luego hacia el otro para así ver si tenemos una equivalencia 
+matemática. Para probar el primer sentido asumimos que existe una función hamiltoniana 
+$H(q,p,t)$ y queremos probar si se cumple la conocida regla de Leibnitz. Recordamos 
+que si existe esta $H$ entonces 
+
+\begin{equation}
+ \frac{dF}{dt} = \{F,H\} + \frac{\partial F}{\partial t},
+ \label{eq:41}
+\end{equation}
+
+por lo tanto
+
+\begin{equation}
+ \frac{d}{dt}\{f,g\} = \{\{f,g\},H\} + \frac{\partial}{\partial t}\{f,g\}.
+ \label{eq:42}
+\end{equation}
+
+Utilizando la identidad de Jacobi\footnote{Ver siguiente problema.} el primer término 
+de \eqref{eq:42} puede escribirse como
+
+\begin{equation}
+ \{\{f,g\},H\} +  \{\{H,f\},g\} +  \{\{g,H\},f\} = 0,
+ \label{eq:43}
+\end{equation}
+
+pero por la antisimetría de los paréntesis de Poisson, podemos escribir \eqref{eq:43} 
+como
+
+\begin{equation}
+  \{\{f,g\},H\} = \{\{f,H\},g\} + \{f,\{g,H\}\}.
+ \label{eq:44}
+\end{equation}
+
+Por otra parte el segundo término de \eqref{eq:42} puede escribirse como 
+
+\begin{align*}
+ \frac{\partial}{\partial t}\{f,g\} &= \frac{\partial}{\partial t}
+ \left[\frac{\partial f}{\partial q^i}\frac{\partial g}{\partial p_i} - 
+ \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}\right] \\
+ &= \frac{\partial^2 f}{\partial t\partial q^i}\frac{\partial g}{\partial p_i} 
+ - \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial t \partial q^i}
+ + \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial t \partial p_i}
+ - \frac{\partial^2 f}{\partial t\partial p_i}\frac{\partial g}{\partial q^i} 
+\end{align*}
+
+\begin{equation}
+ \therefore \frac{\partial}{\partial t}\{f,g\} = \left\{\frac{\partial}{\partial t}f,g\right\}
+ + \left\{f, \frac{\partial}{\partial t}g\right\}.
+ \label{eq:45}
+\end{equation}
+
+Entonces \eqref{eq:42}, utilizando \eqref{eq:44} y \eqref{eq:45} puede escribirse como
+
+\begin{equation}
+ \frac{d}{dt}\{f,g\} =  \{\{f,H\},g\} + \{f,\{g,H\}\} + \left\{\frac{\partial}{\partial t}f,g\right\}
+ + \left\{f, \frac{\partial}{\partial t}g\right\},
+ \label{eq:46}
+\end{equation}
+
+pero por la linealidad de los paréntesis de Poisson podemos escribir \eqref{eq:46} como
+
+\begin{equation}
+  \frac{d}{dt}\{f,g\} = \left\{\{f,H\} + \frac{\partial}{\partial t}g, g\right\} + 
+  \left\{f,\{g,H\} + \frac{\partial}{\partial t}g\right\},
+  \label{eq:47}
+\end{equation}
+
+Y utilizando \eqref{eq:41} podemos escribir \eqref{eq:47} de la forma deseada
+
+\begin{equation}
+ \boxed{\frac{d}{dt}\{f,g\} = \{\dot{f},g\} + \{f,\dot{g}\}.}
+\end{equation}
+
+$\hspace{12cm} \square$
+
+Entonces hemos demostrado que si existe la hamiltoniana, entonces se cumple la regla 
+de Leibnitz para los paréntesis de Poisson. Debemos ahora probar el sentido inverso, 
+para demostrar la equivalencia matemática, es decir, que si se cumple la regla de 
+Leibnitz entonces existe una función hamiltoniana.
+
+
+
+
+
+
+
 \section{Problema 5}
 
 Demuestre la identidad de Jacobi para los paréntesis de Poisson.
