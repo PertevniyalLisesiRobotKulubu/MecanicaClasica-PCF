@@ -435,9 +435,7 @@ la energía cinética no se conserva, podemos ver esto fácilmente
  \dot{T} = - \frac{H}{a}\dot{q}\euler^{-\frac{q}{a}} = - \frac{4m^2aC^3}{Ct + B}
 \end{equation}
 
-Por lo tanto si la energía cinética no se conserva, entonces la energía total del sistema
-no se puede conservar, aún así se conserve la hamiltoniana, que por lo tanto no puede 
-ser igual a la energía total del sistema.
+
 
 \section{Problema 3}
 
@@ -477,8 +475,7 @@ Entonces tenemos que, para $f_1$
 \begin{equation}
  \frac{df_1}{dt} = \{f_1,H\} = \frac{\partial f_1}{\partial q^1}\frac{\partial H}{\partial p_1} - 
  \frac{\partial f_1}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_1}{\partial q^2}\frac{\partial H}{\partial p_2} - 
- \frac{\partial f_1}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial f_1}{\partial q^3}\frac{\partial H}{\partial p_3} - 
- \frac{\partial f_1}{\partial p_3}\frac{\partial H}{\partial q^3}
+ \frac{\partial f_1}{\partial p_2}\frac{\partial H}{\partial q^2},
 \end{equation}
 
 \begin{equation}
@@ -499,25 +496,21 @@ luego para $f_2$
 \begin{equation}
  \frac{df_2}{dt} = \{f_2,H\} = \frac{\partial f_2}{\partial q^1}\frac{\partial H}{\partial p_1} - 
  \frac{\partial f_2}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_2}{\partial q^2}\frac{\partial H}{\partial p_2} - 
- \frac{\partial f_2}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial f_2}{\partial q^3}\frac{\partial H}{\partial p_3} - 
- \frac{\partial f_2}{\partial p_3}\frac{\partial H}{\partial q^3}
+ \frac{\partial f_2}{\partial p_2}\frac{\partial H}{\partial q^2},
 \end{equation}
 
 \begin{equation}
- \frac{df_2}{dt} = q^2q^1 - q^1q^2 = 0
+ \frac{df_2}{dt} = q^2q^1 - q^1q^2 = 0,
 \end{equation}
 
 y por último para $f_3$
 
-\begin{align*}
-\begin{split}
- \frac{df_3}{dt} = \{f_3,H\} + \frac{\partial f_3}{\partial t} &= \frac{\partial f_3}{\partial q^1}\frac{\partial H}{\partial p_1} - 
+\begin{equation}
+\frac{df_3}{dt} = \{f_3,H\} + \frac{\partial f_3}{\partial t} = \frac{\partial f_3}{\partial q^1}\frac{\partial H}{\partial p_1} - 
  \frac{\partial f_3}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_3}{\partial q^2}\frac{\partial H}{\partial p_2} - 
- \frac{\partial f_3}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial f_3}{\partial q^3}\frac{\partial H}{\partial p_3} - 
- \frac{\partial f_3}{\partial p_3}\frac{\partial H}{\partial q^3} \\
- &+ \frac{\partial f_3}{\partial t}
-\end{split}
-\end{align*}
+ \frac{\partial f_3}{\partial p_2}\frac{\partial H}{\partial q^2} + \frac{\partial f_3}{\partial t} 
+\end{equation}
+
 
 \begin{equation}
  \frac{df_3}{dt} + \frac{\partial f_3}{\partial t} = \euler^{-t}q^1 -\euler^{-t}q^1 = 0
@@ -536,8 +529,7 @@ Los paréntesis de Poisson entre ellas son
 \begin{equation}
  \{f_1,f_2\} = \frac{\partial f_1}{\partial q^1}\frac{\partial f_2}{\partial p_1} - 
  \frac{\partial f_1}{\partial p_1}\frac{\partial f_2}{\partial q^1} +  \frac{\partial f_1}{\partial q^2}\frac{\partial f_2}{\partial p_2} - 
- \frac{\partial f_1}{\partial p_2}\frac{\partial f_2}{\partial q^2} +  \frac{\partial f_1}{\partial q^3}\frac{\partial f_2}{\partial p_3} - 
- \frac{\partial f_1}{\partial p_3}\frac{\partial f_2}{\partial q^3},
+ \frac{\partial f_1}{\partial p_2}\frac{\partial f_2}{\partial q^2},
 \end{equation}
 
 \begin{equation}
@@ -547,8 +539,7 @@ Los paréntesis de Poisson entre ellas son
 \begin{equation}
  \{f_2,f_3\} = \frac{\partial f_2}{\partial q^1}\frac{\partial f_3}{\partial p_1} - 
  \frac{\partial f_2}{\partial p_1}\frac{\partial f_3}{\partial q^1} +  \frac{\partial f_2}{\partial q^2}\frac{\partial f_3}{\partial p_2} - 
- \frac{\partial f_2}{\partial p_2}\frac{\partial f_3}{\partial q^2} +  \frac{\partial f_2}{\partial q^3}\frac{\partial f_3}{\partial p_3} - 
- \frac{\partial f_2}{\partial p_3}\frac{\partial f_3}{\partial q^3},
+ \frac{\partial f_2}{\partial p_2}\frac{\partial f_3}{\partial q^2},
 \end{equation}
 
 \begin{equation}
@@ -558,8 +549,7 @@ Los paréntesis de Poisson entre ellas son
 \begin{equation}
  \{f_3,f_1\} = \frac{\partial f_3}{\partial q^1}\frac{\partial f_1}{\partial p_1} - 
  \frac{\partial f_3}{\partial p_1}\frac{\partial f_1}{\partial q^1} +  \frac{\partial f_3}{\partial q^2}\frac{\partial f_1}{\partial p_2} - 
- \frac{\partial f_3}{\partial p_2}\frac{\partial f_1}{\partial q^2} +  \frac{\partial f_3}{\partial q^3}\frac{\partial f_1}{\partial p_3} - 
- \frac{\partial f_3}{\partial p_3}\frac{\partial f_1}{\partial q^3},
+ \frac{\partial f_3}{\partial p_2}\frac{\partial f_1}{\partial q^2},
 \end{equation}
 
 \begin{equation}
@@ -572,15 +562,13 @@ Si existe otra integral de movimiento, y es la hamiltoniana, para ver esto hacem
 \begin{equation}
  \frac{d}{dt} H = \{H,H\} = \frac{\partial H}{\partial q^1}\frac{\partial H}{\partial p_1} - 
  \frac{\partial H}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial H}{\partial q^2}\frac{\partial H}{\partial p_2} - 
- \frac{\partial H}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial H}{\partial q^3}\frac{\partial H}{\partial p_3} - 
- \frac{\partial H}{\partial p_3}\frac{\partial H}{\partial q^3}
+ \frac{\partial H}{\partial p_2}\frac{\partial H}{\partial q^2},
 \end{equation}
 
 \begin{equation}
   \boxed{\frac{d}{dt} H = \cancel{(p_1 - 2aq^1)q^1} - \cancel{q^1(p_1 - 2aq^1)} - \cancel{(p_2 + 2bq^2)q^2} + 
   \cancel{q^2(p_2 + 2bq^2)} = 0.}
 \end{equation}
-
 
 
 
@@ -675,11 +663,6 @@ Entonces hemos demostrado que si existe la hamiltoniana, entonces se cumple la r
 de Leibnitz para los paréntesis de Poisson. Debemos ahora probar el sentido inverso, 
 para demostrar la equivalencia matemática, es decir, que si se cumple la regla de 
 Leibnitz entonces existe una función hamiltoniana.
-
-
-
-
-
 
 
 \section{Problema 5}
