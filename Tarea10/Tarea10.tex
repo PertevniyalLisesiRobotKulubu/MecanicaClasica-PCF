@@ -466,6 +466,124 @@ Esta hamiltoniana es muy rara, encuentre esta rareza y descríbala.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para probar que las $f_j$ son constantes de movimiento debemos demostrar que 
+
+\begin{equation}
+ \frac{df_j}{dt} = \{f_j,H\} + \frac{\partial f_j}{\partial t} =  0.
+\end{equation}
+
+Entonces tenemos que, para $f_1$
+
+\begin{equation}
+ \frac{df_1}{dt} = \{f_1,H\} = \frac{\partial f_1}{\partial q^1}\frac{\partial H}{\partial p_1} - 
+ \frac{\partial f_1}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_1}{\partial q^2}\frac{\partial H}{\partial p_2} - 
+ \frac{\partial f_1}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial f_1}{\partial q^3}\frac{\partial H}{\partial p_3} - 
+ \frac{\partial f_1}{\partial p_3}\frac{\partial H}{\partial q^3}
+\end{equation}
+
+\begin{equation}
+ \frac{df_1}{dt} = - \frac{p_2 - bq^2}{(q^1)^2}q^1 + \frac{b}{q^1}q^2
+ - \frac{1}{q^1}(-p_2 + 2bq^2)
+\end{equation}
+
+\begin{equation}
+ \frac{df_1}{dt} = \frac{-p_2 + bq^2 + bq^2 + p_2 -2bq^2}{q^1} 
+\end{equation}
+
+\begin{equation}
+ \frac{df_1}{dt} = \frac{\cancel{-p_2} + \cancel{2bq^2} + \cancel{p_2} - \cancel{2bq^2}}{q^1} = 0
+\end{equation}
+
+luego para $f_2$
+
+\begin{equation}
+ \frac{df_2}{dt} = \{f_2,H\} = \frac{\partial f_2}{\partial q^1}\frac{\partial H}{\partial p_1} - 
+ \frac{\partial f_2}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_2}{\partial q^2}\frac{\partial H}{\partial p_2} - 
+ \frac{\partial f_2}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial f_2}{\partial q^3}\frac{\partial H}{\partial p_3} - 
+ \frac{\partial f_2}{\partial p_3}\frac{\partial H}{\partial q^3}
+\end{equation}
+
+\begin{equation}
+ \frac{df_2}{dt} = q^2q^1 - q^1q^2 = 0
+\end{equation}
+
+y por último para $f_3$
+
+\begin{align*}
+\begin{split}
+ \frac{df_3}{dt} = \{f_3,H\} + \frac{\partial f_3}{\partial t} &= \frac{\partial f_3}{\partial q^1}\frac{\partial H}{\partial p_1} - 
+ \frac{\partial f_3}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_3}{\partial q^2}\frac{\partial H}{\partial p_2} - 
+ \frac{\partial f_3}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial f_3}{\partial q^3}\frac{\partial H}{\partial p_3} - 
+ \frac{\partial f_3}{\partial p_3}\frac{\partial H}{\partial q^3} \\
+ &+ \frac{\partial f_3}{\partial t}
+\end{split}
+\end{align*}
+
+\begin{equation}
+ \frac{df_3}{dt} + \frac{\partial f_3}{\partial t} = \euler^{-t}q^1 -\euler^{-t}q^1 = 0
+\end{equation}
+
+Hemos demostrado entonces que las $f_j$ son integrales de movimiento. Vemos además que 
+todas estas integrales de movimiento son independientes entre sí, lo cual puede verse 
+fácilmente debido a que solamente $f_1$ depende de $p_2$, por lo tanto es independiente 
+de $f_2$ y $f_3$, también solamente $f_3$ depende del tiempo $t$, por lo tanto 
+$f_3$ es independiente de $f_1$ y $f_2$, por lo tanto las tres son independientes.
+
+\vspace{.3cm}
+
+Los paréntesis de Poisson entre ellas son
+
+\begin{equation}
+ \{f_1,f_2\} = \frac{\partial f_1}{\partial q^1}\frac{\partial f_2}{\partial p_1} - 
+ \frac{\partial f_1}{\partial p_1}\frac{\partial f_2}{\partial q^1} +  \frac{\partial f_1}{\partial q^2}\frac{\partial f_2}{\partial p_2} - 
+ \frac{\partial f_1}{\partial p_2}\frac{\partial f_2}{\partial q^2} +  \frac{\partial f_1}{\partial q^3}\frac{\partial f_2}{\partial p_3} - 
+ \frac{\partial f_1}{\partial p_3}\frac{\partial f_2}{\partial q^3},
+\end{equation}
+
+\begin{equation}
+ \boxed{ \{f_1,f_2\} = - \frac{1}{q^1}q^1 = -1. }
+\end{equation}
+
+\begin{equation}
+ \{f_2,f_3\} = \frac{\partial f_2}{\partial q^1}\frac{\partial f_3}{\partial p_1} - 
+ \frac{\partial f_2}{\partial p_1}\frac{\partial f_3}{\partial q^1} +  \frac{\partial f_2}{\partial q^2}\frac{\partial f_3}{\partial p_2} - 
+ \frac{\partial f_2}{\partial p_2}\frac{\partial f_3}{\partial q^2} +  \frac{\partial f_2}{\partial q^3}\frac{\partial f_3}{\partial p_3} - 
+ \frac{\partial f_2}{\partial p_3}\frac{\partial f_3}{\partial q^3},
+\end{equation}
+
+\begin{equation}
+ \boxed{ \{f_2,f_3\} = 0 .}
+\end{equation}
+
+\begin{equation}
+ \{f_3,f_1\} = \frac{\partial f_3}{\partial q^1}\frac{\partial f_1}{\partial p_1} - 
+ \frac{\partial f_3}{\partial p_1}\frac{\partial f_1}{\partial q^1} +  \frac{\partial f_3}{\partial q^2}\frac{\partial f_1}{\partial p_2} - 
+ \frac{\partial f_3}{\partial p_2}\frac{\partial f_1}{\partial q^2} +  \frac{\partial f_3}{\partial q^3}\frac{\partial f_1}{\partial p_3} - 
+ \frac{\partial f_3}{\partial p_3}\frac{\partial f_1}{\partial q^3},
+\end{equation}
+
+\begin{equation}
+ \boxed{ \{f_3,f_1\} = 0 .}
+\end{equation}
+
+
+Si existe otra integral de movimiento, y es la hamiltoniana, para ver esto hacemos 
+
+\begin{equation}
+ \frac{d}{dt} H = \{H,H\} = \frac{\partial H}{\partial q^1}\frac{\partial H}{\partial p_1} - 
+ \frac{\partial H}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial H}{\partial q^2}\frac{\partial H}{\partial p_2} - 
+ \frac{\partial H}{\partial p_2}\frac{\partial H}{\partial q^2} +  \frac{\partial H}{\partial q^3}\frac{\partial H}{\partial p_3} - 
+ \frac{\partial H}{\partial p_3}\frac{\partial H}{\partial q^3}
+\end{equation}
+
+\begin{equation}
+  \boxed{\frac{d}{dt} H = \cancel{(p_1 - 2aq^1)q^1} - \cancel{q^1(p_1 - 2aq^1)} - \cancel{(p_2 + 2bq^2)q^2} + 
+  \cancel{q^2(p_2 + 2bq^2)} = 0.}
+\end{equation}
+
+
+
+
 \section{Problema 4}
 
 Demuestre que un sistema es hamiltoniano sí y solo sí
