@@ -301,28 +301,13 @@ Entonces las ecuaciones de movimiento, utilizando las anteriores ecuaciones ser�
 \end{split}
 \end{align}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Problema 2}
 
 Una partícula de masa $m$ se mueve en una dimensión y la hamiltoniana del sistema 
 es 
 
 $$
-H(q,p) = \frac{p^2}{2m}e^{-\frac{q}{a}}
+H(q,p) = \frac{p^2}{2m}\euler^{-\frac{q}{a}}
 $$
 
 Encuentre las ecuaciones de movimiento y su solución. Considerando únicamente los casos 
@@ -333,6 +318,126 @@ la energía total, la energía cinética y la hamiltoniana como integral de movi
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Para encontrar las ecuaciones de movimiento utilizaremos las ecuaciones de Hamilton 
+que podemos escribir, debido a que la partícula se mueve en una dimensión, como
+
+\begin{align}
+ \dot{q} = \frac{\partial H}{\partial p}, \\
+ \dot{p} = - \frac{\partial H}{\partial q}.
+\end{align}
+
+Entonces tenemos que,
+
+\begin{align}
+\label{eq:2qdot1}
+ \dot{q} = \frac{\cancel{2}p}{\cancel{2}m}\euler^{-\frac{q}{a}}
+ = \frac{p}{m}\euler^{-\frac{q}{a}}, \\
+\label{eq:2pdot1}
+ \dot{p} = - \left(- \frac{1}{a}\frac{p^2}{2m}\euler^{-\frac{q}{a}}\right)
+ = \frac{p^2}{2ma}\euler^{-\frac{q}{a}}.
+\end{align}
+
+Para hallar $q(t)$ nos podemos ayudar calculando $\ddot{q}$, utilizando 
+\eqref{eq:2qdot1} y \eqref{eq:2pdot1}, y el hecho de que\footnote{Claramente en este caso $p>0$.}
+$p^2 = \dot{q}^2m^2\euler^{\frac{2q}{a}}$,
+
+\begin{align*}
+ \ddot{q} &= \frac{\dot{p}}{m}\euler^{-\frac{q}{a}} - \frac{p\dot{q}}{ma}\euler^{-\frac{q}{a}}, \\
+	  &= \euler^{-\frac{q}{a}}\left(\frac{\dot{p}}{m} - \frac{p\dot{q}}{ma}\right), \\
+	  &= \euler^{-\frac{q}{a}}\left(\frac{p^2}{2m^2a}\euler^{-\frac{q}{a}} - 
+	  \frac{p^2}{m^2a}\euler^{-\frac{q}{a}}\right), \\
+	  &= - \euler^{-\frac{2q}{a}}\left(\frac{p^2}{2m^2a}\right), \\
+	  &= - \frac{\cancel{\euler^{-\frac{2q}{a}}}}{2\cancel{m^2}a}\dot{q}^2\cancel{m^2}\cancel{\euler^{\frac{2q}{a}}},
+\end{align*}
+
+\begin{equation}
+ \therefore \ddot{q} = - \frac{\dot{q}^2}{2a}
+\end{equation}
+
+Esta ecuación puede escribirse como
+
+\begin{equation}
+ m\ddot{q} = - m\frac{\dot{q}^2}{2a},
+\end{equation}
+
+donde vemos entonces que en una visión newtoniana del sistema y para el caso en que 
+$p > 0$ el sistema luce como una partícula con una fuerza de retardo 
+$-\frac{m\dot{q}^2}{2a}$.
+
+\vspace{.3cm}
+
+Tenemos entonces que 
+
+\begin{equation}
+- \frac{\ddot{q}}{\dot{q}^2} = \frac{1}{2a} \Rightarrow 
+\frac{\frac{d}{dt}\cancel{\dot{q}}}{\cancel{\dot{q}}\dot{q}} = \frac{1}{2a} 
+\Rightarrow \frac{d}{\dot{q}} = \frac{dt}{2a},
+\end{equation}
+
+que integrando resulta en
+
+\begin{equation}
+ \frac{1}{\dot{q}} = \frac{t}{2a} + C,
+\end{equation}
+
+luego 
+
+\begin{equation}
+ \dot{q} = \frac{2a}{t} + C \Rightarrow dq = 2a \frac{dt}{t} + Cdt
+\end{equation}
+
+Integrando de nuevo tenemos una expresión para $q(t)$
+
+\begin{equation}
+\boxed{ q(t) = 2a\ln{(Ct + B)}.}
+\end{equation}
+
+Para hallar $p(t)$ podemos usar este resultado, la derivada del mismo que 
+es $\dot{q(t)} = \frac{2aC}{Ct+B}$ y la ecuación \eqref{eq:2qdot1},
+
+\begin{align*}
+ \euler^{-\frac{q}{a}} &= \frac{\dot{q}m}{p}, \\
+ -\frac{q}{a} &= \ln{\left(\frac{2aCm}{(Ct+B)p)}\right)}, \\
+ -2\ln(Ct + B) &= \ln(2aCm) - \ln(Ct + B) - \ln(1/p), \\
+ \ln(2aCm(Ct + B)) &= \ln(p),
+\end{align*}
+
+por lo tanto
+
+\begin{equation}
+ \boxed{p(t) = 2amC(Ct+B).}
+\end{equation}
+
+Primero notamos que la hamiltoniana es una integral de movimiento debido a que 
+
+\begin{equation}
+ \frac{d}{dt}H =  \frac{d}{dt} \frac{p^2}{2m}\euler^{-\frac{q}{a}} = 0,
+\end{equation}
+
+vemos también que la energía cinética es igual a (usando \eqref{eq:2qdot1})
+
+\begin{equation}
+ T = \frac{1}{2}m\dot{q}^2 = \frac{1}{2}\cancel{m}\frac{p^2}{m^{\cancel{2}}}\euler^{-\frac{2q}{a}} = 
+ \frac{p^2}{2m}\euler^{-\frac{2q}{a}}
+\end{equation}
+
+Pero por la definición de $H$ entonces 
+
+\begin{equation}
+ \boxed{T = H\euler^{-\frac{q}{a}}.}
+\end{equation}
+
+Algo muy peculiar es que aunque la hamiltoniana es una integral de movimiento, 
+la energía cinética no se conserva, podemos ver esto fácilmente
+
+\begin{equation}
+ \dot{T} = - \frac{H}{a}\dot{q}\euler^{-\frac{q}{a}} = - \frac{4m^2aC^3}{Ct + B}
+\end{equation}
+
+Por lo tanto si la energía cinética no se conserva, entonces la energía total del sistema
+no se puede conservar, aún así se conserve la hamiltoniana, que por lo tanto no puede 
+ser igual a la energía total del sistema.
 
 \section{Problema 3}
 
