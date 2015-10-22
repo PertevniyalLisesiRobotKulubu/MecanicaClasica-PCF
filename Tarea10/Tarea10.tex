@@ -95,6 +95,12 @@
 
 \maketitle
 
+\textbf{\underline{Nota}: Para simplificar las ecuaciones, durante toda la tarea 
+utilizaremos el convenio de suma de Einstein, el cual nos dice 
+que un índice que aparece dos veces en un término matemático, una vez como un 
+superíndice y una vez como un subíndice, es sumado sobre el rango entero de ese 
+índice.}
+
 \section{Problema 1}
 
 Utilizando la formulación hamiltoniana de la mecánica, encuentre las ecuaciones de 
@@ -749,6 +755,36 @@ Demuestre la identidad de Jacobi para los paréntesis de Poisson.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Sean $f,g,h \in \mathbb{TM}^*$, la identidad de Jacobi nos dice que 
+
+\begin{equation}
+ \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} = 0.
+\end{equation}
+
+Para probar esta identidad utilizamos la definición de los paréntesis de Poisson, 
+en coordenadas canónicas $(q^i,p_i)$, 
+
+\begin{equation}
+ \{f,g\} = \frac{\partial f}{\partial q^i}\frac{\partial g}{\partial p_i} - 
+ \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i},
+\end{equation}
+
+entonces 
+
+\begin{equation}
+  \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\frac{\partial }{\partial p_i}\{g,h\} - 
+ \frac{\partial f}{\partial p_i}\frac{\partial }{\partial q^i}\{g,h\}
+\end{equation}
+
+\begin{equation}
+  \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\frac{\partial }{\partial p_i}\left[
+   \frac{\partial g}{\partial q^i}\frac{\partial h}{\partial p_i} - 
+ \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right]
+\end{equation}
+
+
+
 
 \begin{thebibliography}{20}
  \bibitem{saletan}
