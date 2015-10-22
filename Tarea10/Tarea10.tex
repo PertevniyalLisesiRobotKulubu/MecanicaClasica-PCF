@@ -435,7 +435,49 @@ la energía cinética no se conserva, podemos ver esto fácilmente
  \dot{T} = - \frac{H}{a}\dot{q}\euler^{-\frac{q}{a}} = - \frac{4m^2aC^3}{Ct + B}
 \end{equation}
 
+Pasemos un último punto importante ahora. Si queremos una expresión para la energía 
+total del sistema (si es que se puede hablar de la misma), necesitamos encontrar 
+la lagrangiana del sistema. Para eso hacemos uso de la ecuación (para un grado de 
+libertad)
 
+\begin{equation}
+ H = \dot{q}p - L
+\end{equation}
+
+y necesitamos invertir esta ecuación\footnote{\label{pie:1}Esto es posible si podemos escribir 
+a $p$ en función de $(q,\dot{q})$, es decir el procedimiento inverso para obtener 
+la hamiltoniana desde la lagrangiana, y eso puede hacerse si la Hessiana 
+$\partial^2 H/\partial p_i \partial p_j$ es no singular \cite{saletan}, \cite{abraham}.}
+
+\begin{equation}
+ L = \dot{q}p - H,
+\end{equation}
+
+y escribirla expresando a las $p$ en función de las $(q,\dot{q})$, entonces utilizando 
+las expresiones que hemos encontrado
+
+\begin{equation}
+ L = \dot{q}(m\dot{q}\euler^{\frac{q}{a}}) - \frac{\dot{q}^2m^{\cancel{2}}e^{\frac{2q}{a}}}{2\cancel{m}}\euler^{-\frac{q}{a}},
+\end{equation}
+
+\begin{equation}
+ L = m\dot{q}^2\euler^{\frac{q}{a}} - \frac{1}{2}m\dot{q}^2\euler^{\frac{q}{a}},
+\end{equation}
+
+\begin{equation}
+ \boxed{L = \frac{1}{2}m\dot{q}^2\euler^{\frac{q}{a}}}
+\end{equation}
+
+Pero por la expresión que tenemos para $\dot{q}$ vemos que 
+
+\begin{equation}
+ L = H,
+\end{equation}
+
+Entonces vemos que en este sistema no existe potencial, y la lagrangiana solo 
+contiene la contribución de la energía cinética, la cual no se conserva, y por lo 
+tanto la energía total del sistema no es igual a la hamiltoniana, que sí es una 
+cantidad conservada.
 
 \section{Problema 3}
 
@@ -579,6 +621,33 @@ menos $\{f_1,f_2\}$ tienen paréntesis de Poisson igual a cero, es decir que est
 pero debido a que $\{f_1,f_2\}$ no es cero, entonces no todas las integrales de movimiento 
 están en involución, y por lo tanto el sistema no es completamente integrable.
 
+\vspace{.3cm}
+
+La peculiaridad de esta hamiltoniana es fácil verla al conocer las condiciones\footnote{Ver pié 
+de página \ref{pie:1}.} para la inversión de la ecuación
+
+\begin{equation}
+ H = \dot{q}p - L
+\end{equation}
+
+para así obtener a la lagrangiana desde la hamiltoniana. Y vemos que no cumple con la 
+condición de que la Hessiana $\partial^2 H/\partial p_i \partial p_j$ no sea singular, 
+esto es fácil verlo debido a que claramente, tomando la ecuación para la hamiltoniana 
+y ver que 
+
+\begin{equation}
+ \left|\begin{matrix}
+  \frac{\partial^2 H}{\partial p_1^2} & \frac{\partial^2 H}{\partial p_1 \partial p_2} \\
+  \frac{\partial^2 H}{\partial p_2 \partial p_1} & \frac{\partial^2 H}{\partial p_2^2}
+ \end{matrix}\right| = 0,
+\end{equation}
+
+que es muy fácil de probar que esto es así al ver nuestra expresión de $H$. Entonces 
+no podemos obtener la lagrangiana de la hamiltoniana y por motivos similares no podemos 
+obtener la hamiltoniana de la lagrangiana, por lo tanto la rareza de esta hamiltoniana 
+es que no proviene de ninguna lagrangiana.
+
+
 
 \section{Problema 4}
 
@@ -680,5 +749,14 @@ Demuestre la identidad de Jacobi para los paréntesis de Poisson.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{20}
+ \bibitem{saletan}
+ J. José y E. Saletan, \emph{Classical dynamics: A contemporary approach}, Cambridge University Press,
+ 1998.
+ \bibitem{abraham}
+ R. Abraham y J. Marsden, \emph{Foundations of Mechanics}, 2da edición, Addison-Wesley,
+ 1978.
+\end{thebibliography}
 
 \end{document}
