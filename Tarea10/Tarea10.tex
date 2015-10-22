@@ -19,10 +19,19 @@
 \usepackage[margin=1.4in]{geometry}
 \usepackage[titletoc,toc,title]{appendix}
 \usepackage{enumitem}
+\usepackage{etoolbox}
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
 \graphicspath{Tarea10/}
+
+% Circled words
+\newcommand{\circled}[2][]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape = circle, draw, inner sep = 1pt]
+    (char) {\phantom{\ifblank{#1}{#2}{#1}}};%
+    \node at (char.center) {\makebox[0pt][c]{#2}};}}
+\robustify{\circled}
 
 %Appendices in spanish
 \renewcommand{\appendixname}{Ap\'endices}
@@ -783,7 +792,113 @@ entonces
  \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right]
 \end{equation}
 
+\begin{equation}
+  \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\left[
+  \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i} 
+  + \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
+  - \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
+  - \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i}\right]
+\end{equation}
 
+\begin{equation}
+  \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i} 
+  + \frac{\partial f}{\partial q^i}
+  \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
+  -\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
+  -\frac{\partial f}{\partial q^i} 
+  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i}
+\end{equation}
+
+De la misma manera 
+
+\begin{equation}
+  \{g,\{h,f\}\} = \frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i} 
+  + \frac{\partial g}{\partial q^i}
+  \frac{\partial h}{\partial q^i}\frac{\partial^2 f}{\partial p_i^2} 
+  -\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i} 
+  -\frac{\partial g}{\partial q^i} 
+  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i},
+\end{equation}
+
+y
+
+\begin{equation}
+  \{h,\{f,g\}\} = \frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i} 
+  + \frac{\partial h}{\partial q^i}
+  \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial p_i^2} 
+  -\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i} 
+  -\frac{\partial h}{\partial q^i} 
+  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i},
+\end{equation}
+
+
+Tenemos entonces que 
+
+\begin{align}
+\begin{split}
+  \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} &= \\
+  \frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i} 
+  + \frac{\partial f}{\partial q^i}
+  \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
+  -\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
+  -\frac{\partial f}{\partial q^i} 
+  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i} \\
+  + \frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i} 
+  + \frac{\partial g}{\partial q^i}
+  \frac{\partial h}{\partial q^i}\frac{\partial^2 f}{\partial p_i^2} 
+  -\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i} 
+  -\frac{\partial g}{\partial q^i} 
+  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i} \\
+  + \frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i} 
+  + \frac{\partial h}{\partial q^i}
+  \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial p_i^2} 
+  -\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i} 
+  -\frac{\partial h}{\partial q^i} 
+  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+  \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} &= \\
+  \underset{\circled{1}}{\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i}}
+  + \frac{\partial f}{\partial q^i}
+  \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
+  -\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
+  -\frac{\partial f}{\partial q^i} 
+  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i} \\
+  + \frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i} 
+  + \frac{\partial g}{\partial q^i}
+  \frac{\partial h}{\partial q^i}\frac{\partial^2 f}{\partial p_i^2} 
+  -\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i} 
+  -\frac{\partial g}{\partial q^i} 
+  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i} \\
+  + \frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i} 
+  + \frac{\partial h}{\partial q^i}
+  \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial p_i^2} 
+  -\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i} 
+  -\frac{\partial h}{\partial q^i} 
+  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i}
+\end{split}
+\end{align}
 
 
 \begin{thebibliography}{20}
