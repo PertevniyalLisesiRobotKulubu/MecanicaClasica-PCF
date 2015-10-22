@@ -783,24 +783,32 @@ entonces
 
 \begin{equation}
   \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\frac{\partial }{\partial p_i}\{g,h\} - 
- \frac{\partial f}{\partial p_i}\frac{\partial }{\partial q^i}\{g,h\}
+ \frac{\partial f}{\partial p_i}\frac{\partial }{\partial q^i}\{g,h\} 
 \end{equation}
 
 \begin{equation}
   \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\frac{\partial }{\partial p_i}\left[
    \frac{\partial g}{\partial q^i}\frac{\partial h}{\partial p_i} - 
- \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right]
+ \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right] 
+ - \frac{\partial f}{\partial p_i}\frac{\partial}{\partial q^i}\left[
+   \frac{\partial g}{\partial q^i}\frac{\partial h}{\partial p_i} - 
+ \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right] 
 \end{equation}
 
-\begin{equation}
+\begin{align}
   \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\left[
   \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i} 
   + \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
   - \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
-  - \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i}\right]
-\end{equation}
+  - \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i}\right] \\
+  - \frac{\partial f}{\partial p_i}\left[\frac{\partial^2 g}{\partial (q^i)^2}
+  \frac{\partial h}{\partial p_i} + \frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial q^i\partial p^i} - \frac{\partial^2 g}{\partial q^i\partial p_i}
+  \frac{\partial h}{\partial q^i} - \frac{\partial g}{\partial p_i}
+  \frac{\partial^2 h}{\partial^2(q^i)^2}\right]
+\end{align}
 
-\begin{equation}
+\begin{align}
   \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}
   \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i} 
   + \frac{\partial f}{\partial q^i}
@@ -808,12 +816,17 @@ entonces
   -\frac{\partial f}{\partial q^i}
   \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
   -\frac{\partial f}{\partial q^i} 
-  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i}
-\end{equation}
+  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i} \\
+  - \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial (q^i)^2}
+  \frac{\partial h}{\partial p_i} - \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial q^i\partial p^i} + \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial q^i\partial p_i}
+  \frac{\partial h}{\partial q^i} + \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial p_i}
+  \frac{\partial^2 h}{\partial^2(q^i)^2}
+\end{align}
 
 De la misma manera 
 
-\begin{equation}
+\begin{align}
   \{g,\{h,f\}\} = \frac{\partial g}{\partial q^i}
   \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i} 
   + \frac{\partial g}{\partial q^i}
@@ -821,12 +834,17 @@ De la misma manera
   -\frac{\partial g}{\partial q^i}
   \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i} 
   -\frac{\partial g}{\partial q^i} 
-  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i},
-\end{equation}
+  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i} \\
+   - \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial (q^i)^2}
+  \frac{\partial f}{\partial p_i} - \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial q^i\partial p^i} + \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial q^i\partial p_i}
+  \frac{\partial f}{\partial q^i} + \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial p_i}
+  \frac{\partial^2 f}{\partial^2(q^i)^2}
+\end{align}
 
 y
 
-\begin{equation}
+\begin{align}
   \{h,\{f,g\}\} = \frac{\partial h}{\partial q^i}
   \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i} 
   + \frac{\partial h}{\partial q^i}
@@ -834,8 +852,13 @@ y
   -\frac{\partial h}{\partial q^i}
   \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i} 
   -\frac{\partial h}{\partial q^i} 
-  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i},
-\end{equation}
+  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i} \\
+  - \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial (q^i)^2}
+  \frac{\partial g}{\partial p_i} - \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial q^i\partial p^i} + \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial q^i\partial p_i}
+  \frac{\partial g}{\partial q^i} + \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial p_i}
+  \frac{\partial^2 g}{\partial^2(q^i)^2}
+\end{align}
 
 
 Tenemos entonces que 
@@ -843,7 +866,7 @@ Tenemos entonces que
 \begin{align}
 \begin{split}
   \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} &= \\
-  \frac{\partial f}{\partial q^i}
+ \frac{\partial f}{\partial q^i}
   \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i} 
   + \frac{\partial f}{\partial q^i}
   \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
@@ -851,6 +874,11 @@ Tenemos entonces que
   \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
   -\frac{\partial f}{\partial q^i} 
   \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i} \\
+  - \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial (q^i)^2}
+  \frac{\partial h}{\partial p_i} - \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial q^i\partial p^i} + \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial q^i\partial p_i}
+  \frac{\partial h}{\partial q^i} + \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial p_i}
+  \frac{\partial^2 h}{\partial^2(q^i)^2} \\
   + \frac{\partial g}{\partial q^i}
   \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i} 
   + \frac{\partial g}{\partial q^i}
@@ -859,6 +887,11 @@ Tenemos entonces que
   \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i} 
   -\frac{\partial g}{\partial q^i} 
   \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i} \\
+   - \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial (q^i)^2}
+  \frac{\partial f}{\partial p_i} - \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial q^i\partial p^i} + \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial q^i\partial p_i}
+  \frac{\partial f}{\partial q^i} + \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial p_i}
+  \frac{\partial^2 f}{\partial^2(q^i)^2} \\
   + \frac{\partial h}{\partial q^i}
   \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i} 
   + \frac{\partial h}{\partial q^i}
@@ -866,39 +899,92 @@ Tenemos entonces que
   -\frac{\partial h}{\partial q^i}
   \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i} 
   -\frac{\partial h}{\partial q^i} 
-  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i}
+  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i} \\
+  - \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial (q^i)^2}
+  \frac{\partial g}{\partial p_i} - \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial q^i\partial p^i} + \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial q^i\partial p_i}
+  \frac{\partial g}{\partial q^i} + \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial p_i}
+  \frac{\partial^2 g}{\partial^2(q^i)^2}
 \end{split}
 \end{align}
 
+Para entender un poco mejor todos los términos de esta ecuación, los numeraremos
+y si aparecen repetidos sencillamente se repetirá la numeración,
+
 \begin{align}
 \begin{split}
-  \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} &= \\
-  \underset{\circled{1}}{\frac{\partial f}{\partial q^i}
-  \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i}}
-  + \frac{\partial f}{\partial q^i}
-  \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2} 
-  -\frac{\partial f}{\partial q^i}
-  \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i} 
-  -\frac{\partial f}{\partial q^i} 
-  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i} \\
-  + \frac{\partial g}{\partial q^i}
-  \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i} 
-  + \frac{\partial g}{\partial q^i}
-  \frac{\partial h}{\partial q^i}\frac{\partial^2 f}{\partial p_i^2} 
-  -\frac{\partial g}{\partial q^i}
-  \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i} 
-  -\frac{\partial g}{\partial q^i} 
-  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i} \\
-  + \frac{\partial h}{\partial q^i}
-  \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i} 
-  + \frac{\partial h}{\partial q^i}
-  \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial p_i^2} 
-  -\frac{\partial h}{\partial q^i}
-  \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i} 
-  -\frac{\partial h}{\partial q^i} 
-  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i}
+   \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} &= \\
+ \underset{\circled{1}}{\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i\partial q^i}\frac{\partial h}{\partial p_i}} 
+  + \underset{\circled{2}}{\frac{\partial f}{\partial q^i}
+  \frac{\partial g}{\partial q^i}\frac{\partial^2 h}{\partial p_i^2}} 
+  - \underset{\circled{3}}{\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial p_i^2}\frac{\partial h}{\partial q^i}}
+  -\underset{\circled{4}}{\frac{\partial f}{\partial q^i} 
+  \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial p_i \partial q^i}} \\
+  - \underset{\circled{5}}{\frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial (q^i)^2}
+  \frac{\partial h}{\partial p_i}} - \underset{\circled{6}}{\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial q^i\partial p^i}} + \underset{\circled{7}}{\frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial q^i\partial p_i}
+  \frac{\partial h}{\partial q^i}} + \underset{\circled{8}}{\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial p_i}
+  \frac{\partial^2 h}{\partial^2(q^i)^2}} \\
+  + \underset{\circled{6}}{\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i\partial q^i}\frac{\partial f}{\partial p_i}}
+  + \underset{\circled{9}}{\frac{\partial g}{\partial q^i}
+  \frac{\partial h}{\partial q^i}\frac{\partial^2 f}{\partial p_i^2}}
+  - \underset{\circled{2}}{\frac{\partial g}{\partial q^i}
+  \frac{\partial^2 h}{\partial p_i^2}\frac{\partial f}{\partial q^i}}
+  -\underset{\circled{10}}{\frac{\partial g}{\partial q^i} 
+  \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial p_i \partial q^i}} \\
+   - \underset{\circled{8}}{\frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial (q^i)^2}
+  \frac{\partial f}{\partial p_i}} - \underset{\circled{11}}{\frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial q^i\partial p^i}} + \underset{\circled{4}}{\frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial q^i\partial p_i}
+  \frac{\partial f}{\partial q^i}} + \underset{\circled{12}}{\frac{\partial g}{\partial p_i}\frac{\partial h}{\partial p_i}
+  \frac{\partial^2 f}{\partial^2(q^i)^2}} \\
+  + \underset{\circled{11}}{\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i\partial q^i}\frac{\partial g}{\partial p_i}}
+  + \underset{\circled{3}}{\frac{\partial h}{\partial q^i}
+  \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial p_i^2}}
+  -\underset{\circled{9}}{\frac{\partial h}{\partial q^i}
+  \frac{\partial^2 f}{\partial p_i^2}\frac{\partial g}{\partial q^i}} 
+  -\underset{\circled{7}}{\frac{\partial h}{\partial q^i} 
+  \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial p_i \partial q^i}} \\
+  - \underset{\circled{12}}{\frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial (q^i)^2}
+  \frac{\partial g}{\partial p_i}} - \underset{\circled{1}}{\frac{\partial h}{\partial p_i}\frac{\partial f}{\partial q^i}
+  \frac{\partial^2 g}{\partial q^i\partial p^i}} + \underset{\circled{10}}{\frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial q^i\partial p_i}
+  \frac{\partial g}{\partial q^i}} + \underset{\circled{5}}{\frac{\partial h}{\partial p_i}\frac{\partial f}{\partial p_i}
+  \frac{\partial^2 g}{\partial^2(q^i)^2}}
 \end{split}
 \end{align}
+
+Vemos entonces que podemos escribir, para hacer mucho más fácil la cancelación
+de términos
+
+\begin{align*}
+ \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} = \circled{1} + \circled{2} 
+ - \circled{3} - \circled{4} - \circled{5} - \circled{6} + \circled{7} \\
+ + \circled{8} + \circled{6} + \circled{9} - \circled{2} - \circled{10}
+ - \circled{8} - \circled{11} + \circled{4} + \circled{12} + \circled{11} \\
+ + \circled{3} - \circled{9} - \circled{7} - \circled{12} - \circled{1} 
+ + \circled{10} + \circled{5},
+\end{align*}
+
+ordenando tenemos
+
+\begin{align*}
+ \{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} = \circled{1} - \circled{1} 
+ + \circled{2} - \circled{2} + \circled{3} - \circled{3} \\
+ + \circled{4} - \circled{4} + \circled{5} - \circled{5} + \circled{6} - \circled{6} \\
+ + \circled{7} - \circled{7} + \circled{8} - \circled{8} + \circled{9} - \circled{9} \\
+ + \circled{10} - \circled{10} + \circled{11} - \circled{11} + \circled{12} - \circled{12}
+\end{align*}
+
+Vemos claramente que cada número está repetido, una vez positivo y una vez negativo, 
+por lo tanto todos se cancelan, y llegamos a que 
+
+\begin{equation}
+ \boxed{\{f,\{g,h\}\} + \{g,\{h,f\}\} + \{h,\{f,g\}\} = 0.}
+\end{equation}
+
 
 
 \begin{thebibliography}{20}
