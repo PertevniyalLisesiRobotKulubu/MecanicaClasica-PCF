@@ -166,7 +166,7 @@ puede escribirse como
 
 \begin{equation}
  \therefore T = \frac{m}{2}l^2\left[2\dot{\theta_1}^2 + \dot{\theta_2}^2 
- + 2\dot{\theta_1}\dot{\theta_2}\cos{(\theta_1 - \theta_2)}\right]
+ + 2\dot{\theta_1}\dot{\theta_2}\cos{(\theta_1 - \theta_2)}\right].
 \end{equation}
 
 Por otra parte la energía potencial del sistema 
@@ -227,12 +227,12 @@ coordenadas generalizadas en función de los mismos como
 
 \begin{equation}
  \dot{\theta_1} = \frac{\cos{(\theta_1 - \theta_2)}[- p_{\theta_1}^2 - 
- p_{\theta_2}ml^2] + p_{\theta_1}[p_{\theta_2} + ml^2\cos^2{(\theta_1 - \theta_2)}]}{m^2l^4[2 - \cos^2{(\theta_1 - \theta_2)}]}
+ p_{\theta_2}ml^2] + p_{\theta_1}[p_{\theta_2} + ml^2\cos^2{(\theta_1 - \theta_2)}]}{m^2l^4[2 - \cos^2{(\theta_1 - \theta_2)}]},
  \label{eq:velGenTheta1}
 \end{equation}
 
 \begin{equation}
- \dot{\theta_2} = \frac{2p_{\theta_2} - 2p_{\theta_1}\cos{(\theta_1 - \theta_2)}}{ml^2[2 - \cos^2{(\theta_1 - \theta_2)}]}
+ \dot{\theta_2} = \frac{2p_{\theta_2} - 2p_{\theta_1}\cos{(\theta_1 - \theta_2)}}{ml^2[2 - \cos^2{(\theta_1 - \theta_2)}]}.
  \label{eq:velGenTheta2}
 \end{equation}
 
@@ -271,7 +271,7 @@ o simplificando
 \begin{equation}
  \boxed{H = \frac{p_{\theta_1}^2 + 2p_{\theta_2}^2 - 
  2\cos{(\theta_1 - \theta_2)p_{\theta_1}p_{\theta_2}}}{4m - 
- 2m\cos^2{(\theta_1 - \theta_2)}} - mgl(2\cos{\theta_1} + \cos{\theta_2})}
+ 2m\cos^2{(\theta_1 - \theta_2)}} - mgl(2\cos{\theta_1} + \cos{\theta_2}).}
 \end{equation}
 
 Podemos utilizar ahora las ecuaciones de Hamilton para encontrar las ecuaciones de 
@@ -312,7 +312,7 @@ Entonces las ecuaciones de movimiento, utilizando las anteriores ecuaciones ser�
  &- \frac{4m\sen{(\theta_1 - \theta_2})\cos{(\theta_1 - \theta_2)}
  \left[p_{\theta_1}^2 - 2p_{\theta_1}p_{\theta_2}\cos{(\theta_1 - \theta_2)} + 2p_{\theta_2}^2\right]}{[4m - 2m\cos^2{(\theta_1 - \theta_2)}]^2} \\
  &+ \frac{2p_{\theta_1}p_{\theta_2}\sen{(\theta_1 - \theta_2)}}{4m - 2m\cos^2{(\theta_1 - \theta_2)}} 
- - mgl\sen{\theta_2}
+ - mgl\sen{\theta_2}.
 \end{split}
 \end{align}
 
@@ -354,7 +354,8 @@ Entonces tenemos que,
 \end{align}
 
 Para hallar $q(t)$ nos podemos ayudar calculando $\ddot{q}$, utilizando 
-\eqref{eq:2qdot1} y \eqref{eq:2pdot1}, y el hecho de que\footnote{Claramente en este caso $p>0$.}
+\eqref{eq:2qdot1} y \eqref{eq:2pdot1}, y el hecho de que\footnote{Tomaremos los casos 
+para los que $p>0$.}
 $p^2 = \dot{q}^2m^2\euler^{\frac{2q}{a}}$,
 
 \begin{align*}
@@ -367,7 +368,7 @@ $p^2 = \dot{q}^2m^2\euler^{\frac{2q}{a}}$,
 \end{align*}
 
 \begin{equation}
- \therefore \ddot{q} = - \frac{\dot{q}^2}{2a}
+ \therefore \ddot{q} = - \frac{\dot{q}^2}{2a}.
 \end{equation}
 
 Esta ecuación puede escribirse como
@@ -399,7 +400,7 @@ que integrando resulta en
 luego 
 
 \begin{equation}
- \dot{q} = \frac{2a}{t} + C \Rightarrow dq = 2a \frac{dt}{t} + Cdt
+ \dot{q} = \frac{2a}{t} + C \Rightarrow dq = 2a \frac{dt}{t} + Cdt.
 \end{equation}
 
 Integrando de nuevo tenemos una expresión para $q(t)$
@@ -434,7 +435,7 @@ vemos también que la energía cinética es igual a (usando \eqref{eq:2qdot1})
 
 \begin{equation}
  T = \frac{1}{2}m\dot{q}^2 = \frac{1}{2}\cancel{m}\frac{p^2}{m^{\cancel{2}}}\euler^{-\frac{2q}{a}} = 
- \frac{p^2}{2m}\euler^{-\frac{2q}{a}}
+ \frac{p^2}{2m}\euler^{-\frac{2q}{a}}.
 \end{equation}
 
 Pero por la definición de $H$ entonces 
@@ -447,7 +448,7 @@ Algo muy peculiar es que aunque la hamiltoniana es una integral de movimiento,
 la energía cinética no se conserva, podemos ver esto fácilmente
 
 \begin{equation}
- \dot{T} = - \frac{H}{a}\dot{q}\euler^{-\frac{q}{a}} = - \frac{4m^2aC^3}{Ct + B}
+ \dot{T} = - \frac{H}{a}\dot{q}\euler^{-\frac{q}{a}} = - \frac{4m^2aC^3}{Ct + B}.
 \end{equation}
 
 Pasemos un último punto importante ahora. Si queremos una expresión para la energía 
@@ -480,7 +481,7 @@ las expresiones que hemos encontrado
 \end{equation}
 
 \begin{equation}
- \boxed{L = \frac{1}{2}m\dot{q}^2\euler^{\frac{q}{a}}}
+ \boxed{L = \frac{1}{2}m\dot{q}^2\euler^{\frac{q}{a}}.}
 \end{equation}
 
 Pero por la expresión que tenemos para $\dot{q}$ vemos que 
@@ -537,15 +538,15 @@ Entonces tenemos que, para $f_1$
 
 \begin{equation}
  \frac{df_1}{dt} = - \frac{p_2 - bq^2}{(q^1)^2}q^1 + \frac{b}{q^1}q^2
- - \frac{1}{q^1}(-p_2 + 2bq^2)
+ - \frac{1}{q^1}(-p_2 + 2bq^2),
 \end{equation}
 
 \begin{equation}
- \frac{df_1}{dt} = \frac{-p_2 + bq^2 + bq^2 + p_2 -2bq^2}{q^1} 
+ \frac{df_1}{dt} = \frac{-p_2 + bq^2 + bq^2 + p_2 -2bq^2}{q^1},
 \end{equation}
 
 \begin{equation}
- \frac{df_1}{dt} = \frac{\cancel{-p_2} + \cancel{2bq^2} + \cancel{p_2} - \cancel{2bq^2}}{q^1} = 0
+ \frac{df_1}{dt} = \frac{\cancel{-p_2} + \cancel{2bq^2} + \cancel{p_2} - \cancel{2bq^2}}{q^1} = 0,
 \end{equation}
 
 luego para $f_2$
@@ -565,12 +566,12 @@ y por último para $f_3$
 \begin{equation}
 \frac{df_3}{dt} = \{f_3,H\} + \frac{\partial f_3}{\partial t} = \frac{\partial f_3}{\partial q^1}\frac{\partial H}{\partial p_1} - 
  \frac{\partial f_3}{\partial p_1}\frac{\partial H}{\partial q^1} +  \frac{\partial f_3}{\partial q^2}\frac{\partial H}{\partial p_2} - 
- \frac{\partial f_3}{\partial p_2}\frac{\partial H}{\partial q^2} + \frac{\partial f_3}{\partial t} 
+ \frac{\partial f_3}{\partial p_2}\frac{\partial H}{\partial q^2} + \frac{\partial f_3}{\partial t},
 \end{equation}
 
 
 \begin{equation}
- \frac{df_3}{dt} = \euler^{-t}q^1 -\euler^{-t}q^1 = 0
+ \frac{df_3}{dt} = \euler^{-t}q^1 -\euler^{-t}q^1 = 0.
 \end{equation}
 
 Hemos demostrado entonces que las $f_j$ son constantes de movimiento, dos de ellas 
@@ -642,7 +643,7 @@ La peculiaridad de esta hamiltoniana es fácil verla al conocer las condiciones\
 de página \ref{pie:1}.} para la inversión de la ecuación
 
 \begin{equation}
- H = \dot{q}p - L
+ H = \dot{q}p - L,
 \end{equation}
 
 para así obtener a la lagrangiana desde la hamiltoniana. Y vemos que no cumple con la 
@@ -714,7 +715,7 @@ Por otra parte el segundo término de \eqref{eq:42} puede escribirse como
 \begin{align*}
  \frac{\partial}{\partial t}\{f,g\} &= \frac{\partial}{\partial t}
  \left[\frac{\partial f}{\partial q^i}\frac{\partial g}{\partial p_i} - 
- \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}\right] \\
+ \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}\right], \\
  &= \frac{\partial^2 f}{\partial t\partial q^i}\frac{\partial g}{\partial p_i} 
  - \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial t \partial q^i}
  + \frac{\partial f}{\partial q^i}\frac{\partial^2 g}{\partial t \partial p_i}
@@ -790,7 +791,7 @@ usando la definición de los paréntesis de Poisson
 \end{equation}
 
 \begin{equation}
- \therefore \frac{\partial X^i}{\partial q^i} = - \frac{\partial X_j}{\partial p_j}
+ \therefore \frac{\partial X^i}{\partial q^i} = - \frac{\partial X_j}{\partial p_j}.
 \end{equation}
 
 Si suponemos que existe una forma simpléctica expresada en estas coordenadas canónicas 
@@ -854,7 +855,7 @@ entonces
 
 \begin{equation}
   \{f,\{g,h\}\} = \frac{\partial f}{\partial q^i}\frac{\partial }{\partial p_i}\{g,h\} - 
- \frac{\partial f}{\partial p_i}\frac{\partial }{\partial q^i}\{g,h\} 
+ \frac{\partial f}{\partial p_i}\frac{\partial }{\partial q^i}\{g,h\}, 
 \end{equation}
 
 \begin{equation}
@@ -863,7 +864,7 @@ entonces
  \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right] 
  - \frac{\partial f}{\partial p_i}\frac{\partial}{\partial q^i}\left[
    \frac{\partial g}{\partial q^i}\frac{\partial h}{\partial p_i} - 
- \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right] 
+ \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}\right], 
 \end{equation}
 
 \begin{align}
@@ -876,7 +877,7 @@ entonces
   \frac{\partial h}{\partial p_i} + \frac{\partial g}{\partial q^i}
   \frac{\partial^2 h}{\partial q^i\partial p^i} - \frac{\partial^2 g}{\partial q^i\partial p_i}
   \frac{\partial h}{\partial q^i} - \frac{\partial g}{\partial p_i}
-  \frac{\partial^2 h}{\partial^2(q^i)^2}\right]
+  \frac{\partial^2 h}{\partial^2(q^i)^2}\right],
 \end{align}
 
 \begin{align}
@@ -892,7 +893,7 @@ entonces
   \frac{\partial h}{\partial p_i} - \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q^i}
   \frac{\partial^2 h}{\partial q^i\partial p^i} + \frac{\partial f}{\partial p_i}\frac{\partial^2 g}{\partial q^i\partial p_i}
   \frac{\partial h}{\partial q^i} + \frac{\partial f}{\partial p_i}\frac{\partial g}{\partial p_i}
-  \frac{\partial^2 h}{\partial^2(q^i)^2}
+  \frac{\partial^2 h}{\partial^2(q^i)^2}.
 \end{align}
 
 De la misma manera 
@@ -910,7 +911,7 @@ De la misma manera
   \frac{\partial f}{\partial p_i} - \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial q^i}
   \frac{\partial^2 f}{\partial q^i\partial p^i} + \frac{\partial g}{\partial p_i}\frac{\partial^2 h}{\partial q^i\partial p_i}
   \frac{\partial f}{\partial q^i} + \frac{\partial g}{\partial p_i}\frac{\partial h}{\partial p_i}
-  \frac{\partial^2 f}{\partial^2(q^i)^2}
+  \frac{\partial^2 f}{\partial^2(q^i)^2},
 \end{align}
 
 y
@@ -928,9 +929,8 @@ y
   \frac{\partial g}{\partial p_i} - \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial q^i}
   \frac{\partial^2 g}{\partial q^i\partial p^i} + \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial q^i\partial p_i}
   \frac{\partial g}{\partial q^i} + \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial p_i}
-  \frac{\partial^2 g}{\partial^2(q^i)^2}
+  \frac{\partial^2 g}{\partial^2(q^i)^2}.
 \end{align}
-
 
 Tenemos entonces que 
 
@@ -975,7 +975,7 @@ Tenemos entonces que
   \frac{\partial g}{\partial p_i} - \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial q^i}
   \frac{\partial^2 g}{\partial q^i\partial p^i} + \frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial q^i\partial p_i}
   \frac{\partial g}{\partial q^i} + \frac{\partial h}{\partial p_i}\frac{\partial f}{\partial p_i}
-  \frac{\partial^2 g}{\partial^2(q^i)^2}
+  \frac{\partial^2 g}{\partial^2(q^i)^2}.
 \end{split}
 \end{align}
 
@@ -1023,7 +1023,7 @@ Para entender un poco mejor todos los términos de esta ecuación, los numerarem
   \frac{\partial g}{\partial p_i}} - \underset{\circled{1}}{\frac{\partial h}{\partial p_i}\frac{\partial f}{\partial q^i}
   \frac{\partial^2 g}{\partial q^i\partial p^i}} + \underset{\circled{10}}{\frac{\partial h}{\partial p_i}\frac{\partial^2 f}{\partial q^i\partial p_i}
   \frac{\partial g}{\partial q^i}} + \underset{\circled{5}}{\frac{\partial h}{\partial p_i}\frac{\partial f}{\partial p_i}
-  \frac{\partial^2 g}{\partial^2(q^i)^2}}
+  \frac{\partial^2 g}{\partial^2(q^i)^2}}.
 \end{split}
 \end{align}
 
@@ -1046,7 +1046,7 @@ ordenando tenemos
  + \circled{2} - \circled{2} + \circled{3} - \circled{3} \\
  + \circled{4} - \circled{4} + \circled{5} - \circled{5} + \circled{6} - \circled{6} \\
  + \circled{7} - \circled{7} + \circled{8} - \circled{8} + \circled{9} - \circled{9} \\
- + \circled{10} - \circled{10} + \circled{11} - \circled{11} + \circled{12} - \circled{12}
+ + \circled{10} - \circled{10} + \circled{11} - \circled{11} + \circled{12} - \circled{12}.
 \end{align*}
 
 Vemos claramente que cada número está repetido, una vez positivo y una vez negativo, 
