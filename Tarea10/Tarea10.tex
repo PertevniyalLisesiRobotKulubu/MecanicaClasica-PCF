@@ -678,7 +678,7 @@ $$
 
 Probemos primero hacia un sentido y luego hacia el otro para así ver si tenemos una equivalencia 
 matemática. Para probar el primer sentido asumimos que existe una función hamiltoniana 
-$H(q,p,t)$ y queremos probar si se cumple la conocida regla de Leibnitz. Recordamos 
+$H(q,p,t)$ y queremos probar si se cumple la conocida regla de Leibniz. Recordamos 
 que si existe esta $H$ entonces 
 
 \begin{equation}
@@ -752,9 +752,85 @@ Y utilizando \eqref{eq:41} podemos escribir \eqref{eq:47} de la forma deseada
 $\hspace{12cm} \square$
 
 Entonces hemos demostrado que si existe la hamiltoniana, entonces se cumple la regla 
-de Leibnitz para los paréntesis de Poisson. Debemos ahora probar el sentido inverso, 
+de Leibniz para los paréntesis de Poisson. Debemos ahora probar el sentido inverso, 
 para demostrar la equivalencia matemática, es decir, que si se cumple la regla de 
-Leibnitz entonces existe una función hamiltoniana.
+Leibniz entonces existe una función hamiltoniana.
+
+\vspace{.3cm}
+
+Para probar la segunda parte, utilizaremos el hecho de que \cite{iro}
+
+\begin{equation}
+ \{q^i, p_j\} = \delta^i_j 
+\end{equation}
+
+y asumiremos que se cumple la regla de Leibniz. Tenemos que\footnote{Claramente la 
+derivada temporal de $\delta^i_j$ debe ser cero.} 
+
+\begin{equation}
+ \frac{d}{dt} \{q^i, p_j\} = \{\dot{q}^i, p_j\} + \{q^i, \dot{p}_j\} = 0,
+\end{equation}
+
+y sean $\dot{q}^i = X^i$ y $\dot{p}_j = X_j$ donde las $X^i$ y 
+$X_j$ son las componentes de un campo vectorial en la base inducida por las 
+coordenadas $(\partial/\partial q^i,\partial/\partial p_j)$, el cual 
+está definido en $\mathbb{TM*}$, entonces 
+
+\begin{equation}
+  \{X^i, p_j\} + \{q^i, X_j\} = 0,
+\end{equation}
+
+usando la definición de los paréntesis de Poisson
+
+\begin{equation}
+ \frac{\partial X^i}{\partial q^i}\cancelto{1}{\frac{\partial p_j}{\partial p_j}} - 
+ \frac{\partial X^i}{\partial p_j}\cancelto{0}{\frac{\partial p_j}{\partial q^i}} + 
+ \cancelto{1}{\frac{\partial q^i}{\partial q^i}}\frac{\partial X_j}{\partial p_j} - 
+ \cancelto{0}{\frac{\partial q^i}{\partial p_j}}\frac{\partial X_j}{\partial q^i} = 0
+\end{equation}
+
+\begin{equation}
+ \therefore \frac{\partial X^i}{\partial q^i} = - \frac{\partial X_j}{\partial p_j}
+\end{equation}
+
+Si suponemos que existe una forma simpléctica expresada en estas coordenadas canónicas 
+de la forma
+
+\begin{equation}
+ \gamma = dp_i \wedge dq^i,
+\end{equation}
+
+sabemos entonces que la diferenciación exterior de la uno-forma que le toca 
+al campo vectorial $X$ será igual a cero por la condición a la que hemos llegado
+asumiendo que se cumple la regla de Leibniz, es decir que la uno-forma $\gamma[\bullet,X]$
+es exacta, por lo que debe ser la diferencial de alguna función, la cual llamaremos 
+$H$ 
+
+\begin{equation}
+\gamma[\bullet,X] = dH,
+\end{equation}
+
+$\hspace{12cm} \square$
+
+lo que nos dice que el campo $X$ es hamiltoniano y debe existir entonces una función 
+hamiltoniana $H$. Debe quedar claro que esta prueba es local debido a que hemos usado coordenadas 
+explícitamente para demostrarlo, y puede además probarse que esto es lo mejor que 
+se puede hacer \cite{saletan}. En otras palabras, si el paréntesis de Poisson se comporta como un 
+producto con respecto a la diferenciación temporal, existe una función hamiltoniana $H$ 
+local, es decir, que el sistema es localmente hamiltoniano. Y como establece \cite{saletan}
+y puede verse mejor en \cite{abraham}, puede no existir una sola $H$ que sea válida para 
+todo $\mathbb{TM^*}$.
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Problema 5}
@@ -994,6 +1070,9 @@ por lo tanto todos se cancelan, y llegamos a que
  \bibitem{abraham}
  R. Abraham y J. Marsden, \emph{Foundations of Mechanics}, 2da edición, Addison-Wesley,
  1978.
+ \bibitem{iro}
+ H. Iro, \emph{A modern approach to classical mechanics}, World Scientific Publishing,
+ 2002.
 \end{thebibliography}
 
 \end{document}
