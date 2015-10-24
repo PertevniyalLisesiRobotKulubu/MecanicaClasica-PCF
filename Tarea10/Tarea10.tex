@@ -570,11 +570,12 @@ y por último para $f_3$
 
 
 \begin{equation}
- \frac{df_3}{dt} + \frac{\partial f_3}{\partial t} = \euler^{-t}q^1 -\euler^{-t}q^1 = 0
+ \frac{df_3}{dt} = \euler^{-t}q^1 -\euler^{-t}q^1 = 0
 \end{equation}
 
-Hemos demostrado entonces que las $f_j$ son integrales de movimiento. Vemos además que 
-todas estas integrales de movimiento son independientes entre sí, lo cual puede verse 
+Hemos demostrado entonces que las $f_j$ son constantes de movimiento, dos de ellas 
+integrales de movimiento ($f_1$ y $f_2$) y $f_3$ sólo constante de movimiento. Vemos además que 
+todas estas constantes de movimiento son independientes entre sí, lo cual puede verse 
 fácilmente debido a que solamente $f_1$ depende de $p_2$, por lo tanto es independiente 
 de $f_2$ y $f_3$, también solamente $f_3$ depende del tiempo $t$, por lo tanto 
 $f_3$ es independiente de $f_1$ y $f_2$, por lo tanto las tres son independientes.
@@ -614,7 +615,8 @@ Los paréntesis de Poisson entre ellas son
 \end{equation}
 
 
-Si existe otra integral de movimiento, y es la hamiltoniana, para ver esto hacemos 
+Sí existe otra constante de movimiento (en este casi integral de movimiento),
+y es la hamiltoniana, para ver esto hacemos 
 
 \begin{equation}
  \frac{d}{dt} H = \{H,H\} = \frac{\partial H}{\partial q^1}\frac{\partial H}{\partial p_1} - 
@@ -628,13 +630,11 @@ Si existe otra integral de movimiento, y es la hamiltoniana, para ver esto hacem
 \end{equation}
 
 Y esta es independiente de las $f_j$ debido a que depende de $p_1$ y las $f_j$ no. Los 
-paréntesis de Poisson entre las $H$ y las $f_j$ ya los calculamos y vimos que eran todos 
-cero, lo cual probó que eran integrales de movimiento. También calculamos los paréntesis de 
+paréntesis de Poisson entre las $H$ y las $f_j$ ya los calculamos y vimos que dos eran cero 
+lo cual probó que eran integrales de movimiento, pero $\{f_3,H\}$ no lo es, con lo cual 
+vimos que $f_3$ es solo una constante de movimiento. También calculamos los paréntesis de 
 Poisson de las $f_j$ y vemos que dos eran cero, los de $\{f_3,f_1\}$ y $\{f_2,f_3\}$, pero 
-$\{f_1,f_2\}$ no fue cero. Entonces vemos que todas menos las integrales de movimiento 
-menos $\{f_1,f_2\}$ tienen paréntesis de Poisson igual a cero, es decir que están en involución,
-pero debido a que $\{f_1,f_2\}$ no es cero, entonces no todas las integrales de movimiento 
-están en involución, y por lo tanto el sistema no es completamente integrable.
+$\{f_1,f_2\}$ no fue cero.
 
 \vspace{.3cm}
 
