@@ -115,6 +115,49 @@ mismo para el caso de una forma simpléctica.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para la solución de este problema y para no repetir lo que se hace en e
+problema 3, se asumirán que las definiciones y propiedades para los productos 
+internos y métricas ya están establecidas. La mayoría del tratamiento 
+que haremos en este problema fue sacado de \cite{rasband} y \cite{spivak}.
+
+\vspace{.3cm}
+
+Para probar la primera parte del problema debemos probar que cuando 
+se define un producto interno, y por lo tanto un tensor métrico (ver problema 3), 
+existe, no hay diferencia entre $TM_x$ y $TM_x^*$, y que por lo tanto 
+a cada vector le corresponde una forma lineal, y esto elevado a los haces 
+tangentes y cotangentes establece un isomorfismo natural entre campos vectoriales 
+y uno-formas diferenciales. Para poder hacer esta prueba, y que podamos decir 
+que el isomorfismo es natural, la misma no debe depender de cartas, o lo mismo 
+que no dependa de coordenadas, o como lo haremos aquí, que se cumpla para 
+cualquier vector arbitrario.
+
+\vspace{.3cm}
+
+Sea $\mathbf{u} \in TM_x$ un vector arbitrario, definimos el producto interno 
+$\langle \mathbf{u} , \mathbf{v} \rangle$ para todo $\mathbf{v} \in TM_x$. Si vemos 
+a $\langle \mathbf{u} , \bullet \rangle$ como un operador sobre $TM_x$, vemos 
+por lo demostrado en el problema 3 que es un operador real, lineal y por 
+lo tanto una forma lineal; además sabemos que este producto interno induce 
+una métrica en $M$ y podemos pensarlo como un mapeo lineal con dos argumentos 
+sobre $TM_x$, podemos escribir entonces 
+
+\begin{equation}
+ \langle \mathbf{u} , \mathbf{v} \rangle = g_{ij}u^iv^i \in \mathbb{R}.
+\end{equation}
+
+De esta ecuación vemos que el mapeo $\langle \mathbf{u} , \bullet \rangle: TM_x 
+\rightarrow \mathbb{R}$ es un mapeo real y lineal sobre $TM_x$ y por lo tanto 
+es un elemento de $TM_x^*$. Este elemento es la imagen isomorfa de $\mathbf{u}$. 
+Si $\mathbf{u} \in TM_x$ tiene componentes $u^i$ en una base natural, entonces 
+la imagen isomorfa tiene componentes $u_i = g_{ij}u^j$. Con lo cual vemos que 
+como esto fue hecho para vectores cualesquiera, y definido punto a punto, entonces 
+vemos exactamente lo pedido, con el sencillo hecho de definir un producto interno 
+en cada espacio tangente pudimos establecer un isomorfismo natural entre 
+cada pareja de espacios tangentes y cotangentes, con lo cual tenemos inmediatamente 
+una relación entre campos vectoriales y uno-formas diferenciales.
+
+
 \section{Problema 2}
 
 Demuestre, de manera detallada y rigurosa, que los productos externos 
@@ -194,7 +237,7 @@ y diferencial, queda definida una métrica para la variedad diferencial.
 Necesitamos una serie de definiciones y teoremas para demostrar de manera detallada 
 y rigurosa este enunciado. Comencemos hablando un poco sobre lo que es un producto 
 interno en un espacio vectorial. La mayoría del tratamiento que haremos en este 
-problema proviene de 
+problema proviene de \cite{spivak}.
 
 \vspace{.3cm}
 
@@ -397,5 +440,14 @@ es una dos-forma diferencial NO DEGENERADA y por tanto simpléctica.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{10}
+\bibitem{rasband}
+S. Rasband, \emph{Dynamics}, John Wiley \& Sons, 1983.
+\bibitem{spivak}
+M. Spivak, \emph{A comprehensive introduction to Differential Geometry}, vol. 1, 
+3ra edición, Publish or Perish, 1999.
+\end{thebibliography}
+
 
 \end{document}
