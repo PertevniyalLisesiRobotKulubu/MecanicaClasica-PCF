@@ -129,6 +129,58 @@ forman una base local para el espacio de las dos-formas diferenciales.
 
 \underline{Solución:} \vspace{.3cm}
 
+Una base para las uno-formas está dada por el conjunto $\{dq^i\}$, lo cual podemos 
+ver fácilmente. Sea $\mathbf{\omega} \in TM_x^*$ una uno-forma arbitraria, y sea 
+$\mathbf{\omega}[\mathbf{e}_i] \equiv \omega_i \in \mathbb{R}$. Entonces para un $\mathbf{v} \in 
+TM_x$ arbitrario 
+f
+\begin{equation}
+ \mathbf{\omega}[\mathbf{v}] = \mathbf{\omega}[v^i\mathbf{e}_i] =
+ v^i\mathbf{\omega}[\mathbf{e}_i] = \omega_iv^i,
+\end{equation}
+
+y
+
+\begin{equation}
+ \omega_i dq^i[\mathbf{v}] = \omega_i dq^i[v^j e_j] = \omega_i v^j \delta^i_j = \omega_i v^i,
+\end{equation}
+
+donde hemos utilizado el hecho que $dq^i[\mathbf{e}_i] = \delta^i_j$. Vemos entonces que 
+como habíamos establecido el conjunto $\{dq^i\}$ forma una base para las uno-formas 
+en $TM_x^*$, esta base es la dual de la base $e_i$ de $TM_x$. 
+
+\vspace{.3cm}
+
+Lo que queremos probar ahora es que el producto exterior de estas bases forman una 
+base para las dos-formas. Sea entonces $\gamma$ una dos-forma arbitraria y sea de nuevo 
+$\{\mathbf{e}_i\}$ una base para los vectores en $TM_x$ correspondientes a la base 
+$\{dq^i \}$ en $TM_x^*$. Sea $\gamma_{ij} \equiv \gamma[\mathbf{e}_i,\mathbf{e}_j] = 
+- \gamma[\mathbf{e}_j,\mathbf{e}_i] = - \gamma_{ji}$. También sean $\mathbf{v} = v^i\mathbf{e}_i$ 
+y $\mathbf{u} = u^i\mathbf{e}_i$ vectores arbitrarios en $TM_x$. Consideremos ahora la 
+dos-forma $(1/2)\gamma_{ij}dq^i \wedge dq^j$ y mostremos que es idéntica a $\gamma$ 
+probando que toma exactamente los mismos valores para $\mathbf{v}$ y $\mathbf{u}$ arbitrarios.
+
+\begin{equation}
+ \gamma[\mathbf{v},\mathbf{u}] = \gamma[v^i\mathbf{e}_i,u^j\mathbf{e}_j] = 
+ v^iu^j\gamma[\mathbf{e}_i,\mathbf{e}_j] = v^iu^j\gamma_{ij}.
+\end{equation}
+
+\begin{equation}
+ \frac{1}{2}\gamma_{ij} dq^i \wedge dq^j [\mathbf{v},\mathbf{u}] = 
+ \frac{1}{2}\gamma_{ij}(dq^i[\mathbf{v}]dq^j[\mathbf{u}] - dq^i[\mathbf{u}]dq^j[\mathbf{v}],
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore \frac{1}{2}\gamma_{ij} dq^i \wedge dq^j [\mathbf{v},\mathbf{u}] = 
+ \frac{1}{2}\gamma_{ij}(v^iu^j - u^iv^j) = \gamma_{ij}v^iu^j}.
+\end{equation}
+
+Donde hemos usado el hecho de que $\gamma_{ij} = - \gamma_{ji}$. Claramente estas decisiones 
+de comparación con $(1/2)\gamma_{ij}dq^i \wedge dq^j$ es para tomar en cuenta el hecho 
+de que esto es verdad si $i < j$. Vemos entonces que las dos formas pueden escribirse 
+en términos de las bases $dq^i \wedge dq^j$ para $i < j$ que era lo que queríamos probar.
+
+
 \section{Problema 3}
 
 Demuestre, de manera detallada y rigurosa, que al estar definido un producto interno 
