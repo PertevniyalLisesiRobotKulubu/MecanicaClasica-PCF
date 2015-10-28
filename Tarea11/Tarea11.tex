@@ -191,6 +191,187 @@ y diferencial, queda definida una métrica para la variedad diferencial.
 
 \underline{Solución:} \vspace{.3cm}
 
+Necesitamos una serie de definiciones y teoremas para demostrar de manera detallada 
+y rigurosa este enunciado. Comencemos hablando un poco sobre lo que es un producto 
+interno en un espacio vectorial. La mayoría del tratamiento que haremos en este 
+problema proviene de 
+
+\vspace{.3cm}
+
+\definicion Un producto interno sobre un espacio vectorial $V$ sobre un campo $F$ es 
+una función bilineal de $V \times V$ a $F$, denotado por $\langle \bullet, \bullet \rangle$, que 
+es simétrico
+
+\begin{equation}
+ \langle v, w \rangle = \langle w, v \rangle,
+\end{equation}
+
+y no degenerado: si $v\ne 0$, entonces $\exists$ algún $w \ne 0$ tal que
+
+\begin{equation}
+ \langle w, v \rangle \ne 0.
+\end{equation}
+
+Para el tratamiento que haremos en este problema el campo $F$ siempre será $\mathbb{R}$. Para 
+cualquier $r$ en $0 \leq n \geq n$, podemos definir el producto interno 
+$\langle \space , \space \rangle_r$ sobre $\mathbb{R}^n$ por 
+
+\begin{equation}
+ \langle a, b \rangle_r = \sum_{i=1}^r a^ib^i - \sum_{i=r+1}^n a^ib^i,
+\end{equation}
+
+que es no degenerado debido a que si $a \ne 0$, entonces $\sum_{i=1}^n (a^i)^2 > 0$. 
+En particular si $r = n$ obtenemos el producto interno usual en $\mathbb{R}^n$,
+
+\begin{equation}
+ \langle a, b \rangle = \sum_{i=1}^n a^ib^i.
+\end{equation}
+
+Para este producto interno tenemos $\langle a, a \rangle > 0$ para cualquier 
+$a \ne 0$. En general una función bilineal $\langle \space, \space \rangle$ es 
+llamada positiva definida si 
+
+\begin{equation}
+ \langle v, v \rangle > 0 \quad \forall v \ne 0.
+\end{equation}
+
+Una función bilineal positiva definida $\langle \space, \space \rangle$
+claramente es no degenerada y consecuentemente un producto interno. 
+
+\vspace{.3cm}
+
+Aunque hay mucho más que podríamos decir sobre los productos internos, 
+pasemos a ver como éstos están relacionados a las métricas, y particularmente 
+a las métricas riemannianas que son las que nos interesan para probar lo que
+nos piden. 
+
+\definicion Un haz vectorial $n$-dimensional (o un haz $n$-plano)
+es una quíntupla 
+
+\begin{equation}
+ \xi = (E,\pi,B,\oplus,\odot),
+\end{equation}
+
+donde 
+
+\begin{itemize}
+ \item $E$ y $B$ son espacios (el ``espacio total'' y el ``espacio base'' de 
+ $\xi$, respectivamente),
+ \item $\pi: E \rightarrow B$ es un mapeo continuo hacia $B$,
+ \item $\oplus$ y $\odot$ son mapeos
+ 
+ \begin{equation}
+  \oplus: \underset{p \in b}{\bigcup} \pi^{-1}(p) \times \pi^{-1}(p) \rightarrow E, \quad 
+  \odot: R \times E \rightarrow E,
+ \end{equation}
+\end{itemize}
+
+con $\oplus(\pi^{-1}(p) \times \pi^{-1}(p)) \subseteq \pi^{-1}(p)$, que hace 
+cada fibra $\pi^{-1}(p)$ sea un espacio vectorial $n$-dimensional sobre 
+$\mathbb{R}$.
+
+\definicion Si $\xi = \pi: E \rightarrow B$ es un haz vectorial, definimos 
+una métrica riemanniana sobre $\xi$ como una función $\langle \space, \space \rangle$, 
+que asigna a cada $p \in B$ un producto interno positivo definido $\langle \space, \space \rangle_p$
+en $\pi^{-1}(p)$ y que es continuo en el sentido que de que para dos secciones continuas 
+$s_1,s_2: B \rightarrow E$, la función
+
+\begin{equation}
+ \langle s_1, s_2 \rangle = p \mapsto \langle s_1(p), s_2(p) \rangle_p
+\end{equation}
+
+es también continuo. Si $\xi$ es un haz vectorial $C^\infty$ sobre una variedad 
+$C^\infty$ hablamos de métricas riemannianas $C^\infty$. Esto será de importancia pronto.
+
+\vspace{.3cm}
+
+Estamos en posición ahora de enunciar el teorema que nos servirá para 
+demostrar lo que queremos.
+
+\vspace{.3cm}
+
+\teorema Sea $\xi = \pi: E \rightarrow M$ un $[C^\infty]$ haz $k$-plano
+sobre una variedad $C^\infty$. Entonces $\exists$ una métrica riemanniana 
+$[C^\infty]$ sobre $\xi$.
+
+\vspace{.3cm}
+
+\prueba Existe una cobertura abierta y localmente finita $\mathcal{O}$ sobre 
+$M$ por los conjuntos $U$ para los cuales existen trivializaciones $[C^\infty]$
+
+\begin{equation}
+ t_U: \pi^{-1}(U) \rightarrow U \times \mathbb{R}^k.
+\end{equation}
+
+Sobre $U \times \mathbb{R}^k$, existe una obviamente una métrica riemanniana,
+
+\begin{equation}
+ \langle (p,a), (p,b)\rangle_p = \langle a, b \rangle. 
+\end{equation}
+
+Para $v,w \in \pi^{-1}(p)$, definimos
+
+\begin{equation}
+ \langle v, w \rangle_p^U = \langle t_U(v),t_U(w)\rangle_p.
+\end{equation}
+
+Entonces $\langle \space , \space \rangle^U$ es una métrica riemanniana
+$[C^\infty]$ para $\xi|U$. Sea $\{\phi_U \}$ una partición de la unidad\footnote{ Una partición 
+de la unidad de un espacio $X$ es un conjunto de funciones continuas de $X$ a $[0,1]$ tal que todo punto 
+tenga un entorno donde todas las funciones sean cero excepto un número finito de ellas, y que la 
+suma de todas las funciones sobre todo el espacio sea idénticamente 1.} 
+subordinada a $\mathcal{O}$. Definimos $\langle \space, \space \rangle$ por 
+
+\begin{equation}
+ \langle v, w \rangle_p = \sum_{U \in \mathcal{O}} \phi_U(p)\langle v, w \rangle_p^U, 
+ \qquad v,w \in \pi^{-1}(p).
+\end{equation}
+
+Entonces $\langle \space, \space \rangle$ es continua $[C^\infty]$ y 
+cada $\langle \space, \space \rangle_p$ es una función simétrica y 
+bilineal sobre $\pi^{-1}(p)$. Para mostrar que es positiva definida, 
+notamos que 
+
+\begin{equation}
+ \langle v, v \rangle_p =  \sum_{U \in \mathcal{O}} \phi_U(p)\langle v, v \rangle_p^U,
+\end{equation}
+
+y cada $\phi_U(p)\langle v, w \rangle_p^U \geq 0$, para algún $U$ la igualdad 
+se mantiene.
+
+$\hspace{12cm} \square$
+
+Este teorema cobra una especial significación, y le da solución a este
+problema cuando el haz vectorial del teorema que probamos es el es haz 
+tangente a una variedad diferenciable $C^\infty$ $M$. En este caso, 
+el teorema (ver detalladamente la prueba) nos dice que definir un producto 
+interno positivo definido en cada espacio tangente a $M$ define una 
+métrica riemanniana $C^\infty$ en $M$. Para esclarecer un poco lo que hemos hecho,
+si $(x,U)$ es un sistema de coordenadas en $M$, entonces sobre $U$ podemos 
+escribir nuestra métrica riemanniana $\langle \space, \space \rangle$ como 
+
+\begin{equation}
+ \langle \space , \space \rangle = \sum_{i,j = 0}^n g_{ij}dx^i \otimes dx^j.
+\end{equation}
+
+donde las funciones $C^\infty$ $g_{ij}$ satisfacen $g_{ij} = g_{ji}$, debido 
+a que $langle \space , \space \rangle$ es simétrico, y $\det{a} > 0$, debido a
+que $langle \space , \space \rangle$ es positivo definido. Claramente la métrica 
+riemanniana que hemos definido en $M$ es un tensor covariante de orden 2, en realidad 
+son las componentes de un campo tensorial ya que está definido como un tensor 
+en el espacio tangente en cada punto de la variedad, pero comúnmente 
+solo se habla de él como un tensor.
+
+
+
+
+
+
+
+
+
+
+
 \section{Problema 4}
 
 En la base inducida por coordenadas, encuentre las componentes de un campo vectorial 
