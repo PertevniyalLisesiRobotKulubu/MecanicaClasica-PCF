@@ -58,6 +58,34 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 ## Tarea 10 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/a02bd2cbb3857b287a5ad3bd0486106399131bd0/raw/output.pdf)
 
+---------
+
+## **Acceso a los PDFs de las tareas en GitHub**
+
+Se pueden también ver las tareas directamente en GitHub. Se renderizarán en línea y las podrán ver directamente en el mismo repositorio. Aún así recomiendo verlas en los links de arriba que fueron compilados por ShareLatex ya que por algún motivo tienen más calidad que las que renderiza GitHub.
+
+### [Tarea 1](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea1/Tarea1.pdf)
+
+### [Tarea 2](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea2/Tarea2.pdf)
+
+### [Tarea 3](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Tarea3.pdf)
+
+### [Tarea 3](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Tarea3.pdf)
+
+### [Tarea 4](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea4/Tarea4.pdf)
+
+### [Tarea 5](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea5/Tarea5.pdf)
+
+### [Tarea 6](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea6/Tarea6.pdf)
+
+### [Tarea 7](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea7/Tarea7.pdf)
+
+### [Tarea 8](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea8/Tarea8.pdf)
+
+### [Tarea 9](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea9/Tarea9.pdf)
+
+### [Tarea 10](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea10/Tarea10.pdf)
+
 --------
 
 ## **Descarga directa de las tareas**
