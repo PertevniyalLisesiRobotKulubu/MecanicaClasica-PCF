@@ -157,6 +157,109 @@ en cada espacio tangente pudimos establecer un isomorfismo natural entre
 cada pareja de espacios tangentes y cotangentes, con lo cual tenemos inmediatamente 
 una relación entre campos vectoriales y uno-formas diferenciales.
 
+\vspace{.3cm}
+
+Pero esta relación puede no parecer evidente así que trabajemos un poco sobre ella,
+ya que también nos permitirá hacer lo mismo para una forma simpléctica. Sea $F(q,p)$ 
+una función arbitraria del espacio de fase tal que $F: TM^* \rightarrow \mathbb{R}$. Un
+flujo hamiltoniano está definido como el flujo 
+
+\begin{equation}
+ \frac{dx}{ds} = V_F(x),
+ \label{eq:83}
+\end{equation}
+
+donde $x=(q,p)$ y donde las componentes de $V_F$ están dadas por 
+
+\begin{equation}
+ \left(\frac{dp_i}{ds}, \frac{dq^i}{ds}\right) = 
+ \left(- \frac{\partial F}{\partial q^i}, \frac{\partial F}{\partial p_i}\right)
+ \label{eq:82}
+\end{equation}
+
+Si denotamos los vectores bases como $\{\mathbf{e}_{p_i},\mathbf{e}_{q^i}\}$ 
+correspondientes a las coordenadas $(p_i,q^i)$. Y asumimos que $V_F = \mathbf{e}_{q^i}$ 
+en \eqref{eq:83}, encontramos que $dq^i/ds = 1$; todas las otras derivadas se cancelan. 
+Entonces de \eqref{eq:82} encontramos que $\partial F / \partial p_i = 1$ y todas las 
+otras derivadas parciales de $F$ se hacen cero. Entonces $F = p_i$ genera el flujo 
+$V_F = \mathbf{e}_{q^i}$ y de forma idéntica $F = -q^i$ genera el flujo 
+$\mathbf{e}_{p_{i}}$. Ahora, sabemos que podemos interpretar estos flujos como 
+operadores \cite{rasband}, y entonces para
+
+\begin{equation}
+ V_F = \frac{\partial F}{\partial p_i}\mathbf{e}_{q^i} - \frac{\partial F}{\partial q^i}\mathbf{e}_{p_{i}},
+\label{eq:88}
+\end{equation}
+
+definimos el operador
+
+\begin{equation}
+ \frac{\partial}{\partial V_F} = \frac{\partial F}{\partial p_i}\frac{\partial}{\partial q^i}
+ - \frac{\partial F}{\partial q^i}\frac{\partial}{\partial p_i}.
+\end{equation}
+
+Pero la función $F$ también tiene la expresión usual correspondiente a una uno-forma
+
+\begin{equation}
+ dF = \frac{\partial F}{\partial p_i}dp_i + \frac{\partial F}{\partial q^i}dq^i.
+ \label{eq:810}
+\end{equation}
+
+Comparando ahora \eqref{eq:88} con \eqref{eq:810} podemos ahora ver lo que queríamos 
+mostrar, que para cada uno-forma diferenciable $dF$ le corresponde un campo vectorial 
+$V_F$. La correspondencia en los términos está dada por 
+
+\begin{equation}
+ \left(- \frac{\partial F}{\partial q^i}, \frac{\partial F}{\partial p_i}\right) \leftrightarrow
+ \left( \frac{\partial F}{\partial p_i}, \frac{\partial F}{\partial q^i}\right).
+ \label{eq:811}
+\end{equation}
+
+Este isomorfismo entre campos vectoriales y uno-formas diferenciales podemos denotarla 
+por $\omega$ y escribirlo como 
+
+\begin{equation}
+ \omega(V_F) = dF,
+  \label{eq:812}
+\end{equation}
+
+donde el isomorfismo está definido por \eqref{eq:811}. Vemos entonces que hemos demostrado 
+completamente lo que se pedía en la primera parte, aunque de una forma un poco no ortodoxa, 
+a la final se cumplió con el objetivo. Algo que será de importancia para la siguiente 
+parte de la prueba es que usando el isomorfismo escrito como \eqref{eq:812} podemos 
+escribir los paréntesis de Poisson como \cite{rasband}
+
+\begin{equation}
+ \{f,g\} = \omega(V_F)[V_G] = - \omega(V_G)[V_F].
+\end{equation}
+
+Ahora para hacerlo con una forma simpléctica, recordamos que podemos escribir esta 
+en coordenadas canónicas como
+
+\begin{equation}
+ \gamma = dp_i \wedge dq^i.
+\end{equation}
+
+Lo que veremos ahora es que el isomorfismo dado en \eqref{eq:811} y \eqref{eq:812} puede 
+ser expresado también utilizando $\gamma$. Para hacer esto tomemos un campo vectorial 
+arbitrario $V$, y definamos la uno-forma correspondiente a $V$ por 
+
+\begin{equation}
+ \omega_V = \gamma[\bullet,V] = dq^i[V]dp_i - dp_i[V]dq^i.
+\end{equation}
+
+y debemos asegurarnos ahora que este es el mismo isomorfismo que el definido por \eqref{eq:812}. Para 
+verificar esto hacemos que $V = V_F$, en este caso \eqref{eq:82} nos muestra que 
+$dq^i[V] = \partial F/ \partial p_i$ y $dp_i[V] = - \partial F/\partial q^i$. Sustituyendo 
+esto en la anterior ecuación resulta en 
+
+\begin{equation}
+ \omega_{V_F} = \frac{\partial F}{\partial p_i}dp_i + \frac{\partial F}{\partial q^i}dq^i.
+\end{equation}
+
+que claramente es la misma expresión para $dF$ que \eqref{eq:810}, con lo cual vemos que 
+tenemos el mismo isomorfismo y por lo tanto se ha probado lo que se quería.
+
 
 \section{Problema 2}
 
@@ -441,12 +544,110 @@ es una dos-forma diferencial NO DEGENERADA y por tanto simpléctica.
 
 \underline{Solución:} \vspace{.3cm}
 
+Utilizando la definición de derivación exterior obtenemos que 
+
+\begin{equation}
+ \gamma = d\omega = d(p_i) \wedge dq^i = dp_i \wedge dq^i
+\end{equation}
+
+y sabemos que la derivación exterior de una uno-forma diferencial es una dos forma 
+diferencial. Podemos notar que por definición $\gamma$ es cerrada, es decir que 
+$d\gamma = 0$, debido a que la formamos tomando la diferencial de una uno-forma 
+diferencial. Para probar que es no degenerada, debemos probar que dado cualquier 
+campo vectorial distinto de cero, existe otro tal que, al aplicar $\gamma$ a esa pareja, 
+el resultado es una función distinta de cero; de manera equivalente podemos decir 
+que será no degenerada si el único modo de que dado un campo vectorial distinto de 
+cero al aplicar $\gamma$ sea cero, es el que el otro campo al que se le aplica 
+es cero; o de forma equivalente que el determinante que define la aplicación 
+sea no singular. 
+
+\vspace{.3cm}
+
+Utilizando la definición de producto exterior entre dos uno-formas diferenciales, vemos 
+que al aplicarla a dos campos vectoriales arbitrarios $X$ y $Y$ que expresados 
+en coordenadas canónicas son 
+
+\begin{align}
+ X = X^i\frac{\partial}{\partial q^i} + X_i\frac{\partial}{\partial p_i}, \\
+ Y = Y^i\frac{\partial}{\partial q^i} + Y_i\frac{\partial}{\partial p_i},
+\end{align}
+
+tenemos entonces que
+
+\begin{equation}
+ \gamma[X,Y] = \left|\begin{matrix}
+                dp_i[X] & dp_i[Y] \\
+                dq^i[X] & dq^i[Y]
+               \end{matrix}\right|
+\end{equation}
+
+\begin{equation}
+ \gamma[X,Y] = \left|\begin{matrix}
+                X_i & Y_i \\
+                X^i & Y^i
+               \end{matrix}\right|
+\end{equation}
+
+\begin{equation}
+ \gamma[X,Y] = X_i Y^i - X^iY_i
+\end{equation}
+
+Por la forma de esta ecuación debe ser evidente que si $X$ no es cero, entonces 
+siempre existe una $Y$ tal que $\gamma[X,Y] \ne 0$. Con lo cual ya podríamos decir 
+que la dos-forma es no degenerada, y como vimos al comienzo también es cerrada 
+y por lo tanto simpléctica. 
+
+\vspace{.3cm}
+
+Para convencernos de este resultado, estudiemos el único caso en que $\gamma[X,Y] = 0$, 
+que debería ser el caso en que $\gamma[X,0]$, entonces 
+
+\begin{equation}
+ \gamma[X,0] = \left|\begin{matrix}
+                dp_i[X] & dp_i[0] \\
+                dq^i[X] & dq^i[0]
+               \end{matrix}\right|
+\end{equation}
+
+\begin{equation}
+ \gamma[X,Y] = \left|\begin{matrix}
+                X_i & 0 \\
+                X^i & 0
+               \end{matrix}\right|
+\end{equation}
+
+\begin{equation}
+ \gamma[X,0] = 0.
+\end{equation}
+
+Y lo mismo se debe cumplir para $\gamma[0,X]$. Con lo cual demostramos también los otros 
+criterios para la no degeneración. Estas pruebas completan la demostración que queríamos 
+hacer, y sabemos que $\gamma$ es simpléctica por que por definición \cite{rasband,abraham,arnold},
+una forma simpléctica es una dos-forma diferencial cerrada y no degenerada sobre 
+una variedad diferencial de dimensión par (y vemos que esto es así ya que tenemos 
+$n$ $q$'s y $n$ $p$'s), es decir 
+
+\begin{equation}
+ d\gamma = 0 \quad \text{y} \quad \forall \xi \ne 0 \quad \exists \eta: \gamma[\xi,\eta] \ne 0 
+ \quad (\xi,\eta \in TM_x).
+\end{equation}
+
+que es exactamente lo que acabamos de demostrar.
+
+
 \begin{thebibliography}{10}
 \bibitem{rasband}
 S. Rasband, \emph{Dynamics}, John Wiley \& Sons, 1983.
 \bibitem{spivak}
 M. Spivak, \emph{A comprehensive introduction to Differential Geometry}, vol. 1, 
 3ra edición, Publish or Perish, 1999.
+\bibitem{abraham}
+ R. Abraham y J. Marsden, \emph{Foundations of Mechanics}, 2da edición, Addison-Wesley,
+ 1978.
+ \bibitem{arnold}
+V. Arnold, \emph{Mathematical Methods of Classical Mechanics}, 2da edición, Springer-Verlang, 
+1989.
+ 
 \end{thebibliography}
 
 
