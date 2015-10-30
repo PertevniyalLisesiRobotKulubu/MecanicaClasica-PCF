@@ -11,3 +11,9 @@ Ayudante: M.Sc. Eduardo Serrano Ensástiga.
 ## **Página Web del repositorio (contiene los PDFs de las tareas para verlos en línea)**
 
 ### http://faviovazquez.github.io/MecanicaClasica-PCF/
+
+**Favio Vázquez.**
+
+**Instituto de Ciencias Nucleares - UNAM.**
+
+![ICN-UNAM](http://sigi.nucleares.unam.mx/sgiicn/images/icn_logo_small.png)
