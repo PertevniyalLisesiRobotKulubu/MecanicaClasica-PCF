@@ -677,15 +677,18 @@ Tenemos entonces
 \end{align}
 
 \begin{align}
+\begin{split}
  \gamma[A,B] &= \left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)(A^jB^k - A^kB^j) \\
  &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
  - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)(A_jB_k - A_kB_j) \\
  &+  \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)(A_jB^k - A^kB_j)
+\end{split}
 \end{align}
 
 \begin{align}
+\begin{split}
  \gamma[A,B] &= \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^jB^k 
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^jB^k
  - \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^kB^j 
@@ -698,9 +701,11 @@ Tenemos entonces
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}A_jB^k
  -\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}A^kB_j 
  + \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}A^kB_j
+\end{split}
 \end{align}
 
 \begin{align}
+\begin{split}
  \gamma[A,B] &= \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^jB^k 
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^jB^k
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^jB^k 
@@ -713,9 +718,11 @@ Tenemos entonces
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}A_jB^k
  -\frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial x^j}A^jB_k 
  + \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial y_k}A^jB_k
+\end{split}
 \end{align}
 
 \begin{align}
+\begin{split}
  \gamma[A,B] &= A^j\left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}B^k
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}B^k
  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}B^k
@@ -729,6 +736,7 @@ Tenemos entonces
   &\left\zerodel + \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}B^k
   - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}B^k\right)
   \label{eq:Hamilton1}
+\end{split}
 \end{align}
 
 Apliquemos ahora la diferencial de la hamiltoniana al mismo campo vectorial $A$
@@ -755,17 +763,17 @@ Apliquemos ahora la diferencial de la hamiltoniana al mismo campo vectorial $A$
  \left(A^j\frac{\partial}{\partial x^j} + A_j \frac{\partial}{\partial y_j}\right)
 \end{equation}
 
-\begin{align}
+\begin{align*}
  dH[A] = \left[ \frac{\partial H}{\partial q^i}\left(\frac{\partial q^i}{\partial x^k}dx^k + \frac{\partial q^i}{\partial y_k}dy_k  \right)
  + \frac{\partial H}{\partial p_i}\left(\frac{\partial p_i}{\partial x^k}dx^k + \frac{\partial p_i}{\partial y_k}dy_k  \right)\right]
  \left[A^j\frac{\partial}{\partial x^j} + A_j \frac{\partial}{\partial y_j}\right]
-\end{align}
+\end{align*}
 
-\begin{align}
+\begin{align*}
  dH[A] = \left[ \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial x^k}dx^k + \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial y_k}dy_k
  + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial x^k}dx^k + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial y_k}dy_k \right]
  \left[A^j\frac{\partial}{\partial x^j} + A_j \frac{\partial}{\partial y_j}\right]
-\end{align}
+\end{align*}
 
 \begin{align}
  dH[A] = \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial x^j}A^j + \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial y_j}A_j
