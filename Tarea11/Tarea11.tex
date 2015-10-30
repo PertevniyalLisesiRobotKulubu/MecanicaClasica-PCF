@@ -513,15 +513,6 @@ en el espacio tangente en cada punto de la variedad, pero comúnmente
 solo se habla de él como un tensor.
 
 
-
-
-
-
-
-
-
-
-
 \section{Problema 4}
 
 En la base inducida por coordenadas, encuentre las componentes de un campo vectorial 
@@ -531,6 +522,281 @@ arbitrarias.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Recordemos que para coordenadas canónicas la forma simpléctica está expresada 
+simplemente por 
+
+\begin{equation}
+ \gamma = dp_i \wedge dq^i,
+\end{equation}
+
+y que al expresar la hamiltoniana del sistema también en coordenadas canónicas 
+encontramos que las coordenadas del campo vectorial hamiltoniano $V = V_H$ son 
+
+\begin{equation}
+ (V^i,V_i) = \left(\frac{\partial H}{\partial p_i}, - \frac{\partial H}{\partial q^i}\right).
+\end{equation}
+
+Con lo cual vemos que el campo vectorial hamiltoniano se identifica con las ecuaciones de 
+Hamilton. Como veremos más adelante, pasando a unas coordenadas no canónicas, al expresar 
+la forma simpléctica y la hamiltoniana en esas coordenadas, la forma de las ecuaciones de 
+movimiento no quedará hamiltoniana, la forma simpléctica no queda invariante ante 
+el cambio de coordenadas y por lo tanto no podremos hallar esta identificación de las 
+coordenadas del campo vectorial hamiltoniano con las ecuaciones de Hamilton.
+
+\vspace{.3cm}
+
+Para ver esto consideremos unas coordenadas arbitrarias, y hagamos una transformación 
+de coordenadas partiendo de las coordenadas canónicas originales $(q,p)$. En el enunciado 
+se expresan por $(x^i,\dots,x^{2n})$, pero para simplificar un poco el entendimiento 
+y comparación dividamos estas coordenadas, las primeras $n$ coordenadas las denotaremos 
+$x^i$ y las segunda $n$ coordenadas las denotaremos $y_i$, donde hemos mantenido la notación 
+de índices abajo y arriba aunque debemos recordar que que cuando tenemos un sistema 
+de coordenadas cualquiera en el espacio de fases, pierde sentido tener índices arriba 
+o abajo ya que no son coordenadas locales de la variedad de configuración unas 
+y componentes de una forma lineal las otras, pero las mantendremos ya que hace más fácil 
+la escritura de las ecuaciones y mantiene el convenio de suma de Einstein, pero 
+hay que recordar que ha dejado de tener sentido hablar de covariancia o contravariancia 
+ante transformaciones de coordenadas en la variedad de configuración. Tenemos entonces 
+que 
+
+\begin{align}
+ x^i = x^i(q^i,\dots,q^n,p_1,\dots,p_n), \\
+ y_i = y_i(q^i,\dots,q^n,p_1,\dots,p_n),
+\end{align}
+
+y 
+
+\begin{align}
+ q^i = q^i(x^1,\dots,x^n,y_1,\dots,y_n), \\
+ p_i = p_i(x^1,\dots,x^n,y_1,\dots,y_n).
+\end{align}
+
+Veamos ahora como se expresa la forma simpléctica ante este cambio de coordenadas
+
+\begin{equation}
+ \gamma = dp_i \wedge dq^i = \left(\frac{\partial p_i}{\partial y_j}dy_j + 
+ \frac{\partial p_i}{\partial x^j}dx^j\right) \wedge 
+ \left(\frac{\partial q^i}{\partial y_k}dy_k + 
+ \frac{\partial q^i}{\partial x^k}dx^k\right)
+\end{equation}
+
+\begin{align}
+\begin{split}
+ \gamma &= \left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)dx^j \wedge dx^k \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)dy_j \wedge dy_k \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)dy_j \wedge dx^k,
+\end{split}
+\end{align}
+
+donde $j < k$ y donde recordamos que el único modo $\gamma$ en que se reduzca 
+a $dy_i \wedge dx^i$ es que la transformación sea canónica, que no es nuestro caso. Estudiemos 
+ahora que ocurre al aplicar $\gamma$ a un par de campos vectoriales arbitrarios utilizando 
+las coordenadas $(x,y)$, y donde por lo tanto los expresamos como 
+
+\begin{align}
+ \begin{split}
+  A = A^i\frac{\partial}{\partial x^i} + A_i \frac{\partial}{\partial y_i}, \\
+  B = B^i\frac{\partial}{\partial x^i} + B_i \frac{\partial}{\partial y_i}.
+ \end{split}
+\end{align}
+
+Tenemos entonces 
+
+\begin{align}
+\begin{split}
+ \gamma[A,B] &= \left[\left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)dx^j \wedge dx^k\right\zerodel \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)dy_j \wedge dy_k \\
+ &+ \left\zerodel\left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)dy_j \wedge dx^k\right]
+ [A,B]
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+ \gamma[A,B] &= \left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)dx^j \wedge dx^k[A,B] \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)dy_j \wedge dy_k[A,B] \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)dy_j \wedge dx^k[A,B]
+\end{split}
+\end{align}
+
+
+\begin{align}
+\begin{split}
+ \gamma[A,B] &= \left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)\left|\begin{matrix}
+                                                                             dx^j[A] & dx^j[B] \\
+                                                                             dx^k[A] & dx^k[B]
+                                                                            \end{matrix}\right| \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)\left|\begin{matrix}
+                                                                             dy_j[A] & dy_j[B] \\
+                                                                             dy_k[A] & dy_k[B]
+                                                                            \end{matrix}\right| \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)\left|\begin{matrix}
+                                                                             dy_j[A] & dy_j[B] \\
+                                                                             dx^k[A] & dx^k[B]
+                                                                            \end{matrix}\right|
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+ \gamma[A,B] &= \left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)\left|\begin{matrix}
+                                                                             A^j & B^j \\
+                                                                             A^k & B^k
+                                                                            \end{matrix}\right| \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)\left|\begin{matrix}
+                                                                             A_j & B_j \\
+                                                                             A_k & B_k
+                                                                            \end{matrix}\right| \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)\left|\begin{matrix}
+                                                                             A_j & B_j \\
+                                                                             A^k & B^k
+                                                                            \end{matrix}\right|
+\end{split}
+\end{align}
+
+\begin{align}
+ \gamma[A,B] &= \left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}\right)(A^jB^k - A^kB^j) \\
+ &+ \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k} 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}\right)(A_jB_k - A_kB_j) \\
+ &+  \left(\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k} 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}\right)(A_jB^k - A^kB_j)
+\end{align}
+
+\begin{align}
+ \gamma[A,B] &= \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^jB^k 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^jB^k
+ - \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^kB^j 
+ + \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^kB^j\\
+ &+ \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}A_jB_k 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}A_jB_k
+ - \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}A_kB_j 
+ + \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}A_kB_j\\
+ &+  \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}A_jB^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}A_jB^k
+ -\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}A^kB_j 
+ + \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}A^kB_j
+\end{align}
+
+\begin{align}
+ \gamma[A,B] &= \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^jB^k 
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^jB^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}A^jB^k 
+ + \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}A^jB^k\\
+ &+ \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}A_jB_k 
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}A_jB_k
+ - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}A_jB_k 
+ + \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}A_jB_k\\
+ &+  \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}A_jB^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}A_jB^k
+ -\frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial x^j}A^jB_k 
+ + \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial y_k}A^jB_k
+\end{align}
+
+\begin{align}
+ \gamma[A,B] &= A^j\left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}B^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}B^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}B^k
+ + \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}B^k\right\zerodel \\
+ &\left\zerodel-\frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial x^j}B_k
+ +\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial y_k}B_k\right) + \\
+ &A_j\left( \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}B_k - 
+  \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}B_k
+  - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}B_k 
+  +\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}B_k \right\zerodel \\
+  &\left\zerodel + \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}B^k
+  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}B^k\right)
+  \label{eq:Hamilton1}
+\end{align}
+
+Apliquemos ahora la diferencial de la hamiltoniana al mismo campo vectorial $A$
+
+% \begin{equation}
+%  dH[A] = \left( \frac{\partial H}{\partial q^i}dq^i + \frac{\partial H}{\partial p_i}dp_i\right)
+%  \left(A^i\frac{\partial}{\partial x^i} + A_i \frac{\partial}{\partial y_i}\right)
+% \end{equation}
+% 
+% \begin{align}
+%  dH[A] = \left[ \frac{\partial H}{\partial q^i}\left(\frac{\partial q^i}{\partial x^i}dx^i + \frac{\partial q^i}{\partial y_i}dy_i  \right)
+%  + \frac{\partial H}{\partial p_i}\left(\frac{\partial p_i}{\partial x^i}dx^i + \frac{\partial p_i}{\partial y_i}dy_i  \right)\right]
+%  \left[A^i\frac{\partial}{\partial x^i} + A_i \frac{\partial}{\partial y_i}\right]
+% \end{align}
+% 
+% \begin{align*}
+%  dH[A] = \left[ \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial x^i}dx^i + \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial y_i}dy_i
+%  + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial x^i}dx^i + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial y_i}dy_i \right]
+%  \left[A^i\frac{\partial}{\partial x^i} + A_i \frac{\partial}{\partial y_i}\right]
+% \end{align*}
+
+\begin{equation}
+ dH[A] = \left( \frac{\partial H}{\partial q^i}dq^i + \frac{\partial H}{\partial p_i}dp_i\right)
+ \left(A^j\frac{\partial}{\partial x^j} + A_j \frac{\partial}{\partial y_j}\right)
+\end{equation}
+
+\begin{align}
+ dH[A] = \left[ \frac{\partial H}{\partial q^i}\left(\frac{\partial q^i}{\partial x^k}dx^k + \frac{\partial q^i}{\partial y_k}dy_k  \right)
+ + \frac{\partial H}{\partial p_i}\left(\frac{\partial p_i}{\partial x^k}dx^k + \frac{\partial p_i}{\partial y_k}dy_k  \right)\right]
+ \left[A^j\frac{\partial}{\partial x^j} + A_j \frac{\partial}{\partial y_j}\right]
+\end{align}
+
+\begin{align}
+ dH[A] = \left[ \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial x^k}dx^k + \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial y_k}dy_k
+ + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial x^k}dx^k + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial y_k}dy_k \right]
+ \left[A^j\frac{\partial}{\partial x^j} + A_j \frac{\partial}{\partial y_j}\right]
+\end{align}
+
+\begin{align}
+ dH[A] = \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial x^j}A^j + \frac{\partial H}{\partial q^i}\frac{\partial q^i}{\partial y_j}A_j
+ + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial x^j}A^j + \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial y_j}A_j 
+\end{align}
+
+\begin{equation}
+ dH[A] =  \frac{\partial H}{\partial x^j}A^j + \frac{\partial H}{\partial y_j}A_j
+ + \frac{\partial H}{\partial x^j}A^j + \frac{\partial H}{\partial y_j}A_j
+\end{equation}
+
+\begin{equation}
+ dH[A] =  2\frac{\partial H}{\partial x^j}A^j + 2\frac{\partial H}{\partial y_j}A_j
+ \label{eq:Hamilton2}
+\end{equation}
+
+Comparando las ecuaciones \eqref{eq:Hamilton1} con \eqref{eq:Hamilton2} vemos entonces 
+que las componentes del campo vectorial hamiltoniano en las coordenadas arbitrarias será 
+
+
+\begin{align*}
+ &\left(\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}B^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}B^k
+ - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial x^j}B^k
+ + \frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial x^k}B^k\right\zerodel
+ \left\zerodel-\frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial x^j}B_k
+ +\frac{\partial p_i}{\partial x^j}\frac{\partial q^i}{\partial y_k}B_k,\right\zerodel \\
+ &\left\zerodel \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}B_k - 
+  \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}B_k
+  - \frac{\partial p_i}{\partial y_k}\frac{\partial q^i}{\partial y_j}B_k 
+  +\frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial y_k}B_k \right\zerodel 
+  \left\zerodel + \frac{\partial p_i}{\partial y_j}\frac{\partial q^i}{\partial x^k}B^k
+  - \frac{\partial p_i}{\partial x^k}\frac{\partial q^i}{\partial y_j}B^k\right) = \\ 
+  &\hspace{5cm} (2\frac{\partial H}{\partial x^j}, 2\frac{\partial H}{\partial y_j})
+\end{align*}
+
+Con lo cual vemos el alto precio que se paga por no utilizar coordenadas canónicas.
 
 \section{Problema 5}
 
