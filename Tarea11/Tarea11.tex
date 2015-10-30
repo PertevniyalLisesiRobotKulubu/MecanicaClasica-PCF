@@ -115,7 +115,7 @@ mismo para el caso de una forma simpléctica.
 
 \underline{Solución:} \vspace{.3cm}
 
-Para la solución de este problema y para no repetir lo que se hace en e
+Para la solución de este problema y para no repetir lo que se hace en el
 problema 3, se asumirán que las definiciones y propiedades para los productos 
 internos y métricas ya están establecidas. La mayoría del tratamiento 
 que haremos en este problema fue sacado de \cite{rasband} y \cite{spivak}.
@@ -123,7 +123,7 @@ que haremos en este problema fue sacado de \cite{rasband} y \cite{spivak}.
 \vspace{.3cm}
 
 Para probar la primera parte del problema debemos probar que cuando 
-se define un producto interno, y por lo tanto un tensor métrico (ver problema 3), 
+se define un producto interno, y por lo tanto un tensor métrico (ver problema 3) 
 existe, no hay diferencia entre $TM_x$ y $TM_x^*$, y que por lo tanto 
 a cada vector le corresponde una forma lineal, y esto elevado a los haces 
 tangentes y cotangentes establece un isomorfismo natural entre campos vectoriales 
@@ -359,8 +359,8 @@ y no degenerado: si $v\ne 0$, entonces $\exists$ algún $w \ne 0$ tal que
 \end{equation}
 
 Para el tratamiento que haremos en este problema el campo $F$ siempre será $\mathbb{R}$. Para 
-cualquier $r$ en $0 \leq n \geq n$, podemos definir el producto interno 
-$\langle \space , \space \rangle_r$ sobre $\mathbb{R}^n$ por 
+cualquier $r$ en $0 \leq r \leq n$, podemos definir el producto interno 
+$\langle \hspace{.2cm} , \hspace{.1cm} \rangle_r$ sobre $\mathbb{R}^n$ por 
 
 \begin{equation}
  \langle a, b \rangle_r = \sum_{i=1}^r a^ib^i - \sum_{i=r+1}^n a^ib^i,
@@ -374,14 +374,14 @@ En particular si $r = n$ obtenemos el producto interno usual en $\mathbb{R}^n$,
 \end{equation}
 
 Para este producto interno tenemos $\langle a, a \rangle > 0$ para cualquier 
-$a \ne 0$. En general una función bilineal $\langle \space, \space \rangle$ es 
+$a \ne 0$. En general una función bilineal $\langle \hspace{.1cm}, \hspace{.1cm} \rangle$ es 
 llamada positiva definida si 
 
 \begin{equation}
  \langle v, v \rangle > 0 \quad \forall v \ne 0.
 \end{equation}
 
-Una función bilineal positiva definida $\langle \space, \space \rangle$
+Una función bilineal positiva definida $\langle \hspace{.1cm}, \hspace{.1cm} \rangle$
 claramente es no degenerada y consecuentemente un producto interno. 
 
 \vspace{.3cm}
@@ -421,8 +421,8 @@ $\mathbb{R}$.
 \vspace{.3cm}
 
 \definicion Si $\xi = \pi: E \rightarrow B$ es un haz vectorial, definimos 
-una métrica riemanniana sobre $\xi$ como una función $\langle \space, \space \rangle$, 
-que asigna a cada $p \in B$ un producto interno positivo definido $\langle \space, \space \rangle_p$
+una métrica riemanniana sobre $\xi$ como una función $\langle \hspace{.1cm}, \hspace{.1cm} \rangle$
+que asigna a cada $p \in B$ un producto interno positivo definido $\langle \hspace{.1cm}, \hspace{.1cm} \rangle_p$
 en $\pi^{-1}(p)$ y que es continuo en el sentido que de que para dos secciones continuas 
 $s_1,s_2: B \rightarrow E$, la función
 
@@ -465,20 +465,20 @@ Para $v,w \in \pi^{-1}(p)$, definimos
  \langle v, w \rangle_p^U = \langle t_U(v),t_U(w)\rangle_p.
 \end{equation}
 
-Entonces $\langle \space , \space \rangle^U$ es una métrica riemanniana
+Entonces $\langle \hspace{.1cm} , \hspace{.1cm} \rangle^U$ es una métrica riemanniana
 $[C^\infty]$ para $\xi|U$. Sea $\{\phi_U \}$ una partición de la unidad\footnote{ Una partición 
 de la unidad de un espacio $X$ es un conjunto de funciones continuas de $X$ a $[0,1]$ tal que todo punto 
 tenga un entorno donde todas las funciones sean cero excepto un número finito de ellas, y que la 
 suma de todas las funciones sobre todo el espacio sea idénticamente 1.} 
-subordinada a $\mathcal{O}$. Definimos $\langle \space, \space \rangle$ por 
+subordinada a $\mathcal{O}$. Definimos $\langle \hspace{.1cm}, \hspace{.1cm} \rangle$ por 
 
 \begin{equation}
  \langle v, w \rangle_p = \sum_{U \in \mathcal{O}} \phi_U(p)\langle v, w \rangle_p^U, 
  \qquad v,w \in \pi^{-1}(p).
 \end{equation}
 
-Entonces $\langle \space, \space \rangle$ es continua $[C^\infty]$ y 
-cada $\langle \space, \space \rangle_p$ es una función simétrica y 
+Entonces $\langle \hspace{.1cm}, \hspace{.1cm} \rangle$ es continua $[C^\infty]$ y 
+cada $\langle \hspace{.1cm}, \hspace{.1cm} \rangle_p$ es una función simétrica y 
 bilineal sobre $\pi^{-1}(p)$. Para mostrar que es positiva definida, 
 notamos que 
 
@@ -498,15 +498,15 @@ el teorema (ver detalladamente la prueba) nos dice que definir un producto
 interno positivo definido en cada espacio tangente a $M$ define una 
 métrica riemanniana $C^\infty$ en $M$. Para esclarecer un poco lo que hemos hecho,
 si $(x,U)$ es un sistema de coordenadas en $M$, entonces sobre $U$ podemos 
-escribir nuestra métrica riemanniana $\langle \space, \space \rangle$ como 
+escribir nuestra métrica riemanniana $\langle \hspace{.1cm}, \hspace{.1cm} \rangle$ como 
 
 \begin{equation}
- \langle \space , \space \rangle = \sum_{i,j = 0}^n g_{ij}dx^i \otimes dx^j.
+ \langle \hspace{.1cm} , \hspace{.1cm} \rangle = \sum_{i,j = 0}^n g_{ij}dx^i \otimes dx^j.
 \end{equation}
 
 donde las funciones $C^\infty$ $g_{ij}$ satisfacen $g_{ij} = g_{ji}$, debido 
-a que $\langle \space , \space \rangle$ es simétrico, y $\det{a} > 0$, debido a
-que $\langle \space , \space \rangle$ es positivo definido. Claramente la métrica 
+a que $\langle \hspace{.1cm} , \hspace{.1cm} \rangle$ es simétrico, y $\det{a} > 0$, debido a
+que $\langle \hspace{.1cm} , \hspace{.1cm} \rangle$ es positivo definido. Claramente la métrica 
 riemanniana que hemos definido en $M$ es un tensor covariante de orden 2, en realidad 
 son las componentes de un campo tensorial ya que está definido como un tensor 
 en el espacio tangente en cada punto de la variedad, pero comúnmente 
@@ -549,9 +549,9 @@ coordenadas del campo vectorial hamiltoniano con las ecuaciones de Hamilton.
 Para ver esto consideremos unas coordenadas arbitrarias, y hagamos una transformación 
 de coordenadas partiendo de las coordenadas canónicas originales $(q,p)$. En el enunciado 
 se expresan por $(x^i,\dots,x^{2n})$, pero para simplificar un poco el entendimiento 
-y comparación dividamos estas coordenadas, las primeras $n$ coordenadas las denotaremos 
+y comparación dividimos estas coordenadas, las primeras $n$ coordenadas las denotaremos 
 $x^i$ y las segunda $n$ coordenadas las denotaremos $y_i$, donde hemos mantenido la notación 
-de índices abajo y arriba aunque debemos recordar que que cuando tenemos un sistema 
+de índices abajo y arriba aunque debemos recordar que cuando tenemos un sistema 
 de coordenadas cualquiera en el espacio de fases, pierde sentido tener índices arriba 
 o abajo ya que no son coordenadas locales de la variedad de configuración unas 
 y componentes de una forma lineal las otras, pero las mantendremos ya que hace más fácil 
@@ -838,8 +838,8 @@ que al aplicarla a dos campos vectoriales arbitrarios $X$ y $Y$ que expresados
 en coordenadas canónicas son 
 
 \begin{align}
- X = X^i\frac{\partial}{\partial q^i} + X_i\frac{\partial}{\partial p_i}, \\
- Y = Y^i\frac{\partial}{\partial q^i} + Y_i\frac{\partial}{\partial p_i},
+ X &= X^i\frac{\partial}{\partial q^i} + X_i\frac{\partial}{\partial p_i}, \\
+ Y &= Y^i\frac{\partial}{\partial q^i} + Y_i\frac{\partial}{\partial p_i},
 \end{align}
 
 tenemos entonces que
@@ -892,7 +892,7 @@ que debería ser el caso en que $\gamma[X,0]$, entonces
 
 Y lo mismo se debe cumplir para $\gamma[0,X]$. Con lo cual demostramos también los otros 
 criterios para la no degeneración. Estas pruebas completan la demostración que queríamos 
-hacer, y sabemos que $\gamma$ es simpléctica por que por definición \cite{rasband,abraham,arnold},
+hacer, y sabemos que $\gamma$ es simpléctica debido a que por definición \cite{rasband,abraham,arnold},
 una forma simpléctica es una dos-forma diferencial cerrada y no degenerada sobre 
 una variedad diferencial de dimensión par (y vemos que esto es así ya que tenemos 
 $n$ $q$'s y $n$ $p$'s), es decir 
