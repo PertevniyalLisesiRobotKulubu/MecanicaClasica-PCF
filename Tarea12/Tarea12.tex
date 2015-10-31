@@ -73,6 +73,14 @@
 \newcommand{\proposicion}{\textbf{Proposición: }}
 \newcommand{\corolario}{\textbf{Corolario: }}
 
+% Definición de las secciones y su numeración
+
+\makeatletter
+\def\@seccntformat#1{%
+  \expandafter\ifx\csname c@#1\endcsname\c@section\else
+  \csname the#1\endcsname\quad
+  \fi}
+\makeatother
 
 %opening
 \title{Mecánica Clásica Tarea \# 12}
@@ -103,5 +111,125 @@
 \makeatother
 
 \maketitle
+
+\section{Problema 1}
+
+Demuestre que entre los paréntesis de Poisson y los de Lagrange existe la relación 
+de inversión
+
+$$
+\sum_{\alpha=1}^{2n} [u_\alpha,u_\beta]\{u_\alpha,u_\gamma\} = \delta_{\beta\gamma},
+$$
+
+donde $u_\alpha(q^1,\dots,q^n,p_1,\dots,p_n)$, $\alpha = 1, \dots, 2n$ y $(q,p)$ es un 
+sistema canónico de coordenadas.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 2}
+
+Demuestre por tres vías distintas que las transformaciones 
+
+\begin{align*}
+ q^1 &= \frac{\sqrt{2P_1}\sen{Q^1}+P_2}{\sqrt{m\omega}} \\
+ q^2 &= \frac{\sqrt{2P_1}\cos{Q^1}+Q^2}{\sqrt{m\omega}} \\
+ p_1 &= \frac{\sqrt{m\omega}(\sqrt{2P_1}\cos{Q^1 - Q^2})}{2} \\
+ p_2 &= \frac{\sqrt{m\omega}(\sqrt{2P_1}\sen{Q^1 - P_2})}{2}, 
+\end{align*}
+
+y
+
+\begin{align*}
+ q^1 &= Q^1\cos{\lambda} + \frac{P_2\sen{\lambda}}{m\omega} \\
+ q^2 &= Q^2\cos{\lambda} + \frac{P_1\sen{\lambda}}{m\omega}\\
+ p_1 &= - m\omega Q^2\sen{\lambda} + P_1 \cos{\lambda}\\
+ p_2 &= - m\omega Q^1\sen{\lambda} + P_2 \cos{\lambda},
+\end{align*}
+
+son canónicas.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 3}
+
+Considere la función $F(q,p) = pq - \frac{1}{2m}p^2 t$ encuentre TODAS las transformaciones 
+canónicas generadas por esta función.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 4}
+
+Encuentre las funciones generadoras para las transformaciones canónicas del problema 
+2.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 5}
+
+Considere una de las regiones acotadas (aquellas donde las trayectorias son regulares 
+y acotadas) del espacio de fase de un péndulo simple, ¿será posible encontrar una 
+transformación canónica de coordenadas de tal forma que, en las nuevas coordenadas, 
+tengamos una coordenada ignorable?, note que esto es similar al caso del oscilador 
+armónico que estudiamos como ejemplo. En caso de una respuesta afirmativa calcule 
+esta transformación (puede dejar algunas integrales indicadas) ¿Será posible 
+esto en las tres regiones acotadas? ¿Será posible esto de manera global?, esto es,
+una sola transformación para todo el espacio de fase (excepto por algunos puntos o 
+lineas).
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 6}
+
+Al hacer una transformación de punto dependiente del tiempo la hamiltoniana 
+debe cambiarse por medio de 
+
+$$
+H' = H + \sum_j p_j \frac{\partial q^j}{\partial t},
+$$
+
+ver fórmula (189) de las notas.
+
+\vspace{.3cm}
+
+Al aplicar una transformación canónica de coordenadas dependiente del tiempo la 
+hamiltoniana debe cambiar por 
+
+$$
+H' = H + \frac{\partial F}{\partial t}
+$$
+
+donde $F$ es la función generadora de la transformación. 
+
+\vspace{.3cm}
+
+Encuentre la relación entre estos dos resultados. Así mimos encuentre la relación 
+entre la fórmula para la integral de movimiento ante una simetría que se vio en el 
+contexto de la formulación lagrangiana y los generadores infinitesimales del grupo 
+de dicha simetría.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 7}
+
+Cuando la hamiltoniana no depende explícitamente del tiempo las fórmulas para el 
+campo vectorial hamiltoniano $\gamma[\bullet,V_H] = dH$, en el espacio de fase, 
+y $\Gamma[V_H,\bullet] = 0$ en el espacio de fase extendido, son equivalentes. 
+Demuestre esto de manera global, esto es, sin utilizar coordenadas.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
 
 \end{document}
