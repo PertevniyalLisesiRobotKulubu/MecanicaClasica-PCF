@@ -23,8 +23,6 @@
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
-\graphicspath{Tarea10/}
-
 % Circled words
 \newcommand{\circled}[2][]{%
   \tikz[baseline=(char.base)]{%
@@ -232,6 +230,138 @@ son canónicas.
 
 \underline{Solución:} \vspace{.3cm}
 
+Comencemos con las primeras transformaciones canónicas. La primera prueba que haremos 
+es con los paréntesis de Poisson, que debe cumplirse que 
+
+\begin{align}
+ \begin{split}
+  \{q^1,q^2\} = 0, \\
+  \{q^1,p_2\} = 0, \\
+  \{q^1,p_1\} = 1, \\
+  \{p_1,p_2\} = 0, \\
+  \{q^2,p_1\} = 0, \\
+  \{p_2, q^2\} = 1.
+ \end{split}
+\end{align}
+
+Todas las demás se obtienen intercambiando las variables y usando la anti-simetría 
+de los paréntesis de Poisson. Comencemos con las pruebas,
+
+\begin{align*}
+ \{q^1,q^2\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial q^2}{\partial P_1} - 
+ \frac{\partial q^1}{\partial P_1}\frac{\partial q^2}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}}\frac{\partial q^2}{\partial P_2} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial q^2}{\partial Q^2} \\
+ &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\sqrt{m\omega}} \right)
+ \left(\frac{\cos{Q^1}}{\cancel{\sqrt{2P_1}}\sqrt{m\omega}} \right) \\
+ &- \left(\frac{\sen{Q^1}}{\cancel{\sqrt{2P_1}}\sqrt{m\omega}} \right)
+ \left(- \frac{\cancel{\sqrt{2P_1}}\sen{Q^1}}{\sqrt{m\omega}} \right) - 
+ \left(\frac{1}{\sqrt{m\omega}}\right)\left(\frac{1}{\sqrt{m\omega}}\right) \\
+ &= \frac{\cos^2{Q^1}}{m\omega} + \frac{\sen^2{Q^1}}{m\omega} - \frac{1}{m\omega} \\
+ &= \frac{\cancelto{1}{\cos^2{Q^1} + \sen^2{Q^1}}}{m\omega} - \frac{1}{m\omega},
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^1,q^2\} = \frac{1}{m\omega} - \frac{1}{m\omega} = 0.
+\end{equation}
+
+
+\begin{align*}
+ \{q^1,p_2\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_2}{\partial P_1} - 
+ \frac{\partial q^1}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_2}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}}\sen{Q^1}}{2\cancel{\sqrt{2P_1}}} \right) - 
+ \left(\frac{\sen{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}\cos{Q^1}}{\sqrt{2}}\right)
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^1,p_2\} = \frac{\cos{Q^1}\sen{Q^1}}{2} - \frac{\cos{Q^1}\sen{Q^1}}{2} = 0
+\end{equation}
+
+\begin{align*}
+ \{q^1,p_1\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
+ \frac{\partial q^1}{\partial p_1}\frac{\partial p_1}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \frac{\partial q^1}{\partial p_2}\frac{\partial p_1}{\partial Q^2} \\
+ &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}} \cos{Q^1}}{2\cancel{\sqrt{2P_1}}}\right) \\
+ &- \left(\frac{\sen{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}\sen{Q^1}}{\sqrt{2}} \right) -
+ \left(\frac{1}{\cancel{\sqrt{m\omega}}} \right) \left(- \frac{\cancel{\sqrt{m\omega}}}{2} \right) \\ 
+ &= \frac{\cos^2{Q^1}}{2} + \frac{\sen^2{Q^1}}{2} + \frac{1}{2} \\
+ &= \frac{\cancelto{1}{\cos^2{Q^1} + \sen^2{Q^1}}}{2} + \frac{1}{2}
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^1,p_1\} = \frac{1}{2} + \frac{1}{2} = 1.
+\end{equation}
+
+\begin{align*}
+  \{p_1,p_2\} &= \frac{\partial p_1}{\partial Q^1}\frac{\partial p_2}{\partial P_1} - 
+ \frac{\partial p_1}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial p_1}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= \left(-\frac{\cancel{\sqrt{P_1}}\sqrt{m\omega}\sen{Q^1}}{\sqrt{2}} \right)
+ \left(\frac{\sqrt{m\omega}\sen{Q^1}}{2\sqrt{2}\cancel{\sqrt{P_1}}} \right) - 
+ \left(\frac{\sqrt{m\omega}\cos{Q^1}}{2\sqrt{2}\cancel{\sqrt{P_1}}} \right) 
+ \left(\frac{\cancel{\sqrt{P_1}}\sqrt{m\omega}\cos{Q^1}}{\sqrt{2}} \right) \\
+ &- \left(-\frac{\sqrt{m\omega}}{2}\right)\left(-\frac{\sqrt{m\omega}}{2} \right) \\
+ &= -\frac{m\omega \sen^2{Q^1}}{4} - \frac{m\omega \cos^2{Q^1}}{4} 
+ + \frac{m\omega}{4}\\
+ &= - \frac{m\omega}{4}(\cancelto{1}{\sen^2{Q^1} + \cos^2{Q^1}}) + \frac{m\omega}{4},
+\end{align*}
+
+\begin{equation}
+ \therefore \{p_1,p_2\} = -  \frac{m\omega}{4} +  \frac{m\omega}{4} = 0.
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_1\} &= \frac{\partial q^2}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
+ \frac{\partial q^2}{\partial P_1}\frac{\partial p_1}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^2}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_1}{\partial Q^2}} \\
+ &= \left(- \frac{\cancel{\sqrt{2P_1}}\sen{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}}\cos{Q^1}}{2\cancel{\sqrt{2P_1}}} \right) - 
+ \left(\frac{\cos{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(- \frac{\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}\sen{Q^1}}{\sqrt{2}} \right)
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^2, p_1\} = - \frac{\sen{Q^1}\cos{Q^1}}{2} + \frac{\sen{Q^1}\cos{Q^1}}{2} = 0
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_2\} &= \frac{\partial q^2}{\partial Q^1}\frac{\partial p_2}{\partial P_1} - 
+ \frac{\partial q^2}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial q^2}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &=  \left(- \frac{\cancel{\sqrt{2P_1}}\sen{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}}\sen{Q^1}}{2\cancel{\sqrt{2P_1}}} \right) - 
+ \left(\frac{\cos{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\sqrt{P_1}\sqrt{m\omega}\cos{Q^1}}{\sqrt{2}} \right) \\
+ &+ \left(\frac{1}{\cancel{\sqrt{m\omega}}}\right)\left(- \frac{\cancel{\sqrt{m\omega}}}{2} \right) \\
+ &= - \frac{\sen^2{Q^1}}{2} - \frac{\cos^2{Q^1}}{2} - \frac{1}{2} \\
+ &= - \frac{1}{2}(\cancelto{1}{(\sen^2{Q^1} + \cos^2{Q^1})}) - \frac{1}{2},
+\end{align*}
+
+\begin{equation}
+ \{p_2, q^2\} = - \{q^2, p_2\} = \frac{1}{2} + \frac{1}{2} = 1.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Problema 3}
 
 Considere la función $F(q,p) = pq - \frac{1}{2m}p^2 t$ encuentre TODAS las transformaciones 
@@ -346,8 +476,6 @@ $\{Q,P\} = 1$,
 
 Lo cual finaliza el problema. Claramente tenemos una gran cantidad de transformaciones 
 canónicas que puede generar esta función generadora debido a que $\xi(p,t)$ es arbitraria.
-
-
 
 \section{Problema 4}
 
