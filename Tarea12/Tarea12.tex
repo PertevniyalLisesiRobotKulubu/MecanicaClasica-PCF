@@ -128,6 +128,47 @@ sistema canónico de coordenadas.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para demostrar esto utilizaremos la definición de cada uno de los paréntesis y 
+las sustituiremos directamente. El paréntesis de Lagrange para las coordenadas 
+canónicas $(q,p)$ y aplicados al problema en cuestión se escribe como
+
+\begin{equation}
+ [u_\alpha,u_\beta] = \sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta}- \frac{\partial q^i}{\partial u_\beta}
+ \frac{\partial p_i}{\partial u_\alpha}\right),
+\end{equation}
+
+y el paréntesis de Poisson se escribe como 
+
+\begin{equation}
+ \{u_\alpha, u_\gamma\} = \sum_i \left( \frac{\partial u_\alpha}{\partial q^i}
+ \frac{\partial u_\gamma}{\partial p_i} - \frac{\partial u_\alpha}{\partial p_i}
+ \frac{\partial u_\gamma}{\partial q^i} \right).
+\end{equation}
+
+Tenemos entonces que 
+
+\begin{align*}
+\sum_{\alpha=1}^{2n} [u_\alpha,u_\beta]\{u_\alpha,u_\gamma\} &= 
+\sum_{\alpha=1}^{2n} \left[\sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta}- \frac{\partial q^i}{\partial u_\beta}
+ \frac{\partial p_i}{\partial u_\alpha}\right) \right] \left[ \sum_i \left( \frac{\partial u_\alpha}{\partial q^i}
+ \frac{\partial u_\gamma}{\partial p_i} - \frac{\partial u_\alpha}{\partial p_i}
+ \frac{\partial u_\gamma}{\partial q^i} \right)\right] \\
+ &= \sum_{\alpha=1}^{2n} \left[\sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta}\frac{\partial u_\alpha}{\partial q^i}
+ \frac{\partial u_\gamma}{\partial p_i}\right) -  \sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta} \frac{\partial u_\alpha}{\partial p_i}
+ \frac{\partial u_\gamma}{\partial q^i}\right)\right\zerodel \\
+ &\left\zerodel - \sum_i \left(\frac{\partial q^i}{\partial u_\beta}
+ \frac{\partial p_i}{\partial u_\alpha}\frac{\partial u_\alpha}{\partial q^i}
+ \frac{\partial u_\gamma}{\partial p_i} \right) +  \sum_i \left(\frac{\partial q^i}{\partial u_\beta}
+ \frac{\partial p_i}{\partial u_\alpha}\frac{\partial u_\alpha}{\partial p_i}
+ \frac{\partial u_\gamma}{\partial q^i} \right)\right]
+\end{align*}
+
+
+
 \section{Problema 2}
 
 Demuestre por tres vías distintas que las transformaciones 
