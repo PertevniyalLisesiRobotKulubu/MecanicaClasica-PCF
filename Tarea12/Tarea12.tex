@@ -283,9 +283,9 @@ de los paréntesis de Poisson. Comencemos con las pruebas,
 
 \begin{align*}
  \{q^1,p_1\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
- \frac{\partial q^1}{\partial p_1}\frac{\partial p_1}{\partial Q^1} + 
+ \frac{\partial q^1}{\partial P_1}\frac{\partial p_1}{\partial Q^1} + 
  \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
- \frac{\partial q^1}{\partial p_2}\frac{\partial p_1}{\partial Q^2} \\
+ \frac{\partial q^1}{\partial P_2}\frac{\partial p_1}{\partial Q^2} \\
  &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
  \left(\frac{\cancel{\sqrt{m\omega}} \cos{Q^1}}{2\cancel{\sqrt{2P_1}}}\right) \\
  &- \left(\frac{\sen{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
@@ -403,6 +403,65 @@ Hagamos ahora los siguientes productos exteriores,
 \begin{equation}
  dp_1 \wedge dq^1 = - \left(\frac{\sqrt{m\omega}dP_1\sen{Q^1}dQ^1}{2\sqrt{2P_1}} - \frac{dQ^2}{2}\right) 
  \wedge \left(\frac{dP_1\cos{Q^1}dQ^1}{\sqrt{2P_1}\sqrt{m\omega}}+\frac{dP_2}{\sqrt{m\omega}}\right)
+\end{equation}
+
+TERMINAR
+
+\vspace{.3cm}
+
+Para las segundas transformaciones canónicas, comencemos igual la prueba utilizando 
+los paréntesis de Poisson, que recordamos que debe cumplirse que 
+
+\begin{align}
+ \begin{split}
+  \{q^1,q^2\} = 0, \\
+  \{q^1,p_2\} = 0, \\
+  \{q^1,p_1\} = 1, \\
+  \{p_1,p_2\} = 0, \\
+  \{q^2,p_1\} = 0, \\
+  \{p_2, q^2\} = 1.
+ \end{split}
+\end{align}
+
+Entonces, 
+
+\begin{align*}
+  \{q^1,q^2\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial q^2}{\partial P_1} - 
+ \cancelto{0}{\frac{\partial q^1}{\partial P_1}\frac{\partial q^2}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial q^2}{\partial P_2}} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial q^2}{\partial Q^2} \\
+ &= (\cos{\lambda})\left(\frac{\sen{\lambda}}{m\omega}\right) - 
+ \left(\frac{\sen{\lambda}}{m\omega}\right)(\cos{\lambda}) 
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^1,q^2\} =  \frac{\cos{\lambda}\sen{\lambda}}{m\omega} -
+ \frac{\cos{\lambda}\sen{\lambda}}{m\omega} =0.
+\end{equation}
+
+\begin{align*}
+ \{q^1,p_2\} &= \cancelto{0}{\frac{\partial q^1}{\partial Q^1}\frac{\partial p_2}{\partial P_1}} - 
+ \cancelto{0}{\frac{\partial q^1}{\partial P_1}\frac{\partial p_2}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_2}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}}
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^1,p_2\} = 0.
+\end{equation}
+
+
+\begin{align*}
+ \{q^1,p_1\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
+ \cancelto{0}{\frac{\partial q^1}{\partial P_1}\frac{\partial p_1}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial p_1}{\partial Q^2} \\
+ &= (\cos{\lambda})(\cos{\lambda}) - \left(\frac{\sen{\lambda}}{\cancel{m\omega}}\right)
+ (- \cancel{m\omega} \sen{\lambda})
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^1,p_1\} = \cos^2{\lambda} + \sen^2{\lambda} = 1.
 \end{equation}
 
 
