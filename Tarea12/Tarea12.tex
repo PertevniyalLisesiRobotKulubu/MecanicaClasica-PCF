@@ -133,7 +133,7 @@ las sustituiremos directamente. El paréntesis de Lagrange para las coordenadas
 canónicas $(q,p)$ y aplicados al problema en cuestión se escribe como
 
 \begin{equation}
- [u_\alpha,u_\beta] = \sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
+ [u_\alpha,u_\beta] = \sum_i^n \left( \frac{\partial q^i}{\partial u_\alpha}
  \frac{\partial p_i}{\partial u_\beta}- \frac{\partial q^i}{\partial u_\beta}
  \frac{\partial p_i}{\partial u_\alpha}\right),
 \end{equation}
@@ -141,31 +141,70 @@ canónicas $(q,p)$ y aplicados al problema en cuestión se escribe como
 y el paréntesis de Poisson se escribe como 
 
 \begin{equation}
- \{u_\alpha, u_\gamma\} = \sum_i \left( \frac{\partial u_\alpha}{\partial q^i}
- \frac{\partial u_\gamma}{\partial p_i} - \frac{\partial u_\alpha}{\partial p_i}
- \frac{\partial u_\gamma}{\partial q^i} \right).
+ \{u_\alpha, u_\gamma\} = \sum_j^n \left( \frac{\partial u_\alpha}{\partial q^j}
+ \frac{\partial u_\gamma}{\partial p_j} - \frac{\partial u_\alpha}{\partial p_j}
+ \frac{\partial u_\gamma}{\partial q^j} \right).
 \end{equation}
 
 Tenemos entonces que 
 
 \begin{align*}
 \sum_{\alpha=1}^{2n} [u_\alpha,u_\beta]\{u_\alpha,u_\gamma\} &= 
-\sum_{\alpha=1}^{2n} \left[\sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
+\sum_{\alpha=1}^{2n} \left[\sum_i^n \left( \frac{\partial q^i}{\partial u_\alpha}
  \frac{\partial p_i}{\partial u_\beta}- \frac{\partial q^i}{\partial u_\beta}
- \frac{\partial p_i}{\partial u_\alpha}\right) \right] \left[ \sum_i \left( \frac{\partial u_\alpha}{\partial q^i}
- \frac{\partial u_\gamma}{\partial p_i} - \frac{\partial u_\alpha}{\partial p_i}
- \frac{\partial u_\gamma}{\partial q^i} \right)\right] \\
- &= \sum_{\alpha=1}^{2n} \left[\sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
- \frac{\partial p_i}{\partial u_\beta}\frac{\partial u_\alpha}{\partial q^i}
- \frac{\partial u_\gamma}{\partial p_i}\right) -  \sum_i \left( \frac{\partial q^i}{\partial u_\alpha}
- \frac{\partial p_i}{\partial u_\beta} \frac{\partial u_\alpha}{\partial p_i}
- \frac{\partial u_\gamma}{\partial q^i}\right)\right\zerodel \\
- &\left\zerodel - \sum_i \left(\frac{\partial q^i}{\partial u_\beta}
- \frac{\partial p_i}{\partial u_\alpha}\frac{\partial u_\alpha}{\partial q^i}
- \frac{\partial u_\gamma}{\partial p_i} \right) +  \sum_i \left(\frac{\partial q^i}{\partial u_\beta}
- \frac{\partial p_i}{\partial u_\alpha}\frac{\partial u_\alpha}{\partial p_i}
- \frac{\partial u_\gamma}{\partial q^i} \right)\right]
+ \frac{\partial p_i}{\partial u_\alpha}\right) \right] \left[ \sum_j^n \left( \frac{\partial u_\alpha}{\partial q^j}
+ \frac{\partial u_\gamma}{\partial p_j} - \frac{\partial u_\alpha}{\partial p_j}
+ \frac{\partial u_\gamma}{\partial q^j} \right)\right] \\
+ &= \sum_{\alpha=1}^{2n} \sum_i^n \sum_j^n \left( \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta}- \frac{\partial q^i}{\partial u_\beta}
+ \frac{\partial p_i}{\partial u_\alpha}\right)\left( \frac{\partial u_\alpha}{\partial q^j}
+ \frac{\partial u_\gamma}{\partial p_j} - \frac{\partial u_\alpha}{\partial p_j}
+ \frac{\partial u_\gamma}{\partial q^j} \right) \\
+ &= \sum_{\alpha=1}^{2n} \sum_i^n \sum_j^n \left[\frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta} \frac{\partial u_\alpha}{\partial q^j}
+ \frac{\partial u_\gamma}{\partial p_j} - \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial p_i}{\partial u_\beta}\frac{\partial u_\alpha}{\partial p_j}
+ \frac{\partial u_\gamma}{\partial q^j}  \right\zerodel \\
+ &\left\zerodel- \frac{\partial q^i}{\partial u_\beta}\frac{\partial p_i}{\partial u_\alpha}
+ \frac{\partial u_\alpha}{\partial q^j}\frac{\partial u_\gamma}{\partial p_j} + 
+ \frac{\partial q^i}{\partial u_\beta}\frac{\partial p_i}{\partial u_\alpha}
+ \frac{\partial u_\alpha}{\partial p_j}\frac{\partial u_\gamma}{\partial q^j}\right].
 \end{align*}
+
+Ahora evaluando estos términos vemos que 
+
+\begin{align}
+ \sum_{\alpha=1}^{2n} \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial u_\alpha}{\partial q^j} = \delta^i_j, \\
+  \sum_{\alpha=1}^{2n} \frac{\partial q^i}{\partial u_\alpha}
+ \frac{\partial u_\alpha}{\partial p_j} = 0, \\
+  \sum_{\alpha=1}^{2n} \frac{\partial p_i}{\partial u_\alpha}
+ \frac{\partial u_\alpha}{\partial q^j} = 0, \\
+  \sum_{\alpha=1}^{2n} \frac{\partial p_i}{\partial u_\alpha}
+ \frac{\partial u_\alpha}{\partial p_jj} = \delta^i_j.
+\end{align}
+
+Donde $\delta^i_j$ es la delta de Kronecker. Entonces tenemos que 
+
+\begin{align}
+\begin{split}
+ \sum_{\alpha=1}^{2n} [u_\alpha,u_\beta]\{u_\alpha,u_\gamma\} &= \sum_i^n \sum_j^n
+ \left( \frac{\partial p_i}{\partial u_\beta}\frac{\partial u_\gamma}{\partial p_j}\delta^i_j
+ + \frac{\partial q^i}{\partial u_\beta}\frac{\partial u_\gamma}{\partial q^j}\delta^i_j\right) \\
+ &= \sum_i^n \left( \frac{\partial p_i}{\partial u_\beta}\frac{\partial u_\gamma}{\partial p_i}
+ + \frac{\partial q^i}{\partial u_\beta}\frac{\partial u_\gamma}{\partial q^i}\right).
+\end{split}
+\end{align}
+
+Haciendo ahora la sumatoria en $i$ vemos que esta expresión debe ser igual a la 
+delta de Kronecker para $\beta$ y $\gamma$, por lo tanto 
+
+\begin{equation}
+ \boxed{\sum_{\alpha=1}^{2n} [u_\alpha,u_\beta]\{u_\alpha,u_\gamma\} = \delta_{\beta\gamma}.}
+\end{equation}
+
+Que era lo que se pidió demostrar, con lo cual vemos que los paréntesis de Poisson y 
+los paréntesis de Lagrange forman matrices inversas la una para la otra.
 
 
 
