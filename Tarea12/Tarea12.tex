@@ -241,6 +241,114 @@ canónicas generadas por esta función.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para dar solución a este problema consideremos una transformación de 
+coordenadas en el espacio extendido (dependiente del tiempo) 
+
+\begin{align*}
+ Q &= Q(q,p,t) \\
+ P &= P(q,p,t) \\
+ T &= T(q,p,t) = t.
+\end{align*}
+
+y su inversa 
+
+\begin{align*}
+ q &= q(Q,P,T) \\
+ p &= p(Q,P,T) \\
+ t &= y(Q,P,T) = t.
+\end{align*}
+
+que será canónica si al ser $(q,p,t)$ un sistema de coordenadas canónicas, $(Q,P,T)$ 
+también lo es. Véase que el tiempo no se transforma $T = t$, lo cual indica que 
+las coordenadas $(Q,P)$ son coordenadas canónicas para todo valor del tiempo. Recordemos 
+que para las transformaciones canónicas dependientes del tiempo tenemos que la 
+uno forma diferencial para las coordenadas $(q,p)$ se expresa como (para una dimensión)
+
+\begin{equation}
+ \omega = pdq - Hdt,
+\end{equation}
+
+donde $H(q,p,t)$ es la función hamiltoniana, y para las coordenadas $(Q,P,T)$ 
+
+\begin{equation}
+ \Omega = PdQ - H'dt
+\end{equation}
+
+donde $H'(q,p,t)$ es la nueva hamiltoniana. Ahora si la transformación es canónica 
+debe cumplirse que las diferenciales de $\omega$ y $\Omega$ sean iguales, lo que 
+quiere decir que la diferencia entre $\omega$ y $\Omega$ debe ser la diferencial 
+de una función el espacio de fase, que es la que nos da el problema. Tenemos entonces 
+que 
+
+\begin{equation}
+ pdq - Hdt - PdQ + H'dt = dF,
+\end{equation}
+
+diferenciando con respecto la tiempo tenemos 
+
+\begin{equation}
+ p\dot{q} - H - P\dot{Q} + H' = \dot{F}
+\end{equation}
+
+pero $Q = Q(q,f,t)$ y  $F = F(q,p,t)$ por lo tanto 
+
+\begin{equation}
+ p\dot{q} - H - P\left(\frac{\partial Q}{\partial q}\dot{q} 
+ + \frac{\partial Q}{\partial p}\dot{p} + \frac{\partial Q}{\partial t} \right) + 
+ H' = \frac{\partial F}{\partial q}\dot{q} 
+ + \frac{\partial F}{\partial p}\dot{p} + \frac{\partial F}{\partial t},
+\end{equation}
+
+Para que esta igualdad se mantenga, deben ser iguales los coeficientes 
+de $\dot{q}$ y $\dot{p}$, entonces para $\dot{q}$
+
+\begin{equation}
+ p - \frac{\partial Q}{\partial q}P = \frac{\partial F}{\partial q} = p,
+\end{equation}
+
+de esta expresión vemos que 
+
+\begin{equation}
+ \frac{\partial Q}{\partial q}= 0\quad \text{ó} \quad P = 0,
+ \label{eq:Qcero}
+\end{equation}
+
+ahora para $\dot{p}$
+
+\begin{equation}
+ - \frac{\partial Q}{\partial p} P = \frac{\partial F}{\partial p} = q - \frac{pt}{m},
+\label{eq:Pfinal}
+\end{equation}
+
+de donde vemos claramente que $P \ne 0$, por lo tanto de \eqref{eq:Qcero} vemos que 
+obligatoriamente $\partial Q / \partial q = 0$, entonces necesariamente $Q$ es solo 
+una función de $(p,t)$. Entonces de lo que acabamos de probar tenemos que 
+
+\begin{equation}
+  \boxed{Q = \xi(p,t),}
+\end{equation}
+
+con $\xi(p,t)$ arbitraria y de \eqref{eq:Pfinal} vemos que 
+
+\begin{equation}
+ \boxed{P = \frac{pt/m - q}{\partial \xi/\partial p}.}
+\end{equation}
+
+Para verificar que esta transformación es canónica entonces debe cumplirse que 
+$\{Q,P\} = 1$, 
+
+\begin{equation}
+ \{Q,P\} = \cancelto{0}{\frac{\partial Q}{\partial q}}\frac{\partial P}{\partial p} - 
+ \frac{\partial Q}{\partial p}\frac{\partial P}{\partial q} = 
+ \left(\frac{\partial \xi}{\partial p}\right)\left(- \frac{1}{\frac{\xi}{\partial p}} \right) = 
+ - \frac{\partial \xi}{\partial p}\frac{\partial p}{\partial \xi} = -1.
+\end{equation}
+
+Lo cual finaliza el problema. Claramente tenemos una gran cantidad de transformaciones 
+canónicas que puede generar esta función generadora debido a que $\xi(p,t)$ es arbitraria.
+
+
+
 \section{Problema 4}
 
 Encuentre las funciones generadoras para las transformaciones canónicas del problema 
