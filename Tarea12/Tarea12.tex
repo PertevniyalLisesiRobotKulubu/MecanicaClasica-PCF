@@ -358,6 +358,57 @@ Encuentre las funciones generadoras para las transformaciones canónicas del pro
 
 \underline{Solución:} \vspace{.3cm}
 
+En el problema 2 demostramos que estas transformaciones son canónicas, ahora para 
+encontrar las funciones generadoras para estas transformaciones canónicas debemos 
+partir de la tabla de la página 50 de las notas, verificar que tipo ( o tipos) de 
+función generadora es, y luego integrar las ecuaciones que resultan hasta encontrar
+la (o las) funciones generadoras para cada transformación canónica. La primera 
+transformación canónica es 
+
+\begin{align*}
+ q^1 &= \frac{\sqrt{2P_1}\sen{Q^1}+P_2}{\sqrt{m\omega}} \\
+ q^2 &= \frac{\sqrt{2P_1}\cos{Q^1}+Q^2}{\sqrt{m\omega}} \\
+ p_1 &= \frac{\sqrt{m\omega}(\sqrt{2P_1}\cos{Q^1 - Q^2})}{2} \\
+ p_2 &= \frac{\sqrt{m\omega}(\sqrt{2P_1}\sen{Q^1 - P_2})}{2}, 
+\end{align*}
+
+Si asumimos que la función generadora es de tipo 1 entonces debe cumplirse que 
+$F_1 = F_1(q,Q)$, y que 
+
+\begin{align*}
+ p_1 = \frac{\partial F_1}{\partial q^1}, \\
+ p_2 = \frac{\partial F_1}{\partial q^2}, \\
+ P_1 = \frac{\partial F_1}{\partial Q^1}, \\
+ P_2 = \frac{\partial F_1}{\partial Q^2}.
+\end{align*}
+
+Tenemos entonces que 
+
+\begin{equation}
+ p_1 = \frac{\sqrt{m\omega}(\sqrt{2P_1}\cos{Q^1 - Q^2})}{2} = 
+ \frac{\partial F_1}{\partial q^1},
+\end{equation}
+
+\begin{equation}
+ p_2 = \frac{\sqrt{m\omega}(\sqrt{2P_1}\sen{Q^1 - P_2})}{2} = 
+ \frac{\partial F_1}{\partial q^2},
+\end{equation}
+
+\begin{equation}
+ P_1 = \frac{1}{2}\sqrt{\frac{q^1\sqrt{m\omega}-P_2}{\sen{Q^1}}} = 
+ \frac{\partial F_1}{\partial Q^1}
+\end{equation}
+
+\begin{equation}
+ P_2 = \sqrt{2P_1}\sen{Q^1} + q^1\sqrt{m\omega} = 
+ \frac{\partial F_1}{\partial Q^2}.
+\end{equation}
+
+
+
+
+
+
 \section{Problema 5}
 
 Considere una de las regiones acotadas (aquellas donde las trayectorias son regulares 
