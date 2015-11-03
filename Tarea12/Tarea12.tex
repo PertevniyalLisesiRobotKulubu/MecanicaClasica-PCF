@@ -419,7 +419,7 @@ los paréntesis de Poisson, que recordamos que debe cumplirse que
   \{q^1,p_1\} = 1, \\
   \{p_1,p_2\} = 0, \\
   \{q^2,p_1\} = 0, \\
-  \{p_2, q^2\} = 1.
+  \{q^2,p_2\} = 1.
  \end{split}
 \end{align}
 
@@ -463,6 +463,163 @@ Entonces,
 \begin{equation}
  \therefore \{q^1,p_1\} = \cos^2{\lambda} + \sen^2{\lambda} = 1.
 \end{equation}
+
+\begin{align*}
+  \{p_1,p_2\} &= \cancelto{0}{\frac{\partial p_1}{\partial Q^1}\frac{\partial p_2}{\partial P_1}} - 
+ \frac{\partial p_1}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial p_1}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= - (\cos{\lambda})(- m\omega\sen{\lambda}) + (- m\omega\sen{\lambda})(\cos{\lambda}) 
+\end{align*}
+
+\begin{equation}
+ \therefore \{p_1,p_2\} = m\omega\cos{\lambda}\sen{\lambda} - 
+ m\omega\cos{\lambda}\sen{\lambda} = 0.
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_1\} &= \cancelto{0}{\frac{\partial q^2}{\partial Q^1}\frac{\partial p_1}{\partial P_1}} - 
+ \cancelto{0}{\frac{\partial q^2}{\partial P_1}\frac{\partial p_1}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^2}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_1}{\partial Q^2}} 
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^2, p_1\} = 0.
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_2\} &= \cancelto{0}{\frac{\partial q^2}{\partial Q^1}\frac{\partial p_2}{\partial P_1}} - 
+ \frac{\partial q^2}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial q^2}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= -\left(\frac{\sen{\lambda}}{\cancel{m\omega}}\right)(-\cancel{m\omega}\sen{\lambda}) + 
+ (\cos{\lambda})(\cos{\lambda}) 
+\end{align*}
+
+\begin{equation}
+ \therefore = \{q^2, p_2\} = \sen^2{\lambda} + \cos^2{\lambda} = 1.
+\end{equation}
+
+Probemos ahora con los paréntesis de Lagrange, que se debe cumplir que
+
+\begin{align}
+ \begin{split}
+  [q^1,q^2] = 0, \\
+  [q^1,p_2] = 0, \\
+  [q^1,p_1] = 1, \\
+  [p_1,p_2] = 0, \\
+  [q^2,p_1] = 0, \\
+  [q^2, p_2] = 1.
+ \end{split}
+\end{align}
+
+De nuevo, la prueba con los paréntesis de Lagrange es trivial al saber que 
+
+\begin{equation}
+ \sum_k^{2n} \{q^k,p_i\}[q^k,p_j] = \delta_{ij},
+\end{equation}
+
+que fue el resultado al cual se llegó en el problema anterior. Con lo cual tenemos que,
+utilizando los resultados que hemos obtenidos arriba
+
+\begin{align}
+ \begin{split}
+  [q^1,q^2] = \{q^1,q^2\} = 0, \\
+  [q^1,p_2] = \{q^1,p_2\} = 0, \\
+  [q^1,p_1] = \{q^1, p_1\} = 1, \\
+  [p_1,p_2] = \{p_1,p_2\} = 0, \\
+  [q^2,p_1] = \{q^2,p_1\} = 0, \\
+  [q^2, p_2] = \{q^2,p_2\} = 1.
+ \end{split}
+\end{align}
+
+La última prueba será demostrar que la transformación canónica deja invariante 
+a la forma simpléctica. Para hacer esto calculemos las diferenciales, 
+
+\begin{align}
+ dq^1 = \cos{\lambda}dQ^1 + \frac{\sen{\lambda}}{m\omega}dP_2, \\ 
+ dq^2 = \cos{\lambda}dQ^2 + \frac{\sen{\lambda}}{m\omega}dP_1, \\
+ dp_1 = - m\omega\sen{\lambda} dQ^2 + \cos{\lambda}dP_1, \\
+ dp_2 = - m\omega\sen{\lambda} dQ^1 + \cos{\lambda}dP_2.
+\end{align}
+
+Hagamos ahora los siguientes productos exteriores, 
+
+\begin{align}
+\begin{split}
+ dp_1 \wedge dq^1 &= (- m\omega\sen{\lambda} dQ^2 + \cos{\lambda}dP_1) \wedge 
+  \left(\cos{\lambda}dQ^1 + \frac{\sen{\lambda}}{m\omega}dP_2\right) \\
+  &= - m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1  
+  - \cancel{m\omega}\sen{\lambda}\frac{\sen{\lambda}}{\cancel{m\omega}}dQ^2 \wedge dP_2 \\
+  &+ \cos{\lambda}\cos{\lambda}dP_1 \wedge dQ^1 + 
+  \cos{\lambda}\frac{\sen{\lambda}}{m\omega} dP_1 \wedge dP_2 \\
+  &= - m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1
+  - \sen^2{\lambda}dQ^2 \wedge dP_2 \\ 
+  &+ \cos^2{\lambda}dP_1 \wedge dQ^1 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2.
+  \label{eq:2parte2productoext1}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+ dp_2 \wedge dq^2 &= (- m\omega\sen{\lambda} dQ^1 + \cos{\lambda}dP_2) \wedge 
+ \left(\cos{\lambda}dQ^2 + \frac{\sen{\lambda}}{m\omega}dP_1\right) \\
+ &= - m\omega\sen{\lambda}\cos{\lambda} dQ^1 \wedge dQ^2  
+  - \cancel{m\omega}\sen{\lambda}\frac{\sen{\lambda}}{\cancel{m\omega}}dQ^1 \wedge dP_1 \\
+  &+ \cos{\lambda}\cos{\lambda}dP_2 \wedge dQ^2 + 
+  \cos{\lambda}\frac{\sen{\lambda}}{m\omega} dP_2 \wedge dP_1 \\
+  &= - m\omega\sen{\lambda}\cos{\lambda} dQ^1 \wedge dQ^2
+  - \sen^2{\lambda}dQ^1 \wedge dP_1 \\ 
+  &+ \cos^2{\lambda}dP_2 \wedge dQ^2 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_2 \wedge dP_1.
+  \label{eq:2parte2productoext2}
+\end{split}
+\end{align}
+
+Entonces si la transformación es canónica debe cumplirse que 
+
+\begin{equation}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2,
+\end{equation}
+
+sumemos entonces \eqref{eq:2parte2productoext1} con \eqref{eq:2parte2productoext2} a ver 
+si se cumple esta igualdad,
+
+\begin{align*}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 &= - m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1
+  - \sen^2{\lambda}dQ^2 \wedge dP_2 \\ 
+  &+ \cos^2{\lambda}dP_1 \wedge dQ^1 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2 \\ 
+  &- m\omega\sen{\lambda}\cos{\lambda} dQ^1 \wedge dQ^2
+  - \sen^2{\lambda}dQ^1 \wedge dP_1 \\
+  &+ \cos^2{\lambda}dP_2 \wedge dQ^2 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_2 \wedge dP_1.
+\end{align*}
+
+Si usamos la propiedad anti-simétrica del producto exterior la ecuación anterior 
+puede escribirse como 
+
+\begin{align*}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 &= - \cancel{m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1}
+  + \sen^2{\lambda}dP_2 \wedge dQ^2 \\ 
+  &+ \cos^2{\lambda}dP_1 \wedge dQ^1 + \cancel{\frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2} \\ 
+  &+ \cancel{m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1}
+  + \sen^2{\lambda}dP_1 \wedge dQ^1 \\
+  &+ \cos^2{\lambda}dP_2 \wedge dQ^2 - \cancel{\frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2}.
+\end{align*}
+
+\begin{equation}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 =  \cancelto{1}{(\sen^2{\lambda} + \cos^2{\lambda})}dP_1 \wedge dQ^1+ 
+ \cancelto{1}{(\sen^2{\lambda} + \cos^2{\lambda})}dP_2 \wedge dQ^2 
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2.}
+\end{equation}
+
+
+
+
+
+
 
 
 \section{Problema 3}
