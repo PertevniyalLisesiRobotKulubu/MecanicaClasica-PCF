@@ -407,6 +407,96 @@ de dicha simetría.
 
 \underline{Solución:} \vspace{.3cm}
 
+Recordemos un poco de donde salen estas ecuaciones. La primera,
+
+\begin{equation} 
+H' = H + \sum_j p_j \frac{\partial q^j}{\partial t},
+\label{eq:hamiltonianaPunto}
+\end{equation}
+
+surge de una transformación de punto, definidas como aquella en la cual se propone 
+un cambio de coordenadas de la variedad de configuración, i.e. 
+
+\begin{equation}
+ Q^i = Q^i(q,t),
+\end{equation}
+
+y los impulsos se generan utilizando la definición 
+
+\begin{equation}
+P_i = \frac{\partial L}{\partial \dot{Q}^i}.
+\end{equation}
+
+Veíamos que este tipo de transformaciones de coordenadas son canónicas, es decir, 
+que hacen que las ecuaciones de movimiento conserven la forma hamiltoniana, pero 
+la función hamiltoniana debe modificarse de acuerdo a \eqref{eq:hamiltonianaPunto}. 
+Por otra parte, vimos que al aplicar una transformación canónica de coordenadas dependiente 
+del tiempo, también se mantendrá la forma hamiltoniana de las ecuaciones ya que por 
+definición esto es lo que hacen las transformaciones canónicas, y también en este 
+caso debíamos cambiar la función hamiltoniana para que se mantuviera esto de acuerdo 
+a 
+
+\begin{equation}
+ H' = H + \frac{\partial F}{\partial t}.
+ \label{eq:hamiltonianaTiempo}
+\end{equation}
+
+Podemos entonces ahora ver que las transformaciones de punto como las hemos planteado 
+son solo un ejemplo de las transformaciones canónicas de coordenadas dependientes 
+del tiempo. Veamos ahora como están relacionadas estas dos ecuaciones. Para ver esto, 
+supongamos que las $H'$ de \eqref{eq:hamiltonianaPunto} y \eqref{eq:hamiltonianaTiempo} 
+son iguales, lo cual es plausible ya que ambas dejan invariantes a las ecuaciones 
+de Hamilton y a la forma simpléctica, y pensemos que tenemos ambas ecuaciones 
+y queremos ver entonces que relación tiene la $F$ con el segundo término de la 
+derecha de la ecuación \eqref{eq:hamiltonianaPunto}, que son las que sobreviven 
+al hacer la igualdad, es decir que tenemos 
+
+\begin{equation}
+ \sum_j p_j \frac{\partial q^j}{\partial t} = \frac{\partial F}{\partial t}.
+\end{equation}
+
+Sino queda claro lo que hacemos, sencillamente estamos viendo qué función generadora 
+produce las transformaciones de punto, la cual vimos que era una transformación de 
+coordenadas canónica. Vemos ahora que 
+
+\begin{equation}
+ F = \sum_j \int p_j \frac{\partial q^j}{\partial t}dt,
+\end{equation}
+
+pero 
+
+\begin{equation}
+ \frac{d}{dt}(p_jq^j) = q^j\frac{\partial p_j}{\partial t} +
+ p_j\frac{\partial q^j}{\partial t},
+\end{equation}
+
+entonces 
+
+\begin{equation}
+ F = \sum_j \int \left(\frac{d}{dt}(p_j q^j) - q^j\frac{\partial p_j}{\partial t}\right)dt
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore F = \sum_j \left[p_j q^j - \int q^j \frac{\partial p_j}{\partial t}dt\right]}.
+\end{equation}
+
+
+La cual entonces sería la función generadora de una transformación de punto.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
 \section{Problema 7}
 
 Cuando la hamiltoniana no depende explícitamente del tiempo las fórmulas para el 
