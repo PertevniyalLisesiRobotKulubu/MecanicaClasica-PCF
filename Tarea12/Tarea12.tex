@@ -385,27 +385,93 @@ utilizando los resultados que hemos obtenidos arriba
 \end{align}
 
 La última prueba será demostrar que la transformación canónica deja invariante 
-a la forma simpléctica. Para hacer esto calculemos las diferenciales, 
-
-\begin{align*}
- dq^1 &= \frac{\frac{dP_1}{\sqrt{2P_1}}\cos{Q^1}dQ^1+dP_2}{\sqrt{m\omega}} = 
- \frac{dP_1\cos{Q^1}dQ^1}{\sqrt{2P_1}\sqrt{m\omega}}+\frac{dP_2}{\sqrt{m\omega}} \\
- dq^2 &=  \frac{-\frac{dP_1}{\sqrt{2P_1}}\sen{Q^1}dQ^1+dQ_2}{\sqrt{m\omega}} = 
- - \frac{dP_1\sen{Q^1}dQ^1}{\sqrt{2P_1}\sqrt{m\omega}}+\frac{dQ_2}{\sqrt{m\omega}} \\
- dp_1 &= \frac{\sqrt{m\omega}(- \frac{dP_1}{\sqrt{2P_1}}\sen{Q^1}dQ^1 - dQ^2)}{2} = 
- - \frac{\sqrt{m\omega}dP_1\sen{Q^1}dQ^1}{2\sqrt{2P_1}} - \frac{dQ^2}{2} \\
- dp_2 &= \frac{\sqrt{m\omega}(\frac{dP_1}{\sqrt{2P_1}}\cos{Q^1}dQ^1 - dP_2)}{2} = 
- \frac{\sqrt{m\omega}dP_1\cos{Q^1}dQ^1}{2\sqrt{2P_1}} - \frac{dP^2}{2}.
-\end{align*}
-
-Hagamos ahora los siguientes productos exteriores,
+a la forma simpléctica. Para hacer esto debido a la forma complicada de las ecuaciones 
+haremos el cálculo más general, de donde debe cumplirse que 
 
 \begin{equation}
- dp_1 \wedge dq^1 = - \left(\frac{\sqrt{m\omega}dP_1\sen{Q^1}dQ^1}{2\sqrt{2P_1}} - \frac{dQ^2}{2}\right) 
- \wedge \left(\frac{dP_1\cos{Q^1}dQ^1}{\sqrt{2P_1}\sqrt{m\omega}}+\frac{dP_2}{\sqrt{m\omega}}\right)
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2.
 \end{equation}
 
-TERMINAR
+Usaremos las diferenciales para validar que se cumple esta igualdad,
+
+\begin{align*}
+ \gamma &= dp_1 \wedge dq^1 + dp_2 \wedge dq^2 \\
+ &= \left(\frac{\partial p_1}{\partial Q^1}dQ^1 + \frac{\partial p_1}{\partial P_1}dP_1 + 
+ \frac{\partial p_1}{\partial Q^2}dQ^2 + \frac{\partial p_1}{\partial P_2}dP_2 \right) 
+ \wedge \left(\frac{\partial q^1}{\partial Q^1}dQ^1 + \frac{\partial q^1}{\partial P_1}dP_1 + 
+ \frac{\partial q^1}{\partial Q^2}dQ^2 + \frac{\partial q^1}{\partial P_2}dP_2 \right) \\
+ &+ \left(\frac{\partial p_2}{\partial Q^1}dQ^1 + \frac{\partial p_2}{\partial P_1}dP_1 + 
+ \frac{\partial p_2}{\partial Q^2}dQ^2 + \frac{\partial p_2}{\partial P_2}dP_2 \right) 
+ \wedge \left(\frac{\partial q^2}{\partial Q^1}dQ^1 + \frac{\partial q^2}{\partial P_1}dP_1 + 
+ \frac{\partial q^2}{\partial Q^2}dQ^2 + \frac{\partial q^2}{\partial P_2}dP_2 \right) \\
+ &= \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial Q^1}dQ^1 \wedge dQ^1 + 
+ \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_1}dQ^1 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial Q^2}}dQ^1 \wedge dQ^2 + 
+ \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_2}dQ^1 \wedge dP_2 \\
+ &+ \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial Q^1} dP_1 \wedge dQ^1 +
+ \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial P_1} dP_1 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial Q^2}} dP_1 \wedge dQ^2 + 
+ \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial P_2} dP_1 \wedge dP_2 \\
+ &+  \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial Q^1} dQ^2 \wedge dQ^1 
+ + \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_1} dQ^2 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial Q^2}} dQ^2 \wedge dQ^2 + 
+ \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_2} dQ^2 \wedge dP_2 \\
+ &+  \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial Q^1}} dP_2 \wedge dQ^1
+ + \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial P_1}} dP_2 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial Q^2}} dP_2 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial P_2}} dP_2 \wedge dP_2 \\
+ %
+ &+ \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^1}dQ^1 \wedge dQ^1 + 
+ \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial P_1}dQ^1 \wedge dP_1 + 
+ \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^2}dQ^1 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial P_2}}dQ^1 \wedge dP_2 \\
+ &+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^1} dP_1 \wedge dQ^1 +
+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial P_1} dP_1 \wedge dP_1 + 
+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^2} dP_1 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial P_2}} dP_1 \wedge dP_2 \\
+ &+  \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial Q^1}} dQ^2 \wedge dQ^1 
+ + \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial P_1}} dQ^2 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial Q^2}} dQ^2 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial P_2}} dQ^2 \wedge dP_2 \\
+ &+  \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^1} dP_2 \wedge dQ^1
+ + \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial P_1} dP_2 \wedge dP_1 + 
+ \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^2} dP_2 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial P_2}} dP_2 \wedge dP_2.
+\end{align*}
+
+Agrupando términos y utilizando la propiedad de antisimetría del producto exterior, 
+
+\begin{align*}
+ \gamma &= dQ^1 \wedge dQ^1 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial Q^1} 
+ + \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^1}\right)} + 
+ dQ^1 \wedge dQ^2 \cancelto{0}{\left(- \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial Q^1} 
+ +  \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^2}\right)} \\
+ &+ dP_1 \wedge dQ^1 \cancelto{1}{\left(- \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_1}
+ + \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial Q^1} 
+ - \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial P_1} 
+ + \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^1}\right)} \\
+ &+ dQ^2 \wedge dP^1 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_1} - 
+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^2} \right)}
+ + dP_1 \wedge dP_1 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_1}
+ + \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^1}\right)} \\
+ &+ dP_1 \wedge dP_2 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_2} 
+ - \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^2}\right)}
+ + dP_2 \wedge dQ^2 \cancelto{1}{\left(- \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_2}
+ + \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^2} \right)}.
+\end{align*}
+
+Las cancelaciones e igualaciones a 1 las hemos hecho utilizando todas las derivadas 
+que obtuvimos anteriormente, con lo cual tenemos que 
+
+\begin{equation}
+ \gamma = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2,
+\end{equation}
+
+y por lo tanto hemos encontrado la relación que esperábamos,
+
+\begin{equation}
+ \boxed{dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2.}
+\end{equation}
 
 \vspace{.3cm}
 
