@@ -23,8 +23,6 @@
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
-\graphicspath{Tarea10/}
-
 % Circled words
 \newcommand{\circled}[2][]{%
   \tikz[baseline=(char.base)]{%
@@ -232,6 +230,457 @@ son canónicas.
 
 \underline{Solución:} \vspace{.3cm}
 
+Comencemos con las primeras transformaciones canónicas. La primera prueba que haremos 
+es con los paréntesis de Poisson, que debe cumplirse que 
+
+\begin{align}
+ \begin{split}
+  \{q^1,q^2\} = 0, \\
+  \{q^1,p_2\} = 0, \\
+  \{q^1,p_1\} = 1, \\
+  \{p_1,p_2\} = 0, \\
+  \{q^2,p_1\} = 0, \\
+  \{p_2, q^2\} = 1.
+ \end{split}
+\end{align}
+
+Todas las demás se obtienen intercambiando las variables y usando la anti-simetría 
+de los paréntesis de Poisson. Comencemos con las pruebas,
+
+\begin{align*}
+ \{q^1,q^2\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial q^2}{\partial P_1} - 
+ \frac{\partial q^1}{\partial P_1}\frac{\partial q^2}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}}\frac{\partial q^2}{\partial P_2} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial q^2}{\partial Q^2} \\
+ &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\sqrt{m\omega}} \right)
+ \left(\frac{\cos{Q^1}}{\cancel{\sqrt{2P_1}}\sqrt{m\omega}} \right) \\
+ &- \left(\frac{\sen{Q^1}}{\cancel{\sqrt{2P_1}}\sqrt{m\omega}} \right)
+ \left(- \frac{\cancel{\sqrt{2P_1}}\sen{Q^1}}{\sqrt{m\omega}} \right) - 
+ \left(\frac{1}{\sqrt{m\omega}}\right)\left(\frac{1}{\sqrt{m\omega}}\right) \\
+ &= \frac{\cos^2{Q^1}}{m\omega} + \frac{\sen^2{Q^1}}{m\omega} - \frac{1}{m\omega} \\
+ &= \frac{\cancelto{1}{\cos^2{Q^1} + \sen^2{Q^1}}}{m\omega} - \frac{1}{m\omega},
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^1,q^2\} = \frac{1}{m\omega} - \frac{1}{m\omega} = 0.
+\end{equation}
+
+
+\begin{align*}
+ \{q^1,p_2\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_2}{\partial P_1} - 
+ \frac{\partial q^1}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_2}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}}\sen{Q^1}}{2\cancel{\sqrt{2P_1}}} \right) - 
+ \left(\frac{\sen{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}\cos{Q^1}}{\sqrt{2}}\right)
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^1,p_2\} = \frac{\cos{Q^1}\sen{Q^1}}{2} - \frac{\cos{Q^1}\sen{Q^1}}{2} = 0
+\end{equation}
+
+\begin{align*}
+ \{q^1,p_1\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
+ \frac{\partial q^1}{\partial P_1}\frac{\partial p_1}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial p_1}{\partial Q^2} \\
+ &= \left(\frac{\cancel{\sqrt{2P_1}}\cos{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}} \cos{Q^1}}{2\cancel{\sqrt{2P_1}}}\right) \\
+ &- \left(\frac{\sen{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}\sen{Q^1}}{\sqrt{2}} \right) -
+ \left(\frac{1}{\cancel{\sqrt{m\omega}}} \right) \left(- \frac{\cancel{\sqrt{m\omega}}}{2} \right) \\ 
+ &= \frac{\cos^2{Q^1}}{2} + \frac{\sen^2{Q^1}}{2} + \frac{1}{2} \\
+ &= \frac{\cancelto{1}{\cos^2{Q^1} + \sen^2{Q^1}}}{2} + \frac{1}{2}
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^1,p_1\} = \frac{1}{2} + \frac{1}{2} = 1.
+\end{equation}
+
+\begin{align*}
+  \{p_1,p_2\} &= \frac{\partial p_1}{\partial Q^1}\frac{\partial p_2}{\partial P_1} - 
+ \frac{\partial p_1}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial p_1}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= \left(-\frac{\cancel{\sqrt{P_1}}\sqrt{m\omega}\sen{Q^1}}{\sqrt{2}} \right)
+ \left(\frac{\sqrt{m\omega}\sen{Q^1}}{2\sqrt{2}\cancel{\sqrt{P_1}}} \right) - 
+ \left(\frac{\sqrt{m\omega}\cos{Q^1}}{2\sqrt{2}\cancel{\sqrt{P_1}}} \right) 
+ \left(\frac{\cancel{\sqrt{P_1}}\sqrt{m\omega}\cos{Q^1}}{\sqrt{2}} \right) \\
+ &- \left(-\frac{\sqrt{m\omega}}{2}\right)\left(-\frac{\sqrt{m\omega}}{2} \right) \\
+ &= -\frac{m\omega \sen^2{Q^1}}{4} - \frac{m\omega \cos^2{Q^1}}{4} 
+ + \frac{m\omega}{4}\\
+ &= - \frac{m\omega}{4}(\cancelto{1}{\sen^2{Q^1} + \cos^2{Q^1}}) + \frac{m\omega}{4},
+\end{align*}
+
+\begin{equation}
+ \therefore \{p_1,p_2\} = -  \frac{m\omega}{4} +  \frac{m\omega}{4} = 0.
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_1\} &= \frac{\partial q^2}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
+ \frac{\partial q^2}{\partial P_1}\frac{\partial p_1}{\partial Q^1} + 
+ \cancelto{0}{\frac{\partial q^2}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_1}{\partial Q^2}} \\
+ &= \left(- \frac{\cancel{\sqrt{2P_1}}\sen{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}}\cos{Q^1}}{2\cancel{\sqrt{2P_1}}} \right) - 
+ \left(\frac{\cos{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(- \frac{\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}\sen{Q^1}}{\sqrt{2}} \right)
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^2, p_1\} = - \frac{\sen{Q^1}\cos{Q^1}}{2} + \frac{\sen{Q^1}\cos{Q^1}}{2} = 0
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_2\} &= \frac{\partial q^2}{\partial Q^1}\frac{\partial p_2}{\partial P_1} - 
+ \frac{\partial q^2}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial q^2}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &=  \left(- \frac{\cancel{\sqrt{2P_1}}\sen{Q^1}}{\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\cancel{\sqrt{m\omega}}\sen{Q^1}}{2\cancel{\sqrt{2P_1}}} \right) - 
+ \left(\frac{\cos{Q^1}}{\sqrt{2}\cancel{\sqrt{P_1}}\cancel{\sqrt{m\omega}}} \right)
+ \left(\frac{\sqrt{P_1}\sqrt{m\omega}\cos{Q^1}}{\sqrt{2}} \right) \\
+ &+ \left(\frac{1}{\cancel{\sqrt{m\omega}}}\right)\left(- \frac{\cancel{\sqrt{m\omega}}}{2} \right) \\
+ &= - \frac{\sen^2{Q^1}}{2} - \frac{\cos^2{Q^1}}{2} - \frac{1}{2} \\
+ &= - \frac{1}{2}(\cancelto{1}{(\sen^2{Q^1} + \cos^2{Q^1})}) - \frac{1}{2},
+\end{align*}
+
+\begin{equation}
+ \{p_2, q^2\} = - \{q^2, p_2\} = \frac{1}{2} + \frac{1}{2} = 1.
+\end{equation}
+
+Probemos ahora con los paréntesis de Lagrange, que se debe cumplir que
+
+\begin{align}
+ \begin{split}
+  [q^1,q^2] = 0, \\
+  [q^1,p_2] = 0, \\
+  [q^1,p_1] = 1, \\
+  [p_1,p_2] = 0, \\
+  [q^2,p_1] = 0, \\
+  [p_2, q^2] = 1.
+ \end{split}
+\end{align}
+
+Pero la prueba para los paréntesis de Lagrange es trivial al saber que 
+
+\begin{equation}
+ \sum_k^{2n} \{q^k,p_i\}[q^k,p_j] = \delta_{ij},
+\end{equation}
+
+que fue el resultado al cual se llegó en el problema anterior. Con lo cual tenemos que,
+utilizando los resultados que hemos obtenidos arriba
+
+\begin{align}
+ \begin{split}
+  [q^1,q^2] = \{q^1,q^2\} = 0, \\
+  [q^1,p_2] = \{q^1,p_2\} = 0, \\
+  [q^1,p_1] = \{q^1, p_1\} = 1, \\
+  [p_1,p_2] = \{p_1,p_2\} = 0, \\
+  [q^2,p_1] = \{q^2,p_1\} = 0, \\
+  [p_2, q^2] = \{p_2,q^2\} = 1.
+ \end{split}
+\end{align}
+
+La última prueba será demostrar que la transformación canónica deja invariante 
+a la forma simpléctica. Para hacer esto debido a la forma complicada de las ecuaciones 
+haremos el cálculo más general, de donde debe cumplirse que 
+
+\begin{equation}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2.
+\end{equation}
+
+Usaremos las diferenciales para validar que se cumple esta igualdad,
+
+\begin{align*}
+ \gamma &= dp_1 \wedge dq^1 + dp_2 \wedge dq^2 \\
+ &= \left(\frac{\partial p_1}{\partial Q^1}dQ^1 + \frac{\partial p_1}{\partial P_1}dP_1 + 
+ \frac{\partial p_1}{\partial Q^2}dQ^2 + \frac{\partial p_1}{\partial P_2}dP_2 \right) 
+ \wedge \left(\frac{\partial q^1}{\partial Q^1}dQ^1 + \frac{\partial q^1}{\partial P_1}dP_1 + 
+ \frac{\partial q^1}{\partial Q^2}dQ^2 + \frac{\partial q^1}{\partial P_2}dP_2 \right) \\
+ &+ \left(\frac{\partial p_2}{\partial Q^1}dQ^1 + \frac{\partial p_2}{\partial P_1}dP_1 + 
+ \frac{\partial p_2}{\partial Q^2}dQ^2 + \frac{\partial p_2}{\partial P_2}dP_2 \right) 
+ \wedge \left(\frac{\partial q^2}{\partial Q^1}dQ^1 + \frac{\partial q^2}{\partial P_1}dP_1 + 
+ \frac{\partial q^2}{\partial Q^2}dQ^2 + \frac{\partial q^2}{\partial P_2}dP_2 \right) \\
+ &= \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial Q^1}dQ^1 \wedge dQ^1 + 
+ \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_1}dQ^1 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial Q^2}}dQ^1 \wedge dQ^2 + 
+ \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_2}dQ^1 \wedge dP_2 \\
+ &+ \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial Q^1} dP_1 \wedge dQ^1 +
+ \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial P_1} dP_1 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial Q^2}} dP_1 \wedge dQ^2 + 
+ \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial P_2} dP_1 \wedge dP_2 \\
+ &+  \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial Q^1} dQ^2 \wedge dQ^1 
+ + \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_1} dQ^2 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial Q^2}} dQ^2 \wedge dQ^2 + 
+ \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_2} dQ^2 \wedge dP_2 \\
+ &+  \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial Q^1}} dP_2 \wedge dQ^1
+ + \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial P_1}} dP_2 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial Q^2}} dP_2 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial q^1}{\partial P_2}} dP_2 \wedge dP_2 \\
+ %
+ &+ \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^1}dQ^1 \wedge dQ^1 + 
+ \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial P_1}dQ^1 \wedge dP_1 + 
+ \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^2}dQ^1 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial P_2}}dQ^1 \wedge dP_2 \\
+ &+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^1} dP_1 \wedge dQ^1 +
+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial P_1} dP_1 \wedge dP_1 + 
+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^2} dP_1 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial P_2}} dP_1 \wedge dP_2 \\
+ &+  \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial Q^1}} dQ^2 \wedge dQ^1 
+ + \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial P_1}} dQ^2 \wedge dP_1 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial Q^2}} dQ^2 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial Q^2}\frac{\partial q^2}{\partial P_2}} dQ^2 \wedge dP_2 \\
+ &+  \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^1} dP_2 \wedge dQ^1
+ + \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial P_1} dP_2 \wedge dP_1 + 
+ \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^2} dP_2 \wedge dQ^2 + 
+ \cancelto{0}{\frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial P_2}} dP_2 \wedge dP_2.
+\end{align*}
+
+Agrupando términos y utilizando la propiedad de antisimetría del producto exterior, 
+
+\begin{align*}
+ \gamma &= dQ^1 \wedge dQ^1 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial Q^1} 
+ + \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^1}\right)} + 
+ dQ^1 \wedge dQ^2 \cancelto{0}{\left(- \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial Q^1} 
+ +  \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^2}\right)} \\
+ &+ dP_1 \wedge dQ^1 \cancelto{1}{\left(- \frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_1}
+ + \frac{\partial p_1}{\partial P_1}\frac{\partial q^1}{\partial Q^1} 
+ - \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial P_1} 
+ + \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^1}\right)} \\
+ &+ dQ^2 \wedge dP^1 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_1} - 
+ \frac{\partial p_2}{\partial P_1}\frac{\partial q^2}{\partial Q^2} \right)}
+ + dP_1 \wedge dP_1 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_1}
+ + \frac{\partial p_2}{\partial Q^1}\frac{\partial q^2}{\partial Q^1}\right)} \\
+ &+ dP_1 \wedge dP_2 \cancelto{0}{\left(\frac{\partial p_1}{\partial Q^1}\frac{\partial q^1}{\partial P_2} 
+ - \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^2}\right)}
+ + dP_2 \wedge dQ^2 \cancelto{1}{\left(- \frac{\partial p_1}{\partial Q^2}\frac{\partial q^1}{\partial P_2}
+ + \frac{\partial p_2}{\partial P_2}\frac{\partial q^2}{\partial Q^2} \right)}.
+\end{align*}
+
+Las cancelaciones e igualaciones a 1 las hemos hecho utilizando todas las derivadas 
+que obtuvimos anteriormente, con lo cual tenemos que 
+
+\begin{equation}
+ \gamma = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2,
+\end{equation}
+
+y por lo tanto hemos encontrado la relación que esperábamos,
+
+\begin{equation}
+ \boxed{dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2.}
+\end{equation}
+
+\vspace{.3cm}
+
+Para las segundas transformaciones canónicas, comencemos igual la prueba utilizando 
+los paréntesis de Poisson, que recordamos que debe cumplirse que 
+
+\begin{align}
+ \begin{split}
+  \{q^1,q^2\} = 0, \\
+  \{q^1,p_2\} = 0, \\
+  \{q^1,p_1\} = 1, \\
+  \{p_1,p_2\} = 0, \\
+  \{q^2,p_1\} = 0, \\
+  \{q^2,p_2\} = 1.
+ \end{split}
+\end{align}
+
+Entonces, 
+
+\begin{align*}
+  \{q^1,q^2\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial q^2}{\partial P_1} - 
+ \cancelto{0}{\frac{\partial q^1}{\partial P_1}\frac{\partial q^2}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial q^2}{\partial P_2}} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial q^2}{\partial Q^2} \\
+ &= (\cos{\lambda})\left(\frac{\sen{\lambda}}{m\omega}\right) - 
+ \left(\frac{\sen{\lambda}}{m\omega}\right)(\cos{\lambda}) 
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^1,q^2\} =  \frac{\cos{\lambda}\sen{\lambda}}{m\omega} -
+ \frac{\cos{\lambda}\sen{\lambda}}{m\omega} =0.
+\end{equation}
+
+\begin{align*}
+ \{q^1,p_2\} &= \cancelto{0}{\frac{\partial q^1}{\partial Q^1}\frac{\partial p_2}{\partial P_1}} - 
+ \cancelto{0}{\frac{\partial q^1}{\partial P_1}\frac{\partial p_2}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_2}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}}
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^1,p_2\} = 0.
+\end{equation}
+
+
+\begin{align*}
+ \{q^1,p_1\} &= \frac{\partial q^1}{\partial Q^1}\frac{\partial p_1}{\partial P_1} - 
+ \cancelto{0}{\frac{\partial q^1}{\partial P_1}\frac{\partial p_1}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^1}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \frac{\partial q^1}{\partial P_2}\frac{\partial p_1}{\partial Q^2} \\
+ &= (\cos{\lambda})(\cos{\lambda}) - \left(\frac{\sen{\lambda}}{\cancel{m\omega}}\right)
+ (- \cancel{m\omega} \sen{\lambda})
+\end{align*}
+
+\begin{equation}
+ \therefore \{q^1,p_1\} = \cos^2{\lambda} + \sen^2{\lambda} = 1.
+\end{equation}
+
+\begin{align*}
+  \{p_1,p_2\} &= \cancelto{0}{\frac{\partial p_1}{\partial Q^1}\frac{\partial p_2}{\partial P_1}} - 
+ \frac{\partial p_1}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial p_1}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial p_1}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= - (\cos{\lambda})(- m\omega\sen{\lambda}) + (- m\omega\sen{\lambda})(\cos{\lambda}) 
+\end{align*}
+
+\begin{equation}
+ \therefore \{p_1,p_2\} = m\omega\cos{\lambda}\sen{\lambda} - 
+ m\omega\cos{\lambda}\sen{\lambda} = 0.
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_1\} &= \cancelto{0}{\frac{\partial q^2}{\partial Q^1}\frac{\partial p_1}{\partial P_1}} - 
+ \cancelto{0}{\frac{\partial q^2}{\partial P_1}\frac{\partial p_1}{\partial Q^1}} + 
+ \cancelto{0}{\frac{\partial q^2}{\partial Q^2}\frac{\partial p_1}{\partial P_2}} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_1}{\partial Q^2}} 
+\end{align*}
+
+\begin{equation}
+ \therefore  \{q^2, p_1\} = 0.
+\end{equation}
+
+\begin{align*}
+ \{q^2, p_2\} &= \cancelto{0}{\frac{\partial q^2}{\partial Q^1}\frac{\partial p_2}{\partial P_1}} - 
+ \frac{\partial q^2}{\partial P_1}\frac{\partial p_2}{\partial Q^1} + 
+ \frac{\partial q^2}{\partial Q^2}\frac{\partial p_2}{\partial P_2} -
+ \cancelto{0}{\frac{\partial q^2}{\partial P_2}\frac{\partial p_2}{\partial Q^2}} \\
+ &= -\left(\frac{\sen{\lambda}}{\cancel{m\omega}}\right)(-\cancel{m\omega}\sen{\lambda}) + 
+ (\cos{\lambda})(\cos{\lambda}) 
+\end{align*}
+
+\begin{equation}
+ \therefore = \{q^2, p_2\} = \sen^2{\lambda} + \cos^2{\lambda} = 1.
+\end{equation}
+
+Probemos ahora con los paréntesis de Lagrange, que se debe cumplir que
+
+\begin{align}
+ \begin{split}
+  [q^1,q^2] = 0, \\
+  [q^1,p_2] = 0, \\
+  [q^1,p_1] = 1, \\
+  [p_1,p_2] = 0, \\
+  [q^2,p_1] = 0, \\
+  [q^2, p_2] = 1.
+ \end{split}
+\end{align}
+
+De nuevo, la prueba con los paréntesis de Lagrange es trivial al saber que 
+
+\begin{equation}
+ \sum_k^{2n} \{q^k,p_i\}[q^k,p_j] = \delta_{ij},
+\end{equation}
+
+que fue el resultado al cual se llegó en el problema anterior. Con lo cual tenemos que,
+utilizando los resultados que hemos obtenidos arriba
+
+\begin{align}
+ \begin{split}
+  [q^1,q^2] = \{q^1,q^2\} = 0, \\
+  [q^1,p_2] = \{q^1,p_2\} = 0, \\
+  [q^1,p_1] = \{q^1, p_1\} = 1, \\
+  [p_1,p_2] = \{p_1,p_2\} = 0, \\
+  [q^2,p_1] = \{q^2,p_1\} = 0, \\
+  [q^2, p_2] = \{q^2,p_2\} = 1.
+ \end{split}
+\end{align}
+
+La última prueba será demostrar que la transformación canónica deja invariante 
+a la forma simpléctica. Para hacer esto calculemos las diferenciales, 
+
+\begin{align}
+ dq^1 = \cos{\lambda}dQ^1 + \frac{\sen{\lambda}}{m\omega}dP_2, \\ 
+ dq^2 = \cos{\lambda}dQ^2 + \frac{\sen{\lambda}}{m\omega}dP_1, \\
+ dp_1 = - m\omega\sen{\lambda} dQ^2 + \cos{\lambda}dP_1, \\
+ dp_2 = - m\omega\sen{\lambda} dQ^1 + \cos{\lambda}dP_2.
+\end{align}
+
+Hagamos ahora los siguientes productos exteriores, 
+
+\begin{align}
+\begin{split}
+ dp_1 \wedge dq^1 &= (- m\omega\sen{\lambda} dQ^2 + \cos{\lambda}dP_1) \wedge 
+  \left(\cos{\lambda}dQ^1 + \frac{\sen{\lambda}}{m\omega}dP_2\right) \\
+  &= - m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1  
+  - \cancel{m\omega}\sen{\lambda}\frac{\sen{\lambda}}{\cancel{m\omega}}dQ^2 \wedge dP_2 \\
+  &+ \cos{\lambda}\cos{\lambda}dP_1 \wedge dQ^1 + 
+  \cos{\lambda}\frac{\sen{\lambda}}{m\omega} dP_1 \wedge dP_2 \\
+  &= - m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1
+  - \sen^2{\lambda}dQ^2 \wedge dP_2 \\ 
+  &+ \cos^2{\lambda}dP_1 \wedge dQ^1 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2.
+  \label{eq:2parte2productoext1}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+ dp_2 \wedge dq^2 &= (- m\omega\sen{\lambda} dQ^1 + \cos{\lambda}dP_2) \wedge 
+ \left(\cos{\lambda}dQ^2 + \frac{\sen{\lambda}}{m\omega}dP_1\right) \\
+ &= - m\omega\sen{\lambda}\cos{\lambda} dQ^1 \wedge dQ^2  
+  - \cancel{m\omega}\sen{\lambda}\frac{\sen{\lambda}}{\cancel{m\omega}}dQ^1 \wedge dP_1 \\
+  &+ \cos{\lambda}\cos{\lambda}dP_2 \wedge dQ^2 + 
+  \cos{\lambda}\frac{\sen{\lambda}}{m\omega} dP_2 \wedge dP_1 \\
+  &= - m\omega\sen{\lambda}\cos{\lambda} dQ^1 \wedge dQ^2
+  - \sen^2{\lambda}dQ^1 \wedge dP_1 \\ 
+  &+ \cos^2{\lambda}dP_2 \wedge dQ^2 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_2 \wedge dP_1.
+  \label{eq:2parte2productoext2}
+\end{split}
+\end{align}
+
+Entonces si la transformación es canónica debe cumplirse que 
+
+\begin{equation}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2,
+\end{equation}
+
+sumemos entonces \eqref{eq:2parte2productoext1} con \eqref{eq:2parte2productoext2} a ver 
+si se cumple esta igualdad,
+
+\begin{align*}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 &= - m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1
+  - \sen^2{\lambda}dQ^2 \wedge dP_2 \\ 
+  &+ \cos^2{\lambda}dP_1 \wedge dQ^1 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2 \\ 
+  &- m\omega\sen{\lambda}\cos{\lambda} dQ^1 \wedge dQ^2
+  - \sen^2{\lambda}dQ^1 \wedge dP_1 \\
+  &+ \cos^2{\lambda}dP_2 \wedge dQ^2 + \frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_2 \wedge dP_1.
+\end{align*}
+
+Si usamos la propiedad anti-simétrica del producto exterior la ecuación anterior 
+puede escribirse como 
+
+\begin{align*}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 &= - \cancel{m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1}
+  + \sen^2{\lambda}dP_2 \wedge dQ^2 \\ 
+  &+ \cos^2{\lambda}dP_1 \wedge dQ^1 + \cancel{\frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2} \\ 
+  &+ \cancel{m\omega\sen{\lambda}\cos{\lambda} dQ^2 \wedge dQ^1}
+  + \sen^2{\lambda}dP_1 \wedge dQ^1 \\
+  &+ \cos^2{\lambda}dP_2 \wedge dQ^2 - \cancel{\frac{1}{m\omega}\cos{\lambda}\sen{\lambda} dP_1 \wedge dP_2}.
+\end{align*}
+
+\begin{equation}
+ dp_1 \wedge dq^1 + dp_2 \wedge dq^2 =  \cancelto{1}{(\sen^2{\lambda} + \cos^2{\lambda})}dP_1 \wedge dQ^1+ 
+ \cancelto{1}{(\sen^2{\lambda} + \cos^2{\lambda})}dP_2 \wedge dQ^2 
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore dp_1 \wedge dq^1 + dp_2 \wedge dq^2 = dP_1 \wedge dQ^1 + dP_2 \wedge dQ^2.}
+\end{equation}
+
 \section{Problema 3}
 
 Considere la función $F(q,p) = pq - \frac{1}{2m}p^2 t$ encuentre TODAS las transformaciones 
@@ -335,7 +784,7 @@ con $\xi(p,t)$ arbitraria y de \eqref{eq:Pfinal} vemos que
 \end{equation}
 
 Para verificar que esta transformación es canónica entonces debe cumplirse que 
-$\{Q,P\} = 1$, 
+$\{P,Q\} = 1$, 
 
 \begin{equation}
  \{Q,P\} = \cancelto{0}{\frac{\partial Q}{\partial q}}\frac{\partial P}{\partial p} - 
@@ -346,8 +795,6 @@ $\{Q,P\} = 1$,
 
 Lo cual finaliza el problema. Claramente tenemos una gran cantidad de transformaciones 
 canónicas que puede generar esta función generadora debido a que $\xi(p,t)$ es arbitraria.
-
-
 
 \section{Problema 4}
 
@@ -406,6 +853,82 @@ de dicha simetría.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Recordemos un poco de donde salen estas ecuaciones. La primera,
+
+\begin{equation} 
+H' = H + \sum_j p_j \frac{\partial q^j}{\partial t},
+\label{eq:hamiltonianaPunto}
+\end{equation}
+
+surge de una transformación de punto, definidas como aquella en la cual se propone 
+un cambio de coordenadas de la variedad de configuración, i.e. 
+
+\begin{equation}
+ Q^i = Q^i(q,t),
+\end{equation}
+
+y los impulsos se generan utilizando la definición 
+
+\begin{equation}
+P_i = \frac{\partial L}{\partial \dot{Q}^i}.
+\end{equation}
+
+Veíamos que este tipo de transformaciones de coordenadas son canónicas, es decir, 
+que hacen que las ecuaciones de movimiento conserven la forma hamiltoniana, pero 
+la función hamiltoniana debe modificarse de acuerdo a \eqref{eq:hamiltonianaPunto}. 
+Por otra parte, vimos que al aplicar una transformación canónica de coordenadas dependiente 
+del tiempo, también se mantendrá la forma hamiltoniana de las ecuaciones ya que por 
+definición esto es lo que hacen las transformaciones canónicas, y también en este 
+caso debíamos cambiar la función hamiltoniana para que se mantuviera esto de acuerdo 
+a 
+
+\begin{equation}
+ H' = H + \frac{\partial F}{\partial t}.
+ \label{eq:hamiltonianaTiempo}
+\end{equation}
+
+Podemos entonces ahora ver que las transformaciones de punto como las hemos planteado 
+son solo un ejemplo de las transformaciones canónicas de coordenadas dependientes 
+del tiempo. Veamos ahora como están relacionadas estas dos ecuaciones. Para ver esto, 
+supongamos que las $H'$ de \eqref{eq:hamiltonianaPunto} y \eqref{eq:hamiltonianaTiempo} 
+son iguales, lo cual es plausible ya que ambas dejan invariantes a las ecuaciones 
+de Hamilton y a la forma simpléctica, y pensemos que tenemos ambas ecuaciones 
+y queremos ver entonces que relación tiene la $F$ con el segundo término de la 
+derecha de la ecuación \eqref{eq:hamiltonianaPunto}, que son las que sobreviven 
+al hacer la igualdad, es decir que tenemos 
+
+\begin{equation}
+ \sum_j p_j \frac{\partial q^j}{\partial t} = \frac{\partial F}{\partial t}.
+\end{equation}
+
+Sino queda claro lo que hacemos, sencillamente estamos viendo qué función generadora 
+produce las transformaciones de punto, la cual vimos que era una transformación de 
+coordenadas canónica. Vemos ahora que 
+
+\begin{equation}
+ F = \sum_j \int p_j \frac{\partial q^j}{\partial t}dt,
+\end{equation}
+
+pero 
+
+\begin{equation}
+ \frac{d}{dt}(p_jq^j) = q^j\frac{\partial p_j}{\partial t} +
+ p_j\frac{\partial q^j}{\partial t},
+\end{equation}
+
+entonces 
+
+\begin{equation}
+ F = \sum_j \int \left(\frac{d}{dt}(p_j q^j) - q^j\frac{\partial p_j}{\partial t}\right)dt
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore F = \sum_j \left[p_j q^j - \int q^j \frac{\partial p_j}{\partial t}dt\right]}.
+\end{equation}
+
+
+La cual entonces sería la función generadora de una transformación de punto.
 
 \section{Problema 7}
 
