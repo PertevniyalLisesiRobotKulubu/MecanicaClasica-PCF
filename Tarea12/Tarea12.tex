@@ -821,6 +821,221 @@ lineas).
 
 \underline{Solución:} \vspace{.3cm}
 
+En la figura de abajo se muestra una ilustración del péndulo simple
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.4]{problema5fig1}
+ \caption{Péndulo simple.}
+ \label{fig:problema5fig1}
+\end{figure}
+
+Recordemos que su lagrangiana es 
+
+\begin{equation}
+ L = \frac{1}{2}ml^2\dot{\theta}^2 + mgl\cos{\theta},
+\end{equation}
+
+el momento $p_\theta$ conjugado a $\theta$ es 
+
+\begin{equation}
+ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = ml^2\dot{\theta},
+\end{equation}
+
+y por lo tanto la cantidad de Jacobi del sistema es 
+
+\begin{equation}
+ H = p_\theta \dot{\theta} - L = \frac{1}{2}ml^2\dot{\theta}^2 - mgl\cos{\theta},
+\end{equation}
+
+ahora para escribir la hamiltoniana del sistema escribimos la cantidad de Jacobi 
+en términos de $\theta$ y $p_\theta$, 
+
+\begin{equation}
+ H = \frac{p_\theta^2}{2ml^2} - mgl\cos{\theta}.
+\end{equation}
+
+Ahora debido a que la energía cinética es una función cuadrática de las velocidades 
+y la hamiltoniana no depende explícitamente del tiempo, entonces la hamiltoniana es 
+la energía total del sistema, y aparte una integral de movimiento. Las trayectorias 
+del sistema en el espacio de fases $(\theta,p_\theta)$ están dadas entonces por 
+
+\begin{equation}
+ E = \frac{p_\theta^2}{2ml^2} - mgl\cos{\theta},
+ \label{eq:energiaTotalPendulo}
+\end{equation}
+
+donde $E$ es la energía total del sistema. Para analizar las trayectorias del sistema 
+podemos despejar $p_\theta$ de \eqref{eq:energiaTotalPendulo}, 
+
+\begin{equation}
+ p_\theta = \sqrt{2ml^2(E - mgl\cos{\theta})},
+\end{equation}
+
+ahora si graficamos el espacio de fases para el péndulo simple podemos ver la 
+forma de las trayectorias 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.6]{problema5fig2}
+ \caption{Trayectorias en el espacio de fases del péndulo simple}
+ \label{fig:problema5fig2}
+\end{figure}
+
+Debemos notar que en la figura de arriba $\theta = \pi$ y  $\theta = -\pi$ son el 
+mismo punto, debido a que el espacio de fases del péndulo simple es un cilindro, 
+así que en realidad deberíamos imaginarnos al mismo como la figura de abajo 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema5fig3}
+ \caption{Trayectorias en el espacio de fases del péndulo simple. $A$ es la sección 
+ de oscilación, $B$ es la separatriz y $C$ es la sección de rotación.}
+ \label{fig:problema5fig3}
+\end{figure}
+
+Vemos entonces que tenemos entre $-mgl < E < mgl$ oscilación, la separatriz está 
+en $E = mgl$ y tenemos rotación cuando $E > mgl$. En términos del enunciado y siguiendo 
+a Arnold \cite{arnold}, en las secciones acotadas $A$ de la figura \ref{fig:problema5fig3} 
+las trayectorias cerradas representan oscilaciones del péndulos y en las partes 
+no acotadas, $C$ de la figura \ref{fig:problema5fig3} representan rotaciones del 
+péndulo. 
+
+\vspace{.3cm}
+
+El tratamiento que haremos para llegar a las coordenadas solicitadas será el de 
+la teoría de coordenadas de ángulo y acción. Según \cite{arnold} y \cite{calkin} 
+se pueden construir estas coordenadas de ángulo y acción, que son a su vez coordenadas 
+canónicas, en estas regiones, pero las coordenadas representarán cosas distintas y 
+su forma diferirá dependiendo de la región que se esté tratando. Con esto podemos 
+responder a las dos preguntas finales. Primero debemos resaltar que las coordenadas 
+de acción y ángulo que construiremos, se dará el caso que encontraremos una integral 
+de movimiento para cada región acotada, por lo tanto sí se pueden construir estas coordenadas 
+en las regiones acotadas, pero como veremos su forma no será la misma para todas las 
+regiones, por lo tanto la respuesta a que si se puede hacer de forma global menos 
+algunos puntos o líneas, es en parte sí, si no consideramos los puntos hiperbólicos 
+de las separatrices, pero no por la otra debido aunque podamos hallar estas coordenadas 
+e integrales de movimiento para cada región acotada, su expresión no será exactamente 
+la misma.
+
+\vspace{.3cm}
+
+Requerimos entonces una transformación canónica de coordenadas a unas coordenadas 
+$(\phi,I)$ tales que 
+
+\begin{equation}
+ \frac{\partial H}{\partial \theta} = 0, \quad \dot{\phi} = \frac{\partial H}{\partial I} = 
+ \omega (I) = \text{constante},
+\end{equation}
+
+es decir que $H$ sea una función solamente de $I$, y en cada región $\phi$ sea una 
+coordenada ignorable, y por lo tanto $I$ sea una integral de movimiento, además 
+la forma de $\phi$ será $\phi(t) = \omega(I)t + \phi(0)$. La variable $I$ se llama 
+la coordenada canónica de acción y la variable $\phi$ se llama la coordenada canónica 
+de ángulo. El tratamiento completo y común que se hace para las variables de 
+acción y ángulo es con la teoría de Hamilton-Jacobi pero aunque utilizaremos algunos 
+resultados que se obtienen de la misma, haremos el problema enmarcados en la teoría 
+de Hamilton. Ya que las variables de acción y ángulo son canónicas, por hipótesis, sabemos 
+que las transformaciones canónicas preservan el área en el espacio de fases, entonces 
+podemos calcular la variable de acción con 
+
+\begin{equation}
+ I = \frac{1}{2\pi}\oint p_\theta d\theta = 
+ \frac{1}{2\pi}\oint \sqrt{2ml^2(E - mgl\cos{\theta})} d\theta,
+\end{equation}
+
+que debemos evaluar en un ciclo cerrado entre $\theta_{min}$ y $\theta_{max}$, pero 
+como el coseno es una función par, podemos escribir esta ecuación como 
+
+\begin{equation}
+ I = \frac{2}{\pi}\int_0^{\theta_{max}}  \sqrt{2ml^2(E - mgl\cos{\theta})} d\theta.
+\end{equation}
+
+Las soluciones a esta ecuación son funciones elípticas, tanto adentro como afuera de 
+la separatriz. Y tenemos que 
+
+\begin{itemize}
+ \item En la separatriz $\theta_{max} = \pi$ y $E = mgl$.
+ \item Adentro de la separatriz $\theta_{max} < \pi$ y $E < mgl$.
+ \item Afuera de la separatriz $\theta_{max} > \pi$ y $E > mgl$.
+\end{itemize}
+
+Usando las funciones elípticas de primer tipo
+
+\begin{equation}
+ F\left(\frac{\pi}{2};k\right) = \int_0^{\frac{\pi}{2}} \frac{d\xi}{\sqrt{1 - k^2\sin{\xi}}} 
+ = \int_0^1 \frac{dv}{(1-v^2)(1-k^2v^2)},
+\end{equation}
+
+donde $v=\sen{\xi}$ de manera que $dv = \cos{\xi}d\xi$, y las de segundo tipo 
+
+\begin{equation}
+ G\left(\frac{\pi}{2};k\right) = \int_0^{\frac{\pi}{2}} \sqrt{1 - k^2\sin{\xi}}d\xi = 
+ \int_0^1 \frac{\sqrt{1 - k^2v^2}}{\sqrt{1 - v^2}}dv
+\end{equation}
+
+podemos escribir la variable de acción como
+
+\begin{equation}
+ I = \frac{8mglk}{\pi}G\left(\frac{\pi}{2};k\right) \quad \text{\textbf{Afuera de la 
+ separatriz}}
+\end{equation}
+
+donde, $k = \frac{E + m^2g^2l^2}{2 m^2g^2l^2}$, y 
+
+\begin{equation}
+ I = \frac{8mgl}{\pi}\left(G\left(\frac{\pi}{2};k\right) - (1 - k^2)F\left(\frac{\pi}{2};k\right)\right) 
+ \quad \text{\textbf{Adentro de la separatriz}}
+\end{equation}
+
+Estas $I$ serán integrales de movimiento en las regiones acotadas del espacio de fase. 
+La frecuencia $\omega(I) = \frac{\partial H}{\partial I}$, será 
+
+\begin{equation}
+ \omega(I) = \frac{\pi mgl}{2F\left(\frac{\pi}{2};k\right)} \quad \text{Adentro de la 
+ separatriz}
+\end{equation}
+
+y 
+
+\begin{equation}
+ \omega(I) = \frac{\pi mgl}{2F\left(\frac{\pi}{2};\frac{1}{k}\right)} \quad \text{Afuera de la 
+ separatriz}
+\end{equation}
+
+Si ahora hacemos uso de $u = F(\xi;k)$ entonces $sn(u,k) = \sen{\xi} = \sen{\frac{\frac{\theta}{2}}{k}}$, 
+podemos ahora escribir el impulso $p_\theta(\phi,I)$ en términos de estas nuevas variables 
+como 
+
+\begin{equation}
+ p_\theta = 2mgl \sqrt{k^2 - k^2sn\left(\frac{2F(\xi;k)\phi}{\pi},k \right)},
+\end{equation}
+
+y con estas fórmulas podemos escribir entonces las transformaciones que buscabamos 
+
+\begin{equation}
+ \phi(t) = \omega(I)(t-t_0) \quad \text{y} \quad I(t) = \text{constante},
+\end{equation}
+
+donde 
+
+\begin{equation}
+ \omega(I) = \frac{\pi mgl}{2F(\xi;k)},
+\end{equation}
+
+y donde los valores de $I$ y $\omega(I)$ dependen de la región que se esté estudiando 
+del péndulo, y hemos logrado lo solicitado que es encontrar una coordenada ignorable 
+para cada región acotada, una integral de movimiento, y por ser construcciones de variables 
+de acción y ángulo, la transformación a estas coordenadas es canónica.
+
+
+
+
+
+
+
+
+
 \section{Problema 6}
 
 Al hacer una transformación de punto dependiente del tiempo la hamiltoniana 
@@ -1030,5 +1245,14 @@ es totalmente equivalente a $\Gamma[V_H,X] = 0$ si $H$ no depende del tiempo, po
 \end{equation}
 
 lo cual era lo que queríamos demostrar. 
+
+\begin{thebibliography}{10}
+ \bibitem{arnold}
+V. Arnold, \emph{Mathematical Methods of Classical Mechanics}, 2da edición, Springer-Verlang, 
+1989.
+\bibitem{calkin}
+M. Calkin, \emph{Lagrangian and Hamiltonian Mechanics}, World Scientific, 1996.
+\end{thebibliography}
+
 
 \end{document}
