@@ -418,4 +418,94 @@ Demuestre esto de manera global, esto es, sin utilizar coordenadas.
 
 \underline{Solución:} \vspace{.3cm}
 
+Recordemos que en el espacio extendido a la invariante diferencial de Poincaré-Cartan 
+se define como
+
+\begin{equation}
+ \Gamma = \gamma - dH \wedge dt,
+ \label{eq:poincareCartan}
+\end{equation}
+
+y el campo hamiltoniano se expresa como 
+
+\begin{equation}
+ V_{He} = V_H + \frac{\partial}{\partial t},
+ \label{eq:campoHamiltonianoExt}
+\end{equation}
+
+donde $V_H$ es el campo hamiltoniano en el espacio de fase normal. Consideremos ahora 
+que aplicamos la dos forma $\Gamma$ a este campo hamiltoniano extendido y a un campo 
+vectorial arbitrario $X$, y utilizando la ecuación \eqref{eq:poincareCartan} tenemos 
+
+\begin{equation}
+ \Gamma[V_{He},X] = \gamma[V_{He},X] - dH \wedge dt[V_{He},X] = 0,
+ \label{eq:equivalencia}
+\end{equation}
+
+ahora analicemos el valor de $dH \wedge dt[V_{He},X]$, utilizando \eqref{eq:campoHamiltonianoExt}
+y el hecho de que ni $V_H$ ni $X$ tienen dependencia temporal
+
+\begin{align*}
+  dH \wedge dt[V_{He},X] &= dH \wedge dt[V_H,X] + dH \wedge dt[\frac{\partial}{\partial t},X] \\
+  &= \left|\begin{matrix}
+       dH[V_H] & dH[X] \\
+       \cancelto{0}{dt[V_H]} & \cancelto{0}{dt[X]}
+      \end{matrix}
+      \right| + 
+      \left|\begin{matrix}
+       dH[\frac{\partial}{\partial t}] & dH[X] \\
+       dt[\frac{\partial}{\partial t}] & \cancelto{0}{dt[X]}
+      \end{matrix}
+      \right| \\
+  &= \left|\begin{matrix}
+       dH[\frac{\partial}{\partial t}] & dH[X] \\
+       1 & 0
+      \end{matrix}
+      \right|
+\end{align*}
+
+\begin{equation}
+ \therefore dH \wedge dt[V_{He},X] = - dH[X]
+\end{equation}
+
+Ahora consideremos la forma de $\gamma[V_{He},X]$, utilizando la ecuación \eqref{eq:campoHamiltonianoExt}, 
+vemos que pero si la hamiltoniana no depende del tiempo entonces no existirá en el campo hamiltoniano el 
+término $\frac{\partial}{\partial t}$, y por lo tanto si $H$ no depende 
+del tiempo
+
+\begin{equation}
+ \gamma[V_{He},X] = \gamma[V_H,X],
+\end{equation}
+
+y
+
+\begin{equation}
+ \Gamma[V_{He},X] = \Gamma[V_H,X],
+\end{equation}
+
+y ahora regresando a \eqref{eq:equivalencia} vemos que 
+
+\begin{equation}
+ \Gamma[V_H,X] = \gamma[V_H,X] - dH \wedge dt[V_H,X] = 0
+\end{equation}
+
+\begin{equation}
+ \Gamma[V_H,X] = \gamma[V_H,X] + dH = 0
+\end{equation}
+
+y utilizando los resultados que hemos obtenido y el hecho de que $X$ es un campo 
+vectorial arbitrario y que $ \gamma[V_H,X] =  - \gamma[X,V_H]$ vemos que 
+
+\begin{equation}
+ \gamma[V_H,X] = - dH[X] \Rightarrow \gamma[X,V_H] = dH[X]
+\end{equation}
+
+es totalmente equivalente a $\Gamma[V_H,X] = 0$ si $H$ no depende del tiempo, por lo tanto 
+
+\begin{equation}
+ \Gamma[V_H,\bullet] = 0 \Leftrightarrow \gamma[\bullet,X] = dH,
+\end{equation}
+
+lo cual era lo que queríamos demostrar. 
+
 \end{document}
