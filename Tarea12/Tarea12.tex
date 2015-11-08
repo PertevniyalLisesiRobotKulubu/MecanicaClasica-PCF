@@ -416,6 +416,83 @@ de la segunda ecuación vemos que
  F_3 = \frac{p_2(\sqrt{2P_1}\cos{Q^1}+Q^2)}{\sqrt{m\omega}} + G(Q^1,Q^2,P_1),
 \end{equation}
 
+TERMINAR 
+
+\vspace{.3cm}
+
+Calculemos la función generadora ahora para la segunda transformación, 
+
+\begin{align*}
+ q^1 &= Q^1\cos{\lambda} + \frac{P_2\sen{\lambda}}{m\omega} \\
+ q^2 &= Q^2\cos{\lambda} + \frac{P_1\sen{\lambda}}{m\omega}\\
+ p_1 &= - m\omega Q^2\sen{\lambda} + P_1 \cos{\lambda}\\
+ p_2 &= - m\omega Q^1\sen{\lambda} + P_2 \cos{\lambda},
+\end{align*}
+
+Proponemos que la función generadora de esta transformación canónica es de tipo 
+$F_4 = F_4(p,P)$, es decir que son independientes las $p_i$ de las $P_1$, esto podemos 
+verlo ya que podemos escribir a las otras variables en términos de $p_1,p_2,P_1,P_2$, 
+
+\begin{align*}
+ q^1 &= \left( \frac{p_2 - P_2\cos{\lambda}}{-m\omega}\right)\cos{\lambda} 
+ + \frac{P_2\sen{\lambda}}{m\omega} \\
+ q^2 &= \left(\frac{p_1 - P_1\cos{\lambda}}{-m\omega}\right)\cos{\lambda} 
+ + \frac{P_1\sen{\lambda}}{m\omega} \\
+ Q^1 &= \frac{P_2\cos{\lambda} - p_2}{m\omega\sen{\lambda}}\\
+ Q^2 &= \frac{P_1\cos{\lambda} - p_1}{m\omega\sen{\lambda}}
+\end{align*}
+
+Proponemos entonces que 
+
+\begin{equation}
+ dF_4(p_1,p_2,P_1,P_2) = -q^1dp_1 - q^2dp_2 + Q^1dP_1 + Q^2dP_2 
+\end{equation}
+
+\begin{align}
+ \begin{split}
+ dF_4(p_1,p_2,P_1,P_2) = &- \left[ \left( \frac{p_2 - P_2\cos{\lambda}}{-m\omega}\right)\cos{\lambda} 
+ + \frac{P_2\sen{\lambda}}{m\omega}\right]dp_1 \\
+ &- \left[ \left(\frac{p_1 - P_1\cos{\lambda}}{-m\omega}\right)\cos{\lambda} 
+ + \frac{P_1\sen{\lambda}}{m\omega}\right]dp_2 \\
+ &+ \left(\frac{P_2\cos{\lambda} - p_2}{m\omega\sen{\lambda}} \right)dP_1 
+ + \left(\frac{P_1\cos{\lambda} - p_1}{m\omega\sen{\lambda}} \right)dP_2 \\
+ &= - \left[\frac{p_2\cos{\lambda} - P_2\cos^2{\lambda}}{-m\omega} 
+ + \frac{P_2\sen{\lambda}}{m\omega}\right]dp_1 \\
+ &- \left[\frac{p_1\cos{\lambda}  - P_1\cos^2{\lambda}}{-m\omega}
+ + \frac{P_1\sen{\lambda}}{m\omega}\right]dp_2 \\
+ &+ \left(\frac{P_2\cos{\lambda} - p_2}{m\omega\sen{\lambda}} \right)dP_1 
+ + \left(\frac{P_1\cos{\lambda} - p_1}{m\omega\sen{\lambda}} \right)dP_2 \\
+ &= \left[\frac{p_2\cos{\lambda} - P_2\cos^2{\lambda}}{m\omega} 
+ - \frac{P_2\sen{\lambda}}{m\omega}\right]dp_1 \\
+ & \left[\frac{p_1\cos{\lambda}  - P_1\cos^2{\lambda}}{m\omega}
+ - \frac{P_1\sen{\lambda}}{m\omega}\right]dp_2 \\
+ &+ \left(\frac{P_2\cos{\lambda} - p_2}{m\omega\sen{\lambda}} \right)dP_1 
+ + \left(\frac{P_1\cos{\lambda} - p_1}{m\omega\sen{\lambda}} \right)dP_2 \\
+ &= \frac{p_2\cos{\lambda}dp_1}{m\omega} - \frac{P_2\cos^2{\lambda}dp_1}{m\omega}
+ - \frac{P_2\sen{\lambda}dp_1}{m\omega} \\
+ &+ \frac{p_1\cos{\lambda}dp_2}{m\omega} - \frac{P_1\cos^2{\lambda}dp_2}{m\omega}
+ - \frac{P_1\sen{\lambda}dp_2}{m\omega} \\
+ &+ \frac{P_2\cos{\lambda}dP_1}{m\omega\sen{\lambda}} - 
+ \frac{p_2dP_1}{m\omega\sen{\lambda}} \\
+ &+ \frac{P_1\cos{\lambda}dP_2}{m\omega\sen{\lambda}} - 
+ \frac{p_1dP_2}{m\omega\sen{\lambda}}
+ \end{split}
+\end{align}
+
+\begin{equation*}
+ \therefore dF_4(p_1,p_2,P_1,P_2) = d\left(\frac{\cos{\lambda}}{m\omega}p_1p_2 + 
+ \frac{\cos{\lambda}}{m\omega\sen{\lambda}}P_1P_2 -
+ \frac{1}{m\omega\sen{\lambda}}p_1P_2 - \frac{\cos^2{\lambda}}{m\omega}p_2P1 \right),
+\end{equation*}
+
+debido a que esta es una diferencial exacta entonces tenemos que 
+
+\begin{equation}
+ \boxed{F_4(p_1,p_2,P_1,P_2) = \frac{\cos{\lambda}}{m\omega}p_1p_2 + 
+ \frac{\cos{\lambda}}{m\omega\sen{\lambda}}P_1P_2 -
+ \frac{1}{m\omega\sen{\lambda}}p_1P_2 - \frac{\cos^2{\lambda}}{m\omega}p_2P1}
+\end{equation}
+
 
 
 
