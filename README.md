@@ -60,6 +60,8 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 ## Tarea 11 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/dd35471f67f1bba14131e4cf442079706c74ef0a/raw/output.pdf)
 
+## Tarea 12 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/cdd779afad49b506be91525759443a3423ee125f/raw/output.pdf)
+
 ---------
 
 ## **Acceso a los PDFs de las tareas en GitHub**
@@ -89,6 +91,8 @@ Se pueden también ver las tareas directamente en GitHub. Se renderizarán en l�
 ### [Tarea 10](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea10/Tarea10.pdf)
 
 ### [Tarea 11](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea11/Tarea11.pdf)
+
+### [Tarea 12](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea12/Tarea12.pdf)
 
 --------
 
