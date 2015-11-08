@@ -1119,31 +1119,111 @@ al hacer la igualdad, es decir que tenemos
 
 Sino queda claro lo que hacemos, sencillamente estamos viendo qué función generadora 
 produce las transformaciones de punto, la cual vimos que era una transformación de 
-coordenadas canónica. Vemos ahora que 
+coordenadas canónica. Debido a la expresión que tenemos para $P_i$ vemos también que 
 
 \begin{equation}
- F = \sum_j \int p_j \frac{\partial q^j}{\partial t}dt,
+ p_i = \sum_j P_j \frac{\partial Q^j}{\partial q^i},
 \end{equation}
 
-pero 
+por lo tanto 
 
 \begin{equation}
- \frac{d}{dt}(p_jq^j) = q^j\frac{\partial p_j}{\partial t} +
- p_j\frac{\partial q^j}{\partial t},
+ \sum_j p_j \frac{\partial q^j}{\partial t} = 
+ \sum_{ji} P_i\frac{\partial Q^i}{\partial q^j}\frac{\partial q^j}{\partial t} = 
+ \sum_i P_i \frac{\partial Q^i}{\partial t}
 \end{equation}
 
-entonces 
+por lo tanto 
 
 \begin{equation}
- F = \sum_j \int \left(\frac{d}{dt}(p_j q^j) - q^j\frac{\partial p_j}{\partial t}\right)dt
+ \sum_i P_i \frac{\partial Q^i}{\partial t} = \frac{\partial F}{\partial t},
 \end{equation}
+
+pero debido a que $P_i$ no  depende del tiempo, vemos que 
 
 \begin{equation}
- \boxed{\therefore F = \sum_j \left[p_j q^j - \int q^j \frac{\partial p_j}{\partial t}dt\right]}.
+ F = \sum_i P_i Q^i,
 \end{equation}
 
+es decir que la función generadora de una transformación de punto es una función 
+generadora de segundo tipo $F_2 = F(q,P,t)$, por lo tanto podemos escribir 
+
+\begin{equation}
+ \boxed{F(q^i,P_i,t) = \sum_i P_i Q^i(q^i,t).}
+\end{equation}
 
 La cual entonces sería la función generadora de una transformación de punto.
+
+\vspace{.3cm}
+
+Ahora para ver la relación entre la fórmula para la integral de movimiento ante una
+simetría que se vio en el contexto de la formulación lagrangiana y los generadores 
+infinitesimales del grupo de dicha simetría, lo que haremos es hacer ver que 
+la integral de movimiento, que era la energía total del sistema\footnote{En realidad 
+la cantidad conservada era el inverso de la cantidad de Jacobi, pero asumiendo 
+que la energía cinética es una función cuadrática de las velocidades y que 
+la lagrangiana no depende explícitamente del tiempo esta es igual a la Hamiltoniana 
+y a su vez a la energía total del sistema.}, se transforma con una transformación de 
+punto con la misma función generadora que acabamos de encontrar, y que los generadores 
+infinitesimales son los que nos permiten ver esto. Para hacer esto asumamos que 
+el parámetro del grupo es $t$, entonces podemos expresar la integral de movimiento 
+como
+
+\begin{equation}
+ E = \sum_i p_i\dot{q}^i - L = \sum_i \frac{\partial L}{\partial \dot{q}^i}\dot{q}^i - L,
+\end{equation}
+
+haciendo ahora la transformación, que debe ser invertible, $q^i = q^i(Q,t)$,
+
+\begin{equation}
+ \dot{Q}^i = \sum_j \frac{\partial Q^i}{\partial q^j}\dot{q}^j + \frac{\partial Q^i}{\partial t},
+\end{equation}
+
+\begin{equation}
+ \dot{q}^i = \sum_j \frac{\partial q^i}{\partial Q^j}\dot{Q}^j + \frac{\partial q^i}{\partial t},
+\end{equation}
+
+tenemos que, usando algunos resultados obtenidos anteriormente
+
+\begin{align*}
+ \overline{E} &= \sum_i \frac{\partial L}{\partial \dot{Q}^i}\dot{Q}^i - L \\
+ &= \sum_j \sum_k \sum_i \left[p_j\frac{\partial q^j}{\partial Q^i}\left( 
+ \frac{\partial Q^i}{\partial q^k}\dot{q}^k + \frac{\partial Q^i}{\partial t}\right)\right] - L \\
+ &= \sum_j p_j\dot{q}^j - L + \sum_i P_i \frac{\partial Q^i}{\partial t}
+\end{align*}
+
+\begin{equation}
+ \therefore \overline{E} = E + \sum_i P_i \frac{\partial Q^i}{\partial t}
+\end{equation}
+
+y vemos ahora que la integral de movimiento, la energía total que es igual a la hamiltoniana $H$ en el caso 
+que estudiamos, se transforma con una transformación de punto con una función generadora 
+de tipo 2, $F_2(q,P,t)$, y la relación que existe entre la integral de movimiento y 
+los generadores infinitesimales del grupo de la simetría con lo que vimos anteriormente 
+es que estos son las funciones generadoras de la transformación de punto de dicha 
+simetría. 
+
+
+% \begin{equation}
+%  F = \sum_j \int p_j \frac{\partial q^j}{\partial t}dt,
+% \end{equation}
+% 
+% pero 
+% 
+% \begin{equation}
+%  \frac{d}{dt}(p_jq^j) = q^j\frac{\partial p_j}{\partial t} +
+%  p_j\frac{\partial q^j}{\partial t},
+% \end{equation}
+% 
+% entonces 
+% 
+% \begin{equation}
+%  F = \sum_j \int \left(\frac{d}{dt}(p_j q^j) - q^j\frac{\partial p_j}{\partial t}\right)dt
+% \end{equation}
+% 
+% \begin{equation}
+%  \boxed{\therefore F = \sum_j \left[p_j q^j - \int q^j \frac{\partial p_j}{\partial t}dt\right]}.
+% \end{equation}
 
 \section{Problema 7}
 
