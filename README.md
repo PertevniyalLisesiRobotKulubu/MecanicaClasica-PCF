@@ -60,7 +60,7 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 ## Tarea 11 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/dd35471f67f1bba14131e4cf442079706c74ef0a/raw/output.pdf)
 
-## Tarea 12 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/cdd779afad49b506be91525759443a3423ee125f/raw/output.pdf)
+## Tarea 12 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/19f254629f40f61882ec5f177bb3752b714c4940/raw/output.pdf)
 
 ---------
 
