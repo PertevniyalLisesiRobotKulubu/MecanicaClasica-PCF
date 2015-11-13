@@ -125,6 +125,108 @@ encuentre la trayectoria por el método de Hamilton-Jacobi.
 
 \underline{Solución:} \vspace{.3cm}
 
+Tenemos una partícula que se mueve en sólo una dimensión en el eje $x$, por lo tanto 
+podemos escribir la energía cinética como
+
+\begin{equation}
+ T = \frac{1}{2}m\dot{x}^2 = \frac{1}{2m}p_x^2,
+\end{equation}
+
+y considerando la expresión que tenemos para el potencial, podemos escribir la 
+hamiltoniana del sistema como\footnote{Debido a que la lagrangiana $L = T - V$ del 
+sistema es independiente del tiempo y la energía cinética es una función cuadrática 
+de las velocidades, entonces la cantidad de Jacobi es la energía total del sistema, 
+y al escribir a la cantidad de Jacobi en términos de $x$ y $p_x$ tenemos que también 
+la hamiltoniana es la energía total del sistema, es decir $H = T+V$.}
+
+\begin{equation}
+ H = \frac{1}{2m}p_x^2 + a\sec^2{\left(\frac{x}{l}\right)}.
+\end{equation}
+
+Podemos ahora construir la ecuación de Hamilton-Jacobi, que queda expresada como 
+
+\begin{equation}
+ \frac{1}{2m}\left(\frac{\partial G}{\partial x}\right)^2 + 
+ a\sec^2{\left(\frac{x}{l}\right)} = - \frac{\partial G}{\partial t}.
+ \label{eq:HJsec1}
+\end{equation}
+
+Claramente esta ecuación se puede resolver por el método de separación de variables,
+y proponemos entonces que
+
+\begin{equation}
+ G(x,t) = W(x)+ T(t),
+\end{equation}
+
+entonces la ecuación \eqref{eq:HJsec1} se convierte en 
+
+\begin{equation}
+ \frac{1}{2m}\left(\frac{\partial W}{\partial x}\right)^2 + 
+ a\sec^2{\left(\frac{x}{l}\right)} = - \frac{\partial T}{\partial t}.
+ \label{eq:HJsec2}
+\end{equation}
+
+Debido a que el lado izquierdo de \eqref{eq:HJsec2} depende únicamente de $x$ y el derecho de $t$, el único 
+modo de que esta expresión se cumpla es que ambos términos sean iguales a una misma 
+constante que llamaremos $\alpha_1$. Entonces,
+
+\begin{equation}
+  \frac{1}{2m}\left(\frac{\partial W}{\partial x}\right)^2 + 
+ a\sec^2{\left(\frac{x}{l}\right)} = \alpha_1,
+\end{equation}
+
+\begin{equation}
+ \frac{\partial T}{\partial t} = - \alpha_1.
+\end{equation}
+
+De la segunda ecuación vemos que 
+
+\begin{equation}
+ T(t) = - \alpha_1t,
+\end{equation}
+
+y de la primera ecuación
+
+\begin{equation}
+ p_x = \frac{\partial W}{\partial x} = \left\{2m\left[\alpha_1 - a\sec^2{\left(\frac{x}{l}\right)}\right]\right\}^{1/2}.
+\end{equation}
+
+y entonces 
+
+\begin{equation}
+ W(x) = \int \left\{2m\left[\alpha_1 - a\sec^2{\left(\frac{x}{l}\right)}\right]\right\}^{1/2}dx.
+\end{equation}
+
+
+Por lo tanto tenemos que 
+
+\begin{equation}
+ G(x,t) =  \int \left\{2m\left[\alpha_1 - a\sec^2{\left(\frac{x}{l}\right)}\right]\right\}^{1/2}dx
+ - \alpha_1t.
+\end{equation}
+
+Podemos hallar ahora $\beta_1 = \frac{\partial G}{\partial \alpha_1}$, 
+
+\begin{equation}
+ \beta_1 = - t + \int \frac{mdx}{\left\{2m\left[\alpha_1 - a\sec^2{\left(\frac{x}{l}\right)}\right]\right\}^{1/2}}dx.
+\end{equation}
+
+De la última ecuación podemos encontrar una ecuación para la trayectoria, $x(t)$, pero 
+resulta casi imposible despejar a $x$ de la misma, pero se ha encontrado en términos 
+generales la trayectoria del sistema, ya que con encontrar estas expresiones, aunque 
+quedan en términos de integrales, se considera resuelto el sistema, esto también 
+se da ya que hemos encontrado una expresión para $G$ que contiene toda la información 
+del sistema, y obviamente la trayectoria. Para ser completos se muestra debajo el 
+resultado de integrar la anterior ecuación, si se desea una expresión 
+concreta para $x$ se pueden utilizar algunas aproximaciones o series de potencia.
+
+\begin{equation}
+\frac{l\sec{\left(\frac{x}{l}\right)}\sqrt{\alpha_1\cos{\left(\frac{2x}{l}\right)}}
+\sqrt{\frac{1}{\alpha_1 - a\sec^2{\left(\frac{x}{l}\right)}}}
+\arctan{\left(\frac{\sqrt{2\alpha_1}\sen{\left(\frac{x}{l}\right)}}{\alpha_1\cos{\left(\frac{2x}{l}\right)+ \alpha_1 - 2a}}\right)}}{2\sqrt{\alpha_1}}
+= - t - \beta_1
+\end{equation}
+
 \section{Problema 2}
 
 Usando los ángulos de Euler como coordenadas, establezca la ecuación de Hamilton-Jacobi 
