@@ -247,6 +247,252 @@ elípticas confocales.
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{Nota: El profesor nos dijo que podíamos resolver el problema en dos dimensiones.}
+
+\vspace{.3cm}
+
+\textbf{Notación: Cambiaremos $l$ por $a$ debido a que es más fácil de distinguir tanto 
+para las imágenes como para las ecuaciones.}
+
+\vspace{.3cm}
+
+Las coordenadas elípticas confocales $u$ y $v$ están relacionadas con las coordenadas 
+cartesianas $(x,y)$ por 
+
+\begin{align}
+ x = a\cosh{u}\cos{v}, \\
+ y = a\senh{u}\sen{v}.
+\end{align}
+
+Los rangos de $u$ y $v$ son $0 \leq u < \infty$ y $0 \leq v < 2\pi$. Para encontrar
+las curvas coordenadas primero hacemos $u$ constante, y tenemos que 
+
+\begin{equation}
+ \frac{x^2}{\cosh^2{u}} + \frac{y^2}{\senh^2{u}} = a^2,
+ \label{eq:uelipse}
+\end{equation}
+
+y llamando a $A = \cosh{u}$ y $B = \senh{u}$ tenemos 
+
+\begin{equation}
+ \frac{x^2}{A^2} + \frac{y^2}{B^2} = a^2,
+\end{equation}
+
+y vemos claramente que las curvas de $u$ constante son elipses. Ahora consideremos 
+a $v$ constante, tenemos que 
+
+\begin{equation}
+ \frac{x^2}{\cos^2{v}} - \frac{y^2}{\sen^2{v}} = a^2,
+ \label{eq:vhiperbola}
+\end{equation}
+
+y llamando a $C = \cos{v}$ y $D = \sen{v}$ tenemos 
+
+\begin{equation}
+ \frac{x^2}{C^2} - \frac{y^2}{D^2} = a^2,
+\end{equation}
+
+y vemos que cada curva de $v$ constante es una hipérbola que se abre en las direcciones 
+de $\pm x$. Puede probarse \cite{arfken} que todas estas curvas tienen los mismos focos en $y=0$, 
+$x= \pm a$ y que las elipses intersectan a las hipérbolas en ángulos rectos. Debajo se encuentra 
+una representación gráfica de estas coordenadas con los resultados que hemos obtenido.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.7]{problema3fig1}
+ \caption{Coordenadas confocales elípticas $(u,v)$ en el plano. Las curvas de 
+ $u$ constante son elipses y las de $v$ constante son hipérbolas.}
+ \label{fig:problema3fig1}
+\end{figure}
+
+Para resolver este problema fijaremos los focos de las coordenadas elípticas en los 
+centros gravitatorios fijos $(x,y) = (\pm a,0)$, ver figura \eqref{fig:problema3fig1}. La hamiltoniana es entonces 
+
+\begin{equation}
+ H = \frac{p^2}{2m} + V(r_1,r_2),
+\end{equation}
+
+donde el potencial $V$ depende de las distancias $r_1$ y $r_2$ hacia los dos 
+centros de fuerza y está dado por 
+
+\begin{equation}
+ V(r_1,r_2) = - \left(\frac{\alpha_1}{r_1} + \frac{\alpha_2}{r_2} \right)
+  = \left(\frac{\alpha_1}{(x - a)^2 + y^2} + \frac{\alpha_2}{(x + a)^2 + y^2}\right),
+\end{equation}
+
+donde las $\alpha_i$ son las fuerzas de los centros de fuerza. Ahora reescribiremos 
+$H$ en términos de $(u,v)$, para eso utilizamos el hecho de podemos escribir al potencial 
+en términos de $(u,v)$ como (utilizando \eqref{eq:uelipse} y \eqref{eq:vhiperbola})
+
+\begin{equation}
+ V(u,v) = - \frac{\alpha \cosh{u} - \alpha'\cos{v}}{\cosh^2{u}- \cos^2{v}},
+\end{equation}
+
+donde $alpha \equiv \alpha_1 + \alpha_2$ y $\alpha' \equiv \alpha_1 - \alpha_2$. Y ahora 
+reescribiremos la energía cinética en términos de los impulsos conjugados 
+
+\begin{equation}
+ p_u = \frac{\partial L}{\partial \dot{u}} = \frac{\partial T}{\partial \dot{u}},
+\end{equation}
+
+\begin{equation}
+ p_v = \frac{\partial L}{\partial \dot{v}} = \frac{\partial T}{\partial \dot{v}},
+\end{equation}
+
+debido a que $V$ es independiente de $\dot{u}$ y $\dot{v}$. Entonces 
+
+\begin{equation}
+ T = \frac{1}{2} (\dot{x}^2 + \dot{y}^2) = \frac{1}{2}a^2m(\cosh^2{u} - \cos^2{v})
+ (\dot{u}^2+\dot{v}^2),
+\end{equation}
+
+por lo tanto
+
+\begin{equation}
+ p_u = a^2m(\cosh^2{u} - \cos^2{v})\dot{u},
+\end{equation}
+
+y 
+
+\begin{equation}
+ p_v = a^2m(\cosh^2{u} - \cos^2{v})\dot{v},
+\end{equation}
+
+y encontramos ahora una expresión para $\dot{u}$ y $\dot{v}$ en términos de 
+$p_u$ y $p_v$, 
+
+\begin{equation}
+ \dot{u} = \frac{p_u}{a^2m(\cosh^2{u} - \cos^2{v})}
+\end{equation}
+
+y 
+
+\begin{equation}
+ \dot{v} = \frac{p_v}{a^2m(\cosh^2{u} - \cos^2{v})}
+\end{equation}
+
+y entonces 
+
+\begin{equation}
+ T = \frac{1}{2}a^2m(\cosh^2{u} - \cos^2{v})\left( \frac{p_u^2}{a^4m^2(\cosh^2{u} - \cos^2{v})^2} 
+ + \frac{p_v^2}{a^4m^2(\cosh^2{u} - \cos^2{v})^2}\right).
+\end{equation}
+
+\begin{equation}
+ \therefore T = \frac{1}{2}\left( \frac{p_u^2 + p_v^2}{a^2m(\cosh^2{u} - \cos^2{v})}\right).
+\end{equation}
+
+
+Podemos ahora escribir la hamiltoniana en estas nuevas coordenadas como 
+
+\begin{equation}
+ H = T + V = \frac{1}{2a^2m}\left( \frac{p_u^2 + p_v^2}{\cosh^2{u} - \cos^2{v}}\right) - \frac{\alpha \cosh{u} - \alpha'\cos{v}}{\cosh^2{u}- \cos^2{v}},
+\end{equation}
+
+\begin{equation}
+ \therefore H = \frac{1}{2a^2m}\left( \frac{p_u^2 + p_v^2 - 2a^2m\alpha \cosh{u} + 2a^2m\alpha'\cos{v}}{\cosh^2{u}- \cos^2{v}}\right)
+\end{equation}
+
+Ahora escribimos la ecuación de Hamilton-Jacobi como
+
+\begin{equation}
+\frac{1}{2a^2m}\left( \frac{\left(\frac{\partial G}{\partial u} \right)^2 + 
+\left(\frac{\partial G}{\partial v} \right)^2- 2a^2m\alpha \cosh{u} + 
+2a^2m\alpha'\cos{v}}{\cosh^2{u}- \cos^2{v}}\right) = - \frac{\partial G}{\partial t}.
+\label{eq:HJconfocales1}
+\end{equation}
+
+Para comprobar si esta ecuación en derivadas parciales es soluble por el método de 
+separación de variables proponemos una solución del estilo 
+
+\begin{equation}
+ G(u,v,t) = W(u,v) + T(t),
+\end{equation}
+
+y entonces la ecuación \eqref{eq:HJconfocales1} se transforma en 
+
+ \begin{equation}
+\frac{1}{2a^2m}\left( \frac{\left(\frac{\partial W}{\partial u} \right)^2 + 
+\left(\frac{\partial W}{\partial v} \right)^2- 2a^2m\alpha \cosh{u} + 
+2a^2m\alpha'\cos{v}}{\cosh^2{u}- \cos^2{v}}\right) = - \frac{\partial T}{\partial t}.
+\label{eq:HJconfocales2}
+\end{equation}
+
+Vemos que el único modo de que se cumpla la igualdad \eqref{eq:HJconfocales2} es que 
+ambos lados sean iguales a una constante que llamaremos $\zeta_1$, y tenemos entonces 
+
+\begin{equation}
+ \frac{1}{2a^2m}\left( \frac{\left(\frac{\partial W}{\partial u} \right)^2 + 
+\left(\frac{\partial W}{\partial v} \right)^2- 2a^2m\alpha \cosh{u} + 
+2a^2m\alpha'\cos{v}}{\cosh^2{u}- \cos^2{v}}\right) = \zeta_1,
+\end{equation}
+
+\begin{equation}
+ \frac{\partial T}{\partial t} = - \zeta_1.
+\end{equation}
+
+De la segunda de estas ecuaciones vemos que 
+
+\begin{equation}
+ \boxed{T(t) = - \zeta_1t,}
+\end{equation}
+
+y la primera la podemos reescribir como 
+
+\begin{equation}
+\left(\frac{\partial W}{\partial u} \right)^2 + 
+\left(\frac{\partial W}{\partial v} \right)^2
+= 2a^2m\zeta_1(\cosh^2{u}- \cos^2{v})
++ 2a^2m\alpha \cosh{u} - 
+2a^2m\alpha'\cos{v}.
+\end{equation}
+
+Ya hemos separado la parte temporal, ahora proponemos una solución del tipo 
+
+\begin{equation}
+ W(u,v) = W_u(u) + W_v(v),
+\end{equation}
+
+y entonces tenemos que 
+
+\begin{equation}
+\left(\frac{\partial W_u}{\partial u} \right)^2 + 
+\left(\frac{\partial W_v}{\partial v} \right)^2
+= 2a^2m\zeta_1(\cosh^2{u}- \cos^2{v})
++ 2a^2m\alpha \cosh{u} - 
+2a^2m\alpha'\cos{v},
+\end{equation}
+
+reescribiendo vemos que 
+
+\begin{equation}
+ \left(\frac{\partial W_u}{\partial u} \right)^2 - 2a^2m\zeta_1\cosh^2{u} - 
+ 2a^2m\alpha\cosh{u} = 
+ - \left(\frac{\partial W_v}{\partial v} \right)^2 - 2a^2m\zeta_1\cos^2{v} - 
+ 2a^2m\alpha'\cos{v}.
+ \label{eq:HJconfocales3}
+\end{equation}
+
+Como vemos el lado izquierdo de \eqref{eq:HJconfocales3} solo depende de $u$ y 
+el lado derecho de $v$ por lo tanto el único como de que se mantenga esta igualdad 
+es que ambos lados sean iguales a una misma constante que llamaremos $\zeta_2$, 
+y entonces 
+
+\begin{equation}
+ \boxed{\left(\frac{\partial W_u}{\partial u} \right)^2 - 2a^2m\zeta_1\cosh^2{u} - 
+ 2a^2m\alpha\cosh{u} = \zeta_2.}
+\end{equation}
+
+\begin{equation}
+ \boxed{ \left(\frac{\partial W_v}{\partial v} \right)^2 + 2a^2m\zeta_1\cos^2{v} + 
+ 2a^2m\alpha'\cos{v} = - \zeta_2.}
+\end{equation}
+
+\vspace{.2cm}
+
+Y con estas dos ecuaciones finales hemos demostrado que el sistema en separable 
+si se utilizan coordenadas elípticas confocales.
+
 \section{Problema 4}
 
 Establezca la ecuación de Hamilton-Jacobi de una partícula libre en dos dimensiones 
@@ -265,5 +511,12 @@ Utilizando el método de Hamilton-Jacobi reduzca a cuadraturas el péndulo simpl
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{10}
+\bibitem{arfken}
+G. Arfken y H. Weber, \emph{Mathematical Methods for Physicists}, 6ta edición, Elsevier 
+Academic Press, 2005.
+\end{thebibliography}
+
 
 \end{document}
