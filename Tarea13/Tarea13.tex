@@ -512,6 +512,123 @@ Utilizando el método de Hamilton-Jacobi reduzca a cuadraturas el péndulo simpl
 
 \underline{Solución:} \vspace{.3cm}
 
+En la figura de abajo se muestra una ilustración del péndulo simple
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.4]{problema5fig1}
+ \caption{Péndulo simple.}
+ \label{fig:problema5fig1}
+\end{figure}
+
+Recordemos que su lagrangiana es 
+
+\begin{equation}
+ L = \frac{1}{2}ml^2\dot{\theta}^2 + mgl\cos{\theta},
+\end{equation}
+
+el momento $p_\theta$ conjugado a $\theta$ es 
+
+\begin{equation}
+ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = ml^2\dot{\theta},
+\end{equation}
+
+y por lo tanto la cantidad de Jacobi del sistema es 
+
+\begin{equation}
+ H = p_\theta \dot{\theta} - L = \frac{1}{2}ml^2\dot{\theta}^2 - mgl\cos{\theta},
+\end{equation}
+
+ahora para escribir la hamiltoniana del sistema escribimos la cantidad de Jacobi 
+en términos de $\theta$ y $p_\theta$, 
+
+\begin{equation}
+ H = \frac{p_\theta^2}{2ml^2} - mgl\cos{\theta}.
+\end{equation}
+
+Claramente la hamiltoniana es igual a la energía total del sistema debido a que 
+la lagrangiana no depende del tiempo y la energía cinética es una función cuadrática 
+de las velocidades. Ahora podemos escribir la ecuación de Hamilton-Jacobi como 
+
+\begin{equation}
+ \frac{1}{2ml^2} \left(\frac{\partial G}{\partial \theta} \right)^2 - mgl\cos{\theta} 
+ = - \frac{\partial G}{\partial t}
+ \label{eq:HJpendulo1}
+\end{equation}
+
+Proponemos una solución de la forma 
+
+\begin{equation}
+ G(\theta,t) = W(\theta) + T(t),
+\end{equation}
+
+y entonces la ecuación \eqref{eq:HJpendulo1} queda como 
+
+\begin{equation}
+  \frac{1}{2ml^2} \left(\frac{\partial W}{\partial \theta} \right)^2 - mgl\cos{\theta} 
+ = - \frac{\partial T}{\partial t}.
+ \label{eq:HJpendulo2}
+\end{equation}
+
+Debido a que el lado izquierdo de \eqref{eq:HJpendulo2} depende únicamente de $\theta$ 
+y el derecho de $t$, el único  modo de que esta expresión se cumpla es que ambos
+términos sean iguales a una misma constante que llamaremos $\alpha_1$. Entonces 
+
+\begin{equation}
+ \frac{1}{2ml^2} \left(\frac{\partial W}{\partial \theta} \right)^2 - mgl\cos{\theta} = 
+ \alpha_1,
+ \label{eq:HJpendulo3}
+\end{equation}
+
+\begin{equation}
+ \frac{\partial T}{\partial t} = - \alpha_1,
+\end{equation}
+
+de la segunda ecuación vemos directamente que 
+
+\begin{equation}
+ \boxed{T(t) = - \alpha_1t.}
+\end{equation}
+
+Si utilizamos la definición de $p_\theta$ podemos reescribir \eqref{eq:HJpendulo3} 
+como 
+
+\begin{equation}
+ \frac{p_\theta^2}{2ml^2} - mgl\cos{\theta} = 
+ \alpha_1,
+\end{equation}
+
+y entonces podemos asociar a $\alpha_1$ con la energía total del sistema $E$. Volviendo 
+a \eqref{eq:HJpendulo3} podemos despejar de ella $\partial W/\partial \theta$ para 
+encontrar 
+
+\begin{equation}
+ \frac{\partial W}{\partial \theta} = \sqrt{2ml^2(E + mgl\cos{\theta})},
+\end{equation}
+
+y por lo tanto 
+
+\begin{equation}
+ \boxed{W(\theta) = \int \sqrt{2ml^2(E + mgl\cos{\theta})} d\theta.}
+\end{equation}
+
+Y entonces 
+
+\begin{equation}
+ \boxed{G(\theta,t) = \sqrt{2ml^2(E + mgl\cos{\theta})} d\theta - Et.}
+\end{equation}
+
+Por último calculemos $\beta$, 
+
+\begin{equation}
+ \boxed{\beta = \frac{\partial G}{\partial \alpha_1} = \frac{\partial G}{E} = 
+ - t + ml^2 \int \frac{d\theta}{\sqrt{2ml^2(E + mgl\cos{\theta})}}.}
+\end{equation}
+
+\vspace{.2cm}
+
+con lo cual hemos reducido el problema del péndulo simple a cuadraturas.
+
 \begin{thebibliography}{10}
 \bibitem{arfken}
 G. Arfken y H. Weber, \emph{Mathematical Methods for Physicists}, 6ta edición, Elsevier 
