@@ -237,6 +237,179 @@ de ser esto posible encuentre la solución. Puede dejar integrales indicadas.
 
 \underline{Solución:} \vspace{.3cm}
 
+En la figura de abajo se muestra un diagrama para trompo simétrico, 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema2fig1}
+ \caption{Trompo simétrico y los ángulos de Euler.}
+ \label{fig:problema2fig1}
+\end{figure}
+
+Para estudiar el trompo primero tomamos un sistema inercial $(x,y,z)$ cuyo origen 
+coincide con el punto fijo y el eje $z$ coincidente con la vertical. Construimos también 
+un sistema de referencia $(X,Y,Z)$ anclado al cuerpo con el mismo origen y colocado 
+a lo largo de los ejes principales de inercia del trompo, pondremos al eje $Z$ coincidente 
+con el eje de simetría. Utilizaremos la convención de denotar las componentes de un 
+vector con respecto a los ejes del sistema inercial con letras minúsculas 
+y con mayúsculas a las componentes con respecto al sistema anclado al cuerpo. El trompo 
+simétrico presenta dos simetrías, una debida a que la fuerza de gravedad 
+es siempre vertical, por lo que una rotación en torno a un eje vertical deja invariante 
+al sistema y una segunda debida a la simetría propia del trompo. Por esta razón escogemos 
+un sistema de coordenadas que contenga a un ángulo de rotación en torno al eje vertical 
+y otro en torno al eje del trompo, y este sistema de coordenadas son los conocidos 
+ángulos de Euler. En la figura \eqref{fig:problema2fig1} los ángulos de Euler quedan 
+definidos en su forma estándar como los ángulos $(\theta,\phi,\psi$). Para no alargar 
+más la discusión se asume que ya se conoce lo necesario referente a los ángulos 
+de Euler, y que en estas coordenadas el vector de velocidad angular puede descomponerse 
+en tres componentes, una de magnitud $\dot{\theta}$ en la dirección de la línea de 
+nodos $N$ en \eqref{fig:problema2fig1}, una segunda de magnitud $\dot{\phi}$ en
+dirección del eje $z$ y una de magnitud $\dot{\psi}$ en la dirección del eje $Z$. Utilizando 
+esto y la figura \eqref{fig:problema2fig1} vemos que las componentes del vector 
+velocidad angular pueden obtenerse de estas últimas por medio de 
+
+\begin{align}
+ \begin{split}
+   \Omega_X &= \dot{\theta}\cos{\psi} + \dot{\phi}\sen{\theta}\sen{\psi}, \\
+  \Omega_Y &= - \dot{\theta}\sen{\psi} + \dot{\phi}\sen{\theta}\cos{\psi}, \\
+   \Omega_Z &= \dot{\psi} + \dot{\phi}\cos{\theta}.
+ \end{split}
+\end{align}
+
+La energía cinética puede calcularse fácilmente en las coordenadas del cuerpo, ya que 
+el tensor de inercia es constante y diagonal, aparte de que como tratamos con un 
+trompo simétrico $I_X = I_Y = I$, y entonces 
+
+\begin{equation}
+ T = \frac{1}{2}[I(\Omega_X^2 + \Omega_Y^2) + I_Z\Omega_Z^2],
+\end{equation}
+
+\begin{equation}
+ \therefore T = \frac{1}{2}\left[I(\dot{\theta}^2 + \dot{\phi}^2\sen^2{\theta})
+ + I_Z(\dot{\psi} + \dot{\phi}\cos{\theta})^2\right].
+\end{equation}
+
+La única fuerza que interviene es la de la gravedad cuyo potencial es 
+
+\begin{equation}
+ V = Mgl\cos{\theta},
+\end{equation}
+
+donde $M$ es la masa del trompo, $l$ es la distancia entre el centro de pasas y 
+el punto fijo, y $g$ es la aceleración de la gravedad. Entonces la lagrangiana 
+$L = T - V$ del trompo simétrico puede escribirse como 
+
+\begin{equation}
+ L = \frac{1}{2}\left[I(\dot{\theta}^2 + \dot{\phi}^2\sen^2{\theta})
+ + I_Z(\dot{\psi} + \dot{\phi}\cos{\theta})^2\right] - Mgl\cos{\theta}.
+\end{equation}
+
+Podemos ver de la lagrangiana que las coordenadas $\phi$ y $\psi$ son ignorables y 
+por lo tanto se conservarán sus impulsos asociados. Para 
+construir la lagrangiana necesitamos los impulsos generalizados conjugados a las 
+coordenadas, que son los siguientes
+
+\begin{align}
+ p_\phi &= \dot{\phi}(I\sen^2{\theta} + I_Z\cos^2{\theta}) + I_Z\dot{\psi}\cos{\theta} = \alpha_2, \\
+ p_\psi &= I_Z(\dot{\phi}\cos{\theta} + \dot{\psi}) = \alpha_3, \\
+ p_\theta &= I\dot{\theta}.
+\end{align}
+
+Con un poco de álgebra podemos escribir la hamiltoniana como 
+
+\begin{equation}
+ H = \frac{1}{2}\left[\frac{p_\theta^2}{I} + \frac{p_\psi^2}{I_Z} 
+ + \frac{(p_\phi - p_\psi\cos{\theta})^2}{I\sen^2{\theta}}\right] + 
+ Mgl\cos{\theta}.
+\end{equation}
+
+Y la ecuación de Hamilton-Jacobi será entonces 
+
+\begin{equation}
+ \frac{1}{2I}\left(\frac{\partial G}{\partial \theta} \right)^2 + 
+ \frac{1}{2I\sen^2{\theta}}\left(\frac{\partial G}{\partial \phi} - 
+ \frac{\partial G}{\partial \psi}\cos{\theta}\right)^2 + 
+ \frac{1}{2I_Z}\left(\frac{\partial G}{\partial \psi} \right)^2 
+ + Mgl\cos{\theta} = - \frac{\partial G}{\partial t}.
+ \label{eq:HJTrompo1}
+\end{equation}
+
+Como la hamiltoniana no depende del tiempo, ni de $\phi$ ni $\psi$ proponemos 
+una solución de la forma 
+
+\begin{equation}
+ G = \alpha_1t + W(\phi,\theta,\psi) = - \alpha_1t + \alpha_2\phi + \alpha_3\psi 
+ + \Theta(\theta).
+\end{equation}
+
+Si ahora sustituimos esta expresión en \eqref{eq:HJTrompo1} obtenemos 
+
+\begin{equation}
+ \frac{1}{2}\left[\frac{1}{I}\left(\frac{\partial \Theta}{\partial \theta} \right)^2
+ + \frac{\alpha_3^2}{I_Z} + \frac{1}{I}\frac{(\alpha_2 - \alpha_3\cos{\theta})^2}{\sen^2{\theta}}\right] 
+ + Mgl\cos{\theta} = \alpha_1,
+\end{equation}
+
+que como vemos es un ecuación que solo depende de $\theta$ y puede integrarse 
+para obtener 
+
+\begin{equation}
+ \Theta(\theta) = \int \frac{\sqrt{2I\sen^2{\theta}(\alpha_1 - A - 
+ Mgl\cos{\theta}) - (\alpha_2 - \alpha_3\cos{\theta})^2}}{\sen{\theta}}d\theta,
+\end{equation}
+
+donde $A = \frac{\alpha_3^2}{2I_Z}$. Por lo tanto la solución para la función que 
+contiene toda la información del sistema, $G$, es 
+
+\begin{equation*}
+ \boxed{G = -\alpha_1t + \alpha_2\phi + \alpha_3\psi + \int \frac{\sqrt{2I\sen^2{\theta}(\alpha_1 - A - 
+ Mgl\cos{\theta}) - (\alpha_2 - \alpha_3\cos{\theta})^2}}{\sen{\theta}}d\theta.}
+\end{equation*}
+
+Ahora solo nos falta calcular las $\beta^i$ y los impulsos utilizando la formulación 
+de Hamilton-Jacobi. Entonces 
+
+\begin{equation}
+ \beta^1 = \frac{\partial G}{\partial \alpha_1} = 
+ - t + \int \frac{I\sen{\theta}}{\sqrt{2I\sen^2{\theta}(\alpha_1 - A - 
+ Mgl\cos{\theta}) - (\alpha_2 - \alpha_3\cos{\theta})^2}}d\theta,
+\end{equation}
+
+\begin{equation}
+ \beta^2 = \frac{\partial G}{\partial \alpha_2} = 
+ \phi + \int \frac{\csc{\theta}(\alpha_2 - \alpha_3\cos{\theta})}{\sqrt{2I\sen^2{\theta}(\alpha_1 - A - 
+ Mgl\cos{\theta}) - (\alpha_2 - \alpha_3\cos{\theta})^2}}d\theta,
+\end{equation}
+
+\begin{equation}
+ \beta^3 = \frac{\partial G}{\partial \alpha_3} = 
+ \psi + \int \frac{\cot{\theta}(\alpha_2 - \alpha_3\cos{\theta})}{\sqrt{2I\sen^2{\theta}(\alpha_1 - A - 
+ Mgl\cos{\theta}) - (\alpha_2 - \alpha_3\cos{\theta})^2}}d\theta.
+\end{equation}
+
+Por último expresamos los impulsos,
+
+\begin{equation}
+ p_\theta = \frac{\partial G}{\partial \theta} = 
+ \frac{\sqrt{2I\sen^2{\theta}(\alpha_1 - A - 
+ Mgl\cos{\theta}) - (\alpha_2 - \alpha_3\cos{\theta})^2}}{\sen{\theta}},
+\end{equation}
+
+\begin{equation}
+ p_\phi = \frac{\partial G}{\partial \psi} = \alpha_2,
+\end{equation}
+
+\begin{equation}
+ p_\psi = \frac{\partial G}{\partial \psi} = \alpha_3.
+\end{equation}
+
+Con lo cual vemos un significado directo para $\alpha_2$ y $\alpha_3$, que ya lo sabíamos 
+de antemano pero quisimos probarlo al final. Puede verse fácilmente entonces viendo 
+estas ecuaciones que $\alpha_1$ será la energía total del trompo simétrico. Con esto
+hemos demostrado que el problema del trompo simétrico utilizando los ángulos 
+de Euler como coordenadas generalizadas, se puede resolver por separación 
+de variables y hemos encontrado una solución completa al mismo.
+
 \section{Problema 3}
 
 Demuestra que la ecuación de Hamilton-Jacobi de una partícula atraída por dos centros
