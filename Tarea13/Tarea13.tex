@@ -677,6 +677,217 @@ Establezca el significado de las constantes $\alpha$ y $\beta$.
 
 \underline{Solución:} \vspace{.3cm}
 
+Debido a que la partícula está libre, tenemos que la lagrangiana de la misma 
+en coordenadas cartesianas será
+
+\begin{equation}
+ L = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2),
+\end{equation}
+
+y en coordenadas polares 
+
+\begin{align}
+ x = r\cos{\theta}, \\
+ y = r\sen{\theta},
+\end{align}
+
+la lagrangiana se escribe como 
+
+\begin{equation}
+ L = \frac{1}{2}m(r^2\dot{\theta}^2 + \dot{r}^2).
+\end{equation}
+
+Ahora para obtener la expresión para la hamiltoniana debemos encontrar los momentos 
+conjugados,
+
+\begin{equation}
+ p_r = \frac{\partial L}{\partial \dot{r}} = m\dot{r},
+\end{equation}
+
+\begin{equation}
+ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = mr^2\dot{\theta},
+\end{equation}
+
+y ahora encontramos expresiones de $\dot{r}$ y $\dot{\theta}$ en términos de 
+$p_r$ y $p_\theta$,
+
+\begin{equation}
+ \dot{r} = \frac{p_r}{m},
+\end{equation}
+
+\begin{equation}
+ \dot{\theta} = \frac{p_\theta}{mr^2},
+\end{equation}
+
+y con estas expresiones podemos construir la hamiltoniana, que se escribe como 
+
+\begin{equation}
+ H = \frac{1}{2}\frac{p_r^2}{m} + \frac{1}{2}\frac{p_\theta^2}{mr^2}.
+\end{equation}
+
+Y ahora la ecuación de Hamilton-Jacobi para el sistema será 
+
+\begin{equation}
+ \frac{1}{2m}\left[\left(\frac{\partial G}{\partial r} \right)^2 
+ + \frac{1}{r^2}\left( \frac{\partial G}{\partial \theta}\right)^2\right] = 
+ - \frac{\partial G}{\partial t}.
+\end{equation}
+
+Vemos que en esta ecuación el tiempo el separable, por lo que proponemos una solución 
+de la forma $G(r,\theta,t) = W(r,\theta) + T(t)$, y al sustituir en la ecuación anterior 
+nos queda 
+
+\begin{equation}
+ \frac{1}{2m}\left[\left(\frac{\partial W}{\partial r} \right)^2 
+ + \frac{1}{r^2}\left( \frac{\partial W}{\partial \theta}\right)^2\right] = 
+ - \frac{\partial T}{\partial t}.
+\end{equation}
+
+Vemos que el único modo de que se cumpla la igualdad anterior es que 
+ambos lados sean iguales a una constante que llamaremos $\alpha_1$, y tenemos entonces
+
+\begin{equation}
+ \frac{1}{2m}\left[\left(\frac{\partial W}{\partial r} \right)^2 
+ + \frac{1}{r^2}\left( \frac{\partial W}{\partial \theta}\right)^2\right] = 
+ \alpha_1,
+\end{equation}
+
+\begin{equation}
+ \frac{\partial T}{\partial t} = - \alpha_1,
+\end{equation}
+
+más una constante aditiva de integración que consideramos, sin perder generalidad,
+como cero. De la segunda ecuación
+
+\begin{equation}
+ T(t) = - \alpha_1t.
+\end{equation}
+
+Ahora para la primera ecuación proponemos una solución del tipo $W(r,\theta) = 
+W_r(t) + W_\theta(\theta)$ y tenemos que 
+
+\begin{equation}
+ \frac{1}{2m}\left[\left(\frac{\partial W_r}{\partial r} \right)^2 
+ + \frac{1}{r^2}\left( \frac{\partial W_\theta}{\partial \theta}\right)^2\right] = 
+ \alpha_1.
+\end{equation}
+
+Toda la dependencia en $\theta$ de esta ecuación está en el término 
+$\partial W_\theta/\partial \theta$, por lo que este debe ser constante, llamaremos 
+a esta constante $\alpha_2$. Entonces 
+
+\begin{equation}
+ W_\theta (\theta) = \alpha_2 \theta,
+\end{equation}
+
+más una constante de integración que también haremos cero como anteriormente. Finalmente 
+$W_r$, deberá, para que se cumpla la ecuación de Hamilton-Jacobi, cumplir con 
+
+\begin{equation}
+  \frac{1}{2m}\left[\left(\frac{\partial W_r}{\partial r} \right)^2 
+ + \frac{\alpha_2^2}{r^2}\right] = 
+ \alpha_1.
+\end{equation}
+
+Para resolver esta ecuación despejamos el término de la derivada 
+
+\begin{equation}
+ \frac{\partial W_r}{\partial r} = \sqrt{2m\alpha_1 - \frac{\alpha_2^2}{r^2}},
+\end{equation}
+
+e integramos 
+
+\begin{equation}
+ W_r = \int \sqrt{2m\alpha_1 - \frac{\alpha_2^2}{r^2}} dr.
+\end{equation}
+
+Y la solución completa será 
+
+\begin{equation}
+ G = \int \sqrt{2m\alpha_1 - \frac{\alpha_2^2}{r^2}} dr + \alpha_2\theta - \alpha_1t.
+\end{equation}.
+
+Ahora obtengamos las constantes $\beta^i$, 
+
+\begin{equation}
+ \beta^1 = \frac{\partial G}{\partial \alpha_1} = 
+ \int \frac{m}{\sqrt{2m\alpha_1 - \frac{\alpha_2^2}{r^2}}}dr - t,
+ \label{eq:beta1Polares}
+\end{equation}
+
+\begin{equation}
+ \beta^2 = \frac{\partial G}{\partial \alpha_2} = 
+ - \int \frac{\alpha_2}{r^2\sqrt{2m\alpha_1 - \frac{\alpha_2^2}{r^2}}}dr + \theta.
+ \label{eq:beta2Polares}
+\end{equation}
+
+Por último utilicemos las expresiones para los impulsos generalizados en la formulación 
+de Hamilton-Jacobi, 
+
+\begin{equation}
+ p_r = \frac{\partial G}{\partial r} = \sqrt{2m\alpha_1 - \frac{\alpha_2^2}{r^2}},
+ \label{eq:prPolares}
+\end{equation}
+
+\begin{equation}
+ p_\theta = \frac{\partial G}{\partial \theta} = \alpha_2.
+ \label{eq:alfa2Polares}
+\end{equation}
+
+Podemos ahora darle sentido físico a las constantes $\alpha_i$ y $\beta^i$, tenemos que 
+de \eqref{eq:alfa2Polares} $\alpha_2$ es el impulso $p_\theta$ o impulso angular 
+de la partícula. De la ecuación \eqref{eq:prPolares} podemos despejar $\alpha_1$,
+
+\begin{equation}
+ \alpha_1 = \frac{1}{2m} \left(p_r^2 + \frac{p_\theta^2}{r^2}\right) 
+\end{equation}
+
+y por lo tanto podemos ver que $\alpha_1$ es la energía total de la partícula que llamaremos 
+$E$. Ahora si reescribimos la ecuación \eqref{eq:beta2Polares} como 
+
+\begin{equation}
+ \theta =   \beta^2  - \int \frac{p_\theta}{r^2\sqrt{2mE - \frac{p_\theta^2}{r^2}}}dr,
+\end{equation}
+
+podemos identificar a $\beta^2$ con $\theta_0$. Y al escribir \eqref{eq:beta1Polares} 
+como 
+
+\begin{equation}
+ t = \int \frac{m}{\sqrt{2mE - \frac{p_\theta^2}{r^2}}}dr - \beta^1,
+\end{equation}
+
+podemos identificar a $\beta^2$ con $r_0$. Podemos escribir ahora la solución 
+completa del problema como
+
+\begin{equation}
+ \boxed{G = \int \sqrt{2mE - \frac{p_\theta^2}{r^2}} dr + p_\theta\theta - Et.}
+\end{equation}.
+
+Ahora culminemos el problema haciendo un breve análisis de las superficies de nivel 
+para $G$ constante, es decir ver a $W$ como un campo escalar en la variedad de 
+configuración parametrizado por las $\alpha_i$ que ya sabemos que no son más que 
+la energía total $E$ y el impulso angular $p_\theta$ de la partícula. Entonces tenemos 
+que las superficies de nivel que forma $W$ están dadas por 
+
+\begin{equation}
+ \int \sqrt{2mE - \frac{p_\theta^2}{r^2}} dr + p_\theta\theta = c,
+\end{equation}
+
+donde hemos llamado $c$ a la constante. Desde esta ecuación podemos trazar las curvas 
+de nivel para distintos valores de las constantes y encontrar la siguiente gráfica 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema4fig1}
+ \caption{Superficies de nivel para una partícula libre en coordenadas polares.}
+ \label{fig:problema4fig1}
+\end{figure}
+
+Si trazamos las perpendiculares a estas curvas vemos entonces que para distintos valores de las constantes estas generarán trayectorias 
+de líneas rectas sobre el plano, las cuales son equivalentes a las rectas que deben 
+encontrarse para coordenadas cartesianas, solo que estas rectas estarán parametrizadas 
+por las coordenadas polares en este caso.
+
 \section{Problema 5}
 
 Utilizando el método de Hamilton-Jacobi reduzca a cuadraturas el péndulo simple. 
