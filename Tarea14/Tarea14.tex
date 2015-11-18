@@ -220,6 +220,187 @@ Reduzca a cuadraturas por el método de Liouville el ejemplo del péndulo esfér
 
 \underline{Solución:} \vspace{.3cm}
 
+Debajo se encuentra un diagrama del péndulo esférico,
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.6]{problema5fig1}
+ \caption{Péndulo esférico.}
+ \label{fig:problema5fig1}
+\end{figure}
+
+recordamos que para el péndulo esférico la lagrangiana se escribe como 
+
+\begin{equation}
+ L = T - V = \frac{1}{2}ml^2(\dot{\theta}^2 + \dot{\phi}^2\sen^2{\theta} 
+ - mgl\cos{\theta},
+\end{equation}
+
+podemos ahora escribir la hamiltoniana del sistema, primero obteniendo los momentos 
+conjugados para las variables $\theta$ y $\phi$, 
+
+\begin{equation}
+ p_\theta = \frac{\partial L}{\partial \dot{\theta}} = ml^2\dot{\theta},
+\end{equation}
+
+\begin{equation}
+ p_\phi = \frac{\partial L}{\partial \dot{\phi}} = ml^2\dot{\phi}\sen^2{\theta},
+\end{equation}
+
+de donde obtenemos 
+
+\begin{equation}
+ \dot{\theta} = \frac{p_\theta}{ml^2},
+\end{equation}
+
+y
+
+\begin{equation}
+ \dot{\phi} = \frac{p_\phi}{ml^2\sen^2{\theta}},
+\end{equation}
+
+y ahora utilizando 
+
+\begin{equation}
+ H = \sum_i p_i \dot{q}^2(q,p) - L, 
+\end{equation}
+
+la hamiltoniana del péndulo esférico resulta
+
+\begin{equation}
+ H = \frac{p_\theta^2}{2ml^2} + \frac{p_\phi^2}{2ml^2\sen^2{\theta}} 
+ + mgl\cos{\theta}.
+\end{equation}
+
+Podemos notar ahora dos cosas. Primero, debido a que la coordenada $\phi$ es 
+ignorable según la forma de la lagrangiana, entonces su momento conjugado se 
+conservará, es decir que $p_\phi$ es constante, y además debido a que la energía 
+cinética es una forma cuadrática de las velocidades y que la lagrangiana no depende 
+explícitamente del tiempo, entonces la hamiltoniana es igual a la energía total 
+del sistema, que también será una integral de movimiento. Usando la notación del
+método de Liouville, podemos escribir esto de la siguiente forma 
+
+\begin{equation}
+  \frac{p_\theta^2}{2ml^2} + \frac{p_\phi^2}{2ml^2\sen^2{\theta}} 
+ + mgl\cos{\theta} = I_1 = E,
+ \label{eq:energiaPendEsf}
+\end{equation}
+
+\begin{equation}
+ p_\phi = I_2.
+ \label{eq:pphiPendEsf}
+\end{equation}
+
+Ahora hemos encontrado entonces dos integrales de movimiento, nos preguntamos ahora 
+si están en involución, es decir si 
+
+\begin{equation}
+ \{I_1, I_2\} = 0,
+\end{equation}
+
+para ver esto recordamos la expresión para los paréntesis de Poisson, 
+
+\begin{equation}
+ \frac{\partial I_1}{\partial \theta}\cancelto{0}{\frac{I_2}{\partial p_\theta}} 
+ - \frac{\partial I_1}{\partial p_\theta}\cancelto{0}{\frac{I_2}{\partial \theta}} + 
+ \cancelto{0}{\frac{\partial I_1}{\partial \phi}}\frac{I_2}{\partial p_\phi} 
+ - \frac{\partial I_1}{\partial p_\phi}\cancelto{0}{\frac{I_2}{\partial \phi}} = 
+ 0.
+\end{equation}
+
+Por lo tanto hemos demostrado que las dos integrales de movimiento que hemos encontrado 
+están en involución, y debido a que hay tantas integrales de movimiento en involución como grados 
+de libertad el sistema es integrable. Esto quiere decir que la uno forma $\omega = 
+\sum_i p_idq^i$, que en términos de nuestras coordenadas y definiciones tiene la 
+forma (despejando $p_\theta$ de \eqref{eq:energiaPendEsf}),
+
+\begin{equation}
+ \omega = \sqrt{2ml^2\left(I_1 - mgl\cos{\theta} - \frac{1}{2}\frac{I_2}{ml^2\sen^2{\theta}}
+ \right)}d\theta + I_2d\phi,
+\end{equation}
+
+utilizando el teorema de Liouville es integrable, y al integrarla obtenemos 
+
+\begin{equation}
+ F = \int \sqrt{2ml^2\left(I_1 - mgl\cos{\theta} - \frac{1}{2}\frac{I_2}{ml^2\sen^2{\theta}}
+ \right)}d\theta + I_2\phi.
+\end{equation}
+
+Y en vistas del mismo teorema podemos ver entonces a $F(q,I)$ como una función 
+generadora de tipo dos, que al complementarla con 
+
+\begin{equation}
+ Q^i = \frac{\partial F(q,I)}{\partial I_i},
+ \label{eq:QiPendEsf1}
+\end{equation}
+
+obtenemos una transformación canónica de coordenadas 
+
+\begin{equation}
+ (q,p) \leftrightarrow (Q,I),
+\end{equation}
+
+que nos lleva a un sistema canónico de coordenadas donde los impulsos son las 
+integrales de movimiento. Ahora calculando las $Q^i$ utilizando \eqref{eq:QiPendEsf1}, 
+obtenemos 
+
+\begin{equation}
+ Q^1 = \frac{\partial F}{\partial I_1} = \int \frac{ml^2}{\sqrt{2ml^2\left(I_1 -
+ mgl\cos{\theta} - \frac{1}{2}\frac{I_2}{ml^2\sen^2{\theta}} \right)}}d\theta,
+ \label{eq:Q1PendEsf1}
+\end{equation}
+
+\begin{equation}
+ Q^2 = \phi - \int \frac{I_2}{\sen^2{\theta}\sqrt{2ml^2\left(I_1 - mgl\cos{\theta} - 
+ \frac{1}{2}\frac{I_2}{ml^2\sen^2{\theta}} \right)}}d\theta.
+ \label{eq:Q2PendEsf2}
+\end{equation}
+
+Y en nuestro nuevo sistema canónico $(Q^1,Q^2,I_1,I_2)$ tenemos 
+
+\begin{equation}
+ H = I_1 = E,
+\end{equation}
+
+por lo que 
+
+\begin{equation}
+ \dot{Q}^1 = \frac{\partial H}{\partial I_1} = 1,
+\end{equation}
+
+y 
+
+\begin{equation}
+ \dot{Q}^2 = \frac{\partial H}{\partial I_2} = 0.
+\end{equation}
+
+Y de estas ecuaciones podemos escribir, llamando a las constantes de integración 
+$\beta^1$ y $\beta^2$ respectivamente, 
+
+\begin{equation}
+ Q^1 = t + \beta^1,
+\end{equation}
+
+\begin{equation}
+ Q^2 = \beta^2,
+\end{equation}
+
+y utilizando estos resultados las ecuaciones \eqref{eq:Q1PendEsf1} y \eqref{eq:Q2PendEsf2}, 
+quedan como 
+
+\begin{equation}
+ \boxed{t = -\beta^1 + \frac{\partial F}{\partial I_1} = \int \frac{ml^2}{\sqrt{2ml^2\left(I_1 -
+ mgl\cos{\theta} - \frac{1}{2}\frac{I_2}{ml^2\sen^2{\theta}} \right)}}d\theta.}
+\end{equation}
+
+\begin{equation}
+ \boxed{\phi = \beta^2 + \int \frac{I_2}{\sen^2{\theta}\sqrt{2ml^2\left(I_1 - mgl\cos{\theta} - 
+ \frac{1}{2}\frac{I_2}{ml^2\sen^2{\theta}} \right)}}d\theta.}
+\end{equation}
+
+Con lo cual hemos reducido el péndulo esférico a cuadraturas utilizando el método 
+de Liouville.
+
 \begin{thebibliography}{10}
 \bibitem{rashed}
 R. Rashed, \emph{“Géométrie et dioptrique au Xe siècle: Ibn Sahl, 
