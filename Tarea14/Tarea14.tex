@@ -118,6 +118,68 @@ Utilizando únicamente la ecuación de la eikonal deduzca la ley de Snell.
 
 \underline{Solución:} \vspace{.3cm}
 
+Recordemos la expresión para la ecuación de la eikonal,
+
+\begin{equation}
+ |\nabla S|^2(\mathbf{r}) = n^2(\mathbf{r}).
+\end{equation}
+
+Esta ecuación es simplemente el módulo de la ecuación de Huygens que puede 
+escribirse como 
+
+\begin{equation}
+ \nabla S = n(\mathbf{r})\hat{\mathbf{s}},
+\end{equation}
+
+y también sabemos que el gradiente de esta ecuación define el vector de rayo de 
+magnitud $|\mathbf{n}| = n$. Si ahora recordamos que la integración del gradiente 
+sobre un camino cerrado se hace cero, tenemos que 
+
+\begin{equation}
+\oint_P \nabla S(\mathbf{r}) \cdot d\mathbf{r} = \oint_P \mathbf{n}(\mathbf{r}) 
+\cdot d\mathbf{r} = 0.
+\end{equation}
+
+Consideremos ahora el caso en que el camino cerrado $P$ rodea una frontera que 
+separa dos medios diferentes. Si hacemos que los lados del bucle perpendicular 
+a la interfaz vayan a cero, entonces únicamente las partes de la integral de línea 
+tangenciales al camino de la interfaz contribuirán en la misma. Ahora debido a que 
+estas contribuciones deben sumar cero, las componentes tangenciales de los vectores 
+de rato deben preservarse, esto es 
+
+\begin{equation}
+ (\mathbf{n} - \mathbf{n}') \times \hat{\mathbf{z}} = 0,
+ \label{eq:preservacionTangencial}
+\end{equation}
+
+donde el primo se refiere al lado de la frontera al cual el rayo es transmitido, 
+cuyo vector normal es $\hat{\mathbf{z}}$. Ahora imaginemos a un rayo atravesando 
+la frontera y pasando a través de la región encerrada por el bucle de integración. 
+Si $\theta$ y $\theta'$ son los ángulos de incidencia y transmisión, respectivamente, 
+medidos desde la normal $\hat{\mathbf{z}}$ a través de la frontera, entonces la 
+preservación de la componente tangencial del vector de rayo significa que, 
+tomando en cuenta \eqref{eq:preservacionTangencial} y la definición del 
+producto vectorial,
+
+\begin{equation}
+ \mathbf{n} \times \hat{\mathbf{z}} - \mathbf{n}' \times \hat{\mathbf{z}} = 0,
+\end{equation}
+
+\begin{equation}
+ n\sen{\theta} - n'\sen{\theta'} = 0,
+\end{equation}
+
+esto debido a que $|\hat{\mathbf{z}}| = 1$, por lo tanto 
+
+\begin{equation}
+ \boxed{n\sen{\theta} = n'\sen{\theta'}.}
+\end{equation}
+
+Que es la ley de la refracción de Snell, descubierta primero por Ibn Sahl en 984 \cite{rashed}, 
+y luego por Willebrod Snellius en 1621 \cite{holm}. Un análisis similar puede aplicarse al 
+caso de los rayos reflejaos para mostrar que el ángulo de incidencia debe ser igual 
+al ángulo de reflexión.
+
 \section{Problema 2}
 
 En el curso se mostró que la ecuación de la eikonal es una aproximación de onda 
@@ -157,5 +219,14 @@ Reduzca a cuadraturas por el método de Liouville el ejemplo del péndulo esfér
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{10}
+\bibitem{rashed}
+R. Rashed, \emph{“Géométrie et dioptrique au Xe siècle: Ibn Sahl, 
+Al-Quhi et Ibn Al-Haytham}, Las Belles Lettres, 1993.
+\bibitem{holm}
+D. Holm, \emph{Geometric Mechanics, Part I: Dynamics and Symmetry}, World Scientific, 
+Imperial College Press, 2008.
+\end{thebibliography}
 
 \end{document}
