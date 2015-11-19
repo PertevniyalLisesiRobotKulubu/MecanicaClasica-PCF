@@ -76,8 +76,6 @@ Se pueden también ver las tareas directamente en GitHub. Se renderizarán en l�
 
 ### [Tarea 3](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Tarea3.pdf)
 
-### [Tarea 3](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea3/Tarea3.pdf)
-
 ### [Tarea 4](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea4/Tarea4.pdf)
 
 ### [Tarea 5](https://github.com/FavioVazquez/MecanicaClasica-PCF/blob/master/Tarea5/Tarea5.pdf)
