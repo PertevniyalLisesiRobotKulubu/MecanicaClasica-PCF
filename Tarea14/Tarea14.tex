@@ -20,8 +20,12 @@
 \usepackage[titletoc,toc,title]{appendix}
 \usepackage{enumitem}
 \usepackage{etoolbox}
+\usepackage{mdframed} %frame theorems
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
+
+% Enviroment for theorems
+\newmdtheoremenv[frametitle=Teorema]{theo}{Theorem}
 
 % Circled words
 \newcommand{\circled}[2][]{%
@@ -191,6 +195,301 @@ de la mecánica y el principio de Hamilton.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+En gran parte esta discusión y pruebas fueron tomadas de \cite{holm}. Matemáticamente, el principio de Fermat establece que el camino un rayo $\mathbf{r}(s)$ 
+de un punto $A$ a un punto $B$ en el espacio es un extremal de la longitud óptica, 
+definida por 
+
+\begin{equation}
+ \delta \int_A^B n(\mathbf{r}(s)) = 0.
+\end{equation}
+
+Donde $n(\mathbf{r})$ es el índice de refracción en el punto espacial $\mathbf{r}$ 
+y 
+
+\begin{equation}
+ ds^2 = d\mathbf{r}(s) \cdot d\mathbf{r}(s)
+\end{equation}
+
+es el elemento de la longitud de arco $ds$ a lo largo del camino del rato $\mathbf{r}(s)$ 
+a través del punto.
+
+\vspace{.3cm}
+
+\definicion El \textbf{eje óptico} se define como la dirección principal de propagación de la 
+luz. 
+
+\vspace{.3cm}
+
+Si se escogen coordenadas de manera que el eje $z$ coincida con el eje óptico y 
+se exprese el elemento de longitud de arco $ds$ en términos del incremento a lo 
+largo del eje óptico, $dz$, como 
+
+\begin{align*}
+ ds &= \left[(dx)^2 + (dy)^2 + (dz)^2 \right]^{1/2}\\
+    &= \left[1 + \dot{x}^2 + \dot{y}^2 \right]^{1/2} = \frac{1}{\gamma}dz,
+\end{align*}
+
+donde hemos utilizado la notación $\dot{x} \equiv dx/dz$, $\dot{y} \equiv dy/dz$ y 
+$\gamma \equiv dz/ds$, entonces el principio de Fermat puede interpretarse como 
+un principio de acción estacionaria, con $z$ jugando el papel del tiempo (de aquí 
+en adelante escribiremos $t$ en vez de $z$),
+
+\begin{equation}
+ 0 = \delta S \equiv \delta \int_{t_A}^{t_B} L(x,y,\dot{x},dot{y},t)dt.
+ \label{eq:112}
+\end{equation}
+
+Aquí, hemos definido la lagrangiana óptica como 
+
+\begin{equation}
+ L(x,y,\dot{x},dot{y},t) = n(x,y,t)\left[1 + \dot{x}^2 + \dot{y}^2 \right]^{1/2} = 
+ \frac{n(x,y,t)}{\gamma},
+\end{equation}
+
+con 
+
+\begin{equation}
+ \gamma \equiv \frac{1}{\sqrt{1 + \dot{x}^2 + \dot{y}^2}} \leq 1.
+\end{equation}
+
+Podemos pensar en $(x,y,t) = (\mathbf{q},t)$ donde $\mathbf{q} = (x,y)$ es un vector 
+con componentes en el plano perpendicular al eje óptico a un desplazamiento en un 
+tiempo $t$. En esta formulación, el principio de Fermat implica la ecuación 
+eikonal, lo cual establecemos en el siguiente teorema:
+
+\vspace{.3cm}
+
+\begin{mdframed}[linewidth=2]
+
+\teorema El principio de Fermat
+
+\begin{equation}
+ 0 = \delta S = \delta \int_{t_A}^{t_B} L(\mathbf{q}(t),\dot{\mathbf{q}}(t))dt, 
+\end{equation}
+
+para la lagrangiana óptica 
+
+\begin{equation}
+ L(\mathbf{q},\dot{\mathbf{q}},t) = n(\mathbf{q},t)\left[1 + |\dot{\mathbf{q}}|^2
+ \right]^{1/2} \equiv \frac{n}{\gamma},
+ \label{eq:113}
+\end{equation}
+
+con 
+
+\begin{equation}
+ \gamma \equiv \frac{dt}{ds} = \frac{1}{\sqrt{1 + |\dot{\mathbf{q}}|^2}} \leq 1,
+ \label{eq:114}
+\end{equation}
+
+implica la ecuación de la eikonal
+
+\begin{equation}
+ \gamma\frac{d}{dt}\left(n(\mathbf{q},t)\gamma\frac{d\mathbf{q}}{dt}\right) 
+ = \frac{\partial n}{\partial \mathbf{q}}, \quad \text{con} \quad 
+ \frac{d}{ds} = \gamma \frac{d}{dt}
+ \label{eq:115}
+\end{equation}
+\end{mdframed}
+
+\prueba Consideremos una familia de curvas $C^2$ $\mathbf{q}(t,\epsilon) \in \mathbb{R}^2$ 
+que representan los posibles caminos de rayos desde un punto $A$ a un punto $B$ en el 
+espacio. Estos caminos satisfacen 
+
+\begin{equation}
+ \mathbf{q}(t,0) = \mathbf{q}(t), \quad \mathbf{q}(t_A,\epsilon) = \mathbf{q}(t_A) 
+ \quad \text{y} \quad \mathbf{q}(t_B,\epsilon) = \mathbf{q}(t_B),
+\end{equation}
+
+para un parámetro $\epsilon$ en algún intervalo cerrado. Si definimos la variación 
+de la acción óptica \eqref{eq:112} usando este parámetro como 
+
+\begin{equation}
+ \delta S = \delta \int_{t_A}^{t_B} L(\mathbf{q}(t),\dot{\mathbf{q}}(t))dt,
+\end{equation}
+
+entonces
+
+\begin{equation}
+ \delta S = \left\zerodel\frac{d}{d\epsilon}\right|_{\epsilon=0} 
+ L(\mathbf{q}(t,\epsilon),\dot{\mathbf{q}}(t,\epsilon))dt.
+\end{equation}
+
+Diferenciando con respecto a $\epsilon$ bajo el signo de la integral, denotando 
+la derivada variacional como 
+
+\begin{equation}
+ \delta \mathbf{q}(t) \equiv  \left\zerodel\frac{d}{d\epsilon}\right|_{\epsilon=0} 
+ \mathbf{q}(t,\epsilon),
+\end{equation}
+
+e integrando por parte produce la siguiente variación de la acción óptica, 
+
+\begin{align*}
+ 0 &= \delta S = \delta \int L(\mathbf{q},\dot{\mathbf{q}},t)dt \\
+   &= \int \left(\frac{\partial L}{\partial \mathbf{q}}\cdot \delta\mathbf{q} 
+   + \frac{\partial L}{\partial \dot{\mathbf{q}}}\cdot \delta\mathbf{q} \right) dt \\
+   &= \left(\frac{\partial L}{\partial \dot{\mathbf{q}}} - 
+   \frac{d}{dt}\frac{\partial L}{\partial \dot{\mathbf{q}}} \right) \cdot \delta\mathbf{q}
+   + \left[\frac{\partial L}{\partial \dot{\mathbf{q}}} \cdot \delta\mathbf{q}
+   \right]_{t_A}^{t_B}.
+\end{align*}
+
+Donde hemos asumido que las derivadas cruzadas son iguales evaluadas en $\epsilon = 0$, 
+y por lo tanto podemos cambiar el orden de derivación y escribir 
+
+\begin{equation}
+ \delta \dot{\mathbf{q}} = \frac{d}{dt}\delta\mathbf{q}.
+\end{equation}
+
+Los términos evaluados en los puntos $t_A$ y $t_B$ de la última ecuación se hacen cero 
+debido a que $\delta\mathbf{q}(t_A) = 0 = \delta\mathbf{q}(t_B)$. Esto es porque 
+la variación del camino del rayo debe hacerse cero en los puntos espaciales 
+$A$ y $B$ en $t_A$ y $t_B$ a lo largo del eje óptico. Debido a que $\delta\mathbf{q}$ 
+es arbitrario, el principio de acción estacionaria es equivalente a la siguiente ecuación, 
+la cual es la conocida ecuación de Lagrange, 
+
+\begin{equation}
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{\mathbf{q}}} - \frac{\partial L}{\partial \mathbf{q}} = 0.
+\label{eq:118}
+\end{equation}
+
+Ahora introduciendo la lagrangiana óptica \eqref{eq:113} en la ecuación de Lagrange 
+\eqref{eq:118}, nos resulta en 
+
+\begin{equation}
+ \frac{d}{dt}\left(n(\mathbf{q},t) \frac{\dot{\mathbf{q}}}{\sqrt{1 + |\dot{\mathbf{q}}|^2}}
+ \right) = \frac{\partial n}{\partial \mathbf{q}} \sqrt{1 + |\dot{\mathbf{q}}|^2}, 
+\end{equation}
+
+y utilizando la definición de $\gamma = 1/\sqrt{1 + |\dot{\mathbf{q}}|^2}$ tenemos 
+entonces 
+
+\begin{equation}
+ \gamma\frac{d}{dt}\left(n(\mathbf{q},t)\gamma\frac{d\mathbf{q}}{dt}\right) 
+ = \frac{\partial n}{\partial \mathbf{q}},
+\end{equation}
+
+que es exactamente \eqref{eq:115}. 
+
+$\hspace{12cm} \blacksquare$
+
+Ahora para encontrar la ecuación de la eikonal 
+que vimos en clase, que es en realidad la llamada ecuación eikonal escalar, comenzamos 
+por escribir \eqref{eq:115} en tres dimensiones, para un camino de rayo $\mathbf{r} 
+\in \mathbb{R}^3$ como 
+
+\begin{equation}
+ \frac{d}{ds}\left(\frac{\partial L}{\partial (d\mathbf{r}/ds)}\right) = 
+ \frac{d}{ds}\left(n(\mathbf{r})\frac{d\mathbf{r}}{ds}\right) = 
+ \frac{\partial n}{\partial \mathbf{r}}.
+ \label{eq:119}
+\end{equation}
+
+Y ahora con el siguiente teorema probaremos lo que queremos:
+
+\begin{mdframed}[linewidth=2]
+ \teorema La ecuación de la eikonal \eqref{eq:119} obtenida del principio de Fermat, 
+ se puede obtener de la ecuación de ondícula (wavelet) de Huygens, 
+ 
+ \begin{equation}
+  \nabla S(\mathbf{r}) = n(\mathbf{r})\frac{d\mathbf{r}}{ds},
+  \label{eq:1113}
+ \end{equation}
+ 
+ diferenciándola a lo largo del camino del rayo.
+\end{mdframed}
+
+\vspace{.3cm}
+
+\prueba Podemos probar este teorema aplicando la operación 
+
+\begin{equation}
+ \frac{d}{ds} = \frac{d\mathbf{r}}{ds}\cdot \nabla = \frac{1}{n}\nabla S \cdot \nabla, 
+\end{equation}
+
+a la ecuación de Huygens \eqref{eq:1113}. Esto producirá la ecuación de la eikonal
+\eqref{eq:119}, con el siguiente razonamiento, 
+
+\begin{equation}
+ \frac{d}{ds}\left(n\frac{d\mathbf{r}}{ds} \right) = \frac{1}{n}\nabla S \cdot \nabla 
+ (\nabla S) = \frac{1}{2n}\nabla|\nabla S|^2 = \frac{1}{2n}\nabla n^2 = \nabla n.
+\end{equation}
+
+En estas ecuaciones el primer paso sustituye 
+
+\begin{equation}
+ \frac{d}{ds} = n^{-1}\nabla S \cdot \nabla.
+\end{equation}
+
+El segundo paso cambia el orden de las derivadas. El tercer paso usa el módulo de 
+la ecuación de Huygens \eqref{eq:1113} e invoca la propiedad $|d\mathbf{r}/ds|^2 = 1$.
+Demostrando así el teorema y encontrando la ecuación de la eikonal.
+
+$\hspace{12cm} \blacksquare$
+
+Y para obtener la ecuación escalar de la eikonal, que fue la que vimos en clase, 
+solo debemos obtener el módulo de la ecuación de Huygens, que como probamos produce 
+la misma ecuación de la eikonal que del principio de Fermat, y nos queda 
+
+\begin{equation}
+ |\nabla S|^2(\mathbf{r}) = n^2(\mathbf{r}).
+ \label{eq:eikonalescalar}
+\end{equation}
+
+Y hemos obtenido lo que pedía el problema, hemos encontrado la ecuación diferencial 
+que determinan los rayos de luz que es la ecuación \eqref{eq:119} y aparte hemos encontrado 
+la ecuación de la eikonal en su forma vectorial \eqref{eq:115} y escalar que fue 
+como se vio en clases en la ecuación \eqref{eq:eikonalescalar}.
+
+\vspace{.3cm}
+
+Ahora por otra parte, hablaremos un poco sobre la analogía entre la mecánica y la 
+óptica geométrica que es la que hemos estado tratando. El principio de Fermat es un 
+ejemplo de la relevancia de los principios variacionales en la física, y la analogía 
+entre la mecánica y la óptica geométrica está basada en el hecho de que ambas teorías 
+pueden ser formuladas en términos de principios variacionales. Aún más, existe una 
+analogía muy cercana entre la ecuación de la eikonal en la óptica y la ecuación de 
+Hamilton-Jacobi en la mecánica, y por lo tanto entre los rayos de luz y las trayectorias 
+en un sistema mecánico, esto está bien establecido y probado en extensión en 
+\cite{romer}. Podemos decir que, en pocas palabras, la analogía mecánica del 
+principio de Fermat en la óptica es el principio de Maupertuis, que establece que 
+las órbitas para una energía fija
+
+\begin{equation}
+ E = \frac{1}{2}\sum_{ij} I_{ij} \dot{q}^i\dot{q}^j + V,
+\end{equation}
+
+donde $I_{ij}$ es el tensor de inercia, sigue del problema variacional 
+
+\begin{equation}
+ \delta \int \sqrt{(E-V)I_{ij} \dot{q}^i\dot{q}^j} = 0.
+\end{equation}
+
+De este principio podemos obtener las ecuaciones diferenciales que rigen la mecánica 
+clásica, que pueden expresarse de forma equivalente en las ecuaciones de Newton, Lagrange, 
+Hamilton o Hamilton-Jacobi. Para pasar de este principio a la determinación de 
+rayos de luz tenemos que hacer $E=0$, debido a la ecuación de la eikonal \eqref{eq:eikonalescalar}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Problema 3}
 
@@ -408,6 +707,8 @@ Al-Quhi et Ibn Al-Haytham}, Las Belles Lettres, 1993.
 \bibitem{holm}
 D. Holm, \emph{Geometric Mechanics, Part I: Dynamics and Symmetry}, World Scientific, 
 Imperial College Press, 2008.
+\bibitem{romer}
+H. Römer, \emph{Theoretical Optics: An introduction}, Wiley-VCH, 2005.
 \end{thebibliography}
 
 \end{document}
