@@ -6,6 +6,14 @@ Profesor: Dr. Rafael Pérez Pascual.
 
 Ayudante: M.Sc. Eduardo Serrano Ensástiga.
 
+#### Estadísticas del repositorio
+
+[![Issue Stats](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF/badge/pr)](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF) [![Issue Stats](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF/badge/issue)](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF)
+
+
+
+
+
 --------
 
 ## **Página Web del repositorio (contiene los PDFs de las tareas para verlos en línea)**
