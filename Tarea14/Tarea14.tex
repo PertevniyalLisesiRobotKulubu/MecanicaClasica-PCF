@@ -492,7 +492,184 @@ canónicas en las que la ecuación de Hamilton-Jacobi es totalmente separable.
 
 \underline{Solución:} \vspace{.3cm}
 
+Primero probemos el sentido $\Rightarrow$, es decir, que si un sistema es integrable 
+entonces existen sistemas de coordenadas canónicas en las que la ecuación de 
+Hamilton-Jacobi es totalmente separable.
+
+\vspace{.3cm}
+
+Decimos un sistema hamiltoniano de $n$ grados de libertad con hamiltoniana 
+$H(q,p)$, donde $(q,p)$ son algunas coordenadas canónicas, es integrable si 
+existen $n$ integrales de movimiento $I_i$ linealmente independientes y
+en involución, i.e.
+
+\begin{equation}
+ \{ I_i, I_j \} = 0.
+\end{equation}
+
+Sea entonces un sistema integrable, tenemos $n$ integrales de movimiento y $2n$ coordenadas 
+$(q,p)$, podemos por la independencia lineal, despejar $n$ de las coordenadas en 
+función de las otras $n$ y de las integrales de movimiento, y lo haremos para 
+los impulsos $p$ 
+
+\begin{equation}
+ p_i = \pi_i(q,I).
+\end{equation}
+
+En coordenadas $(q,I)$ la uno forma diferencial $\omega = \sum_i p_i dq^i$ estará 
+dada por 
+
+\begin{equation}
+ \omega = \sum_i \pi_i(q,I)dq^i,
+\end{equation}
+
+y la forma simpléctica $\gamma = d\omega$ toma la forma 
+
+\begin{align*}
+ \gamma &= \sum{ik} \left(\frac{\partial \pi_i}{\partial q^k}dq^k + 
+ \frac{\partial \pi_i}{\partial I_k}dI_k\right) \wedge dq^i \\
+  &= \sum_{k<i} \left(\frac{\partial \pi_i}{\partial q^k} - 
+ \frac{\partial \pi_k}{\partial q^i}\right) dq^k \wedge dq^i + 
+ \sum_{ik} \frac{\partial \pi_i}{\partial I_k} dI_k \wedge dq^i.
+\end{align*}
+
+Ahora debido a que $\{I_l, I_m\} = \gamma[V_{I_m},V_{I_l}]$, tenemos que 
+
+\begin{align*}
+\{I_l, I_m\} &= \sum_{k<i} \left(\frac{\partial \pi_i}{\partial q^k} - 
+ \frac{\partial \pi_k}{\partial q^i}\right) dq^k \wedge dq^i[V_{I_m},V_{I_l}] + 
+ \sum_{ik} \frac{\partial \pi_i}{\partial I_k} dI_k \wedge dq^i[V_{I_m},V_{I_l}] \\
+ &= \sum_{k<i} \left(\frac{\partial \pi_i}{\partial q^k} - 
+ \frac{\partial \pi_k}{\partial q^i}\right)(\{q^k,I_m\}\{q^i,I_l\} - 
+ \{q^i,I_m\}\{q^k,I_l\}) \\  
+ &+ \sum_{ik} \frac{\partial \pi_i}{\partial I_k}
+ (\{I_k,I_m\}\{q^i,I_l\} - \{I_k,I_l\}\{q^i,I_m\}),
+\end{align*}
+
+y como las $I_i$ están en involución, sus paréntesis de Poisson son cero 
+y tendremos que para que se cumpla $\{I_l,I_m\}$ necesariamente debe cumplirse 
+que 
+
+\begin{equation}
+ \frac{\partial \pi_i}{\partial q^k} - \frac{\partial \pi_k}{\partial q^i} = 0.
+\end{equation}
+
+Y con esta expresión, si consideramos a las $I$ como parámetros independientes, 
+vemos que la expresión 
+
+\begin{equation}
+ \sum_i \pi_i(q,I)dq^i,
+\end{equation}
+
+es integrable, esto es, existe una función $F(q,I)$ tal que 
+
+\begin{equation}
+ \pi_i(q,I) = \frac{\partial F}{\partial q^i},
+\end{equation}
+
+pero $\pi_i$ es $p_i$, por lo que $F(q,I)$ puede ser utilizada como una función 
+generadora de transformaciones canónicas de tipo dos, y al complementarla con 
+
+\begin{equation}
+ Q^i = \frac{\partial F}{\partial I_i},
+\end{equation}
+
+obtenemos una transformación canónica de coordenadas 
+
+\begin{equation}
+ (q,p) \leftrightarrow (Q,I),
+\end{equation}
+
+que nos lleva a un sistema canónico de coordenadas donde los impulsos son las 
+integrales de movimiento. En estas coordenadas la hamiltoniana resulta ser función 
+únicamente de las $I$, i.e.
+
+\begin{equation}
+ H = H(I_1,\dots,I_n).
+\end{equation}
+
+Si ahora recordamos la expresión para la ecuación de Hamilton-Jacobi para una hamiltoniana 
+independiente del tiempo, 
+
+\begin{equation}
+ H(q^1, \dots, q^n, \frac{\partial G}{q^1}, \dots, \frac{\partial G}{\partial q^n}) 
+ = - \frac{\partial G}{\partial t}.
+\end{equation}
+
+con 
+
+\begin{equation}
+ p_i = \frac{\partial G}{\partial q^i}.
+\end{equation}
+
+Y la expresamos para nuestro sistema con $H(I)$, tendíamos que 
+
+\begin{equation}
+ H\left(\frac{\partial G}{\partial Q^i}\right) = -\frac{\partial G}{\partial t},
+ \label{eq:HJintegrable1}
+\end{equation}
+
+donde 
+
+\begin{equation}
+ p_i = \frac{\partial G}{\partial Q^i} = I_i = c_i
+\end{equation}
+
+donde $c_i$ son los valores constantes para las integrales de movimiento. Claramente 
+esta ecuación de Hamilton-Jacobi es completamente separable debido a que como cada 
+lado depende de solamente una variable, el único modo de que se cumpla esta igualdad 
+es que ambos lados de \eqref{eq:HJintegrable1} sean iguales a una misma constante, lo 
+cual nos permite separar esta ecuación directamente. Con esto hemos demostrado que 
+si el sistema es integrable, existen transformaciones canónicas que nos llevan a 
+que la ecuación de Hamilton-Jacobi sea completamente totalmente separable.
+
+\vspace{.3cm}
+
+Ahora probemos $\Leftarrow$, es decir si existe un sistema canónico de coordenadas en que 
+la ecuación de Hamilton-Jacobi es totalmente separable, entonces el sistema es integrable. 
+
+\vspace{.3cm}
+
+Sea entonces un sistema canónico de coordenadas $(Q,I)$ tal que se cumpla que 
+
+\begin{equation}
+ \frac{\partial G}{\partial Q^i} = c_i, 
+\end{equation}
+
+donde la $G$ es una solución completa de la ecuación de Hamilton-Jacobi, y las 
+$c_i$ son unas constantes. Pero sabemos que el hecho de que la ecuación de Hamilton-
+Jacobi sea separable implica que 
+
+\begin{equation}
+ \frac{\partial G}{\partial Q^i} = I_i,
+\end{equation}
+
+por lo tanto $I_i = c_i$. Ahora debido a que las $I$ son constantes, por las ecuaciones 
+de Hamilton 
+
+\begin{equation}
+ \frac{\partial H}{\partial Q^i} = 0,
+\end{equation}
+
+por lo tanto la hamiltoniana solo será función de las I, es decir 
+
+\begin{equation}
+ H = H(I_i).
+\end{equation}
+
+Esto quiere decir que en nuestra hamiltoniana, al no depender de las $Q$, existirán 
+$n$ integrales de movimiento, que están aseguradas como integrales de movimiento debido 
+a que partimos de una hamiltoniana que no dependía del tiempo. Ahora estas $I$ deben 
+ser linealmente independientes para poder considerarse como coordenadas y además cumplir 
+las relaciones principales de Poisson \cite{abraham}, con las que aseguramos que las $I$ serán integrales 
+de movimiento en involución. Por lo tanto hemos encontrado unas coordenadas en las que la ecuación 
+de Hamilton-Jacobi es totalmente separable, que también nos garantizan que existirán
+$n$ integrales de movimiento en involución, lo cual culmina la segunda parte de la 
+demostración. Destacamos que no es el único modo de demostrar esto, y existen modos 
+mucho más formales, los cuales pueden encontrarse en \cite{abraham}.
+
 \section{Problema 5}
+
 
 Reduzca a cuadraturas por el método de Liouville el ejemplo del péndulo esférico.
 
@@ -690,6 +867,9 @@ D. Holm, \emph{Geometric Mechanics, Part I: Dynamics and Symmetry}, World Scient
 Imperial College Press, 2008.
 \bibitem{romer}
 H. Römer, \emph{Theoretical Optics: An introduction}, Wiley-VCH, 2005.
+\bibitem{abraham}
+ R. Abraham y J. Marsden, \emph{Foundations of Mechanics}, 2da edición, Addison-Wesley,
+ 1978.
 \end{thebibliography}
 
 \end{document}
