@@ -9,14 +9,11 @@ Ayudante: M.Sc. Eduardo Serrano Ensástiga.
 #### Estadísticas del repositorio
 
 [![Issue Stats](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF/badge/pr)](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF) [![Issue Stats](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF/badge/issue)](http://issuestats.com/github/FavioVazquez/MecanicaClasica-PCF) [![GitHub issues](https://img.shields.io/github/issues/FavioVazquez/MecanicaClasica-PCF.svg?style=plastic)](https://github.com/FavioVazquez/MecanicaClasica-PCF/issues)
-
-
-
-
-
 --------
 
 ## **Página Web del repositorio (contiene los PDFs de las tareas para verlos en línea)**
+
+[![Página Web del Repositorio](http://s7.postimg.org/btif6nxsr/githubpage_snapshot.jpg)](http://faviovazquez.github.io/MecanicaClasica-PCF/)
 
 ### http://faviovazquez.github.io/MecanicaClasica-PCF/
 
