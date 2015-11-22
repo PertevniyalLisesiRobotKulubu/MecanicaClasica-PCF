@@ -483,6 +483,319 @@ ver como la función principal de Hamilton? Argumente su respuesta.
 
 \underline{Solución:} \vspace{.3cm}
 
+Para no alargar demasiado la prueba de este enunciado, tomaremos por cierto 
+y completamente probado el hecho de la función principal de Hamilton es
+una solución completa  de la ecuación de Hamilton-Jacobi 
+correspondiente, y por lo tanto cuando se conoce la función principal de 
+Hamilton, puede obtenerse la solución completa para el movimiento del 
+sistema por un proceso de diferenciación y manipulación algebraica. Sin 
+embargo, recordemos algunas cosas sobre la función principal, y algunos 
+resultados que nos serán de utilidad en el camino de la argumentación. 
+La mayoría del tratamiento que se hace en esta solución es una extensión 
+y argumentación de \cite{greenwood} y \cite{ardema}.
+
+\vspace{.3cm}
+
+Recordemos que la función principal de Hamilton se define como 
+
+\begin{equation}
+ S(q_0,q_1,t_0,t_1) = \int_{t_0}^{t_1} L dt,
+\end{equation}
+
+donde $L$ es la lagrangiana del sistema, $(q_0,t_0)$ es la posición 
+y tiempo inicial y $(q_1,t_1)$ es la posición y tiempo final a la 
+que llega el sistema. La función $S$ se asume ser dos veces diferenciable 
+en todos sus argumentos. Recordemos además que la función principal $S$ 
+es la integral canónica $I = \int_{t_0}^{t_1} L dt$ expresada como 
+una función de los puntos iniciales y finales de la trayectoria en el 
+espacio de configuración extendido, así que podemos identificar $\delta S$ 
+con $\delta I$ y por lo tanto debe cumplirse que (integrando)
+
+\begin{equation}
+ \delta S = \left[ \sum_i p_i \delta q^i - H \delta t \right]_{t_0}^{t_1}.
+\end{equation}
+
+Ahora si escribimos esta ecuación en forma diferencial, obtenemos que,
+
+\begin{equation}
+ dS = \sum_i p_{i1}dq^{i1} - \sum_i p_{i0}dq^{i0} - H_1 dt_1 + 
+ H_0 dt_0,
+ \label{eq:515}
+\end{equation}
+
+donde hemos utilizado la notación de las notas de clase. Por otra parte, 
+una diferenciación directa de $S(q_0,q_1,t_0,t_1)$ da 
+
+\begin{equation}
+ dS = \sum_i \frac{\partial S}{\partial q^{i1}}dq^{i1} + 
+ \sum_i \frac{\partial S}{\partial q^{i0}}dq^{i0} + 
+ \frac{\partial S}{\partial t_1}dt_1 + 
+ \frac{\partial S}{\partial t_0}dt_0.
+ \label{eq:516}
+\end{equation}
+
+Debido a que los $(2n + 2)$ argumentos de la función principal puede 
+ser variados independientemente, los coeficientes de \eqref{eq:515} y 
+\eqref{eq:516} deben ser iguales, y por lo tanto encontramos lo 
+mismo que se llegó en las notas 
+
+\begin{equation}
+ p_{i1} = \frac{\partial S}{\partial q^{i1}}, \quad 
+ p_{i0} = \frac{\partial S}{\partial q^{i0}},
+\end{equation}
+
+y
+
+\begin{equation}
+ H_1 = - \frac{\partial S}{\partial t_1}, \quad 
+ H_0 = - \frac{\partial S}{\partial t_0}.
+\end{equation}
+
+Y asumiendo que 
+
+\begin{equation}
+ \left|\frac{\partial^2 S}{\partial q^{i0}\partial q^{ji}} \right| 
+ \ne 0,
+\end{equation}
+
+podemos resolver para cada $q^{i1}$ como función de las condiciones 
+iniciales y el tiempo, y luego sustituir para obtener $p_{i1}$ 
+completando la solución al sistema, dando el movimiento en el espacio 
+de fase como una función del tiempo. 
+
+\vspace{.3cm}
+
+Hemos pues probado de una forma un poco más compacta que en las notas, 
+lo que se asumió como cierto, el hecho de que cuando se conoce la 
+función principal de Hamilton, puede obtenerse una solución completa 
+para el movimiento del sistema. Es decir, que la función principal 
+es una solución completa de la ecuación de Hamilton-Jacobi.
+
+\vspace{.3cm}
+
+Ahora para la parte que nos interesa para la solución del problema debemos 
+preguntarnos, si será posible que toda solución completa de la ecuación de 
+Hamilton-Jacobi puede verse como la función principal de Hamilton. Para 
+ver si esto es así, consideremos de nuevo la forma diferencial 
+
+\begin{equation}
+ dS = \sum_i p_{i1}dq^{i1} - \sum_i p_{i0}dq^{i0} - H_1 dt_1 + 
+ H_0 dt_0,
+ \label{eq:537}
+\end{equation}
+
+que también debemos recordar que está asociada con una transformación 
+canónica que relaciona los puntos iniciales y finales de un camino 
+en el espacio de fases. Ahora supongamos que las condiciones iniciales 
+son especificadas por $n$ $\alpha$'s y $n$ $\beta$'s, donde 
+
+\begin{align}
+ \begin{split}
+  \alpha_i = \alpha_i(q^{10},\dots,q^{n0}, p_{10}, \dots, p_{n0}), \\
+  \beta^i = \beta^i(q^{10},\dots,q^{n0}, p_{10}, \dots, p_{n0}),
+ \end{split}
+\end{align}
+
+donde debemos notar que estas funciones no son arbitrarias, sino que 
+representan una transformación canónica homogénea. Entonces haciendo 
+esta transformación, la ecuación \eqref{eq:537} se escribe como 
+
+\begin{equation}
+ dS = \sum_i p_{i1}dq^{i1} - \sum_i \beta^id\alpha_i - H_1 dt_1 + 
+ H_0 dt_0
+ \label{eq:539}
+\end{equation}
+
+y ahora consideramos a $S$ como una función de $(q^{i1},\alpha_i,t_1,t_0)$. 
+Por lo tanto podemos escribir 
+
+\begin{equation}
+ dS = \sum_i \frac{\partial S}{\partial q^{i1}}dq^{i1} + 
+ \sum_i \frac{\partial S}{\partial \alpha_i}d\alpha_i + 
+ \frac{\partial S}{\partial t_1}dt_1 + 
+ \frac{\partial S}{\partial t_0}dt_0.
+ \label{eq:540}
+\end{equation}
+
+Ahora asumamos que el determinante 
+
+\begin{equation}
+ \left|\frac{\partial^2 S}{\partial q^{i1}\partial \alpha_i} \right| 
+ \ne 0,
+\end{equation}
+
+Entonces es posible resolver para las $\alpha$'s en términos de 
+$\partial S/\partial q^{i1}$, que, podrán identificarse con los 
+$p_1$'s. Esto implica que las $q_1$'s y las $\alpha$'s son variables 
+independientes, y por lo tanto podemos igualar los coeficientes 
+de \eqref{eq:539} y \eqref{eq:540} y obtener 
+
+\begin{equation}
+ - \beta^i = \frac{\partial S}{\partial \alpha_i},
+\end{equation}
+
+\begin{equation}
+ p_{i1} = \frac{\partial S}{\partial q^{i1}}.
+\end{equation}
+
+Y como antes obtenemos, 
+
+\begin{equation}
+  H_1 = - \frac{\partial S}{\partial t_1}, \quad 
+ H_0 = - \frac{\partial S}{\partial t_0}.
+\end{equation}
+
+La ecuación \eqref{eq:539} puede simplificarse arbitrariamente haciendo 
+el tiempo inicial $t_0$ igual a cero, con lo que $dt_0 = 0$. Y como 
+se hizo en las notas de clase, medimos el tiempo desde este instante y 
+dejamos de usar el subíndice 1 por conveniencia. Entonces obtenemos 
+
+\begin{equation}
+ dS = \sum_i p_idq^i - \sum_i \beta^i d\alpha_i - Hdt.
+ \label{eq:545}
+\end{equation}
+
+Otra forma más general es considerar las trayectorias correspondientes 
+en los espacios de fases $(\alpha,\beta)$ y $(q,p)$ como funciones de 
+un mismo tiempo $t$. Estas variables están relacionadas por una transformación 
+canónica, como ya fue establecido, que puede ser especificada igualando 
+la diferencial total la diferencia de dos formas de Pfaffian \cite{greenwood}, 
+que son,
+
+\begin{equation}
+ \sum_i p_idq^i - H dt,
+\end{equation}
+
+y 
+
+\begin{equation}
+ \sum_i \beta^id\alpha_i - H' dt,
+\end{equation}
+
+donde $H'(\alpha,\beta,t)$ es la función hamiltoniana que resulta de 
+considerar a las $\alpha$'s y $\beta$'s como variables. Por lo tanto 
+obtenemos 
+
+\begin{equation}
+ dS = \sum_i p_idq^i - \sum_i \beta^i d\alpha_i - Hdt + H' dt.
+\end{equation}
+
+Ahora, aunque consideramos a las $\alpha$'s y $\beta$'s como variables 
+en la formulación hamiltoniana, querríamos que fueran las $2n$ constantes 
+de movimiento requeridas, en una solución completa. En otras palabras, 
+queremos que en toda la trayectoria en el espacio de fase $(\alpha,\beta)$ 
+consista de un solo punto fijo. Un modo de asegurar esto es que $H'$ 
+sea cero. Y debido a a las ecuaciones canónicas, encontramos que 
+$\dot{\alpha_i}$ y $\dot{\beta^i}$ son cero, y por lo tanto las $\alpha$'s
+y $\beta$'s son constantes. Haciendo estas consideraciones la ecuación 
+\eqref{eq:545} también sería una forma diferencial pero sin el término 
+de $H'$. Vemos de la ecuación \eqref{eq:545} la función principal es 
+de la forma $S(q,\alpha,t)$. Por lo tanto su diferencial total puede 
+escribirse como 
+
+\begin{equation}
+ S = \sum_i \frac{\partial S}{\partial q^{i}}dq^{i} + 
+ \sum_i \frac{\partial S}{\partial \alpha_i}d\alpha_i + 
+ \frac{\partial S}{\partial t}dt,
+ \label{eq:547}
+\end{equation}
+
+de nuevo asumimos un determinante no cero, i.e.,
+
+\begin{equation}
+ \left|\frac{\partial^2 S}{\partial q^{1}\partial \alpha_i} \right| 
+ \ne 0,
+\end{equation}
+
+y ahora igualando los coeficientes de las ecuaciones \eqref{eq:545} y 
+\eqref{eq:547} obtenemos 
+
+\begin{equation}
+ - \beta^i = \frac{\partial S}{\partial \alpha_i},
+ \label{eq:549}
+\end{equation}
+
+\begin{equation}
+ p_i = \frac{\partial S}{\partial q^i},
+ \label{eq:550}
+\end{equation}
+
+\begin{equation}
+ \frac{\partial S}{\partial t} = - H.
+ \label{eq:551}
+\end{equation}
+
+La ecuación \eqref{eq:549} puede resolverse para las $q$'s como 
+función de $(\alpha,\beta,t)$ y esto provee la solución a el 
+problema lagrangiano. Y luego sustituyendo las $q$'s en \eqref{eq:550} 
+obtenemos expresiones para las $p$'s como función de $(\alpha,\beta,t)$, 
+por lo tanto completando la solución del problema de Hamilton. Claramente 
+lo que también hemos hecho en la demostración es obtener la ecuación de 
+Hamilton-Jacobi, debido a que si luego de obtener las $p$'s sustituimos 
+en \eqref{eq:551}, podemos escribir esta como 
+
+\begin{equation}
+ \frac{\partial S}{\partial t} + H\left(q,\frac{\partial S}{\partial q}, 
+ t \right) = 0,
+\end{equation}
+
+que es la ecuación de Hamilton-Jacobi. Vemos entonces que hemos demostrado 
+que una solución completa de la ecuación de Hamilton-Jacobi da la función 
+principal de Hamilton $S(q,\alpha,t)$ que provee el camino del sistema 
+en el espacio de fases por diferenciación y manipulación algebraica. Entonces 
+consideramos que el enunciado es afirmativo.
+
+\vspace{.3cm}
+
+Para ser aún todavía más convincente esta demostración, podemos hacernos 
+esta otra pregunta: ¿es necesaria cierta solución para $S$ y así obtener 
+una integración completa de las ecuaciones canónicas, o si cualquier 
+solución completa de la ecuación de Hamilton-Jacobi servirá?, que es 
+prácticamente la misma pregunta que hemos respondido afirmativamente 
+arriba, y claramente la respuesta a esta también sera afirmativa, pero 
+nos da paso a formular el teorema de Jacobi, que enunciamos sin 
+demostrar, 
+
+\begin{mdframed}[linewidth=2]
+ 
+ \teorema Si $S(q,\alpha,t)$ es cualquier solución completa de la ecuación 
+ de Hamilton-Jacobi
+ 
+ \begin{equation}
+ \frac{\partial S}{\partial t} + H\left(q,\frac{\partial S}{\partial q}, 
+ t \right) = 0,
+\end{equation}
+
+y si las ecuaciones 
+
+\begin{equation}
+ - \beta^i = \frac{\partial S}{\partial \alpha_i},
+\end{equation}
+
+\begin{equation}
+ p_i = \frac{\partial S}{\partial q^i},
+\end{equation}
+ 
+ donde las $\beta$'s son constantes arbitrarias, son usadas para resolver 
+ para $q^i(\alpha,\beta,t)$ y $p_i(\alpha,\beta,t)$; entonces estas 
+ expresiones proveen la solución general de las ecuaciones canónicas 
+ asociadas con la hamiltoniana $H(q,p,t)$.  
+\end{mdframed}
+
+Este teorema debe quedar claro por la primera parte de la demostración, 
+pero ahora sumando la segunda parte, y demostrando que es afirmativa, 
+entonces vemos ahora claramente que cualquier solución completa de 
+la ecuación de Hamilton-Jacobi puede ser considerada como una función 
+principal de Hamilton, sí y solo sí esta puede expresarse de la forma 
+$S(q,\alpha,t)$, y como hemos visto podemos hacer esto sin perder generalidad
+asegurando que el resultado que hemos obtenido es consistente. Esto también
+puede verse por el hecho de que $S$ es una función generadora de transformaciones 
+canónicas, y cualquier función del espacio de fases decente es una función 
+generadora del algún tipo, o de la suma de ellos, y por lo tanto esta $S$ 
+puede tener la forma de cualquier solución completa de la ecuación 
+de Hamilton-Jacobi y, ser una función generadora de transformaciones 
+canónicas y ser la función principal de Hamilton del sistema.
+
 \section{Problema 4}
 
 Demuestre que un sistema es integrable sí y solo sí existen sistemas de coordenadas 
@@ -869,6 +1182,11 @@ D. Holm, \emph{Geometric Mechanics, Part I: Dynamics and Symmetry}, World Scient
 Imperial College Press, 2008.
 \bibitem{romer}
 H. Römer, \emph{Theoretical Optics: An introduction}, Wiley-VCH, 2005.
+\bibitem{greenwood}
+D. Greenwood, \emph{Classical Dynamics}, Dover Publications, 1997.
+\bibitem{ardema}
+M. Ardema, \emph{Analytical Dynamics: Theory and Applications}, Kluwer 
+Academic / Plenum Publishers, 2005.
 \bibitem{abraham}
  R. Abraham y J. Marsden, \emph{Foundations of Mechanics}, 2da edición, Addison-Wesley,
  1978.
