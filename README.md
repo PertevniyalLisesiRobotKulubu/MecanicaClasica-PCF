@@ -1,5 +1,7 @@
 # Mecánica Clásica - Posgrado de Ciencias Físicas - UNAM. Semestre 2016-I
 
+[![Join the chat at https://gitter.im/FavioVazquez/MecanicaClasica-PCF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/FavioVazquez/MecanicaClasica-PCF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![UNAM](https://elielirangel.files.wordpress.com/2012/08/nt_p2.jpg) ![PCF-UNAM](http://www.posgrado.fisica.unam.mx/sites/default/files/LUZ.png)
 
 Profesor: Dr. Rafael Pérez Pascual.
